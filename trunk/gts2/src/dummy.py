@@ -1,9 +1,9 @@
 __author__="davide"
 __date__ ="$1-ago-2010 14.18.26$"
 
-from common.customer import *
-from common.trucks import *
-from common.dima import *
+from customer import *
+from trucks import *
+from dima import *
 
 def dummy_solution(customers,max_routes):
     """
@@ -34,11 +34,12 @@ def dummy_solution(customers,max_routes):
             print("costraint violated!");
             if k!=max_routes:
                 print("creating new route!");
-                trucks[k]=redimension_truck(truck);
-                routes[k+1]=[depot];
-                truck=allocate_truck();
+                routes.append([depot]);
+                trucks.append(allocate_truck());
+                distances=__calculate_distances(routes[k+1],customer);
                 
             k=min(k+1,max_routes);
+            truck=trucks[k];
             print("inserting customer in route {0}".format(k));
         __insert(routes[k],customer,distances,truck);
 
@@ -47,8 +48,11 @@ def dummy_solution(customers,max_routes):
 def __calculate_distances(route,customer):
     distances={};
     if len(route)!=1:
-        for k in range(len(route)):
-            distance=elma[route[k]][customer]+elma[customer][route[k+1]];
+        #print(len(route));
+        #print(route);
+        for k in range(len(route)-1):
+            #print(k);
+            distance=elma[route[k]][customer]+elma[customer][route[k+1]]+download_time(customer);
             distances[distance]=(route[k],route[k+1]);
     
         distance=elma[route[-1]][customer]+elma[customer][route[0]]+download_time(customer);
@@ -141,9 +145,10 @@ def __insert(route,customer,distances,truck):
     else:
         index=route.index(cust);
         print("customer must be inserted at index {0}".format(index));
-        route[index+1:index+1]=customer;
+        route[index+1:index+1]=[customer];
 
     truck.load+=customers[customer].demand;
     truck.time_frame+=delta_distance;
-    print("truck_load={0}/{1},truck_time_frame={2}/{3}".format(truck.load,truck.max_load,truck.time_frame,customers[route[0]].time_frame))
+    print("truck_load={0}/{1},truck_time_frame={2}/{3}".format(truck.load,truck.max_load,truck.time_frame,customers[route[0]].time_frame));
+    print(route);
     

@@ -1,10 +1,10 @@
 __author__="davide"
-__date__ ="$2-ago-2010 15.38.57$"
+__date__ ="$2-ago-2010 17.54.13$"
 
 from setuptools import setup,find_packages
 
 setup (
-  name = 'gts',
+  name = 'gts2',
   version = '0.1',
   packages = find_packages(),
 

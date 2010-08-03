@@ -4,9 +4,9 @@
 __author__="davide"
 __date__ ="$1-ago-2010 14.16.51$"
 
-from dummy import dummy_solution;
+from gts import *;
 from trucks import trucks_number
 from customer import customers
 
 if __name__ == "__main__":
-    print(dummy_solution(set(range(len(customers)))-set([0]),trucks_number()));
+    print(gts(set(range(len(customers)))-set([0]),trucks_number(),{}));

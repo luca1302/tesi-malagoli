@@ -19,12 +19,8 @@ def compute_cost(solution):
     delta_time_window=0;
 
     for tour in solution:
-        #print(tour);
         truck=tour['truck'];
         route=tour['route'];
-        #print(truck);
-        #print(route);
-        #print(solution);
         for k in range(len(route)-1):
             delta_max_load+=customers[route[k]].demand;
             delta_max_duration+=elma[route[k]][route[k+1]];

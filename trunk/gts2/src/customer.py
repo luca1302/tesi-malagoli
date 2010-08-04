@@ -8,10 +8,58 @@ depot=0;
 download_cost_factor_1=2;
 download_cost_factor_2=3;
 
+class AttributeList:
+    def __init__(self,customer_id,customer_object,truck_index,truck_max_load):
+        self.customer=customer_id;
+        self.truck_id=truck_index;
+        self.truck_max_load=truck_max_load;
+        self.prec=0;
+        self.succ=0;
+        self.distance_from_next=0;
+        self.demand=customer_object.demand;
+        self.service_time=download_time(customer_id);
+        self.truck_arrival_time=0;
+        self.truck_departure_time=0;
+        self.opening=customer_object.start_window;
+        self.closing=customer_object.end_window;
+        self.delta_load=0;
+        self.delta_distance=0;
+        self.delta_time_window=0;
+        
+    def __repr__(self):
+        return  "customer:{0},\n\
+                truck_id:{1},\n\
+                truck_max_load:{2},\n\
+                prec:{3},\n\
+                succ:{4},\n\
+                distance_from_next:{5},\n\
+                demand:{6},\n\
+                service_time:{7},\n\
+                truck_arrival_time:{8},\n\
+                truck_departure_time:{9},\n\
+                opening:{10},\n\
+                closing:{11},\n\
+                delta_load:{12},\n\
+                delta_distance:{13},\n\
+                delta_time_window:{14},\n\
+                \n".format(  self.customer,
+                            self.truck_id,
+                            self.truck_max_load,
+                            self.prec,
+                            self.succ,
+                            self.distance_from_next,
+                            self.demand,
+                            self.service_time,
+                            self.truck_arrival_time,
+                            self.truck_departure_time,
+                            self.opening,
+                            self.closing,
+                            self.delta_load,
+                            self.delta_distance,
+                            self.delta_time_window
+                            );
+
 class Customer:
-    #__x;
-    #__y;
-    #__demand;
 
     def __init__(self,demand=0,e=0,l=0,x=0,y=0):
         self.__x=x;

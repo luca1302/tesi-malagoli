@@ -12,23 +12,8 @@ def __change_format(routes,trucks):
         for k in range(depot+1,l):
             customer=routes[r][k];
             customer_object=customers[customer];
-            solution[customer]={'customer':customer,
-                                'truck_id':get_truck_index(trucks[r]),
-                                'truck_max_load':trucks[r].max_load,
-                                'prec':{},
-                                'succ':{},
-                                'distance_from_next':0,
-                                'demand':customer_object.demand,
-                                'service_time':download_time(customer),
-                                'truck_arrival_time':0,
-                                'truck_departure_time':0,
-                                'opening':customer_object.start_window,
-                                'closing':customer_object.end_window,
-                                'delta_load':0,
-                                'delta_distance':0,
-                                'delta_time_window':0,
-                                };
-        
+            solution[customer]=AttributeList(customer,customer_object,get_truck_index(trucks[r]),trucks[r].max_load);
+
         depot_object=customers[depot];
         total_load=0;
         truck_time=total_distance=elma[depot][routes[r][1]];
@@ -36,17 +21,16 @@ def __change_format(routes,trucks):
         for k in range(depot+1,l):
             customer_id=routes[r][k];
             customer=solution[customer_id];
-            customer['succ']=routes[r][(k+1)%l];
-            customer['prec']=routes[r][(k-1)%l];
-            customer['truck_arrival_time']=truck_time;
-            customer['distance_from_next']=elma[customer_id][customer['succ']];
-
-            truck_time=customer['truck_departure_time']=max(truck_time,customer['opening']) +customer['service_time'];
-            total_load+=customer['demand'];
-            customer['delta_load']=max(0,total_load-customer['truck_max_load']);
-            customer['delta_distance']=max(0,total_distance-depot_object.time_frame);
-            total_distance+=customer['distance_from_next'];
-            customer['delta_time_window']=max(0,customer['truck_departure_time']-customer['closing']);
+            customer.succ=routes[r][(k+1)%l];
+            customer.prec=routes[r][(k-1)%l];
+            customer.truck_arrival_time=truck_time;
+            customer.distance_from_next=elma[customer_id][customer.succ];
+            truck_time=customer.truck_departure_time=max(truck_time,customer.opening) +customer.service_time;
+            total_load+=customer.demand;
+            customer.delta_load=max(0,total_load-customer.truck_max_load);
+            customer.delta_distance=max(0,total_distance-depot_object.time_frame);
+            total_distance+=customer.distance_from_next;
+            customer.delta_time_window=max(0,customer.truck_departure_time-customer.closing);
         
     return solution;
 
@@ -88,7 +72,7 @@ def dummy_solution(customers,max_routes):
             #print("inserting customer in route {0}".format(k));
         __insert(routes[k],customer,distances,truck);
 
-    print(routes);
+    #print(routes);
     return __change_format(routes,trucks);
 
 def __calculate_distances(route,customer):

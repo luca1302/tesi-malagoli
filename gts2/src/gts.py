@@ -1,4 +1,7 @@
+from common import *
 from dummy import dummy_solution
+from random import shuffle
+from moves import *
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
@@ -7,11 +10,24 @@ __date__ ="$2-ago-2010 21.23.40$"
 
 
 __gts={
-        'cost_factors':{'duration':1,'load':1,'time_window':1},
         'delta':1,
+        'cost_factor_max_value':6400,
+        'cost_factor_min_value':1,
+        'update_delay':10
 };
 
 __cost_factors={'lenght':1,'duration':1};
+
+def __choose_new_best_solution(solution):
+    solution_set=[];
+    
+    new_solutions=make1step(solution);
+    for cost,sols in new_solutions:
+        if(cost in solution_set):
+            solution_set[cost].extend(sols);
+    min_cost=min(solution_set.keys());
+    shuffle(solutions_set[min_cost]);
+    return solutions_set[min_cost][0];
 
 def gts(customers,max_routes,cicles,**cost_factors):
     initial_solution=dummy_solution(customers,max_routes);
@@ -23,21 +39,26 @@ def gts(customers,max_routes,cicles,**cost_factors):
     new_solution=best_solution=initial_solution;
     best_solution_cost=compute_cost(best_solution);
 
+    update=update_max=globals()['__gts']['update_delay'];
     k=0;
     while (k<cicles):
         new_solution=__choose_new_best_solution(new_solution);
         new_cost=compute_cost(new_solution);
-        if(is_feasible(new_solution) and (new_cost<best_solution_cost)):
+        if(is_feasible() and (new_cost<best_solution_cost)):
             best_solution=new_solution;
             best_solution_cost=new_cost;
             k=0;
         else:
             k+=1;
-        __update_cost_factors();
+        if(update<=0):
+            update_cost_factors(globals()['__gts']['delta']);
+            update=update_max;
+        else:
+            update-=1;
 
-    for route in best_solution:
-        new_route=__apply_post_opt(route);
-        best_solution.remove(route);
-        best_solution.append(new_route);
+    #for route in best_solution:
+    #    new_route=__apply_post_opt(route);
+    #    best_solution.remove(route);
+    #    best_solution.append(new_route);
 
     return best_solution;

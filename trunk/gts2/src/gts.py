@@ -31,6 +31,8 @@ def __choose_new_best_solution(solution):
 
 def gts(customers,max_routes,cicles,**cost_factors):
     initial_solution=dummy_solution(customers,max_routes);
+    print(initial_solution);
+    return;
     
     for cost_factor in globals()['__cost_factors'].keys():
         if(cost_factor in cost_factors):

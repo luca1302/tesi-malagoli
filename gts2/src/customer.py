@@ -13,12 +13,12 @@ class Customer:
     #__y;
     #__demand;
 
-    def __init__(self,demand=0,a=0,e=0,x=0,y=0):
+    def __init__(self,demand=0,e=0,l=0,x=0,y=0):
         self.__x=x;
         self.__y=y;
         self.__demand=demand;
-        self.__a=a;
         self.__e=e;
+        self.__l=l;
 
     def set_x(self,x):
         self.__x=x;
@@ -33,11 +33,19 @@ class Customer:
         self.__demand=demand;
 
     def get_time_frame(self):
-        return self.__e-self.__a;
-    
+        return self.__l-self.__e;
+
+    def get_start_window(self):
+        return self.__e;
+
+    def get_end_window(self):
+        return self.__l;
+
     x=property(get_x,set_x);
     demand=property(get_demand,set_demand);
     time_frame=property(get_time_frame);
+    start_window=property(get_start_window);
+    end_window=property(get_end_window);
 
 def download_time(customer):
     #return customers[customer].demand/download_cost_factor_1+customers[customer].demand/download_cost_factor_2;

@@ -51,10 +51,10 @@ def allocate_truck():
 def trucks_number():
     return len(__trucks);
 
+def get_truck_index(truck):
+    return __trucks.index(truck);
 
-
-
-__trucks=set(
+__trucks=list(
 Truck(200)*10
 
 );

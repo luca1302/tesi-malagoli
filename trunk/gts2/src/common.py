@@ -18,17 +18,21 @@ def compute_cost(solution):
     delta_max_load=0;
     delta_time_window=0;
 
-    for tour in solution:
-        truck=tour['truck'];
-        route=tour['route'];
-        for k in range(len(route)-1):
-            delta_max_load+=customers[route[k]].demand;
-            delta_max_duration+=elma[route[k]][route[k+1]];
-            #delta_time_window+=abs(min(0,service_start_time-opening)+min(0,ending-service_end_time));
-        delta_max_duration+=elma[route[-1]][route[0]];
-
-        delta_max_duration=abs(min(0,truck.time_frame-delta_max_duration));
-        delta_max_load=abs(min(0,truck.max_load-delta_max_load));
+    for customer,attrlist in solution:
+        delta_max_duration+=attrlist.delta_distance;
+        delta_max_load+=attrlist.delta_load;
+        delta_time_window+=attrlist.delta_time_window;
+    #for tour in solution:
+    #    truck=tour['truck'];
+    #    route=tour['route'];
+    #    for k in range(len(route)-1):
+    #        delta_max_load+=customers[route[k]].demand;
+    #        delta_max_duration+=elma[route[k]][route[k+1]];
+    #        #delta_time_window+=abs(min(0,service_start_time-opening)+min(0,ending-service_end_time));
+    #    delta_max_duration+=elma[route[-1]][route[0]];
+    #
+    #    delta_max_duration=abs(min(0,truck.time_frame-delta_max_duration));
+    #    delta_max_load=abs(min(0,truck.max_load-delta_max_load));
 
     globals()['__solution_cost']['costs']['load']=delta_max_load;
     globals()['__solution_cost']['costs']['duration']=delta_max_duration;

@@ -15,6 +15,7 @@ def __change_format(routes,trucks):
             solution[customer]=AttributeList(customer,customer_object,get_truck_index(trucks[r]),trucks[r].max_load);
 
         depot_object=customers[depot];
+        previous_delta_time_w=previous_delta_distance=previous_delta_load=0;
         total_load=0;
         truck_time=total_distance=elma[depot][routes[r][1]];
 
@@ -26,12 +27,15 @@ def __change_format(routes,trucks):
             customer.truck_arrival_time=truck_time;
             customer.distance_from_next=elma[customer_id][customer.succ];
             truck_time=customer.truck_departure_time=max(truck_time,customer.opening) +customer.service_time;
+
             total_load+=customer.demand;
             customer.delta_load=max(0,total_load-customer.truck_max_load);
             customer.delta_distance=max(0,total_distance-depot_object.time_frame);
             total_distance+=customer.distance_from_next;
             customer.delta_time_window=max(0,customer.truck_departure_time-customer.closing);
-        
+            
+            
+
     return solution;
 
 def dummy_solution(customers,max_routes):

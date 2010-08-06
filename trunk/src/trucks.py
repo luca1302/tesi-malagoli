@@ -5,6 +5,7 @@ __author__="davide"
 __date__ ="$2-ago-2010 0.45.33$"
 
 
+
 __trucks_load_index={};
 
 class Truck:

@@ -7,6 +7,7 @@ from dima import *
 __author__="davide"
 __date__ ="$3-ago-2010 16.32.33$"
 
+
 __solution_cost={
     'costs':{'duration':0,'load':1,'time_window':1},
     'cost_factors':{'duration':1,'load':1,'time_window':1},

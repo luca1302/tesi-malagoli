@@ -8,6 +8,7 @@ from dima import *;
 from copy import *;
 from common import *;
 
+
 __tabu_max=50;
 
 def delete_from_his_route(node,node_pos,solution):

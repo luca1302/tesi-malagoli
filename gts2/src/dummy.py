@@ -5,39 +5,6 @@ from customer import *
 from trucks import *
 from dima import *
 
-def __change_format(routes,trucks):
-    solution={};
-    for r in range(len(routes)):
-        l=len(routes[r]);
-        for k in range(depot+1,l):
-            customer=routes[r][k];
-            customer_object=customers[customer];
-            solution[customer]=AttributeList(customer,customer_object,get_truck_index(trucks[r]),trucks[r].max_load);
-
-        depot_object=customers[depot];
-        previous_delta_time_w=previous_delta_distance=previous_delta_load=0;
-        total_load=0;
-        truck_time=total_distance=elma[depot][routes[r][1]];
-
-        for k in range(depot+1,l):
-            customer_id=routes[r][k];
-            customer=solution[customer_id];
-            customer.succ=routes[r][(k+1)%l];
-            customer.prec=routes[r][(k-1)%l];
-            customer.truck_arrival_time=truck_time;
-            customer.distance_from_next=elma[customer_id][customer.succ];
-            truck_time=customer.truck_departure_time=max(truck_time,customer.opening) +customer.service_time;
-
-            total_load+=customer.demand;
-            customer.delta_load=max(0,total_load-customer.truck_max_load);
-            customer.delta_distance=max(0,total_distance-depot_object.time_frame);
-            total_distance+=customer.distance_from_next;
-            customer.delta_time_window=max(0,customer.truck_departure_time-customer.closing);
-            
-            
-
-    return solution;
-
 def dummy_solution(customers,max_routes):
     """
         Build a dummy solution for the VRPTW with max_routes or less routes
@@ -76,8 +43,12 @@ def dummy_solution(customers,max_routes):
             #print("inserting customer in route {0}".format(k));
         __insert(routes[k],customer,distances,truck);
 
-    #print(routes);
-    return __change_format(routes,trucks);
+    for r in range(len(routes)):
+        new_route={'truck':trucks[r],'route':routes[r],'old_tabu':{},'new_tabu':{},'inserted':{},};
+        routes.remove(routes[r]);
+        routes.insert(r,new_route);
+
+    return routes;
 
 def __calculate_distances(route,customer):
     distances={};

@@ -5,6 +5,7 @@ __author__="davide"
 __date__ ="$2-ago-2010 0.45.33$"
 
 
+
 __trucks_load_index={};
 
 class Truck:
@@ -51,10 +52,10 @@ def allocate_truck():
 def trucks_number():
     return len(__trucks);
 
-def get_truck_index(truck):
-    return __trucks.index(truck);
 
-__trucks=list(
+
+
+__trucks=set(
 Truck(200)*10
 
 );

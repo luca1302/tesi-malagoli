@@ -9,8 +9,9 @@ __author__="davide"
 __date__ ="$2-ago-2010 21.23.40$"
 
 
+
 __gts={
-        'delta':1,
+        'delta':0.5,
         'cost_factor_max_value':6400,
         'cost_factor_min_value':1,
         'update_delay':10
@@ -18,20 +19,19 @@ __gts={
 
 __cost_factors={'lenght':1,'duration':1};
 
+def __argmin(solution_set):
+    return min(solution_set.keys());
+
 def __choose_new_best_solution(solution):
-    solution_set=[];
     
-    new_solutions=make1step(solution);
-    for cost,sols in new_solutions:
-        if(cost in solution_set):
-            solution_set[cost].extend(sols);
-    min_cost=min(solution_set.keys());
-    shuffle(solutions_set[min_cost]);
-    return solutions_set[min_cost][0];
+    solution_set=make1step(solution);
+    min_cost=__argmin(solution_set);
+    shuffle(solution_set[min_cost]);
+    return solution_set[min_cost][0];
 
 def gts(customers,max_routes,cicles,**cost_factors):
     initial_solution=dummy_solution(customers,max_routes);
-    #print(initial_solution);
+    print(initial_solution);
     
     for cost_factor in globals()['__cost_factors'].keys():
         if(cost_factor in cost_factors):
@@ -39,12 +39,15 @@ def gts(customers,max_routes,cicles,**cost_factors):
 
     new_solution=best_solution=initial_solution;
     best_solution_cost=compute_cost(best_solution);
-
+    print(best_solution);
+    print(best_solution_cost);
     update=update_max=globals()['__gts']['update_delay'];
     k=0;
     while (k<cicles):
         new_solution=__choose_new_best_solution(new_solution);
+        print(new_solution);
         new_cost=compute_cost(new_solution);
+        print(new_cost);
         if(is_feasible() and (new_cost<best_solution_cost)):
             best_solution=new_solution;
             best_solution_cost=new_cost;
@@ -54,6 +57,7 @@ def gts(customers,max_routes,cicles,**cost_factors):
         if(update<=0):
             update_cost_factors(globals()['__gts']['delta']);
             update=update_max;
+            best_solution_cost=compute_cost(best_solution);
         else:
             update-=1;
 

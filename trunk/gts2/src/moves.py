@@ -29,6 +29,10 @@ def insert_in_position(new_node,node_tour,node_index,solution):
     solution[node_tour]['route'][node_index:node_index]=[new_node];
     assert(solution[node_tour]['route'][node_index]==new_node);
     solution[node_tour]['new_tabu'][new_node]=globals()['__tabu_max'];
+    if(new_node in solution[node_tour]['inserted']):
+        solution[node_tour]['inserted'][new_node]+=1;
+    else:
+        solution[node_tour]['inserted'][new_node]=1;
 
 def add_as_successor_of(node,node_pos,new_node,solution):
     node_tour=node_pos[0];
@@ -102,6 +106,12 @@ def get_neighbors(vertexes):
 
 def make1step(solution):
     solution_set={};
+    for tour in solution:
+        for key in tour['old_tabu'].keys():
+            tour['old_tabu']-=1;
+            if(tour['old_tabu']==0):
+                del tour['old_tabu'];
+    
     for move in moves:
         vertexes=get_vertexes(solution);
         vertex_neighbors=get_neighbors(vertexes);

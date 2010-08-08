@@ -19,15 +19,50 @@ __gts={
 
 __cost_factors={'lenght':1,'duration':1};
 
-def __argmin(solution_set):
-    return min(solution_set.keys());
-
-def __choose_new_best_solution(solution):
+def __argmin(solution_set,best_solution_cost):
+    min_cost=min(solution_set.keys());
+    argmin=None;
     
+    #aspiration_criterion
+    if(min_cost>=best_solution_cost):
+        cost_tmp=None;
+        solution_tmp=None;
+        
+        for cost in sorted(solution_set.keys()):
+            cost_tmp=cost;
+            k=0;
+            for solution in solution_set[cost]:
+                solution_tmp=k;
+                k+=1;
+                acceptable=True;
+                for tour in solution:
+                    for key in tour['new_tabu']:
+                        if(key in tour['old_tabu']):
+                            acceptable=False;
+                    if(not acceptable):
+                        break;
+                if(acceptable):
+                    break;
+            if(acceptable):
+                break;
+            
+        argmin=solution_set[cost_tmp][solution_tmp];
+
+    else:
+        shuffle(solution_set[min_cost]);
+        argmin=solution_set[min_cost][0];
+    
+    for tour in argmin:
+        for key in tour['new_tabu'].keys():
+            if(key in tour['old_tabu']):
+                tour['old_tabu']=tour['new_tabu'];
+    tour['new_tabu']={};
+        
+    return argmin;
+
+def __choose_new_best_solution(solution,best_solution_cost):
     solution_set=make1step(solution);
-    min_cost=__argmin(solution_set);
-    shuffle(solution_set[min_cost]);
-    return solution_set[min_cost][0];
+    return __argmin(solution_set,best_solution_cost);
 
 def gts(customers,max_routes,cicles,**cost_factors):
     initial_solution=dummy_solution(customers,max_routes);
@@ -44,7 +79,7 @@ def gts(customers,max_routes,cicles,**cost_factors):
     update=update_max=globals()['__gts']['update_delay'];
     k=0;
     while (k<cicles):
-        new_solution=__choose_new_best_solution(new_solution);
+        new_solution=__choose_new_best_solution(new_solution,best_solution_cost);
         print(new_solution);
         new_cost=compute_cost(new_solution);
         print(new_cost);

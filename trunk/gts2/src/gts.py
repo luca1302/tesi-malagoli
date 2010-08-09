@@ -31,6 +31,7 @@ def __argmin(solution_set,best_solution_cost):
         solution_tmp=None;
         
         for cost in sorted(solution_set.keys()):
+            #print('cost={0},min_cost={1}'.format(cost,min_cost));
             cost_tmp=cost;
             k=0;
             for solution in solution_set[cost]:

@@ -135,7 +135,9 @@ def get_vertexes(solution,reinit):
     if((vertexes==None) or reinit):
         vertexes={};
         for tour in range(len(solution)):
-            for position in range(1,len(solution[tour]['route'])):
+            #print(solution[tour]['route']);
+            for position in range(len(solution[tour]['route'])):
+                #print(solution[tour]['route'][position]);
                 vertexes[solution[tour]['route'][position]]=[tour,position];
         globals()['__vertexes']=vertexes;
     
@@ -146,14 +148,17 @@ def get_neighbors(vertexes,granular_distance,reinit):
     if((neighbors==None) or reinit):
         neighbors={};
         for vertex in vertexes:
+            #print(vertex);
             n={};
             for element in range(1,len(dima[vertex])):
+                #print(element);
                 distance=dima[vertex][element];
                 if distance<granular_distance and element!=vertex:
                     #if distance in n:
                     #    n[distance].append(vertexes[element]);
                     #else:
                     #    n[distance]=[vertexes[element]];
+                    #print(vertexes);
                     n[element]=vertexes[element];
             neighbors[vertex]=n;
         globals()['__neighbors']=neighbors;
@@ -207,4 +212,4 @@ def make1step(solution):
                         solution_set[cost]=[current_solution];
     return solution_set;
 
-moves=[or1];
+moves=[or2];

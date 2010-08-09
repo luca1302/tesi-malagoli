@@ -25,27 +25,38 @@ class Clark_and_Wright():
         self.__routes={};
         self.__max_truck=allocate_truck();
         self.__max_capacity=self.__max_truck.max_load;
+        self.__start={};
+        self.__end={};
         #print(customers);
         #customers=deepcopy(customers);
         #customers=customers-customers[depot_index];
+        customers=list(customers);
+        #print(customers);
         scan=range(len(customers));
         for i in scan:
-            self.__routes[i]=[i];
+            self.__routes[i+1]=[customers[i]];
+            self.__end[customers[i]]=self.__start[customers[i]]=i+1;
             for j in scan:
-                saving=dima[i][depot_index]+dima[depot_index][j]-dima[i][j];
-                couple=(i,j);
+                #print(i,j);
+                saving=dima[i+1][depot_index]+dima[depot_index][j+1]-dima[i+1][j+1];
+                couple=(i+1,j+1);
+                #print(couple);
                 if saving in self.__savings:
                     self.__savings[saving].append(couple);
                 else:
                     self.__savings[saving]=[couple];
+        #print(self.__savings);
+        assert(len(self.__start)==len(self.__end)==len(self.__routes)==len(customers));
+        
         
     def is_feasible(self,list):
+        #print(list);
         depot_object=customers[self.__depot_index];
         total_load=0;
         total_time=depot_object.opening;
         prev_index=self.__depot_index;
         for index in list:
-            customer=self.__customers[index];
+            customer=customers[index];
             total_load+=customer.demand;
             total_time+=self.__elma[prev_index][index];
             total_time=max(total_time,customer.opening)+download_time(index);
@@ -55,43 +66,87 @@ class Clark_and_Wright():
     
     def find_starting_solution(self):
         savings=self.__savings.keys();
-        sorted(savings,reverse=True);
-        l=len(savings);
-        for k in range(l):
-            for saving in self.__savings[k]:
-                for couple in self.__savings[saving]:
-                    if((couple[0] in self.__start) and (couple[1] in self.__end)):
-                        route_2=self.__start[couple[0]];
-                        route=self.__end[couple[1]];
+        savings=sorted(savings,reverse=True);
+        for saving in savings:
+            #print('saving={0}:{1}'.format(saving,self.__savings[saving]));
+            for couple in self.__savings[saving]:
+                #print(couple);
+                
+                if((couple[0] in self.__start) and (couple[1] in self.__end)):
+                    #print('{0}:{1} in start, {2}:{3} in end!'.format(couple[0],self.__start[couple[0]],couple[1],self.__end[couple[1]]));
+                    route_2=self.__start[couple[0]];
+                    route=self.__end[couple[1]];
                         
-                    elif((couple[0] in self.__end) and (couple[1] in self.__start)):
-                        route_2=self.__start[couple[1]];
-                        route=self.__end[couple[0]];
+                elif((couple[0] in self.__end) and (couple[1] in self.__start)):
+                    #print('{2}:{3} in start, {0}:{1} in end!'.format(couple[0],self.__end[couple[0]],couple[1],self.__start[couple[1]]));
+                    route_2=self.__start[couple[1]];
+                    route=self.__end[couple[0]];
+                else:
+                    #print('{0} and {1} not present!'.format(couple[0],couple[1]));
+                    continue;
                     
-                    if is_feasible(route+route2):
-                        self.__routes[route]+=route_2;
-                        del self.__routes[route_2];
+                if((route not in self.__routes) or (route_2 not in self.__routes)):
+                    continue;
+                #print('routes exist');
+                if(route==route_2):
+                    #print('same route');
+                    #print(self.__routes[route]);
+                    continue;
+                #print('routes are different');
+                if self.is_feasible(self.__routes[route]+self.__routes[route_2]):
+                    #print("combination_feasible!");
+                    #print('{0}+{1}='.format(self.__routes[route],self.__routes[route_2]));
+                    self.__routes[route]+=self.__routes[route_2];
+                    #print('{0}:{1}'.format(route,self.__routes[route]));
+                    del self.__routes[route_2];
+                    #print('route {0} deleted'.format(route_2));
+                
+                    #print(self.__start);
+                    elements=[];
+                    for element,r in self.__start.items():
+                        if r==route_2:
+                            elements.append(element);
+                    #print('elements={0}'.format(elements));
+                    #print('start={0}'.format(self.__start));
+                    for element in elements:
+                        del self.__start[element];
+                    #print('start={0}'.format(self.__start));
                     
-                        for dictionary in [self.__start,self.__end]:
-                            for element,r in dictionary:
-                                if r==route_2:
-                                    del dictionary[element];
+                    elements=[];
+                    #print('end={0}'.format(self.__end));        
+                    for element,r in self.__end.items():
+                        if r==route_2:
+                            self.__end[element]=route;
+                        elif r==route:
+                            elements.append(element);
+                    #print('elements={0}'.format(elements));
+                    for element in elements:
+                        del self.__end[element];
+                    #print('end={0}'.format(self.__end));
         
-        if(len(self.__routes.keys())>self.__truck_number):
-            routes=[];
-            for key,route in self.__routes:
-                routes.append(route);
-            sorted(routes,key=__sorting,reverse=True);
+        #print(len(self.__routes.keys()));
+        routes=[];
+        for key,route in self.__routes.items():
+            routes.append(route);
+        self.__routes=routes;
+        
+        if(len(self.__routes)>self.__truck_number()):
+            
+            routes=sorted(self.__routes,key=globals()['__sorting'],reverse=True);
             k=0;
-            t=self.__truck_number;
+            t=self.__truck_number();
+            #print(routes);
             for route in range(t,len(routes)):
-                routes[k]+=route;
+                routes[k]+=routes[route];
                 k=(k+1)%t;
+            #print(routes);
+            routes=routes[0:t];
+            #print(routes);
             self.__routes=routes;
                  
-        
+        #print(len(self.__routes));
         solution=[];
-        for key,route in self.__routes:
+        for route in self.__routes:
             tour={};
             tour['truck']=self.__max_truck;
             self.__max_truck=self.__allocate_truck();

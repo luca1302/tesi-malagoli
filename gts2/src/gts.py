@@ -3,6 +3,7 @@ from common import *
 from clark_and_wright import *
 from random import shuffle
 from moves import *
+#import sys;
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
@@ -71,7 +72,7 @@ def gts(customers,max_routes,cicles,**cost_factors):
     #initial_solution=dummy_solution(customers,max_routes);
     initial_solution=Clark_and_Wright(dima,elma,customers,allocate_truck,trucks_number,depot).find_starting_solution();
     print(initial_solution);
-    
+    #sys.exit();
     for cost_factor in globals()['__cost_factors'].keys():
         if(cost_factor in cost_factors):
             globals()['__cost_factors'][cost_factor]=cost_factors[cost_factor];

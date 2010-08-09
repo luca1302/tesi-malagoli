@@ -130,9 +130,9 @@ def swap(vertex,vertex_pos,neighbor,neighbor_pos,solution):
 def ab(solution):
     pass;
 
-def get_vertexes(solution):
+def get_vertexes(solution,reinit):
     vertexes=globals()['__vertexes'];
-    if(vertexes==None):
+    if((vertexes==None) or reinit):
         vertexes={};
         for tour in range(len(solution)):
             for position in range(1,len(solution[tour]['route'])):
@@ -161,7 +161,6 @@ def get_neighbors(vertexes,granular_distance,reinit):
     return neighbors;
 
 def make1step(solution):
-    solution_set={};
     globals()['__i']=(globals()['__i']+1)%(globals()['__period']);
     #print(globals()['__i']);
     if(globals()['__i']==1):
@@ -185,8 +184,9 @@ def make1step(solution):
             if(tour['old_tabu'][key]==0):
                 del tour['old_tabu'][key];
     
+    solution_set={};
     for move in moves:
-        vertexes=get_vertexes(solution);
+        vertexes=get_vertexes(solution,reinit);
         vertex_neighbors=get_neighbors(vertexes,globals()['__granular_distance'],reinit);
         for vertex in vertexes:
             #print(vertex_neighbors[vertex]);

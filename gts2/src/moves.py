@@ -43,12 +43,12 @@ def apply(argmin):
                 element_index=tour['route'].index(key);
                 tour['old_tabu']=tour['new_tabu'];
                 
-            route_number=argmin.index(tour);
-            for k in range(1,len(tour['route'])):
-                element=tour['route'][k];
-                #print(element);
-                globals()['__vertexes'][element][0]=route_number;
-                globals()['__vertexes'][element][1]=k;
+            #route_number=argmin.index(tour);
+            #for k in range(1,len(tour['route'])):
+            #    element=tour['route'][k];
+            #    #print(element);
+            #    globals()['__vertexes'][element][0]=route_number;
+            #    globals()['__vertexes'][element][1]=k;
             tour['deleted'].clear();
             #assert(globals()['__vertexes'][key][0]!=tmp_vertexes[key][0]);
             #assert(globals()['__vertexes'][key][1]!=tmp_vertexes[key][1]);
@@ -132,7 +132,8 @@ def ab(solution):
 
 def get_vertexes(solution,reinit):
     vertexes=globals()['__vertexes'];
-    if((vertexes==None) or reinit):
+    #if((vertexes==None) or reinit):
+    if(True):
         vertexes={};
         for tour in range(len(solution)):
             #print(solution[tour]['route']);
@@ -145,7 +146,8 @@ def get_vertexes(solution,reinit):
 
 def get_neighbors(vertexes,granular_distance,reinit):
     neighbors=globals()['__neighbors'];
-    if((neighbors==None) or reinit):
+    #if((neighbors==None) or reinit):
+    if(True):
         neighbors={};
         for vertex in vertexes:
             #print(vertex);
@@ -212,4 +214,4 @@ def make1step(solution):
                         solution_set[cost]=[current_solution];
     return solution_set;
 
-moves=[or2];
+moves=[or1,or2,swap];

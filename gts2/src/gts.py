@@ -1,5 +1,6 @@
 from common import *
-from dummy import dummy_solution
+#from dummy import dummy_solution
+from clark_and_wright import *
 from random import shuffle
 from moves import *
 # To change this template, choose Tools | Templates
@@ -67,7 +68,8 @@ def __choose_new_best_solution(solution,best_solution_cost):
     return solution;
 
 def gts(customers,max_routes,cicles,**cost_factors):
-    initial_solution=dummy_solution(customers,max_routes);
+    #initial_solution=dummy_solution(customers,max_routes);
+    initial_solution=Clark_and_Wright(dima,elma,customers,allocate_truck,trucks_number,depot).find_starting_solution();
     print(initial_solution);
     
     for cost_factor in globals()['__cost_factors'].keys():

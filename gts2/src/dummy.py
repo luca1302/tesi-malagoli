@@ -44,7 +44,7 @@ def dummy_solution(customers,max_routes):
         __insert(routes[k],customer,distances,truck);
 
     for r in range(len(routes)):
-        new_route={'truck':trucks[r],'route':routes[r],'old_tabu':{},'new_tabu':{},'inserted':{},};
+        new_route={'truck':trucks[r],'route':routes[r],'old_tabu':{},'new_tabu':{},'inserted':{},'deleted':{}};
         routes.remove(routes[r]);
         routes.insert(r,new_route);
 

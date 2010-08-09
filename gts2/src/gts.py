@@ -52,17 +52,19 @@ def __argmin(solution_set,best_solution_cost):
         shuffle(solution_set[min_cost]);
         argmin=solution_set[min_cost][0];
     
-    for tour in argmin:
-        for key in tour['new_tabu'].keys():
-            if(key in tour['old_tabu']):
-                tour['old_tabu']=tour['new_tabu'];
-    tour['new_tabu']={};
+    #for tour in argmin:
+    #    for key in tour['new_tabu'].keys():
+    #        if(key in tour['old_tabu']):
+    #            tour['old_tabu']=tour['new_tabu'];
+    #tour['new_tabu']={};
         
     return argmin;
 
 def __choose_new_best_solution(solution,best_solution_cost):
     solution_set=make1step(solution);
-    return __argmin(solution_set,best_solution_cost);
+    solution=__argmin(solution_set,best_solution_cost);
+    apply(solution);
+    return solution;
 
 def gts(customers,max_routes,cicles,**cost_factors):
     initial_solution=dummy_solution(customers,max_routes);
@@ -78,7 +80,9 @@ def gts(customers,max_routes,cicles,**cost_factors):
     print(best_solution_cost);
     update=update_max=globals()['__gts']['update_delay'];
     k=0;
+    init_granular(best_solution_cost);
     while (k<cicles):
+        #print('next cicle');
         new_solution=__choose_new_best_solution(new_solution,best_solution_cost);
         print(new_solution);
         new_cost=compute_cost(new_solution);
@@ -95,7 +99,7 @@ def gts(customers,max_routes,cicles,**cost_factors):
             best_solution_cost=compute_cost(best_solution);
         else:
             update-=1;
-
+        
     #for route in best_solution:
     #    new_route=__apply_post_opt(route);
     #    best_solution.remove(route);

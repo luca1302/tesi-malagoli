@@ -52,8 +52,8 @@ def allocate_truck():
 def trucks_number():
     return len(__trucks);
 
-
-
+def peek_truck(k):
+    return __trucks[k];
 
 __trucks=set(
 Truck(200)*10

@@ -130,11 +130,11 @@ class Clark_and_Wright():
             routes.append(route);
         self.__routes=routes;
         
-        if(len(self.__routes)>self.__truck_number()):
+        if(len(self.__routes)>self.__truck_number):
             
             routes=sorted(self.__routes,key=globals()['__sorting'],reverse=True);
             k=0;
-            t=self.__truck_number();
+            t=self.__truck_number;
             #print(routes);
             for route in range(t,len(routes)):
                 routes[k]+=routes[route];

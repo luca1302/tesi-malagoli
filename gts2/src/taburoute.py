@@ -7,8 +7,8 @@ __date__ ="$3-ago-2010 16.32.33$"
 #from common import *
 from clark_and_wright import *
 from random import *
-from moves import *
-from costs import *
+from new_moves import *
+import costs
 
 def taburoute(customers,trucks_number,cicles):
     seed(a=123456789);
@@ -66,17 +66,23 @@ class Search():
         neighbors={};
         for vertex in tmp_vertexes:
             ne={};
-            for element in range(1,len(dima[vertex])):
+            for element in range(len(dima[vertex])):
                 distance=dima[vertex][element];
-                if distance<granular_distance and element!=vertex:
+                if element!=depot and distance<granular_distance and element!=vertex:
                     ne[element]=vertexes[element];
             neighbors[vertex]=ne;
             
         self.vertexes=vertexes;
         self.neighbors=neighbors;
-        self.best_solution_cost=0;
+        #self.best_solution_cost=0;
         
         return tmp_vertexes; 
+    
+    def __add_to_solution_set(self,sol_set,sol,cost):
+        if cost in sol_set:
+            sol_set[cost].append(sol);
+        else:
+            sol_set[cost]=[sol];
     
     def __consider_single_routes(self,solution_set,v,tmp_solution):
         if(len(tmp_solution)<m):
@@ -89,13 +95,15 @@ class Search():
                 sol.append({'truck':peek_truck(k),'route':[v],'new_tabu':{},'inserted':{},'deleted':{},'old_tabu':{},'created':True});
                 __add_to_solution_set(solution_set,sol,calculate_cost(sol)[1]);
     
-    def __evaluate_moves(v,tmp_solution,tmp_solution_cost):
+    def __evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost):
         solution_set={};
         
         __consider_single_route(solution_set,v_set,tmp_solution);
         for move in moves:
-            sol=move(v,neighbors[v]);
-            sol_cost=comput_cost(sol);
+            sol=move(v,v_pos,neighbors[v],solution);
+            if sol==None:
+                continue;
+            sol_cost=compute_cost(sol);
             if(__is_tabu(sol)):
                 #aspiration criterion
                 if(__is_feasible(sol_cost) and sol_cost[0]<tmp_solution_cost[0]):
@@ -123,7 +131,7 @@ class Search():
             pass;
             tmp_solution=us(tmp_solution);
             self.us_already_runned=True;
-            return tmp_solution,compute_cost(tmp_solution);
+            return tmp_solution,cost.compute_cost(tmp_solution);
         else:
             self.us_already_runned=False;
             return new_solution,new_solution_cost;
@@ -157,6 +165,7 @@ class Search():
         for tour in tmp_solution:
             if v in tour['new_tabu']:
                 new_tabu=True;
+                del tour['new_tabu'][v];
                 
         if((not self.us_already_runned)
            and (new_tabu)):
@@ -174,20 +183,20 @@ class Search():
         
         self.m=len(self.best_solution);
         
-        __update_cost_factors(tmp_solution);
+        __update_cost_factors(tmp_solution_cost);
         
     def find_solution(self,start):
         self.t=1;
         self.tabu={};
         self.solution=[];
         self.best_solution=tmp_solution=start;
-        self.best_solution_cost=tmp_solution_cost=compute_cost(tmp_solution);
+        self.best_solution_cost=tmp_solution_cost=cost.compute_cost(tmp_solution);
         
         while(self.t<self.max_iterations):
             self.m=len(self.best_solution);
             v_set=__vertex_selection(tmp_solution,0);
-            for v in v_set:
-                solution_set=__evaluate_moves(v,tmp_solution,tmp_solution_cost);
+            for v,v_pos in v_set.items():
+                solution_set=__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
                 new_solution,new_solution_cost=__best(solution_set);
                 tmp_solution,tmp_solution_cost=__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
                 __update(v,tmp_solution,tmp_solution_cost);

@@ -8,6 +8,8 @@ __date__ ="$3-ago-2010 16.32.33$"
 from clark_and_wright import *
 from random import *
 from new_moves import *
+from dima import *
+from trucks import *
 import costs
 
 def taburoute(customers,trucks_number,cicles):
@@ -36,7 +38,6 @@ class Search():
         self.vertexes=None;
         self.neighbors=None;
         self.candidates_number=candidates_number;
-        self.max_nearest_neighbors=None;
         self.geni_max_neighbors=geni_max_neighbors;
         self.tabu_min=tabu_min;
         self.tabu_max=tabu_max,
@@ -52,8 +53,17 @@ class Search():
         self.m=-1;
         self.t=1;
         self.tabu={};
-        self.solution=[];
+        self.key_vertex=None;
         
+    def __init_key(self,vertex):
+        self.key_vertex=vertex;
+        
+        
+    def __key(self,x):
+        #print(self.key_vertex);
+        #print(x);
+        return dima[self.key_vertex][x[0]];
+
     def __vertex_selection(self,sol,granular_distance):
         vertexes={};
         for t in range(len(sol)):
@@ -61,22 +71,33 @@ class Search():
             for k in range(len(tour['route'])):
                 vertexes[tour['route'][k]]=[t,k];
         self.vertexes=vertexes;
-        tmp_vertexes=sample(vertexes,max_candidates);
-        
+        tmp_vertexes=sample(list(vertexes.keys()),self.candidates_number);
+        #print(tmp_vertexes);
+        #print(self.vertexes.keys());
         neighbors={};
-        for vertex in tmp_vertexes:
+        for vertex in vertexes:
             ne={};
             for element in range(len(dima[vertex])):
                 distance=dima[vertex][element];
                 if element!=depot and distance<granular_distance and element!=vertex:
-                    ne[element]=vertexes[element];
+                    neighbor=vertexes[element];
+                    neighbor_tour=neighbor[0];
+                    if neighbor_tour in ne:
+                        ne[neighbor_tour]+=[(element,neighbor[1])];
+                    else:
+                        ne[neighbor_tour]=[(element,neighbor[1])];
+            self.__init_key(vertex);
+            
+            for tour in ne.keys():
+                #print(ne[tour]);
+                ne[tour]=sorted(ne[tour],key=self.__key)[1:min(len(ne[tour]),self.geni_max_neighbors)];
             neighbors[vertex]=ne;
             
         self.vertexes=vertexes;
         self.neighbors=neighbors;
         #self.best_solution_cost=0;
         
-        return tmp_vertexes; 
+        return {v:vertexes[v] for v in tmp_vertexes}; 
     
     def __add_to_solution_set(self,sol_set,sol,cost):
         if cost in sol_set:
@@ -84,9 +105,9 @@ class Search():
         else:
             sol_set[cost]=[sol];
     
-    def __consider_single_routes(self,solution_set,v,tmp_solution):
-        if(len(tmp_solution)<m):
-            for k in range(len(tmp_solution),m): 
+    def __consider_single_route(self,solution_set,v,tmp_solution):
+        if(len(tmp_solution)<self.m):
+            for k in range(len(tmp_solution),self.m): 
                 sol=deepcopy(tmp_solution);
                 for tour in sol:
                     for position in tour['route']:
@@ -95,12 +116,13 @@ class Search():
                 sol.append({'truck':peek_truck(k),'route':[v],'new_tabu':{},'inserted':{},'deleted':{},'old_tabu':{},'created':True});
                 __add_to_solution_set(solution_set,sol,calculate_cost(sol)[1]);
     
-    def __evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost):
+    def __evaluate_moves(self,v,v_pos,tmp_solution,tmp_solution_cost):
         solution_set={};
         
-        __consider_single_route(solution_set,v_set,tmp_solution);
+        self.__consider_single_route(solution_set,v,tmp_solution);
         for move in moves:
-            sol=move(v,v_pos,neighbors[v],solution);
+            #print(self.neighbors);
+            sol=move(v,v_pos,self.neighbors,tmp_solution);
             if sol==None:
                 continue;
             sol_cost=compute_cost(sol);
@@ -190,13 +212,13 @@ class Search():
         self.tabu={};
         self.solution=[];
         self.best_solution=tmp_solution=start;
-        self.best_solution_cost=tmp_solution_cost=cost.compute_cost(tmp_solution);
+        self.best_solution_cost=tmp_solution_cost=costs.compute_cost(tmp_solution);
         
         while(self.t<self.max_iterations):
             self.m=len(self.best_solution);
-            v_set=__vertex_selection(tmp_solution,0);
+            v_set=self.__vertex_selection(tmp_solution,2000);
             for v,v_pos in v_set.items():
-                solution_set=__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
+                solution_set=self.__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
                 new_solution,new_solution_cost=__best(solution_set);
                 tmp_solution,tmp_solution_cost=__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
                 __update(v,tmp_solution,tmp_solution_cost);

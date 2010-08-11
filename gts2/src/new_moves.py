@@ -5,6 +5,7 @@ __author__="davide"
 __date__ ="$3-ago-2010 18.33.45$"
 
 from genius import geni_insert
+from copy import *
     
 def delete_from_his_route(node,node_pos,solution):
     #print('delete({0},{1})'.format(node,node_pos));
@@ -19,10 +20,10 @@ def delete_from_his_route(node,node_pos,solution):
     #print(solution[node_tour]['route']);
     assert(value==node);
 
-def insert_in_position(new_node,node_tour,node_index,solution):
+def insert_in_position(node,neighbors,node_tour,node_index,solution):
     #solution[node_tour]['route'][node_index:node_index]=[new_node];
     #assert(solution[node_tour]['route'][node_index]==new_node);
-    geni_insert(new_node,node_tour,node_index,solution);
+    solution=geni_insert(node,neighbors,new_node,node_tour,node_index,solution);
     #solution[node_tour]['new_tabu'][new_node]=globals()['__tabu_max'];
     if(new_node in solution[node_tour]['inserted']):
         solution[node_tour]['inserted'][new_node]+=1;
@@ -30,14 +31,15 @@ def insert_in_position(new_node,node_tour,node_index,solution):
     else:
         solution[node_tour]['inserted'][new_node]=1;
         if new_node in solution[node_tour]['deleted']:
-           solution[node_tour]['new_tabu'][new_node]=True; 
+           solution[node_tour]['new_tabu'][new_node]=True;
+    return solution;
 
-def add_as_successor_of(node,node_pos,new_node,solution):
+def add_as_successor_of(node,node_pos,neighbors,solution):
     node_tour=node_pos[0];
     node_index=node_pos[1];
 
     assert(solution[node_tour]['route'][node_index]==node);
-    insert_in_position(new_node, node_tour, node_index+1, solution);
+    return insert_in_position(node,neighbors, node_tour, node_index+1, solution);
     #solution[node_tour]['route'][node_index+1:node_index+1]=[new_node];
     #assert(solution[node_tour]['route'][node_index+1]==new_node);
     #solution[node_tour]['new_tabu'][new_node]=globals()['__tabu_max'];
@@ -46,13 +48,11 @@ def or1(vertex,vertex_pos,neighbors,solution):
     #print('or1({0},{1},{2},{3})'.format(vertex,vertex_pos,neighbor,neighbor_pos));
     solutions={};
     sol=deepcopy(solution);
-    delete_from_his_route(neighbor,neighbor_pos,sol);
-    for neighbor,neighbor_pos in neighbors:
-        if(vertex_pos[0]!=neighbor_pos[0]):
-            sol_2=deepcopy(sol);
-            add_as_successor_of(vertex,vertex_pos,neighbor,sol_2);
-            cost=compute_cost(sol_2);
-            sols[cost]=sol_2;
+    delete_from_his_route(vertex,vertex_pos,sol);
+    #n={tour:neighbor_pos for tour,neighbor_pos in neighbors[vertex].items() if (vertex_pos[0]!=tour)};
+    
+    sol,cost=geni_insert(vertex,neighbors,sol);
+    sols[cost]=sol;
             
     if len(sols.keys())==0:
         return None;

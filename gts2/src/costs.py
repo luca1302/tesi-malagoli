@@ -12,6 +12,9 @@ __solution_cost={
     'costr_factors':{'duration':1,'load':1,'time_window':1,'created':100},
 };
 
+def __user_defined_criteria(solution):
+    return 0;
+
 def is_elapsed_feasible(solution_cost):
     return solution_cost[3]==0;
 
@@ -34,7 +37,7 @@ def compute_cost(solution):
         #print(truck);
         #print(route);
         #print(solution);
-        if('created'):
+        if('created' in tour):
             created+=1;
             del tour['created'];
         truck_arrival=elma[depot][route[0]];
@@ -61,7 +64,7 @@ def compute_cost(solution):
     omega=globals()['__solution_cost']['costr_factors']['created'];
 
     cost_feasible=__user_defined_criteria(solution)+path_lenght+created*omega;
-    cost_infeasible=cost+delta_max_load*alpha+delta_max_duration*beta+delta_time_window*gamma;
+    cost_infeasible=cost_feasible+delta_max_load*alpha+delta_max_duration*beta+delta_time_window*gamma;
 
     #cost+=__penalty(cost,solution);
 

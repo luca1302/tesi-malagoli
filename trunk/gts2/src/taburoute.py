@@ -116,6 +116,13 @@ class Search():
                 sol.append({'truck':peek_truck(k),'route':[v],'new_tabu':{},'inserted':{},'deleted':{},'old_tabu':{},'created':True});
                 __add_to_solution_set(solution_set,sol,calculate_cost(sol)[1]);
     
+    def __is_tabu(self,sol):
+        for tour in sol:
+            for tabu in self.tabu:
+                if tabu in tour['new_tabu']:
+                    return True;
+        return False;
+    
     def __evaluate_moves(self,v,v_pos,tmp_solution,tmp_solution_cost):
         solution_set={};
         
@@ -125,20 +132,20 @@ class Search():
             sol=move(v,v_pos,self.neighbors,tmp_solution);
             if sol==None:
                 continue;
-            sol_cost=compute_cost(sol);
-            if(__is_tabu(sol)):
+            sol_cost=costs.compute_cost(sol);
+            if(self.__is_tabu(sol)):
                 #aspiration criterion
-                if(__is_feasible(sol_cost) and sol_cost[0]<tmp_solution_cost[0]):
-                    __add_to_solution_set(solution_set,sol,sol_cost[0]);
+                if(self.__is_feasible(sol_cost) and sol_cost[0]<tmp_solution_cost[0]):
+                    self.__add_to_solution_set(solution_set,sol,sol_cost[0]);
                     
-                elif (not __is_feasible(sol_cost) and sol_cost[1]<tmp_solution_cost[1]):
-                    __add_to_solution_set(solution_set,sol,sol_cost[0]);
+                elif (not self.__is_feasible(sol_cost) and sol_cost[1]<tmp_solution_cost[1]):
+                    self.__add_to_solution_set(solution_set,sol,sol_cost[0]);
                         
             else:
                 if(sol_cost[1]<tmp_solution_cost[1]):
-                    __add_to_solution_set(solution_set,sol,sol_cost[1]);
+                    self.__add_to_solution_set(solution_set,sol,sol_cost[1]);
                 else:
-                    __add_to_solution_set(solution_set,sol,sol_cost[1]+__penalty(sol));
+                    self.__add_to_solution_set(solution_set,sol,sol_cost[1]+self.__penalty(sol));
        
         return solution_set;         
     

@@ -20,19 +20,20 @@ def delete_from_his_route(node,node_pos,solution):
     #print(solution[node_tour]['route']);
     assert(value==node);
 
-def insert_in_position(node,neighbors,node_tour,node_index,solution):
+def insert(vertex,neighbors,sol):
     #solution[node_tour]['route'][node_index:node_index]=[new_node];
     #assert(solution[node_tour]['route'][node_index]==new_node);
-    solution=geni_insert(node,neighbors,new_node,node_tour,node_index,solution);
+    solution,cost=geni_insert(vertex,neighbors,sol);
     #solution[node_tour]['new_tabu'][new_node]=globals()['__tabu_max'];
-    if(new_node in solution[node_tour]['inserted']):
-        solution[node_tour]['inserted'][new_node]+=1;
-        solution[node_tour]['new_tabu'][new_node]=True;
-    else:
-        solution[node_tour]['inserted'][new_node]=1;
-        if new_node in solution[node_tour]['deleted']:
-           solution[node_tour]['new_tabu'][new_node]=True;
-    return solution;
+    #if(new_node in solution[node_tour]['inserted']):
+    #    solution[node_tour]['inserted'][new_node]+=1;
+    #    solution[node_tour]['new_tabu'][new_node]=True;
+    #else:
+    #    solution[node_tour]['inserted'][new_node]=1;
+    #    if new_node in solution[node_tour]['deleted']:
+    #       solution[node_tour]['new_tabu'][new_node]=True;
+    #return solution,cost;
+    
 
 def add_as_successor_of(node,node_pos,neighbors,solution):
     node_tour=node_pos[0];
@@ -46,7 +47,7 @@ def add_as_successor_of(node,node_pos,neighbors,solution):
 
 def or1(vertex,vertex_pos,neighbors,solution):
     #print('or1({0},{1},{2},{3})'.format(vertex,vertex_pos,neighbor,neighbor_pos));
-    solutions={};
+    sols={};
     sol=deepcopy(solution);
     delete_from_his_route(vertex,vertex_pos,sol);
     #n={tour:neighbor_pos for tour,neighbor_pos in neighbors[vertex].items() if (vertex_pos[0]!=tour)};

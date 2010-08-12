@@ -11,6 +11,7 @@ from new_moves import *
 from dima import *
 from trucks import *
 import costs
+from math import sqrt
 
 def taburoute(customers,trucks_number,cicles):
     seed(a=123456789);
@@ -49,11 +50,12 @@ class Search():
         self.best_solution_cost=-1;
         self.us_already_runned=False;
         self.n=len(customers);
-        self.delta_max=0;
+        self.old_delta_cost=self.new_delta_cost=self.delta=0;
         self.m=-1;
         self.t=1;
         self.tabu={};
         self.key_vertex=None;
+        self.recorded_sol={};
         
     def __init_key(self,vertex):
         self.key_vertex=vertex;
@@ -100,6 +102,7 @@ class Search():
         return {v:vertexes[v] for v in tmp_vertexes}; 
     
     def __add_to_solution_set(self,sol_set,sol,cost):
+        print()
         if cost in sol_set:
             sol_set[cost].append(sol);
         else:
@@ -123,37 +126,49 @@ class Search():
                     return True;
         return False;
     
+    def __penalty(self,sol,v):
+        moved=0;
+        for tour in sol:
+            for key in ['inserted','deleted']:
+                if v in sol[tour][key]:
+                    moved+=sol[tour][key];
+        return self.delta*sqrt(self.m)*self.penalty_scaling*moved;
+    
     def __evaluate_moves(self,v,v_pos,tmp_solution,tmp_solution_cost):
         solution_set={};
         
         self.__consider_single_route(solution_set,v,tmp_solution);
         for move in moves:
+            #print(move);
             #print(self.neighbors);
-            sol=move(v,v_pos,self.neighbors,tmp_solution);
+            sol,sol_cost=move(v,v_pos,self.neighbors,tmp_solution);
             if sol==None:
                 continue;
-            sol_cost=costs.compute_cost(sol);
+            #sol_cost=costs.compute_cost(sol);
             if(self.__is_tabu(sol)):
                 #aspiration criterion
                 if(self.__is_feasible(sol_cost) and sol_cost[0]<tmp_solution_cost[0]):
-                    self.__add_to_solution_set(solution_set,sol,sol_cost[0]);
+                    self.__add_to_solution_set(solution_set,(sol,sol_cost),sol_cost[0]);
                     
                 elif (not self.__is_feasible(sol_cost) and sol_cost[1]<tmp_solution_cost[1]):
-                    self.__add_to_solution_set(solution_set,sol,sol_cost[0]);
+                    self.__add_to_solution_set(solution_set,(sol,sol_cost),sol_cost[0]);
                         
             else:
                 if(sol_cost[1]<tmp_solution_cost[1]):
-                    self.__add_to_solution_set(solution_set,sol,sol_cost[1]);
+                    self.__add_to_solution_set(solution_set,(sol,sol_cost),sol_cost[1]);
                 else:
-                    self.__add_to_solution_set(solution_set,sol,sol_cost[1]+self.__penalty(sol));
+                    self.__add_to_solution_set(solution_set,(sol,sol_cost),sol_cost[1]+self.__penalty(sol,v));
        
         return solution_set;         
     
-    def __best(solution_set):
-        min_cost=min(soltion_set.keys());
-        return shuffle(solution_set[min_cost])[0],min_cost;
+    def __best(self,solution_set):
+        min_cost=min(solution_set.keys());
+        #print(min_cost);
+        couple=sample(solution_set[min_cost],1)[0];
+        return couple[0],couple[1];
     
     def __improve(self,tmp_solution,tmp_solution_cost,new_solution,new_solution_cost):
+        #print(new_solution_cost);
         if((new_solution_cost[1]>tmp_solution_cost[1])
             and (__is_feasible(tmp_solution_cost))
             and (not self.us_already_runned)):
@@ -168,27 +183,30 @@ class Search():
     def __update_cost_factors(self,sol):
         k=self.t%self.update_period;
         
-        self.recorded_sol[k]=self.sol;
+        self.recorded_sol[k]=sol;
         
         if((k)==0):
-            feasible={factor:True for factor in cost_factors['costraint'].keys()};
+            cost_factors=costs.solution_cost['costr_factors'];
+            feasible={factor:True for factor in cost_factors.keys()};
             for key,solution in self.recorded_sol.items():
-                if(not is_elapsed_feasible(solution)):
-                    feasible['e']=False;
-                if(not is_load_feasible(solution)):
-                    feasible['l']=False;
-                if(not is_time_window_feasible(solution)):
-                    feasible['tw']=False;
-                    
-            for factor in cost_factors['costraint'].keys():
+                if(not costs.is_elapsed_feasible(solution)):
+                    feasible['duration']=False;
+                if(not costs.is_load_feasible(solution)):
+                    feasible['load']=False;
+                if(not costs.is_time_window_feasible(solution)):
+                    feasible['time_window']=False;
+            
+            for factor in cost_factors.keys():
+                if factor=='created':
+                    continue;
                 if(not feasible[factor]):
-                    cost_factors['costraint'][factor]*=2;
+                    cost_factors[factor]*=2;
                 else:
-                    cost_factors['costraint'][factor]/=2;
+                    cost_factors[factor]/=2;
                     
             self.recorded_sol.clear();        
     
-    def __update(v,tmp_solution,tmp_solution_cost):
+    def __update(self,v,tmp_solution,tmp_solution_cost):
         new_tabu=False;
         
         for tour in tmp_solution:
@@ -200,7 +218,7 @@ class Search():
            and (new_tabu)):
             self.tabu[v]=uniform(self.tabu_min,self.tabu_max);
             
-        self.t=t+1;
+        self.t+=1;
         
         if(tmp_solution_cost[1]<self.best_solution_cost[1]):
             self.best_solution=tmp_solution;
@@ -208,11 +226,13 @@ class Search():
             #we must continue a little longer 
             self.t=0;
         
-        self.delta_max=max(self.delta_cost,abs(self.old_delta_cost-self.new_delta_cost));
+        self.new_delta_cost=self.best_solution_cost[1];
+        self.delta=abs(self.old_delta_cost-self.new_delta_cost);
+        self.old_delta_cost=self.new_delta_cost;
         
         self.m=len(self.best_solution);
         
-        __update_cost_factors(tmp_solution_cost);
+        self.__update_cost_factors(tmp_solution_cost);
         
     def find_solution(self,start):
         self.t=1;
@@ -226,8 +246,8 @@ class Search():
             v_set=self.__vertex_selection(tmp_solution,2000);
             for v,v_pos in v_set.items():
                 solution_set=self.__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
-                new_solution,new_solution_cost=__best(solution_set);
-                tmp_solution,tmp_solution_cost=__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
-                __update(v,tmp_solution,tmp_solution_cost);
+                new_solution,new_solution_cost=self.__best(solution_set);
+                tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
+                self.__update(v,tmp_solution,tmp_solution_cost);
             
         return self.best_solution;

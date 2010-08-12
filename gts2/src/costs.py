@@ -8,7 +8,7 @@ from dima import *
 from trucks import *
 from customer import *
 
-__solution_cost={
+solution_cost={
     'costr_factors':{'duration':1,'load':1,'time_window':1,'created':100},
 };
 
@@ -58,10 +58,10 @@ def compute_cost(solution):
         delta_max_load=abs(min(0,truck.max_load-delta_max_load));
 
 
-    alpha=globals()['__solution_cost']['costr_factors']['load'];
-    beta=globals()['__solution_cost']['costr_factors']['duration'];
-    gamma=globals()['__solution_cost']['costr_factors']['time_window'];
-    omega=globals()['__solution_cost']['costr_factors']['created'];
+    alpha=globals()['solution_cost']['costr_factors']['load'];
+    beta=globals()['solution_cost']['costr_factors']['duration'];
+    gamma=globals()['solution_cost']['costr_factors']['time_window'];
+    omega=globals()['solution_cost']['costr_factors']['created'];
 
     cost_feasible=__user_defined_criteria(solution)+path_lenght+created*omega;
     cost_infeasible=cost_feasible+delta_max_load*alpha+delta_max_duration*beta+delta_time_window*gamma;

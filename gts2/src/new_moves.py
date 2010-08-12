@@ -47,46 +47,80 @@ def add_as_successor_of(node,node_pos,neighbors,solution):
 
 def or1(vertex,vertex_pos,neighbors,solution):
     #print('or1({0},{1},{2},{3})'.format(vertex,vertex_pos,neighbor,neighbor_pos));
-    sols={};
+    #sols={};
     sol=deepcopy(solution);
     delete_from_his_route(vertex,vertex_pos,sol);
     #n={tour:neighbor_pos for tour,neighbor_pos in neighbors[vertex].items() if (vertex_pos[0]!=tour)};
     
-    sol,cost=geni_insert(vertex,neighbors,sol);
-    sols[cost]=sol;
-            
-    if len(sols.keys())==0:
-        return None;
-    else:
+    #sol,cost=geni_insert((vertex,vertex),neighbors,sol);
+    return geni_insert((vertex,vertex),neighbors,sol);
+    #sols[cost]=sol;
+    #        
+    #if len(sols.keys())==0:
+    #    return None;
+    #else:
+    #    min_cost=min(sols.keys());
+    #    return sols[min_cost];
+
+def or2(vertex,vertex_pos,neighbors,solution):
+    l=len(solution[vertex_pos[0]]);
+    #if(vertex_pos[1]==l-1):
+    #    return None,None;
+    #else:
+        #print('or1({0},{1},{2},{3})'.format(vertex,vertex_pos,neighbor,neighbor_pos));
+    #sols={};
+    sol=deepcopy(solution);
+    succ_pos=(vertex_pos[0],(vertex_pos[0]+1)%l);
+    succ=solution[succ_pos[0]]['route'][succ_pos[1]];
+    delete_from_his_route(succ,succ_pos,sol);
+    delete_from_his_route(vertex,vertex_pos,sol);
+    #n={tour:neighbor_pos for tour,neighbor_pos in neighbors[vertex].items() if (vertex_pos[0]!=tour)};
+    
+    #sol,cost=geni_insert((vertex,succ),neighbors,sol);
+    return geni_insert((vertex,succ),neighbors,sol);
+    #sols[cost]=sol;
+    #        
+    #if len(sols.keys())==0:
+    #    return None;
+    #else:
+    #    min_cost=min(sols.keys());
+    #    return sols[min_cost];
+
+def swap(vertex,vertex_pos,neighbors,solution):
+    #if(vertex_pos[0]==neighbor_pos[0]):
+    #    return True;
+    #else:
+    
+        #delete_from_his_route(vertex, vertex_pos, solution);
+        #delete_from_his_route(neighbor, neighbor_pos, solution);
+        #insert_in_position(vertex, neighbor_pos[0], neighbor_pos[1], solution);
+        #insert_in_position(neighbor, vertex_pos[0], vertex_pos[1], solution);
+        #return False;
+    sols={};
+    l=len(solution[vertex_pos[0]]);
+    succ_pos=(vertex_pos[0],(vertex_pos[0]+1)%l);
+    succ=solution[succ_pos[0]]['route'][succ_pos[1]];
+    for tour in neighbors[succ]:
+        if tour!=succ_pos[0]:
+            for neighbor in neighbors[succ][tour]:
+                #print(neighbors[succ]);
+                #print(tour);
+                #print(neighbor);
+                sol=deepcopy(solution);
+                delete_from_his_route(succ,succ_pos,sol);
+                delete_from_his_route(vertex,vertex_pos,sol);
+                geni_insert((vertex,vertex),neighbors,sol);
+                sol,cost=geni_insert((neighbor[0],neighbor[0]),neighbors,sol);
+                
+                if cost!=None:
+                    sols[cost]=sol;
+    if len(sols.keys())!=0:
         min_cost=min(sols.keys());
-        return sols[min_cost];
-
-def or2(vertex,vertex_pos,neighbor,neighbor_pos,solution):
-    neighbor_tour=neighbor_pos[0];
-    neighbor_index=neighbor_pos[1];
-    neighbor_route_lenght=len(solution[neighbor_tour]['route']);
-    if((vertex_pos[0]==neighbor_pos[0]) or (neighbor_index==(neighbor_route_lenght-1))):
-        return True;
+        return sols[min_cost],min_cost;
     else:
-        other_neighbor=solution[neighbor_tour]['route'][neighbor_index+1];
-        delete_from_his_route(other_neighbor,[neighbor_tour,neighbor_index+1],solution);
-        delete_from_his_route(neighbor,neighbor_pos,solution);
-        
-        add_as_successor_of(vertex,vertex_pos,neighbor,solution);
-        add_as_successor_of(neighbor,[vertex_pos[0],vertex_pos[1]+1],other_neighbor,solution);
-        return False;
-
-def swap(vertex,vertex_pos,neighbor,neighbor_pos,solution):
-    if(vertex_pos[0]==neighbor_pos[0]):
-        return True;
-    else:
-        delete_from_his_route(vertex, vertex_pos, solution);
-        delete_from_his_route(neighbor, neighbor_pos, solution);
-        insert_in_position(vertex, neighbor_pos[0], neighbor_pos[1], solution);
-        insert_in_position(neighbor, vertex_pos[0], vertex_pos[1], solution);
-        return False;
+        return None,None;
     
 def ab(solution):
     pass;
 
-moves=[or1,or2,swap];
+moves=[or1,or2,];

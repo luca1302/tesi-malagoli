@@ -31,7 +31,7 @@ def geni_update_sol(sol,route,tour,vertex):
     return sol,cost;
 
 def geni_route_type_I(route,node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus,l):
-    return route[0:pos_vi]+[node]+geni_reverse(route,pos_vj,viplus)+geni_reverse(route,pos_vk,vjplus)+route[vkplus:l];
+    return route[0:pos_vi]+list(node)+geni_reverse(route,pos_vj,viplus)+geni_reverse(route,pos_vk,vjplus)+route[vkplus:l];
 
 def geni_route_type_I_inverse(route,node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus,l):
     route=geni_route_type_I(route,node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus,l);
@@ -39,7 +39,7 @@ def geni_route_type_I_inverse(route,node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkpl
     return route;
 
 def geni_route_type_II(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkplus,vlplus,l):
-    return route[0:pos_vi+1]+[node]+geni_reverse(route,pos_vj,vlplus)+route[vjplus:pos_vk+1]+geni_reverse(route,pos_vl,viplus)+route[vkplus:l];
+    return route[0:pos_vi+1]+list(node)+geni_reverse(route,pos_vj,vlplus)+route[vjplus:pos_vk+1]+geni_reverse(route,pos_vl,viplus)+route[vkplus:l];
     
 def geni_route_type_II_inverse(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkplus,vlplus,l):
     route=geni_route_type_II(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkplus,vlplus,l);
@@ -116,13 +116,16 @@ def geni_type_I_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
 def geni_main(node,neighbors,solution,func,func_2):
     best_sol=best_cost=cost=sol=None;
     #print(neighbors);
-    for tour in neighbors[node].keys():
-        for vi,pos_vi in neighbors[node][tour]:
+    for tour in neighbors[node[0]].keys():
+        for vi,pos_vi in neighbors[node[0]][tour]:
             #print(vi);
             #print(pos_vi);
-            for vj,pos_vj in neighbors[node][tour]:
+            for vj,pos_vj in neighbors[node[1]][tour]:
                 if vi!=vj:
-                    sol,cost=func(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2);
+                    if(node[0]==node[1]):
+                        sol,cost=func((node[0],),neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2);
+                    else:
+                        sol,cost=func(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2);
                     if (best_cost==None):
                         best_cost=cost;
                         best_sol=sol;
@@ -157,8 +160,9 @@ def geni_insert(node,neighbors,solution):
             best_cost=cost;
             best_sol=sol;
             first_iteration=False;
-        
+    
+    #print(best_sol,best_cost);    
     return best_sol,best_cost;
     
-def us(tmp_solution):
-    pass;
+#def us(tmp_solution):
+#    pass;

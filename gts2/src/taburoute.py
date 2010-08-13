@@ -66,16 +66,14 @@ class Search():
         #print(x);
         return dima[self.key_vertex][x[0]];
 
-    def __vertex_selection(self,sol,granular_distance):
+    def __build(self,sol,granular_distance):
         vertexes={};
         for t in range(len(sol)):
             tour=sol[t];
             for k in range(len(tour['route'])):
                 vertexes[tour['route'][k]]=[t,k];
         self.vertexes=vertexes;
-        tmp_vertexes=sample(list(vertexes.keys()),self.candidates_number);
-        #print(tmp_vertexes);
-        #print(self.vertexes.keys());
+        
         neighbors={};
         for vertex in vertexes:
             ne={};
@@ -95,11 +93,44 @@ class Search():
                 ne[tour]=sorted(ne[tour],key=self.__key)[1:min(len(ne[tour]),self.geni_max_neighbors)];
             neighbors[vertex]=ne;
             
-        self.vertexes=vertexes;
+        #self.vertexes=vertexes;
         self.neighbors=neighbors;
+        
+    def __vertex_selection(self,sol,granular_distance):
+        self.__build(sol, granular_distance);
+        #vertexes={};
+        #for t in range(len(sol)):
+        #    tour=sol[t];
+        #    for k in range(len(tour['route'])):
+        #        vertexes[tour['route'][k]]=[t,k];
+        #self.vertexes=vertexes;
+        tmp_vertexes=sample(list(self.vertexes.keys()),self.candidates_number);
+        #print(tmp_vertexes);
+        #print(self.vertexes.keys());
+        #neighbors={};
+        #for vertex in vertexes:
+        #    ne={};
+        #    for element in range(len(dima[vertex])):
+        #        distance=dima[vertex][element];
+        #        if element!=depot and distance<granular_distance and element!=vertex:
+        #            neighbor=vertexes[element];
+        #            neighbor_tour=neighbor[0];
+        #            if neighbor_tour in ne:
+        #                ne[neighbor_tour]+=[(element,neighbor[1])];
+        #            else:
+        #                ne[neighbor_tour]=[(element,neighbor[1])];
+        #    self.__init_key(vertex);
+        #    
+        #    for tour in ne.keys():
+        #        #print(ne[tour]);
+        #        ne[tour]=sorted(ne[tour],key=self.__key)[1:min(len(ne[tour]),self.geni_max_neighbors)];
+        #    neighbors[vertex]=ne;
+            
+        #self.vertexes=vertexes;
+        #self.neighbors=neighbors;
         #self.best_solution_cost=0;
         
-        return {v:vertexes[v] for v in tmp_vertexes}; 
+        return {v:self.vertexes[v] for v in tmp_vertexes}; 
     
     def __add_to_solution_set(self,sol_set,sol,cost):
         print()
@@ -142,12 +173,13 @@ class Search():
     
     def __evaluate_moves(self,v,v_pos,tmp_solution,tmp_solution_cost):
         solution_set={};
-        
-        self.__consider_single_route(solution_set,v,tmp_solution);
+        sol=deepcopy(tmp_solution);
+        self.__consider_single_route(solution_set,v,sol);
         for move in moves:
+            sol=deepcopy(tmp_solution);
             #print(move);
             #print(self.neighbors);
-            sol,sol_cost=move(v,v_pos,self.neighbors,tmp_solution);
+            sol,sol_cost=move(v,v_pos,self.neighbors,sol);
             if sol==None:
                 continue;
             #sol_cost=costs.compute_cost(sol);
@@ -168,17 +200,27 @@ class Search():
         return solution_set;         
     
     def __best(self,solution_set):
-        min_cost=min(solution_set.keys());
-        #print(min_cost);
-        couple=sample(solution_set[min_cost],1)[0];
-        return couple[0],couple[1];
+        if(len(solution_set.keys())!=0):
+            min_cost=min(solution_set.keys());
+            #print(min_cost);
+            couple=sample(solution_set[min_cost],1)[0];
+            return couple[0],couple[1];
+        else:
+            return None,None;
     
     def __improve(self,tmp_solution,tmp_solution_cost,new_solution,new_solution_cost):
-        print(new_solution_cost[1]>tmp_solution_cost[1],self.__is_feasible(tmp_solution_cost),not self.us_already_runned);
-        if((new_solution_cost[1]>tmp_solution_cost[1])
+        #if(new_solution==None):
+        #    tmp_solution=us(tmp_solution);
+            
+        #print(new_solution_cost[1]>tmp_solution_cost[1],self.__is_feasible(tmp_solution_cost),not self.us_already_runned);
+        
+        if(not self.__is_feasible(tmp_solution_cost)
+           and self.__is_feasible(new_solution_cost)):
+            return new_solution,new_solution_cost;
+        
+        elif((new_solution_cost[1]>tmp_solution_cost[1])
             and (self.__is_feasible(tmp_solution_cost))
             and (not self.us_already_runned)):
-            pass;
             tmp_solution=us(tmp_solution);
             self.us_already_runned=True;
             return tmp_solution,cost.compute_cost(tmp_solution);
@@ -240,6 +282,9 @@ class Search():
         
         self.__update_cost_factors(tmp_solution_cost);
         
+    def __rebuild(self,sol,gran_dist):
+        self.__build(sol, gran_dist);
+        
     def find_solution(self,start):
         self.t=1;
         self.tabu={};
@@ -251,11 +296,16 @@ class Search():
         while(self.t<self.max_iterations):
             self.m=len(self.best_solution);
             v_set=self.__vertex_selection(tmp_solution,2000);
-            for v,v_pos in v_set.items():
+            for v in v_set.keys():
+                for tabu in self.tabu:
+                    self.tabu[tabu]-=1;
+                    if self.tabu[tabu]<=0:
+                        del self.tabu[tabu];
+                v_pos=self.vertexes[v];
                 solution_set=self.__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
                 new_solution,new_solution_cost=self.__best(solution_set);
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
                 self.__update(v,tmp_solution,tmp_solution_cost);
-                rebuild();
-                print(self.best_solution_cost);
+                self.__rebuild(tmp_solution,2000);
+                print(self.best_solution_cost,tmp_solution_cost);
         return self.best_solution;

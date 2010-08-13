@@ -29,6 +29,7 @@ def compute_cost(solution):
     delta_max_load=0;
     delta_time_window=0;
     created=0;
+    path_lenght=0;
 
     for tour in solution:
         #print(tour);
@@ -40,29 +41,39 @@ def compute_cost(solution):
         if('created' in tour):
             created+=1;
             del tour['created'];
-        truck_arrival=elma[depot][route[0]];
-        path_lenght=dima[depot][route[0]];
+        curr_max_load=0;
+        curr_max_duration=truck_arrival=elma[depot][route[0]];
+        path_lenght+=dima[depot][route[0]];
         for k in range(len(route)-1):
             customer=customers[route[k]];
+            #print(path_lenght,dima[route[k]][route[k+1]],truck_arrival,customer.opening,download_time(customer),elma[route[k]][route[k+1]]);
+            #print(curr_max_duration,elma[route[k]][route[k+1]]);
             truck_start_service=max(truck_arrival,customer.opening);
             truck_departure=truck_start_service+download_time(customer);
+            truck_arrival=truck_departure+elma[route[k]][route[k+1]];
             
-            delta_max_load+=customer.demand;
+            curr_max_load+=customer.demand;
             path_lenght+=dima[route[k]][route[k+1]];
-            delta_max_duration+=elma[route[k]][route[k+1]];
-            delta_time_window+=abs(min(0,truck_departure-customer.closing));
-        delta_max_duration+=elma[route[-1]][depot];
+            curr_max_duration+=elma[route[k]][route[k+1]];
+            delta_time_window+=abs(max(0,truck_departure-customer.closing));
+        curr_max_duration+=elma[route[-1]][depot];
         path_lenght+=dima[route[-1]][depot];
+        
 
-        delta_max_duration=abs(min(0,customers[depot].time_frame-delta_max_duration));
-        delta_max_load=abs(min(0,truck.max_load-delta_max_load));
-
+        #print('results');
+        #print(path_lenght,curr_max_duration,curr_max_load);
+        #print(path_lenght,delta_max_duration,delta_max_load);
+       # print(delta_max_duration,customers[depot].time_frame);
+        delta_max_duration+=abs(min(0,customers[depot].time_frame-curr_max_duration));
+        delta_max_load+=abs(min(0,truck.max_load-curr_max_load));
+        #print(path_lenght,delta_max_duration,delta_max_load);
 
     alpha=globals()['solution_cost']['costr_factors']['load'];
     beta=globals()['solution_cost']['costr_factors']['duration'];
     gamma=globals()['solution_cost']['costr_factors']['time_window'];
     omega=globals()['solution_cost']['costr_factors']['created'];
-
+    #print(path_lenght,delta_max_load,delta_max_duration,delta_time_window);
+    #print(path_lenght);
     cost_feasible=__user_defined_criteria(solution)+path_lenght+created*omega;
     cost_infeasible=cost_feasible+delta_max_load*alpha+delta_max_duration*beta+delta_time_window*gamma;
 

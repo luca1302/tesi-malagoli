@@ -128,11 +128,17 @@ class Search():
     
     def __penalty(self,sol,v):
         moved=0;
+        #print(sol);
         for tour in sol:
             for key in ['inserted','deleted']:
-                if v in sol[tour][key]:
-                    moved+=sol[tour][key];
-        return self.delta*sqrt(self.m)*self.penalty_scaling*moved;
+                if v in tour[key]:
+                    moved+=tour[key][v];
+        return self.delta*sqrt(self.m)*self.penalty_scaling*(moved/(self.t+1));
+    
+    def __is_feasible(self,sol_cost):
+        return (costs.is_elapsed_feasible(sol_cost) 
+                and costs.is_load_feasible(sol_cost) 
+                and costs.is_time_window_feasible(sol_cost));
     
     def __evaluate_moves(self,v,v_pos,tmp_solution,tmp_solution_cost):
         solution_set={};
@@ -168,9 +174,9 @@ class Search():
         return couple[0],couple[1];
     
     def __improve(self,tmp_solution,tmp_solution_cost,new_solution,new_solution_cost):
-        #print(new_solution_cost);
+        print(new_solution_cost[1]>tmp_solution_cost[1],self.__is_feasible(tmp_solution_cost),not self.us_already_runned);
         if((new_solution_cost[1]>tmp_solution_cost[1])
-            and (__is_feasible(tmp_solution_cost))
+            and (self.__is_feasible(tmp_solution_cost))
             and (not self.us_already_runned)):
             pass;
             tmp_solution=us(tmp_solution);
@@ -240,7 +246,8 @@ class Search():
         self.solution=[];
         self.best_solution=tmp_solution=start;
         self.best_solution_cost=tmp_solution_cost=costs.compute_cost(tmp_solution);
-        
+        #print(self.best_solution_cost);
+        #return;
         while(self.t<self.max_iterations):
             self.m=len(self.best_solution);
             v_set=self.__vertex_selection(tmp_solution,2000);
@@ -249,5 +256,6 @@ class Search():
                 new_solution,new_solution_cost=self.__best(solution_set);
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
                 self.__update(v,tmp_solution,tmp_solution_cost);
-            
+                rebuild();
+                print(self.best_solution_cost);
         return self.best_solution;

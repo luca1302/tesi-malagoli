@@ -6,6 +6,7 @@ __date__ ="$3-ago-2010 18.33.45$"
 
 from genius import geni_insert
 from copy import *
+from costs import *
     
 def delete_from_his_route(node,node_pos,solution):
     #print('delete({0},{1})'.format(node,node_pos));
@@ -109,31 +110,60 @@ def swap(vertex,vertex_pos,neighbors,solution):
         #insert_in_position(vertex, neighbor_pos[0], neighbor_pos[1], solution);
         #insert_in_position(neighbor, vertex_pos[0], vertex_pos[1], solution);
         #return False;
-    sols={};
-    l=len(solution[vertex_pos[0]]);
-    succ_pos=(vertex_pos[0],(vertex_pos[0]+1)%l);
-    succ=solution[succ_pos[0]]['route'][succ_pos[1]];
-    for tour in neighbors[succ]:
-        if tour!=succ_pos[0]:
-            for neighbor in neighbors[succ][tour]:
+    #sols={};
+    best_sol=best_cost=sol=cost=None;
+    #sol=deepcopy(solution);
+    #l=len(sol[vertex_pos[0]]);
+    #succ_pos=(vertex_pos[0],(vertex_pos[0]+1)%l);
+    #succ=sol[succ_pos[0]]['route'][succ_pos[1]];
+    sol=deepcopy(solution);
+    delete_from_his_route(vertex, vertex_pos, sol);
+    for tour in range(len(sol)):
+        if tour==vertex_pos[0]:
+            continue;
+        l=len(sol[tour]['route']);
+        if(l==0):
+            sol_2=deepcopy(sol);
+            sol_2[tour]['route']=[vertex];
+            cost=compute_cost(sol_2);
+            #sols[sol_cost[1]]=sol;
+            if(best_cost==None) or (cost[1]<best_cost[1]):
+                best_cost=cost;
+                best_sol=sol_2;
+        else:
+            for k in range(l):
+                sol_2=deepcopy(sol);
+                el=sol_2[tour]['route'][k];
+                el_pos=(tour,k);
+                delete_from_his_route(el,el_pos,sol_2);
+                sol_2[tour]['route'][k:k]=[vertex];
+                sol_2[vertex_pos[0]]['route'][vertex_pos[1]:vertex_pos[1]]=[el];
+                cost=compute_cost(sol_2);
+                if(best_cost==None) or (cost[1]<best_cost[1]):
+                    best_cost=cost;
+                    best_sol=sol_2;
+
+    return best_sol,best_cost;            
+        #if tour!=succ_pos[0]:
+        #    for neighbor in neighbors[succ][tour]:
                 #print(neighbors[succ]);
                 #print(tour);
                 #print(neighbor);
-                sol=deepcopy(solution);
-                delete_from_his_route(succ,succ_pos,sol);
-                delete_from_his_route(vertex,vertex_pos,sol);
-                geni_insert((vertex,vertex),neighbors,sol);
-                sol,cost=geni_insert((neighbor[0],neighbor[0]),neighbors,sol);
+        #        sol=deepcopy(solution);
+        #        delete_from_his_route(succ,succ_pos,sol);
+        #        delete_from_his_route(vertex,vertex_pos,sol);
+        #        geni_insert((vertex,vertex),neighbors,sol);
+        #        sol,cost=geni_insert((neighbor[0],neighbor[0]),neighbors,sol);
                 
-                if cost!=None:
-                    sols[cost]=sol;
-    if len(sols.keys())!=0:
-        min_cost=min(sols.keys());
-        return sols[min_cost],min_cost;
-    else:
-        return None,None;
+        #        if cost!=None:
+        #            sols[cost]=sol;
+    #if len(sols.keys())!=0:
+    #    min_cost=min(sols.keys());
+    #    return sols[min_cost],min_cost;
+    #else:
+    #    return None,None;
     
 def ab(solution):
     pass;
 
-moves=[or1,or2];
+moves=[or1,or2,swap];

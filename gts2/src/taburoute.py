@@ -209,13 +209,16 @@ class Search():
             return None,None;
     
     def __improve(self,tmp_solution,tmp_solution_cost,new_solution,new_solution_cost):
-        #if(new_solution==None):
+        if(new_solution==None):
+            self.us_already_runned=False;
         #    tmp_solution=us(tmp_solution);
+            return tmp_solution,tmp_solution_cost;
             
         #print(new_solution_cost[1]>tmp_solution_cost[1],self.__is_feasible(tmp_solution_cost),not self.us_already_runned);
         
-        if(not self.__is_feasible(tmp_solution_cost)
+        elif(not self.__is_feasible(tmp_solution_cost)
            and self.__is_feasible(new_solution_cost)):
+            self.us_already_runned=False;
             return new_solution,new_solution_cost;
         
         elif((new_solution_cost[1]>tmp_solution_cost[1])
@@ -285,17 +288,25 @@ class Search():
     def __rebuild(self,sol,gran_dist):
         self.__build(sol, gran_dist);
         
+    def __granular_distance(self,granular_cost):
+        #print(self.n);
+        #print(self.m);
+        #print(granular_cost);
+        return granular_cost/(self.n+self.m);
+    
     def find_solution(self,start):
         self.t=1;
         self.tabu={};
         self.solution=[];
         self.best_solution=tmp_solution=start;
-        self.best_solution_cost=tmp_solution_cost=costs.compute_cost(tmp_solution);
+        granular_cost=self.best_solution_cost=tmp_solution_cost=costs.compute_cost(tmp_solution);
         #print(self.best_solution_cost);
         #return;
+        
         while(self.t<self.max_iterations):
             self.m=len(self.best_solution);
-            v_set=self.__vertex_selection(tmp_solution,2000);
+            granular_distance=self.__granular_distance(granular_cost[1]);
+            v_set=self.__vertex_selection(tmp_solution,granular_distance);
             for v in v_set.keys():
                 for tabu in self.tabu:
                     self.tabu[tabu]-=1;
@@ -306,6 +317,6 @@ class Search():
                 new_solution,new_solution_cost=self.__best(solution_set);
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
                 self.__update(v,tmp_solution,tmp_solution_cost);
-                self.__rebuild(tmp_solution,2000);
+                self.__rebuild(tmp_solution,granular_distance);
                 print(self.best_solution_cost,tmp_solution_cost);
         return self.best_solution;

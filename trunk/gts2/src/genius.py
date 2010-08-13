@@ -105,7 +105,7 @@ def geni_type_II_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
                 sol=deepcopy(solution);
                 route=sol[tour]['route'];
                 route=func_2(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkplus,vlplus,l);
-                assert(len(route)==(l+1));
+                assert(len(route)==(l+len(node)));
                 sol,cost=geni_update_sol(sol,route,tour,node);
                 #sol[tour]['route']=route;
                 #sol[tour]['inserted']=vertex
@@ -139,7 +139,7 @@ def geni_type_I_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
             sol=deepcopy(solution);
             route=sol[tour]['route'];
             route=func_2(route, node, pos_vi, pos_vj, pos_vk, viplus, vjplus, vkplus,l);
-            assert(len(route)==(l+1));
+            assert(len(route)==(l+len(node)));
             sol,cost=geni_update_sol(sol,route,tour,node);
             #print(cost);
             if(best_cost==None) or (cost[1]<best_cost[1]):

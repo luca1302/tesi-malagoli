@@ -9,7 +9,7 @@ from trucks import *
 from customer import *
 
 solution_cost={
-    'costr_factors':{'duration':1,'load':1,'time_window':1,'created':100},
+    'costr_factors':{'duration':1,'load':1,'time_window':0,'created':100},
 };
 
 def __user_defined_criteria(solution):
@@ -35,6 +35,8 @@ def compute_cost(solution):
         #print(tour);
         truck=tour['truck'];
         route=tour['route'];
+        if(len(route)==0):
+            continue;
         #print(truck);
         #print(route);
         #print(solution);
@@ -75,7 +77,10 @@ def compute_cost(solution):
     #print(path_lenght,delta_max_load,delta_max_duration,delta_time_window);
     #print(path_lenght);
     cost_feasible=__user_defined_criteria(solution)+path_lenght+created*omega;
-    cost_infeasible=cost_feasible+delta_max_load*alpha+delta_max_duration*beta+delta_time_window*gamma;
+    delta_max_load*=alpha;
+    delta_max_duration*=beta;
+    delta_time_window*=gamma;
+    cost_infeasible=cost_feasible+delta_max_load+delta_max_duration*beta+delta_time_window*gamma;
 
     #cost+=__penalty(cost,solution);
 

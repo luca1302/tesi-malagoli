@@ -53,7 +53,7 @@ def or1(vertex,vertex_pos,neighbors,solution):
     #n={tour:neighbor_pos for tour,neighbor_pos in neighbors[vertex].items() if (vertex_pos[0]!=tour)};
     
     #sol,cost=geni_insert((vertex,vertex),neighbors,sol);
-    return geni_insert((vertex,vertex),neighbors,sol);
+    return geni_insert((vertex,vertex),vertex_pos[0],neighbors,sol);
     #sols[cost]=sol;
     #        
     #if len(sols.keys())==0:
@@ -123,4 +123,4 @@ def swap(vertex,vertex_pos,neighbors,solution):
 def ab(solution):
     pass;
 
-moves=[or1,or2,];
+moves=[or1,];

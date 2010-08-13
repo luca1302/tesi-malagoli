@@ -73,7 +73,8 @@ def geni_type_II_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
     vjplus_=solution[tour]['route'][(pos_vj+1)%l];
     
     
-    
+    if(tour not in neighbors[vjplus_]):
+        return None,None;
     for vk,pos_vk in neighbors[vjplus_][tour]:
         #print(neighbors);
         #print(vjplus_);
@@ -124,6 +125,8 @@ def geni_type_I_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
     route=solution[tour]['route'];
     l=len(route);
     vjplus_=solution[tour]['route'][(pos_vj+1)%l];
+    if(tour not in neighbors[vjplus_]):
+        return best_sol,best_cost;
     
     for vk,pos_vk in neighbors[vjplus_][tour]:
         if pos_vj>pos_vk:
@@ -159,6 +162,8 @@ def geni_main(node,original_tour,neighbors,solution,func,func_2):
         for vi,pos_vi in neighbors[node[0]][tour]:
             #print(vi);
             #print(pos_vi);
+            if not tour in neighbors[node[1]]:
+                continue;
             for vj,pos_vj in neighbors[node[1]][tour]:
                 if vi!=vj:
                     if(node[0]==node[1]):

@@ -11,10 +11,68 @@ from costs import compute_cost
 def geni_swap(a,x,b,y):
     return b,y,a,x;
 
+def geni_sorting_key(v):
+    return v[1];
+
+def geni_sort(v,p,pos_vi):
+    q=[];
+    r=[];
+    assert(len(v)==len(p));
+    for k in range(len(v)):
+        q+=[(v[k],p[k])];
+        
+    q=sorted(q,key=geni_sorting_key);
+    
+    for el,p in q:
+        r+=[el,p];
+        
+    return r;
+    #q=[];
+    #r=deepcopy(p);
+    #r=sorted(r);
+    #i=r.index(pos_vi);
+    #l=len(r);
+    #print(v,p,i,l);
+    #for k in range(l):
+    #    done=False;
+    #    for j in range(l):
+    #        if(r[(i+k)%l]==p[j]) and(not done):
+    #            print(r,i,k,j,p,q,done);
+    #            done=True;
+    #            q+=[v[(i+k)%l],p[(i+k)%l]];
+    #            print(r,i,k,j,p,q,done);
+    #return q;        
+    
+    
+    #base=pos_vi;
+    #
+    #if(pos_vj<base):
+    #    pos_j=l+pos_vj;
+    #if(pos_vk<base):
+    #    pos_k=l+pos_vk;
+    #
+    #if(pos_vj<base) and(pos_vk>base):
+    #    return vk,pos_vk,vj,pos_vj,vi,pos_vi;
+    #elif(pos_j>pos_k):
+    #    return vi,pos_vi,vk,pos_vk,vj,pos_vj;
+    #else:
+    #    return vi,pos_vi,vj,pos_vj,vk,pos_vk;
+
+def geni_straight(r,init,fin):
+    if(fin==(-1)):
+        fin=len(r);
+    if(fin<init):
+        q=r[init:len(r)]+r[0:fin+1];
+    else:
+        q=r[init:fin+1];
+    #print(init,fin,q);
+    return q;
+
 def geni_reverse(l,fin,init):
     #print(fin);
     #print(init);
-    q=l[init:fin+1];
+    #q=l[init:fin+1];
+    q=geni_straight(l,init,fin);
     #print(q);
     q.reverse();
     #print(q);
@@ -37,7 +95,10 @@ def geni_route_type_I(route,node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus,l):
     #print('geni_type_I');
     #print(node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus);
     #print(route);
-    route=route[0:pos_vi+1]+list(node)+geni_reverse(route,pos_vj,viplus)+geni_reverse(route,pos_vk,vjplus)+route[vkplus:l];
+    if(vkplus==pos_vi):
+        vkplus=pos_vi-1;
+    route=route[pos_vi:pos_vi+1]+list(node)+geni_reverse(route,pos_vj,viplus)+geni_reverse(route,pos_vk,vjplus)+geni_straight(route,vkplus,pos_vi-1);
+    
     #print(route);
     assert(len(route)==(l+len(node)));
     return route;
@@ -54,7 +115,10 @@ def geni_route_type_II(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkpl
     #print('geni_type_II');
     #print(node,pos_vi,pos_vl,pos_vj,pos_vk,viplus,vlplus,vjplus,vkplus);
     #print(route);
-    route=route[0:pos_vi+1]+list(node)+geni_reverse(route,pos_vj,vlplus)+route[vjplus:pos_vk+1]+geni_reverse(route,pos_vl,viplus)+route[vkplus:l];
+    if(vkplus==pos_vi):
+        vkplus=pos_vi-1;
+    route=route[pos_vi:pos_vi+1]+list(node)+geni_reverse(route,pos_vj,vlplus)+geni_straight(route,vjplus,pos_vk)+geni_reverse(route,pos_vl,viplus)+geni_straight(route,vkplus,pos_vi-1);
+    
     #print(route);
     assert(len(route)==(l+len(node)));
     return route;
@@ -84,7 +148,8 @@ def geni_type_II_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
         #print(vk);
         for vl,pos_vl in neighbors[vjplus_][tour]:
             #print(vl);
-            pos_vi,pos_vl,pos_vj,pos_vk=sorted((pos_vi,pos_vl,pos_vj,pos_vk));
+            #pos_vi,pos_vl,pos_vj,pos_vk=sorted((pos_vi,pos_vl,pos_vj,pos_vk));
+            vi,pos_vi,vl,pos_vl,vj,pos_vj,vk,pos_vk=geni_sort([vi,vl,vj,vk],[pos_vi,pos_vl,pos_vj,pos_vk],pos_vi);
             #if pos_vj>pos_vk:
             #    vj,pos_vj,vk,pos_vk=geni_swap(vj,pos_vj,vk,pos_vk);
             #if pos_vl>pos_vj:
@@ -104,11 +169,11 @@ def geni_type_II_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
                 and pos_vk!=vjplus 
                 and pos_vl!=pos_vi 
                 and pos_vl!=viplus):
-                assert(pos_vi<pos_vl<pos_vj<pos_vk);
+                #assert(pos_vi<pos_vl<pos_vj<pos_vk);
                 sol=deepcopy(solution);
                 route=sol[tour]['route'];
                 route=func_2(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkplus,vlplus,l);
-                assert(len(route)==(l+len(node)));
+                #assert(len(route)==(l+len(node)));
                 sol,cost=geni_update_sol(sol,route,tour,node);
                 #sol[tour]['route']=route;
                 #sol[tour]['inserted']=vertex
@@ -121,29 +186,31 @@ def geni_type_II_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
 
 def geni_type_I_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
     sol=cost=best_cost=best_sol=None;
-    if pos_vi>pos_vj:
-        vi,pos_vi,vj,pos_vj=geni_swap(vi,pos_vi,vj,pos_vj);
+    #if pos_vi>pos_vj:
+    #    vi,pos_vi,vj,pos_vj=geni_swap(vi,pos_vi,vj,pos_vj);
         
     route=solution[tour]['route'];
     l=len(route);
     vjplus_=solution[tour]['route'][(pos_vj+1)%l];
     if(tour not in neighbors[vjplus_]):
-        return best_sol,best_cost;
+        return None,None;
     
     for vk,pos_vk in neighbors[vjplus_][tour]:
-        if pos_vj>pos_vk:
-            vj,pos_vj,vk,pos_vk=geni_swap(vj,pos_vj,vk,pos_vk);
-        if pos_vi>pos_vj:
-            vi,pos_vi,vj,pos_vj=geni_swap(vi, pos_vi, vj, pos_vj);
-                            
-        if vi!=vk and vk!=vj and vi!=vj:
-            assert(pos_vi<pos_vj<pos_vk);
-            vjplus=(pos_vj+1)%l;
-            viplus=(pos_vi+1)%l;
-            vkplus=min((pos_vk+1),l);
+        #if pos_vj>pos_vk:
+        #    vj,pos_vj,vk,pos_vk=geni_swap(vj,pos_vj,vk,pos_vk);
+        #if pos_vi>pos_vj:
+        #    vi,pos_vi,vj,pos_vj=geni_swap(vi, pos_vi, vj, pos_vj);
+        #print(vi,pos_vi,vj,pos_vj,vk,pos_vk);
+        vi_,pos_vi_,vj_,pos_vj_,vk_,pos_vk_=geni_sort([vi,vj,vk],[pos_vi,pos_vj,pos_vk],pos_vi);
+        #print(vi_,pos_vi_,vj_,pos_vj_,vk_,pos_vk_);                    
+        if vi_!=vk_ and vk_!=vj_ and vi_!=vj_:
+            assert(pos_vi_!=pos_vj_!=pos_vk_);
+            vjplus=(pos_vj_+1)%l;
+            viplus=(pos_vi_+1)%l;
+            vkplus=min((pos_vk_+1),l);
             sol=deepcopy(solution);
             route=sol[tour]['route'];
-            route=func_2(route, node, pos_vi, pos_vj, pos_vk, viplus, vjplus, vkplus,l);
+            route=func_2(route, node, pos_vi_, pos_vj_, pos_vk_, viplus, vjplus, vkplus,l);
             sol,cost=geni_update_sol(sol,route,tour,node);
             #print(cost);
             if(best_cost==None) or (cost[1]<best_cost[1]):
@@ -260,7 +327,7 @@ def us_route_type_I(route,node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus,l):
     #print('geni_type_I');
     #print(node,pos_vi,pos_vj,pos_vk,viplus,vjplus,vkplus);
     #print(route);
-    route=route[0:pos_vi]+list(node)+geni_reverse(route,pos_vj,viplus)+geni_reverse(route,pos_vk,vjplus)+route[vkplus:l];
+    route=geni_reverse(route,pos_vj,viplus)+geni_reverse(route,pos_vk,vjplus)+geni_straight(route,vkplus,pos_vi-1);
     #print(route);
     assert(len(route)==(l-len(node)));
     return route;
@@ -277,7 +344,7 @@ def us_route_type_II(route,node,pos_vi,pos_vj,pos_vk,pos_vl,viplus,vjplus,vkplus
     #print('geni_type_II');
     #print(node,pos_vi,pos_vl,pos_vj,pos_vk,viplus,vlplus,vjplus,vkplus);
     #print(route);
-    route=route[0:pos_vi]+geni_reverse(route,pos_vj,vlplus)+route[vjplus:pos_vk+1]+geni_reverse(route,pos_vl,viplus)+route[vkplus:l];
+    route=geni_reverse(route,pos_vj,vlplus)+geni_straight(route,vjplus,pos_vk+1)+geni_reverse(route,pos_vl,viplus)+geni_straight(route,vkplus,pos_vi-1);
     #print(route);
     assert(len(route)==(l-len(node)));
     return route;
@@ -303,7 +370,7 @@ def us_route_II_inverted(node,vi,pos_vi,tour,neighbors,solution):
 def us_unstring(vertex,pos_vertex,tour,n,sol_2):
     best_sol=best_cost=None;
     for insertion in [us_route_I,us_route_I_inverted,
-                      us_toute_II,us_route_II_inverted]:
+                      us_route_II,us_route_II_inverted]:
         sol_3,cost=insertion((vertex,vertex),vertex,pos_vertex,tour,n,sol_2);
         if(best_cost==None) or (cost!=None and (cost[1]<best_cost[1])):
             best_cost=cost;
@@ -337,7 +404,7 @@ def us_string(vertex,tour,n,sol_2):
     
     return best_sol,best_cost;
     
-def us(tmp_solution,tour,neighbors,gran_dist):
+def geni_us(tmp_solution,tour,neighbors,gran_dist):
     best_sol=best_cost=None;
     n=deepcopy(neighbors);
     sol=deepcopy(tmp_solution);

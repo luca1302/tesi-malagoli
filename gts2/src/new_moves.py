@@ -4,7 +4,7 @@
 __author__="davide"
 __date__ ="$3-ago-2010 18.33.45$"
 
-from genius import geni_insert
+from genius import geni_insert,geni_us
 from copy import *
 from costs import *
     
@@ -167,3 +167,6 @@ def ab(solution):
     pass;
 
 moves=[or1,or2,swap];
+
+def us(tmp_solution,tour,neighbors,gran_dist):
+    return geni_us(tmp_solution,tour,neighbors,gran_dist);

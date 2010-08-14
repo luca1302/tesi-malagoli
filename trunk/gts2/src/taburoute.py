@@ -316,7 +316,7 @@ class Search():
                 v_pos=self.vertexes[v];
                 solution_set=self.__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
                 new_solution,new_solution_cost=self.__best(solution_set);
-                tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0]);
+                tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0],granular_distance);
                 self.__update(v,tmp_solution,tmp_solution_cost);
                 self.__rebuild(tmp_solution,granular_distance);
                 print(self.best_solution_cost,tmp_solution_cost);

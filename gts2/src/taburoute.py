@@ -208,7 +208,7 @@ class Search():
         else:
             return None,None;
     
-    def __improve(self,tmp_solution,tmp_solution_cost,new_solution,new_solution_cost):
+    def __improve(self,tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,tour,gran_dist):
         if(new_solution==None):
             self.us_already_runned=False;
         #    tmp_solution=us(tmp_solution);
@@ -224,7 +224,8 @@ class Search():
         elif((new_solution_cost[1]>tmp_solution_cost[1])
             and (self.__is_feasible(tmp_solution_cost))
             and (not self.us_already_runned)):
-            tmp_solution=us(tmp_solution);
+            self.__rebuild(tmp_solution, gran_dist);
+            tmp_solution=us(tmp_solution,tour,self.neighbors,gran_dist);
             self.us_already_runned=True;
             return tmp_solution,cost.compute_cost(tmp_solution);
         else:
@@ -315,7 +316,7 @@ class Search():
                 v_pos=self.vertexes[v];
                 solution_set=self.__evaluate_moves(v,v_pos,tmp_solution,tmp_solution_cost);
                 new_solution,new_solution_cost=self.__best(solution_set);
-                tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost);
+                tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0]);
                 self.__update(v,tmp_solution,tmp_solution_cost);
                 self.__rebuild(tmp_solution,granular_distance);
                 print(self.best_solution_cost,tmp_solution_cost);

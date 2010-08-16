@@ -243,6 +243,8 @@ def geni_type_I_body(node,neighbors,solution,tour,vi,pos_vi,vj,pos_vj,func_2):
 def geni_route(node,vi,pos_vi,tour,neighbors,solution,func,func_2):
     best_sol=best_cost=cost=sol=None;
     #print(vi,pos_vi);
+    if tour not in neighbors[node[1]]:
+        return None,None;
     for vj,pos_vj in neighbors[node[1]][tour]:
         if vi!=vj:
             if(node[0]==node[1]):
@@ -392,6 +394,7 @@ def us_route_II_inverted(node,vi,pos_vi,tour,neighbors,solution):
 def us_unstring(vertex,pos_vertex,tour,n,sol_2):
     best_sol=best_cost=None;
     #print(vertex);
+    #print(pos_vertex);
     for insertion in [us_route_I,us_route_I_inverted,
                       us_route_II,us_route_II_inverted]:
         #print("iterazione");
@@ -402,22 +405,28 @@ def us_unstring(vertex,pos_vertex,tour,n,sol_2):
             best_sol=sol_3;
     
     #print(sol_2);
-    #print(best_sol); 
+    #print(best_sol);
+    if(best_sol==None):
+        #print("XD");
+        return None,n; 
     #print(n);       
     for k in range(len(best_sol[tour]['route'])):
         node=best_sol[tour]['route'][k];
         #node_pos=(tour,k);
         #node_n=(node,k);
+        #if(vertex in n):
+        #    del n[vertex];
         for node_2 in n:
+                
             if tour not in n[node_2]:
                 continue;
             for q in range(len(n[node_2][tour])):
                 if(n[node_2][tour][q][0]==node):
-                    n[node_2][tour][q][1]=k;
+                    n[node_2][tour][q]=(node,k);
             #print([vertex,pos_vertex[1]],n[node_2][tour]);
-            if([vertex,pos_vertex[1]] in n[node_2][tour]):
+            if((vertex,pos_vertex[1]) in n[node_2][tour]):
                 #print("vertex found");
-                i=n[node_2][tour].index([vertex,pos_vertex[1]]);
+                i=n[node_2][tour].index((vertex,pos_vertex[1]));
                 del n[node_2][tour][i];
     #print(n);
     return best_sol,n;
@@ -445,9 +454,13 @@ def geni_us(tmp_solution,tour,neighbors,gran_dist):
     sol=deepcopy(tmp_solution);
     route=sol[tour]['route'];
     k=0;
+    #n_=n;
     for vertex in route:
         sol_2=deepcopy(sol);
+        #assert(n_==n);
         n_2=deepcopy(n);
+        #print(route);
+        #print(sol_2[tour]['route']);
         #print("unstringing");
         #route_2=sol_2[tour]['route'];
         #print(sol_2);
@@ -455,7 +468,11 @@ def geni_us(tmp_solution,tour,neighbors,gran_dist):
         #sol_2[tour]['route']=route_2;
         #us_update_n(n_2,new_vertex_pos,gran_dist);
         #print(sol_2);
+        if(sol_2==None):
+            k+=1;
+            continue;
         #print("stringing");
+        #print(sol_2[tour]['route']);
         sol_3,cost=us_string(vertex,tour,n_2,sol_2);
         if(best_cost==None) or (cost!=None and (cost[1]<best_cost[1])):
             best_cost=cost;

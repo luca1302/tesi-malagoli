@@ -83,9 +83,9 @@ class Search():
                     neighbor=vertexes[element];
                     neighbor_tour=neighbor[0];
                     if neighbor_tour in ne:
-                        ne[neighbor_tour]+=[[element,neighbor[1]]];
+                        ne[neighbor_tour]+=[(element,neighbor[1])];
                     else:
-                        ne[neighbor_tour]=[[element,neighbor[1]]];
+                        ne[neighbor_tour]=[(element,neighbor[1])];
             self.__init_key(vertex);
             
             for tour in ne.keys():
@@ -227,11 +227,16 @@ class Search():
             and (not self.us_already_runned)):
             self.__rebuild(tmp_solution, gran_dist);
             print("running us");
-            print(tmp_solution_cost);
-            tmp_solution,tmp_solution_cost=us(tmp_solution,tour,self.neighbors,gran_dist);
-            print(tmp_solution_cost);
-            print("end us");
+            #print(tmp_solution_cost);
+            tmp_solution_,tmp_solution_cost_=us(tmp_solution,tour,self.neighbors,gran_dist);
+            #print(tmp_solution_cost_);
+            #print("end us");
             self.us_already_runned=True;
+            if(tmp_solution_cost_!=None
+               and self.__is_feasible(tmp_solution_cost_) 
+               and tmp_solution_cost_[1]<tmp_solution_cost[1]):
+                tmp_solution=tmp_solution_;
+                tmp_solution_cost=tmp_solution_cost_;
             return tmp_solution,tmp_solution_cost;
         else:
             self.us_already_runned=False;
@@ -277,8 +282,8 @@ class Search():
             
         self.t+=1;
         
-        if((tmp_solution_cost[1]<self.best_solution_cost[1])
-           or (not self.__is_feasible(self.best_solution_cost) and self.__is_feasible(tmp_solution_cost))):
+        if(((tmp_solution_cost[1]<self.best_solution_cost[1])and ( self.__is_feasible(self.best_solution_cost)==self.__is_feasible(tmp_solution_cost)))
+           or ((not self.__is_feasible(self.best_solution_cost)) and (self.__is_feasible(tmp_solution_cost)))):
             self.best_solution=tmp_solution;
             self.best_solution_cost=tmp_solution_cost;
             #we must continue a little longer 

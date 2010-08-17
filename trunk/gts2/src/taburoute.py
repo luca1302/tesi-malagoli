@@ -12,6 +12,7 @@ from dima import *
 from trucks import *
 import costs
 from math import sqrt
+from time import time
 
 def taburoute(customers,trucks_number,cicles):
     seed(a=123456789);
@@ -56,6 +57,14 @@ class Search():
         self.tabu={};
         self.key_vertex=None;
         self.recorded_sol={};
+        self.beta=self.beta1=1.25;
+        self.beta2=1.75;
+        self.beta_period=self.beta_period1=15*self.n;
+        self.beta_period2=self.n;
+        self.period_switch=False;
+        self.saved_period=0;
+        self.start_time=0;
+        #self.curr_time=0;
         
     def __init_key(self,vertex):
         self.key_vertex=vertex;
@@ -226,7 +235,7 @@ class Search():
             and (self.__is_feasible(tmp_solution_cost))
             and (not self.us_already_runned)):
             self.__rebuild(tmp_solution, gran_dist);
-            print("running us");
+            #print("running us");
             #print(tmp_solution_cost);
             tmp_solution_,tmp_solution_cost_=us(tmp_solution,tour,self.neighbors,gran_dist);
             #print(tmp_solution_cost_);
@@ -304,10 +313,24 @@ class Search():
         #print(self.n);
         #print(self.m);
         #print(granular_cost);
-        return granular_cost/(self.n+self.m);
+        if self.period_switch:
+            self.saved_period+=1;
+            if(self.saved_period%self.beta_period)==0:
+                self.period_switch=False;
+                self.beta=self.beta1;
+                self.beta_period=self.beta_period1;
+                
+        elif (self.t%self.beta_period)==0:
+            self.period_switch=True;
+            self.beta_period=self.beta_period2;
+            self.saved_period=0;
+            self.beta=self.beta2;
+        
+        return self.beta*granular_cost/(self.n+self.m);
     
     def find_solution(self,start):
         self.t=1;
+        self.start_time=time();
         self.tabu={};
         self.solution=[];
         self.best_solution=tmp_solution=start;
@@ -315,7 +338,8 @@ class Search():
         #print(self.best_solution_cost);
         #return;
         
-        while(self.t<self.max_iterations):
+        while((self.t<self.max_iterations)
+              and ((time()-self.start_time)<=120)):
             self.m=len(self.best_solution);
             granular_distance=self.__granular_distance(granular_cost[1]);
             v_set=self.__vertex_selection(tmp_solution,granular_distance);
@@ -330,5 +354,10 @@ class Search():
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0],granular_distance);
                 self.__update(v,tmp_solution,tmp_solution_cost);
                 self.__rebuild(tmp_solution,granular_distance);
-                print(self.best_solution_cost,tmp_solution_cost);
-        return self.best_solution;
+                #print(self.best_solution_cost,tmp_solution_cost);
+                #print(self.start_time,time(),time()-self.start_time);
+                #print(self.t,self.max_iterations);
+                if(time()-self.start_time)>=120:
+                    break;
+                
+        return self.best_solution,self.best_solution_cost;

@@ -14,8 +14,12 @@ import costs
 from math import sqrt
 from time import time
 
-def taburoute(customers,trucks_number,cicles):
+def taburoute(customers,trucks_number,cicles,**costs):
     seed(a=123456789);
+    
+    for factor,coefficient in costs.items():
+        globals()['solution_cost']['user_factors'][factor]=coefficient;
+        
     initial_solution=Clark_and_Wright(dima,elma,customers,allocate_truck,trucks_number,depot).find_starting_solution();
     
     return Search(5*trucks_number,

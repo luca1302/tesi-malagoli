@@ -10,4 +10,4 @@ from customer import customers
 
 
 if __name__ == "__main__":
-    print(taburoute(set(range(len(customers)))-set([0]),trucks_number(),50));
+    print(taburoute(set(range(len(customers)))-set([0]),trucks_number(),50,elapsed=0));

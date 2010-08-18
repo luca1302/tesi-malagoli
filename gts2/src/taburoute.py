@@ -143,7 +143,8 @@ class Search():
         #self.neighbors=neighbors;
         #self.best_solution_cost=0;
         
-        return {v:self.vertexes[v] for v in tmp_vertexes}; 
+        #return {v:self.vertexes[v] for v in tmp_vertexes};
+	return dict((v,self.vertexes[v]) for v in tmp_vertexes); 
     
     def __add_to_solution_set(self,sol_set,sol,cost):
         print()
@@ -262,7 +263,8 @@ class Search():
         
         if((k)==0):
             cost_factors=costs.solution_cost['costr_factors'];
-            feasible={factor:True for factor in cost_factors.keys()};
+            #feasible={factor:True for factor in cost_factors.keys()};
+	    feasible=dict((factor,True) for factor in cost_factors.keys());
             for key,solution in self.recorded_sol.items():
                 if(not costs.is_elapsed_feasible(solution)):
                     feasible['duration']=False;
@@ -358,7 +360,7 @@ class Search():
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0],granular_distance);
                 self.__update(v,tmp_solution,tmp_solution_cost);
                 self.__rebuild(tmp_solution,granular_distance);
-                #print(self.best_solution_cost,tmp_solution_cost);
+                print(self.best_solution_cost,tmp_solution_cost);
                 #print(self.start_time,time(),time()-self.start_time);
                 #print(self.t,self.max_iterations);
                 if(time()-self.start_time)>=120:

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-"""This runs 'ls -l' on a remote host using SSH. At the prompts enter hostname,
-user, and password.
+"""This runs a command on a remote host using SSH. At the prompts enter hostname,user, and password.
 
 $Id: sshls.py 489 2007-11-28 23:40:34Z noah $
 """

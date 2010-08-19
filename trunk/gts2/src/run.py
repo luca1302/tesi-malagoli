@@ -8,6 +8,8 @@ from taburoute import *
 from trucks import trucks_number
 from customer import customers
 
+import sys
 
 if __name__ == "__main__":
-    print(taburoute(set(range(len(customers)))-set([0]),trucks_number(),50,elapsed=0));
+    print(sys.argv[1],sys.argv[2]);
+    print(taburoute(set(range(len(customers)))-set([0]),trucks_number(),50,lenght=int(sys.argv[1]),elapsed=int(sys.argv[2])));

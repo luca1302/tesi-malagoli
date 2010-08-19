@@ -8,16 +8,12 @@ $Id: sshls.py 489 2007-11-28 23:40:34Z noah $
 import pexpect
 import getpass, os
 
-ssh_password=None;
-
 class SSHCommand:
 
-	def __init__(self,user, host, command):
+	def __init__(self,user, host, password, command):
 		self.user=user;
 		self.host=host;
-		if globals()['ssh_password']==None:
-			globals()['ssh_password']=getpass.getpass('Password: ');
-		self.password=globals()['ssh_password'];
+		self.password=password;
 		self.command=command;
 
 	def launch(self):
@@ -51,7 +47,7 @@ fingerprint and continue connecting. """
             			print child.before, child.after;
             			return None;       
     		child.sendline(password);
-		child.expect(pexpect.EOF);
+		child.expect(pexpect.EOF,timeout=300);
     		return child.before;
 
 	
@@ -61,7 +57,7 @@ if __name__ == '__main__':
         #host = raw_input('Hostname: ')
 	#user = raw_input('User: ')
 	user='malagoli'
-	#password = getpass.getpass('Password: ')
+	password = getpass.getpass('Password: ')
 	
 	for host in ['ambrogio.cs.unibo.it','maria.cs.unibo.it']:
 		child = SSHCommand (user, host,'/bin/ls -l').launch();

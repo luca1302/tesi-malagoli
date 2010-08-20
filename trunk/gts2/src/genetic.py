@@ -23,8 +23,8 @@ class GenThread(Thread):
 	self.password=password;
         self.output=None;
     def run(self):
-        #self.output=SSHCommand(self.username,self.host,self.password,"nice python /public/malagoli/tesi-malagoli-read-only/gts2/src/run.py {0} {1}".format(self.gene1,self.gene2)).launch();
-	self.output=SSHCommand(self.username,self.host,self.password,"nice python /home/davide/tesi-malagoli/gts2/src/run.py {0} {1}".format(self.gene1,self.gene2)).launch();
+        self.output=SSHCommand(self.username,self.host,self.password,"nice python /public/malagoli/tesi-malagoli-read-only/gts2/src/run.py {0} {1}".format(self.gene1,self.gene2)).launch();
+	#self.output=SSHCommand(self.username,self.host,self.password,"nice python /home/davide/tesi-malagoli/gts2/src/run.py {0} {1}".format(self.gene1,self.gene2)).launch();
 
 def initialize_population(range1,range2,n):
 
@@ -38,7 +38,7 @@ def initialize_population(range1,range2,n):
 def launch_childs(pop,password):
 	#pop=[(0,1),(0,1)];
 	#hosts=['davide-laptop'];
-	hosts=hosts.hosts;
+	#hosts=hosts.hosts;
 	shuffle(hosts);
 	#username='davide';
 	username='malagoli';	

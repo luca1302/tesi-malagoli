@@ -26,7 +26,7 @@ class GenThread(Thread):
 	self.output=SSHCommand(self.username,self.host,self.password,"nice python /home/davide/tesi-malagoli/gts2/src/run.py {0} {1}".format(self.gene1,self.gene2)).launch();
 
 def initialize_population(range1,range2,n):
-	return [(0,1),(1,0)];
+	return [(0,1),(2,0)];
 
 def launch_childs(pop,password):
 	#pop=[(0,1),(0,1)];
@@ -50,7 +50,7 @@ def launch_childs(pop,password):
 	return r_list;
 
 def calculate_distance(r_list,lenght_desired,elapsed_desired):
-	print(r_list);	
+	#print(r_list);	
 	#clones={};
 	#for g1,g2,l,e in r_list:
 	#	#g1,g2,l,e=element;
@@ -100,15 +100,15 @@ def calculate_distance(r_list,lenght_desired,elapsed_desired):
 		else:
 			results[distance]=[(int(g1),int(g2))];
 	
-	print(results);	
+	#print(results);	
 	return results;
 
 def convert_to_fitness(dists):
-	print('conversion');
+	#print('conversion');
 	dist_tot=0;
 	for dist,k in dists.items():
 		for e in k:
-			print(dist,e);
+			#print(dist,e);
 			dist_tot+=dist;
 
 	fitness={};
@@ -119,8 +119,8 @@ def convert_to_fitness(dists):
 		else:
 			fitness[value]=k;
 	
-	print('end conversion');
-	print(fitness);
+	#print('end conversion');
+	#print(fitness);
 	return fitness;
 
 def evaluate_fitness(pop,password,l,e):
@@ -136,15 +136,16 @@ def select(fitness,num):
 	
 	selected=[];
 	for s in range(num):
-		print('iterazione');
+		#print('iterazione');
 		rand=uniform(0,1);
 	
 		t=0;
 		for key in keys:
 			t+=key[0];
 			if(t>=rand):
-				print(fitness[key[0]][key[1]]);
+				#print(fitness[key[0]][key[1]]);
 				selected+=[fitness[key[0]][key[1]]];
+				break;
 	print(selected);
 	return selected;
 
@@ -159,48 +160,60 @@ def switch(a):
 		return '1';
 
 def xover(a,b,crossover_prob,mutation_prob):
+	#print('xover starts');
+	#print(a,b);
 	if uniform(0,1)<crossover_prob:
 		a,b=(b,a);
-
+	#print(a,b);
 	if mutation(mutation_prob):
 		if uniform(0,1)<0.5:
 			a=switch(a);
 		else:
 			b=switch(b);
+	#print(a,b);
+	#print('xover ends');
+	return a,b;
 
 def bit_exchange(s1,s2,c_p,m_p):
-
+	#print('bit_exchange starts');
 	l1=len(s1);
 	l2=len(s2);
+	#print(s1,s2);
 
 	if(l1<l2):
 		s1,s2,l1,l2=(s2,s1,l2,l1);
 
 	assert(l1>=l2);
-
+	
 	diff=l1-l2;
+	#print(s1,s2,diff);
 	for k in range(diff):
 		s1[k],s2_k=xover(s1[k],'0',crossover_prob,mutation_prob);
 		s2[k:k]=[s2_k];
-
-	for k in range(l1):
-		s1[diff+k],s2[diff+k]=xover(s1[k],s2[k],crossover_prob,mutation_prob);
-	
-	return 
+	#print(s1,s2);
+	for k in range(l1-diff):
+		s1[diff+k],s2[diff+k]=xover(s1[diff+k],s2[diff+k],crossover_prob,mutation_prob);
+	#print(s1,s2);
+	#print('bit_exchange ends');
+	return s1,s2; 
 
 def crossover(couple1,couple2,crossover_prob,mutation_prob):
 	g1_1=list(bin(couple1[0])[2:]);
 	g2_1=list(bin(couple1[1])[2:]);
 	g1_2=list(bin(couple2[0])[2:]);
 	g2_2=list(bin(couple2[1])[2:]);
+	#print('crossover');
+	#print(g1_1,g2_1,g1_2,g2_2);
 
 	g1_1_,g1_2_=bit_exchange(g1_1,g1_2,crossover_prob,mutation_prob);
 	g2_1_,g2_2_=bit_exchange(g2_1,g2_2,crossover_prob,mutation_prob);
-	
+
+	#print(g1_1_,g2_1_,g1_2_,g2_2_);
+	#print('crossover ends');
 	g1_1_=int("".join(g1_1_),2);
-	g1_2_=int("".join(g1_1_),2);
-	g2_1_=int("".join(g1_1_),2);
-	g2_2_=int("".join(g1_1_),2);
+	g1_2_=int("".join(g1_2_),2);
+	g2_1_=int("".join(g2_1_),2);
+	g2_2_=int("".join(g2_2_),2);
 
 	return [(g1_1_,g2_1_),(g1_2_,g2_2_)];
 
@@ -223,14 +236,18 @@ if __name__ == '__main__':
 	desired_lenght=float(sys.argv[1]);
 	desired_elapsed=float(sys.argv[2]);
 	gen_max=int(sys.argv[3]);
-	pop_max=50;
+	pop_max=2;
 	mutation_prob=0.01;
 	crossover_prob=0.5;
 	
+	#f=open('results.txt','w');
+
 	pop=initialize_population((0,100),(0,100),pop_max);
 	k=0;
 	while(k<gen_max):
 		results=evaluate_fitness(pop,password,desired_lenght,desired_elapsed);
 		pop=select_and_breed(results,pop_max,crossover_prob,mutation_prob);
 		k+=1;
-	
+	f=open('results.txt','w');
+	f.write(str(pop));
+	f.close();

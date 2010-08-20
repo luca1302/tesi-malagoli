@@ -40,8 +40,8 @@ fingerprint and continue connecting. """
     		if i == 1: # SSH does not have the public key. Just accept it.
         		child.sendline ('yes');
         		child.expect ('password: ');
-        		i = child.expect([pexpect.TIMEOUT, 'password: ']);
-        		if i == 0: # Timeout
+        		i = child.expect([ 'password: ']);
+        		if i != 0: # Timeout
             			print 'ERROR!';
             			print 'SSH could not login. Here is what SSH said:';
             			print child.before, child.after;

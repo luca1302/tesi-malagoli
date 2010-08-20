@@ -10,7 +10,8 @@ from ssh import SSHCommand
 import getpass
 import sys
 from math import sqrt
-from random import shuffle,uniform,seed
+from random import shuffle,uniform,seed,sample
+from hosts import hosts
 
 class GenThread(Thread):
     def __init__(self,gene1,gene2,username,host,password):
@@ -26,26 +27,43 @@ class GenThread(Thread):
 	self.output=SSHCommand(self.username,self.host,self.password,"nice python /home/davide/tesi-malagoli/gts2/src/run.py {0} {1}".format(self.gene1,self.gene2)).launch();
 
 def initialize_population(range1,range2,n):
-	return [(0,1),(2,0)];
+
+	pop=[];
+	for x in range(range1[0],range1[1]+1):
+		for y in range(range2[0],range2[1]+1):
+			pop+=[(x,y)];
+	
+	return sample(pop,n);
 
 def launch_childs(pop,password):
 	#pop=[(0,1),(0,1)];
-	hosts=['davide-laptop','davide-laptop'];
+	#hosts=['davide-laptop'];
+	hosts=hosts.hosts;
 	shuffle(hosts);
-	username='davide';
-	
-	assert(len(hosts)==len(pop));
-	t_list=[];
-	for g,host in zip(pop,hosts):
-		print(g,host);
-		g=GenThread(g[0],g[1],username,host,password);
-		t_list+=[g];
-		g.start();
-	
+	#username='davide';
+	username='malagoli';	
+
 	r_list=[];
-	for g in t_list:
-		g.join();
-		r_list+=[tuple([float(x) for x in g.output.split('\r\n')[1].split(' ')])];
+	chunk=len(hosts);
+	if(len(pop)%len(hosts))==0:
+		times=len(pop)/len(hosts);
+	else:
+		times=(len(pop)/len(hosts))+1;
+
+	for time in range(times):
+		pop2=pop[chunk*time:chunk*(time+1)];
+		assert(len(hosts)>=len(pop2));
+	
+		t_list=[];
+		for g,host in zip(pop2,hosts):
+			print(g,host);
+			g=GenThread(g[0],g[1],username,host,password);
+			t_list+=[g];
+			g.start();
+	
+		for g in t_list:
+			g.join();
+			r_list+=[tuple([float(x) for x in g.output.split('\r\n')[1].split(' ')])];
 
 	return r_list;
 

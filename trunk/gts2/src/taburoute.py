@@ -345,7 +345,7 @@ class Search():
         #return;
         
         while((self.t<self.max_iterations)
-              and ((time()-self.start_time)<=2)):
+              and ((time()-self.start_time)<=120)):
             self.m=len(self.best_solution);
             granular_distance=self.__granular_distance(granular_cost[1]);
             v_set=self.__vertex_selection(tmp_solution,granular_distance);
@@ -363,7 +363,7 @@ class Search():
                 #print(self.best_solution_cost,tmp_solution_cost);
                 #print(self.start_time,time(),time()-self.start_time);
                 #print(self.t,self.max_iterations);
-                if(time()-self.start_time)>=2:
+                if(time()-self.start_time)>=120:
                     break;
                 
         return self.best_solution,self.best_solution_cost;

@@ -30,7 +30,7 @@ fingerprint and continue connecting. """
 		command=self.command;
 
     		ssh_newkey = 'Are you sure you want to continue connecting';
-    		child = pexpect.spawn('ssh -l %s %s %s'%(user, host, command));
+    		child = pexpect.spawn('ssh %s@%s %s'%(user, host, command));
     		i = child.expect([ssh_newkey, 'password: '],timeout=10);
     		if i != 0 and i!=1: # Timeout
         		print 'ERROR!';

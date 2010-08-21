@@ -31,8 +31,8 @@ fingerprint and continue connecting. """
 
     		ssh_newkey = 'Are you sure you want to continue connecting';
     		child = pexpect.spawn('ssh %s@%s %s'%(user, host, command));
-    		i = child.expect([ssh_newkey, 'password: '],timeout=10);
-    		if i != 0 and i!=1: # Timeout
+    		i = child.expect([pexpect.TIMEOUT,ssh_newkey, 'password: '],timeout=10);
+    		if i == 0: # Timeout
         		print 'ERROR!';
         		print 'SSH could not login. Here is what SSH said:';
         		print child.before, child.after;
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 	password = getpass.getpass('Password: ')
 	
 	for host in ['ambrogio.cs.unibo.it','maria.cs.unibo.it']:
-		child = SSHCommand (user, host,'/bin/ls -l').launch();
+		child = SSHCommand (user, host,password,'/bin/ls -l').launch();
 		print "\'{0}\'".format(child);
 	#print child.before
     except Exception, e:

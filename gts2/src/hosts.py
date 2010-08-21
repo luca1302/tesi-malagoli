@@ -13,7 +13,7 @@ hosts=[
 	'frasquita.cs.unibo.it',	'frazier.cs.unibo.it',
 	'geronte.cs.unibo.it',		'giovanna.cs.unibo.it',
 	'gisella.cs.unibo.it',		'giuseppe.cs.unibo.it',	
-	'ismaele.cs.unibo.it',		'jake.cs.unibo.it',
+	'ismaele.cs.unibo.it',		'ulrica.cs.unibo.it',
 	'jim.cs.unibo.it',		'kurwenal.cs.unibo.it',
 	'lescaut.cs.unibo.it',		'lucia.cs.unibo.it',
 	'ludovico.cs.unibo.it',		'marcellina.cs.unibo.it',

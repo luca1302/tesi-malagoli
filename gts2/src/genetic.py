@@ -254,7 +254,7 @@ if __name__ == '__main__':
 	desired_lenght=float(sys.argv[1]);
 	desired_elapsed=float(sys.argv[2]);
 	gen_max=int(sys.argv[3]);
-	pop_max=2;
+	pop_max=100;
 	mutation_prob=0.01;
 	crossover_prob=0.5;
 	

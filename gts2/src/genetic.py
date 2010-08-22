@@ -136,10 +136,22 @@ def convert_to_fitness(dists):
 			fitness[value]+=k;
 		else:
 			fitness[value]=k;
-	
+
+	tot_fit=0;
+	for fit,k in fitness.items():
+		tot_fit+=fit;
+
+	fitness2={};
+	for fit,k in fitness.items():
+		value=fit/tot_fit;
+		if value in fitness2:
+			fitness2[value]+=k;
+		else:
+			fitness2[value]=k;
 	#print('end conversion');
 	#print(fitness);
-	return fitness;
+	#return fitness;
+	return fitness2;
 
 def evaluate_fitness(pop,password,l,e):
 	r_list=launch_childs(pop,password);

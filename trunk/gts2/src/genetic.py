@@ -139,7 +139,8 @@ def convert_to_fitness(dists):
 
 	tot_fit=0;
 	for fit,k in fitness.items():
-		tot_fit+=fit;
+		for e in k:
+			tot_fit+=fit;
 
 	fitness2={};
 	for fit,k in fitness.items():

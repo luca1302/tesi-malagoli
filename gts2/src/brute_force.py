@@ -11,7 +11,6 @@ import getpass
 import sys
 from math import sqrt
 from random import shuffle,uniform,seed,sample
-from hosts import hosts
 
 class GenThread(Thread):
     def __init__(self,gene1,gene2,username,host,password):
@@ -37,7 +36,8 @@ def initialize_population(range1,range2):
 
 def launch_childs(pop,password):
 
-	shuffle(hosts);
+	#shuffle(hosts);
+	hosts='gretel.cs.unibo.it'
 	username='malagoli';	
 
 	r_list=[];

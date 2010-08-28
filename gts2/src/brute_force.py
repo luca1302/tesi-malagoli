@@ -37,7 +37,7 @@ def initialize_population(range1,range2):
 def launch_childs(pop,password):
 
 	#shuffle(hosts);
-	hosts='gretel.cs.unibo.it'
+	hosts=['gretel.cs.unibo.it',]
 	username='malagoli';	
 
 	r_list=[];

@@ -28,4 +28,12 @@ if __name__ == "__main__":
             		curr_max_duration+=elma[route[k]][route[k+1]];
             	curr_max_duration+=elma[route[-1]][depot];
         	path_lenght+=dima[route[-1]][depot];
-	print sys.argv[1],sys.argv[2],path_lenght,curr_max_duration;
+
+	if (cost[2]!=0
+		or cost[3]!=0
+		or cost[4]!=0):
+		infeasible=1
+	else:
+		infeasible=0
+
+	print sys.argv[1],sys.argv[2],path_lenght,curr_max_duration,infeasible;

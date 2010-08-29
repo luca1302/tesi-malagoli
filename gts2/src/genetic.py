@@ -111,12 +111,13 @@ def calculate_distance(r_list,lenght_desired,elapsed_desired):
 	#print(l_sum,e_sum);
 	results={};
 	#for g1,g2,l,e in r_list2:
-	for g1,g2,l,e in r_list:
+	for g1,g2,l,e,f in r_list:
 		distance=sqrt((lenght_desired-l)**2+(elapsed_desired-e)**2);
+		distance+=100000*f
 		if distance in results:
-			results[distance]+=[(int(g1),int(g2))];
+			results[distance]+=[(int(g1),int(g2),f)];
 		else:
-			results[distance]=[(int(g1),int(g2))];
+			results[distance]=[(int(g1),int(g2),f)];
 	
 	#print(results);	
 	return results;
@@ -131,7 +132,7 @@ def convert_to_fitness(dists):
 
 	fitness={};
 	for dist,k in dists.items():
-		value=1-(dist/dist_tot);
+		value=1-((dist)/dist_tot);
 		if value in fitness:
 			fitness[value]+=k;
 		else:

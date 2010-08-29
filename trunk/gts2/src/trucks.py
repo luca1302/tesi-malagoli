@@ -44,7 +44,16 @@ class Truck:
     max_load=property(get_max_load);
 
 def allocate_truck():
-    load_max=max(__trucks_load_index.keys());
+    q=[];
+    q+=__trucks_load_index.keys();
+    q=set(q)
+    load_max=max(q);
+    while(len(__trucks_load_index[load_max])==0
+          and len(q)>=1):
+	q=q-set([load_max]);
+	load_max=max(q)
+
+    assert(len(__trucks_load_index[load_max])!=0)
     truck=__trucks_load_index[load_max].pop();
     #print(truck);
     return truck;
@@ -55,7 +64,10 @@ def trucks_number():
 def peek_truck(k):
     return __trucks[k];
 
-__trucks=set(
-Truck(200)*10
-
-);
+__trucks=set([Truck(410),Truck(250)]+Truck(220)*9);
+#old experiment
+#
+#__trucks=set(
+#Truck(200)*10
+#
+#);

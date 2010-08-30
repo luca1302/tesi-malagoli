@@ -604,15 +604,17 @@ Me.R.Sy
 \end_layout
 
 \begin_layout Standard
-Oggi i retailer sono alla ricerca di soluzioni innovative integrate per
- la gestione ottimizzata dei processi di business.
-\end_layout
+"Me.R.Sy."(Merchandising Retail System)
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Sito-Wincor-Nixdorf"
 
-\begin_layout Standard
-"Me.R.Sy." (Merchandising Retail System) è la risposta di Wincor Nixdorf alle
- esigenze delle aziende retail che gestisce l’intera filiera della moderna
- distribuzione: dalla negoziazione col fornitore alla logistica della merce,
- dal punto di vendita al consumatore finale.
+\end_inset
+
+ è la suite gestionale di Wincor Nixdorf.
+ risponde alle esigenze delle aziende retail gestendo l’intera filiera della
+ moderna distribuzione: dalla negoziazione col fornitore alla logistica
+ della merce, dal punto di vendita al consumatore finale.
 \end_layout
 
 \begin_layout Standard
@@ -628,19 +630,50 @@ I moduli della Suite Me.R.Sy.
 \end_layout
 
 \begin_layout Enumerate
-Area Commerciale 
+
+\series bold
+Area Commerciale:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della relazione con l’industria.
+ L’ambiente applicativo, basandosi su questa solida struttura anagrafica,
+ garantisce una copertura ampia e profonda di tutte le funzionalità inerenti
+ il ciclo passivo (rapporto tra distributore e produttore) e il ciclo attivo
+ (rapporto tra distributore e punto vendita).
 \end_layout
 
 \begin_layout Enumerate
-Area Logistica 
+
+\series bold
+Area Logistica:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della gestione del ciclo merci
+ e del magazzino.
+ Nella gestione dei processi caratteristici, Me.R.Sy.
+ può utilizzare tecnologie sia in ambito radiofrequenza (RF) che in ambito
+ voice, garantendo precisione nell’esecuzione delle attività e una tracciabilità
+ completa dei prodotti.
 \end_layout
 
 \begin_layout Enumerate
-Gestione della Rete 
+
+\series bold
+Gestione della Rete:
+\series default
+ permette la gestione delle superfici di vendita evolutasi, nel modello
+ e nelle funzioni, con le best practice italiane del canale.
+ Integra in sé tutte le anagrafiche necessarie alla completa gestione dei
+ negozi, nonché la possibilità di utilizzare, per le politiche commerciali,
+ alcuni specifici moduli per la progettazione, applicazione e controllo
+ della politica commerciale.
 \end_layout
 
 \begin_layout Enumerate
-Area Store
+
+\series bold
+Area Store:
+\series default
+ garantisce un’ampia copertura funzionale per i processi di back office,
+ mantenendo in loco la sola interfaccia con la barriera casse e le bilance.
 \end_layout
 
 \begin_layout Section
@@ -653,10 +686,6 @@ Granular Tabu Search
 
 \begin_layout Section
 PTV Intertour
-\end_layout
-
-\begin_layout Standard
-a
 \end_layout
 
 \begin_layout Section
@@ -874,6 +903,13 @@ status open
 \backslash
 bibitem{K1}
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Sito-Wincor-Nixdorf"
 
 \end_inset
 

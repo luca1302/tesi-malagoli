@@ -1,0 +1,669 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Description
+PTV
+\begin_inset space \space{}
+\end_inset
+
+Intertour
+\begin_inset space \space{}
+\end_inset
+
+Standard: (Fonte:
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/ptv_intertour_standard.php"
+target "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/ptv_intertour_standard.php"
+
+\end_inset
+
+) PTV Intertour è un software che permette di risolvere complessi scenari
+ di distribuzione e raccolta merci sul territorio.
+ Suggerendo una programmazione ottimizzata dei viaggi e degli impieghi della
+ flotta veicolare, sia su base giornaliera che settimanale, consente di
+ risparmiare fino al 20% dei costi di distribuzione.
+ Per garantire risultati di questo tipo Intertour include un framework per
+ l'ottimizzazione (Mephisto) e ed una dettagliata cartografia digitale su
+ cui viene effettuato il calcolo delle distanze stradali e dei tempi di
+ percorrenza tra le destinazioni.
+ PTV Intertour può generare automaticamente i viaggi assegnando fermate
+ e mezzi in pochi secondi, oltre a permettere anche di aggiungere le fermate
+ una ad una senza compromettere l'efficienza dei viaggi nel complesso.
+ E' possibile tuttavia manipolare la soluzione trovata per adattarla meglio
+ alle proprie esigenze, aggiungendo,togliendo o scambiando fermate tra i
+ viaggi, o addirittura aggiungere nuove fermate non precedentemente pianificate
+ all'interno di un giro.
+ Nella composizione dei viaggi PTV intertour tiene conto di tutti i possibili
+ vincoli sia temporali, sia strutturali che logistici: orari di servizio
+ per la consegna/ritiro con più fasce temporali giornaliere; tempi di turnazione
+ dei mezzi; data e orari di disponibilità della merce; tempi di guida nel
+ rispetto dei limiti di legge; tempo massimo di permanenza a bordo della
+ merce; quantitativi da consegnare (roll, pallet, volume, peso); capacità
+ delle diverse tipologie di mezzi della flotta; richiesta di equipaggiamenti
+ particolari sui mezzi per determinate merci, clienti; depositi di distribuzione
+/transit point/multidrop; vincoli di passaggio intermedio su magazzini per
+ il prelievo/scarico della merce; limitazione della durata dei viaggi; generazio
+ne di viaggi con concarico.
+ 
+\end_layout
+
+\begin_layout Description
+Valore
+\begin_inset space \space{}
+\end_inset
+
+del
+\begin_inset space \space{}
+\end_inset
+
+tempo: (Fonte: 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://it.wikipedia.org/wiki/Valore_del_tempo"
+target "http://it.wikipedia.org/wiki/Valore_del_tempo"
+
+\end_inset
+
+) (spesso indicato con la sigla "VOT", dall'inglese Value Of Time) è una
+ grandezza utilizzata negli studi relativi alla pianificazione dei trasporti.
+ Tale grandezza esprime il valore monetario associato al tempo impiegato
+ per muoversi.
+ Tale valore è naturalmente diverso in base al motivo dello spostamento
+ (es.
+ lavoro, affari, svago, salute) ed anche alla tipologia di chi si muove
+ (es.
+ un pendolare su una automobile o un autista di camion per il trasporto
+ delle merci).
+ Nella realtà, anche se poche persone si sono forse poste il problema di
+ quantificare in termini monetari quanto costa un'ora spesa per muoversi,
+ questa valutazione viene effettuata nella gran parte dei casi a livello
+ più o meno inconscio.
+ Un esempio è relativo alla scelta o meno di un percorso autostradale, per
+ il quale l'esborso monetario dovuto al pedaggio può essere in qualche modo
+ compensato dal risparmio di tempo che si ottiene a fronte della scelta
+ di un percorso su strade locali (più lento).
+ In qualche modo, in questo caso viene quindi effettuata una comparazione
+ (e quindi una valutazione) di tempo e valore monetario associato.
+ Vista l'importanza della corretta definizione di questa grandezza nei modelli
+ di simulazione dei flussi di traffico, numerose tesi di studio e articoli
+ tecnico-scientifici sono stati dedicati alla sua quantificazione.
+ Per avere delle grandezze di riferimento, si consideri che, al 2006, i
+ valori medi di tale grandezza (riferiti alla realtà italiana) sono i seguenti:
+ veicoli leggeri: 10-12 euro/ora; veicoli pesanti: 15-18 euro/ora.
+\end_layout
+
+\begin_layout Description
+Programmazione
+\begin_inset space \space{}
+\end_inset
+
+Ottimizzata
+\begin_inset space \space{}
+\end_inset
+
+Della
+\begin_inset space \space{}
+\end_inset
+
+Distribuzione: (Fonte: 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/programmazione_ottimizzata_distribuzione.php"
+target "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/programmazione_ottimizzata_distribuzione.php"
+
+\end_inset
+
+) 
+\series bold
+(Attenzione! E' un mezzo clone della voce PTV Intertour!)
+\series default
+ La distribuzione delle merci richiede una conoscenza dettagliata di ogni
+ cliente, dei suoi orari, delle sue infrastrutture, delle dimensioni degli
+ imballi, di eventuali equipaggiamenti necessari (sia propri che non).
+ Inoltre, le variazioni improvvise di consegne/ritiri devono essere gestite
+ con enorme celerità sempre facendo attenzione che tutte le variabili siano
+ sempre e comunque rispettate.
+ Con PTV Intertour tutte le variabili vengono gestite senza possibilità
+ di errori: uno strumento indispensabile per coadiuvare il lavoro degli
+ addetti.
+ E quando le problematiche iniziano ad essere molto complesse PTV Intertour
+ può suggerire diversi scenari per la generazione dei giri creati nell’ottica
+ di ottimizzare i costi generati dal trasporto.
+ La semplicità nell’utilizzo del software permette di gestire quelle variazioni
+ improvvise che, ad esempio, una distribuzione per la GDO richiede.
+ In pochi secondi, potranno essere variati i quantitativi, gli orari di
+ consegna, le aperture dei PDV, le capacità dei mezzi, inseriti/eliminati/scambi
+ati clienti da uno o più viaggi.
+ Con PTV Intertour potranno inoltre essere gestite quelle reti complesse
+ di distribuzione in cui sono presenti Transit Point, Cross Docking e Depositi
+ multipli.
+\end_layout
+
+\begin_layout Description
+Differenze
+\begin_inset space \space{}
+\end_inset
+
+tra
+\begin_inset space \space{}
+\end_inset
+
+i
+\begin_inset space \space{}
+\end_inset
+
+mapServer
+\begin_inset space \space{}
+\end_inset
+
+e
+\begin_inset space \space{}
+\end_inset
+
+gli
+\begin_inset space \space{}
+\end_inset
+
+xServer: 
+\series bold
+PTV MapServer:
+\series default
+ Desktop Developer Platform - la soluzione ideale per applicazioni desktop
+ locali.
+ 
+\series bold
+PTV xServer:
+\series default
+ Network Developer Platform - l’ultima frontiera di componenti server ideali
+ per applicazioni distribuite.
+\end_layout
+
+\begin_layout Description
+
+\series bold
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="3">
+<features>
+<column alignment="center" valignment="top" width="6cm">
+<column alignment="center" valignment="top" width="6cm">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV MapServer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV xServer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Software desktop/Applicazioni locale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Client-server architecture/Applicazioni distribuite
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mappe interattive e personalizzabili
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Geocodifica indirizzi e geocodifica inversa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calcolo percorsi, distanze e tempi di percorrenza, calcolo dei costi di
+ trasporto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calcolo percorsi specifico per mezzi pesanti
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calcolo pedaggi autostradali
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ottimizzazione sequenze (ottimizzazione di una sequenza di tappe (prese
+ e consegne) di un giro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Considerazione di parametri temporali (finestre di aperture e chiusura)
+ e trasportistici (quantità, vincoli operative, …) in fase di calcolo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pianificazione di giri (schedulazione di una flotta di veicoli o della forza
+ vendite sulla base di giri ottimizzati)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Matrici di distanze
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Materiale cartografico incluso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Geocodifica: (Fonte: 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/geocodifica_normalizzazione_anagrafiche.php"
+target "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/geocodifica_normalizzazione_anagrafiche.php"
+
+\end_inset
+
+)La geocodifica consente di attribuire ad un indirizzo presente in un database
+ (via, numero civico, località, provincia, nazione) una coppia di coordinate
+ geografiche.
+ La geocodifica consente il posizionamento degli indirizzi sulla cartografia
+ digitale e, quindi, la loro successiva visualizzazione e rielaborazione
+ per attività di analisi, di pianificazione, di geomarketing, etc.
+ La georeferenziazione con gli strumenti forniti dalla TPS-PTV viene eseguita
+ in modo automatico – veloce e accurato – su un database cartografico che,
+ basandosi sui dati Navteq, TeleAtlas e AND, consente di giungere a livelli
+ altissimi sia di matching che di accuratezza (fino al numero civico per
+ migliaia di strade e di località in Italia e in Europa).
+\end_layout
+
+\begin_layout Description
+PTV
+\begin_inset space \space{}
+\end_inset
+
+MobilityPlatform: (Fonte: 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.developer.ptv.de/index.php?id=104"
+target "http://www.developer.ptv.de/index.php?id=104"
+
+\end_inset
+
+)The PTV MobilityPlatform is a modular and open component-based application
+ framework.
+ Today, PTV Mobility Platform is deployed for service providers such as
+ car manufactures, wireless carriers and telematics service providers as
+ well as mobility portals.
+ It allows them to quickly and cost-efficiently develop innovative mobility
+ services across different communication channels.
+ The platform can be accessed at PTV’s hosting centre using the standard
+ Web Service interface via an XML-based SOAP protocol, or an AJAX interface
+ via JavaScript, to create: Traffic information portals Connected navigation
+ services Branch locators City map services Tracking & Tracing Several convenien
+t methods are available for mapping, routing, geocoding, traffic information
+ and custom-specified POI administration.
+\end_layout
+
+\end_body
+\end_document

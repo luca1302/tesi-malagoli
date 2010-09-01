@@ -110,22 +110,46 @@ FACOLTÀ DI SCIENZE MATEMATICHE, FISICHE E NATURALI
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset VSpace 15mm
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
 \align center
-\begin_inset VSpace 25mm
+\begin_inset VSpace 15mm
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 40mm
+\align center
+
+\series bold
+\size largest
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+un caso di studio
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 50mm
 \end_inset
 
  
@@ -383,7 +407,10 @@ cleardoublepage}
 
 \end_layout
 
-\begin_layout Chapter*
+\begin_layout Standard
+
+\series medium
+\size normal
 \begin_inset ERT
 status open
 
@@ -566,7 +593,7 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter
-Background
+Stato dell'arte
 \end_layout
 
 \begin_layout Standard
@@ -600,6 +627,19 @@ pagenumbering{arabic}
 \end_layout
 
 \begin_layout Section
+Lo scenario di Wincor Nixdorf
+\end_layout
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Standard
+In questa sezione è posibile trovare chiarimenti sui termini che verranno
+ usati nelle sezioni successive.
+\end_layout
+
+\begin_layout Subsection
 Me.R.Sy
 \end_layout
 
@@ -676,23 +716,108 @@ Area Store:
  mantenendo in loco la sola interfaccia con la barriera casse e le bilance.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Euristica di Clarke e Wright
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+L'euristica di Clarke and Wright
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "The-Vehicle-Routing-Problem"
+
+\end_inset
+
+ di cui si parla in questo elaborato di tesi è meglio conosciuta come 
+\begin_inset Quotes eld
+\end_inset
+
+algoritmo dei risparmi di Clarke and Wright
+\begin_inset Quotes erd
+\end_inset
+
+ (nome originale: 
+\begin_inset Quotes eld
+\end_inset
+
+Clarke and Wright Savings Algorithm
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+È senz'altro l'euristica più conosciuta nell'ambito del Vehicle Routing
+ Problem, ed è basato sull'idea di risparmio.
+\end_layout
+
+\begin_layout Standard
+Si suddivide in 2 fasi: il calcolo dei risparmi e la fusione delle rotte.
+\end_layout
+
+\begin_layout Standard
+Per quanto concerne il calcolo dei risparmi, quando due rotte 
+\begin_inset Formula $\left(0,\ldots,i,0\right)$
+\end_inset
+
+ e 
+\begin_inset Formula $\left(0,j,\ldots,0\right)$
+\end_inset
+
+ esiste un cammino tra 
+\emph on
+i
+\emph default
+ e 
+\emph on
+j
+\emph default
+ e la nuova rotta creata sarebbe ancora fattibile, allora viene computato
+ un'ammontare chiamato risparmio, che è pari a 
+\begin_inset Formula $s_{ij}=c_{i0}+c_{0j}-c_{ij}$
+\end_inset
+
+, ovvero la distanza che si è risparmiato tornando al deposito una volta
+ di meno.
+ I risparmi vengono quindi ordinati in modo non crecente.
+\end_layout
+
+\begin_layout Standard
+La fusione delle rotte può essere fatta in due modi: sequienziale o parallelo.
+\end_layout
+
+\begin_layout Standard
+Nel caso parallelo, partendo dal massimo risparmio fino al minimo si effettuano
+ le giunzioni delle rotte, sempre però cercando di rispettare i vincoli
+ di fattibilità.
+\end_layout
+
+\begin_layout Standard
+Nel caso sequenziale invece si esamina una rotta per volta, e si cerca tra
+ i risparmi, sempre dal maggiore al minore, se si può combinare la rotta
+ corrente con un altra rispettando i vincoli di fattibilità.
+\end_layout
+
+\begin_layout Standard
+I risultati sperimentali dicono che la versione parallela è più performante
+ di quella seuenziale, e quindi in questo elaborato quando ci si riferirà
+ a questa euristica si intenderà sempre la sua versione parallela.
+\end_layout
+
+\begin_layout Subsection
 Granular Tabu Search
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 PTV Intertour
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Server XTour
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Mefisto
 \end_layout
 
@@ -716,16 +841,60 @@ cleardoublepage}
 
 \end_layout
 
-\begin_layout Chapter
-Lo scenario di Wincor Nixdorf
-\end_layout
-
-\begin_layout Chapter
+\begin_layout Section
 Vehicle Routing Problem
 \end_layout
 
 \begin_layout Chapter
-Lo studio di fattibilità
+Architettura proposta
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Implementazione
+\end_layout
+
+\begin_layout Section
+Validazione risultati
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter*
@@ -810,6 +979,26 @@ bfseries
 rightmark}} 
 \backslash
 appendix 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
 \end_layout
 
 \end_inset
@@ -926,6 +1115,43 @@ target "http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.htm
 \end_inset
 
 )
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "The-Vehicle-Routing-Problem"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+The Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, P.
+ Toth, D.
+ Vigo, 
+\shape italic
+Society for Industrial and Apllied Mathematics
+\shape default
+, 2002
 \end_layout
 
 \begin_layout Standard

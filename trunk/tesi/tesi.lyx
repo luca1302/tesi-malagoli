@@ -717,6 +717,200 @@ Area Store:
 \end_layout
 
 \begin_layout Subsection
+Problema dell'instradamento dei veicoli
+\end_layout
+
+\begin_layout Standard
+Il problema dell'instradamento dei veicoli
+\end_layout
+
+\begin_layout Subsection
+Geocodifica
+\end_layout
+
+\begin_layout Standard
+La geocodifica
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "geocodifica"
+
+\end_inset
+
+ consente di attribuire ad un indirizzo presente in un database (via, numero
+ civico, località, provincia, nazione) una coppia di coordinate geografiche.
+ La geocodifica consente il posizionamento degli indirizzi sulla cartografia
+ digitale e, quindi, la loro successiva visualizzazione e rielaborazione
+ per attività di analisi, di pianificazione, di geomarketing, etc.
+\end_layout
+
+\begin_layout Subsection
+Rotte e rotte cartografiche
+\end_layout
+
+\begin_layout Standard
+Il percorso che un veicolo terrestre (es.
+ automobile,camion, treno, ecc.), navale, o aereo) compie partendo dal punto
+ di partenza a quello di arrivo, e passando nel suo tragitto attraverso
+ vari punti di controllo, non ha una denominazione univoca in italiano:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+giro
+\begin_inset Quotes erd
+\end_inset
+
+ o 
+\begin_inset Quotes eld
+\end_inset
+
+tragitto
+\begin_inset Quotes erd
+\end_inset
+
+ sono in genere le parole più appropriate.
+ Nei problemi di instradamento dei veicoli l'insieme dei veicoli potrebbe
+ tranquillamente essere composto anche da veicoli navali o aerei, senza
+ cambiare di molto la tenica di soluzione del problema stesso.
+ Per questo in questo elaborato si parlerà in modo generico di 
+\begin_inset Quotes eld
+\end_inset
+
+rotte
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Con il termine 
+\begin_inset Quotes eld
+\end_inset
+
+rotta
+\begin_inset Quotes erd
+\end_inset
+
+ si intende il percorso che un veicolo (terrestre navale, o aereo) compie
+ partendo dal punto di partenza a quello di arrivo, e passando nel suo tragitto
+ attraverso vari punti di controllo, che sono rappresentati dai punti di
+ consegna.
+\end_layout
+
+\begin_layout Standard
+Una rotta è quindi una sequenza ordinata di cui ogni elemento rappresenta
+ un punto di consegna.
+ Ogni rotta ha come primo elemento sempre un deposito tra quelli che sono
+ stati definiti.
+\end_layout
+
+\begin_layout Standard
+Una rotta cartografica è una rotta in cui i punti di consegna sono geocodificati.
+\end_layout
+
+\begin_layout Standard
+In questo elaborato ogni volta in cui si parla di rotte si intende rotte
+ cartografiche.
+\end_layout
+
+\begin_layout Subsubsection
+Punti di consegna
+\end_layout
+
+\begin_layout Standard
+Un punto di consegna rappresenta un cliente che fa richiesta ad un deposito
+ di un qualche tipo di bene o merce, e che deve essergli recapitato alle
+ sue coordinate.
+\end_layout
+
+\begin_layout Standard
+Ogni punto di consegna possiede un identificativo univoco ed una serie di
+ coordinate che permette di localizzarlo all'interno dello spazio del problema.
+ Nel caso lo spazio del problema sia rappresentato da mappe geografiche
+ generalmente si utilizzano coordinate geografiche, mentre nel caso di mappe
+ cartografiche digitali si può passare anche a tecniche di geocodifica.
+\end_layout
+
+\begin_layout Standard
+La definizione dell'unità di misura della merce è in genere definita o concordat
+a con l'uitlizzatore finale, quindi nel caso di merci possono essere pallet,
+ roll, ecc.
+ o anche confezioni singole.
+\end_layout
+
+\begin_layout Subsubsection
+Depositi
+\end_layout
+
+\begin_layout Standard
+Sono punti di consegna speciali, che hanno una richiesta nulla ( i depositi
+ non possono fare richieste tra di loro).
+ Ogni rotta parte sempre da uno dei depositi.
+ In questo elaborato sarà trattati solamente casi in cui vi è un solo deposito,
+ quindi sarà anche rispettata la convenzione utilizzata in letteratura di
+ indicare il deposito con l'identificativo 0.
+\end_layout
+
+\begin_layout Subsubsection
+Rotte 
+\begin_inset Quotes eld
+\end_inset
+
+aperte
+\begin_inset Quotes erd
+\end_inset
+
+ e rotte 
+\begin_inset Quotes eld
+\end_inset
+
+chiuse
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una rotta, per essere tale secondo la nostra definizione, deve sempre partire
+ dal deposito.
+ Una rotta si dice 
+\begin_inset Quotes eld
+\end_inset
+
+chiusa
+\begin_inset Quotes erd
+\end_inset
+
+ se il punto di arrivo è il deposito di partenza, 
+\begin_inset Quotes eld
+\end_inset
+
+aperta
+\begin_inset Quotes erd
+\end_inset
+
+ altrimenti.
+\end_layout
+
+\begin_layout Standard
+Nei problemi di instradamento dei veicoli classici normalmente si suppone
+ che i veicoli debbano partire e tornare al deposito di partenza.
+ Questo elaborato non si discosta dalla letteratura da questo punto di vista,
+ quindi quando si parla di rotte senza specificare diversamente si suppone
+ che si stia parlando di rotte 
+\begin_inset Quotes eld
+\end_inset
+
+chiuse
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
 Euristica di Clarke e Wright
 \end_layout
 
@@ -1107,10 +1301,13 @@ Sito Wincor Nixdorf, sezione Retail
 
 \begin_layout Standard
 (
-\begin_inset CommandInset href
-LatexCommand href
-name "http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html"
-target "http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html"
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html
+\end_layout
 
 \end_inset
 
@@ -1152,6 +1349,53 @@ The Vehicle Routing Problem
 Society for Industrial and Apllied Mathematics
 \shape default
 , 2002
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K3}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "geocodifica"
+
+\end_inset
+
+Sito TPS Italia, 
+\begin_inset Quotes eld
+\end_inset
+
+Geocodifica e normalizzazione delle anagrafiche
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/geocodifica_no
+rmalizzazione_anagrafiche.php
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard

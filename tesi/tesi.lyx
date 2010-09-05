@@ -644,14 +644,14 @@ Me.R.Sy
 \end_layout
 
 \begin_layout Standard
-"Me.R.Sy."(Merchandising Retail System)
+"Me.R.Sy."(Merchandising Retail System) [
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Sito-Wincor-Nixdorf"
 
 \end_inset
 
- è la suite gestionale di Wincor Nixdorf.
+] è la suite gestionale di Wincor Nixdorf.
  risponde alle esigenze delle aziende retail gestendo l’intera filiera della
  moderna distribuzione: dalla negoziazione col fornitore alla logistica
  della merce, dal punto di vendita al consumatore finale.
@@ -717,26 +717,18 @@ Area Store:
 \end_layout
 
 \begin_layout Subsection
-Problema dell'instradamento dei veicoli
-\end_layout
-
-\begin_layout Standard
-Il problema dell'instradamento dei veicoli
-\end_layout
-
-\begin_layout Subsection
 Geocodifica
 \end_layout
 
 \begin_layout Standard
-La geocodifica
+La geocodifica [
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "geocodifica"
 
 \end_inset
 
- consente di attribuire ad un indirizzo presente in un database (via, numero
+] consente di attribuire ad un indirizzo presente in un database (via, numero
  civico, località, provincia, nazione) una coppia di coordinate geografiche.
  La geocodifica consente il posizionamento degli indirizzi sulla cartografia
  digitale e, quindi, la loro successiva visualizzazione e rielaborazione
@@ -769,9 +761,16 @@ tragitto
 \end_inset
 
  sono in genere le parole più appropriate.
- Nei problemi di instradamento dei veicoli l'insieme dei veicoli potrebbe
- tranquillamente essere composto anche da veicoli navali o aerei, senza
- cambiare di molto la tenica di soluzione del problema stesso.
+ Nei problemi di instradamento dei veicoli (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VRP"
+
+\end_inset
+
+) l'insieme dei veicoli potrebbe tranquillamente essere composto anche da
+ veicoli navali o aerei, senza cambiare di molto la tenica di soluzione
+ del problema stesso.
  Per questo in questo elaborato si parlerà in modo generico di 
 \begin_inset Quotes eld
 \end_inset
@@ -1000,6 +999,93 @@ I risultati sperimentali dicono che la versione parallela è più performante
 \end_layout
 
 \begin_layout Subsection
+Euristiche e Metaeuristiche
+\end_layout
+
+\begin_layout Standard
+Sono state proposte diverse famiglie di euristiche per risolvere il problema
+ dell'instradamento dei veicoli (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VRP"
+
+\end_inset
+
+), che possono essere raggruppate in due insiemi distinti: 
+\end_layout
+
+\begin_layout Enumerate
+Le euristiche 
+\begin_inset Quotes eld
+\end_inset
+
+classiche
+\begin_inset Quotes erd
+\end_inset
+
+ (sviluppate principalmente tra gli anni '60 e inizio '90)
+\end_layout
+
+\begin_layout Enumerate
+Le 
+\begin_inset Quotes eld
+\end_inset
+
+metaeuristiche
+\begin_inset Quotes erd
+\end_inset
+
+ (sviluppate tra la metà degli anni '90 ed i primi anni del terzo millennio)
+\end_layout
+
+\begin_layout Standard
+Alla prima famiglia appartengono tutte quelle euristiche che quali compiono
+ una esplorazione limitata dell'albero delle scelte e delle combinazioni
+ possibili producendo però generalmente una soluzione comunque buona rispetto
+ a quella ottima.
+ A questa famiglia appartengono o comunque vi fanno appello gran parte delle
+ soluzioni commerciali oggigiorno esistenti, anche e sopratutto perchè questo
+ tipo di euristiche può essere esteso per tenere conto della diversità dei
+ vincoli riscontati in contesti reali.
+\end_layout
+
+\begin_layout Standard
+Nelle metaeuristiche l'enfasi è posta invece sull'esplorazione in profondità
+ dell'albero delle scelte, o almeno di quelle regioni dell'albero che appaiano
+ più promettenti.
+ Questi metodi tipicamente combinano tecniche sofisticate per la ricerca
+ dei vicini, la memorizzazione delle strutture dati e la ricombinazione
+ dei risultati.
+\end_layout
+
+\begin_layout Standard
+La qualità delle soluzioni così ottenute è più alta rispetto a quella delle
+ euristiche più classiche, ma richiede un maggior tempo per essere trovata.
+ Tra l'altro, queste procedure richiedono una configurazione abbastanza
+ precisa di alcuni parametri utilizzati dall'algoritmo, e che servono all'eurisi
+tica per adattarsi al contesto di impiego.
+ Questa configurazione in alcuni casi può diventare particolarmente problematica.
+\end_layout
+
+\begin_layout Standard
+Da un certo punto di vista quindi le metaeuristiche possono essere viste
+ come procedure molto sofisticate per il miglioramento della soluzione trovata,
+ e quindi come un semplice miglioramento delle euristiche classiche (su
+ cui spesso si appoggiano nella relatà dei fatti), ma in realtà aggiungono
+ qualche nuovo concetto ai vecchi approcci.
+ Uno di questi è una gestione più permissiva del risultato trovato: nelle
+ euristiche classiche spesso si passa infatti da una soluzione fattibile
+ all'altra, in una continua ricerca di miglioramento; nelle metaeuristiche
+ spesso invece la scelta della soluzione successiva può riguardare anche
+ soluzioni non fattibili, poichè si è visto che sperimentalmente questo
+ approccio permette di trovare più velocemente la soluzione giusta.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsection
 Granular Tabu Search
 \end_layout
 
@@ -1036,7 +1122,155 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "VRP"
+
+\end_inset
+
 Vehicle Routing Problem
+\end_layout
+
+\begin_layout Standard
+Il problema dell'instradamento dei veicoli ( in inglese 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, o VRP ) riguarda la determinazione di un insieme ottimale di rotte che
+ dovranno essere utilizzati da una flotta di veicoli per servire un dato
+ insieme di clienti.
+ Come è possibile intuire data la sua similitudine con il problema del commesso
+ viaggiatore, la sua complessità è elevata, apprteiene infatti all'insieme
+ dei problemi NP-hard.
+\end_layout
+
+\begin_layout Standard
+Come problema combinatorio e di ottimizzazione è un classico nella letteratura
+ della Ricerca Operativa: sono passati ormai più di 50 anni da quando Dantzig
+ e Ramser introdussero il problema nel 1959.
+\end_layout
+
+\begin_layout Standard
+Nella letteratura vi è una predisposizione a indicare questo problema con
+ il suo nome od il suo acronimo inglese.
+ Tale convenzione verrà d'ora in poi rispettata anche in questo elaborato.
+\end_layout
+
+\begin_layout Standard
+Il 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+ è un problema importante per il trasporto, la logistica e la distribuzione
+ [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Truck-Dispatching-Problem"
+
+\end_inset
+
+].
+ Lo scopo implicito è quello di minimizzare il costo per la distribuzione
+ delle merci, quindi è chiaro che vi è anche molto interesse industriale,
+ non solo di ricerca, su questo problema.
+\end_layout
+
+\begin_layout Standard
+A partire dall'articolo di Dantiz e Ramster e successivamente quello di
+ Clarke e Wright (nel 1964), furono quindi concepiti centinaia di modelli
+ e algoritmi furono proposti per trovare una soluzione il più possibile
+ ottima, ma data l'elevata complessità del problema stesso finora sono state
+ prodotte solo euristiche che producono approssimazioni più o meno precise
+ in un tempo ragionevole.
+\end_layout
+
+\begin_layout Standard
+La versione classica del VRP prevede che l'intera flotta parta da un unico
+ deposito, visiti una serie di punti di consegna, e poi ritorni al deposito
+ di partenza.
+ Inoltre tutte le richieste dei clienti sono deterministiche, conosciute
+ in anticipo, e non possono essere suddivise tra i mezzi.
+ Esistono però alcune variazioni, più o meno note, di grande interesse pratico:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Capacitated VRP (CVRP)
+\series default
+: in questa versione i mezzi che compongono la flotta hanno una capacità
+ limitata ma uguale per tutti, e che quindi funge da vincolo nel calcolo
+ della soluzione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Multi-Capacitated VRP (MCVRP): 
+\series default
+come nel CVRP i mezzi hanno una capacità limitata, ma le capacità dei singoli
+ veicoli possono essere diverse tra loro
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+VRP with Time Window (VRPTW):
+\series default
+ valgono tutti vincoli descritti per il CVRP, e si aggiunge un vincolo sull'inte
+rvallo di tempo in cui la merce deve essere consegnata.
+ Ogni cliente espone un intervallo di tempo in cui è 
+\begin_inset Quotes eld
+\end_inset
+
+aperto
+\begin_inset Quotes erd
+\end_inset
+
+, e quindi ricettivo alla consegna della merce, chiamata finestra di consegna.
+ Beni consegnati al di fuori della finestra di consegna non vengono raccolti
+ e contano come consegna mancata.
+ Il problema quindi si arrichisce di complessità perchè non è più importante
+ coprire solamente tutti i clienti con un dispendio minimo, ma bisogna anche
+ assicurarsi di consegnare la merce in tempo, in modo da minimizzare l'ammontare
+ di merce non consegnata.
+\end_layout
+
+\begin_layout Standard
+Per ognuna di queste è prevista sia la versione 
+\begin_inset Quotes eld
+\end_inset
+
+simmetrica
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero dove gli archi hanno lo stesso costo sia in un verso che nell'altro,
+ che quella 
+\begin_inset Quotes eld
+\end_inset
+
+asimmetrica
+\begin_inset Quotes erd
+\end_inset
+
+, dove invece il costo dell'arco dipende anche dal verso in cui lo si percorre.
+ In questo elaborato, a meno che non specificato esplicitamente, si intendono
+ sempre le versioni asimmetriche di tali problemi, in quanto le versioni
+ simmetriche non sono che un caso particolare di quelle asimmetriche.
+\end_layout
+
+\begin_layout Standard
+Esistono anche variazioni che contemplano l'utilizzo di più depositi invece
+ di averne uno solo centralizzato, ma non saranno descritte in questo elaborato.
 \end_layout
 
 \begin_layout Chapter
@@ -1391,6 +1625,48 @@ status collapsed
 
 http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/geocodifica_no
 rmalizzazione_anagrafiche.php
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K4}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Truck-Dispatching-Problem"
+
+\end_inset
+
+"The Truck Dispatching Problem", Dantzig, G.B., Ramser, J.H.
+ (1959).
+ Management Science 6 (1): 80–91.
+ doi:10.1287/mnsc.6.1.80.
+ Retrieved 2008-04-17.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://links.jstor.org/pss/2627477
 \end_layout
 
 \end_inset

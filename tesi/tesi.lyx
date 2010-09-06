@@ -1081,10 +1081,6 @@ Da un certo punto di vista quindi le metaeuristiche possono essere viste
  approccio permette di trovare più velocemente la soluzione giusta.
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Subsection
 Granular Tabu Search
 \end_layout
@@ -1093,11 +1089,358 @@ Granular Tabu Search
 PTV Intertour
 \end_layout
 
-\begin_layout Subsection
-Server XTour
+\begin_layout Standard
+PTV Intertour non è un'applicativo, ma bensì una suite di programmi specializzat
+i per la pianificazione e l'ottimizzazione dei giri per la grande distribuzione
+ [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "PTV-Intertour"
+
+\end_inset
+
+].
+ Ogni software ha alcune funzionalità leggermente diverse che lo rende adatto
+ ad uno specifico compito.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features>
+<column alignment="center" valignment="top" width="30page%">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Funzionalità
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Prodotto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pianificazione automatica dei giri di distribuzione
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Intertour Standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Master route planning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Intertour Strategy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Location planning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Intertour Strategy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pianificazione delle zone di vendita e ottimizzazione della rete commerciale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Map&Market
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componenti server per l’integrazione di funzionalità geografiche e di ottimizzaz
+ione dei percorsi in applicativi distribuiti
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV xServer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Qui di seguito approfondiremo solo gli applicativi che sono interessanti
+ per questo elaborato.
+\end_layout
+
+\begin_layout Subsubsection
+PTV Intertour Standard
+\end_layout
+
+\begin_layout Standard
+PTV Intertour è un software che permette di risolvere complessi scenari
+ di distribuzione e raccolta merci sul territorio.
+ Suggerendo una programmazione ottimizzata dei viaggi e degli impieghi della
+ flotta veicolare, sia su base giornaliera che settimanale, consente di
+ risparmiare fino al 20% dei costi di distribuzione.
+ Per garantire risultati di questo tipo Intertour include un framework per
+ l'ottimizzazione (Mephisto, vedi pag.
+ 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Mephisto"
+
+\end_inset
+
+) e ed una dettagliata cartografia digitale su cui viene effettuato il calcolo
+ delle distanze stradali e dei tempi di percorrenza tra le destinazioni.
+ PTV Intertour può generare automaticamente i viaggi assegnando fermate
+ e mezzi in pochi secondi, oltre a permettere anche di aggiungere le fermate
+ una ad una senza compromettere l'efficienza dei viaggi nel complesso.
+ E' possibile tuttavia manipolare la soluzione trovata per adattarla meglio
+ alle proprie esigenze, aggiungendo,togliendo o scambiando fermate tra i
+ viaggi, o addirittura aggiungere nuove fermate non precedentemente pianificate
+ all'interno di un giro.
+ Nella composizione dei viaggi PTV Intertour tiene conto di tutti i possibili
+ vincoli sia temporali, sia strutturali che logistici: orari di servizio
+ per la consegna/ritiro con più fasce temporali giornaliere; tempi di turnazione
+ dei mezzi; data e orari di disponibilità della merce; tempi di guida nel
+ rispetto dei limiti di legge; tempo massimo di permanenza a bordo della
+ merce; quantitativi da consegnare (roll, pallet, volume, peso); capacità
+ delle diverse tipologie di mezzi della flotta; richiesta di equipaggiamenti
+ particolari sui mezzi per determinate merci, clienti; depositi di distribuzione
+/transit point/multidrop; vincoli di passaggio intermedio su magazzini per
+ il prelievo/scarico della merce; limitazione della durata dei viaggi; generazio
+ne di viaggi con concarico.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+PTV xServer
+\end_layout
+
+\begin_layout Standard
+I PTV xServer basilarmente offrono le stesse funzionalità dei componenti
+ della suite Intertour, ma usando un'architettura orientata ai servizi.
+ Questo comporta una serie di indiscutibili vantaggi:
+\end_layout
+
+\begin_layout Enumerate
+permettono di ideare soluzioni con un'occhio di riguardo per la scalabilità.
+ Gli xServer sono indipendenti l’uno dall’altro, e grazie alla tecnologia
+ cluster, si può espandere il pool di macchine utilizzate in qualsiasi momento
+ e quindi soddisfare eventuali richieste di prestazioni maggiori
+\end_layout
+
+\begin_layout Enumerate
+sono compatibili con le tecnologie attuali di sviluppo, tutti i componenti
+ hanno interfaccia standard XML/SOAP e questo significa che possono essere
+ facilmente integrati in sistemi ed applicativi 
+\end_layout
+
+\begin_layout Enumerate
+i bundle degli xServer sono completamente standalone, e non necessitano
+ di nessuna installazione
+\end_layout
+
+\begin_layout Enumerate
+mantengono performance elevate poichè l'integrazione dei moduli avviene
+ sì tramite un framework di comunicazione scritto in Java ma i singoli moduli
+ sono scritti in linguaggio C++ 
+\end_layout
+
+\begin_layout Enumerate
+sono multipiattaforma, in quanto possono essere installati in ambiente Windows
+ o Linux e sono in grado di sfruttare i sistemi multiprocessore 
+\end_layout
+
+\begin_layout Enumerate
+hanno un approccio nativamente Web 2.0, con interattività garantita grazie
+ all’utilizzo della tecnologia AJAX
+\end_layout
+
+\begin_layout Enumerate
+vi è un intero portale completamente dedicato al prodotto (“PTV Developer
+ Zone”) dove consultare tutte le ultime novità sui prodotti disponibili,
+ tutte le statistiche sul materiale cartografico, scaricare aggiornamenti
+ e nuove release, consultare FAQ ed ottenere supporto
+\end_layout
+
+\begin_layout Standard
+Qui di seguito riportiamo i 7 server, ognuno con il compito ad esso associato:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xMap:
+\series default
+ si occupa della navigazione dinamica delle mappe AJAX e rappresentazione
+ interattiva di percorsi, informazioni sul traffico, veicoli e, più in generale,
+ POI, punti, polilinee, aree, immagini, etc.
+ Fornisce diversi preconfigurati profili della mappa che poi potranno essere
+ personali (applicazione mapMaker) Numerose opzioni di configurazione per
+ colori, testi, icone,… 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xLocate:
+\series default
+ si occupa della geocodifica e validazione di indirizzi (dall’indirizzo
+ alle coordinate).
+ Supporta differenti formati di coordinate geografiche (WGS-84, GeoDecimal,
+ GeoMinSec, Mercator etc.), permette la geocodifica inversa (dalle coordinate
+ all’indirizzo).
+ Possiede un modalità batch per la geocodifica di grandi quantità di indirizzi
+ e differenti metodi di ricerca che possono essere combinati l’uno con l’altro
+ (binary, fuzzy, phonetic) 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xRoute:
+\series default
+ possiede tutte le funzionalità legate al calcolo di percorsi con più tappe
+ intermedie, distanze e tempi di percorrenza (generazione della lista descrittiv
+a del percorso e dei dati necessari alla rappresentazione del percorso su
+ mappa).
+ Permette inoltre di calcolare i percorsi per diversi tipologie di veicolo
+ tenendo conto di pedaggi autostradali.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xSequence:
+\series default
+ ottimizzazione di una sequenza di tappe nel rispetto di vincoli operativi
+ quali finestre orarie e molti altri parametri propri del mondo del trasporto
+ e della logistica (carico/scarico, quantità, categorie di veicoli,…).
+ La differenza principale rispetto a xRoute sta nel fatto che viene considerata
+ una sola sequenza, non tutti i percorsi contemporaneamente
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xDima:
+\series default
+ calcolo ottimizzato di matrici di distanza (tempi e distanze).
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xCluster:
+\series default
+ utile per la creazione di gruppi omogenei di punti in funzione di parametri
+ geografici e altri criteri.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xTour:
+\series default
+ ottimizzazione dei giri in funzione di parametri quali la capacità dei
+ veicoli, le finestre temporali di aperture e chiusura, etc.
+ Gli ordini vengono suddivisi in giri ottimizzati nel rispetto dei vincoli
+ riducendo i chilometri percorsi, il tempo e il numero di veicoli necessari.
+ La differenza principale ripetto a xCluster sta nel fatto che xTour non
+ si occupa di raggruppare i clienti in base alle consegne periodiche, mentre
+ la differenza rispetto a xRoute è rappresentata dalla strategia di ottimizzazio
+ne, in particolare xTour tiene conto anche delle finestre di consegna.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mephisto"
+
+\end_inset
+
 Mefisto
 \end_layout
 
@@ -1667,6 +2010,52 @@ status collapsed
 \begin_layout Plain Layout
 
 http://links.jstor.org/pss/2627477
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K5}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "PTV-Intertour"
+
+\end_inset
+
+Sito PTV, sezione 
+\begin_inset Quotes eld
+\end_inset
+
+Pianificazione ed ottimizzazione dei giri
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/
 \end_layout
 
 \end_inset

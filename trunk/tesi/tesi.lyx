@@ -1082,6 +1082,16 @@ Da un certo punto di vista quindi le metaeuristiche possono essere viste
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GENIUS"
+
+\end_inset
+
+GENIUS
+\end_layout
+
+\begin_layout Subsection
 Granular Tabu Search
 \end_layout
 
@@ -1261,7 +1271,7 @@ PTV Intertour è un software che permette di risolvere complessi scenari
  flotta veicolare, sia su base giornaliera che settimanale, consente di
  risparmiare fino al 20% dei costi di distribuzione.
  Per garantire risultati di questo tipo Intertour include un framework per
- l'ottimizzazione (Mephisto, vedi pag.
+ l'ottimizzazione (MEFISTO, vedi pag.
  
 \begin_inset CommandInset ref
 LatexCommand pageref
@@ -1355,9 +1365,6 @@ xMap:
  si occupa della navigazione dinamica delle mappe AJAX e rappresentazione
  interattiva di percorsi, informazioni sul traffico, veicoli e, più in generale,
  POI, punti, polilinee, aree, immagini, etc.
- Fornisce diversi preconfigurati profili della mappa che poi potranno essere
- personali (applicazione mapMaker) Numerose opzioni di configurazione per
- colori, testi, icone,… 
 \end_layout
 
 \begin_layout Enumerate
@@ -1441,7 +1448,130 @@ name "sub:Mephisto"
 
 \end_inset
 
-Mefisto
+MEFISTO
+\end_layout
+
+\begin_layout Standard
+MEFISTO (Metaheuristics Framework for Information Systems in Transport Optimisat
+ion) [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Mefisto-bib"
+
+\end_inset
+
+] è, come dice il nome, un framework per l'implementazione di metaeuristiche,
+ disegnato dai suoi autori ed ora sfruttato da PTV per le sue soluzioni
+ commerciali.
+\end_layout
+
+\begin_layout Standard
+Le sviluppo di MEFISTO è dovuto al fatto che fino a poco tempo fa i requisiti
+ per un componente business in ambito VRP erano:
+\end_layout
+
+\begin_layout Itemize
+la correttezza del modello, che doveva essere più vicino alla realtà possibile
+\end_layout
+
+\begin_layout Itemize
+il tempo di calcolo, che doveva essere il minimo possibile o comunque un
+ ammontare ragionevole
+\end_layout
+
+\begin_layout Standard
+Questo aveva portato a vincoli più stringenti come distanze asimmetriche,
+ finestre temporali diverse per ogni utente, tempi di attesa massimi, eterogneit
+à della flotta, vincoli di precedenza, ecc, mentre i tempi di calcolo venivano
+ ridotti affidandosi ad eursitiche particolarmente rapide e ad una successiva
+ fase di post-ottimizzazione (come succedeva nel caso di GENIUS, vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GENIUS"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Questa classe di problemi, in letteratura conosciuta come 'problemi 
+\begin_inset Quotes eld
+\end_inset
+
+ricchi
+\begin_inset Quotes erd
+\end_inset
+
+ di instradamento dei veicoli' (nome originale: 
+\begin_inset Quotes eld
+\end_inset
+
+rich veihicle routing problems
+\begin_inset Quotes erd
+\end_inset
+
+), ha avuto particolare fortuna negli anni passati.
+\end_layout
+
+\begin_layout Standard
+Recentemente però ha cominciato ad emergere un alteriore requisito, ovvero
+ la qualità della soluzione stessa, richiesta che si aggiungeva ai precedenti
+ vincoli posti.
+ Contemporaneamente l'avanzamento tecnologico dell'hardware aveva permesso
+ di ottenere dei tempi di calcolo sufficientemente brevi a fronte di una
+ buona qualità della soluzione.
+ Questi fattori portarono quindi ad un cambio di atteggiamento verso il
+ problema, e permesso ad approcci più sofisticati, come le metaeuristiche,
+ di poter essere usate su ampia scala, e non solo per soddisfare i bisogni
+ del singolo cliente.
+\end_layout
+
+\begin_layout Standard
+Di metaeuristiche però non ve n'era una sola, e la ricerca in questo campo
+ intanto continuava insesorabilmente.
+ Per mostrare un comportamento trasparente rispetto alla particolare metauristic
+a utilizzata e mantenere compatibilità sulle interfacce, era necessario
+ sviluppare una framework più generale.
+ Da questa idea nacque MEFISTO.
+\end_layout
+
+\begin_layout Standard
+L'intero framework è scritto in C++ e si compone di un'architettura suddivisa
+ in 3 livelli:
+\end_layout
+
+\begin_layout Enumerate
+il primo livello è sostanzialmente indipendente dall'applicazione e dalla
+ metaeuristica implementata.
+ Fornisce soltanto le funzioni principali e le strutture dati che servono
+ a rappresentare le entità fondamentali di qualsiasi metaeuristica.
+ Fanno parte di questo livello le classi che rappresentano il generatore
+ di mosse, le mosse stesse, lo spazio delle soluzioni e la ricerca locale
+\end_layout
+
+\begin_layout Enumerate
+il secondo livello contiene tutte le classi che servono alla specifica metaeuris
+tica, ed ereditano le funzionalità dalle classi del primo livello
+\end_layout
+
+\begin_layout Enumerate
+il terzo livello è fortemente dipendente dall'applicazione utilizzata e
+ dal tipo di problema trattato.
+ Ad esempio, per quanto riguarda l'ambito VRP, questo livello dovrà contenere
+ le classi rappresentanti le mosse per scambiare nodi ed archi
+\end_layout
+
+\begin_layout Standard
+Nell'articolo originale vengono inoltre riportati i risultati sperimentali
+ ottenuti in un caso reale e utilizzando un'estensione di Granular Tabu
+ Search.
+\end_layout
+
+\begin_layout Standard
+Dalle informazioni che ci sono state fornite da TPS e PTV questa metaeuristica
+ doveva essere molto simile a quella utilizzata da PTV Intertour Standard
+ e dagli xServer.
 \end_layout
 
 \begin_layout Standard
@@ -2061,6 +2191,41 @@ http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/
 \end_inset
 
 )
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K6}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Mefisto-bib"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+MEFISTO: A Pragmatic Metaheuristic Framework for Adaptive Search with a
+ Special Application to Pickup and Delivery Transports
+\begin_inset Quotes erd
+\end_inset
+
+,A Cardeneo, W Heid, F Radaschewski et al., Operations Research Proceedings
+ 2008: Selected Papers of the Annual International Conference of the German
+ Operations Research Society (GOR) University of Augsburg, September 3-5,
+ 2008
 \end_layout
 
 \begin_layout Standard

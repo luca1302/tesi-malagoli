@@ -36,6 +36,7 @@
 \tracking_changes false
 \output_changes false
 \author "" 
+\author "" 
 \end_header
 
 \begin_body
@@ -73,7 +74,7 @@ target "http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/ptv_
  alle proprie esigenze, aggiungendo,togliendo o scambiando fermate tra i
  viaggi, o addirittura aggiungere nuove fermate non precedentemente pianificate
  all'interno di un giro.
- Nella composizione dei viaggi PTV intertour tiene conto di tutti i possibili
+ Nella composizione dei viaggi PTV Intertour tiene conto di tutti i possibili
  vincoli sia temporali, sia strutturali che logistici: orari di servizio
  per la consegna/ritiro con più fasce temporali giornaliere; tempi di turnazione
  dei mezzi; data e orari di disponibilità della merce; tempi di guida nel

@@ -1184,7 +1184,53 @@ reference "GENIUS-bib"
 
 \end_inset
 
-]
+] è un'euristica utilizzata per risolvere il problema del commesso viaggiatore,
+ ma che è stata impiegata anche in campo VRP da TabuRoute (vedi cap.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TabuRoute"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+L'acronimo in realtà descrive due euristiche, 
+\begin_inset Quotes eld
+\end_inset
+
+GENeralized Insertion
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+Ustring and Stringing
+\begin_inset Quotes erd
+\end_inset
+
+, e che servono ognuna per un passo specifico di questo algoritmo a due
+ fasi.
+\end_layout
+
+\begin_layout Standard
+La prima si occupa, dato un nodo, di inserirlo all'interno di una sequenza
+ circolare (che di norma è una rotta).
+ 
+\end_layout
+
+\begin_layout Standard
+La seconda euristica, in un secondo momento, si occupa di migliorare la
+ rotta trovata, e funge perciò da port-ottimizzazione.
+\end_layout
+
+\begin_layout Standard
+Gli schemi con cui queste euristiche aggiungono o tolgono nodi dalla rotta
+ concedono determinate caratteristiche all'algoritmo, e quindi vengono analizzat
+e di seguito.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1197,6 +1243,193 @@ name "sub:GENI"
 GENI
 \end_layout
 
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+GENeralized Insertion
+\begin_inset Quotes erd
+\end_inset
+
+ viene utilizzata per inizializzare la rotta.
+ 
+\end_layout
+
+\begin_layout Standard
+L'inserzione non viene fatta in maniera casuale ma segue degli schemi, che
+ andiamo ad illustrare:
+\end_layout
+
+\begin_layout Enumerate
+Nel primo schema di inserzione si suppone che il nodo 
+\emph on
+n
+\emph default
+ debba essere inserito tra 
+\emph on
+
+\begin_inset Formula $n{}_{i}$
+\end_inset
+
+
+\emph default
+ ed 
+\begin_inset Formula $n{}_{j}$
+\end_inset
+
+ (diversi tra loro), e che esista un nodo 
+\emph on
+
+\begin_inset Formula $n_{k}$
+\end_inset
+
+
+\emph default
+ diverso dagli altri due.
+ Non è necessario che i due nodi siano adiacenti, come si vede bene nella
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Inserzione-di-tipo-1"
+
+\end_inset
+
+.
+ Come si vede alcuni segmenti della sequenza sono stati 
+\begin_inset Quotes eld
+\end_inset
+
+invertiti
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Notare che questo schema si riduce ad un inserzione classica nel caso in
+ cui 
+\emph on
+
+\begin_inset Formula $n{}_{i}=n_{i+1},n_{j}=n_{j+1},n_{k}=n_{k+1}$
+\end_inset
+
+.
+
+\emph default
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Inserzione-di-tipo-1"
+
+\end_inset
+
+Inserzione di tipo 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Il secondo schema assomiglia al primo, ma questa volta si suppone anche
+ l'esistenza di un nodo 
+\begin_inset Formula $n{}_{l}$
+\end_inset
+
+diverso dagli altri.
+ notare che in questo caso le 
+\begin_inset Quotes eld
+\end_inset
+
+inversioni
+\begin_inset Quotes erd
+\end_inset
+
+ nella rotta sono numerose, come si vede in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Inserzione-di-tipo-2"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Inserzione-di-tipo-2"
+
+\end_inset
+
+Inserzione di tipo 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Degno di nota è il fatto che, per come lavora quest'euristica, non si può
+ partire da una rotta vuota, ma bensì devono esserci almeno 3 nodi.
+ Questo problema è dovuto alla struttura degli schemi di inserzione, ed
+ è possibile risolverlo aggiungendo nodi casulamente alla rotta fino ad
+ arrivare a 3.
+ Un'altra caratteristica che deriva dall'uso di questi schemi è la non necessità
+ di un componente che perturbi la soluzione, poichè le 
+\begin_inset Quotes eld
+\end_inset
+
+inversioni
+\begin_inset Quotes erd
+\end_inset
+
+ negli schemi servono proprio a questo.
+\end_layout
+
+\begin_layout Standard
+Visto che esitono 2 schemi di inserzione, viene sempre scelto l'inserimento
+ che porta alla costruzione di una rotta di costo minimo tra le alternative.
+\end_layout
+
 \begin_layout Subsubsection
 \begin_inset CommandInset label
 LatexCommand label
@@ -1205,6 +1438,103 @@ name "sub:US"
 \end_inset
 
 US
+\end_layout
+
+\begin_layout Standard
+In modo iterativo 
+\begin_inset Quotes eld
+\end_inset
+
+Unstringing and Stringing
+\begin_inset Quotes erd
+\end_inset
+
+, toglie un nodo dalla rotta e lo reiserisce, sempre usando gli schemi di
+ GENI per il reinserimento.
+ La rimozione dei nodi dalla rotta non viene fatto a caso, ma seguendo determina
+ti schemi, che come si può notare dalla figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rimozione-di-tipo-1"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rimozione-di-tipo-2"
+
+\end_inset
+
+, altro non sono che l'inserso dei passi di inserzione descritti nel paragrafo
+ precedente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rimozione-di-tipo-1"
+
+\end_inset
+
+Rimozione di tipo 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rimozione-di-tipo-2"
+
+\end_inset
+
+Rimozione di tipo 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1310,6 +1640,11 @@ L'implementazione di Granular Tabu Search quindi riprende quella di TabuRoute
  e vi aggiunge quest'ultima caratteristica, diminuendo così i tempi di calcolo.
 \end_layout
 
+\begin_layout Standard
+Nella versione originale sono considerate solo mosse di tipo OR1 o OR2 per
+ lo scambio dei nodi all'interno delle rotte.
+\end_layout
+
 \begin_layout Subsection
 PTV Intertour
 \end_layout
@@ -1330,6 +1665,13 @@ reference "PTV-Intertour"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features>
@@ -1461,6 +1803,15 @@ PTV xServer
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -1780,7 +2131,7 @@ il terzo livello è fortemente dipendente dall'applicazione utilizzata e
 \begin_layout Standard
 Nell'articolo originale vengono inoltre riportati i risultati sperimentali
  ottenuti in un caso reale e utilizzando un'estensione di Granular Tabu
- Search.
+ Search, a cui sono state aggiunte anche mosse di swap e A-B.
 \end_layout
 
 \begin_layout Standard

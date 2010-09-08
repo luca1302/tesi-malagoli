@@ -1003,19 +1003,19 @@ Euristiche e Metaeuristiche
 \end_layout
 
 \begin_layout Standard
-Sono state proposte diverse famiglie di euristiche per risolvere il problema
- dell'instradamento dei veicoli (vedi 
+Sono state proposte diverse approcci basati su euristiche per risolvere
+ il problema dell'instradamento dei veicoli (vedi 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "VRP"
 
 \end_inset
 
-), che possono essere raggruppate in due insiemi distinti: 
+), che possono essere raggruppati in due insiemi distinti: 
 \end_layout
 
 \begin_layout Enumerate
-Le euristiche 
+Quelli basati su euristiche 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1027,7 +1027,7 @@ classiche
 \end_layout
 
 \begin_layout Enumerate
-Le 
+Quelli basati su 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1039,20 +1039,25 @@ metaeuristiche
 \end_layout
 
 \begin_layout Standard
-Alla prima famiglia appartengono tutte quelle euristiche che quali compiono
- una esplorazione limitata dell'albero delle scelte e delle combinazioni
- possibili producendo però generalmente una soluzione comunque buona rispetto
- a quella ottima.
- A questa famiglia appartengono o comunque vi fanno appello gran parte delle
- soluzioni commerciali oggigiorno esistenti, anche e sopratutto perchè questo
- tipo di euristiche può essere esteso per tenere conto della diversità dei
- vincoli riscontati in contesti reali.
+Le euristiche compiono una esplorazione limitata dell'albero delle scelte
+ e delle combinazioni possibili producendo però generalmente una soluzione
+ comunque buona rispetto a quella ottima.
+ Gran parte delle soluzioni commerciali oggigiorno esistenti appartengono
+ alla prima famiglia, anche e sopratutto perchè questo tipo di euristiche
+ può essere esteso per tenere conto della diversità dei vincoli riscontati
+ in contesti reali.
 \end_layout
 
 \begin_layout Standard
-Nelle metaeuristiche l'enfasi è posta invece sull'esplorazione in profondità
- dell'albero delle scelte, o almeno di quelle regioni dell'albero che appaiano
- più promettenti.
+Vedremo invece come le soluzioni analizzate in quest'elaborato (PTV Intertour
+ Standard e gli xServer) appantegono alla seconda famiglia, rappresentando
+ così un'evoluzione rispetto al panorama generale.
+\end_layout
+
+\begin_layout Standard
+Nelle metaeuristiche infatti l'enfasi è posta invece sull'esplorazione in
+ profondità dell'albero delle scelte, o almeno di quelle regioni dell'albero
+ che appaiano più promettenti.
  Questi metodi tipicamente combinano tecniche sofisticate per la ricerca
  dei vicini, la memorizzazione delle strutture dati e la ricombinazione
  dei risultati.
@@ -1068,17 +1073,97 @@ tica per adattarsi al contesto di impiego.
 \end_layout
 
 \begin_layout Standard
-Da un certo punto di vista quindi le metaeuristiche possono essere viste
- come procedure molto sofisticate per il miglioramento della soluzione trovata,
- e quindi come un semplice miglioramento delle euristiche classiche (su
- cui spesso si appoggiano nella relatà dei fatti), ma in realtà aggiungono
- qualche nuovo concetto ai vecchi approcci.
- Uno di questi è una gestione più permissiva del risultato trovato: nelle
- euristiche classiche spesso si passa infatti da una soluzione fattibile
- all'altra, in una continua ricerca di miglioramento; nelle metaeuristiche
- spesso invece la scelta della soluzione successiva può riguardare anche
- soluzioni non fattibili, poichè si è visto che sperimentalmente questo
- approccio permette di trovare più velocemente la soluzione giusta.
+Nonostante tutto però la differenza tra euristiche e metaeuristiche sembra
+ risiedere nel fatto che le seconde posseggono una serie di accorgimenti
+ per evitare di rimanere bloccati in minimi locali mediante una gestione
+ più permissiva del risultato trovato: nelle euristiche classiche spesso
+ si passa infatti da una soluzione fattibile all'altra, in una continua
+ ricerca di miglioramento; nelle metaeuristiche spesso invece la scelta
+ della soluzione successiva può riguardare anche soluzioni non fattibili,
+ poichè si è visto che sperimentalmente questo approccio permette di trovare
+ più velocemente la soluzione giusta.
+\end_layout
+
+\begin_layout Subsection
+Tabu Search
+\end_layout
+
+\begin_layout Standard
+Tabu Search è una metaeuristica molto famosa all'interno della'mbietne della
+ Ricerca Operativa, e diverse sue estensioni sono state usate anche in ambito
+ VRP.
+\end_layout
+
+\begin_layout Standard
+In Tabu Search vengono analizzate sequenze di soluzioni in modo iterativo:
+ ad ogni iterazione vengono prodotte diverse soluzioni da una variazione
+ della soluzione ottenuta al passo precedente.
+ Da questo insieme viene scelta la configurazione 
+\begin_inset Quotes eld
+\end_inset
+
+migliore
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero quella che porta più vicino all'obiettivo che si vuole raggiungere.
+\end_layout
+
+\begin_layout Standard
+Per evitare la creazione di cicli nella scelta delle soluzioni, le soluzioni
+ che sono state esaminate recentemente sono contrassegnate come 
+\begin_inset Quotes eld
+\end_inset
+
+tabù
+\begin_inset Quotes erd
+\end_inset
+
+, il che significa che per un certo numero di iterazioni non possono essere
+ più prese in considerazione.
+\end_layout
+
+\begin_layout Standard
+L'approccio basilare di questa metaeuristica, nell'arco di una decina d'anni,
+ è stato utilizzato da diversi autori, i quali lo hanno in genere arricchito
+ di diverse caratteristiche e migliorie.
+ Ad esempio, per risparmiare memoria, alcune estensioni di Tabu Search non
+ memorizzano le soluzioni interamente, ma solo qualche attributo.
+\end_layout
+
+\begin_layout Standard
+Tra gli approcci più famosi o innovativi ricordiamo:
+\end_layout
+
+\begin_layout Itemize
+TabuRoute, descritto poco più avanti in questo documento (cap.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TabuRoute"
+
+\end_inset
+
+).
+ Concepito da Gendreau, Laporte e Hertz, integra al suo interno l'euristica
+ GENIUS (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GENIUS"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Adaptive Memory, di Rochard e Taillard, poichè intriduce il concetto di
+ memoria adattiva per potenziare glia pprocci basati su Tabu Search
+\end_layout
+
+\begin_layout Itemize
+Granular Tabu Search, di Toth e Vigo, poichè tuttora viene ritenuto un ottimo
+ approccio per risolvere l'instradamento dei veicoli
 \end_layout
 
 \begin_layout Subsection
@@ -1091,8 +1176,138 @@ name "sub:GENIUS"
 GENIUS
 \end_layout
 
+\begin_layout Standard
+GENIUS [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "GENIUS-bib"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GENI"
+
+\end_inset
+
+GENI
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:US"
+
+\end_inset
+
+US
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TabuRoute"
+
+\end_inset
+
+TabuRoute
+\end_layout
+
+\begin_layout Standard
+Tra gli approcci derivati da Tabu Search, TabuRoute [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TabuRoute"
+
+\end_inset
+
+] introduce diverse caratteristiche innovative.
+ La lista delle soluzioni che possono essere raggiunte da quella corrente
+ viene determinata usando GENI (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GENI"
+
+\end_inset
+
+), eliminando un vertice da una rotta e cercando di inserirlo in un'altra
+ mediante un criterio di minimo costo.
+\end_layout
+
+\begin_layout Standard
+Un'altra importante caratteristica consiste nell'utilizzo di fattori di
+ penalizzazione per svantaggiare la scelta di soluzioni che non rispettano
+ i vincoli (dette anche inammissibili).
+ Più precisamente:
+\end_layout
+
+\begin_layout Itemize
+la funzione di ricerca viene lasciata libera di selezionare anche soluzioni
+ inammissibili, a patto che abbiano un costo minore.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dopo un certo numero numero di soluzioni inammissibili esaminate consecutivament
+e i fattori di penalità aumentano, e così aumenta anche il costo delle soluzioni
+ che violano i vincoli
+\end_layout
+
+\begin_layout Itemize
+Dopo un certo numero di soluzioni ammissibili consecutive invece il valore
+ dei fattori di penalità decresce
+\end_layout
+
+\begin_layout Standard
+Questa tecnica viene utilizzata per creare un mix di soluzioni ammissibili
+ e non che impedisca alla ricerca di fermarsi in un minimo locale.
+\end_layout
+
+\begin_layout Standard
+Ultima importante peculiarità di questo algoritmo è l'utilizzo di false
+ partenze: più soluzioni iniziali vengono generate, e solo la più promettente
+ viene scelta come putno di partenza.
+\end_layout
+
 \begin_layout Subsection
 Granular Tabu Search
+\end_layout
+
+\begin_layout Standard
+È una metaeuristica, introdotta da Toth e Vigo, che ha finora ottenuto eccellent
+i risultati per il VRP [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "granular-tabu-search"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+L'idea di base, molto promettente, e che gli archi lunghi difficilmente
+ faranno parte della soluzione ottima.
+ Viene quindi introdotto un limite 
+\begin_inset Quotes eld
+\end_inset
+
+di granularità
+\begin_inset Quotes erd
+\end_inset
+
+ per gli archi, scelto anche in base alla lunghezza media degli archi contenuti
+ in una soluzione ottenuta in un'euristica veloce (nei risultati sperimentali
+ era stata usata quella di Clarke e Wright).
+\end_layout
+
+\begin_layout Standard
+L'implementazione di Granular Tabu Search quindi riprende quella di TabuRoute
+ e vi aggiunge quest'ultima caratteristica, diminuendo così i tempi di calcolo.
 \end_layout
 
 \begin_layout Subsection
@@ -2226,6 +2441,108 @@ MEFISTO: A Pragmatic Metaheuristic Framework for Adaptive Search with a
  2008: Selected Papers of the Annual International Conference of the German
  Operations Research Society (GOR) University of Augsburg, September 3-5,
  2008
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K7}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "TabuRoute"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+A tabu search heuristic for the vehicle routing problem
+\begin_inset Quotes erd
+\end_inset
+
+, M.
+ Gendreau, A.
+ Hertz, G.
+ Laporte, Management Science, 1994
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K8}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "granular-tabu-search"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+The granular tabu search and its application to the Vehicle-Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, P.
+ Toth, D.
+ Vigo, INFORMS Journal on Computing, 2003
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{k9}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "GENIUS-bib"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+New insertion and postoptimization procedures for the traveling salesman
+ problem
+\begin_inset Quotes erd
+\end_inset
+
+, M.
+ Gendreau, A.
+ Hertz, G.
+ Laporte, Operations Research, 1992
 \end_layout
 
 \begin_layout Standard

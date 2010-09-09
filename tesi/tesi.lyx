@@ -630,6 +630,363 @@ pagenumbering{arabic}
 Lo scenario di Wincor Nixdorf
 \end_layout
 
+\begin_layout Standard
+In questa sezione parliamo in breve dell'azienda Wincor Nixdorf, della sua
+ struttura organizzativa, per poi concentrarci sul problema che i suoi clienti
+ si erano trovati ad affrontare.
+ Da lì esamineremo brevemente le motivazioni che hanno spinto Wincor ad
+ intraprendere il progetto di cui si parla in questo elaborato e la metodologia
+ con cui hanno deciso di affrontare il problema.
+ Poichè il lavoro descritto in questo documento riguarda un opera concepita
+ presso Wincor Nixdorf Retail Consulting, solo la realtà di questa compagnia
+ sarà descritta nel dettaglio.
+\end_layout
+
+\begin_layout Subsection
+Storia ed organizzazione aziendale
+\end_layout
+
+\begin_layout Standard
+Le origini dell'odierna azienda [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "storia wincor"
+
+\end_inset
+
+] partono nel lontano 1952, nel 
+\begin_inset Quotes eld
+\end_inset
+
+Labor für Impulstechnik
+\begin_inset Quotes erd
+\end_inset
+
+ del pioniere informatico Heinz Nixdorf.
+ Nel 1968 diventa Nixdorf Computer AG (1968-1990), poi Siemens-Nixdorf Informati
+onssysteme AG (1990-1998), e Siemens-Nixdorf Retail & Banking Systems GmbH
+ (1998-1999).
+ Wincor Nixdorf venne infine fondata nell'ottobre 1999 come compagnia indipenden
+te.
+ Nel 1999 l'organizzazione viene rilevata dalla finanziaria Kohlberg Kravis
+ Roberts insieme al partner Goldman Sachs, e prende il nome di Wincor Nixdorf.
+ 
+\end_layout
+
+\begin_layout Standard
+Il suffiso 
+\begin_inset Quotes eld
+\end_inset
+
+Wincor
+\begin_inset Quotes erd
+\end_inset
+
+, composto da "win" e "core", rappresenta la promessa di profitto e la competenz
+a della compagnia nel settori retail e banking [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "significato-wincor"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+Oggi Wincor Nixdorf - quotata alla Borsa di Francoforte - conta a livello
+ mondiale oltre 7.000 dipendenti e un fatturato di circa 2 miliardi di Euro.
+ E' presente in oltre 90 paesi, con 31 filiali consociate nazionali.
+ I dati di mercato fatti registrare nel 2005 indicano che, nei segmenti
+ degli ATM e dei sistemi POS Retail, Wincor Nixdorf è leader di mercato
+ in Germania e al terzo posto a livello mondiale.[
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Dati finanziari wincor"
+
+\end_inset
+
+] 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Germania l'azienda è composta da 20 compagnie:
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf International GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Banking Consulting GmbH (BCON)
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Branch Technology GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf GmbH Business Administration Center (BAC)
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Customer Care GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Facility GmbH 
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Facility Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf property management Ilmenau GmbH & Co.
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Logistics GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Lottery Solutions GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Real Estate GmbH & Co.
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail Consulting GmbH (RCON)
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Security GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Technology GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Portavis GmbH
+\end_layout
+
+\begin_layout Enumerate
+Prosystems IT GmbH e Bank Consulting AG, di cui Wincor Nixdorf possiede
+ il 51%
+\end_layout
+
+\begin_layout Standard
+In Italia, Wincor Nixdorf è presente dal 1999 con un Gruppo strutturato
+ in tre società:
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail Consulting
+\end_layout
+
+\begin_layout Standard
+che coprono l'intera offerta di consulenza, prodotti e servizi per i settori
+ bancario e di vendita al dettaglio.
+ Wincor Nixdorf Italia conta un organico di circa 180 persone.
+\end_layout
+
+\begin_layout Subsection
+Wincor Nixdorf Retail Consulting
+\end_layout
+
+\begin_layout Subsubsection
+La missione aziendale
+\end_layout
+
+\begin_layout Standard
+Wincor Nixdorf Retail Consulting (nel seguito WNRC) ha come scopo quello
+ di offrire consulenza su processi del business aziendale alle aziende della
+ Grande Distribuzione Organizzata (nel seguito GDO).
+\end_layout
+
+\begin_layout Subsubsection
+La metodologia di lavoro
+\end_layout
+
+\begin_layout Standard
+Dopo aver disegnato i processi con i clienti sorge il problema di come supportar
+li dal punto di vista dell'Information Tecnology.
+\end_layout
+
+\begin_layout Standard
+WNRC è anche in grado di sviluppare specifiche applicazioni software a supporto
+ dei processi disegnati con i clienti.
+\end_layout
+
+\begin_layout Standard
+L'approccio di WNRC allo sviluppo software non è quello di una Software
+ House ma quello di offrire ai clienti 
+\begin_inset Quotes eld
+\end_inset
+
+soluzioni
+\begin_inset Quotes erd
+\end_inset
+
+ ritagliate su misura dei processi da informatizzare.
+\end_layout
+
+\begin_layout Standard
+Nello sviluppo di queste soluzioni WNRC ha avuto l'abilità di integrarle
+ organicamente le une con le altre; oggi costituiscono una suite di nome
+ Merchandise Retail System (acronimo Me.R.Sy, vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Me.R.Sy"
+
+\end_inset
+
+) che in pratica è un ERP per le aziende della GDO.
+\end_layout
+
+\begin_layout Standard
+Le aree funzionali coperte dall'aziende sono molte, in particolare la logistica
+ dei Centri di Distribuzione (nel seguito Cedi).
+\end_layout
+
+\begin_layout Subsection
+L'interesse dei clienti al problema
+\end_layout
+
+\begin_layout Standard
+Tipicamente le aziende trattate da WNRC possiedono centinaia di Punti di
+ Vendita (nel seuito Pdv) nei vari canali (Ipermercati, Supermercati, Cash&Carry
+, Discount, Internet, ecc.)
+\end_layout
+
+\begin_layout Standard
+I Cedi consegnano a questi Pdv diverse volte alla settimana; da cui ne derivano
+ importanti costi di trasporto.
+\end_layout
+
+\begin_layout Standard
+I clienti di Wincor stanno diventando sempre più sensibili a queste voci
+ di costo (anche perchè destinate a crescere nel tempo) e questa area sta
+ diventando per WNRC interessante per nuove possibilità di business.
+\end_layout
+
+\begin_layout Standard
+Negli ultimi anni alcuni clienti di Wincor hanno tentato di affrontare il
+ problema della minimizzazione dei costi di trasporto con dei progetti autonomi,
+ ma sono tutti falliti.
+\end_layout
+
+\begin_layout Subsubsection
+Le cause del fallimento dei progetti affrontati dai clienti
+\end_layout
+
+\begin_layout Standard
+Le cause principali del fallimento si ritiene possano essere queste:
+\end_layout
+
+\begin_layout Enumerate
+La complessità del problema è stata sottovalutata
+\end_layout
+
+\begin_layout Enumerate
+L'approccio al problema non è stato quello giusto; ad esempio si è cercato
+ di dare uno strumento sofisiticato in mano al responsabile delle spedizioni
+ il quale:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+non aveva il bagaglio culturale necessario (spesso questa figura è un ex-caminis
+ta)
+\end_layout
+
+\begin_layout Enumerate
+Provocava un conflitto di interessi (queste figure, se abili, sono ben remunerat
+e; lo strumento, se funziona, erode il potere di queste figure...)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Non si è capito la necessità di fortissima integrazione fra lo strumento
+ di integrazione cartografica e quello che, nel processo, sta a monte e
+ a valle (ad esempio, una volta pianificato le gite bisogna essere in grado
+ di pilotare il picking ed il carico del camion in modo da rispettare la
+ pianificazione)
+\end_layout
+
+\begin_layout Subsection
+L'interessamento di Wincor al problema
+\end_layout
+
+\begin_layout Standard
+In conclusione Wincor Nixdorf riteneva che:
+\end_layout
+
+\begin_layout Itemize
+I tempi fossero maturi per spingere, con alcuni dei clienti principali,
+ un progetto di 
+\begin_inset Quotes eld
+\end_inset
+
+minimizzazione costi trasporto
+\begin_inset Quotes erd
+\end_inset
+
+ che, utilizzando un sofisticato tool di painificazione cartografica, permettess
+e di ridurre questa importante voce di costo.
+\end_layout
+
+\begin_layout Itemize
+condizione necessaria ( e non sufficiente ) per concludere, assieme ai clienti,
+ il progetto con successo, fosse quella di integrare il tool all'interno
+ di Me.R.Sy., permettendo ai due software di dialogare e di scambiarsi dati
+\end_layout
+
+\begin_layout Itemize
+fosse necessario un approccio propositivo presso i clienti di questo progetto
+\end_layout
+
+\begin_layout Standard
+La fattibilità di questo progetto era tuttavia subordinata al successo di
+ un 
+\begin_inset Quotes eld
+\end_inset
+
+Proof of Concept
+\begin_inset Quotes erd
+\end_inset
+
+ nel quale si sarebbero dovuti fornire anche indicazioni sull'incidenza
+ del risparmio potenziale.
+\end_layout
+
 \begin_layout Section
 Background
 \end_layout
@@ -640,6 +997,12 @@ In questa sezione è posibile trovare chiarimenti sui termini che verranno
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Me.R.Sy"
+
+\end_inset
+
 Me.R.Sy
 \end_layout
 
@@ -2869,7 +3232,7 @@ status open
 
 
 \backslash
-bibitem{k9}
+bibitem{K9}
 \end_layout
 
 \end_inset
@@ -2894,6 +3257,140 @@ New insertion and postoptimization procedures for the traveling salesman
  Gendreau, A.
  Hertz, G.
  Laporte, Operations Research, 1992
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K10}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "significato-wincor"
+
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.wincor-nixdorf.com/internet/site_DE/DE/WincorNixdorf/Press/pressrelease
+s/1998-1999/KKRundGoldmanSachs_22_10_1999.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K11}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "storia wincor"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+Wincor Nixdorf
+\begin_inset Quotes erd
+\end_inset
+
+, Wikipedia tedesca
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://de.wikipedia.org/wiki/Wincor_Nixdorf
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K12}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Dati finanziari wincor"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+Wincor Nixdorf
+\begin_inset Quotes erd
+\end_inset
+
+ su sito 
+\begin_inset Quotes eld
+\end_inset
+
+Pubbliway, il portale per il business online
+\begin_inset Quotes erd
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://www.pubbliway.com/informatica/wincor_nixdorf_s.r.l._1121241
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard

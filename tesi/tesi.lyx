@@ -1273,6 +1273,111 @@ chiuse
 \end_layout
 
 \begin_layout Subsection
+PTV AG
+\end_layout
+
+\begin_layout Standard
+PTV (Planung Transport Verkehr) AG [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "PTV-bib"
+
+\end_inset
+
+], costituita nel 1979 a Karlsruhe, Germania è una compagnia di consulenza
+ e sviluppo software.
+ 
+\end_layout
+
+\begin_layout Standard
+Il business di PTV è principalmente concentrato nelle aree del trasporto,
+ della mobilità e della logistica, e sviluppa software per la pianificazione
+ e l'ottimizzazione dei trasporti e delle rotte.
+ 
+\end_layout
+
+\begin_layout Standard
+La compagnia è ora attiva in 4 continenti, ha 700 dipendenti e 1500 clienti
+ in 75 nazioni.
+ Alcuni dei loro prodotti software sono utilizzati in Germania anche dalle
+ università nella formazione dei futuri ingegneri del traffico.
+\end_layout
+
+\begin_layout Standard
+Una famiglia di prodotti commerciali che sicuramente ha conquistato una
+ certa fetta di mercato per quanto riguarda la pianificazione delle rotte
+ è rappresentata dal marchio 
+\begin_inset Quotes eld
+\end_inset
+
+maps & guide
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+TPS
+\end_layout
+
+\begin_layout Standard
+TPS (Transport Planning Service) [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "TPS-bib"
+
+\end_inset
+
+] nasce a Perugia nel 1993 dall’iniziativa di un giovane gruppo di ingegneri
+ specialisti nel settore della pianificazione dei trasporti.
+ L’obiettivo comune era ed è quello di fornire ad operatori pubblici e privati,
+ consulenze, prodotti e servizi nel campo dell’ingegneria del traffico,
+ dei trasporti e della logistica.
+ In questo ambito, TPS ha avviato un’importantissima partnership con la
+ PTV AG, azienda leader a livello europeo nello sviluppo di soluzioni software
+ per la mobilità.
+\end_layout
+
+\begin_layout Standard
+La struttura organizzativa della TPS è articolata sul territorio nazionale
+ italiano con uffici a Perugia (sede legale ed operativa con certificazione
+ di qualità UNI EN ISO 9001:2000), Bologna e Milano.
+ 
+\end_layout
+
+\begin_layout Standard
+A livello operativo TPS è strutturata nelle seguenti unità: 
+\end_layout
+
+\begin_layout Itemize
+team di progettazione e consulenza nei campi dell’ingegneria del traffico,
+ della logistica e dei trasporti 
+\end_layout
+
+\begin_layout Itemize
+unità tecnica per rilievi ed indagini nei settori del traffico e dei trasporti
+ 
+\end_layout
+
+\begin_layout Itemize
+rete commerciale e unità tecnica di supporto per l’assistenza post-vendita
+ dei software 
+\end_layout
+
+\begin_layout Itemize
+laboratorio di sviluppo software laboratorio di ricerca
+\end_layout
+
+\begin_layout Standard
+L'organico della TPS è per la quasi totalità costituito da ingegneri ed
+ architetti esperti in pianificazione dei trasporti, ingegneria del traffico
+ e modellistica applicata.
+ Ad essi si affianca l’attività di un nucleo di programmatori che lavora
+ nello sviluppo di soluzioni software basate su cartografia digitale.
+\end_layout
+
+\begin_layout Subsection
 Euristica di Clarke e Wright
 \end_layout
 
@@ -1684,6 +1789,12 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename inserzione tipo 1.jpg
+	scale 50
+
+\end_inset
+
 
 \end_layout
 
@@ -1740,6 +1851,12 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename inserzione tipo 2.jpg
+	scale 50
+
+\end_inset
+
 
 \end_layout
 
@@ -1840,6 +1957,13 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename rimozione tipo 1.jpg
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -1870,6 +1994,12 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename rimozione tipo 2.jpg
+	scale 40
+
+\end_inset
+
 
 \end_layout
 
@@ -3385,7 +3515,100 @@ Pubbliway, il portale per il business online
 status open
 
 \begin_layout Plain Layout
+
 http://www.pubbliway.com/informatica/wincor_nixdorf_s.r.l._1121241
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K13}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "TPS-bib"
+
+\end_inset
+
+Sito TPS, sezione 
+\begin_inset Quotes eld
+\end_inset
+
+Chi siamo
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.tpsitalia.it/azienda/
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K14}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "PTV-bib"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+PTV Planung Transport Verkehr
+\begin_inset Quotes erd
+\end_inset
+
+ sulla Wikipedia tedesca
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://de.wikipedia.org/wiki/PTV_Planung_Transport_Verkehr
 \end_layout
 
 \end_inset

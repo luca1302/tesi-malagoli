@@ -1,4 +1,4 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -2842,14 +2842,209 @@ Questo tipo di problemi sono tutti NP-hard, tuttavia sono già disponibili
 \begin_layout Standard
 Quando il sottoscritto ha cominciato ad occuparsi di questo progetto lo
  studio di fattibilità non era nella sua fase iniziale, per cui alcune scelte
- erano già state fatte.
+ erano già state fatte, in quanto si era già arrivati ad una bbozza generale
+ del progetto, e visto un paio di alternative possibili.
  Si è tuttavia deciso di riportare comunque tutti i dati, sia quelli precedenti
  al mio arrivo sia quelli successivi per dare un'idea più articolata del
  contesto di lavoro.
+ Ogni sezione deve essere vista come una fase dello studio di fattibilità,ed
+ alla fine di ogni sezione viene riportato quello che è stato il risultato
+ dell'incontro finale con gli stakeholder.
 \end_layout
 
 \begin_layout Standard
+Tutte le scelte precedenti al mio arrivo verranno presentate nella prima
+ sezione di questo capitolo, e successivamente si passerà al problema vero
+ e proprio: la scelta tra un'architettura 
+\begin_inset Quotes eld
+\end_inset
 
+vecchio stampo
+\begin_inset Quotes erd
+\end_inset
+
+, con l'utilizzo di software stand-alone, oppure l'adozione di una più moderna
+ architettura Web service ma un attimo più complessa da progettare e realizzare.
+\end_layout
+
+\begin_layout Section
+Progetto di massima della soluzione
+\end_layout
+
+\begin_layout Standard
+Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost la gestione
+ della flotta (ovvero carico e rotte) era affidata ad un dipendente dell'azienda
+, il quale essendo un ex-camionista ed avendo una larga esperienza della
+ rete stradale italiana poteva senza dubbio soddisfare le esigenze dell'azienda.
+\end_layout
+
+\begin_layout Standard
+Ma questa gestione portava diversi problemi:
+\end_layout
+
+\begin_layout Enumerate
+Il futuro di quella parte dell'azienda era accentrato tutto nelle mani di
+ un solo uomo
+\end_layout
+
+\begin_layout Enumerate
+La gestione manuale non dava nessuna garanzia di portare a soluzioni ottime
+ o quantomeno buone, benchè si fossero presi diversi accorgimenti e vi fosse
+ buona volontà da parte di tutti
+\end_layout
+
+\begin_layout Enumerate
+Questa gestione non conveniva nemmeno al suddetto dipendente, il quale a
+ caus del suo ruolo poteva prendersi pochissime ferie
+\end_layout
+
+\begin_layout Standard
+Si cercava dunque una soluzione che permettesse di automatizzare l'intero
+ processo, o almeno ua sua parte, in modo da alleviare gli svantaggi dovuti
+ alla situazione attuale.
+\end_layout
+
+\begin_layout Subsection
+– requisiti della soluzione
+\end_layout
+
+\begin_layout Standard
+La soluzione proposta, per risultare accettabile da parte di Primafrost,
+ doveva:
+\end_layout
+
+\begin_layout Enumerate
+permettere di automatizzare, in tutto o in parte, la generazione delle rotte,
+ una volta forniti ovviamente i dati necessari (mezzi, richieste, ecc.)
+\end_layout
+
+\begin_layout Enumerate
+offrire garanzie di minimizzazione dei costi maggiori rispetto alla normale
+ gestione manuale
+\end_layout
+
+\begin_layout Enumerate
+permettere di modificare le rotte generate, possibilmente in maniera semplice
+ e veloce, garantendo così un maggior controllo sull'output prodotto
+\end_layout
+
+\begin_layout Enumerate
+offrire garanzie di rispettare le norme sindacali vigenti per gli autisti
+ dei camion, tra cui è contemplata anche ilrispetto dei tempi di riposo
+\end_layout
+
+\begin_layout Enumerate
+essere pronta, almeno in una forma prototipale, in un tempo relativamente
+ breve
+\end_layout
+
+\begin_layout Standard
+Per essere accettabile da parte di Wincor la soluzione doveva:
+\end_layout
+
+\begin_layout Enumerate
+rispettare i vincoli posti dal cliente
+\end_layout
+
+\begin_layout Enumerate
+permettere una gestione dei dati integrata con l'ERP aziendale, Me.R.Sy
+\end_layout
+
+\begin_layout Standard
+Requisiti impliciti da parte del cliente potevano essere sulla possibile
+ interfaccia del prodotto, che doveva essere user-friendly e non intralciante
+ dal punto di vista operativo.
+\end_layout
+
+\begin_layout Standard
+Da parte di Wicor Nixdorf un requisito implicito poteva essere la necessità
+ di uno strumento o applicativo che non necessitasse più di tanto un continuo
+ intervento da parte dei suoi dipendenti.
+\end_layout
+
+\begin_layout Subsection
+– specifiche generali del sistema
+\end_layout
+
+\begin_layout Standard
+SPECIFICHE GENERALI DEL SISTEMA 
+\end_layout
+
+\begin_layout Standard
+Specifiche applicative 
+\end_layout
+
+\begin_layout Standard
+Architettura dati (con esame e valutazione delle eventuali alternative)
+ 
+\end_layout
+
+\begin_layout Standard
+Architettura applicativa (con esame e valutazione delle eventuali alternative)
+ 
+\end_layout
+
+\begin_layout Standard
+Interfaccia utente 
+\end_layout
+
+\begin_layout Standard
+Specifiche tecnologiche 
+\end_layout
+
+\begin_layout Standard
+Architettura tecnologica (con esame e valutazione delle eventuali alternative)
+ 
+\end_layout
+
+\begin_layout Standard
+Ambiente e strumenti di sviluppo (con esame e valutazione delle eventuali
+ alternative)
+\end_layout
+
+\begin_layout Subsection
+– modalità di realizzazione
+\end_layout
+
+\begin_layout Standard
+MODALITA’ DI REALIZZAZIONE Realizzazione o acquisizione (con esame e valutazione
+ delle eventuali alternative) Riuso di componenti esistenti (con esame e
+ valutazione delle eventuali alternative) Avvio del sistema Esercizio e
+ manutenzione del sistema (con esame e valutazione delle eventuali alternative)
+ Formazione ed assistenza utenti
+\end_layout
+
+\begin_layout Subsection
+Metodi e tecniche di progettazione sistemi informatici 
+\end_layout
+
+\begin_layout Standard
+– Progettazione reti, basi di dati, sistemi applicativi
+\end_layout
+
+\begin_layout Standard
+– Dimensionamento sistemi (capacity planning)
+\end_layout
+
+\begin_layout Standard
+– Progettazione interfacce utenti 
+\end_layout
+
+\begin_layout Subsection
+Metodi e tecniche per la definizione dei requisiti di qualità di sistemi
+ e servizi
+\end_layout
+
+\begin_layout Subsection
+valutazione delle alternative
+\end_layout
+
+\begin_layout Section
+Il progetto proposto
+\end_layout
+
+\begin_layout Section
+Analisi costi-benefici
 \end_layout
 
 \begin_layout Standard

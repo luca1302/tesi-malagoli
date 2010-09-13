@@ -494,37 +494,30 @@ La grande distribuzione organizzata, abbreviata dagli addetti ai lavori
  Le prime vedono grosse strutture centrali gestite da un unico soggetto
  proprietario, che gestiscono punti di vendita quasi sempre diretti.
  Le seconde vedono invece piccoli soggetti aggregarsi secondo la logica
- de l'unione fa la forza: attraverso infatti l'adesione ai gruppi d'acquisto
- i piccoli e medi dettaglianti possono ottenere agevolazioni economiche
- in termini di approvvigionamento, derivanti dal maggior potere contrattuale
- nei confronti dell'industria da parte delle centrali, oltre che a vantaggi
- conseguibili dallo sfruttamento del marchio e dall'ottenimento di supporto
- in termini di know-how e coordinamento strategico.
-\end_layout
-
-\begin_layout Standard
-Opposta come filosofia alla GDO, la vendita al dettaglio (in inglese 
+ de 
 \begin_inset Quotes eld
 \end_inset
 
-Retail
+l'unione fa la forza
 \begin_inset Quotes erd
 \end_inset
 
-), che consiste nella vendita di beni o prodotti commerciali provenienti
- da una locazione fissa (ad esempio un magazzino) direttamente al pubblico,
- che può essere composto da individui o aziende.
- La differenza principale consiste nel fatto che i venditori al dettaglio
- sono situati all'ultimo anello della catena di rifornimento, quindi in
- generale comprano beni e prodotti in grandi quantità (stock,pallet,ecc.)
- da produttori, importatori o grossisti, per poi venderli agli utenti finali
- in quantità più piccole (generalmente singole unità).
+: attraverso infatti l'adesione ai gruppi d'acquisto i piccoli e medi dettaglian
+ti possono ottenere agevolazioni economiche in termini di approvvigionamento,
+ derivanti dal maggior potere contrattuale nei confronti dell'industria
+ da parte delle centrali, oltre che a vantaggi conseguibili dallo sfruttamento
+ del marchio e dall'ottenimento di supporto in termini di know-how e coordinamen
+to strategico.
 \end_layout
 
 \begin_layout Standard
 All'interno di questo contesto mondiale si colloca Wincor Nixdorf Retail
  Consulting.
- Nata nel 1990 dall'acquisizione da parte di Siemens AG della pionieristica
+ 
+\end_layout
+
+\begin_layout Standard
+Nata nel 1990 dall'acquisizione da parte di Siemens AG della pionieristica
  società di informatica Nixdorf Computer AG, specializzata nello sviluppo
  di sistemi bancari, si è imposta come un'azienda leader nella consulenza
  e nello sviluppo di tecnologie innovative per il settore bancario e per
@@ -536,18 +529,19 @@ All'interno di questo contesto mondiale si colloca Wincor Nixdorf Retail
 \end_layout
 
 \begin_layout Standard
-Nel caso trattato in questa tesi un cliente di Wincor Nixdorf, Primafrost,
- aveva mostrato l'esigenza di migliorare la sua gestione di distribuzione
+Nel caso trattato in questa tesi ad un cliente di Wincor Nixdorf, Primafrost,
+ era stata mostrata l'opportunità di migliorare la sua gestione di distribuzione
  delle merci.
- Primafrost si occupa di servire inumerosi canali di vendita del Gruppo
- Lombardini (supermercati, discount,ipermercati, cash & carry, e-commerce,
- grossisti), ed è detentrice di un magazzino presso Mantova.
- Ogni giorno da questo magazzino partono i mezzi che riforniranno una serie
- di punti vendita che sono sparsi in tutto il nord d'Italia.
+ 
 \end_layout
 
 \begin_layout Standard
-Fino ad ora la gestione del carico e dell'instradamento dei veicoli contenente
+Primafrost si occupa di servire inumerosi canali di vendita del Gruppo Lombardin
+i (supermercati, discount,ipermercati, cash & carry, e-commerce, grossisti),
+ ed è detentrice di un magazzino presso Mantova.
+ Ogni giorno da questo magazzino partono i mezzi che riforniranno una serie
+ di punti vendita che sono sparsi in tutto il nord d'Italia, ma fino ad
+ ora la gestione del carico e dell'instradamento dei veicoli contenente
  la merce era di tipo manuale, effettuata da un dipendente esperto della
  cartografia stradale italiana.
 \end_layout
@@ -557,11 +551,16 @@ Da sempre attenta non solo alla qualità della merce trasportata, ma anche
  alla precisione dell’ordine evaso e alla tempestività della distribuzione,
  e dato anche il crescere costante del numero di punti vendita, Primafrost
  ha deciso di incrementare la sua qualità di servizio, cercando di automatizzare
- il più possibile la creazione di rotte e l'instradamento dei veicoli.
+ il più possibile la creazione di rotte e l'instradamento dei veicoli, e
+ quindi ha accettato la proposta di Wincor Nixdorf.
+ 
 \end_layout
 
 \begin_layout Standard
-In questa tesi viene riportato il lavoro svolto durante la redazione dello
+Era necessario tuttavia mostrare al cliente che la soluzione progettata
+ poteva funzionare, e quindi la sua adozione era subordinata al buon esito
+ di uno studio di fattibilità.
+ In questa tesi viene riportato il lavoro svolto durante la redazione dello
  studio di fattibilità svolto presso Wincor.
  Verranno evidenziati gli apporti personali al lavoro svolto e le soluzioni
  progettate, nonchè i risultati sperimentali.
@@ -624,6 +623,25 @@ pagenumbering{arabic}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In questo capitolo riporteremo quello che è stato osservato essere oggigiorno
+ lo stato dell'arte per quanto riguarda il problema trattato.
+ 
+\end_layout
+
+\begin_layout Standard
+Nella prima sezione analizzeremo il modo di vedere il problema da parte
+ del mondo industriale, in particolare faremo riferimento allo scenario
+ descritto da Wincor Nixdorf.
+\end_layout
+
+\begin_layout Standard
+Nella sezione successiva introdurremo una serie di termini e concetti che
+ saranno utili più avanti in questa tesi, ed infine nell'ultima sezione
+ parleremo un po' del problema dell'instradamento dei veicoli e delle sue
+ varianti.
 \end_layout
 
 \begin_layout Section
@@ -2807,6 +2825,31 @@ Esistono anche variazioni che contemplano l'utilizzo di più depositi invece
 
 \begin_layout Chapter
 Architettura proposta
+\end_layout
+
+\begin_layout Standard
+Il problema posto da Primafrost, che riguardava il carico, scarico e la
+ definizone delle rotte per la flotta degli automezzi era facilmente riconducibi
+le ad una particolare istanza di VRP.
+\end_layout
+
+\begin_layout Standard
+Questo tipo di problemi sono tutti NP-hard, tuttavia sono già disponibili
+ diverse soluzioni commerciali (basate su euristiche) che permettono di
+ ottenere soluzioni molto buone, se non ottime.
+\end_layout
+
+\begin_layout Standard
+Quando il sottoscritto ha cominciato ad occuparsi di questo progetto lo
+ studio di fattibilità non era nella sua fase iniziale, per cui alcune scelte
+ erano già state fatte.
+ Si è tuttavia deciso di riportare comunque tutti i dati, sia quelli precedenti
+ al mio arrivo sia quelli successivi per dare un'idea più articolata del
+ contesto di lavoro.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard

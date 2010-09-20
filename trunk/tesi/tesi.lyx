@@ -1,4 +1,4 @@
-#LyX 1.6.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -536,9 +536,9 @@ Nel caso trattato in questa tesi ad un cliente di Wincor Nixdorf, Primafrost,
 \end_layout
 
 \begin_layout Standard
-Primafrost si occupa di servire inumerosi canali di vendita del Gruppo Lombardin
-i (supermercati, discount,ipermercati, cash & carry, e-commerce, grossisti),
- ed è detentrice di un magazzino presso Mantova.
+Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
+ Lombardini (supermercati, discount,ipermercati, cash & carry, e-commerce,
+ grossisti), ed è detentrice di un magazzino presso Mantova.
  Ogni giorno da questo magazzino partono i mezzi che riforniranno una serie
  di punti vendita che sono sparsi in tutto il nord d'Italia, ma fino ad
  ora la gestione del carico e dell'instradamento dei veicoli contenente
@@ -563,7 +563,7 @@ Era necessario tuttavia mostrare al cliente che la soluzione progettata
  In questa tesi viene riportato il lavoro svolto durante la redazione dello
  studio di fattibilità svolto presso Wincor.
  Verranno evidenziati gli apporti personali al lavoro svolto e le soluzioni
- progettate, nonchè i risultati sperimentali.
+ progettate, nonché i risultati sperimentali.
 \end_layout
 
 \begin_layout Standard
@@ -655,7 +655,7 @@ In questa sezione parliamo in breve dell'azienda Wincor Nixdorf, della sua
  Da lì esamineremo brevemente le motivazioni che hanno spinto Wincor ad
  intraprendere il progetto di cui si parla in questo elaborato e la metodologia
  con cui hanno deciso di affrontare il problema.
- Poichè il lavoro descritto in questo documento riguarda un opera concepita
+ Poiché il lavoro descritto in questo documento riguarda un opera concepita
  presso Wincor Nixdorf Retail Consulting, solo la realtà di questa compagnia
  sarà descritta nel dettaglio.
 \end_layout
@@ -850,6 +850,12 @@ Wincor Nixdorf Retail Consulting (nel seguito WNRC) ha come scopo quello
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "wincor-metodo"
+
+\end_inset
+
 La metodologia di lavoro
 \end_layout
 
@@ -864,8 +870,11 @@ WNRC è anche in grado di sviluppare specifiche applicazioni software a supporto
 \end_layout
 
 \begin_layout Standard
-L'approccio di WNRC allo sviluppo software non è quello di una Software
- House ma quello di offrire ai clienti 
+L'approccio di WNRC allo sviluppo software non è quello di una 
+\emph on
+software house
+\emph default
+ ma quello di offrire ai clienti 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2963,80 +2972,76 @@ Da parte di Wicor Nixdorf un requisito implicito poteva essere la necessità
 \end_layout
 
 \begin_layout Subsection
-– specifiche generali del sistema
-\end_layout
-
-\begin_layout Standard
-SPECIFICHE GENERALI DEL SISTEMA 
-\end_layout
-
-\begin_layout Standard
-Specifiche applicative 
-\end_layout
-
-\begin_layout Standard
-Architettura dati (con esame e valutazione delle eventuali alternative)
- 
-\end_layout
-
-\begin_layout Standard
-Architettura applicativa (con esame e valutazione delle eventuali alternative)
- 
-\end_layout
-
-\begin_layout Standard
-Interfaccia utente 
-\end_layout
-
-\begin_layout Standard
-Specifiche tecnologiche 
-\end_layout
-
-\begin_layout Standard
-Architettura tecnologica (con esame e valutazione delle eventuali alternative)
- 
-\end_layout
-
-\begin_layout Standard
-Ambiente e strumenti di sviluppo (con esame e valutazione delle eventuali
- alternative)
-\end_layout
-
-\begin_layout Subsection
 – modalità di realizzazione
 \end_layout
 
 \begin_layout Standard
-MODALITA’ DI REALIZZAZIONE Realizzazione o acquisizione (con esame e valutazione
- delle eventuali alternative) Riuso di componenti esistenti (con esame e
- valutazione delle eventuali alternative) Avvio del sistema Esercizio e
- manutenzione del sistema (con esame e valutazione delle eventuali alternative)
- Formazione ed assistenza utenti
-\end_layout
-
-\begin_layout Subsection
-Metodi e tecniche di progettazione sistemi informatici 
+Realizzazione o acquisizione (con esame e valutazione delle eventuali alternativ
+e)
 \end_layout
 
 \begin_layout Standard
-– Progettazione reti, basi di dati, sistemi applicativi
+Come già spiegato nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wincor-metodo"
+
+\end_inset
+
+, Wincor Nixdorf non ha un approccio simile a quello delle software house,
+ quindi di sicuro la scelta strategica era di puntare su prodotti già realizzati
+, e customizzarli per il cliente, piuttosto che svilupparne altri ex-novo.
 \end_layout
 
 \begin_layout Standard
-– Dimensionamento sistemi (capacity planning)
+Per Primafrost in particolare era stata già realizzata un'applicazione per
+ la gestione dei carichi dei mezzi e per la visualizzazione delle rotte
+ (tra l'altro già integrata con Me.R.Sy.).
+ Sembrava quindi logico cercare di integrare il tutto con un'applicazione/serviz
+io che calcolasse in automatico le rotte in base a i carichi.
+ La visualizzazione delle rotte veniva fatta con una versione di 
+\begin_inset Quotes eld
+\end_inset
+
+PTV Maps & Guide
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-– Progettazione interfacce utenti 
-\end_layout
-
-\begin_layout Subsection
-Metodi e tecniche per la definizione dei requisiti di qualità di sistemi
- e servizi
+Era quindi logico cercare una soluzione applicativa sempre progettata da
+ PTV, sia perchè poteva risultare più semplice da integrare sia perchè PTV
+ al momento è una delle aziende leader nel campo.
 \end_layout
 
 \begin_layout Subsection
 valutazione delle alternative
+\end_layout
+
+\begin_layout Standard
+Le 3 alternative possibili erano le seguenti:
+\end_layout
+
+\begin_layout Enumerate
+ottimizzare le rotte usando gli XServer
+\end_layout
+
+\begin_layout Enumerate
+ottimizzare le rotte usando PTV Intertour
+\end_layout
+
+\begin_layout Enumerate
+lasciare tutto com'era (non era una vera alternativa, ma era piuttosto l'ultima
+ spiaggia)
+\end_layout
+
+\begin_layout Standard
+L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
+ se l'ottimizzazione delle rotte doveva essere fatta automaticamente piuttosto
+ che manualmente, e se era meglio utilizzare Web Service o un approccio
+ applicativo classico.
 \end_layout
 
 \begin_layout Section

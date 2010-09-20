@@ -3048,6 +3048,199 @@ L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
 Il progetto proposto
 \end_layout
 
+\begin_layout Standard
+Come visto nella sezione precedente, molti aspetti partivano già inquadrati,
+ e tuttavia non era chiaro quale fosse l'alternativa vincente.
+ 
+\end_layout
+
+\begin_layout Standard
+Ci si è quindi informati prima sui processi del cliente coinvolti, e si
+ è cercato di sconvolgerli il meno possibile, come spiegato nella prima
+ sottosezione.
+\end_layout
+
+\begin_layout Standard
+Per alcuni problemi secondari, di cui parliamo a breve, sembrava che la
+ componente umana fosse imprescindibile in alcuni casi.
+ Inoltre non era chiaro cosa un'architettura orientata ai servizi aggiungesse
+ all'architettura, per cui si era partiti facendo test utilizzando l'applicazion
+e stand-alone.
+ Chiaro non era neppure quanto tempo ci volesse ad eseguire una corretta
+ configurazione dello strumento, e se questa configurazione potesse essere
+ unica nonostante la variabilità degli scenari.
+\end_layout
+
+\begin_layout Standard
+Nel mio lavoro non ero solo, anzi la mia mansione era di affiancare un giovane
+ impiegato (Primo Tilli) che era statao incaricato di occuparsi del problema.
+ Tutto il lavoro svolto da me e da Primo si trova nelle sottosezioni successive.
+\end_layout
+
+\begin_layout Subsection
+Processi del cliente
+\end_layout
+
+\begin_layout Standard
+Sicuramente si può pensare che esista una documentazione ufficiale in cui
+ sono descritti i processi di Primafrost, anche se in modo non necessariamente
+ formale, tuttavia comprensibilmente quella documentazione non ci è stata
+ fornita.
+\end_layout
+
+\begin_layout Standard
+La mia conoscenza dei processi di Primafrost deriva esclusivamente dal bagaglio
+ di conoscenza posseduto da Wincor Nixdorf, e da quanto è emerso negli incontri
+ con il cliente, quindi la visione che ne deriva potrebbe essere certamente
+ limitata, ma a mio parere è abbastanza completa per permettere uno sguardo
+ generale alla metodologia di lavoro.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il proceso che era interessante per noi era il processo di gestione delle
+ consegne,e questo poteva essere scomposto come segue:
+\end_layout
+
+\begin_layout Enumerate
+Sotto-processo di raccolta dati dei clienti
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ricezione degli ordini
+\end_layout
+
+\begin_layout Itemize
+eventuale modifica delle finestre di consegna
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+sotto-processo di preparazione della flotta
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+creazione delle rotte
+\end_layout
+
+\begin_layout Enumerate
+eventuale correzione dei carichi dei veicoli
+\end_layout
+
+\begin_layout Enumerate
+assegnazione degli autisti
+\end_layout
+
+\begin_layout Enumerate
+carico veicoli
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sotto-processo di dispiegamento delle consegne
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tracciamento dei mezzi in marcia
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Come si può notare alcuni di questi sotto-processi ho deciso di suddividerli
+ usando elenchi puntati invece che numerati.
+ Questo deriva dal fatto che non so con certezza in che ordine vengano svolte
+ le attività.
+\end_layout
+
+\begin_layout Standard
+Per quanto conosco infatti Primafrost stabilisce con i punti di consegna
+ delle finestre di servizio, entro le quali la merce deve essere consegnata
+ perchè è presente il personale addetto allo scarico.
+ Consegnare al di fuori di queste finestre risulta quindi in uno spreco
+ di tempo e denaro sia per l'azienda che per il punto di consegna, quindi
+ risultano essere un vincolo operativo.
+\end_layout
+
+\begin_layout Standard
+Periodicamente l'azienda quindi raccoglie gli ordini dai suoi clienti/punti
+ di consegna e da questi dati parte nella preparazione della flotta.
+\end_layout
+
+\begin_layout Standard
+Le rotte vengono create su base giornaliera, e chiaramente non è necessario
+ che ogni cliente abbia ordini nuovi ogni giorno, quindi i possibili scenari
+ che ne derivano sono abbastanza dinamici.
+\end_layout
+
+\begin_layout Standard
+Come già accennato in altre sezioni, il processo di creazione delle rotte
+ viene svolto prevalentemente a mano da un dipendente (un ex-camionista,
+ per la precisione) che ha grande esperienza delle strade italiane, e quindi
+ può fare previsioni sulle situazioni contingenti che si potrebbero presentare
+ agli autisti in determinate vie ed in determinati momenti della giornata.
+\end_layout
+
+\begin_layout Standard
+Una volta trovato il percorso, è necessario calcolare una stima dei kilometri
+ da percorrere e tempo potenziale impiego di tempo.
+ Almeno questa parte non era eseguita in maniera completamente manuale,
+ ma mediante il software 'Maps&Guide' si riusciva ad ottnere stime abbastanza
+ precise.
+\end_layout
+
+\begin_layout Standard
+Un altro vincolo, più ovvio, è rappresentato dalla capacità dei mezzi di
+ trasporto.
+ Le eccezioni per quanto riguarda questo limite non possono che essere gestite
+ in maniera manuale, con conseguente rischio di perdita di ottimalità della
+ soluzione.
+\end_layout
+
+\begin_layout Subsection
+Problemi secondari
+\end_layout
+
+\begin_layout Subsection
+Training su PTV Intertour
+\end_layout
+
+\begin_layout Subsection
+Configurazione di PTV Intertour
+\end_layout
+
+\begin_layout Subsection
+Primi risultati sulle rotte
+\end_layout
+
+\begin_layout Subsection
+Problemi di formato sui dati in input
+\end_layout
+
+\begin_layout Subsection
+Nuove rotte, calcolate su più giorni
+\end_layout
+
+\begin_layout Subsection
+Prima presentazione dei risultati al cliente
+\end_layout
+
+\begin_layout Subsection
+Percorso più corto o più breve?
+\end_layout
+
+\begin_layout Subsection
+Presentazione dei risultati definitiva al cliente
+\end_layout
+
 \begin_layout Section
 Analisi costi-benefici
 \end_layout

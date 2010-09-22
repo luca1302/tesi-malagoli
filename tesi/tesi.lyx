@@ -3193,24 +3193,153 @@ Come già accennato in altre sezioni, il processo di creazione delle rotte
 Una volta trovato il percorso, è necessario calcolare una stima dei kilometri
  da percorrere e tempo potenziale impiego di tempo.
  Almeno questa parte non era eseguita in maniera completamente manuale,
- ma mediante il software 'Maps&Guide' si riusciva ad ottnere stime abbastanza
+ ma mediante il software 'Maps&Guide' si riusciva ad ottenere stime abbastanza
  precise.
 \end_layout
 
 \begin_layout Standard
-Un altro vincolo, più ovvio, è rappresentato dalla capacità dei mezzi di
- trasporto.
- Le eccezioni per quanto riguarda questo limite non possono che essere gestite
- in maniera manuale, con conseguente rischio di perdita di ottimalità della
- soluzione.
+Fatte le rotte e apportate eventuali correzioni, la flotta ed i carichi
+ sui mezzi vengono preparati, ed una volta partiti i mezzi vengono tracciati
+ temporalmente mediante appositi strumenti, in modo da assicurarsi che gli
+ autisti rispettino i tempi di lvoro e di riposo.
+ Alcuni di essi in particolare sono già tracciati anche mediante GPS, quindi
+ si possono ottenere informazioni ance sulla rotta realmente percorsa, anche
+ se tuttavia sono una ristretta minoranza.
 \end_layout
 
 \begin_layout Subsection
 Problemi secondari
 \end_layout
 
+\begin_layout Standard
+Un vincolo operatico piuttosto ovvio è rappresentato dalla capacità dei
+ mezzi di trasporto.
+ Le eccezioni per quanto riguarda questo limite non possono che essere gestite
+ in maniera manuale, con conseguente rischio di perdita di ottimalità della
+ soluzione.
+\end_layout
+
+\begin_layout Standard
+Con la vecchia suite capitava ogni tanto una incorretta gestione dei carichi
+ dei camion.
+\end_layout
+
+\begin_layout Standard
+La componenete umana in questo caso si rivelava indispensabile: spesso era
+ necessario modificare le rotte già calcolate per far tornare i conti, ed
+ un uomo con una discreta esperienza ed abilità poteva individuare in pochissimo
+ tempo le modifiche che servivano allo scopo senza aumentare i mezzi e senza
+ sconvolgere più di tanto la vecchia pianificazione.
+\end_layout
+
+\begin_layout Standard
+Un'altro problema che persino con i mezzi di oggi non viene trattato nelle
+ applicazioni commerciali è l'eccesso di traffico che alcune strade riscontrano
+ periodicamente durante la giornata, il quale può creare diversi disagi
+ agli autisti.
+\end_layout
+
+\begin_layout Standard
+Ancora una volta un essere umano con un po' di esperienza può riuscire invece
+ a prevedere il problema, e addirittura sa indicare se il problema affligge
+ uno solo dei versi di marcia, e può quindi avvalersene nel tentativo di
+ ottimizzare le rotte.
+\end_layout
+
+\begin_layout Standard
+Per quest'ultimo problema PTV sta compiendo degli studi e dei rilevamenti
+ statistici, ma è chiaro che ancora per un po' di tempo l'essere umano è
+ destinato a rimanere indispensabile.
+\end_layout
+
+\begin_layout Standard
+Come se non bastasse le tipologie di merce caricata incidono sul tipo di
+ veicolo da utilizzare, e da quest'ultimo dipende quanta merce di un certo
+ tipo può essere caricata.
+ Ad esempio non è possibile caricare assieme articoli di ortofrutta e salumi,
+ poichè non sarebbe a norma rispetto alle norme vigenti.
+ La merce ortofrutticola infatti ha una certa carica batterica e micotica,
+ che rischia di contaminare il resto della merce, e si rende necessario
+ l'utilizzo di una paratia per dividere i tipi di merce.
+ La paratia è possibile montarla se il mezzo possiede almeno 2 ingressi
+ al vano merci, e quindi questo limita la scelta all'interno della flotta.
+\end_layout
+
+\begin_layout Standard
+Questo genere di problemi di carattere alquanto complesso è ancora risolvibile
+ in maniera semi-automatica, ovvero l'operatore è in grado di indicare una
+ serie di vincoli che chiameremo 
+\begin_inset Quotes eld
+\end_inset
+
+qualifiche
+\begin_inset Quotes erd
+\end_inset
+
+ sulle merci, i veicoli e persino gli autisti, nel caso si necessitasse
+ di abiliazoni particolari, e lasciare che un software di un qualche tipo
+ risolva il problema delle corrispondenze, ma anche in questo caso la costruzion
+e dei vincoli non può che essere fatta da una persona che conosce la situazione
+ contingente al problema.
+\end_layout
+
 \begin_layout Subsection
 Training su PTV Intertour
+\end_layout
+
+\begin_layout Standard
+Per prima cosa si è voluto provare ad usare PTV Intertour, in modo da non
+ complicare da subito la possibile architettura finale.
+\end_layout
+
+\begin_layout Standard
+Per utilizzare l'applicazione è necessario di un'addestramento veramente
+ minimo, gran parte dei comandi dell'interfaccia sono abbastanza intuitivi.
+ Giusto per avere una panoramica diciamo che Intertour accetta in input
+ file dati con formato ASCII, XML, CSV oppure anche da tabelle di frontiera
+ in formato SQL SERVER o ORACLE [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Documentazione-di-PTV"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+I dati necessari all'applicazione riguardano depositi (in cui sono inclusi
+ anche gli ordini), veicoli ed autisti.
+ Questi dati vengono chiamati 
+\begin_inset Quotes eld
+\end_inset
+
+master data
+\begin_inset Quotes erd
+\end_inset
+
+, e vengono memorizzati in locale su filesystem, e successivamente processate
+ dall'applicazione, la quale ricava anche i dati relativi alla geocodifica
+ degli indirizzi.
+\end_layout
+
+\begin_layout Standard
+Nell'elaborazione delle rotte è possibile 
+\end_layout
+
+\begin_layout Standard
+Per un'interfacciamento più user-friendly o per semplice integrazione con
+ l'ERP aziendale è possibile inoltre utilizzare un altro applicativo, IT
+ Manager, che permette di caricare facilmente i dati e memorizza tutto in
+ un database in formato SQL SERVER.
+\end_layout
+
+\begin_layout Standard
+L'interfaccia di IT Manager è poco più che minimale, ma contiene tutte le
+ funzionalità necessarie: è possibile modificare i dati, mandare a Intertour
+ solo un sottoinsieme ben preciso,ecc.
+ Inoltre è permette di verificare le coordinate di georeferenziazione disegnando
+ il punto su una mappa.
 \end_layout
 
 \begin_layout Subsection
@@ -4050,6 +4179,29 @@ http://de.wikipedia.org/wiki/PTV_Planung_Transport_Verkehr
 \end_inset
 
 )
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K15}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Documentazione-di-PTV"
+
+\end_inset
+
+Documentazione di PTV Intertour 5.9, fornitami da TPS Italia.
 \end_layout
 
 \begin_layout Standard

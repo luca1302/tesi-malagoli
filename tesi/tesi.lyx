@@ -3284,6 +3284,12 @@ e dei vincoli non può che essere fatta da una persona che conosce la situazione
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Training-su-PTV"
+
+\end_inset
+
 Training su PTV Intertour
 \end_layout
 
@@ -3294,7 +3300,8 @@ Per prima cosa si è voluto provare ad usare PTV Intertour, in modo da non
 
 \begin_layout Standard
 Per utilizzare l'applicazione è necessario di un'addestramento veramente
- minimo, gran parte dei comandi dell'interfaccia sono abbastanza intuitivi.
+ minimo (fornitoci dai dipendenti di TPS), gran parte dei comandi dell'interfacc
+ia sono abbastanza intuitivi.
  Giusto per avere una panoramica diciamo che Intertour accetta in input
  file dati con formato ASCII, XML, CSV oppure anche da tabelle di frontiera
  in formato SQL SERVER o ORACLE [
@@ -3324,7 +3331,43 @@ master data
 \end_layout
 
 \begin_layout Standard
-Nell'elaborazione delle rotte è possibile 
+Da qui PTV Intertour ricava uella che si chiama 
+\begin_inset Quotes eld
+\end_inset
+
+matrice delle distanze
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero ad ogni coppia di destinazioni associa la distanza del più breve
+ percorso che passa tra le due.
+ questa matrice è utilizzata dall'euristica per trovare la corretta soluzione.
+\end_layout
+
+\begin_layout Standard
+Nei 
+\emph on
+master data 
+\emph default
+è possibile indicare quelli che vengono chiamati dall'applicazione 'giri
+ base', ovvero rotte precalcolate dall'utente esterno.
+ PTV Intertour permette infatti sia di calcolare le rotte ex-novo, sia di
+ una funzionalità per cercare di utilizzare i 'giri base' come punto di
+ partenza nella ricerca di una soluzione ottima.
+\end_layout
+
+\begin_layout Standard
+L'utlima funzionalità che ci hanno illustrato era l'utilizzo di quella che
+ in Ricerca Operativa viene chiamata 'post-ottimizzazione', ovvero un possibile
+ raffinamento ulteriore della soluzione trovata, basata sul componenete
+ MEFISTO (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mephisto"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3346,15 +3389,193 @@ L'interfaccia di IT Manager è poco più che minimale, ma contiene tutte le
 Configurazione di PTV Intertour
 \end_layout
 
-\begin_layout Subsection
-Primi risultati sulle rotte
+\begin_layout Standard
+La spiegazione che ci era sata data su questo prodotto era davvero dettagliata,
+ ma tuttavia tutti i dettagli che ci erano stati forniti erano utili solo
+ come aiuto durante lo svolgimento dei casi d'uso più o meno tipici, mentre
+ il funzionamento interno del programma, come ci si poteva aspettare, rimaneva
+ per lo più oscuro.
+\end_layout
+
+\begin_layout Standard
+In questa fase l'attività principale è stata quella di eseguire una attenta
+ esplorazione dell'interfaccia alla ricerca di parametri che ci permettessero
+ di migliorare i risultati.
+ A questa era affiancata una attività di validazione misurando come si comportav
+a in alcuni casi reali.
+\end_layout
+
+\begin_layout Subsubsection
+Parametri dell'euristica
+\end_layout
+
+\begin_layout Standard
+Ben presto ci siamo resi conto che il controllo sui risultati poteva essere
+ anche molto fine, anche se abbiamo riscontrato qualche potenziale pecca.
+ Oltre a diversi tool per la visualizzazione dei risultati infatti, l'applicazio
+ne ci forniva funzionalità:
+\end_layout
+
+\begin_layout Itemize
+per cambiare alcune proprietà relative ai mezzi (velocità media, qualifiche,
+ costi per fascia oraria/kilometrica, ecc.)
+\end_layout
+
+\begin_layout Itemize
+per aggiungere/modificare alcuni vincoli per quanto riguardava la soluzione
+ (tempo massimo che un mezzo poteva attendere presso un punto di consegna
+ in attesa che aprisse, costo relativo alla singola unità di tempo, finestre
+ di consegna, ecc.)
+\end_layout
+
+\begin_layout Itemize
+per decidere se adottare i 
+\begin_inset Quotes eld
+\end_inset
+
+giri base
+\begin_inset Quotes erd
+\end_inset
+
+ come punto di riferimento o meno (era possibile ad esempio decidere di
+ tenere fissi i clienti che dovevano essere visitati nelle rotte, ma fare
+ in modo che fosse l'applicativo a decidere qual'era l'ordine che minimizzava
+ i costi)
+\end_layout
+
+\begin_layout Itemize
+per tenere traccia dei vincoli che erano stati eventualmente violati dalla
+ soluzione, mediante una piccola console.
+\end_layout
+
+\begin_layout Standard
+Ognuna di queste funzionalità ci aiutava nella creazione di uno scenario
+ simulato che cercavamo di rendere il più possibile vicino alla realtà.
+ Più lo scenario che andavamo a creare si avvicinava allo scenario del nostro
+ problema, più i risultati che ottenevamo da Intertour sembravano affidabili,
+ o quantomeno convincenti.
+\end_layout
+
+\begin_layout Subsubsection
+Qualifiche
+\end_layout
+
+\begin_layout Standard
+Per ogni mezzo era possibile definire arbitrariamente dei flag che rappresentass
+ero le 
+\begin_inset Quotes eld
+\end_inset
+
+qualifiche del mezzo
+\begin_inset Quotes erd
+\end_inset
+
+, che ci permettevano di risolvere problematiche complesse come quella dell'orto
+frutta vista in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Training-su-PTV"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Il meccanismo in sè era semplice, ed il sistema, dopo la prima volta era
+ stato impostato, era in grado di memorizzare le qualifiche attivate in
+ modo da non perderle tra una sessione di utilizzo e l'altra.
+ 
+\end_layout
+
+\begin_layout Standard
+Era necessario prima di tutto attivare i flag per i mezzi che si sapeva
+ possedessero certe caratteristiche e poi, ogni volta che un'ordine aveva
+ certe caratteristiche, si attivava il flag corrispondente anche per il
+ cliente (importante notare che la qualifica veniva vista come un'attributo
+ del cliente, e non dei suoi ordini).
+ Dopodichè era l'applicazione a tenere conto delle qualifiche e cercare
+ di attribuire il mezzo giusto durante il calcolo della soluzione.
+ Se il vincolo della qualifica non veniva rispettato dalla soluzione trovata,
+ nella piccola console appariva quale rotta aveva violato il vicolo e su
+ quale punto di consegna.
+ Era anche possibile automatizzare in parte anche le attivazioni delle qualifich
+e definendo alcune macro, ma nel nostro caso ne abbiamo fatto a meno perchè
+ non ne facevamo un uso così esteso.
+\end_layout
+
+\begin_layout Subsubsection
+Visualizzazione dei risultati
+\end_layout
+
+\begin_layout Standard
+I punti di consegna appaiono rappresentati come dei pallini nella mappa
+ che mostra l'applicazione, collegati da linne continue che sono le rotte.
+ Le rotte si dipartono, come è logico, dal maggazzino di Mantova, che appare
+ come un triangolino.
+ Come triangolini appaiono anche eventuali 
+\emph on
+transit point
+\emph default
+, punti particolari che si comportano sia come normali destinazioni (un
+ certo quantitativo di merce deve esservi consegnato) sia come magazzini
+ (la merce, una volta arrivata, viene smistata utilizzando altri corrieri).
+\end_layout
+
+\begin_layout Standard
+Questa rappresentazione, benchè semplice ed abbastanza intuitiva, nasconde
+ in sè quello che potrebbe essere considerato un errore di usabilità: le
+ linee che congiugono i vari punti di consegna non ricalcano minimamente
+ quello che è il percorso reale, sono semplicemente linee che congiungono
+ coppie di punti nel modo più diretto possibile.
+\end_layout
+
+\begin_layout Standard
+Questo significa, come è succeso in caso reale, che se due punti si trovano
+ ai due estremi di un lago e fanno parte della stessa rotta vedremo un linea
+ congiungerli e passare 
+\series bold
+sopra il lago
+\series default
+.
+ Ad una prima vista questa rappresentazione potrebbe sembrare fuorviante
+ oppure anche segnalare un errore nelle impostazioni, ed è quello che è
+ capitato.
+ Invece, tenendo conto di quanto detto prima, è chiaro che non c'è niente
+ di strano.
+\end_layout
+
+\begin_layout Standard
+Questa rappresentazione potrebbe derivare anche da limiti pratici, in quanto
+ non sappiamo se nella matrice delle distanze vengono memorizzate solo le
+ distanze tra le destinazioni o anche i percorsi che le collegano.
+ In ogni caso non è un difetto fatale, anzi per fortuna la mappa risulta
+ molto utile anche in presenza di questo difetto.
+\end_layout
+
+\begin_layout Subsubsection
+Velocità dei mezzi
+\end_layout
+
+\begin_layout Standard
+I dipendenti di TPS ci hanno subito avvertito di una peculiarità di questo
+ prodotto
+\end_layout
+
+\begin_layout Subsubsection
+Validazione dei risultati
 \end_layout
 
 \begin_layout Subsection
+Comportamento dello strumento in caso di scenari dinamici
+\end_layout
+
+\begin_layout Subsubsection
 Problemi di formato sui dati in input
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Nuove rotte, calcolate su più giorni
 \end_layout
 

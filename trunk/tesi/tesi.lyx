@@ -3456,6 +3456,17 @@ Ognuna di queste funzionalità ci aiutava nella creazione di uno scenario
  o quantomeno convincenti.
 \end_layout
 
+\begin_layout Standard
+Un dettaglio che si rivelato importante successivamente stava nel fatto
+ che i mezzi non erano visti come singole unità, ma come classi di veicoli.
+ Gli attributi relativi al mezzo non appartenenvano al singolo mezzo, ma
+ all'intera classe.
+ Questa particolarità ci è stato spiegato che era stata introdotta per motivi
+ prestazionali: più la flotta era omogenea, più i calcoli si semplificavano,
+ ed una simile rappresentazione forzava a distinguere solo ciò che era chiaramen
+te differente.
+\end_layout
+
 \begin_layout Subsubsection
 Qualifiche
 \end_layout
@@ -3560,11 +3571,90 @@ Velocità dei mezzi
 
 \begin_layout Standard
 I dipendenti di TPS ci hanno subito avvertito di una peculiarità di questo
- prodotto
+ prodotto: le zone a ZTL non sono correttamente gestite.
+ Questo significa che se si fosse presentato ad esempio il caso di un punto
+ di consegna in centro a Milano lo l'applicazione ci avrebbe segnalato che
+ il punto era raggiungibile, ma non avrebbe segnalato che era necessario
+ nell'ultimo tratto utilizzare un mezzo leggero o con autorizzazione.
+ Bisognava quindi stare un attimo attenti ai risultati che lo strumento
+ mostrava alla fine del calcolo.
+\end_layout
+
+\begin_layout Standard
+A mio parere questo difetto sembra come al solito legato al fatto che nella
+ matrice delle distanze non vengano salvati altri dati sul percorso più
+ breve.
+\end_layout
+
+\begin_layout Standard
+Per ovviare al problema, e cercare di far quadrare il più possibile i conti
+ soprattutto per i tempi di viaggio, si doveva intervenire a mano, con 3
+ approcci possibili:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+osservare la rotta, calcolare circa il punto in cui il mezzo entrava nella
+ zona ZTL, mettere in quel punto un transit point, e impostare delle qualifiche
+ sul vero punto di consegna in modo che fosse selezionato un mezzo leggero
+ o aurorizzato.
+
+\series default
+ Questo era decisamente l'approccio più corretto, ma molto difficile e dispendio
+so in termini di tempo.
+ Inoltre ricordiamo che era difficile stimare il punto preciso poichè la
+ mappa non mostrava il vero percorso del mezzo, ma soltanto una linea che
+ congiungeva 2 punti.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+stimare più o meno il punto dove il mezzo entrava nella zona ZTL, e stimare
+ la velocità media del mezzo leggero, e modificare la velocità del mezzo
+ pesante in modo che avesse un valore che era una specie di media pesata
+ tra i due.
+ Questo approccio risultava meno corretto, ma sembrava più veloce.
+
+\series default
+ In realtà si perdeva comunque un po' di tempo, poichè i mezzi erano suddivisi
+ in classi, e la velocità media era un'attributo della classe, non del veicolo,
+ per cui sarebbe stato necessario isolare il mezzo scelto e metterlo in
+ una classe a parte.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+era possibile modificare gli attributi relativi alla strada in modo da impostare
+ un determinata velocità massima (una specie di limite di velocità).
+
+\series default
+ Questo metodo, molto simile al secondo, in realtà risulterebbe molto più
+ semplice perchè tutti i relativi calcoli verrebbero campiuti interamente
+ dallo strumento, e di sicuro anche relativamente veloce.
+ Tuttavia ancora una volta usando solo la mappa non si poteva capire da
+ che via specifica il mezzo sarebbe passato, quindi era chiaro che si poteva
+ utilizzare questa tecnica solo se ad esempio utilizzavamo Maps&Guide per
+ visualizzare il percorso.
+\end_layout
+
+\begin_layout Standard
+La nostra fortuna era che situazioni come quella sopra descritta non si
+ presentavano, comunque abbiamo deciso di prendere nota del problema.
+ Il vero difetto dal mio punto di vista non consisteva nel fatto che PTV
+ Intertour non era in grado di risolvere agilmente il problema, ma piuttosto
+ il fatto che non potesse nemmeno segnalare all'operatore che era necessario
+ controllare i risultati.
 \end_layout
 
 \begin_layout Subsubsection
 Validazione dei risultati
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection

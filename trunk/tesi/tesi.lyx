@@ -1,4 +1,4 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -2877,6 +2877,12 @@ vecchio stampo
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Progetto-di-massima"
+
+\end_inset
+
 Progetto di massima della soluzione
 \end_layout
 
@@ -2914,7 +2920,7 @@ Si cercava dunque una soluzione che permettesse di automatizzare l'intero
 \end_layout
 
 \begin_layout Subsection
-– requisiti della soluzione
+Requisiti della soluzione
 \end_layout
 
 \begin_layout Standard
@@ -2972,7 +2978,7 @@ Da parte di Wicor Nixdorf un requisito implicito poteva essere la necessità
 \end_layout
 
 \begin_layout Subsection
-– modalità di realizzazione
+Modalità di realizzazione
 \end_layout
 
 \begin_layout Standard
@@ -3017,7 +3023,7 @@ Era quindi logico cercare una soluzione applicativa sempre progettata da
 \end_layout
 
 \begin_layout Subsection
-valutazione delle alternative
+Valutazione delle alternative
 \end_layout
 
 \begin_layout Standard
@@ -3654,15 +3660,105 @@ Validazione dei risultati
 \end_layout
 
 \begin_layout Standard
+Come test per la configurazione adottata abbiamo utilizzato dei dati provenienti
+ da Primafrost e rilevati in giorno specifico, in modo da fare una prova
+ con uno scenario reale, con tanto di 
+\begin_inset Quotes eld
+\end_inset
 
+giri base
+\begin_inset Quotes erd
+\end_inset
+
+ (ovvero le rotte originali tracciate manualmente).
+\end_layout
+
+\begin_layout Standard
+Sono state fatte più prove, provando a far variare il numero di punti di
+ consegna e la loro disposizione, e controllando ogni volta se i tempi di
+ riposo per i camionisti rispettavano le norme vigenti.
+\end_layout
+
+\begin_layout Standard
+Ciò che si è potuto osservare è che, utilizzando le rotte originali come
+ punto di partenza si otteneva comunque un risparmio, misurabile attorno
+ all'1-2%, che era nulla in confronto al caso in cui le rotte venivano ricalcola
+te da capo.
+ in quest'ultimo caso si poteva anche raggiungere il 5% lasciando agire
+ per un po' la post-ottimizzazione.
+\end_layout
+
+\begin_layout Standard
+Come già detto precedentemente in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Progetto-di-massima"
+
+\end_inset
+
+, queste percentuali possono apparire irrisorie, ma non lo sono affatto,
+ poichè i fattori di costo per questo tipo di attività si aggirando complessivam
+ente sull'ordine dei milioni di euro, e quindi si sta parlando di una discreta
+ somma comunque.
+\end_layout
+
+\begin_layout Standard
+Ciò che abbiamo inoltre rilevato sono le prestazioni del componente applicativo:
+ in al massimo una decina di secondi un problema con circa 200 punti di
+ consegna ed una ventina di mezzi era stato completamente risolto, senza
+ violazioni di vincoli e migliorando la soluzione trovata manualmente del
+ 3% circa (tra i vincoli contavano anche i tempi di riposo).
+\end_layout
+
+\begin_layout Standard
+La post-ottimizzazione impiegava ben di più: in teoria la si poteva lasciare
+ andare quanto si voleva, ma sperimentalmente si era notato che i miglioramenti
+ più notevoli si avevano già entro i primi 2 minuti.
+ Passato questo limite, il tempo tra un miglioramento ed il successivo tendeva
+ ad allungarsi troppo, per cui si è deciso di impostare come condizione
+ di terminazione il fatto che fossero passati 120 secondi.
+ Pur usando un tempo così ristretto, si notava che in media la post-ottimizzazio
+ne migliorava la soluzione trovata dall'euristica dell'1-2% al massimo.
 \end_layout
 
 \begin_layout Subsection
 Comportamento dello strumento in caso di scenari dinamici
 \end_layout
 
+\begin_layout Standard
+Prima di comunicare ufficialmente al cliente i dati che avevamo raccolto,
+ era necessario fare anche delle prove con dati che provenissero da giornate
+ diverse, in modo da vedere come lo strumento si comportava di fronte a
+ scenari dinamici.
+\end_layout
+
+\begin_layout Standard
+Per nostra fortuna il cliente era molto ben disposto nei nostri confronti,
+ ed erano già disponibili i dati di alcune giornate, già riversati all'interno
+ dell'ERP aziendale.
+\end_layout
+
 \begin_layout Subsubsection
 Problemi di formato sui dati in input
+\end_layout
+
+\begin_layout Standard
+In questa fase abbiamo avuto qualche problema con il formato dei dati in
+ input per Intertour.
+ Me.R.Sy.
+ infatti era in grado di restituirci tutti i dati che ci servivano in formato
+ CSV, ma IT Manager, che noi usavamo per questa procedura, voleva che le
+ colonne fossero in un certo ordine, mentre Intertour voleva che le coordinate
+ per la georeferenziazione fossero nel formato Mercatore.
+\end_layout
+
+\begin_layout Standard
+In sé e per sé questo problema era assai stupido, e forse si poteva risolvere
+ anche solo con qualche macro di Microsoft Excel.
+ Questa infatti è stata la prima strada che abbiamo seguito, ma ben presto
+ ci siamo resi conto che i dati che provenivan dall'ERP non riguardavano
+ solo le giornate che servivano a noi.
+ Era dunque necessario 
 \end_layout
 
 \begin_layout Subsubsection

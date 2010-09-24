@@ -3758,19 +3758,100 @@ In sé e per sé questo problema era assai stupido, e forse si poteva risolvere
  Questa infatti è stata la prima strada che abbiamo seguito, ma ben presto
  ci siamo resi conto che i dati che provenivan dall'ERP non riguardavano
  solo le giornate che servivano a noi.
- Era dunque necessario 
+ Era dunque necessario filtrare i record ottenuti, e poi applicare tutte
+ le trasformazioni necessarie.
+ Con le macro di Excel era possibile eseguire le varie operazioni singolarmente,
+ ma visto che avevamo più tabelle (quella dei mezzi e quella degli ordini
+ dei clienti), la cosa si faceva più difficile, perchè da una parte dovevamo
+ riuscire ad escludere più dati possibile, mentre dall'altra non potevamo
+ permetterci di far saltare i controlli dei riferimenti incrociati, per
+ cui dovevamo eliminare solo lo stretto necessario.
+ Per farla breve avevamo veramente bisogno di un'operatore che funzionasse
+ più o meno come il JOIN di SQL per eseguire tutta la procedura in modo
+ da non fare danni.
+\end_layout
+
+\begin_layout Standard
+Così abbiamo provato ad usare le tabelle Excel come input per altri programmi
+ che ci permettessero di utilizzare qualche operazione similare ai DBMS.
+ Dato che l'ambiente in cui ci trovavamo a lavorare aveva un spiccata dominanza
+ di sistemi e applicazioni Windows-like, abbiamo fatto una prova con MS
+ Access, visto che apparteneva alla stessa suite.
+\end_layout
+
+\begin_layout Standard
+Ben presto però ci siamo resi conto dei limiti che l'applicazione aveva,
+ in quanto permetteva di importare le tabelle Excel, ma non permetteva di
+ usare operatore come il JOIN perchè di fatto non stava utilizzando veri
+ database.
+\end_layout
+
+\begin_layout Standard
+Così l'alternativa è stata l'utilizzo di SQL Server 2005 Express Edition,
+ per via del fatto che comunque è un DBMS, è free, ed è della stessa casa,
+ per cui potevamo aspettarci un po' di compatibilità.
+\end_layout
+
+\begin_layout Standard
+Indagando un po' abbiamo infatti trovato una pratica funzionalità che ci
+ permetteva di importare direttamente i dati dei file Excel all'interno
+ delle tabelle del database e viceversa.
+\end_layout
+
+\begin_layout Standard
+In questo modo siamo riusciti a risolvere tutto il problema in appena mezza
+ giornata.
 \end_layout
 
 \begin_layout Subsubsection
 Nuove rotte, calcolate su più giorni
 \end_layout
 
+\begin_layout Standard
+Con i nuovi dati abbiamo potuto fare qualche test anche su pianificazioni
+ di altre giornata di consegna.
+ I risultati per fortuna si mantenevano nella media di quanto precedetemente
+ osservato.
+\end_layout
+
+\begin_layout Standard
+Con queste ultime prove avevamo dimostrato che lo strumento si comportava
+ bene anche in presenza di scenari dinamici, senza cambiare impostazioni.
+\end_layout
+
 \begin_layout Subsection
 Prima presentazione dei risultati al cliente
 \end_layout
 
+\begin_layout Standard
+Abbiamo potuto finalmente presentare in maniera ufficiale i risultati ottenuti
+ in un meeting con tutti gli stakeholder riuniti.
+ Oltre ad una rappresentanza di Wincor Nixdorf e di Primafrost erano presenti
+ anche TPS e gruppo Lombardini.
+ Quest'ultimo in particolare era presente in quanto voleva conoscere quanto
+ il metodo di consegna di Primafrost sarebbe cambiato, visto che l'azienda
+ rifornisce i suoi punti di consegna.
+\end_layout
+
+\begin_layout Standard
+L'incontro è proceduto abbastanza bene, il cliente ha confermato che dal
+ suo punto di vista si stava andando nella direzione giusta.
+ 
+\end_layout
+
+\begin_layout Standard
+Alcune rotte di quelle originali tuttavia sembravano strane perchè erano
+ stati registrati dei tempi che lo strumento non poteva riprodurre, così
+ gli esperti di TPS e i dipendenti di Primafrost si sono ripromessi di ricontrol
+lare i dati per quelle gite in particolare.
+\end_layout
+
 \begin_layout Subsection
 Percorso più corto o più breve?
+\end_layout
+
+\begin_layout Standard
+Una sola domanda rimase in sospeso dopo questo primo incontro
 \end_layout
 
 \begin_layout Subsection

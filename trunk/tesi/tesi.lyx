@@ -3842,8 +3842,20 @@ L'incontro è proceduto abbastanza bene, il cliente ha confermato che dal
 \begin_layout Standard
 Alcune rotte di quelle originali tuttavia sembravano strane perchè erano
  stati registrati dei tempi che lo strumento non poteva riprodurre, così
- gli esperti di TPS e i dipendenti di Primafrost si sono ripromessi di ricontrol
-lare i dati per quelle gite in particolare.
+ gli esperti di TPS e i dipendenti di Primafrost e Wincor Nixdorf si sono
+ ripromessi di ricontrollare i dati per quelle gite in particolare.
+\end_layout
+
+\begin_layout Standard
+E' emerso anche un'altro dato interessante, di cui però e meglio parlare
+ nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Analisi-costi-benefici"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -3851,7 +3863,127 @@ Percorso più corto o più breve?
 \end_layout
 
 \begin_layout Standard
-Una sola domanda rimase in sospeso dopo questo primo incontro
+Una sola domanda rimase in sospeso dopo questo primo incontro.
+ I dirigenti di Primafrost, in linea del tutto teorica, si chiedevano se
+ era possibile regolare lo strumento in modo che invece di utlizzare i percorsi
+ più brevi tra i punti di consegna, utilizzasse invece quelli più veloci.
+\end_layout
+
+\begin_layout Standard
+Questa richiesta era dovuta principalmente alle modalità di pagamento degli
+ autisti: alcuni erano pagati al kilometro, altri all'ora, quindi non era
+ così irragionevole cercare di minimizzare le distanze nel primo caso ed
+ i tempi nel secondo.
+\end_layout
+
+\begin_layout Standard
+Per riuscire a soddisfare la richiesta dovevamo sapere di più sull'architettura
+ interna del programma e capire come manipolare i parametri dell'euristica
+ in modo che tirasse fuori i risultati che ci servivano.
+\end_layout
+
+\begin_layout Subsubsection
+Il componente MEFISTO
+\end_layout
+
+\begin_layout Standard
+MEFISTO è stato l'unico componente che ci appariva manipolabile da questo
+ punto di vista, ed è stato anche l'unico componente interno di cui abbiamo
+ ricevuto un minimo di documentazione da parte di TPS.
+\end_layout
+
+\begin_layout Standard
+Il funzionamento in dettaglio di MEFISTO può essere trovato nella sezione
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mephisto"
+
+\end_inset
+
+.
+ Il suo funzionamento può essere riassunto in poche parole: questo componente
+ parte dal una soluzione base trovata da un'euristica veloce e cerca di
+ migliorarla.
+ I pesi servono ad indirizzare la ricerca e quindi a determinare l'aspetto
+ della soluzione finale.
+\end_layout
+
+\begin_layout Standard
+I pesi non erano modificabili da interfaccia grafica, ed ecco perchè non
+ li avevamo notati finora, ma da un file di configurazione, la cui locazione
+ ci è stata indicata dai tecnici TPS.
+\end_layout
+
+\begin_layout Standard
+Ciò che si è potuto notare è che, ponendo i risultati in un ipotetico piano
+ cartesiano organizzato come in figura, la funzione risulta abbastanza prevedibi
+le, tuttavia in alcuni casi che abbiamo trovato presentava alcune discontinuità.
+\end_layout
+
+\begin_layout Standard
+Non era pertanto possibile prevedere in modo accurato i risultati che si
+ sarebbero ottenuti.
+\end_layout
+
+\begin_layout Subsubsection
+Le rotte che non tornavano
+\end_layout
+
+\begin_layout Standard
+Oltre al problema della non completa prevedibilità dell'influenza dei fattori
+ di costo, c'erano anche da tenere in considerazione le rotte il cui costo
+ non tornava.
+ sembrava infatti che i ottenuti dal precedente sistema, che usava Maps&Guide,
+ non collimassero con i dati ottenuti utilizzando PTV Intertour.
+ In particolare quelli ottenuti con Maps&guide sembravano in alcuni casi
+ migliori.
+\end_layout
+
+\begin_layout Standard
+La prima ipotesi da verificare era che stessero usando la stessa versione
+ delle mappe, altrimenti era chiaro che da dati diversi derivassero risultati
+ diversi.
+\end_layout
+
+\begin_layout Standard
+Sono stati controllati quindi i percorsi di riferimento alle mappe, ma erano
+ identici, e ce lo hanno confermato anche i tecnici TPS.Siamo pertanto tornati
+ a controllare se esistevano altri parametri che influenzassero il calcolo
+ e che fossero comuni ai due sistemi.
+ A prima vista però questa strada sembrava un vicolo cieco.
+\end_layout
+
+\begin_layout Standard
+La soluzione di questo problema venne data da Cristian, il dipendente di
+ Primafrost che si occupava del calcolo delle rotte.
+ Mentre noi cercavamo di riprodurre i suoi risultati, lui aveva cercato
+ di riprodurre i nostri, con successo.
+\end_layout
+
+\begin_layout Standard
+Tutto si era risolto con la variazione di un singolo fattore, che dall'interfacc
+ia sembrava effettivamente influenzare il calcolo del percorso, ma solo
+ per quanto riguardava la sua lunghezza.
+\end_layout
+
+\begin_layout Standard
+La figura illustra quello che esponeva l'interfaccia: mettendo un valore
+ massimo a quel coefficiente avremmo in teoria dovuto influenzare la ricerca
+ in modo che selezionasse il percorso più breve, al contrario avrebbe selezionat
+o il più veloce.
+\end_layout
+
+\begin_layout Standard
+Non è dato sapere
+\end_layout
+
+\begin_layout Subsubsection
+La ricerca dei giusti valori per i fattori
+\end_layout
+
+\begin_layout Subsubsection
+Validazione dei risultati
 \end_layout
 
 \begin_layout Subsection
@@ -3859,6 +3991,12 @@ Presentazione dei risultati definitiva al cliente
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Analisi-costi-benefici"
+
+\end_inset
+
 Analisi costi-benefici
 \end_layout
 

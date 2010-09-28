@@ -3975,19 +3975,105 @@ o il più veloce.
 \end_layout
 
 \begin_layout Standard
-Non è dato sapere
+Non è dato sapere di preciso come questo singolo fattore influenzasse il
+ calcolo, ma si possono fare supposizioni: supponendo che l'algoritmo utilizzato
+ da entrambi i programmi sia simile a grnular Tabu Search, quel fattore
+ potrebbe in realtà aver influenzato la 
+\begin_inset Quotes eld
+\end_inset
+
+granularità
+\begin_inset Quotes erd
+\end_inset
+
+ dello spazio delle soluzioni, cambiando il numero di archi presi in considerazi
+one.
+ Una volta trovato quindi una disposizione degli archi simile, i due programmi
+ avrebbero cominciato a restituire soluzioni simili tra loro.
 \end_layout
 
 \begin_layout Subsubsection
 La ricerca dei giusti valori per i fattori
 \end_layout
 
+\begin_layout Standard
+Risolto il problema delle rotte 
+\begin_inset Quotes eld
+\end_inset
+
+non corrette
+\begin_inset Quotes erd
+\end_inset
+
+, rimaneva il problema di trovare i valori 
+\begin_inset Quotes eld
+\end_inset
+
+migliori
+\begin_inset Quotes erd
+\end_inset
+
+ per soddisfare le esigenze del cliente.
+\end_layout
+
+\begin_layout Standard
+Vi erano sostanzialmente 2 metodi possibili:
+\end_layout
+
+\begin_layout Enumerate
+Cercare manualmente, attraverso una serie di prove, i valori corretti
+\end_layout
+
+\begin_layout Enumerate
+Cercare di automatizzare il processo descritto al punto 1
+\end_layout
+
+\begin_layout Standard
+Ognuna delle due scelte aveva vantaggi e svantaggi, ovviamente.
+ Nel caso della ricerca manuale i tempi potevano essere anche molto lunghi
+ e la qualità della soluzione trovata scadente, viceversa per il caso automatico
+, con la differenza che per automatizzare il processo e mantenere i tempi
+ ragionevolmente brevi potevano essere necessarie risorse computazionali
+ aggiuntive, all'epoca non disponibili.
+\end_layout
+
+\begin_layout Standard
+Si è quindi optato per la prima scelta, raggiungendo una soluzione abbastanza
+ buona dopo qualche giorno di lavoro.
+\end_layout
+
+\begin_layout Standard
+Giusto per completezza, i risultati che si sarebbero potuti ottenere con
+ una procedura automatica, sono spiegati nel capitolo 3, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Implementazione"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsubsection
 Validazione dei risultati
 \end_layout
 
+\begin_layout Standard
+Tutte prove di cui si è parlato prima sono state effettuate sulle mappe
+ e sugli ordini su ci sono anche state effettuate anche le prove fatte per
+ laprima consegna, per cui eravamo piuttosto sicuri dei risultati.
+\end_layout
+
 \begin_layout Subsection
 Presentazione dei risultati definitiva al cliente
+\end_layout
+
+\begin_layout Standard
+Il cliente, già contento perchè aveva intuito che si stava andando nella
+ direzione giusta, è stato molto felice di sapere che c'era anche un modo
+ di manipolare il risultato finale dell'applicazione.
+ In questo modo se un domani fossero cambiate le esigenze, si poteva semplicemen
+te agire sui parametri invece che gettare via tutto.
 \end_layout
 
 \begin_layout Section
@@ -3998,6 +4084,33 @@ name "sec:Analisi-costi-benefici"
 \end_inset
 
 Analisi costi-benefici
+\end_layout
+
+\begin_layout Standard
+A conti fatti le due architetture eran più o meno equivalenti dal punto
+ di vista dei vantaggi e degli svantaggi.
+\end_layout
+
+\begin_layout Standard
+Ciò che ha portato quindi ad una scelta netta è stato ciò che è emerso già
+ dal primo incontro con gli stakeholder, ovvero il fatto che alcune informazioni
+ non erano del tutto aggiornate all'interno delle mappe.
+\end_layout
+
+\begin_layout Subsection
+Vantaggi e svataggi utilizzzando PTV Intertour
+\end_layout
+
+\begin_layout Subsection
+Vantaggi e svantaggi utilizzando PTV XTour
+\end_layout
+
+\begin_layout Subsection
+L'incompletezza delle mappe
+\end_layout
+
+\begin_layout Subsection
+Scelta finale
 \end_layout
 
 \begin_layout Standard
@@ -4021,6 +4134,12 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Implementazione"
+
+\end_inset
+
 Implementazione
 \end_layout
 
@@ -4050,6 +4169,19 @@ cleardoublepage}
 
 \begin_layout Chapter*
 Conclusioni
+\end_layout
+
+\begin_layout Standard
+Si può quindi concludere che, allo stato odierno, il mondo commerciale è
+ ora in grado di rispondere anche alle esigenze di chi ogni giorno deve
+ gestire un'intera flotta di veicoli e qualche centinaio di punti di consegna.
+ Da un punto di vista prestazionale, si evidenziano gli eccellenti risultati
+ raggiunti da PTV.
+\end_layout
+
+\begin_layout Standard
+La vera criticità di oggi invece è tenere completi ed aggiornati i dati
+ delle mappe che non riguardano strettamente la cartografia 
 \end_layout
 
 \begin_layout Standard

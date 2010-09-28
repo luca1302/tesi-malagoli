@@ -3820,6 +3820,12 @@ Con queste ultime prove avevamo dimostrato che lo strumento si comportava
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prima-presentazione-risultati"
+
+\end_inset
+
 Prima presentazione dei risultati al cliente
 \end_layout
 
@@ -4101,16 +4107,148 @@ Ciò che ha portato quindi ad una scelta netta è stato ciò che è emerso già
 Vantaggi e svataggi utilizzzando PTV Intertour
 \end_layout
 
+\begin_layout Standard
+Utilizzando Intertour i vantaggi che se ne ottenevano erano valutabili a
+ livello di maggiore semplicità di utilizzo per l'utente finale se si utilizzava
+ direttamente l'interfaccia grafica prevista dallo strumento, ed un costo
+ minore o quantomeno comparabile a quello degli XServer.
+\end_layout
+
+\begin_layout Standard
+D'altro canto l'applicazione non risultava così facile da integrare nell'archite
+ttura già esistente, infatti necessitava di qualche workaround solo per
+ interfacciarlo direttamente con l'ERP.
+\end_layout
+
+\begin_layout Standard
+Questa risultava essere un'ottima alternativa nel caso si fosse visto che
+ la componente umana non poteva essere esclusa, in quanto anche se più difficile
+ da integrare poteva risultare più usabile.
+\end_layout
+
 \begin_layout Subsection
 Vantaggi e svantaggi utilizzando PTV XTour
+\end_layout
+
+\begin_layout Standard
+Utilizzando XTour era probabilmente più facile da integrare con la'rchitettura
+ preesistente, ma non avrebbe necessariamente semplificato l'interazione
+ con l'utente.
+\end_layout
+
+\begin_layout Standard
+Grazie all'architettura basata su Web Service, si poteva riuscire a visualizzare
+ le mappe anche all'interno di un browser con poco sforzo, visto che esistevano
+ già librerie apposite.
+\end_layout
+
+\begin_layout Standard
+Il problema sarebbe stato dover disegnare ex-novo una nuova interfaccia
+ per l'utente, con possibili problemi di usabilità e di familiarizzazione
+ con i nuovi controlli.
+\end_layout
+
+\begin_layout Standard
+Inoltre non era detto che il costo fosse per forza contenuto, non sono mai
+ state fatte abbastanza prove per avere la certezza se ogni XServer fosse
+ più o meno indipendente dagli altri o se fosse necessario l'utilizzo di
+ più di uno di questi prodotti in sinergia.
+ Facendo conto che le licenze erano diverse per ogni prodotto, significava
+ potenzialmente pagarle tutte a parte singolarmente.
+\end_layout
+
+\begin_layout Standard
+Questa poteva tuttavia essere un'ottima alternativa nel caso si fosse visto
+ che la componente umana era escludibile quasi del tutto.
+ Riducendo i controlli all'osso ed integrando tutto il resto, la qualità
+ delle soluzioni era garantita.
 \end_layout
 
 \begin_layout Subsection
 L'incompletezza delle mappe
 \end_layout
 
+\begin_layout Standard
+Già durante il primo incontro con gli stakeholder, come accennato nel capitolo
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prima-presentazione-risultati"
+
+\end_inset
+
+, emerse subito un problema relativo al calcolo dei percorsi.
+\end_layout
+
+\begin_layout Standard
+PTV Intertour infatti non ci permetteva di vedere di preciso quale percorso
+ seguivano i mezzi, e Christian, che in Primafrost si occupava del calcolo
+ delle rotte, ha voluto vederci chiaro.
+\end_layout
+
+\begin_layout Standard
+Ricalcolando i percorsi utilizzando Maps&Guide si ottenevano risultati un
+ po' strani infatti ( e queste erano le rotte che non tornavano ), mentre
+ altri sembravano potenzialmente ignorare alcune restrizioni presenti sul
+ manto stradale: in un caso particolare Christian ci ha spiegato che per
+ percorrere una certa di distanza in così poco tempo l'applicazione poteva
+ potenzialmente aver deciso di passare per una galleria attaverso la quale
+ un camion non poteva passare.
+\end_layout
+
+\begin_layout Standard
+Ci siamo sentiti subito di escludere il caso, anche se sapevamo che Cristian
+ aveva più esperienza di tutti noi in fatto di strade.
+ In realtà parlandone un po' è uscito fuori che l'ipotesi di Cristian non
+ era così insensata, in quanto la stessa TPS ha dovuto confessare che non
+ era così garantito che le mappe fossero accurate al 100%: erano sicuramete
+ complete ed aggiornate per quanto riguardava la cartografia, ma i dati
+ riguardanti la viabilità erano anche frutto di PTV, e poteva darsi che
+ l'Italia non fosse sempre così aggiornata.
+\end_layout
+
 \begin_layout Subsection
 Scelta finale
+\end_layout
+
+\begin_layout Standard
+In realtà, per quanto il problema della completezza delle mappe sembrasse
+ un problema minore, aveva rivelato una criticità: non potendo più garantire
+ che i percorsi calcolati avrebbero rispettato di base i vincoli imposti
+ dal codice della strada, non si poteva spingere più di tanto con l'ottimizzazio
+ne, anzi bisognava cercare di rifarsi il più possibile ai percorsi precalcolati
+ in origine.
+\end_layout
+
+\begin_layout Standard
+Non si è voluto comunque abbandonare il progetto, in quanto le premesse
+ sembravano promettenti, ma era ormai chiaro che la componente umana non
+ era eliminabile.
+\end_layout
+
+\begin_layout Standard
+Si è quindi deciso di mantenere come applicazione di riferimento PTV Intertour,
+ e di integrarlo in modo da fornire a Cristian tutti i controlli necessari.
+ Con questo assetto la figura professionale di questo dipendente non veniva
+ sostituita, anzi si permetteva all'individuo di crescere ulteriormente
+ nella sua carriera professionale, diventando esperto nell'utilizzo dello
+ strumento.
+\end_layout
+
+\begin_layout Standard
+Questo permetterebbe un domani di poter in teoria affiancare a Cristian
+ un assistente per poter gestire le consegne in caso di sua assenza, ed
+ inoltre con il potenziale miglioramento dello strumento si potrebbero anche
+ raggiungere risparmi sempre migliori, o almeno garantire che più o meno
+ sarà sempre possibile un piccolo margine di risparmio.
+\end_layout
+
+\begin_layout Standard
+Gli XServer non verranno pertanto impiegati, in quanto non offrirebbero
+ i vantaggi sperati e rischierebbero di costare troppo ora le licenze.
+ Questa alternativa sarà rivalutata in futuro, quando magari più clienti
+ utilizzeranno questo servizio e ci sarà bisogno di gestire configurazioni
+ diverse.
 \end_layout
 
 \begin_layout Standard
@@ -4181,7 +4319,34 @@ Si può quindi concludere che, allo stato odierno, il mondo commerciale è
 
 \begin_layout Standard
 La vera criticità di oggi invece è tenere completi ed aggiornati i dati
- delle mappe che non riguardano strettamente la cartografia 
+ delle mappe, partendo da quelli riguardano strettamente la cartografia,
+ fino ai dati sulla viabilità e la percorribilità delle strade.
+\end_layout
+
+\begin_layout Standard
+Senza dati al pari con le aspettative, infatti, si possono creare situazioni
+ spiacevoli in cui i risultati trovati sono inammissibili nella realtà delle
+ cose, come dimostra il caso di Primafrost.
+\end_layout
+
+\begin_layout Standard
+Siamo sicuri che le persone di TPS hanno realizzato quanto importante sia
+ questa priorità, e sicuramente nei prossimi anni si impegnereanno a fondo
+ per migliorare la qualità delle loro mappe.
+\end_layout
+
+\begin_layout Standard
+Questo potrebbe davvero rendere possibile, in un futuro molto prossimo,
+ una reale disponibilità di una soluzione commerciale in grado di risolvere
+ istanze del 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+ in un tempo ragionevole.
 \end_layout
 
 \begin_layout Standard

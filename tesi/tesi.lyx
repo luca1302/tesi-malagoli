@@ -192,6 +192,28 @@ Chiar.mo Prof.
 Fabio Panzieri
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Correlatore: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Ing.
+ Alberto Torrini
+\end_layout
+
 \end_inset
 
 
@@ -237,7 +259,7 @@ Presentata da:
 \end_inset
 
 
-\begin_inset VSpace 20mm
+\begin_inset VSpace 18mm
 \end_inset
 
 
@@ -2832,6 +2854,359 @@ Esistono anche variazioni che contemplano l'utilizzo di più depositi invece
  di averne uno solo centralizzato, ma non saranno descritte in questo elaborato.
 \end_layout
 
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Algoritmo-genetico"
+
+\end_inset
+
+Algoritmo genetico
+\end_layout
+
+\begin_layout Standard
+Un algoritmo genetico è un'euristica di ricerca che cerca di riprodurre
+ il processo di evoluzione naturale.
+ Quesa euristica è generalemnte usata per genrare utili soluzioni nei problemi
+ di ottimizzazione e ricerca.
+ Gli algoritmi genetici alla classe più generale dei problemi evoluzionistici,
+ i quali generano soluzioni a problemi di ottimizzazione usando tecniche
+ ispirate sempre all'evoluzione naturale, quali ereditarietà, mutazione,
+ selezione e crossover.
+\end_layout
+
+\begin_layout Subsection
+Principio generale
+\end_layout
+
+\begin_layout Standard
+In un algoritmo genetico [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "algoritmo-genetico"
+
+\end_inset
+
+], una popolazione di stringhe (chiamate cromosomi, geni o genotipi del
+ genoma) che rappresentano le soluzioni candidate (chiamate individui o
+ fenotipi) in un problema di ottimizzazione, evolvono verso soluzioni migliori.
+\end_layout
+
+\begin_layout Standard
+Tradizionalmente, le soluzioni sono rappresentate come stringhe bnarie,
+ ma sono possibili anche altre rappresentazioni ovviamente.
+ Gli algoritmi genetici sono impiegati in molti campi quali (bio)informatica,
+ ingegneria, economia, chimica, matematica, fisica, ecc.
+ 
+\end_layout
+
+\begin_layout Standard
+Un tipico algoritmo genetico richiede:
+\end_layout
+
+\begin_layout Enumerate
+un modo per rappresentare mediante geni il dominio delle soluzioni
+\end_layout
+
+\begin_layout Enumerate
+una funzione detta 
+\begin_inset Quotes eld
+\end_inset
+
+di idoneità
+\begin_inset Quotes erd
+\end_inset
+
+, per valutare il dominio delle soluzioni
+\end_layout
+
+\begin_layout Standard
+La funzione 
+\begin_inset Quotes eld
+\end_inset
+
+di idoneità
+\begin_inset Quotes erd
+\end_inset
+
+ viene geeralemnte utilizzata per favorire le soluzioni 
+\begin_inset Quotes eld
+\end_inset
+
+idonee
+\begin_inset Quotes erd
+\end_inset
+
+ o comunque buone rispetto al problema, e svantaggiare le altre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pseudocodice di un semplice algoritmo genetico generazionale:
+\end_layout
+
+\begin_layout Enumerate
+Scegli la popolazione iniziale di individui
+\end_layout
+
+\begin_layout Enumerate
+Valuta l'idoneità di ogni individuo 
+\end_layout
+
+\begin_layout Enumerate
+Ripeti fino a che il criterio di terminazione non è raggiunto: (time out,
+ idoneità minima raggiunta, ecc.)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+segli gli individui più idonei per la riproduzione
+\end_layout
+
+\begin_layout Enumerate
+dai origine ai nuovi individui attraverso il crossover dei geni e la mutazione
+\end_layout
+
+\begin_layout Enumerate
+Valuta l'idoneità di ogni nuovo individuo 
+\end_layout
+
+\begin_layout Enumerate
+rimpiazza gli individui meno idonei con i nuovi
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Inizializzazione 
+\end_layout
+
+\begin_layout Standard
+Inizialmente vengono generate tanti corredi genetici quanti individui della
+ popolazione initiale.
+ queste rappresentano le soluzioni iniziali.
+ La dimensione della popolazione iniziale dipende dal problema in questione,
+ ma di solito contiene centinaia o migliaia di individui.
+\end_layout
+
+\begin_layout Standard
+Sempre parlando in linea generale, questa popolazione viene generata casualmente
+, cercando di coprire l'intero spettro della soluzioni possibili.
+ Oppure si può anche utilizzare particolari intervalli di valori in cui
+ si pensa possano annidarsi le soluzioni migliori.
+\end_layout
+
+\begin_layout Subsection
+Selezione 
+\end_layout
+
+\begin_layout Standard
+Durante ogni iterazione successiva, una porzione della popolazione esistente
+ viene selezionata per dare vita ad una nuova generazione.
+\end_layout
+
+\begin_layout Standard
+Le soluzioni individuali vengono selzionate attraverso un processo basato
+ sull'idoneità del singolo individuo, dove le soluzioni con un più alto
+ punteggio di idoneità hanno maggiore probabilità di essere selezionate.
+\end_layout
+
+\begin_layout Standard
+Esistono più stategie di scelta, ognuna con i suoi pro e contro:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+metodo della roulette:
+\series default
+ con questo metodo ogni individuo ha una idoneità 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ ed una probabilità di essere scelto pari a 
+\begin_inset Formula $p_{i}=\frac{f_{i}}{\sum_{j=1}^{N}f_{j}}$
+\end_inset
+
+, dove N è il numero degli individui scelti.
+ Questo permette di ottenere una selezione abbastanza uniforme e rappresentativa
+ rispetto alla effettiva idoneità degli individui.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+campionamento universale stocastico:
+\series default
+ simile al metodo della roulette, ma con migliori probabilità matematiche
+ dal punto di vista della previsione
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+metodo del torneo:
+\series default
+ richiede la simulazione di diversi 
+\begin_inset Quotes eld
+\end_inset
+
+tornei
+\begin_inset Quotes erd
+\end_inset
+
+ tra una ristretta cerchia di individui scelti a caso tra la popolazione.
+ Il vincitore di ogni torneo, ovvero quello più idoneo, viene scelto per
+ la riproduzione.
+ La pressione selettiva indotta da questo metodo può essere moderata variando
+ la dimensione degli individui coinvolti.
+ Più il numero degli individui è grande, minore è la probabilità che gli
+ individui deboli vengano selzionati.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+metodo della troncatura:
+\series default
+ semplicissimo, semplicemente seleziona i migliori K individui sulla base
+ dell'idoneità e li fa riprodurre tra loro.
+\end_layout
+
+\begin_layout Subsection
+Riproduzione 
+\end_layout
+
+\begin_layout Standard
+Nel passo successivo viene creata una seconda generazione di individui (o
+ soluzioni) mediante una simulazione della riproduzione sessuale: il crossover.
+\end_layout
+
+\begin_layout Standard
+Per ogni nuova soluzione che si vole produrre, una coppia di soluzioni 
+\begin_inset Quotes eld
+\end_inset
+
+genitrici
+\begin_inset Quotes erd
+\end_inset
+
+ viene selzionata.
+ Producendo un 
+\begin_inset Quotes eld
+\end_inset
+
+bambino
+\begin_inset Quotes erd
+\end_inset
+
+ attraverso le operazioni che spiegheremo a breve, viene creata una nuova
+ soluzione che ha molto in comune con i suoi 
+\begin_inset Quotes eld
+\end_inset
+
+genitori
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Lo scopo ultimo è quello di far progredire le soluzioni verso una nuova
+ genrazione, potenzialmente 
+\begin_inset Quotes eld
+\end_inset
+
+migliore
+\begin_inset Quotes erd
+\end_inset
+
+ di quella precedente.
+\end_layout
+
+\begin_layout Standard
+Esistono diversi meccanismi di crossover, alcuni tra i più famosi sono:
+\end_layout
+
+\begin_layout Enumerate
+Crossover puntuale: viene selezionato un indice particolare all'interno
+ delle due stringhe che rappresentano i corredi genetici dei 
+\begin_inset Quotes eld
+\end_inset
+
+genitori
+\begin_inset Quotes erd
+\end_inset
+
+, e quindi si effettua lo scambio dei due segmenti
+\end_layout
+
+\begin_layout Enumerate
+Crossover a doppio punto: simile al crossover puntuale, ma con 2 punti di
+ scambio
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+Cut and Splice
+\begin_inset Quotes erd
+\end_inset
+
+: simile al crossover puntale, ma i punti di scambio non hanno lo stesso
+ indice.
+ Atipico rispetto ai precedenti poichè può produrre 
+\begin_inset Quotes eld
+\end_inset
+
+prole
+\begin_inset Quotes erd
+\end_inset
+
+ con stringhe di lunghezza diversa rispetto ai 
+\begin_inset Quotes eld
+\end_inset
+
+genitori
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Crossover uniforme: si seleziona una probabilità con cui due bit delle due
+ stringhe si scambieranno (tipicamente 0.5) e si lancia una monetina per
+ ogni bit della stringa 
+\end_layout
+
+\begin_layout Standard
+All'interno di questo processo la mutazione serve unicamente ad impedire
+ che le soluzioni si adagino su un 
+\begin_inset Quotes eld
+\end_inset
+
+minimo locale
+\begin_inset Quotes erd
+\end_inset
+
+: se la mutazione è vantaggiosa infatti, l'intero gruppo tende a compiere
+ un balzo in avanti da un punto di vista evoluzionistico, altrimenti viene
+ semplicemente scartata senza alterare il risultato finale.
+\end_layout
+
+\begin_layout Standard
+Ovviamente esistono anche meccanismi diversi dalla mutazione e dal crossover,
+ ma non saranno affrontati in quest'elaborato.
+\end_layout
+
 \begin_layout Chapter
 Architettura proposta
 \end_layout
@@ -4413,10 +4788,17 @@ L'algoritmo genetico
 \end_layout
 
 \begin_layout Standard
-Ogni algoritmo genetico non fa altro che rappresentare i geni degli individui
- mediante stringhe, calcolando per ogni stringa un vlore di fitness, ed
- infine, mediante un processo di selezione, fa accopiare gli individui migliori
- in modo che la nuova generazione sia migliore di quella prima.
+Ogni algoritmo genetico (come spiegato precedentmente in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Algoritmo-genetico"
+
+\end_inset
+
+) non fa altro che rappresentare i geni degli individui mediante stringhe,
+ calcolando per ogni stringa un vlore di fitness, ed infine, mediante un
+ processo di selezione, fa accopiare gli individui migliori in modo che
+ la nuova generazione sia migliore di quella prima.
  Nella riproduzione i corredi cromosomici dei genitori vengono mischiati
  tramite cross-over, in modo da ampliare lo spettro delle possibili soluzioni,
  ed infine c'è una probabilità di ottenre una mutazione, che aiuta a non
@@ -4473,6 +4855,49 @@ Cross-over (uniforme) e mutazione
 
 \begin_layout Section
 Ottenere i dati di input
+\end_layout
+
+\begin_layout Standard
+Il fatto che non si potessero ottenere i dati direttamente dalle mappe di
+ PTV non rappresentava un problema.
+ avevo infatti trovato un simpatico tutorial sugli XServer bastato su Javascript
+, che permetteva di editare il codice [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AJAX-tutorial"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+Studiando un po' l'API pubblica descritta nella documentazione di PTV, ed
+ avendo ancora un file Excel di quelli usati per PTV Intertour, sono riuscito
+ ad impostare il programma in modo che, date una serie di città, calcolasse
+ la lunghezza e la durata del percorso tra ogni coppia di città.
+\end_layout
+
+\begin_layout Standard
+Il risultato di quest'operazione era una sorta di matrice delle distanze,
+ ottima per il gnere di problema che doveva essere trattato.
+\end_layout
+
+\begin_layout Standard
+Visto che i punti d consegna erano dell'ordine del centinaio almeno, l'operazion
+e ha richiesto qualche ora.
+\end_layout
+
+\begin_layout Standard
+A causa di un limite sulla massima granularità nella mappa del tutorial,
+ punti di consegna ppartenenti alla stessa città collessavano.
+ Ho eliminato quindi i punti coincidenti, in quanto erano rendevano solo
+ più pesanti i calcoli da effettuare.
+\end_layout
+
+\begin_layout Standard
+La matrice delle distanze che ho potuto utilizzare dopo quest'operazione
+ risulta quindi un po' diversa da quella reale.
 \end_layout
 
 \begin_layout Section
@@ -5323,6 +5748,90 @@ name "Documentazione-di-PTV"
 \end_inset
 
 Documentazione di PTV Intertour 5.9, fornitami da TPS Italia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K16}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "AJAX-tutorial"
+
+\end_inset
+
+Sito PTV, sezione sviluppatori, 
+\begin_inset Quotes eld
+\end_inset
+
+Interactive AJAX Tutorial for PTV MobilityPlatform
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://80.146.239.135/mp-ajax-api-samples/tutorial/tutorial.html
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K17}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "algoritmo-genetico"
+
+\end_inset
+
+Wikipedia inglese, 
+\begin_inset Quotes eld
+\end_inset
+
+Genetic Algorithm
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/Genetic_algorithm
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard

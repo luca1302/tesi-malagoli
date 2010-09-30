@@ -3999,6 +3999,12 @@ one.
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:ricerca-giusti-fattori"
+
+\end_inset
+
 La ricerca dei giusti valori per i fattori
 \end_layout
 
@@ -4279,6 +4285,198 @@ name "cha:Implementazione"
 \end_inset
 
 Implementazione
+\end_layout
+
+\begin_layout Standard
+Nell vicenda spiegata nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:ricerca-giusti-fattori"
+
+\end_inset
+
+ rimaneva un dubbio irrisolto: si poteva riuscire a trovare i coefficienti
+ giusti in un modo automatico o comunque semi-automatico?
+\end_layout
+
+\begin_layout Standard
+Questo ci avrebbe permesso di avere un minimo di sicurezza per quanto riguardava
+ l'ottimalità della soluzione trovata e ci avrebbe risparmiato potenzialmente
+ un sacco di fatica.
+\end_layout
+
+\begin_layout Standard
+In questo capitolo presento un mio contributo completamente personale in
+ cui ho cercato di rispondere questo quesito.
+\end_layout
+
+\begin_layout Standard
+Nella prima sezione parlerò in generale delle motivazioni che mi hanno fatto
+ scegliere l'approccio che poi ho usato, quindi descriverò come ho ottenuto
+ i dati, i risultati ottenuti ed infine come ho potuto validare i risultati.
+\end_layout
+
+\begin_layout Section
+Approccio generale
+\end_layout
+
+\begin_layout Standard
+Era chiaro che non avrei potuto risolvere il problema utilizzando PV Intertour,
+ in quanto nella documentazione di questo strumento non era minimamente
+ spiegato se vi fosse un modo di impartire comandi all'applicazione senza
+ passare per l'interfaccia grafica, quindi non era possibile utilizzarlo
+ da riga d comando o mediante script di qualche genere.
+\end_layout
+
+\begin_layout Standard
+La selta quindi più ovvia era quella di utilizzare gli XServer, ed in particolar
+e XTour in quanto, sempre stando alla documentazione, era il più simile
+ da un punto di vista di funzionalità ed utilizzo.
+\end_layout
+
+\begin_layout Standard
+TPS aveva fornito a Wincor un account per riuscire a scaricare le ultime
+ versioni degli XServer direttamente dal sito di PTV, per cui questa parte
+ non cosutuiva un problema.
+\end_layout
+
+\begin_layout Standard
+I problemi sono cominciati quando, facendo delle prove con i vari applicativi,
+ mi sono reso conto ingenuamente che le mappe non erano incluse nel download.
+ Chiedendo a TPS mi sono reso conto che le mappe avrebbero occupato circa
+ 10 GB, quindi non era possibile scambiarci i file.
+\end_layout
+
+\begin_layout Standard
+Ho abbandonato quindi quella strada, ma ho ottenuto lo stesso i dati, come
+ spiegherò più avanti, poichè in ogni caso non esisteva un modo per importarli
+ all'interno di XTour.
+\end_layout
+
+\begin_layout Standard
+Ho deciso perciò di eseguire un semplice 
+\begin_inset Quotes eld
+\end_inset
+
+dimostrazione
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero un test che avrebbe dato risultati da interpretare in linea di
+ massima, visto che ogni soluzione con un più ampio margine di precisione
+ era da scartare.
+\end_layout
+
+\begin_layout Standard
+Il mio approccio è stato quindi quello di reimplementare Granular Tabu Search
+ e di compiere la ricerca dei fattori migliori atraverso un algoritmo genetico,
+ per vedere se quest'ultimo mi aiutava a selezionare i coefficienti più
+ promenttenti in un tempo ragionevole.
+\end_layout
+
+\begin_layout Subsection
+Reimplementazione di Granular Tabu Search
+\end_layout
+
+\begin_layout Standard
+Per reimplementare il Granular Tabu Search ho utilizzato direttamente l'articolo
+ origininale di Toth e Vigo.
+ L'implementazione più prestante si sarebbe potuta ottenere certamente scrivendo
+ tutto in C e ottimizzando per l'architettura su cui l'applicazione avrebbe
+ dovuto girare.
+\end_layout
+
+\begin_layout Standard
+Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto troppo
+ rispetto alle mie aspettative: C non possiede nativamente il supporto per
+ liste, mappe di hash e iteratori, e tra l'altro benchè ia un linguaggio
+ molto potente non prevede meccanismi per lavorare con gli oggetti senza
+ allocare/deallocare la memoria manualmente, esponendo quindi il sistema
+ a problemi di memory leak e salti ad aree di memoria non più allocate.
+ Per correggere tutti i bug relativi alla gestione della memoria da soli
+ a mio avviso sarebbe servita una settimana, con il rischio di bug non scovati
+ ed effetti più o meno bizantini anche alla fine della revisione.
+\end_layout
+
+\begin_layout Standard
+Avrei potuto puntare sul C++, ma conoscevo meglio Python, e sapevo che comunque
+ anche il codice Python veniva compilato, anche se magari non era ottimizzato.
+ inoltre questo linguaggio aveva tutti i vantaggi che C non aveva, con l'unico
+ difetto che non sapevo prevedere quali performance il codice finale avrebbe
+ avuto.
+ Quest'ultimo problema non era così importante, in fondo la mia era solo
+ una dimostrazione: era importante che fosse corretta, non prestante.
+\end_layout
+
+\begin_layout Subsection
+L'algoritmo genetico
+\end_layout
+
+\begin_layout Standard
+Ogni algoritmo genetico non fa altro che rappresentare i geni degli individui
+ mediante stringhe, calcolando per ogni stringa un vlore di fitness, ed
+ infine, mediante un processo di selezione, fa accopiare gli individui migliori
+ in modo che la nuova generazione sia migliore di quella prima.
+ Nella riproduzione i corredi cromosomici dei genitori vengono mischiati
+ tramite cross-over, in modo da ampliare lo spettro delle possibili soluzioni,
+ ed infine c'è una probabilità di ottenre una mutazione, che aiuta a non
+ rimanere ancorati ai 
+\begin_inset Quotes eld
+\end_inset
+
+minimi locali
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Se come geni pendiamo i coefficienti che usiamo per il granular tabu search,
+ la rappresentazione in stringa di una specifica coppia di valori possibili
+ può rappresentare il corredo genetico di un'individuo.
+\end_layout
+
+\begin_layout Standard
+Nel caso che ci si presentava in azienda noi dovevamo cercare di riprodurre
+ i risultati di Primafrost, trovando i coefficienti opportuni.
+\end_layout
+
+\begin_layout Standard
+Possiamo quindi fare in modo che individui che ottengono i risultati vicini
+ ad un valore preimpostato siano favoriti nel processo di selezione, in
+ modo da ottenere una popolazione finale che presenti come geni solo i coefficie
+nti più promettenti.
+\end_layout
+
+\begin_layout Standard
+Ad ogni ciclo dell'algoritmo da me progettato infatti si ha:
+\end_layout
+
+\begin_layout Enumerate
+inizializzazione degli agenti
+\end_layout
+
+\begin_layout Enumerate
+calcolo della soluzione del problema mediante Granular Tabu Search (i coefficien
+ti usati nella ricerca sono quelli presenti nei geni dell'individuo)
+\end_layout
+
+\begin_layout Enumerate
+selezione degli individui in base ai risultati ottenuti (metodo della ruota
+ della roulette)
+\end_layout
+
+\begin_layout Enumerate
+Cross-over (uniforme) e mutazione
+\end_layout
+
+\begin_layout Section
+Ottenere i dati di input
+\end_layout
+
+\begin_layout Section
+Risultati ottenuti
 \end_layout
 
 \begin_layout Section

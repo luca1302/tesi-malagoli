@@ -573,8 +573,8 @@ Da sempre attenta non solo alla qualità della merce trasportata, ma anche
  alla precisione dell’ordine evaso e alla tempestività della distribuzione,
  e dato anche il crescere costante del numero di punti vendita, Primafrost
  ha deciso di incrementare la sua qualità di servizio, cercando di automatizzare
- il più possibile la creazione di rotte e l'instradamento dei veicoli, e
- quindi ha accettato la proposta di Wincor Nixdorf.
+ il più possibile la creazione delle gite e l'instradamento dei veicoli,
+ e quindi ha accettato la proposta di Wincor Nixdorf.
  
 \end_layout
 
@@ -1148,7 +1148,7 @@ reference "geocodifica"
 \end_layout
 
 \begin_layout Subsection
-Rotte e rotte cartografiche
+Gite e gite cartografiche
 \end_layout
 
 \begin_layout Standard
@@ -1187,7 +1187,7 @@ reference "VRP"
 \begin_inset Quotes eld
 \end_inset
 
-rotte
+gite
 \begin_inset Quotes erd
 \end_inset
 
@@ -1199,7 +1199,7 @@ Con il termine
 \begin_inset Quotes eld
 \end_inset
 
-rotta
+gita
 \begin_inset Quotes erd
 \end_inset
 
@@ -1210,19 +1210,19 @@ rotta
 \end_layout
 
 \begin_layout Standard
-Una rotta è quindi una sequenza ordinata di cui ogni elemento rappresenta
+Una gita è quindi una sequenza ordinata di cui ogni elemento rappresenta
  un punto di consegna.
- Ogni rotta ha come primo elemento sempre un deposito tra quelli che sono
+ Ogni gita ha come primo elemento sempre un deposito tra quelli che sono
  stati definiti.
 \end_layout
 
 \begin_layout Standard
-Una rotta cartografica è una rotta in cui i punti di consegna sono geocodificati.
+Una gita cartografica è una gita in cui i punti di consegna sono geocodificati.
 \end_layout
 
 \begin_layout Standard
-In questo elaborato ogni volta in cui si parla di rotte si intende rotte
- cartografiche.
+In questo elaborato ogni volta in cui si parla di gite si intende gite cartograf
+iche.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1257,14 +1257,14 @@ Depositi
 \begin_layout Standard
 Sono punti di consegna speciali, che hanno una richiesta nulla ( i depositi
  non possono fare richieste tra di loro).
- Ogni rotta parte sempre da uno dei depositi.
+ Ogni gita parte sempre da uno dei depositi.
  In questo elaborato sarà trattati solamente casi in cui vi è un solo deposito,
  quindi sarà anche rispettata la convenzione utilizzata in letteratura di
  indicare il deposito con l'identificativo 0.
 \end_layout
 
 \begin_layout Subsubsection
-Rotte 
+Gite 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1272,7 +1272,7 @@ aperte
 \begin_inset Quotes erd
 \end_inset
 
- e rotte 
+ e gite 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1284,9 +1284,9 @@ chiuse
 \end_layout
 
 \begin_layout Standard
-Una rotta, per essere tale secondo la nostra definizione, deve sempre partire
+Una gita, per essere tale secondo la nostra definizione, deve sempre partire
  dal deposito.
- Una rotta si dice 
+ Una gita si dice 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1309,8 +1309,8 @@ aperta
 Nei problemi di instradamento dei veicoli classici normalmente si suppone
  che i veicoli debbano partire e tornare al deposito di partenza.
  Questo elaborato non si discosta dalla letteratura da questo punto di vista,
- quindi quando si parla di rotte senza specificare diversamente si suppone
- che si stia parlando di rotte 
+ quindi quando si parla di gite senza specificare diversamente si suppone
+ che si stia parlando di gite 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1341,7 +1341,7 @@ reference "PTV-bib"
 \begin_layout Standard
 Il business di PTV è principalmente concentrato nelle aree del trasporto,
  della mobilità e della logistica, e sviluppa software per la pianificazione
- e l'ottimizzazione dei trasporti e delle rotte.
+ e l'ottimizzazione dei trasporti e delle gite.
  
 \end_layout
 
@@ -1354,12 +1354,12 @@ La compagnia è ora attiva in 4 continenti, ha 700 dipendenti e 1500 clienti
 
 \begin_layout Standard
 Una famiglia di prodotti commerciali che sicuramente ha conquistato una
- certa fetta di mercato per quanto riguarda la pianificazione delle rotte
+ certa fetta di mercato per quanto riguarda la pianificazione delle gite
  è rappresentata dal marchio 
 \begin_inset Quotes eld
 \end_inset
 
-maps & guide
+Maps & Guide
 \begin_inset Quotes erd
 \end_inset
 
@@ -1463,11 +1463,11 @@ Clarke and Wright Savings Algorithm
 \end_layout
 
 \begin_layout Standard
-Si suddivide in 2 fasi: il calcolo dei risparmi e la fusione delle rotte.
+Si suddivide in 2 fasi: il calcolo dei risparmi e la fusione delle gite.
 \end_layout
 
 \begin_layout Standard
-Per quanto concerne il calcolo dei risparmi, quando due rotte 
+Per quanto concerne il calcolo dei risparmi, quando due gite 
 \begin_inset Formula $\left(0,\ldots,i,0\right)$
 \end_inset
 
@@ -1483,7 +1483,7 @@ i
 \emph on
 j
 \emph default
- e la nuova rotta creata sarebbe ancora fattibile, allora viene computato
+ e la nuova gita creata sarebbe ancora fattibile, allora viene computato
  un'ammontare chiamato risparmio, che è pari a 
 \begin_inset Formula $s_{ij}=c_{i0}+c_{0j}-c_{ij}$
 \end_inset
@@ -1494,18 +1494,18 @@ j
 \end_layout
 
 \begin_layout Standard
-La fusione delle rotte può essere fatta in due modi: sequienziale o parallelo.
+La fusione delle gite può essere fatta in due modi: sequienziale o parallelo.
 \end_layout
 
 \begin_layout Standard
 Nel caso parallelo, partendo dal massimo risparmio fino al minimo si effettuano
- le giunzioni delle rotte, sempre però cercando di rispettare i vincoli
- di fattibilità.
+ le giunzioni delle gite, sempre però cercando di rispettare i vincoli di
+ fattibilità.
 \end_layout
 
 \begin_layout Standard
-Nel caso sequenziale invece si esamina una rotta per volta, e si cerca tra
- i risparmi, sempre dal maggiore al minore, se si può combinare la rotta
+Nel caso sequenziale invece si esamina una gita per volta, e si cerca tra
+ i risparmi, sempre dal maggiore al minore, se si può combinare la gita
  corrente con un altra rispettando i vincoli di fattibilità.
 \end_layout
 
@@ -1735,17 +1735,17 @@ Ustring and Stringing
 
 \begin_layout Standard
 La prima si occupa, dato un nodo, di inserirlo all'interno di una sequenza
- circolare (che di norma è una rotta).
+ circolare (che di norma è una gita).
  
 \end_layout
 
 \begin_layout Standard
 La seconda euristica, in un secondo momento, si occupa di migliorare la
- rotta trovata, e funge perciò da port-ottimizzazione.
+ gita trovata, e funge perciò da port-ottimizzazione.
 \end_layout
 
 \begin_layout Standard
-Gli schemi con cui queste euristiche aggiungono o tolgono nodi dalla rotta
+Gli schemi con cui queste euristiche aggiungono o tolgono nodi dalla gita
  concedono determinate caratteristiche all'algoritmo, e quindi vengono analizzat
 e di seguito.
 \end_layout
@@ -1768,7 +1768,7 @@ GENeralized Insertion
 \begin_inset Quotes erd
 \end_inset
 
- viene utilizzata per inizializzare la rotta.
+ viene utilizzata per inizializzare la gita.
  
 \end_layout
 
@@ -1885,7 +1885,7 @@ inversioni
 \begin_inset Quotes erd
 \end_inset
 
- nella rotta sono numerose, come si vede in figura 
+ nella gita sono numerose, come si vede in figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Inserzione-di-tipo-2"
@@ -1938,10 +1938,10 @@ Inserzione di tipo 2
 
 \begin_layout Standard
 Degno di nota è il fatto che, per come lavora quest'euristica, non si può
- partire da una rotta vuota, ma bensì devono esserci almeno 3 nodi.
+ partire da una gita vuota, ma bensì devono esserci almeno 3 nodi.
  Questo problema è dovuto alla struttura degli schemi di inserzione, ed
- è possibile risolverlo aggiungendo nodi casulamente alla rotta fino ad
- arrivare a 3.
+ è possibile risolverlo aggiungendo nodi casulamente alla gita fino ad arrivare
+ a 3.
  Un'altra caratteristica che deriva dall'uso di questi schemi è la non necessità
  di un componente che perturbi la soluzione, poichè le 
 \begin_inset Quotes eld
@@ -1956,7 +1956,7 @@ inversioni
 
 \begin_layout Standard
 Visto che esitono 2 schemi di inserzione, viene sempre scelto l'inserimento
- che porta alla costruzione di una rotta di costo minimo tra le alternative.
+ che porta alla costruzione di una gita di costo minimo tra le alternative.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1978,10 +1978,10 @@ Unstringing and Stringing
 \begin_inset Quotes erd
 \end_inset
 
-, toglie un nodo dalla rotta e lo reiserisce, sempre usando gli schemi di
+, toglie un nodo dalla gita e lo reiserisce, sempre usando gli schemi di
  GENI per il reinserimento.
- La rimozione dei nodi dalla rotta non viene fatto a caso, ma seguendo determina
-ti schemi, che come si può notare dalla figure 
+ La rimozione dei nodi dalla gita non viene fatto a caso, ma seguendo determinat
+i schemi, che come si può notare dalla figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Rimozione-di-tipo-1"
@@ -2106,7 +2106,7 @@ reference "sub:GENI"
 
 \end_inset
 
-), eliminando un vertice da una rotta e cercando di inserirlo in un'altra
+), eliminando un vertice da una gita e cercando di inserirlo in un'altra
  mediante un criterio di minimo costo.
 \end_layout
 
@@ -2184,7 +2184,7 @@ L'implementazione di Granular Tabu Search quindi riprende quella di TabuRoute
 
 \begin_layout Standard
 Nella versione originale sono considerate solo mosse di tipo OR1 o OR2 per
- lo scambio dei nodi all'interno delle rotte.
+ lo scambio dei nodi all'interno delle gite.
 \end_layout
 
 \begin_layout Subsection
@@ -2721,7 +2721,7 @@ Vehicle Routing Problem
 \begin_inset Quotes erd
 \end_inset
 
-, o VRP ) riguarda la determinazione di un insieme ottimale di rotte che
+, o VRP ) riguarda la determinazione di un insieme ottimale di gite che
  dovranno essere utilizzati da una flotta di veicoli per servire un dato
  insieme di clienti.
  Come è possibile intuire data la sua similitudine con il problema del commesso
@@ -3213,8 +3213,8 @@ Architettura proposta
 
 \begin_layout Standard
 Il problema posto da Primafrost, che riguardava il carico, scarico e la
- definizone delle rotte per la flotta degli automezzi era facilmente riconducibi
-le ad una particolare istanza di VRP.
+ definizone delle gite per la flotta degli automezzi era facilmente riconducibil
+e ad una particolare istanza di VRP.
 \end_layout
 
 \begin_layout Standard
@@ -3263,8 +3263,8 @@ Progetto di massima della soluzione
 
 \begin_layout Standard
 Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost la gestione
- della flotta (ovvero carico e rotte) era affidata ad un dipendente dell'azienda
-, il quale essendo un ex-camionista ed avendo una larga esperienza della
+ della flotta (ovvero carico e gite) era affidata ad un dipendente dell'azienda,
+ il quale essendo un ex-camionista ed avendo una larga esperienza della
  rete stradale italiana poteva senza dubbio soddisfare le esigenze dell'azienda.
 \end_layout
 
@@ -3304,7 +3304,7 @@ La soluzione proposta, per risultare accettabile da parte di Primafrost,
 \end_layout
 
 \begin_layout Enumerate
-permettere di automatizzare, in tutto o in parte, la generazione delle rotte,
+permettere di automatizzare, in tutto o in parte, la generazione delle gite,
  una volta forniti ovviamente i dati necessari (mezzi, richieste, ecc.)
 \end_layout
 
@@ -3314,7 +3314,7 @@ offrire garanzie di minimizzazione dei costi maggiori rispetto alla normale
 \end_layout
 
 \begin_layout Enumerate
-permettere di modificare le rotte generate, possibilmente in maniera semplice
+permettere di modificare le gite generate, possibilmente in maniera semplice
  e veloce, garantendo così un maggior controllo sull'output prodotto
 \end_layout
 
@@ -3376,11 +3376,11 @@ reference "wincor-metodo"
 
 \begin_layout Standard
 Per Primafrost in particolare era stata già realizzata un'applicazione per
- la gestione dei carichi dei mezzi e per la visualizzazione delle rotte
- (tra l'altro già integrata con Me.R.Sy.).
+ la gestione dei carichi dei mezzi e per la visualizzazione delle gite (tra
+ l'altro già integrata con Me.R.Sy.).
  Sembrava quindi logico cercare di integrare il tutto con un'applicazione/serviz
-io che calcolasse in automatico le rotte in base a i carichi.
- La visualizzazione delle rotte veniva fatta con una versione di 
+io che calcolasse in automatico le gite in base a i carichi.
+ La visualizzazione delle gite veniva fatta con una versione di 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3406,11 +3406,11 @@ Le 3 alternative possibili erano le seguenti:
 \end_layout
 
 \begin_layout Enumerate
-ottimizzare le rotte usando gli XServer
+ottimizzare le gite usando gli XServer
 \end_layout
 
 \begin_layout Enumerate
-ottimizzare le rotte usando PTV Intertour
+ottimizzare le gite usando PTV Intertour
 \end_layout
 
 \begin_layout Enumerate
@@ -3420,7 +3420,7 @@ lasciare tutto com'era (non era una vera alternativa, ma era piuttosto l'ultima
 
 \begin_layout Standard
 L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
- se l'ottimizzazione delle rotte doveva essere fatta automaticamente piuttosto
+ se l'ottimizzazione delle gite doveva essere fatta automaticamente piuttosto
  che manualmente, e se era meglio utilizzare Web Service o un approccio
  applicativo classico.
 \end_layout
@@ -3506,7 +3506,7 @@ sotto-processo di preparazione della flotta
 
 \begin_deeper
 \begin_layout Enumerate
-creazione delle rotte
+creazione delle gite
 \end_layout
 
 \begin_layout Enumerate
@@ -3557,13 +3557,13 @@ Periodicamente l'azienda quindi raccoglie gli ordini dai suoi clienti/punti
 \end_layout
 
 \begin_layout Standard
-Le rotte vengono create su base giornaliera, e chiaramente non è necessario
+Le gite vengono create su base giornaliera, e chiaramente non è necessario
  che ogni cliente abbia ordini nuovi ogni giorno, quindi i possibili scenari
  che ne derivano sono abbastanza dinamici.
 \end_layout
 
 \begin_layout Standard
-Come già accennato in altre sezioni, il processo di creazione delle rotte
+Come già accennato in altre sezioni, il processo di creazione delle gite
  viene svolto prevalentemente a mano da un dipendente (un ex-camionista,
  per la precisione) che ha grande esperienza delle strade italiane, e quindi
  può fare previsioni sulle situazioni contingenti che si potrebbero presentare
@@ -3579,12 +3579,12 @@ Una volta trovato il percorso, è necessario calcolare una stima dei kilometri
 \end_layout
 
 \begin_layout Standard
-Fatte le rotte e apportate eventuali correzioni, la flotta ed i carichi
- sui mezzi vengono preparati, ed una volta partiti i mezzi vengono tracciati
+Fatte le gite e apportate eventuali correzioni, la flotta ed i carichi sui
+ mezzi vengono preparati, ed una volta partiti i mezzi vengono tracciati
  temporalmente mediante appositi strumenti, in modo da assicurarsi che gli
  autisti rispettino i tempi di lvoro e di riposo.
  Alcuni di essi in particolare sono già tracciati anche mediante GPS, quindi
- si possono ottenere informazioni ance sulla rotta realmente percorsa, anche
+ si possono ottenere informazioni ance sulla gita realmente percorsa, anche
  se tuttavia sono una ristretta minoranza.
 \end_layout
 
@@ -3607,7 +3607,7 @@ Con la vecchia suite capitava ogni tanto una incorretta gestione dei carichi
 
 \begin_layout Standard
 La componenete umana in questo caso si rivelava indispensabile: spesso era
- necessario modificare le rotte già calcolate per far tornare i conti, ed
+ necessario modificare le gite già calcolate per far tornare i conti, ed
  un uomo con una discreta esperienza ed abilità poteva individuare in pochissimo
  tempo le modifiche che servivano allo scopo senza aumentare i mezzi e senza
  sconvolgere più di tanto la vecchia pianificazione.
@@ -3624,7 +3624,7 @@ Un'altro problema che persino con i mezzi di oggi non viene trattato nelle
 Ancora una volta un essere umano con un po' di esperienza può riuscire invece
  a prevedere il problema, e addirittura sa indicare se il problema affligge
  uno solo dei versi di marcia, e può quindi avvalersene nel tentativo di
- ottimizzare le rotte.
+ ottimizzare le gite.
 \end_layout
 
 \begin_layout Standard
@@ -3731,8 +3731,8 @@ Nei
 master data 
 \emph default
 è possibile indicare quelli che vengono chiamati dall'applicazione 'giri
- base', ovvero rotte precalcolate dall'utente esterno.
- PTV Intertour permette infatti sia di calcolare le rotte ex-novo, sia di
+ base', ovvero gite precalcolate dall'utente esterno.
+ PTV Intertour permette infatti sia di calcolare le gite ex-novo, sia di
  una funzionalità per cercare di utilizzare i 'giri base' come punto di
  partenza nella ricerca di una soluzione ottima.
 \end_layout
@@ -3819,7 +3819,7 @@ giri base
 \end_inset
 
  come punto di riferimento o meno (era possibile ad esempio decidere di
- tenere fissi i clienti che dovevano essere visitati nelle rotte, ma fare
+ tenere fissi i clienti che dovevano essere visitati nelle gite, ma fare
  in modo che fosse l'applicativo a decidere qual'era l'ordine che minimizzava
  i costi)
 \end_layout
@@ -3890,7 +3890,7 @@ Era necessario prima di tutto attivare i flag per i mezzi che si sapeva
  Dopodichè era l'applicazione a tenere conto delle qualifiche e cercare
  di attribuire il mezzo giusto durante il calcolo della soluzione.
  Se il vincolo della qualifica non veniva rispettato dalla soluzione trovata,
- nella piccola console appariva quale rotta aveva violato il vicolo e su
+ nella piccola console appariva quale gita aveva violato il vicolo e su
  quale punto di consegna.
  Era anche possibile automatizzare in parte anche le attivazioni delle qualifich
 e definendo alcune macro, ma nel nostro caso ne abbiamo fatto a meno perchè
@@ -3903,8 +3903,8 @@ Visualizzazione dei risultati
 
 \begin_layout Standard
 I punti di consegna appaiono rappresentati come dei pallini nella mappa
- che mostra l'applicazione, collegati da linne continue che sono le rotte.
- Le rotte si dipartono, come è logico, dal maggazzino di Mantova, che appare
+ che mostra l'applicazione, collegati da linne continue che sono le gite.
+ Le gite si dipartono, come è logico, dal maggazzino di Mantova, che appare
  come un triangolino.
  Come triangolini appaiono anche eventuali 
 \emph on
@@ -3925,7 +3925,7 @@ Questa rappresentazione, benchè semplice ed abbastanza intuitiva, nasconde
 
 \begin_layout Standard
 Questo significa, come è succeso in caso reale, che se due punti si trovano
- ai due estremi di un lago e fanno parte della stessa rotta vedremo un linea
+ ai due estremi di un lago e fanno parte della stessa gita vedremo un linea
  congiungerli e passare 
 \series bold
 sopra il lago
@@ -3976,7 +3976,7 @@ Per ovviare al problema, e cercare di far quadrare il più possibile i conti
 \begin_layout Enumerate
 
 \series bold
-osservare la rotta, calcolare circa il punto in cui il mezzo entrava nella
+osservare la gita, calcolare circa il punto in cui il mezzo entrava nella
  zona ZTL, mettere in quel punto un transit point, e impostare delle qualifiche
  sul vero punto di consegna in modo che fosse selezionato un mezzo leggero
  o aurorizzato.
@@ -4045,7 +4045,7 @@ giri base
 \begin_inset Quotes erd
 \end_inset
 
- (ovvero le rotte originali tracciate manualmente).
+ (ovvero le gite originali tracciate manualmente).
 \end_layout
 
 \begin_layout Standard
@@ -4055,10 +4055,10 @@ Sono state fatte più prove, provando a far variare il numero di punti di
 \end_layout
 
 \begin_layout Standard
-Ciò che si è potuto osservare è che, utilizzando le rotte originali come
+Ciò che si è potuto osservare è che, utilizzando le gite originali come
  punto di partenza si otteneva comunque un risparmio, misurabile attorno
- all'1-2%, che era nulla in confronto al caso in cui le rotte venivano ricalcola
-te da capo.
+ all'1-2%, che era nulla in confronto al caso in cui le gite venivano ricalcolat
+e da capo.
  in quest'ultimo caso si poteva anche raggiungere il 5% lasciando agire
  per un po' la post-ottimizzazione.
 \end_layout
@@ -4179,7 +4179,7 @@ In questo modo siamo riusciti a risolvere tutto il problema in appena mezza
 \end_layout
 
 \begin_layout Subsubsection
-Nuove rotte, calcolate su più giorni
+Nuove gite, calcolate su più giorni
 \end_layout
 
 \begin_layout Standard
@@ -4221,7 +4221,7 @@ L'incontro è proceduto abbastanza bene, il cliente ha confermato che dal
 \end_layout
 
 \begin_layout Standard
-Alcune rotte di quelle originali tuttavia sembravano strane perchè erano
+Alcune gite di quelle originali tuttavia sembravano strane perchè erano
  stati registrati dei tempi che lo strumento non poteva riprodurre, così
  gli esperti di TPS e i dipendenti di Primafrost e Wincor Nixdorf si sono
  ripromessi di ricontrollare i dati per quelle gite in particolare.
@@ -4308,12 +4308,12 @@ Non era pertanto possibile prevedere in modo accurato i risultati che si
 \end_layout
 
 \begin_layout Subsubsection
-Le rotte che non tornavano
+Le gite che non tornavano
 \end_layout
 
 \begin_layout Standard
 Oltre al problema della non completa prevedibilità dell'influenza dei fattori
- di costo, c'erano anche da tenere in considerazione le rotte il cui costo
+ di costo, c'erano anche da tenere in considerazione le gite il cui costo
  non tornava.
  sembrava infatti che i ottenuti dal precedente sistema, che usava Maps&Guide,
  non collimassero con i dati ottenuti utilizzando PTV Intertour.
@@ -4337,7 +4337,7 @@ Sono stati controllati quindi i percorsi di riferimento alle mappe, ma erano
 
 \begin_layout Standard
 La soluzione di questo problema venne data da Cristian, il dipendente di
- Primafrost che si occupava del calcolo delle rotte.
+ Primafrost che si occupava del calcolo delle gite.
  Mentre noi cercavamo di riprodurre i suoi risultati, lui aveva cercato
  di riprodurre i nostri, con successo.
 \end_layout
@@ -4384,7 +4384,7 @@ La ricerca dei giusti valori per i fattori
 \end_layout
 
 \begin_layout Standard
-Risolto il problema delle rotte 
+Risolto il problema delle gite 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4564,12 +4564,12 @@ reference "sub:Prima-presentazione-risultati"
 \begin_layout Standard
 PTV Intertour infatti non ci permetteva di vedere di preciso quale percorso
  seguivano i mezzi, e Christian, che in Primafrost si occupava del calcolo
- delle rotte, ha voluto vederci chiaro.
+ delle gite, ha voluto vederci chiaro.
 \end_layout
 
 \begin_layout Standard
 Ricalcolando i percorsi utilizzando Maps&Guide si ottenevano risultati un
- po' strani infatti ( e queste erano le rotte che non tornavano ), mentre
+ po' strani infatti ( e queste erano le gite che non tornavano ), mentre
  altri sembravano potenzialmente ignorare alcune restrizioni presenti sul
  manto stradale: in un caso particolare Christian ci ha spiegato che per
  percorrere una certa di distanza in così poco tempo l'applicazione poteva

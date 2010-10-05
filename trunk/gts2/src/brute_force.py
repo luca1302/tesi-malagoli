@@ -42,18 +42,20 @@ def launch_childs(pop,password):
 	username='malagoli';	
 
 	r_list=[];
-	chunk=len(hosts);
-	if(len(pop)%len(hosts))==0:
-		times=len(pop)/len(hosts);
+	#chunk=len(hosts);
+	chunk=15;
+	if(len(pop)%chunk)==0:
+		times=len(pop)/chunk;
 	else:
-		times=(len(pop)/len(hosts))+1;
+		times=(len(pop)/chunk)+1;
 
 	for time in range(times):
+                hosts2=sample(hosts,chunk);
 		pop2=pop[chunk*time:chunk*(time+1)];
-		assert(len(hosts)>=len(pop2));
+		assert(len(hosts2)>=len(pop2));
 	
 		t_list=[];
-		for g,host in zip(pop2,hosts):
+		for g,host in zip(pop2,hosts2):
 			print(g,host);
 			g=GenThread(g[0],g[1],username,host,password);
 			t_list+=[g];

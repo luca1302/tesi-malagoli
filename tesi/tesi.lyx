@@ -506,91 +506,55 @@ bfseries INTRODUZIONE}}
 
 \end_layout
 
-\begin_layout Standard
-La grande distribuzione organizzata, abbreviata dagli addetti ai lavori
- in GDO, è composta da grandi strutture o grandi gruppi (in alcuni casi
- multinazionali) con molte strutture distribuite su tutto il territorio
- nazionale, internazionale o addirittura mondiale.
- Nel gergo tecnico si distingue tra strutture della Grande Distribuzione
- (GD) e strutture della Distribuzione Organizzata (DO).
- Le prime vedono grosse strutture centrali gestite da un unico soggetto
- proprietario, che gestiscono punti di vendita quasi sempre diretti.
- Le seconde vedono invece piccoli soggetti aggregarsi secondo la logica
- de 
-\begin_inset Quotes eld
-\end_inset
-
-l'unione fa la forza
-\begin_inset Quotes erd
-\end_inset
-
-: attraverso infatti l'adesione ai gruppi d'acquisto i piccoli e medi dettaglian
-ti possono ottenere agevolazioni economiche in termini di approvvigionamento,
- derivanti dal maggior potere contrattuale nei confronti dell'industria
- da parte delle centrali, oltre che a vantaggi conseguibili dallo sfruttamento
- del marchio e dall'ottenimento di supporto in termini di know-how e coordinamen
-to strategico.
+\begin_layout Section*
+Scopo della tesi (i.e.
+ problema affrontato) 
 \end_layout
 
 \begin_layout Standard
-All'interno di questo contesto mondiale si colloca Wincor Nixdorf Retail
- Consulting.
- 
-\end_layout
-
-\begin_layout Standard
-Nata nel 1990 dall'acquisizione da parte di Siemens AG della pionieristica
- società di informatica Nixdorf Computer AG, specializzata nello sviluppo
- di sistemi bancari, si è imposta come un'azienda leader nella consulenza
- e nello sviluppo di tecnologie innovative per il settore bancario e per
- il retail, che oggigiorno rappresentano il core business dell'azienda.
- Sviluppatori di soluzioni end-to-end, il punto di forza dell'azienda sta
- nel combinare soluzioni hardware con software e servizi, sviluppando offerte
- che soddisfano le esigenze del mercato e dei clienti basandosi su standard
- aperti, che si integrano senza problemi nell’ambiente IT degli utenti.
-\end_layout
-
-\begin_layout Standard
-Nel caso trattato in questa tesi ad un cliente di Wincor Nixdorf, Primafrost,
- era stata mostrata l'opportunità di migliorare la sua gestione di distribuzione
- delle merci.
- 
+In quest'elaborato si vuole descrivere la mia breve esperienza maturata
+ presso Wincor-Nixdorf, in particolare rispetto ad un problema posto da
+ uno dei suoi clienti, Primafrost.
 \end_layout
 
 \begin_layout Standard
 Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
  Lombardini (supermercati, discount,ipermercati, cash & carry, e-commerce,
- grossisti), ed è detentrice di un magazzino presso Mantova.
- Ogni giorno da questo magazzino partono i mezzi che riforniranno una serie
- di punti vendita che sono sparsi in tutto il nord d'Italia, ma fino ad
- ora la gestione del carico e dell'instradamento dei veicoli contenente
- la merce era di tipo manuale, effettuata da un dipendente esperto della
- cartografia stradale italiana.
+ grossisti) ponendo sempre molta attenzione non solo alla qualità della
+ merce trasportata, ma anche alla precisione dell’ordine evaso e alla tempestivi
+tà della distribuzione.
+ I suoi punti di vendita sono sparsi per tutta la prte settentrionale dell'Itali
+a, mentre il magazzino centrale è situato vicino a Mantova.
+ Data la crescita di business ed il conseguente incremento dei punti di
+ vendita, quest'azienda necessitava di migliorare la gestione delle consegne.
 \end_layout
 
 \begin_layout Standard
-Da sempre attenta non solo alla qualità della merce trasportata, ma anche
- alla precisione dell’ordine evaso e alla tempestività della distribuzione,
- e dato anche il crescere costante del numero di punti vendita, Primafrost
- ha deciso di incrementare la sua qualità di servizio, cercando di automatizzare
- il più possibile la creazione delle gite e l'instradamento dei veicoli,
- e quindi ha accettato la proposta di Wincor Nixdorf.
- 
+Fino ad allora infatti gran parte del lavoro era stato compiuto in maniera
+ manuale
 \end_layout
 
-\begin_layout Standard
-Era necessario tuttavia mostrare al cliente che la soluzione progettata
- poteva funzionare, e quindi la sua adozione era subordinata al buon esito
- di uno studio di fattibilità.
- In questa tesi viene riportato il lavoro svolto durante la redazione dello
- studio di fattibilità svolto presso Wincor.
- Verranno evidenziati gli apporti personali al lavoro svolto e le soluzioni
- progettate, nonché i risultati sperimentali.
+\begin_layout Section*
+Motivazioni (i.e.
+ perche' e' importante risolvere il problema di cui sopra)
 \end_layout
 
-\begin_layout Standard
-Verrà inoltre svolto un confronto tra gli strumenti utilizzati e lo stato
- dell'arte per quanto riguarda la ricerca in questo settore.
+\begin_layout Section*
+Stato dell'arte (i.e., quali soluzioni ci sono, se ce ne sono, al problema
+ affrontato)
+\end_layout
+
+\begin_layout Section*
+Contributo della tesi (i.e., quale soluzione viene proposta, come si colloca
+ rispetto allo stato dell'arte, quali sono i risultati attesi)
+\end_layout
+
+\begin_layout Section*
+Metodologia usata
+\end_layout
+
+\begin_layout Section*
+Struttura della tesi (descrizione dei capitoli)
 \end_layout
 
 \begin_layout Standard

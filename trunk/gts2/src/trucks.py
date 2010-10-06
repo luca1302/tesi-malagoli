@@ -64,10 +64,14 @@ def trucks_number():
 def peek_truck(k):
     return __trucks[k];
 
-__trucks=set([Truck(410),Truck(250)]+Truck(220)*9);
+__trucks_primafrost=set([Truck(410),Truck(250)]+Truck(220)*9);
 #old experiment
-#
-#__trucks=set(
-#Truck(200)*10
-#
-#);
+
+__trucks_condreau=set(
+Truck(200)*10
+
+);
+
+__trucks_solomon=set(Truck(200)*25)
+
+__trucks=__trucks_primafrost;

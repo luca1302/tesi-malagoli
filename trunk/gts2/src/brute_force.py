@@ -63,8 +63,8 @@ def launch_childs(pop,password):
 	
 		for g in t_list:
 			g.join();
-			#print(g.output);
-			r_list+=[tuple([float(x) for x in g.output.split('\r\n')[1].split(' ')])];
+			print(g.output);
+			r_list+=[tuple([float(x) for x in g.output.split('\r\n')[0].split(' ')])];
 
 	return r_list;
 

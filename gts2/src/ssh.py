@@ -32,7 +32,7 @@ fingerprint and continue connecting. """
     		ssh_newkey = 'Are you sure you want to continue connecting';
     		child = pexpect.spawn('ssh %s@%s %s'%(user, host, command));
 		if password==None:
-			i = child.expect([pexpect.TIMEOUT,ssh_newkey],timeout=30);
+			i = child.expect([pexpect.TIMEOUT,ssh_newkey,pexpect.EOF],timeout=30);
 		else:
     			i = child.expect([pexpect.TIMEOUT,ssh_newkey, 'password: '],timeout=10);
     		if i == 0: # Timeout

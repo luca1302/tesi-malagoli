@@ -252,8 +252,7 @@ Customer(10.00,743,820),
 Customer(20.00,647,726),
 ];
 
-customers_solomon=
-[
+customers_solomon=[
 Customer(0,0,1236),
 Customer(10,912,967),
 Customer(30,825,870),

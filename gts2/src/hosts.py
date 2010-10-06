@@ -10,7 +10,7 @@ hosts=[
 	'donbasilio.cs.unibo.it',	'doncurzio.cs.unibo.it',
 	'edmondo.cs.unibo.it',		'emilia.cs.unibo.it',
 	'eva.cs.unibo.it',		'fenena.cs.unibo.it',
-	'frasquita.cs.unibo.it',	'frazier.cs.unibo.it',
+                                	'frazier.cs.unibo.it',
 	'geronte.cs.unibo.it',		'giovanna.cs.unibo.it',
 	'gisella.cs.unibo.it',		'giuseppe.cs.unibo.it',	
 	'ismaele.cs.unibo.it',		'ulrica.cs.unibo.it',
@@ -25,5 +25,5 @@ hosts=[
 	'peter.cs.unibo.it',		'pinkerton.cs.unibo.it',
 	'porgy.cs.unibo.it',		'radames.cs.unibo.it',
         'remarke.cs.unibo.it',	        'remendado.cs.unibo.it',
-        'renato.cs.unibo.it',
+        'renato.cs.unibo.it',           'robbins.cs.unibo.it',
 ];

@@ -51,7 +51,7 @@ fingerprint and continue connecting. """
             			return None;
 		if not password==None:       
     			child.sendline(password);
-		child.expect(pexpect.EOF,timeout=300);
+			child.expect(pexpect.EOF,timeout=300);
     		return child.before;
 
 	

@@ -26,5 +26,5 @@ hosts=[
 	'porgy.cs.unibo.it',		'radames.cs.unibo.it',
         'remarke.cs.unibo.it',	        'remendado.cs.unibo.it',
         'renato.cs.unibo.it',           'robbins.cs.unibo.it',
-        'roderigo.cs.unibo.it';
+        'roderigo.cs.unibo.it',
 ];

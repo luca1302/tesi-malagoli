@@ -343,7 +343,7 @@ class Search():
         granular_cost=self.best_solution_cost=tmp_solution_cost=costs.compute_cost(tmp_solution);
         #print(self.best_solution_cost);
         #return;
-        time_limit=480;
+        time_limit=120;
 
         while((self.t<self.max_iterations)
               and ((time()-self.start_time)<=time_limit)):

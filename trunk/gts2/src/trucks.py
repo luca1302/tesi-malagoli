@@ -74,4 +74,4 @@ Truck(200)*10
 
 __trucks_solomon=set(Truck(200)*25)
 
-__trucks=__trucks_primafrost;
+__trucks=__trucks_solomon;

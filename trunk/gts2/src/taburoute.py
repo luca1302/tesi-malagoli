@@ -343,9 +343,10 @@ class Search():
         granular_cost=self.best_solution_cost=tmp_solution_cost=costs.compute_cost(tmp_solution);
         #print(self.best_solution_cost);
         #return;
-        
+        time_limit=480;
+
         while((self.t<self.max_iterations)
-              and ((time()-self.start_time)<=120)):
+              and ((time()-self.start_time)<=time_limit)):
             self.m=len(self.best_solution);
             granular_distance=self.__granular_distance(granular_cost[1]);
             v_set=self.__vertex_selection(tmp_solution,granular_distance);
@@ -360,10 +361,10 @@ class Search():
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0],granular_distance);
                 self.__update(v,tmp_solution,tmp_solution_cost);
                 self.__rebuild(tmp_solution,granular_distance);
-                #print(self.best_solution_cost,tmp_solution_cost);
+                print(self.best_solution_cost,tmp_solution_cost);
                 #print(self.start_time,time(),time()-self.start_time);
                 #print(self.t,self.max_iterations);
-                if(time()-self.start_time)>=120:
+                if(time()-self.start_time)>=time_limit:
                     break;
                 
         return self.best_solution,self.best_solution_cost;

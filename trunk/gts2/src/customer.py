@@ -356,4 +356,4 @@ Customer(10,743,820),
 Customer(20,647,726),
 ];
 
-customers=customers_primafrost;
+customers=customers_solomon;

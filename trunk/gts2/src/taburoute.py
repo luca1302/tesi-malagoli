@@ -361,7 +361,7 @@ class Search():
                 tmp_solution,tmp_solution_cost=self.__improve(tmp_solution,tmp_solution_cost,new_solution,new_solution_cost,v_pos[0],granular_distance);
                 self.__update(v,tmp_solution,tmp_solution_cost);
                 self.__rebuild(tmp_solution,granular_distance);
-                print(self.best_solution_cost,tmp_solution_cost);
+                #print(self.best_solution_cost,tmp_solution_cost);
                 #print(self.start_time,time(),time()-self.start_time);
                 #print(self.t,self.max_iterations);
                 if(time()-self.start_time)>=time_limit:

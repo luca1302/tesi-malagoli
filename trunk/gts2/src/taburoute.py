@@ -117,7 +117,7 @@ class Search():
         #    for k in range(len(tour['route'])):
         #        vertexes[tour['route'][k]]=[t,k];
         #self.vertexes=vertexes;
-        tmp_vertexes=sample(list(self.vertexes.keys()),self.candidates_number);
+        tmp_vertexes=sample(list(self.vertexes.keys()),min(self.candidates_number,len(self.vertexes.keys())));
         #print(tmp_vertexes);
         #print(self.vertexes.keys());
         #neighbors={};

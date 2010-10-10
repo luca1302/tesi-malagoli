@@ -1,4 +1,4 @@
-#LyX 1.6.6 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -539,14 +539,132 @@ Motivazioni (i.e.
  perche' e' importante risolvere il problema di cui sopra)
 \end_layout
 
+\begin_layout Standard
+La soluzione del problema risultava quindi economicamente vantaggiosa per
+ entrambe le aziende, e lasciava intravedere interessanti possibili futuri
+ sviluppi.
+\end_layout
+
 \begin_layout Section*
 Stato dell'arte (i.e., quali soluzioni ci sono, se ce ne sono, al problema
  affrontato)
 \end_layout
 
+\begin_layout Standard
+Utilizzando la sua solita metodologia, Wincor ha deciso di non agire come
+ una software house sviluppando da subito componenti nuovi, ma ha cercato
+ dapprima se esistevano soluzioni già commercializzate.
+\end_layout
+
+\begin_layout Standard
+Per fortuna problemi come questo non sono nuovi nel mondo della Ricerca
+ Operativa: il problema di Primafrost era infatti riconducibile ad un problema
+ piuttosto noto in campo accademico, detto 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Questo particolare problema è tuttora etesamente trattato in ambito di
+ ricerca, nonostante siano già stati spesi già 40 anni di lavoro.
+ I frutti di questo lavoro possono oggi essere beneficiati anche dal mondo
+ commerciale: esistono infatti alcune soluzioni software che già oggi risolvono
+ diverse tipologie e varianti di questo problema.
+\end_layout
+
+\begin_layout Standard
+Alcune tra le soluzione maggiormente accreditate appartengono ad una compagnia,
+ PTV, di origine tedesca.
+\end_layout
+
+\begin_layout Standard
+Le soluzioni software di PTV sono oggi utilizzate da un'ampio pubblico,
+ e anche da diverse aziende più o meno grandi.
+ Si può dire che ovunque vi sia un problema di instradamento di veicoli
+ vi sia virtualmente spazio per l'adozione dei suo prodotti, quindi si può
+ ben immaginare perchè abbia avuto una diffusione così endemica.
+\end_layout
+
+\begin_layout Standard
+Qui in Italia uno dei suoi clienti è nient'altro che Poste Italiane,la quale
+ aveva un ovvio problema nell'ottimizzare le spedizioni postali, e ha trovato
+ conveniente utilizzare un software specializzato per trovare una soluzione.
+\end_layout
+
+\begin_layout Standard
+Come si può intuire, PTV ha diverse partnership sparse un po' per tutta
+ Europa.
+ In Italia il partner di riferimento è TPS, con cui Wincor Nixdorf aveva
+ già preso contatti nel periodo in cui arrivai.
+ 
+\end_layout
+
 \begin_layout Section*
 Contributo della tesi (i.e., quale soluzione viene proposta, come si colloca
  rispetto allo stato dell'arte, quali sono i risultati attesi)
+\end_layout
+
+\begin_layout Standard
+L'azienda infatti stava guardando il mercato alla ricerca di una soluzione
+ che le paresse adatta, in modo da poter effettuare un primo studio di fattibili
+tà, sulla base del quale avrebbe deciso il mods operandi per risolvere il
+ problema del suo cliente.
+\end_layout
+
+\begin_layout Standard
+Il contributo principale di questa tesi riguarda quindi proprio i dati raccolti
+ ed i risultati ottenuti nell'ambito di questo studio di fattibilità.
+ Il lavoro da me svolto presso Wincor Nixdorf è il risultato di un esperienza
+ di affiancamento con un dipendente dell'azienda, Primo Tilli, che già era
+ stato assegnato a questo problema.
+ 
+\end_layout
+
+\begin_layout Standard
+Il mio ingresso nell'azienda è avvenuto un po' dopo l'inizio effettivo del
+ progetto, per cui alcune decisioni erano già state prese, ma le sorprese
+ non sono venute a mancare in ogni caso.
+\end_layout
+
+\begin_layout Standard
+Al momento del mio ingresso, si era ormai inquadrato abbastanza nello specifico
+ quali arcitetture software potevano soddisfare i requisiti impostici dal
+ cliente.
+ Rimaneva però comunque una scelta tra due alternative: vi era la possibilità
+ di implementare tutto utilizzando un'applicazione 
+\begin_inset Quotes eld
+\end_inset
+
+vecchio stampo
+\begin_inset Quotes erd
+\end_inset
+
+ (PTV Intertour), ed integrarla sia all'interno di una interfaccia precedentemen
+te sviluppata per Primafrost sia con l'ERP aziendale, oppure si poteva anche
+ valutare di seguire lo stesso processo, ma con server applicativi (XTour
+ e serie XServer) già predisposti anche ad un approccio più simile a quello
+ di un'architettura di servizi.
+\end_layout
+
+\begin_layout Standard
+Da entrambe queste due soluzioni ci si aspettava che producessero buoni
+ risultati, e difatti le premesse c'erano, in quanto a prima vista sembravano
+ utilizzare gli stessi algoritmi, anche se magari in modi simili ma non
+ uguali.
+ Non era infatti chiaro da subito se i risultati prodotti da XTour sarebbero
+ stati gli stessi di PTV Intertour o se dovessero essere raffinati prima
+ da qualche altro componente della famiglia XServer.
+ Dal punto di vista dell'integrazione invece il margine di variabilità era
+ abbastanza ampio: l'interfaccia sviluppata per Primafrost era stata sviluppata
+ utilizzando AJAX, per cui poteva darsi che l'achitettura basata su Web
+ Service fosse più facile da integrare.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section*

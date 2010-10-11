@@ -507,8 +507,7 @@ bfseries INTRODUZIONE}}
 \end_layout
 
 \begin_layout Section*
-Scopo della tesi (i.e.
- problema affrontato) 
+Scopo della tesi
 \end_layout
 
 \begin_layout Standard
@@ -525,41 +524,50 @@ Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
 tà della distribuzione.
  I suoi punti di vendita sono sparsi per tutta la prte settentrionale dell'Itali
 a, mentre il magazzino centrale è situato vicino a Mantova.
- Data la crescita di business ed il conseguente incremento dei punti di
- vendita, quest'azienda necessitava di migliorare la gestione delle consegne.
+ Attualmente il numero dei punti di vendita è in continuo aumento, e Primafrost
+ doveva rivedere il metoo con cui gestiva la creazione delle gite ed il
+ dispiegamento della sua flotta di veicoli.
+ 
 \end_layout
 
 \begin_layout Standard
-Fino ad allora infatti gran parte del lavoro era stato compiuto in maniera
- manuale
+Finora infatti tutto questo era stato gestito in modo quasi esclusivamente
+ manuale: lo sforzo principale era infatti svolto da un solo dipendente,
+ il quale in quanto ex-camionista aveva grande esperienza delle tessuto
+ della rete stradale italiana.
+ La sua esperienza era vitale per l'azienda, in quanto permetteva di evitare
+ le strade generalmente più disagevoli per i trasportatori e contemporaneamente
+ di rispettare i vincoli del codice stradale.
+ 
+\end_layout
+
+\begin_layout Standard
+Tuttavia ogni infrastruttura che si regge su un solo elemento insostituibile
+ ha ovvi problemi di scalabilità, e la crescente richiesta aveva fatto sì
+ che anche i vertici dell'azienda si rendessero conto del problema, chiedendo
+ a Wincor se era possibile automatizzare, almeno parzialmente, il processo.
+\end_layout
+
+\begin_layout Standard
+Wincor Nixdorf da parte sua aveva già notato che l'interesse dei suoi clienti
+ verso problemi di questo tipo era in crescita, tuttavia tutti quelli che
+ avevano tentato di risolvere il problema da soli con soluzioni personalizzate
+ fino ad allora avevano fallito.
+ Facendo teso di queste esperienze, Wincor aveva deciso quindi di accettare
+ la sfida, tentando però una strada diversa, che passasse attraverso l'integrazi
+one dei componenti che aveva già sviluppato, in modo da offrire ai suoi
+ clienti un servizio che sfruttasse gli anni di esperienza acquisiti nel
+ settore.
 \end_layout
 
 \begin_layout Section*
-Motivazioni (i.e.
- perche' e' importante risolvere il problema di cui sopra)
+Motivazioni
 \end_layout
 
 \begin_layout Standard
-La soluzione del problema risultava quindi economicamente vantaggiosa per
- entrambe le aziende, e lasciava intravedere interessanti possibili futuri
- sviluppi.
-\end_layout
-
-\begin_layout Section*
-Stato dell'arte (i.e., quali soluzioni ci sono, se ce ne sono, al problema
- affrontato)
-\end_layout
-
-\begin_layout Standard
-Utilizzando la sua solita metodologia, Wincor ha deciso di non agire come
- una software house sviluppando da subito componenti nuovi, ma ha cercato
- dapprima se esistevano soluzioni già commercializzate.
-\end_layout
-
-\begin_layout Standard
-Per fortuna problemi come questo non sono nuovi nel mondo della Ricerca
- Operativa: il problema di Primafrost era infatti riconducibile ad un problema
- piuttosto noto in campo accademico, detto 
+Problemi come questo non sono nuovi nel mondo della Ricerca Operativa: il
+ problema di Primafrost era infatti riconducibile ad un problema piuttosto
+ noto in campo accademico, detto 
 \begin_inset Quotes eld
 \end_inset
 
@@ -570,9 +578,43 @@ Vehicle routing Problem
 .
  Questo particolare problema è tuttora etesamente trattato in ambito di
  ricerca, nonostante siano già stati spesi già 40 anni di lavoro.
- I frutti di questo lavoro possono oggi essere beneficiati anche dal mondo
- commerciale: esistono infatti alcune soluzioni software che già oggi risolvono
- diverse tipologie e varianti di questo problema.
+\end_layout
+
+\begin_layout Standard
+Questa tipologia di problemi infatti è interessante sia da un punto di vista
+ accademico per la sua elevata complessità, sia da un punto di vista commerciale
+, poichè le voci di costo interessate sono in genere dell'ordine di milioni
+ di euro, e continuamente crescenti.
+ Anche la più piccola percentuale di risparmio su totali così grandi è quindi
+ sempre significativa per qualsiasi bilancio aziendale.
+\end_layout
+
+\begin_layout Standard
+La soluzione del problema risultava quindi economicamente vantaggiosa per
+ entrambe le aziende, e lasciava intravedere interessanti possibili futuri
+ sviluppi.
+\end_layout
+
+\begin_layout Standard
+In particolare Wincor Nixdorf aveva intenzione, nel caso il progetto fosse
+ andato a buon fine, di proporre l'idea anche ad altri suoi clienti.
+\end_layout
+
+\begin_layout Section*
+Stato dell'arte
+\end_layout
+
+\begin_layout Standard
+Utilizzando la sua solita metodologia, Wincor ha deciso di non agire come
+ una software house sviluppando da subito componenti nuovi, ma ha cercato
+ dapprima se esistevano soluzioni già commercializzate.
+\end_layout
+
+\begin_layout Standard
+Per fortuna i frutti di anni di ricerca da parte del mondo accademico possono
+ oggi essere beneficiati anche dal mondo commerciale: esistono infatti alcune
+ soluzioni software che già oggi risolvono diverse tipologie e varianti
+ di questo problema.
 \end_layout
 
 \begin_layout Standard
@@ -603,8 +645,7 @@ Come si può intuire, PTV ha diverse partnership sparse un po' per tutta
 \end_layout
 
 \begin_layout Section*
-Contributo della tesi (i.e., quale soluzione viene proposta, come si colloca
- rispetto allo stato dell'arte, quali sono i risultati attesi)
+Contributo della tesi
 \end_layout
 
 \begin_layout Standard
@@ -664,15 +705,89 @@ Da entrambe queste due soluzioni ci si aspettava che producessero buoni
 \end_layout
 
 \begin_layout Standard
-
+Il nostro obiettivo era dunque quello di studiare le due archietture, osservare
+ le loro potenzialità, i loro limiti, ed infine scegliere quali delle due
+ si adattava meglio alle nostre esigenze.
+ L'obiettivo che mi era statao assegnato in particolare era quello di studiare
+ il framework MEFISTO ed il suo funzionamento.
+ Questa indagine mi avrebbe portato, anche se allora non lo immaginavo,
+ a conoscere il vasto background di informazioni che sottostava al funzionamento
+ dei software da noi impiegati.
 \end_layout
 
 \begin_layout Section*
 Metodologia usata
 \end_layout
 
+\begin_layout Standard
+Era importante coinvolgere il cliente e conteporaneamente fargli percepire
+ che da parte nostra vi era interesse per il suo problema.
+ Per questo si era optato per un modello di sviluppo incrementale e con
+ milestone stabilite in accordo con le esigenze di tutti.
+\end_layout
+
+\begin_layout Standard
+Quello che si voleva raggiungere era ottenere risultati che potessero risultare
+ credibili e vicini il più possibile a quella che sarebbe risultata essere
+ la realtà di utilizzo.
+ Non è difficile capire il perchè di questa esigenza: il cliente aveva bisogno
+ di sapere il prima possibile se la soluzione che si veniva a profilare
+ poteva avere un reale impiego per cui valesse la pena spendere il proprio
+ tempo e denaro.
+ Fortunatamente, contemporaneamente allo sviluppo della soluzione per l'ottimizz
+azione delle gite, Primafrost e Wincor Nixdorf stavano mettendo a punto
+ un sistema per il monitoraggio dei veicoli, per cui possiamo dire che la
+ base di dati da utilizzata per gli esperimenti avrebbe coinciso con quella
+ degli esperimenti.
+ Non si trattava di dati particolarmente precisi, poichè anche il progetto
+ di monitoraggio tuttavia era ancora allo stadio embrionale, e c'erano ancora
+ diversi problemi nella fase della raccolta dei dati, ma erano sicuramente
+ dati reali, vicini alla realtà di tutti i giorni.
+\end_layout
+
+\begin_layout Standard
+I dati che noi avevamo riguardavano le gite compiute dagli automezzi, e
+ suddivise in base alla giornata in cui erano state effettuate.
+ Da questo insieme sono state alcune giornate 
+\begin_inset Quotes eld
+\end_inset
+
+affidabili
+\begin_inset Quotes erd
+\end_inset
+
+, i cui dati erano stati già ricontrollati.
+\end_layout
+
+\begin_layout Standard
+Per il resto è stato necessario solo un breve addestramento da parte di
+ TPS nei nostri confronti per quanto riguardava i prodotti utilizzati, dopodichè
+ eravamo già operativi.
+\end_layout
+
 \begin_layout Section*
-Struttura della tesi (descrizione dei capitoli)
+Struttura del documento
+\end_layout
+
+\begin_layout Standard
+Questa tesi è strutturata in modo da ricalcare il più possibile quella che
+ è stata la naturale successione degli eventi, in modo che risulti semplice
+ al lettore comprendere ciò che si è fatto.
+ Siccome la problematica affrontata è piuttosto vasta ed articolata, è stata
+ prevista una sezione preliminare in cui tutti i concetti e termini chiave
+ vengono ripresi, in modo da garantire che la lettura di questo documento
+ possa essere già sufficiente per la comprensione delle soluzioni illustrate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Il documento è suddiviso in 3 capitoli:
+\end_layout
+
+\begin_layout Enumerate
+
 \end_layout
 
 \begin_layout Standard

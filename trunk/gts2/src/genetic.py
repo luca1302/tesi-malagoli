@@ -29,17 +29,22 @@ class GenThread(Thread):
 def initialize_population(range1,range2,n):
 
 	pop=[];
-	for x in range(range1[0],range1[1]+1):
+#	for x in range(range1[0],range1[1]+1):
+	for x in range(range1[0]):
 		for y in range(range2[0],range2[1]+1):
 			pop+=[(x,y)];
+
+	for x in range(range1[0],range1[1]+1):
+		for y in range(range2[0]):
+			pop+=[(x,y)];
 	
-	return sample(pop,n);
+	return sample(pop,min(len(pop),n));
 
 def launch_childs(pop,password):
 	#pop=[(0,1),(0,1)];
-	#hosts=['davide-laptop'];
+	hosts=['davide-laptop'];
 	#hosts=hosts.hosts;
-	shuffle(hosts);
+	#shuffle(hosts);
 	#username='davide';
 	username='malagoli';	
 

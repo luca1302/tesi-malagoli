@@ -30,6 +30,8 @@ def initialize_population(range1,range2,n):
 
 	pop=[];
 #	for x in range(range1[0],range1[1]+1):
+#		for y in range(range2[0],range2[1]+1):
+#			pop+=[(x,y)];
 	for x in range(range1[0]):
 		for y in range(range2[0],range2[1]+1):
 			pop+=[(x,y)];

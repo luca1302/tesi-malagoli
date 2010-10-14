@@ -31,14 +31,14 @@ def initialize_population(range1,range2):
 #	for x in range(range1[0],range1[1]+1):
 #		for y in range(range2[0],range2[1]+1):
 #			pop+=[(x,y)];
-	for x in range(range1[0]):
+	for x in range(range1[0]+1):
 		for y in range(range2[0],range2[1]+1):
 			pop+=[(x,y)];
 
 	for x in range(range1[0],range1[1]+1):
-		for y in range(range2[0]):
+		for y in range(range2[0]+1):
 			pop+=[(x,y)];
-	
+	#print pop;	
 	return pop;
 
 def launch_childs(pop,password):
@@ -49,7 +49,7 @@ def launch_childs(pop,password):
 
 	r_list=[];
 	#chunk=len(hosts);
-	chunk=15;
+	chunk=min(15,len(hosts));
 	if(len(pop)%chunk)==0:
 		times=len(pop)/chunk;
 	else:

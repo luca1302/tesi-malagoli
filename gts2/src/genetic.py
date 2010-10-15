@@ -268,7 +268,7 @@ def select_and_breed(fitness,num,pop,crossover_prob,mutation_prob):
 	selected=select(fitness,num);
 	#return breed(selected,crossover_prob,mutation_prob);
         pop2=breed(selected,crossover_prob,mutation_prob);
-        sorted_keys=sorted(fitness.keys(),reversed=True);
+        #sorted_keys=sorted(fitness.keys(),reversed=True);
         assert(len(pop2)<len(pop));
         
         for index in range(0,len(pop)-len(pop2)):

@@ -261,12 +261,23 @@ def breed(selected,crossover_prob,mutation_prob):
 	pop=[];
 	for k in range(len(selected)/2):
 		pop+=crossover(selected[k],selected[k+1],crossover_prob,mutation_prob);
-	print(pop);
+	#print(pop);
 	return pop;
 
-def select_and_breed(fitness,num,crossover_prob,mutation_prob):
+def select_and_breed(fitness,num,pop,crossover_prob,mutation_prob):
 	selected=select(fitness,num);
-	return breed(selected,crossover_prob,mutation_prob);
+	#return breed(selected,crossover_prob,mutation_prob);
+        pop2=breed(selected,crossover_prob,mutation_prob);
+        sorted_keys=sorted(fitness.keys(),reversed=True);
+        assert(len(pop2)<len(pop));
+        
+        for index in range(0,len(pop)-len(pop2)):
+            pop2+=pop[index];
+
+        assert(len(pop2)==len(pop));
+        print(pop2);
+        return pop2;
+            
 
 if __name__ == '__main__':
 	seed(a=123456789);
@@ -283,10 +294,12 @@ if __name__ == '__main__':
 
 	pop=initialize_population((0,100),(0,100),pop_max);
 	k=0;
+	
 	while(k<gen_max):
 		results=evaluate_fitness(pop,password,desired_lenght,desired_elapsed);
-		pop=select_and_breed(results,pop_max,crossover_prob,mutation_prob);
+		pop=select_and_breed(results,pop_max/2,pop,crossover_prob,mutation_prob);
 		k+=1;
-	f=open('results.txt','w');
-	f.write(str(pop));
+		
+        f=open('results.txt','w');
+        f.write(str(pop));
 	f.close();

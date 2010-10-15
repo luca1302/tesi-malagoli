@@ -44,9 +44,9 @@ def initialize_population(range1,range2,n):
 
 def launch_childs(pop,password):
 	#pop=[(0,1),(0,1)];
-	hosts=['davide-laptop'];
+	#hosts=['davide-laptop'];
 	#hosts=hosts.hosts;
-	#shuffle(hosts);
+	shuffle(hosts);
 	#username='davide';
 	username='malagoli';	
 
@@ -158,7 +158,7 @@ def convert_to_fitness(dists):
 		else:
 			fitness2[value]=k;
 	#print('end conversion');
-	#print(fitness);
+	print(fitness2);
 	#return fitness;
 	return fitness2;
 

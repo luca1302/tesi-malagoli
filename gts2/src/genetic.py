@@ -32,15 +32,15 @@ def initialize_population(range1,range2,n):
 #	for x in range(range1[0],range1[1]+1):
 #		for y in range(range2[0],range2[1]+1):
 #			pop+=[(x,y)];
-	for x in range(range1[0]):
+	for x in range(range1[0]+1):
 		for y in range(range2[0],range2[1]+1):
 			pop+=[(x,y)];
 
 	for x in range(range1[0],range1[1]+1):
-		for y in range(range2[0]):
+		for y in range(range2[0]+1):
 			pop+=[(x,y)];
 	
-	return sample(pop,min(len(pop),n));
+	return sample(pop,min(len(pop),n-1))+[(0,1)];
 
 def launch_childs(pop,password):
 	#pop=[(0,1),(0,1)];
@@ -70,7 +70,7 @@ def launch_childs(pop,password):
 	
 		for g in t_list:
 			g.join();
-			r_list+=[tuple([float(x) for x in g.output.split('\r\n')[1].split(' ')])];
+			r_list+=[tuple([float(x) for x in g.output.split('\r\n')[0].split(' ')])];
 
 	return r_list;
 

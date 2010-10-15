@@ -281,7 +281,8 @@ def select_and_breed(fitness,num,pop,crossover_prob,mutation_prob):
 
 if __name__ == '__main__':
 	seed(a=123456789);
-	password=getpass.getpass('Password: ');
+	#password=getpass.getpass('Password: ');
+        password=None;
 
 	desired_lenght=float(sys.argv[1]);
 	desired_elapsed=float(sys.argv[2]);

@@ -277,7 +277,7 @@ def select_and_breed(fitness,num,pop_tot,crossover_prob,mutation_prob):
                         if len(pop2)>=pop_tot:
                             break;
                         else:
-                            pop2+=[fitness[key][j]];
+                            pop2+=[(fitness[key][j][0],fitness[key][j][1])];
 			
         
         #for index in range(0,len(pop)-len(pop2)):
@@ -300,16 +300,17 @@ if __name__ == '__main__':
 	mutation_prob=0.01;
 	crossover_prob=0.5;
 	
-	#f=open('results.txt','w');
+	f=open('results.txt','w');
 
 	pop=initialize_population((0,100),(0,100),pop_max);
 	k=0;
 	
 	while(k<gen_max):
 		results=evaluate_fitness(pop,password,desired_lenght,desired_elapsed);
+		f.write(str(results));
 		pop=select_and_breed(results,pop_max/2,len(pop),crossover_prob,mutation_prob);
 		k+=1;
 		
-        f=open('results.txt','w');
-        f.write(str(pop));
+        #f=open('results.txt','w');
+        f.write(str(evaluate_fitness(pop,password,desired_lenght,desired_elapsed)));
 	f.close();

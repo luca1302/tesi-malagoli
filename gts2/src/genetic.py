@@ -264,17 +264,26 @@ def breed(selected,crossover_prob,mutation_prob):
 	#print(pop);
 	return pop;
 
-def select_and_breed(fitness,num,pop,crossover_prob,mutation_prob):
+def select_and_breed(fitness,num,pop_tot,crossover_prob,mutation_prob):
 	selected=select(fitness,num);
 	#return breed(selected,crossover_prob,mutation_prob);
         pop2=breed(selected,crossover_prob,mutation_prob);
         #sorted_keys=sorted(fitness.keys(),reversed=True);
-        assert(len(pop2)<len(pop));
+        assert(len(pop2)<=pop_tot);
+        #delta_pop=pop_tot-len(pop2);
         
-        for index in range(0,len(pop)-len(pop2)):
-            pop2+=[pop[index]];
+        for key in sorted(fitness.keys(),reverse=True):
+		for j in range(len(fitness[key])):
+                        if len(pop2)>=pop_tot:
+                            break;
+                        else:
+                            pop2+=[fitness[key][j]];
+			
+        
+        #for index in range(0,len(pop)-len(pop2)):
+        #    pop2+=[pop[index]];
 
-        assert(len(pop2)==len(pop));
+        assert(len(pop2)==pop_tot);
         print(pop2);
         return pop2;
             
@@ -298,7 +307,7 @@ if __name__ == '__main__':
 	
 	while(k<gen_max):
 		results=evaluate_fitness(pop,password,desired_lenght,desired_elapsed);
-		pop=select_and_breed(results,pop_max/2,pop,crossover_prob,mutation_prob);
+		pop=select_and_breed(results,pop_max/2,len(pop),crossover_prob,mutation_prob);
 		k+=1;
 		
         f=open('results.txt','w');

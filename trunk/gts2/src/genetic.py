@@ -272,7 +272,7 @@ def select_and_breed(fitness,num,pop,crossover_prob,mutation_prob):
         assert(len(pop2)<len(pop));
         
         for index in range(0,len(pop)-len(pop2)):
-            pop2+=pop[index];
+            pop2+=[pop[index]];
 
         assert(len(pop2)==len(pop));
         print(pop2);

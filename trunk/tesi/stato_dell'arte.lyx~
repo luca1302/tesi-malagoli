@@ -1,0 +1,223 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+
+\lang italian
+Background
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}} 
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang italian
+Me.R.Sy
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+"Me.R.Sy."(Merchandising Retail System)
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Sito-Wincor-Nixdorf"
+
+\end_inset
+
+ è la suite gestionale di Wincor Nixdorf.
+ risponde alle esigenze delle aziende retail gestendo l’intera filiera della
+ moderna distribuzione: dalla negoziazione col fornitore alla logistica
+ della merce, dal punto di vendita al consumatore finale.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+La suite applicativa Me.R.Sy., grazie alla sua modularità, che permette di
+ configurare l’applicazione in modo graduale e progressivo nel tempo, controlla
+ con efficacia ed efficienza tutti i processi caratteristici di un’azienda
+ retail, garantendo alti livelli di flessibilità.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+I moduli della Suite Me.R.Sy.
+ insistono su 4 aree applicative:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\lang italian
+Area Commerciale:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della relazione con l’industria.
+ L’ambiente applicativo, basandosi su questa solida struttura anagrafica,
+ garantisce una copertura ampia e profonda di tutte le funzionalità inerenti
+ il ciclo passivo (rapporto tra distributore e produttore) e il ciclo attivo
+ (rapporto tra distributore e punto vendita).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\lang italian
+Area Logistica:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della gestione del ciclo merci
+ e del magazzino.
+ Nella gestione dei processi caratteristici, Me.R.Sy.
+ può utilizzare tecnologie sia in ambito radiofrequenza (RF) che in ambito
+ voice, garantendo precisione nell’esecuzione delle attività e una tracciabilità
+ completa dei prodotti.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\lang italian
+Gestione della Rete:
+\series default
+ permette la gestione delle superfici di vendita evolutasi, nel modello
+ e nelle funzioni, con le best practice italiane del canale.
+ Integra in sé tutte le anagrafiche necessarie alla completa gestione dei
+ negozi, nonché la possibilità di utilizzare, per le politiche commerciali,
+ alcuni specifici moduli per la progettazione, applicazione e controllo
+ della politica commerciale.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\lang italian
+Area Store:
+\series default
+ garantisce un’ampia copertura funzionale per i processi di back office,
+ mantenendo in loco la sola interfaccia con la barriera casse e le bilance.
+\end_layout
+
+\begin_layout Section
+
+\lang italian
+Euristica di Clarke e Wright
+\end_layout
+
+\begin_layout Section
+
+\lang italian
+Granular Tabu Search
+\end_layout
+
+\begin_layout Section
+
+\lang italian
+PTV Intertour
+\end_layout
+
+\begin_layout Section
+
+\lang italian
+Server XTour
+\end_layout
+
+\begin_layout Section
+
+\lang italian
+Mefisto
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

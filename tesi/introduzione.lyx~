@@ -1,0 +1,796 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\use_default_options false
+\language italian
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "fronte.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+leftmark}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries INDICE}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series medium
+\size normal
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Introduzione}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Introduzione
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries INTRODUZIONE}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries INTRODUZIONE}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La grande distribuzione organizzata, abbreviata dagli addetti ai lavori
+ in GDO, è composta da grandi strutture o grandi gruppi (in alcuni casi
+ multinazionali) con molte strutture distribuite su tutto il territorio
+ nazionale, internazionale o addirittura mondiale.
+ Nel gergo tecnico si distingue tra strutture della Grande Distribuzione
+ (GD) e strutture della Distribuzione Organizzata (DO).
+ Le prime vedono grosse strutture centrali gestite da un unico soggetto
+ proprietario, che gestiscono punti di vendita quasi sempre diretti.
+ Le seconde vedono invece piccoli soggetti aggregarsi secondo la logica
+ de l'unione fa la forza: attraverso infatti l'adesione ai gruppi d'acquisto
+ i piccoli e medi dettaglianti possono ottenere agevolazioni economiche
+ in termini di approvvigionamento, derivanti dal maggior potere contrattuale
+ nei confronti dell'industria da parte delle centrali, oltre che a vantaggi
+ conseguibili dallo sfruttamento del marchio e dall'ottenimento di supporto
+ in termini di know-how e coordinamento strategico.
+\end_layout
+
+\begin_layout Standard
+Opposta come filosofia alla GDO, la vendita al dettaglio (in inglese 
+\begin_inset Quotes eld
+\end_inset
+
+Retail
+\begin_inset Quotes erd
+\end_inset
+
+), che consiste nella vendita di beni o prodotti commerciali provenienti
+ da una locazione fissa (ad esempio un magazzino) direttamente al pubblico,
+ che può essere composto da individui o aziende.
+ La differenza principale consiste nel fatto che i venditori al dettaglio
+ sono situati all'ultimo anello della catena di rifornimento, quindi in
+ generale comprano beni e prodotti in grandi quantità (stock,pallet,ecc.)
+ da produttori, importatori o grossisti, per poi venderli agli utenti finali
+ in quantità più piccole (generalmente singole unità).
+\end_layout
+
+\begin_layout Standard
+All'interno di questo contesto mondiale si colloca Wincor Nixdorf Retail
+ Consulting.
+ Nata nel 1990 dall'acquisizione da parte di Siemens AG della pionieristica
+ società di informatica Nixdorf Computer AG, specializzata nello sviluppo
+ di sistemi bancari, si è imposta come un'azienda leader nella consulenza
+ e nello sviluppo di tecnologie innovative per il settore bancario e per
+ il retail, che oggigiorno rappresentano il core business dell'azienda.
+ Sviluppatori di soluzioni end-to-end, il punto di forza dell'azienda sta
+ nel combinare soluzioni hardware con software e servizi, sviluppando offerte
+ che soddisfano le esigenze del mercato e dei clienti basandosi su standard
+ aperti, che si integrano senza problemi nell’ambiente IT degli utenti.
+\end_layout
+
+\begin_layout Standard
+Nel caso trattato in questa tesi un cliente di Wincor Nixdorf, Primafrost,
+ aveva mostrato l'esigenza di migliorare la sua gestione di distribuzione
+ delle merci.
+ Primafrost si occupa di servire inumerosi canali di vendita del Gruppo
+ Lombardini (supermercati, discount,ipermercati, cash & carry, e-commerce,
+ grossisti), ed è detentrice di un magazzino presso Mantova.
+ Ogni giorno da questo magazzino partono i mezzi che riforniranno una serie
+ di punti vendita che sono sparsi in tutto il nord d'Italia.
+\end_layout
+
+\begin_layout Standard
+Fino ad ora la gestione del carico e dell'instradamento dei veicoli contenente
+ la merce era di tipo manuale, effettuata da un dipendente esperto della
+ cartografia stradale italiana.
+\end_layout
+
+\begin_layout Standard
+Da sempre attenta non solo alla qualità della merce trasportata, ma anche
+ alla precisione dell’ordine evaso e alla tempestività della distribuzione,
+ e dato anche il crescere costante del numero di punti vendita, Primafrost
+ ha deciso di incrementare la sua qualità di servizio, cercando di automatizzare
+ il più possibile la creazione di rotte e l'instradamento dei veicoli.
+\end_layout
+
+\begin_layout Standard
+In questa tesi viene riportato il lavoro svolto durante la redazione dello
+ studio di fattibilità svolto presso Wincor.
+ Verranno evidenziati gli apporti personali al lavoro svolto e le soluzioni
+ progettate, nonchè i risultati sperimentali.
+\end_layout
+
+\begin_layout Standard
+Verrà inoltre svolto un confronto tra gli strumenti utilizzati e lo stato
+ dell'arte per quanto riguarda la ricerca in questo settore.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Background
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}} 
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Me.R.Sy
+\end_layout
+
+\begin_layout Standard
+"Me.R.Sy."(Merchandising Retail System)
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Sito-Wincor-Nixdorf"
+
+\end_inset
+
+ è la suite gestionale di Wincor Nixdorf.
+ risponde alle esigenze delle aziende retail gestendo l’intera filiera della
+ moderna distribuzione: dalla negoziazione col fornitore alla logistica
+ della merce, dal punto di vendita al consumatore finale.
+\end_layout
+
+\begin_layout Standard
+La suite applicativa Me.R.Sy., grazie alla sua modularità, che permette di
+ configurare l’applicazione in modo graduale e progressivo nel tempo, controlla
+ con efficacia ed efficienza tutti i processi caratteristici di un’azienda
+ retail, garantendo alti livelli di flessibilità.
+\end_layout
+
+\begin_layout Standard
+I moduli della Suite Me.R.Sy.
+ insistono su 4 aree applicative:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Area Commerciale:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della relazione con l’industria.
+ L’ambiente applicativo, basandosi su questa solida struttura anagrafica,
+ garantisce una copertura ampia e profonda di tutte le funzionalità inerenti
+ il ciclo passivo (rapporto tra distributore e produttore) e il ciclo attivo
+ (rapporto tra distributore e punto vendita).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Area Logistica:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della gestione del ciclo merci
+ e del magazzino.
+ Nella gestione dei processi caratteristici, Me.R.Sy.
+ può utilizzare tecnologie sia in ambito radiofrequenza (RF) che in ambito
+ voice, garantendo precisione nell’esecuzione delle attività e una tracciabilità
+ completa dei prodotti.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Gestione della Rete:
+\series default
+ permette la gestione delle superfici di vendita evolutasi, nel modello
+ e nelle funzioni, con le best practice italiane del canale.
+ Integra in sé tutte le anagrafiche necessarie alla completa gestione dei
+ negozi, nonché la possibilità di utilizzare, per le politiche commerciali,
+ alcuni specifici moduli per la progettazione, applicazione e controllo
+ della politica commerciale.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Area Store:
+\series default
+ garantisce un’ampia copertura funzionale per i processi di back office,
+ mantenendo in loco la sola interfaccia con la barriera casse e le bilance.
+\end_layout
+
+\begin_layout Section
+Euristica di Clarke e Wright
+\end_layout
+
+\begin_layout Section
+Granular Tabu Search
+\end_layout
+
+\begin_layout Section
+PTV Intertour
+\end_layout
+
+\begin_layout Section
+Server XTour
+\end_layout
+
+\begin_layout Section
+Mefisto
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Lo scenario di Wincor Nixdorf
+\end_layout
+
+\begin_layout Chapter
+Vehicle Routing Problem
+\end_layout
+
+\begin_layout Chapter
+Lo studio di fattibilità
+\end_layout
+
+\begin_layout Chapter*
+Conclusioni
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries CONCLUSIONI}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries CONCLUSIONI}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Conclusioni}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+chaptermark}[1]{
+\backslash
+markright{
+\backslash
+thechapter 
+\backslash
+ #1}{}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}} 
+\backslash
+appendix 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Prima Appendice
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries 
+\backslash
+thechapter 
+\backslash
+:Prima Appendice}] {
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{thebibliography}{90}              
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries 
+\backslash
+leftmark}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries 
+\backslash
+thepage}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Bibliografia}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Sito-Wincor-Nixdorf"
+
+\end_inset
+
+Sito Wincor Nixdorf, sezione Retail
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html"
+target "http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{thebibliography}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Ringraziamenti
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

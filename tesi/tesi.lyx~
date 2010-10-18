@@ -1,0 +1,6158 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\use_default_options false
+\language italian
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\shape smallcaps
+\size larger
+Alma Mater Studiorum 
+\begin_inset Formula $\cdot$
+\end_inset
+
+ Università di Bologna
+\shape default
+\size default
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rule[0.1cm]{11.8cm}{0.1mm}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rule[0.5cm]{11.8cm}{0.6mm}
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+\size small
+FACOLTÀ DI SCIENZE MATEMATICHE, FISICHE E NATURALI
+\begin_inset Newline newline
+\end_inset
+
+ Corso di Laurea Magistrale in Informatica
+\series default
+\size default
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace 15mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace 15mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+un caso di studio
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 50mm
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Relatore:
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Chiar.mo Prof.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Fabio Panzieri
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Correlatore: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Ing.
+ Alberto Torrini
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedleft
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+\size large
+Presentata da:
+\begin_inset Newline newline
+\end_inset
+
+ Davide Malagoli
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 18mm
+\end_inset
+
+
+\series bold
+\size large
+Sessione II
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+\size large
+Anno Accademico 2010-2011
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+leftmark}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries INDICE}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series medium
+\size normal
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Introduzione}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Introduzione
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries INTRODUZIONE}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries INTRODUZIONE}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Scopo della tesi
+\end_layout
+
+\begin_layout Standard
+In quest'elaborato si vuole descrivere la mia breve esperienza maturata
+ presso Wincor-Nixdorf, in particolare rispetto ad un problema posto da
+ uno dei suoi clienti, Primafrost.
+\end_layout
+
+\begin_layout Standard
+Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
+ Lombardini (supermercati, discount,ipermercati, cash & carry, e-commerce,
+ grossisti) ponendo sempre molta attenzione non solo alla qualità della
+ merce trasportata, ma anche alla precisione dell’ordine evaso e alla tempestivi
+tà della distribuzione.
+ I suoi punti di vendita sono sparsi per tutta la parte settentrionale dell'Ital
+ia, mentre il magazzino centrale è situato vicino a Mantova.
+ Attualmente il numero dei punti di vendita è in continuo aumento, e Primafrost
+ doveva rivedere il metodo con cui gestiva la creazione delle gite ed il
+ dispiegamento della sua flotta di veicoli.
+ 
+\end_layout
+
+\begin_layout Standard
+Finora infatti tutto questo era stato gestito in modo quasi esclusivamente
+ manuale: lo sforzo principale era infatti svolto da un solo dipendente,
+ il quale in quanto ex-camionista aveva grande esperienza delle tessuto
+ della rete stradale italiana.
+ La sua esperienza era vitale per l'azienda, in quanto permetteva di evitare
+ le strade generalmente più disagevoli per i trasportatori e contemporaneamente
+ di rispettare i vincoli del codice stradale.
+ 
+\end_layout
+
+\begin_layout Standard
+Tuttavia ogni infrastruttura che si regge su un solo elemento insostituibile
+ ha ovvi problemi di scalabilità, e la crescente richiesta aveva fatto sì
+ che anche i vertici dell'azienda si rendessero conto del problema, chiedendo
+ a Wincor se era possibile automatizzare, almeno parzialmente, il processo.
+\end_layout
+
+\begin_layout Standard
+Wincor Nixdorf da parte sua aveva già notato che l'interesse dei suoi clienti
+ verso problemi di questo tipo era in crescita, tuttavia tutti quelli che
+ avevano tentato di risolvere il problema da soli con soluzioni personalizzate
+ fino ad allora avevano fallito.
+ Facendo teso di queste esperienze, Wincor aveva deciso quindi di accettare
+ la sfida, tentando però una strada diversa, che passasse attraverso l'integrazi
+one dei componenti che aveva già sviluppato, in modo da offrire ai suoi
+ clienti un servizio che sfruttasse gli anni di esperienza acquisiti nel
+ settore.
+\end_layout
+
+\begin_layout Section*
+Motivazioni
+\end_layout
+
+\begin_layout Standard
+Problemi come questo non sono nuovi nel mondo della Ricerca Operativa: il
+ problema di Primafrost era infatti riconducibile ad un problema piuttosto
+ noto in campo accademico, detto 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Questo particolare problema è tuttora estesamente trattato in ambito di
+ ricerca, nonostante siano già stati spesi già 40 anni di lavoro.
+ sono state studiate istanze con più o meno ogni genere di limitazione ragionevo
+lmente significativa, dalla capacità limitata dei veicoli fino a limitazioni
+ presenti sui punti di consegna o sulle qualifiche dei conducenti.
+\end_layout
+
+\begin_layout Standard
+Questa tipologia di problemi infatti è interessante sia da un punto di vista
+ accademico per la sua elevata complessità, sia da un punto di vista commerciale
+, poiché le voci di costo interessate sono in genere dell'ordine di milioni
+ di euro, e continuamente crescenti.
+ Anche la più piccola percentuale di risparmio su totali così grandi è quindi
+ sempre significativa per qualsiasi bilancio aziendale.
+\end_layout
+
+\begin_layout Standard
+La soluzione del problema risultava quindi economicamente vantaggiosa per
+ entrambe le aziende, e lasciava intravedere interessanti possibili futuri
+ sviluppi.
+ In particolare Wincor Nixdorf aveva intenzione, nel caso il progetto fosse
+ andato a buon fine, di proporre l'idea anche ad altri suoi clienti.
+\end_layout
+
+\begin_layout Section*
+Stato dell'arte
+\end_layout
+
+\begin_layout Standard
+Utilizzando la sua solita metodologia, Wincor ha deciso di non agire come
+ una software house sviluppando da subito componenti nuovi, ma ha cercato
+ dapprima se esistevano soluzioni già commercializzate.
+\end_layout
+
+\begin_layout Standard
+Per fortuna i frutti di anni di ricerca da parte del mondo accademico possono
+ oggi essere beneficiati anche dal mondo commerciale: esistono infatti alcune
+ soluzioni software che già oggi risolvono diverse tipologie e varianti
+ di questo problema.
+\end_layout
+
+\begin_layout Standard
+Alcune tra le soluzione maggiormente accreditate appartengono ad una compagnia,
+ PTV, di origine tedesca.
+\end_layout
+
+\begin_layout Standard
+Le soluzioni software di PTV sono oggi utilizzate da un ampio pubblico,
+ e anche da diverse aziende più o meno grandi.
+ Si può dire che ovunque vi sia un problema di instradamento di veicoli
+ vi sia virtualmente spazio per l'adozione dei suo prodotti, quindi si può
+ ben immaginare perché abbia avuto una diffusione così endemica.
+\end_layout
+
+\begin_layout Standard
+Qui in Italia uno dei suoi clienti è nient'altro che Poste Italiane,la quale
+ aveva un ovvio problema nell'ottimizzare le spedizioni postali, e ha trovato
+ conveniente utilizzare un software specializzato per trovare una soluzione.
+\end_layout
+
+\begin_layout Standard
+Come si può intuire, PTV ha diverse partnership sparse un po' per tutta
+ Europa.
+ In Italia il partner di riferimento è TPS, con cui Wincor Nixdorf aveva
+ già preso contatti nel periodo in cui arrivai.
+ Avevano già utilizzato infatti un'altra volta una soluzione PTV sempre
+ per Primafrost.
+\end_layout
+
+\begin_layout Standard
+Il pacchetto impiegato era 
+\begin_inset Quotes eld
+\end_inset
+
+Maps&Guide
+\begin_inset Quotes erd
+\end_inset
+
+, ed era servito poichè aveva capacità simili a Intertour.
+ Una differenza rispetto a Intertour era nella rappresentazione delle mappe:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Maps&Guide
+\begin_inset Quotes erd
+\end_inset
+
+ era in grado di rappresentare l'effettivo percorso del veicolo sul manto
+ stradale con una grafica che a prima vista ricordava il ben più famoso
+ Google Maps.
+ Questo strumento era infatti stato integrato all'interno di un'interfaccia
+ piuttosto complessa per la gestione delle consegne.
+ Quest'interfaccia era anch'essa stata realizzata da Tuttavia questo strumento,
+ benché fosse stato già integrato in un'interfaccia p era limitato, in quanto
+ non era in grado
+\end_layout
+
+\begin_layout Section*
+Contributo della tesi
+\end_layout
+
+\begin_layout Standard
+L'azienda infatti stava guardando il mercato alla ricerca di una soluzione
+ che le paresse adatta, in modo da poter effettuare un primo studio di fattibili
+tà, sulla base del quale avrebbe deciso il modus operandi per risolvere
+ il problema del suo cliente.
+\end_layout
+
+\begin_layout Standard
+Il contributo principale di questa tesi riguarda quindi proprio i dati raccolti
+ ed i risultati ottenuti nell'ambito di questo studio di fattibilità.
+ Il lavoro da me svolto presso Wincor Nixdorf è il risultato di un esperienza
+ di affiancamento con un dipendente dell'azienda, Primo Tilli, che già era
+ stato assegnato a questo problema.
+ 
+\end_layout
+
+\begin_layout Standard
+Il mio ingresso nell'azienda è avvenuto un po' dopo l'inizio effettivo del
+ progetto, per cui alcune decisioni erano già state prese, ma le sorprese
+ non sono venute a mancare in ogni caso.
+\end_layout
+
+\begin_layout Standard
+Al momento del mio ingresso, si era ormai inquadrato abbastanza nello specifico
+ quali architetture software potevano soddisfare i requisiti impostici dal
+ cliente.
+ Rimaneva però comunque una scelta tra due alternative: vi era la possibilità
+ di implementare tutto utilizzando un'applicazione 
+\begin_inset Quotes eld
+\end_inset
+
+vecchio stampo
+\begin_inset Quotes erd
+\end_inset
+
+ (PTV Intertour), ed integrarla sia all'interno di una interfaccia precedentemen
+te sviluppata per Primafrost sia con l'ERP aziendale, oppure si poteva anche
+ valutare di seguire lo stesso processo, ma con server applicativi (XTour
+ e serie XServer) già predisposti anche ad un approccio più simile a quello
+ di un'architettura di servizi.
+\end_layout
+
+\begin_layout Standard
+Da entrambe queste due soluzioni ci si aspettava che producessero buoni
+ risultati, e difatti le premesse c'erano, in quanto a prima vista sembravano
+ utilizzare gli stessi algoritmi, anche se magari in modi simili ma non
+ uguali.
+ Non era infatti chiaro da subito se i risultati prodotti da XTour sarebbero
+ stati gli stessi di PTV Intertour o se dovessero essere raffinati prima
+ da qualche altro componente della famiglia XServer.
+ Dal punto di vista dell'integrazione invece il margine di variabilità era
+ abbastanza ampio: l'interfaccia sviluppata per Primafrost era stata sviluppata
+ utilizzando AJAX, per cui poteva darsi che l'architettura basata su Web
+ Service fosse più facile da integrare.
+\end_layout
+
+\begin_layout Standard
+Il nostro obiettivo era dunque quello di studiare le due architetture, osservare
+ le loro potenzialità, i loro limiti, ed infine scegliere quali delle due
+ si adattava meglio alle nostre esigenze.
+ L'obiettivo che mi era stato assegnato in particolare era quello di studiare
+ il framework MEFISTO ed il suo funzionamento.
+ Questa indagine mi avrebbe portato, anche se allora non lo immaginavo,
+ a conoscere il vasto background di informazioni che sottostava al funzionamento
+ dei software da noi impiegati.
+\end_layout
+
+\begin_layout Standard
+Una volta conclusa la mia esperienza con Primafrost ho successivamente deciso
+ di studiare una soluzione migliore ad un problema in cui ci eravamo imbattuti,
+ tentando un approccio basato su algoritmi genetici.
+ Questa parte è interamente descritta in un capitolo a parte.
+\end_layout
+
+\begin_layout Section*
+Metodologia usata
+\end_layout
+
+\begin_layout Standard
+Era importante coinvolgere il cliente e contemporaneamente fargli percepire
+ che da parte nostra vi era interesse per il suo problema.
+ Per questo si era optato per un modello di sviluppo incrementale e con
+ milestone stabilite in accordo con le esigenze di tutti.
+\end_layout
+
+\begin_layout Standard
+Quello che si voleva raggiungere era ottenere risultati che potessero risultare
+ credibili e vicini il più possibile a quella che sarebbe risultata essere
+ la realtà di utilizzo.
+ Non è difficile capire il perché di questa esigenza: il cliente aveva bisogno
+ di sapere il prima possibile se la soluzione che si veniva a profilare
+ poteva avere un reale impiego per cui valesse la pena spendere il proprio
+ tempo e denaro.
+ Fortunatamente, contemporaneamente allo sviluppo della soluzione per l'ottimizz
+azione delle gite, Primafrost e Wincor Nixdorf stavano mettendo a punto
+ un sistema per il monitoraggio dei veicoli, per cui possiamo dire che la
+ base di dati da utilizzata per gli esperimenti avrebbe coinciso con quella
+ degli esperimenti.
+ Non si trattava di dati particolarmente precisi, poiché anche il progetto
+ di monitoraggio tuttavia era ancora allo stadio embrionale, e c'erano ancora
+ diversi problemi nella fase della raccolta dei dati, ma erano sicuramente
+ dati reali, vicini alla realtà di tutti i giorni.
+\end_layout
+
+\begin_layout Standard
+I dati che noi avevamo riguardavano le gite compiute dagli automezzi, e
+ suddivise in base alla giornata in cui erano state effettuate.
+ Da questo insieme sono state alcune giornate 
+\begin_inset Quotes eld
+\end_inset
+
+affidabili
+\begin_inset Quotes erd
+\end_inset
+
+, i cui dati erano stati già ricontrollati.
+\end_layout
+
+\begin_layout Standard
+Per il resto è stato necessario solo un breve addestramento da parte di
+ TPS nei nostri confronti per quanto riguardava i prodotti utilizzati, dopodiché
+ eravamo già operativi.
+\end_layout
+
+\begin_layout Section*
+Struttura del documento
+\end_layout
+
+\begin_layout Standard
+Questa tesi è strutturata in modo da ricalcare il più possibile quella che
+ è stata la naturale successione degli eventi, in modo che risulti semplice
+ al lettore comprendere ciò che si è fatto.
+ Siccome la problematica affrontata è piuttosto vasta ed articolata, è stata
+ prevista una sezione preliminare in cui tutti i concetti e termini chiave
+ vengono ripresi, in modo da garantire che la lettura di questo documento
+ possa essere già sufficiente per la comprensione delle soluzioni illustrate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Il documento è suddiviso in 3 capitoli:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Stato dell'arte:
+\series default
+ in questo capitolo vengono descritti tutti i concetti importanti, le parole
+ chiave, gli algoritmi che poi saranno menzionati nel documento.
+ Viene anche presentato un approfondimento sul punto di vista delle aziende
+ coinvolte.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Architettura proposta:
+\series default
+ in questo capitolo viene presentato un approfondimento sulle architetture
+ proposte, sul lavoro ed i risultati ottenuti per lo studio di fattibilità,
+ e alcune conclusioni che sono state tratte.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Implementazione:
+\series default
+ in quest'ultimo capitolo viene presentato un mio contributo personale ad
+ un problema affrontato nel capitolo 2 ma che era rimasto sostanzialmente
+ irrisolto.
+ Spiegando l'idea da cui sono partito, il procedimento da me adottato ed
+ i risultati finali è possibile formulare alcune ipotesi sulla struttura
+ dell'algoritmo sottostante il framework MEFISTO
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Stato dell'arte
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}} 
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In questo capitolo riporteremo quello che è stato osservato essere oggigiorno
+ lo stato dell'arte per quanto riguarda il problema trattato.
+ 
+\end_layout
+
+\begin_layout Standard
+Nella prima sezione analizzeremo il modo di vedere il problema da parte
+ del mondo industriale, in particolare faremo riferimento allo scenario
+ descritto da Wincor Nixdorf.
+\end_layout
+
+\begin_layout Standard
+Nella sezione successiva introdurremo una serie di termini e concetti che
+ saranno utili più avanti in questa tesi, ed infine nell'ultima sezione
+ parleremo un po' del problema dell'instradamento dei veicoli e delle sue
+ varianti.
+\end_layout
+
+\begin_layout Section
+Lo scenario di Wincor Nixdorf
+\end_layout
+
+\begin_layout Standard
+In questa sezione parliamo in breve dell'azienda Wincor Nixdorf, della sua
+ struttura organizzativa, per poi concentrarci sul problema che i suoi clienti
+ si erano trovati ad affrontare.
+ Da lì esamineremo brevemente le motivazioni che hanno spinto Wincor ad
+ intraprendere il progetto di cui si parla in questo elaborato e la metodologia
+ con cui hanno deciso di affrontare il problema.
+ Poiché il lavoro descritto in questo documento riguarda un opera concepita
+ presso Wincor Nixdorf Retail Consulting, solo la realtà di questa compagnia
+ sarà descritta nel dettaglio.
+\end_layout
+
+\begin_layout Subsection
+Storia ed organizzazione aziendale
+\end_layout
+
+\begin_layout Standard
+Le origini dell'odierna azienda [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "storia wincor"
+
+\end_inset
+
+] partono nel lontano 1952, nel 
+\begin_inset Quotes eld
+\end_inset
+
+Labor für Impulstechnik
+\begin_inset Quotes erd
+\end_inset
+
+ del pioniere informatico Heinz Nixdorf.
+ Nel 1968 diventa Nixdorf Computer AG (1968-1990), poi Siemens-Nixdorf Informati
+onssysteme AG (1990-1998), e Siemens-Nixdorf Retail & Banking Systems GmbH
+ (1998-1999).
+ Wincor Nixdorf venne infine fondata nell'ottobre 1999 come compagnia indipenden
+te.
+ Nel 1999 l'organizzazione viene rilevata dalla finanziaria Kohlberg Kravis
+ Roberts insieme al partner Goldman Sachs, e prende il nome di Wincor Nixdorf.
+ 
+\end_layout
+
+\begin_layout Standard
+Il suffiso 
+\begin_inset Quotes eld
+\end_inset
+
+Wincor
+\begin_inset Quotes erd
+\end_inset
+
+, composto da "win" e "core", rappresenta la promessa di profitto e la competenz
+a della compagnia nel settori retail e banking [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "significato-wincor"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+Oggi Wincor Nixdorf - quotata alla Borsa di Francoforte - conta a livello
+ mondiale oltre 7.000 dipendenti e un fatturato di circa 2 miliardi di Euro.
+ E' presente in oltre 90 paesi, con 31 filiali consociate nazionali.
+ I dati di mercato fatti registrare nel 2005 indicano che, nei segmenti
+ degli ATM e dei sistemi POS Retail, Wincor Nixdorf è leader di mercato
+ in Germania e al terzo posto a livello mondiale.[
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Dati finanziari wincor"
+
+\end_inset
+
+] 
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Germania l'azienda è composta da 20 compagnie:
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf International GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Banking Consulting GmbH (BCON)
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Branch Technology GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf GmbH Business Administration Center (BAC)
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Customer Care GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Facility GmbH 
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Facility Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf property management Ilmenau GmbH & Co.
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Logistics GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Lottery Solutions GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Real Estate GmbH & Co.
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail Consulting GmbH (RCON)
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Security GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Services GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Technology GmbH
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Portavis GmbH
+\end_layout
+
+\begin_layout Enumerate
+Prosystems IT GmbH e Bank Consulting AG, di cui Wincor Nixdorf possiede
+ il 51%
+\end_layout
+
+\begin_layout Standard
+In Italia, Wincor Nixdorf è presente dal 1999 con un Gruppo strutturato
+ in tre società:
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail
+\end_layout
+
+\begin_layout Enumerate
+Wincor Nixdorf Retail Consulting
+\end_layout
+
+\begin_layout Standard
+che coprono l'intera offerta di consulenza, prodotti e servizi per i settori
+ bancario e di vendita al dettaglio.
+ Wincor Nixdorf Italia conta un organico di circa 180 persone.
+\end_layout
+
+\begin_layout Subsection
+Wincor Nixdorf Retail Consulting
+\end_layout
+
+\begin_layout Subsubsection
+La missione aziendale
+\end_layout
+
+\begin_layout Standard
+Wincor Nixdorf Retail Consulting (nel seguito WNRC) ha come scopo quello
+ di offrire consulenza su processi del business aziendale alle aziende della
+ Grande Distribuzione Organizzata (nel seguito GDO).
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "wincor-metodo"
+
+\end_inset
+
+La metodologia di lavoro
+\end_layout
+
+\begin_layout Standard
+Dopo aver disegnato i processi con i clienti sorge il problema di come supportar
+li dal punto di vista dell'Information Tecnology.
+\end_layout
+
+\begin_layout Standard
+WNRC è anche in grado di sviluppare specifiche applicazioni software a supporto
+ dei processi disegnati con i clienti.
+\end_layout
+
+\begin_layout Standard
+L'approccio di WNRC allo sviluppo software non è quello di una 
+\emph on
+software house
+\emph default
+ ma quello di offrire ai clienti 
+\begin_inset Quotes eld
+\end_inset
+
+soluzioni
+\begin_inset Quotes erd
+\end_inset
+
+ ritagliate su misura dei processi da informatizzare.
+\end_layout
+
+\begin_layout Standard
+Nello sviluppo di queste soluzioni WNRC ha avuto l'abilità di integrarle
+ organicamente le une con le altre; oggi costituiscono una suite di nome
+ Merchandise Retail System (acronimo Me.R.Sy, vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Me.R.Sy"
+
+\end_inset
+
+) che in pratica è un ERP per le aziende della GDO.
+\end_layout
+
+\begin_layout Standard
+Le aree funzionali coperte dall'aziende sono molte, in particolare la logistica
+ dei Centri di Distribuzione (nel seguito Cedi).
+\end_layout
+
+\begin_layout Subsection
+L'interesse dei clienti al problema
+\end_layout
+
+\begin_layout Standard
+Tipicamente le aziende trattate da WNRC possiedono centinaia di Punti di
+ Vendita (nel seuito Pdv) nei vari canali (Ipermercati, Supermercati, Cash&Carry
+, Discount, Internet, ecc.)
+\end_layout
+
+\begin_layout Standard
+I Cedi consegnano a questi Pdv diverse volte alla settimana; da cui ne derivano
+ importanti costi di trasporto.
+\end_layout
+
+\begin_layout Standard
+I clienti di Wincor stanno diventando sempre più sensibili a queste voci
+ di costo (anche perchè destinate a crescere nel tempo) e questa area sta
+ diventando per WNRC interessante per nuove possibilità di business.
+\end_layout
+
+\begin_layout Standard
+Negli ultimi anni alcuni clienti di Wincor hanno tentato di affrontare il
+ problema della minimizzazione dei costi di trasporto con dei progetti autonomi,
+ ma sono tutti falliti.
+\end_layout
+
+\begin_layout Subsubsection
+Le cause del fallimento dei progetti affrontati dai clienti
+\end_layout
+
+\begin_layout Standard
+Le cause principali del fallimento si ritiene possano essere queste:
+\end_layout
+
+\begin_layout Enumerate
+La complessità del problema è stata sottovalutata
+\end_layout
+
+\begin_layout Enumerate
+L'approccio al problema non è stato quello giusto; ad esempio si è cercato
+ di dare uno strumento sofisiticato in mano al responsabile delle spedizioni
+ il quale:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+non aveva il bagaglio culturale necessario (spesso questa figura è un ex-caminis
+ta)
+\end_layout
+
+\begin_layout Enumerate
+Provocava un conflitto di interessi (queste figure, se abili, sono ben remunerat
+e; lo strumento, se funziona, erode il potere di queste figure...)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Non si è capito la necessità di fortissima integrazione fra lo strumento
+ di integrazione cartografica e quello che, nel processo, sta a monte e
+ a valle (ad esempio, una volta pianificato le gite bisogna essere in grado
+ di pilotare il picking ed il carico del camion in modo da rispettare la
+ pianificazione)
+\end_layout
+
+\begin_layout Subsection
+L'interessamento di Wincor al problema
+\end_layout
+
+\begin_layout Standard
+In conclusione Wincor Nixdorf riteneva che:
+\end_layout
+
+\begin_layout Itemize
+I tempi fossero maturi per spingere, con alcuni dei clienti principali,
+ un progetto di 
+\begin_inset Quotes eld
+\end_inset
+
+minimizzazione costi trasporto
+\begin_inset Quotes erd
+\end_inset
+
+ che, utilizzando un sofisticato tool di painificazione cartografica, permettess
+e di ridurre questa importante voce di costo.
+\end_layout
+
+\begin_layout Itemize
+condizione necessaria ( e non sufficiente ) per concludere, assieme ai clienti,
+ il progetto con successo, fosse quella di integrare il tool all'interno
+ di Me.R.Sy., permettendo ai due software di dialogare e di scambiarsi dati
+\end_layout
+
+\begin_layout Itemize
+fosse necessario un approccio propositivo presso i clienti di questo progetto
+\end_layout
+
+\begin_layout Standard
+La fattibilità di questo progetto era tuttavia subordinata al successo di
+ un 
+\begin_inset Quotes eld
+\end_inset
+
+Proof of Concept
+\begin_inset Quotes erd
+\end_inset
+
+ nel quale si sarebbero dovuti fornire anche indicazioni sull'incidenza
+ del risparmio potenziale.
+\end_layout
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Standard
+In questa sezione è possibile trovare chiarimenti sui termini che verranno
+ usati nelle sezioni successive.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Me.R.Sy"
+
+\end_inset
+
+Me.R.Sy
+\end_layout
+
+\begin_layout Standard
+"Me.R.Sy."(Merchandising Retail System) [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Sito-Wincor-Nixdorf"
+
+\end_inset
+
+] è la suite gestionale di Wincor Nixdorf.
+ risponde alle esigenze delle aziende retail gestendo l’intera filiera della
+ moderna distribuzione: dalla negoziazione col fornitore alla logistica
+ della merce, dal punto di vendita al consumatore finale.
+\end_layout
+
+\begin_layout Standard
+La suite applicativa Me.R.Sy., grazie alla sua modularità, che permette di
+ configurare l’applicazione in modo graduale e progressivo nel tempo, controlla
+ con efficacia ed efficienza tutti i processi caratteristici di un’azienda
+ retail, garantendo alti livelli di flessibilità.
+\end_layout
+
+\begin_layout Standard
+I moduli della Suite Me.R.Sy.
+ insistono su 4 aree applicative:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Area Commerciale:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della relazione con l’industria.
+ L’ambiente applicativo, basandosi su questa solida struttura anagrafica,
+ garantisce una copertura ampia e profonda di tutte le funzionalità inerenti
+ il ciclo passivo (rapporto tra distributore e produttore) e il ciclo attivo
+ (rapporto tra distributore e punto vendita).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Area Logistica:
+\series default
+ supporta l’impresa e gli utenti nell’ambito della gestione del ciclo merci
+ e del magazzino.
+ Nella gestione dei processi caratteristici, Me.R.Sy.
+ può utilizzare tecnologie sia in ambito radiofrequenza (RF) che in ambito
+ voice, garantendo precisione nell’esecuzione delle attività e una tracciabilità
+ completa dei prodotti.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Gestione della Rete:
+\series default
+ permette la gestione delle superfici di vendita evolutasi, nel modello
+ e nelle funzioni, con le best practice italiane del canale.
+ Integra in sé tutte le anagrafiche necessarie alla completa gestione dei
+ negozi, nonché la possibilità di utilizzare, per le politiche commerciali,
+ alcuni specifici moduli per la progettazione, applicazione e controllo
+ della politica commerciale.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Area Store:
+\series default
+ garantisce un’ampia copertura funzionale per i processi di back office,
+ mantenendo in loco la sola interfaccia con la barriera casse e le bilance.
+\end_layout
+
+\begin_layout Subsection
+Geocodifica
+\end_layout
+
+\begin_layout Standard
+La geocodifica [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "geocodifica"
+
+\end_inset
+
+] consente di attribuire ad un indirizzo presente in un database (via, numero
+ civico, località, provincia, nazione) una coppia di coordinate geografiche.
+ La geocodifica consente il posizionamento degli indirizzi sulla cartografia
+ digitale e, quindi, la loro successiva visualizzazione e rielaborazione
+ per attività di analisi, di pianificazione, di geomarketing, etc.
+\end_layout
+
+\begin_layout Subsection
+Gite e gite cartografiche
+\end_layout
+
+\begin_layout Standard
+Il percorso che un veicolo terrestre (es.
+ automobile,camion, treno, ecc.), navale, o aereo) compie partendo dal punto
+ di partenza a quello di arrivo, e passando nel suo tragitto attraverso
+ vari punti di controllo, non ha una denominazione univoca in italiano:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+giro
+\begin_inset Quotes erd
+\end_inset
+
+ o 
+\begin_inset Quotes eld
+\end_inset
+
+tragitto
+\begin_inset Quotes erd
+\end_inset
+
+ sono in genere le parole più appropriate.
+ Nei problemi di instradamento dei veicoli (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VRP"
+
+\end_inset
+
+) l'insieme dei veicoli potrebbe tranquillamente essere composto anche da
+ veicoli navali o aerei, senza cambiare di molto la tecnica di soluzione
+ del problema stesso.
+ Per questo in questo elaborato si parlerà in modo generico di 
+\begin_inset Quotes eld
+\end_inset
+
+gite
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Con il termine 
+\begin_inset Quotes eld
+\end_inset
+
+gita
+\begin_inset Quotes erd
+\end_inset
+
+ si intende il percorso che un veicolo (terrestre navale, o aereo) compie
+ partendo dal punto di partenza a quello di arrivo, e passando nel suo tragitto
+ attraverso vari punti di controllo, che sono rappresentati dai punti di
+ consegna.
+\end_layout
+
+\begin_layout Standard
+Una gita è quindi una sequenza ordinata di cui ogni elemento rappresenta
+ un punto di consegna.
+ Ogni gita ha come primo elemento sempre un deposito tra quelli che sono
+ stati definiti.
+\end_layout
+
+\begin_layout Standard
+Una gita cartografica è una gita in cui i punti di consegna sono geocodificati.
+\end_layout
+
+\begin_layout Standard
+In questo elaborato ogni volta in cui si parla di gite si intende gite cartograf
+iche.
+\end_layout
+
+\begin_layout Subsubsection
+Punti di consegna
+\end_layout
+
+\begin_layout Standard
+Un punto di consegna rappresenta un cliente che fa richiesta ad un deposito
+ di un qualche tipo di bene o merce, e che deve essergli recapitato alle
+ sue coordinate.
+\end_layout
+
+\begin_layout Standard
+Ogni punto di consegna possiede un identificativo univoco ed una serie di
+ coordinate che permette di localizzarlo all'interno dello spazio del problema.
+ Nel caso lo spazio del problema sia rappresentato da mappe geografiche
+ generalmente si utilizzano coordinate geografiche, mentre nel caso di mappe
+ cartografiche digitali si può passare anche a tecniche di geocodifica.
+\end_layout
+
+\begin_layout Standard
+La definizione dell'unità di misura della merce è in genere definita o concordat
+a con l'utilizzatore finale, quindi nel caso di merci possono essere pallet,
+ roll, ecc.
+ o anche confezioni singole.
+\end_layout
+
+\begin_layout Subsubsection
+Depositi
+\end_layout
+
+\begin_layout Standard
+Sono punti di consegna speciali, che hanno una richiesta nulla ( i depositi
+ non possono fare richieste tra di loro).
+ Ogni gita parte sempre da uno dei depositi.
+ In questo elaborato sarà trattati solamente casi in cui vi è un solo deposito,
+ quindi sarà anche rispettata la convenzione utilizzata in letteratura di
+ indicare il deposito con l'identificativo 0.
+\end_layout
+
+\begin_layout Subsubsection
+Gite 
+\begin_inset Quotes eld
+\end_inset
+
+aperte
+\begin_inset Quotes erd
+\end_inset
+
+ e gite 
+\begin_inset Quotes eld
+\end_inset
+
+chiuse
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una gita, per essere tale secondo la nostra definizione, deve sempre partire
+ dal deposito.
+ Una gita si dice 
+\begin_inset Quotes eld
+\end_inset
+
+chiusa
+\begin_inset Quotes erd
+\end_inset
+
+ se il punto di arrivo è il deposito di partenza, 
+\begin_inset Quotes eld
+\end_inset
+
+aperta
+\begin_inset Quotes erd
+\end_inset
+
+ altrimenti.
+\end_layout
+
+\begin_layout Standard
+Nei problemi di instradamento dei veicoli classici normalmente si suppone
+ che i veicoli debbano partire e tornare al deposito di partenza.
+ Questo elaborato non si discosta dalla letteratura da questo punto di vista,
+ quindi quando si parla di gite senza specificare diversamente si suppone
+ che si stia parlando di gite 
+\begin_inset Quotes eld
+\end_inset
+
+chiuse
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+PTV AG
+\end_layout
+
+\begin_layout Standard
+PTV (Planung Transport Verkehr) AG [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "PTV-bib"
+
+\end_inset
+
+], costituita nel 1979 a Karlsruhe, Germania è una compagnia di consulenza
+ e sviluppo software.
+ 
+\end_layout
+
+\begin_layout Standard
+Il business di PTV è principalmente concentrato nelle aree del trasporto,
+ della mobilità e della logistica, e sviluppa software per la pianificazione
+ e l'ottimizzazione dei trasporti e delle gite.
+ 
+\end_layout
+
+\begin_layout Standard
+La compagnia è ora attiva in 4 continenti, ha 700 dipendenti e 1500 clienti
+ in 75 nazioni.
+ Alcuni dei loro prodotti software sono utilizzati in Germania anche dalle
+ università nella formazione dei futuri ingegneri del traffico.
+\end_layout
+
+\begin_layout Standard
+Una famiglia di prodotti commerciali che sicuramente ha conquistato una
+ certa fetta di mercato per quanto riguarda la pianificazione delle gite
+ è rappresentata dal marchio 
+\begin_inset Quotes eld
+\end_inset
+
+Maps & Guide
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+TPS
+\end_layout
+
+\begin_layout Standard
+TPS (Transport Planning Service) [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "TPS-bib"
+
+\end_inset
+
+] nasce a Perugia nel 1993 dall’iniziativa di un giovane gruppo di ingegneri
+ specialisti nel settore della pianificazione dei trasporti.
+ L’obiettivo comune era ed è quello di fornire ad operatori pubblici e privati,
+ consulenze, prodotti e servizi nel campo dell’ingegneria del traffico,
+ dei trasporti e della logistica.
+ In questo ambito, TPS ha avviato un’importantissima partnership con la
+ PTV AG, azienda leader a livello europeo nello sviluppo di soluzioni software
+ per la mobilità.
+\end_layout
+
+\begin_layout Standard
+La struttura organizzativa della TPS è articolata sul territorio nazionale
+ italiano con uffici a Perugia (sede legale ed operativa con certificazione
+ di qualità UNI EN ISO 9001:2000), Bologna e Milano.
+ 
+\end_layout
+
+\begin_layout Standard
+A livello operativo TPS è strutturata nelle seguenti unità: 
+\end_layout
+
+\begin_layout Itemize
+team di progettazione e consulenza nei campi dell’ingegneria del traffico,
+ della logistica e dei trasporti 
+\end_layout
+
+\begin_layout Itemize
+unità tecnica per rilievi ed indagini nei settori del traffico e dei trasporti
+ 
+\end_layout
+
+\begin_layout Itemize
+rete commerciale e unità tecnica di supporto per l’assistenza post-vendita
+ dei software 
+\end_layout
+
+\begin_layout Itemize
+laboratorio di sviluppo software laboratorio di ricerca
+\end_layout
+
+\begin_layout Standard
+L'organico della TPS è per la quasi totalità costituito da ingegneri ed
+ architetti esperti in pianificazione dei trasporti, ingegneria del traffico
+ e modellistica applicata.
+ Ad essi si affianca l’attività di un nucleo di programmatori che lavora
+ nello sviluppo di soluzioni software basate su cartografia digitale.
+\end_layout
+
+\begin_layout Subsection
+Euristica di Clarke e Wright
+\end_layout
+
+\begin_layout Standard
+L'euristica di Clarke e Wright
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "The-Vehicle-Routing-Problem"
+
+\end_inset
+
+ di cui si parla in questo elaborato di tesi è meglio conosciuta come 
+\begin_inset Quotes eld
+\end_inset
+
+algoritmo dei risparmi di Clarke e Wright
+\begin_inset Quotes erd
+\end_inset
+
+ (nome originale: 
+\begin_inset Quotes eld
+\end_inset
+
+Clarke and Wright Savings Algorithm
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+È senz'altro l'euristica più conosciuta nell'ambito del Vehicle Routing
+ Problem, ed è basato sull'idea di risparmio.
+\end_layout
+
+\begin_layout Standard
+Si suddivide in 2 fasi: il calcolo dei risparmi e la fusione delle gite.
+\end_layout
+
+\begin_layout Standard
+Per quanto concerne il calcolo dei risparmi, quando due gite 
+\begin_inset Formula $\left(0,\ldots,i,0\right)$
+\end_inset
+
+ e 
+\begin_inset Formula $\left(0,j,\ldots,0\right)$
+\end_inset
+
+ esiste un cammino tra 
+\emph on
+i
+\emph default
+ e 
+\emph on
+j
+\emph default
+ e la nuova gita creata sarebbe ancora fattibile, allora viene computato
+ un'ammontare chiamato risparmio, che è pari a 
+\begin_inset Formula $s_{ij}=c_{i0}+c_{0j}-c_{ij}$
+\end_inset
+
+, ovvero la distanza che si è risparmiato tornando al deposito una volta
+ di meno.
+ I risparmi vengono quindi ordinati in modo non crescente.
+\end_layout
+
+\begin_layout Standard
+La fusione delle gite può essere fatta in due modi: sequenziale o parallelo.
+\end_layout
+
+\begin_layout Standard
+Nel caso parallelo, partendo dal massimo risparmio fino al minimo si effettuano
+ le giunzioni delle gite, sempre però cercando di rispettare i vincoli di
+ fattibilità.
+\end_layout
+
+\begin_layout Standard
+Nel caso sequenziale invece si esamina una gita per volta, e si cerca tra
+ i risparmi, sempre dal maggiore al minore, se si può combinare la gita
+ corrente con un altra rispettando i vincoli di fattibilità.
+\end_layout
+
+\begin_layout Standard
+I risultati sperimentali dicono che la versione parallela è più performante
+ di quella sequenziale, e quindi in questo elaborato quando ci si riferirà
+ a questa euristica si intenderà sempre la sua versione parallela.
+\end_layout
+
+\begin_layout Subsection
+Euristiche e Metaeuristiche
+\end_layout
+
+\begin_layout Standard
+Sono state proposte diverse approcci basati su euristiche per risolvere
+ il problema dell'instradamento dei veicoli (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VRP"
+
+\end_inset
+
+), che possono essere raggruppati in due insiemi distinti: 
+\end_layout
+
+\begin_layout Enumerate
+Quelli basati su euristiche 
+\begin_inset Quotes eld
+\end_inset
+
+classiche
+\begin_inset Quotes erd
+\end_inset
+
+ (sviluppate principalmente tra gli anni '60 e inizio '90)
+\end_layout
+
+\begin_layout Enumerate
+Quelli basati su 
+\begin_inset Quotes eld
+\end_inset
+
+metaeuristiche
+\begin_inset Quotes erd
+\end_inset
+
+ (sviluppate tra la metà degli anni '90 ed i primi anni del terzo millennio)
+\end_layout
+
+\begin_layout Standard
+Le euristiche compiono una esplorazione limitata dell'albero delle scelte
+ e delle combinazioni possibili producendo però generalmente una soluzione
+ comunque buona rispetto a quella ottima.
+ Gran parte delle soluzioni commerciali oggigiorno esistenti appartengono
+ alla prima famiglia, anche e sopratutto perchè questo tipo di euristiche
+ può essere esteso per tenere conto della diversità dei vincoli riscontati
+ in contesti reali.
+\end_layout
+
+\begin_layout Standard
+Vedremo invece come le soluzioni analizzate in quest'elaborato (PTV Intertour
+ Standard e gli xServer) appantegono alla seconda famiglia, rappresentando
+ così un'evoluzione rispetto al panorama generale.
+\end_layout
+
+\begin_layout Standard
+Nelle metaeuristiche infatti l'enfasi è posta invece sull'esplorazione in
+ profondità dell'albero delle scelte, o almeno di quelle regioni dell'albero
+ che appaiano più promettenti.
+ Questi metodi tipicamente combinano tecniche sofisticate per la ricerca
+ dei vicini, la memorizzazione delle strutture dati e la ricombinazione
+ dei risultati.
+\end_layout
+
+\begin_layout Standard
+La qualità delle soluzioni così ottenute è più alta rispetto a quella delle
+ euristiche più classiche, ma richiede un maggior tempo per essere trovata.
+ Tra l'altro, queste procedure richiedono una configurazione abbastanza
+ precisa di alcuni parametri utilizzati dall'algoritmo, e che servono all'eurisi
+tica per adattarsi al contesto di impiego.
+ Questa configurazione in alcuni casi può diventare particolarmente problematica.
+\end_layout
+
+\begin_layout Standard
+Nonostante tutto però la differenza tra euristiche e metaeuristiche sembra
+ risiedere nel fatto che le seconde posseggono una serie di accorgimenti
+ per evitare di rimanere bloccati in minimi locali mediante una gestione
+ più permissiva del risultato trovato: nelle euristiche classiche spesso
+ si passa infatti da una soluzione fattibile all'altra, in una continua
+ ricerca di miglioramento; nelle metaeuristiche spesso invece la scelta
+ della soluzione successiva può riguardare anche soluzioni non fattibili,
+ poichè si è visto che sperimentalmente questo approccio permette di trovare
+ più velocemente la soluzione giusta.
+\end_layout
+
+\begin_layout Subsection
+Tabu Search
+\end_layout
+
+\begin_layout Standard
+Tabu Search è una metaeuristica molto famosa all'interno della'mbietne della
+ Ricerca Operativa, e diverse sue estensioni sono state usate anche in ambito
+ VRP.
+\end_layout
+
+\begin_layout Standard
+In Tabu Search vengono analizzate sequenze di soluzioni in modo iterativo:
+ ad ogni iterazione vengono prodotte diverse soluzioni da una variazione
+ della soluzione ottenuta al passo precedente.
+ Da questo insieme viene scelta la configurazione 
+\begin_inset Quotes eld
+\end_inset
+
+migliore
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero quella che porta più vicino all'obiettivo che si vuole raggiungere.
+\end_layout
+
+\begin_layout Standard
+Per evitare la creazione di cicli nella scelta delle soluzioni, le soluzioni
+ che sono state esaminate recentemente sono contrassegnate come 
+\begin_inset Quotes eld
+\end_inset
+
+tabù
+\begin_inset Quotes erd
+\end_inset
+
+, il che significa che per un certo numero di iterazioni non possono essere
+ più prese in considerazione.
+\end_layout
+
+\begin_layout Standard
+L'approccio basilare di questa metaeuristica, nell'arco di una decina d'anni,
+ è stato utilizzato da diversi autori, i quali lo hanno in genere arricchito
+ di diverse caratteristiche e migliorie.
+ Ad esempio, per risparmiare memoria, alcune estensioni di Tabu Search non
+ memorizzano le soluzioni interamente, ma solo qualche attributo.
+\end_layout
+
+\begin_layout Standard
+Tra gli approcci più famosi o innovativi ricordiamo:
+\end_layout
+
+\begin_layout Itemize
+TabuRoute, descritto poco più avanti in questo documento (cap.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TabuRoute"
+
+\end_inset
+
+).
+ Concepito da Gendreau, Laporte e Hertz, integra al suo interno l'euristica
+ GENIUS (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GENIUS"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Adaptive Memory, di Rochard e Taillard, poichè intriduce il concetto di
+ memoria adattiva per potenziare glia pprocci basati su Tabu Search
+\end_layout
+
+\begin_layout Itemize
+Granular Tabu Search, di Toth e Vigo, poichè tuttora viene ritenuto un ottimo
+ approccio per risolvere l'instradamento dei veicoli
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GENIUS"
+
+\end_inset
+
+GENIUS
+\end_layout
+
+\begin_layout Standard
+GENIUS [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "GENIUS-bib"
+
+\end_inset
+
+] è un'euristica utilizzata per risolvere il problema del commesso viaggiatore,
+ ma che è stata impiegata anche in campo VRP da TabuRoute (vedi cap.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TabuRoute"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+L'acronimo in realtà descrive due euristiche, 
+\begin_inset Quotes eld
+\end_inset
+
+GENeralized Insertion
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+Ustring and Stringing
+\begin_inset Quotes erd
+\end_inset
+
+, e che servono ognuna per un passo specifico di questo algoritmo a due
+ fasi.
+\end_layout
+
+\begin_layout Standard
+La prima si occupa, dato un nodo, di inserirlo all'interno di una sequenza
+ circolare (che di norma è una gita).
+ 
+\end_layout
+
+\begin_layout Standard
+La seconda euristica, in un secondo momento, si occupa di migliorare la
+ gita trovata, e funge perciò da port-ottimizzazione.
+\end_layout
+
+\begin_layout Standard
+Gli schemi con cui queste euristiche aggiungono o tolgono nodi dalla gita
+ concedono determinate caratteristiche all'algoritmo, e quindi vengono analizzat
+e di seguito.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GENI"
+
+\end_inset
+
+GENI
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+GENeralized Insertion
+\begin_inset Quotes erd
+\end_inset
+
+ viene utilizzata per inizializzare la gita.
+ 
+\end_layout
+
+\begin_layout Standard
+L'inserzione non viene fatta in maniera casuale ma segue degli schemi, che
+ andiamo ad illustrare:
+\end_layout
+
+\begin_layout Enumerate
+Nel primo schema di inserzione si suppone che il nodo 
+\emph on
+n
+\emph default
+ debba essere inserito tra 
+\emph on
+
+\begin_inset Formula $n{}_{i}$
+\end_inset
+
+
+\emph default
+ ed 
+\begin_inset Formula $n{}_{j}$
+\end_inset
+
+ (diversi tra loro), e che esista un nodo 
+\emph on
+
+\begin_inset Formula $n_{k}$
+\end_inset
+
+
+\emph default
+ diverso dagli altri due.
+ Non è necessario che i due nodi siano adiacenti, come si vede bene nella
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Inserzione-di-tipo-1"
+
+\end_inset
+
+.
+ Come si vede alcuni segmenti della sequenza sono stati 
+\begin_inset Quotes eld
+\end_inset
+
+invertiti
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Notare che questo schema si riduce ad un inserzione classica nel caso in
+ cui 
+\emph on
+
+\begin_inset Formula $n{}_{i}=n_{i+1},n_{j}=n_{j+1},n_{k}=n_{k+1}$
+\end_inset
+
+.
+
+\emph default
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename inserzione tipo 1.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Inserzione-di-tipo-1"
+
+\end_inset
+
+Inserzione di tipo 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Il secondo schema assomiglia al primo, ma questa volta si suppone anche
+ l'esistenza di un nodo 
+\begin_inset Formula $n{}_{l}$
+\end_inset
+
+diverso dagli altri.
+ notare che in questo caso le 
+\begin_inset Quotes eld
+\end_inset
+
+inversioni
+\begin_inset Quotes erd
+\end_inset
+
+ nella gita sono numerose, come si vede in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Inserzione-di-tipo-2"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename inserzione tipo 2.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Inserzione-di-tipo-2"
+
+\end_inset
+
+Inserzione di tipo 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Degno di nota è il fatto che, per come lavora quest'euristica, non si può
+ partire da una gita vuota, ma bensì devono esserci almeno 3 nodi.
+ Questo problema è dovuto alla struttura degli schemi di inserzione, ed
+ è possibile risolverlo aggiungendo nodi casulamente alla gita fino ad arrivare
+ a 3.
+ Un'altra caratteristica che deriva dall'uso di questi schemi è la non necessità
+ di un componente che perturbi la soluzione, poichè le 
+\begin_inset Quotes eld
+\end_inset
+
+inversioni
+\begin_inset Quotes erd
+\end_inset
+
+ negli schemi servono proprio a questo.
+\end_layout
+
+\begin_layout Standard
+Visto che esitono 2 schemi di inserzione, viene sempre scelto l'inserimento
+ che porta alla costruzione di una gita di costo minimo tra le alternative.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:US"
+
+\end_inset
+
+US
+\end_layout
+
+\begin_layout Standard
+In modo iterativo 
+\begin_inset Quotes eld
+\end_inset
+
+Unstringing and Stringing
+\begin_inset Quotes erd
+\end_inset
+
+, toglie un nodo dalla gita e lo reiserisce, sempre usando gli schemi di
+ GENI per il reinserimento.
+ La rimozione dei nodi dalla gita non viene fatto a caso, ma seguendo determinat
+i schemi, che come si può notare dalla figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rimozione-di-tipo-1"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rimozione-di-tipo-2"
+
+\end_inset
+
+, altro non sono che l'inserso dei passi di inserzione descritti nel paragrafo
+ precedente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename rimozione tipo 1.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rimozione-di-tipo-1"
+
+\end_inset
+
+Rimozione di tipo 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename rimozione tipo 2.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rimozione-di-tipo-2"
+
+\end_inset
+
+Rimozione di tipo 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:TabuRoute"
+
+\end_inset
+
+TabuRoute
+\end_layout
+
+\begin_layout Standard
+Tra gli approcci derivati da Tabu Search, TabuRoute [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:TabuRoute"
+
+\end_inset
+
+] introduce diverse caratteristiche innovative.
+ La lista delle soluzioni che possono essere raggiunte da quella corrente
+ viene determinata usando GENI (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GENI"
+
+\end_inset
+
+), eliminando un vertice da una gita e cercando di inserirlo in un'altra
+ mediante un criterio di minimo costo.
+\end_layout
+
+\begin_layout Standard
+Un'altra importante caratteristica consiste nell'utilizzo di fattori di
+ penalizzazione per svantaggiare la scelta di soluzioni che non rispettano
+ i vincoli (dette anche inammissibili).
+ Più precisamente:
+\end_layout
+
+\begin_layout Itemize
+la funzione di ricerca viene lasciata libera di selezionare anche soluzioni
+ inammissibili, a patto che abbiano un costo minore.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dopo un certo numero numero di soluzioni inammissibili esaminate consecutivament
+e i fattori di penalità aumentano, e così aumenta anche il costo delle soluzioni
+ che violano i vincoli
+\end_layout
+
+\begin_layout Itemize
+Dopo un certo numero di soluzioni ammissibili consecutive invece il valore
+ dei fattori di penalità decresce
+\end_layout
+
+\begin_layout Standard
+Questa tecnica viene utilizzata per creare un mix di soluzioni ammissibili
+ e non che impedisca alla ricerca di fermarsi in un minimo locale.
+\end_layout
+
+\begin_layout Standard
+Ultima importante peculiarità di questo algoritmo è l'utilizzo di false
+ partenze: più soluzioni iniziali vengono generate, e solo la più promettente
+ viene scelta come putno di partenza.
+\end_layout
+
+\begin_layout Subsection
+Granular Tabu Search
+\end_layout
+
+\begin_layout Standard
+È una metaeuristica, introdotta da Toth e Vigo, che ha finora ottenuto eccellent
+i risultati per il VRP [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "granular-tabu-search"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+L'idea di base, molto promettente, e che gli archi lunghi difficilmente
+ faranno parte della soluzione ottima.
+ Viene quindi introdotto un limite 
+\begin_inset Quotes eld
+\end_inset
+
+di granularità
+\begin_inset Quotes erd
+\end_inset
+
+ per gli archi, scelto anche in base alla lunghezza media degli archi contenuti
+ in una soluzione ottenuta in un'euristica veloce (nei risultati sperimentali
+ era stata usata quella di Clarke e Wright).
+\end_layout
+
+\begin_layout Standard
+L'implementazione di Granular Tabu Search quindi riprende quella di TabuRoute
+ e vi aggiunge quest'ultima caratteristica, diminuendo così i tempi di calcolo.
+\end_layout
+
+\begin_layout Standard
+Nella versione originale sono considerate solo mosse di tipo OR1 o OR2 per
+ lo scambio dei nodi all'interno delle gite.
+\end_layout
+
+\begin_layout Subsection
+PTV Intertour
+\end_layout
+
+\begin_layout Standard
+PTV Intertour non è un'applicativo, ma bensì una suite di programmi specializzat
+i per la pianificazione e l'ottimizzazione dei giri per la grande distribuzione
+ [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "PTV-Intertour"
+
+\end_inset
+
+].
+ Ogni software ha alcune funzionalità leggermente diverse che lo rende adatto
+ ad uno specifico compito.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features>
+<column alignment="center" valignment="top" width="30page%">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Funzionalità
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Prodotto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pianificazione automatica dei giri di distribuzione
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Intertour Standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Master route planning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Intertour Strategy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Location planning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Intertour Strategy
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pianificazione delle zone di vendita e ottimizzazione della rete commerciale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV Map&Market
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componenti server per l’integrazione di funzionalità geografiche e di ottimizzaz
+ione dei percorsi in applicativi distribuiti
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTV xServer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Qui di seguito approfondiremo solo gli applicativi che sono interessanti
+ per questo elaborato.
+\end_layout
+
+\begin_layout Subsubsection
+PTV Intertour Standard
+\end_layout
+
+\begin_layout Standard
+PTV Intertour è un software che permette di risolvere complessi scenari
+ di distribuzione e raccolta merci sul territorio.
+ Suggerendo una programmazione ottimizzata dei viaggi e degli impieghi della
+ flotta veicolare, sia su base giornaliera che settimanale, consente di
+ risparmiare fino al 20% dei costi di distribuzione.
+ Per garantire risultati di questo tipo Intertour include un framework per
+ l'ottimizzazione (MEFISTO, vedi pag.
+ 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Mephisto"
+
+\end_inset
+
+) e ed una dettagliata cartografia digitale su cui viene effettuato il calcolo
+ delle distanze stradali e dei tempi di percorrenza tra le destinazioni.
+ PTV Intertour può generare automaticamente i viaggi assegnando fermate
+ e mezzi in pochi secondi, oltre a permettere anche di aggiungere le fermate
+ una ad una senza compromettere l'efficienza dei viaggi nel complesso.
+ E' possibile tuttavia manipolare la soluzione trovata per adattarla meglio
+ alle proprie esigenze, aggiungendo,togliendo o scambiando fermate tra i
+ viaggi, o addirittura aggiungere nuove fermate non precedentemente pianificate
+ all'interno di un giro.
+ Nella composizione dei viaggi PTV Intertour tiene conto di tutti i possibili
+ vincoli sia temporali, sia strutturali che logistici: orari di servizio
+ per la consegna/ritiro con più fasce temporali giornaliere; tempi di turnazione
+ dei mezzi; data e orari di disponibilità della merce; tempi di guida nel
+ rispetto dei limiti di legge; tempo massimo di permanenza a bordo della
+ merce; quantitativi da consegnare (roll, pallet, volume, peso); capacità
+ delle diverse tipologie di mezzi della flotta; richiesta di equipaggiamenti
+ particolari sui mezzi per determinate merci, clienti; depositi di distribuzione
+/transit point/multidrop; vincoli di passaggio intermedio su magazzini per
+ il prelievo/scarico della merce; limitazione della durata dei viaggi; generazio
+ne di viaggi con concarico.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+PTV xServer
+\end_layout
+
+\begin_layout Standard
+I PTV xServer basilarmente offrono le stesse funzionalità dei componenti
+ della suite Intertour, ma usando un'architettura orientata ai servizi.
+ Questo comporta una serie di indiscutibili vantaggi:
+\end_layout
+
+\begin_layout Enumerate
+permettono di ideare soluzioni con un'occhio di riguardo per la scalabilità.
+ Gli xServer sono indipendenti l’uno dall’altro, e grazie alla tecnologia
+ cluster, si può espandere il pool di macchine utilizzate in qualsiasi momento
+ e quindi soddisfare eventuali richieste di prestazioni maggiori
+\end_layout
+
+\begin_layout Enumerate
+sono compatibili con le tecnologie attuali di sviluppo, tutti i componenti
+ hanno interfaccia standard XML/SOAP e questo significa che possono essere
+ facilmente integrati in sistemi ed applicativi 
+\end_layout
+
+\begin_layout Enumerate
+i bundle degli xServer sono completamente standalone, e non necessitano
+ di nessuna installazione
+\end_layout
+
+\begin_layout Enumerate
+mantengono performance elevate poichè l'integrazione dei moduli avviene
+ sì tramite un framework di comunicazione scritto in Java ma i singoli moduli
+ sono scritti in linguaggio C++ 
+\end_layout
+
+\begin_layout Enumerate
+sono multipiattaforma, in quanto possono essere installati in ambiente Windows
+ o Linux e sono in grado di sfruttare i sistemi multiprocessore 
+\end_layout
+
+\begin_layout Enumerate
+hanno un approccio nativamente Web 2.0, con interattività garantita grazie
+ all’utilizzo della tecnologia AJAX
+\end_layout
+
+\begin_layout Enumerate
+vi è un intero portale completamente dedicato al prodotto (“PTV Developer
+ Zone”) dove consultare tutte le ultime novità sui prodotti disponibili,
+ tutte le statistiche sul materiale cartografico, scaricare aggiornamenti
+ e nuove release, consultare FAQ ed ottenere supporto
+\end_layout
+
+\begin_layout Standard
+Qui di seguito riportiamo i 7 server, ognuno con il compito ad esso associato:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xMap:
+\series default
+ si occupa della navigazione dinamica delle mappe AJAX e rappresentazione
+ interattiva di percorsi, informazioni sul traffico, veicoli e, più in generale,
+ POI, punti, polilinee, aree, immagini, etc.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xLocate:
+\series default
+ si occupa della geocodifica e validazione di indirizzi (dall’indirizzo
+ alle coordinate).
+ Supporta differenti formati di coordinate geografiche (WGS-84, GeoDecimal,
+ GeoMinSec, Mercator etc.), permette la geocodifica inversa (dalle coordinate
+ all’indirizzo).
+ Possiede un modalità batch per la geocodifica di grandi quantità di indirizzi
+ e differenti metodi di ricerca che possono essere combinati l’uno con l’altro
+ (binary, fuzzy, phonetic) 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xRoute:
+\series default
+ possiede tutte le funzionalità legate al calcolo di percorsi con più tappe
+ intermedie, distanze e tempi di percorrenza (generazione della lista descrittiv
+a del percorso e dei dati necessari alla rappresentazione del percorso su
+ mappa).
+ Permette inoltre di calcolare i percorsi per diversi tipologie di veicolo
+ tenendo conto di pedaggi autostradali.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xSequence:
+\series default
+ ottimizzazione di una sequenza di tappe nel rispetto di vincoli operativi
+ quali finestre orarie e molti altri parametri propri del mondo del trasporto
+ e della logistica (carico/scarico, quantità, categorie di veicoli,…).
+ La differenza principale rispetto a xRoute sta nel fatto che viene considerata
+ una sola sequenza, non tutti i percorsi contemporaneamente
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xDima:
+\series default
+ calcolo ottimizzato di matrici di distanza (tempi e distanze).
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xCluster:
+\series default
+ utile per la creazione di gruppi omogenei di punti in funzione di parametri
+ geografici e altri criteri.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+xTour:
+\series default
+ ottimizzazione dei giri in funzione di parametri quali la capacità dei
+ veicoli, le finestre temporali di aperture e chiusura, etc.
+ Gli ordini vengono suddivisi in giri ottimizzati nel rispetto dei vincoli
+ riducendo i chilometri percorsi, il tempo e il numero di veicoli necessari.
+ La differenza principale ripetto a xCluster sta nel fatto che xTour non
+ si occupa di raggruppare i clienti in base alle consegne periodiche, mentre
+ la differenza rispetto a xRoute è rappresentata dalla strategia di ottimizzazio
+ne, in particolare xTour tiene conto anche delle finestre di consegna.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mephisto"
+
+\end_inset
+
+MEFISTO
+\end_layout
+
+\begin_layout Standard
+MEFISTO (Metaheuristics Framework for Information Systems in Transport Optimisat
+ion) [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Mefisto-bib"
+
+\end_inset
+
+] è, come dice il nome, un framework per l'implementazione di metaeuristiche,
+ disegnato dai suoi autori ed ora sfruttato da PTV per le sue soluzioni
+ commerciali.
+\end_layout
+
+\begin_layout Standard
+Le sviluppo di MEFISTO è dovuto al fatto che fino a poco tempo fa i requisiti
+ per un componente business in ambito VRP erano:
+\end_layout
+
+\begin_layout Itemize
+la correttezza del modello, che doveva essere più vicino alla realtà possibile
+\end_layout
+
+\begin_layout Itemize
+il tempo di calcolo, che doveva essere il minimo possibile o comunque un
+ ammontare ragionevole
+\end_layout
+
+\begin_layout Standard
+Questo aveva portato a vincoli più stringenti come distanze asimmetriche,
+ finestre temporali diverse per ogni utente, tempi di attesa massimi, eterogneit
+à della flotta, vincoli di precedenza, ecc, mentre i tempi di calcolo venivano
+ ridotti affidandosi ad eursitiche particolarmente rapide e ad una successiva
+ fase di post-ottimizzazione (come succedeva nel caso di GENIUS, vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GENIUS"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Questa classe di problemi, in letteratura conosciuta come 'problemi 
+\begin_inset Quotes eld
+\end_inset
+
+ricchi
+\begin_inset Quotes erd
+\end_inset
+
+ di instradamento dei veicoli' (nome originale: 
+\begin_inset Quotes eld
+\end_inset
+
+rich veihicle routing problems
+\begin_inset Quotes erd
+\end_inset
+
+), ha avuto particolare fortuna negli anni passati.
+\end_layout
+
+\begin_layout Standard
+Recentemente però ha cominciato ad emergere un alteriore requisito, ovvero
+ la qualità della soluzione stessa, richiesta che si aggiungeva ai precedenti
+ vincoli posti.
+ Contemporaneamente l'avanzamento tecnologico dell'hardware aveva permesso
+ di ottenere dei tempi di calcolo sufficientemente brevi a fronte di una
+ buona qualità della soluzione.
+ Questi fattori portarono quindi ad un cambio di atteggiamento verso il
+ problema, e permesso ad approcci più sofisticati, come le metaeuristiche,
+ di poter essere usate su ampia scala, e non solo per soddisfare i bisogni
+ del singolo cliente.
+\end_layout
+
+\begin_layout Standard
+Di metaeuristiche però non ve n'era una sola, e la ricerca in questo campo
+ intanto continuava insesorabilmente.
+ Per mostrare un comportamento trasparente rispetto alla particolare metauristic
+a utilizzata e mantenere compatibilità sulle interfacce, era necessario
+ sviluppare una framework più generale.
+ Da questa idea nacque MEFISTO.
+\end_layout
+
+\begin_layout Standard
+L'intero framework è scritto in C++ e si compone di un'architettura suddivisa
+ in 3 livelli:
+\end_layout
+
+\begin_layout Enumerate
+il primo livello è sostanzialmente indipendente dall'applicazione e dalla
+ metaeuristica implementata.
+ Fornisce soltanto le funzioni principali e le strutture dati che servono
+ a rappresentare le entità fondamentali di qualsiasi metaeuristica.
+ Fanno parte di questo livello le classi che rappresentano il generatore
+ di mosse, le mosse stesse, lo spazio delle soluzioni e la ricerca locale
+\end_layout
+
+\begin_layout Enumerate
+il secondo livello contiene tutte le classi che servono alla specifica metaeuris
+tica, ed ereditano le funzionalità dalle classi del primo livello
+\end_layout
+
+\begin_layout Enumerate
+il terzo livello è fortemente dipendente dall'applicazione utilizzata e
+ dal tipo di problema trattato.
+ Ad esempio, per quanto riguarda l'ambito VRP, questo livello dovrà contenere
+ le classi rappresentanti le mosse per scambiare nodi ed archi
+\end_layout
+
+\begin_layout Standard
+Nell'articolo originale vengono inoltre riportati i risultati sperimentali
+ ottenuti in un caso reale e utilizzando un'estensione di Granular Tabu
+ Search, a cui sono state aggiunte anche mosse di swap e A-B.
+\end_layout
+
+\begin_layout Standard
+Dalle informazioni che ci sono state fornite da TPS e PTV questa metaeuristica
+ doveva essere molto simile a quella utilizzata da PTV Intertour Standard
+ e dagli xServer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "VRP"
+
+\end_inset
+
+Vehicle Routing Problem
+\end_layout
+
+\begin_layout Standard
+Il problema dell'instradamento dei veicoli ( in inglese 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, o VRP ) riguarda la determinazione di un insieme ottimale di gite che
+ dovranno essere utilizzati da una flotta di veicoli per servire un dato
+ insieme di clienti.
+ Come è possibile intuire data la sua similitudine con il problema del commesso
+ viaggiatore, la sua complessità è elevata, apprteiene infatti all'insieme
+ dei problemi NP-hard.
+\end_layout
+
+\begin_layout Standard
+Come problema combinatorio e di ottimizzazione è un classico nella letteratura
+ della Ricerca Operativa: sono passati ormai più di 50 anni da quando Dantzig
+ e Ramser introdussero il problema nel 1959.
+\end_layout
+
+\begin_layout Standard
+Nella letteratura vi è una predisposizione a indicare questo problema con
+ il suo nome od il suo acronimo inglese.
+ Tale convenzione verrà d'ora in poi rispettata anche in questo elaborato.
+\end_layout
+
+\begin_layout Standard
+Il 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+ è un problema importante per il trasporto, la logistica e la distribuzione
+ [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Truck-Dispatching-Problem"
+
+\end_inset
+
+].
+ Lo scopo implicito è quello di minimizzare il costo per la distribuzione
+ delle merci, quindi è chiaro che vi è anche molto interesse industriale,
+ non solo di ricerca, su questo problema.
+\end_layout
+
+\begin_layout Standard
+A partire dall'articolo di Dantiz e Ramster e successivamente quello di
+ Clarke e Wright (nel 1964), furono quindi concepiti centinaia di modelli
+ e algoritmi furono proposti per trovare una soluzione il più possibile
+ ottima, ma data l'elevata complessità del problema stesso finora sono state
+ prodotte solo euristiche che producono approssimazioni più o meno precise
+ in un tempo ragionevole.
+\end_layout
+
+\begin_layout Standard
+La versione classica del VRP prevede che l'intera flotta parta da un unico
+ deposito, visiti una serie di punti di consegna, e poi ritorni al deposito
+ di partenza.
+ Inoltre tutte le richieste dei clienti sono deterministiche, conosciute
+ in anticipo, e non possono essere suddivise tra i mezzi.
+ Esistono però alcune variazioni, più o meno note, di grande interesse pratico:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Capacitated VRP (CVRP)
+\series default
+: in questa versione i mezzi che compongono la flotta hanno una capacità
+ limitata ma uguale per tutti, e che quindi funge da vincolo nel calcolo
+ della soluzione
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Multi-Capacitated VRP (MCVRP): 
+\series default
+come nel CVRP i mezzi hanno una capacità limitata, ma le capacità dei singoli
+ veicoli possono essere diverse tra loro
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+VRP with Time Window (VRPTW):
+\series default
+ valgono tutti vincoli descritti per il CVRP, e si aggiunge un vincolo sull'inte
+rvallo di tempo in cui la merce deve essere consegnata.
+ Ogni cliente espone un intervallo di tempo in cui è 
+\begin_inset Quotes eld
+\end_inset
+
+aperto
+\begin_inset Quotes erd
+\end_inset
+
+, e quindi ricettivo alla consegna della merce, chiamata finestra di consegna.
+ Beni consegnati al di fuori della finestra di consegna non vengono raccolti
+ e contano come consegna mancata.
+ Il problema quindi si arrichisce di complessità perchè non è più importante
+ coprire solamente tutti i clienti con un dispendio minimo, ma bisogna anche
+ assicurarsi di consegnare la merce in tempo, in modo da minimizzare l'ammontare
+ di merce non consegnata.
+\end_layout
+
+\begin_layout Standard
+Per ognuna di queste è prevista sia la versione 
+\begin_inset Quotes eld
+\end_inset
+
+simmetrica
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero dove gli archi hanno lo stesso costo sia in un verso che nell'altro,
+ che quella 
+\begin_inset Quotes eld
+\end_inset
+
+asimmetrica
+\begin_inset Quotes erd
+\end_inset
+
+, dove invece il costo dell'arco dipende anche dal verso in cui lo si percorre.
+ In questo elaborato, a meno che non specificato esplicitamente, si intendono
+ sempre le versioni asimmetriche di tali problemi, in quanto le versioni
+ simmetriche non sono che un caso particolare di quelle asimmetriche.
+\end_layout
+
+\begin_layout Standard
+Esistono anche variazioni che contemplano l'utilizzo di più depositi invece
+ di averne uno solo centralizzato, ma non saranno descritte in questo elaborato.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Algoritmo-genetico"
+
+\end_inset
+
+Algoritmo genetico
+\end_layout
+
+\begin_layout Standard
+Un algoritmo genetico è un'euristica di ricerca che cerca di riprodurre
+ il processo di evoluzione naturale.
+ Quesa euristica è generalemnte usata per genrare utili soluzioni nei problemi
+ di ottimizzazione e ricerca.
+ Gli algoritmi genetici alla classe più generale dei problemi evoluzionistici,
+ i quali generano soluzioni a problemi di ottimizzazione usando tecniche
+ ispirate sempre all'evoluzione naturale, quali ereditarietà, mutazione,
+ selezione e crossover.
+\end_layout
+
+\begin_layout Subsection
+Principio generale
+\end_layout
+
+\begin_layout Standard
+In un algoritmo genetico [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "algoritmo-genetico"
+
+\end_inset
+
+], una popolazione di stringhe (chiamate cromosomi, geni o genotipi del
+ genoma) che rappresentano le soluzioni candidate (chiamate individui o
+ fenotipi) in un problema di ottimizzazione, evolvono verso soluzioni migliori.
+\end_layout
+
+\begin_layout Standard
+Tradizionalmente, le soluzioni sono rappresentate come stringhe bnarie,
+ ma sono possibili anche altre rappresentazioni ovviamente.
+ Gli algoritmi genetici sono impiegati in molti campi quali (bio)informatica,
+ ingegneria, economia, chimica, matematica, fisica, ecc.
+ 
+\end_layout
+
+\begin_layout Standard
+Un tipico algoritmo genetico richiede:
+\end_layout
+
+\begin_layout Enumerate
+un modo per rappresentare mediante geni il dominio delle soluzioni
+\end_layout
+
+\begin_layout Enumerate
+una funzione detta 
+\begin_inset Quotes eld
+\end_inset
+
+di idoneità
+\begin_inset Quotes erd
+\end_inset
+
+, per valutare il dominio delle soluzioni
+\end_layout
+
+\begin_layout Standard
+La funzione 
+\begin_inset Quotes eld
+\end_inset
+
+di idoneità
+\begin_inset Quotes erd
+\end_inset
+
+ viene geeralemnte utilizzata per favorire le soluzioni 
+\begin_inset Quotes eld
+\end_inset
+
+idonee
+\begin_inset Quotes erd
+\end_inset
+
+ o comunque buone rispetto al problema, e svantaggiare le altre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pseudocodice di un semplice algoritmo genetico generazionale:
+\end_layout
+
+\begin_layout Enumerate
+Scegli la popolazione iniziale di individui
+\end_layout
+
+\begin_layout Enumerate
+Valuta l'idoneità di ogni individuo 
+\end_layout
+
+\begin_layout Enumerate
+Ripeti fino a che il criterio di terminazione non è raggiunto: (time out,
+ idoneità minima raggiunta, ecc.)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+segli gli individui più idonei per la riproduzione
+\end_layout
+
+\begin_layout Enumerate
+dai origine ai nuovi individui attraverso il crossover dei geni e la mutazione
+\end_layout
+
+\begin_layout Enumerate
+Valuta l'idoneità di ogni nuovo individuo 
+\end_layout
+
+\begin_layout Enumerate
+rimpiazza gli individui meno idonei con i nuovi
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Inizializzazione 
+\end_layout
+
+\begin_layout Standard
+Inizialmente vengono generate tanti corredi genetici quanti individui della
+ popolazione initiale.
+ queste rappresentano le soluzioni iniziali.
+ La dimensione della popolazione iniziale dipende dal problema in questione,
+ ma di solito contiene centinaia o migliaia di individui.
+\end_layout
+
+\begin_layout Standard
+Sempre parlando in linea generale, questa popolazione viene generata casualmente
+, cercando di coprire l'intero spettro della soluzioni possibili.
+ Oppure si può anche utilizzare particolari intervalli di valori in cui
+ si pensa possano annidarsi le soluzioni migliori.
+\end_layout
+
+\begin_layout Subsection
+Selezione 
+\end_layout
+
+\begin_layout Standard
+Durante ogni iterazione successiva, una porzione della popolazione esistente
+ viene selezionata per dare vita ad una nuova generazione.
+\end_layout
+
+\begin_layout Standard
+Le soluzioni individuali vengono selzionate attraverso un processo basato
+ sull'idoneità del singolo individuo, dove le soluzioni con un più alto
+ punteggio di idoneità hanno maggiore probabilità di essere selezionate.
+\end_layout
+
+\begin_layout Standard
+Esistono più stategie di scelta, ognuna con i suoi pro e contro:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+metodo della roulette:
+\series default
+ con questo metodo ogni individuo ha una idoneità 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ ed una probabilità di essere scelto pari a 
+\begin_inset Formula $p_{i}=\frac{f_{i}}{\sum_{j=1}^{N}f_{j}}$
+\end_inset
+
+, dove N è il numero degli individui scelti.
+ Questo permette di ottenere una selezione abbastanza uniforme e rappresentativa
+ rispetto alla effettiva idoneità degli individui.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+campionamento universale stocastico:
+\series default
+ simile al metodo della roulette, ma con migliori probabilità matematiche
+ dal punto di vista della previsione
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+metodo del torneo:
+\series default
+ richiede la simulazione di diversi 
+\begin_inset Quotes eld
+\end_inset
+
+tornei
+\begin_inset Quotes erd
+\end_inset
+
+ tra una ristretta cerchia di individui scelti a caso tra la popolazione.
+ Il vincitore di ogni torneo, ovvero quello più idoneo, viene scelto per
+ la riproduzione.
+ La pressione selettiva indotta da questo metodo può essere moderata variando
+ la dimensione degli individui coinvolti.
+ Più il numero degli individui è grande, minore è la probabilità che gli
+ individui deboli vengano selzionati.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+metodo della troncatura:
+\series default
+ semplicissimo, semplicemente seleziona i migliori K individui sulla base
+ dell'idoneità e li fa riprodurre tra loro.
+\end_layout
+
+\begin_layout Subsection
+Riproduzione 
+\end_layout
+
+\begin_layout Standard
+Nel passo successivo viene creata una seconda generazione di individui (o
+ soluzioni) mediante una simulazione della riproduzione sessuale: il crossover.
+\end_layout
+
+\begin_layout Standard
+Per ogni nuova soluzione che si vole produrre, una coppia di soluzioni 
+\begin_inset Quotes eld
+\end_inset
+
+genitrici
+\begin_inset Quotes erd
+\end_inset
+
+ viene selzionata.
+ Producendo un 
+\begin_inset Quotes eld
+\end_inset
+
+bambino
+\begin_inset Quotes erd
+\end_inset
+
+ attraverso le operazioni che spiegheremo a breve, viene creata una nuova
+ soluzione che ha molto in comune con i suoi 
+\begin_inset Quotes eld
+\end_inset
+
+genitori
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Lo scopo ultimo è quello di far progredire le soluzioni verso una nuova
+ genrazione, potenzialmente 
+\begin_inset Quotes eld
+\end_inset
+
+migliore
+\begin_inset Quotes erd
+\end_inset
+
+ di quella precedente.
+\end_layout
+
+\begin_layout Standard
+Esistono diversi meccanismi di crossover, alcuni tra i più famosi sono:
+\end_layout
+
+\begin_layout Enumerate
+Crossover puntuale: viene selezionato un indice particolare all'interno
+ delle due stringhe che rappresentano i corredi genetici dei 
+\begin_inset Quotes eld
+\end_inset
+
+genitori
+\begin_inset Quotes erd
+\end_inset
+
+, e quindi si effettua lo scambio dei due segmenti
+\end_layout
+
+\begin_layout Enumerate
+Crossover a doppio punto: simile al crossover puntuale, ma con 2 punti di
+ scambio
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes eld
+\end_inset
+
+Cut and Splice
+\begin_inset Quotes erd
+\end_inset
+
+: simile al crossover puntale, ma i punti di scambio non hanno lo stesso
+ indice.
+ Atipico rispetto ai precedenti poichè può produrre 
+\begin_inset Quotes eld
+\end_inset
+
+prole
+\begin_inset Quotes erd
+\end_inset
+
+ con stringhe di lunghezza diversa rispetto ai 
+\begin_inset Quotes eld
+\end_inset
+
+genitori
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Crossover uniforme: si seleziona una probabilità con cui due bit delle due
+ stringhe si scambieranno (tipicamente 0.5) e si lancia una monetina per
+ ogni bit della stringa 
+\end_layout
+
+\begin_layout Standard
+All'interno di questo processo la mutazione serve unicamente ad impedire
+ che le soluzioni si adagino su un 
+\begin_inset Quotes eld
+\end_inset
+
+minimo locale
+\begin_inset Quotes erd
+\end_inset
+
+: se la mutazione è vantaggiosa infatti, l'intero gruppo tende a compiere
+ un balzo in avanti da un punto di vista evoluzionistico, altrimenti viene
+ semplicemente scartata senza alterare il risultato finale.
+\end_layout
+
+\begin_layout Standard
+Ovviamente esistono anche meccanismi diversi dalla mutazione e dal crossover,
+ ma non saranno affrontati in quest'elaborato.
+\end_layout
+
+\begin_layout Chapter
+Architettura proposta
+\end_layout
+
+\begin_layout Standard
+Il problema posto da Primafrost, che riguardava il carico, scarico e la
+ definizone delle gite per la flotta degli automezzi era facilmente riconducibil
+e ad una particolare istanza di VRP.
+\end_layout
+
+\begin_layout Standard
+Questo tipo di problemi sono tutti NP-hard, tuttavia sono già disponibili
+ diverse soluzioni commerciali (basate su euristiche) che permettono di
+ ottenere soluzioni molto buone, se non ottime.
+\end_layout
+
+\begin_layout Standard
+Quando il sottoscritto ha cominciato ad occuparsi di questo progetto lo
+ studio di fattibilità non era nella sua fase iniziale, per cui alcune scelte
+ erano già state fatte, in quanto si era già arrivati ad una bbozza generale
+ del progetto, e visto un paio di alternative possibili.
+ Si è tuttavia deciso di riportare comunque tutti i dati, sia quelli precedenti
+ al mio arrivo sia quelli successivi per dare un'idea più articolata del
+ contesto di lavoro.
+ Ogni sezione deve essere vista come una fase dello studio di fattibilità,ed
+ alla fine di ogni sezione viene riportato quello che è stato il risultato
+ dell'incontro finale con gli stakeholder.
+\end_layout
+
+\begin_layout Standard
+Tutte le scelte precedenti al mio arrivo verranno presentate nella prima
+ sezione di questo capitolo, e successivamente si passerà al problema vero
+ e proprio: la scelta tra un'architettura 
+\begin_inset Quotes eld
+\end_inset
+
+vecchio stampo
+\begin_inset Quotes erd
+\end_inset
+
+, con l'utilizzo di software stand-alone, oppure l'adozione di una più moderna
+ architettura Web service ma un attimo più complessa da progettare e realizzare.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Progetto-di-massima"
+
+\end_inset
+
+Progetto di massima della soluzione
+\end_layout
+
+\begin_layout Standard
+Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost la gestione
+ della flotta (ovvero carico e gite) era affidata ad un dipendente dell'azienda,
+ il quale essendo un ex-camionista ed avendo una larga esperienza della
+ rete stradale italiana poteva senza dubbio soddisfare le esigenze dell'azienda.
+\end_layout
+
+\begin_layout Standard
+Ma questa gestione portava diversi problemi:
+\end_layout
+
+\begin_layout Enumerate
+Il futuro di quella parte dell'azienda era accentrato tutto nelle mani di
+ un solo uomo
+\end_layout
+
+\begin_layout Enumerate
+La gestione manuale non dava nessuna garanzia di portare a soluzioni ottime
+ o quantomeno buone, benchè si fossero presi diversi accorgimenti e vi fosse
+ buona volontà da parte di tutti
+\end_layout
+
+\begin_layout Enumerate
+Questa gestione non conveniva nemmeno al suddetto dipendente, il quale a
+ caus del suo ruolo poteva prendersi pochissime ferie
+\end_layout
+
+\begin_layout Standard
+Si cercava dunque una soluzione che permettesse di automatizzare l'intero
+ processo, o almeno ua sua parte, in modo da alleviare gli svantaggi dovuti
+ alla situazione attuale.
+\end_layout
+
+\begin_layout Subsection
+Requisiti della soluzione
+\end_layout
+
+\begin_layout Standard
+La soluzione proposta, per risultare accettabile da parte di Primafrost,
+ doveva:
+\end_layout
+
+\begin_layout Enumerate
+permettere di automatizzare, in tutto o in parte, la generazione delle gite,
+ una volta forniti ovviamente i dati necessari (mezzi, richieste, ecc.)
+\end_layout
+
+\begin_layout Enumerate
+offrire garanzie di minimizzazione dei costi maggiori rispetto alla normale
+ gestione manuale
+\end_layout
+
+\begin_layout Enumerate
+permettere di modificare le gite generate, possibilmente in maniera semplice
+ e veloce, garantendo così un maggior controllo sull'output prodotto
+\end_layout
+
+\begin_layout Enumerate
+offrire garanzie di rispettare le norme sindacali vigenti per gli autisti
+ dei camion, tra cui è contemplata anche ilrispetto dei tempi di riposo
+\end_layout
+
+\begin_layout Enumerate
+essere pronta, almeno in una forma prototipale, in un tempo relativamente
+ breve
+\end_layout
+
+\begin_layout Standard
+Per essere accettabile da parte di Wincor la soluzione doveva:
+\end_layout
+
+\begin_layout Enumerate
+rispettare i vincoli posti dal cliente
+\end_layout
+
+\begin_layout Enumerate
+permettere una gestione dei dati integrata con l'ERP aziendale, Me.R.Sy
+\end_layout
+
+\begin_layout Standard
+Requisiti impliciti da parte del cliente potevano essere sulla possibile
+ interfaccia del prodotto, che doveva essere user-friendly e non intralciante
+ dal punto di vista operativo.
+\end_layout
+
+\begin_layout Standard
+Da parte di Wicor Nixdorf un requisito implicito poteva essere la necessità
+ di uno strumento o applicativo che non necessitasse più di tanto un continuo
+ intervento da parte dei suoi dipendenti.
+\end_layout
+
+\begin_layout Subsection
+Modalità di realizzazione
+\end_layout
+
+\begin_layout Standard
+Realizzazione o acquisizione (con esame e valutazione delle eventuali alternativ
+e)
+\end_layout
+
+\begin_layout Standard
+Come già spiegato nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wincor-metodo"
+
+\end_inset
+
+, Wincor Nixdorf non ha un approccio simile a quello delle software house,
+ quindi di sicuro la scelta strategica era di puntare su prodotti già realizzati
+, e customizzarli per il cliente, piuttosto che svilupparne altri ex-novo.
+\end_layout
+
+\begin_layout Standard
+Per Primafrost in particolare era stata già realizzata un'applicazione per
+ la gestione dei carichi dei mezzi e per la visualizzazione delle gite (tra
+ l'altro già integrata con Me.R.Sy.).
+ Sembrava quindi logico cercare di integrare il tutto con un'applicazione/serviz
+io che calcolasse in automatico le gite in base a i carichi.
+ La visualizzazione delle gite veniva fatta con una versione di 
+\begin_inset Quotes eld
+\end_inset
+
+PTV Maps & Guide
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Era quindi logico cercare una soluzione applicativa sempre progettata da
+ PTV, sia perchè poteva risultare più semplice da integrare sia perchè PTV
+ al momento è una delle aziende leader nel campo.
+\end_layout
+
+\begin_layout Subsection
+Valutazione delle alternative
+\end_layout
+
+\begin_layout Standard
+Le 3 alternative possibili erano le seguenti:
+\end_layout
+
+\begin_layout Enumerate
+ottimizzare le gite usando gli XServer
+\end_layout
+
+\begin_layout Enumerate
+ottimizzare le gite usando PTV Intertour
+\end_layout
+
+\begin_layout Enumerate
+lasciare tutto com'era (non era una vera alternativa, ma era piuttosto l'ultima
+ spiaggia)
+\end_layout
+
+\begin_layout Standard
+L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
+ se l'ottimizzazione delle gite doveva essere fatta automaticamente piuttosto
+ che manualmente, e se era meglio utilizzare Web Service o un approccio
+ applicativo classico.
+\end_layout
+
+\begin_layout Section
+Il progetto proposto
+\end_layout
+
+\begin_layout Standard
+Come visto nella sezione precedente, molti aspetti partivano già inquadrati,
+ e tuttavia non era chiaro quale fosse l'alternativa vincente.
+ 
+\end_layout
+
+\begin_layout Standard
+Ci si è quindi informati prima sui processi del cliente coinvolti, e si
+ è cercato di sconvolgerli il meno possibile, come spiegato nella prima
+ sottosezione.
+\end_layout
+
+\begin_layout Standard
+Per alcuni problemi secondari, di cui parliamo a breve, sembrava che la
+ componente umana fosse imprescindibile in alcuni casi.
+ Inoltre non era chiaro cosa un'architettura orientata ai servizi aggiungesse
+ all'architettura, per cui si era partiti facendo test utilizzando l'applicazion
+e stand-alone.
+ Chiaro non era neppure quanto tempo ci volesse ad eseguire una corretta
+ configurazione dello strumento, e se questa configurazione potesse essere
+ unica nonostante la variabilità degli scenari.
+\end_layout
+
+\begin_layout Standard
+Nel mio lavoro non ero solo, anzi la mia mansione era di affiancare un giovane
+ impiegato (Primo Tilli) che era statao incaricato di occuparsi del problema.
+ Tutto il lavoro svolto da me e da Primo si trova nelle sottosezioni successive.
+\end_layout
+
+\begin_layout Subsection
+Processi del cliente
+\end_layout
+
+\begin_layout Standard
+Sicuramente si può pensare che esista una documentazione ufficiale in cui
+ sono descritti i processi di Primafrost, anche se in modo non necessariamente
+ formale, tuttavia comprensibilmente quella documentazione non ci è stata
+ fornita.
+\end_layout
+
+\begin_layout Standard
+La mia conoscenza dei processi di Primafrost deriva esclusivamente dal bagaglio
+ di conoscenza posseduto da Wincor Nixdorf, e da quanto è emerso negli incontri
+ con il cliente, quindi la visione che ne deriva potrebbe essere certamente
+ limitata, ma a mio parere è abbastanza completa per permettere uno sguardo
+ generale alla metodologia di lavoro.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il proceso che era interessante per noi era il processo di gestione delle
+ consegne,e questo poteva essere scomposto come segue:
+\end_layout
+
+\begin_layout Enumerate
+Sotto-processo di raccolta dati dei clienti
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ricezione degli ordini
+\end_layout
+
+\begin_layout Itemize
+eventuale modifica delle finestre di consegna
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+sotto-processo di preparazione della flotta
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+creazione delle gite
+\end_layout
+
+\begin_layout Enumerate
+eventuale correzione dei carichi dei veicoli
+\end_layout
+
+\begin_layout Enumerate
+assegnazione degli autisti
+\end_layout
+
+\begin_layout Enumerate
+carico veicoli
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sotto-processo di dispiegamento delle consegne
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tracciamento dei mezzi in marcia
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+Come si può notare alcuni di questi sotto-processi ho deciso di suddividerli
+ usando elenchi puntati invece che numerati.
+ Questo deriva dal fatto che non so con certezza in che ordine vengano svolte
+ le attività.
+\end_layout
+
+\begin_layout Standard
+Per quanto conosco infatti Primafrost stabilisce con i punti di consegna
+ delle finestre di servizio, entro le quali la merce deve essere consegnata
+ perchè è presente il personale addetto allo scarico.
+ Consegnare al di fuori di queste finestre risulta quindi in uno spreco
+ di tempo e denaro sia per l'azienda che per il punto di consegna, quindi
+ risultano essere un vincolo operativo.
+\end_layout
+
+\begin_layout Standard
+Periodicamente l'azienda quindi raccoglie gli ordini dai suoi clienti/punti
+ di consegna e da questi dati parte nella preparazione della flotta.
+\end_layout
+
+\begin_layout Standard
+Le gite vengono create su base giornaliera, e chiaramente non è necessario
+ che ogni cliente abbia ordini nuovi ogni giorno, quindi i possibili scenari
+ che ne derivano sono abbastanza dinamici.
+\end_layout
+
+\begin_layout Standard
+Come già accennato in altre sezioni, il processo di creazione delle gite
+ viene svolto prevalentemente a mano da un dipendente (un ex-camionista,
+ per la precisione) che ha grande esperienza delle strade italiane, e quindi
+ può fare previsioni sulle situazioni contingenti che si potrebbero presentare
+ agli autisti in determinate vie ed in determinati momenti della giornata.
+\end_layout
+
+\begin_layout Standard
+Una volta trovato il percorso, è necessario calcolare una stima dei kilometri
+ da percorrere e tempo potenziale impiego di tempo.
+ Almeno questa parte non era eseguita in maniera completamente manuale,
+ ma mediante il software 'Maps&Guide' si riusciva ad ottenere stime abbastanza
+ precise.
+\end_layout
+
+\begin_layout Standard
+Fatte le gite e apportate eventuali correzioni, la flotta ed i carichi sui
+ mezzi vengono preparati, ed una volta partiti i mezzi vengono tracciati
+ temporalmente mediante appositi strumenti, in modo da assicurarsi che gli
+ autisti rispettino i tempi di lvoro e di riposo.
+ Alcuni di essi in particolare sono già tracciati anche mediante GPS, quindi
+ si possono ottenere informazioni ance sulla gita realmente percorsa, anche
+ se tuttavia sono una ristretta minoranza.
+\end_layout
+
+\begin_layout Subsection
+Problemi secondari
+\end_layout
+
+\begin_layout Standard
+Un vincolo operatico piuttosto ovvio è rappresentato dalla capacità dei
+ mezzi di trasporto.
+ Le eccezioni per quanto riguarda questo limite non possono che essere gestite
+ in maniera manuale, con conseguente rischio di perdita di ottimalità della
+ soluzione.
+\end_layout
+
+\begin_layout Standard
+Con la vecchia suite capitava ogni tanto una incorretta gestione dei carichi
+ dei camion.
+\end_layout
+
+\begin_layout Standard
+La componenete umana in questo caso si rivelava indispensabile: spesso era
+ necessario modificare le gite già calcolate per far tornare i conti, ed
+ un uomo con una discreta esperienza ed abilità poteva individuare in pochissimo
+ tempo le modifiche che servivano allo scopo senza aumentare i mezzi e senza
+ sconvolgere più di tanto la vecchia pianificazione.
+\end_layout
+
+\begin_layout Standard
+Un'altro problema che persino con i mezzi di oggi non viene trattato nelle
+ applicazioni commerciali è l'eccesso di traffico che alcune strade riscontrano
+ periodicamente durante la giornata, il quale può creare diversi disagi
+ agli autisti.
+\end_layout
+
+\begin_layout Standard
+Ancora una volta un essere umano con un po' di esperienza può riuscire invece
+ a prevedere il problema, e addirittura sa indicare se il problema affligge
+ uno solo dei versi di marcia, e può quindi avvalersene nel tentativo di
+ ottimizzare le gite.
+\end_layout
+
+\begin_layout Standard
+Per quest'ultimo problema PTV sta compiendo degli studi e dei rilevamenti
+ statistici, ma è chiaro che ancora per un po' di tempo l'essere umano è
+ destinato a rimanere indispensabile.
+\end_layout
+
+\begin_layout Standard
+Come se non bastasse le tipologie di merce caricata incidono sul tipo di
+ veicolo da utilizzare, e da quest'ultimo dipende quanta merce di un certo
+ tipo può essere caricata.
+ Ad esempio non è possibile caricare assieme articoli di ortofrutta e salumi,
+ poichè non sarebbe a norma rispetto alle norme vigenti.
+ La merce ortofrutticola infatti ha una certa carica batterica e micotica,
+ che rischia di contaminare il resto della merce, e si rende necessario
+ l'utilizzo di una paratia per dividere i tipi di merce.
+ La paratia è possibile montarla se il mezzo possiede almeno 2 ingressi
+ al vano merci, e quindi questo limita la scelta all'interno della flotta.
+\end_layout
+
+\begin_layout Standard
+Questo genere di problemi di carattere alquanto complesso è ancora risolvibile
+ in maniera semi-automatica, ovvero l'operatore è in grado di indicare una
+ serie di vincoli che chiameremo 
+\begin_inset Quotes eld
+\end_inset
+
+qualifiche
+\begin_inset Quotes erd
+\end_inset
+
+ sulle merci, i veicoli e persino gli autisti, nel caso si necessitasse
+ di abiliazoni particolari, e lasciare che un software di un qualche tipo
+ risolva il problema delle corrispondenze, ma anche in questo caso la costruzion
+e dei vincoli non può che essere fatta da una persona che conosce la situazione
+ contingente al problema.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Training-su-PTV"
+
+\end_inset
+
+Training su PTV Intertour
+\end_layout
+
+\begin_layout Standard
+Per prima cosa si è voluto provare ad usare PTV Intertour, in modo da non
+ complicare da subito la possibile architettura finale.
+\end_layout
+
+\begin_layout Standard
+Per utilizzare l'applicazione è necessario di un'addestramento veramente
+ minimo (fornitoci dai dipendenti di TPS), gran parte dei comandi dell'interfacc
+ia sono abbastanza intuitivi.
+ Giusto per avere una panoramica diciamo che Intertour accetta in input
+ file dati con formato ASCII, XML, CSV oppure anche da tabelle di frontiera
+ in formato SQL SERVER o ORACLE [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Documentazione-di-PTV"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+I dati necessari all'applicazione riguardano depositi (in cui sono inclusi
+ anche gli ordini), veicoli ed autisti.
+ Questi dati vengono chiamati 
+\begin_inset Quotes eld
+\end_inset
+
+master data
+\begin_inset Quotes erd
+\end_inset
+
+, e vengono memorizzati in locale su filesystem, e successivamente processate
+ dall'applicazione, la quale ricava anche i dati relativi alla geocodifica
+ degli indirizzi.
+\end_layout
+
+\begin_layout Standard
+Da qui PTV Intertour ricava uella che si chiama 
+\begin_inset Quotes eld
+\end_inset
+
+matrice delle distanze
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero ad ogni coppia di destinazioni associa la distanza del più breve
+ percorso che passa tra le due.
+ questa matrice è utilizzata dall'euristica per trovare la corretta soluzione.
+\end_layout
+
+\begin_layout Standard
+Nei 
+\emph on
+master data 
+\emph default
+è possibile indicare quelli che vengono chiamati dall'applicazione 'giri
+ base', ovvero gite precalcolate dall'utente esterno.
+ PTV Intertour permette infatti sia di calcolare le gite ex-novo, sia di
+ una funzionalità per cercare di utilizzare i 'giri base' come punto di
+ partenza nella ricerca di una soluzione ottima.
+\end_layout
+
+\begin_layout Standard
+L'utlima funzionalità che ci hanno illustrato era l'utilizzo di quella che
+ in Ricerca Operativa viene chiamata 'post-ottimizzazione', ovvero un possibile
+ raffinamento ulteriore della soluzione trovata, basata sul componenete
+ MEFISTO (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mephisto"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Per un'interfacciamento più user-friendly o per semplice integrazione con
+ l'ERP aziendale è possibile inoltre utilizzare un altro applicativo, IT
+ Manager, che permette di caricare facilmente i dati e memorizza tutto in
+ un database in formato SQL SERVER.
+\end_layout
+
+\begin_layout Standard
+L'interfaccia di IT Manager è poco più che minimale, ma contiene tutte le
+ funzionalità necessarie: è possibile modificare i dati, mandare a Intertour
+ solo un sottoinsieme ben preciso,ecc.
+ Inoltre è permette di verificare le coordinate di georeferenziazione disegnando
+ il punto su una mappa.
+\end_layout
+
+\begin_layout Subsection
+Configurazione di PTV Intertour
+\end_layout
+
+\begin_layout Standard
+La spiegazione che ci era sata data su questo prodotto era davvero dettagliata,
+ ma tuttavia tutti i dettagli che ci erano stati forniti erano utili solo
+ come aiuto durante lo svolgimento dei casi d'uso più o meno tipici, mentre
+ il funzionamento interno del programma, come ci si poteva aspettare, rimaneva
+ per lo più oscuro.
+\end_layout
+
+\begin_layout Standard
+In questa fase l'attività principale è stata quella di eseguire una attenta
+ esplorazione dell'interfaccia alla ricerca di parametri che ci permettessero
+ di migliorare i risultati.
+ A questa era affiancata una attività di validazione misurando come si comportav
+a in alcuni casi reali.
+\end_layout
+
+\begin_layout Subsubsection
+Parametri dell'euristica
+\end_layout
+
+\begin_layout Standard
+Ben presto ci siamo resi conto che il controllo sui risultati poteva essere
+ anche molto fine, anche se abbiamo riscontrato qualche potenziale pecca.
+ Oltre a diversi tool per la visualizzazione dei risultati infatti, l'applicazio
+ne ci forniva funzionalità:
+\end_layout
+
+\begin_layout Itemize
+per cambiare alcune proprietà relative ai mezzi (velocità media, qualifiche,
+ costi per fascia oraria/kilometrica, ecc.)
+\end_layout
+
+\begin_layout Itemize
+per aggiungere/modificare alcuni vincoli per quanto riguardava la soluzione
+ (tempo massimo che un mezzo poteva attendere presso un punto di consegna
+ in attesa che aprisse, costo relativo alla singola unità di tempo, finestre
+ di consegna, ecc.)
+\end_layout
+
+\begin_layout Itemize
+per decidere se adottare i 
+\begin_inset Quotes eld
+\end_inset
+
+giri base
+\begin_inset Quotes erd
+\end_inset
+
+ come punto di riferimento o meno (era possibile ad esempio decidere di
+ tenere fissi i clienti che dovevano essere visitati nelle gite, ma fare
+ in modo che fosse l'applicativo a decidere qual'era l'ordine che minimizzava
+ i costi)
+\end_layout
+
+\begin_layout Itemize
+per tenere traccia dei vincoli che erano stati eventualmente violati dalla
+ soluzione, mediante una piccola console.
+\end_layout
+
+\begin_layout Standard
+Ognuna di queste funzionalità ci aiutava nella creazione di uno scenario
+ simulato che cercavamo di rendere il più possibile vicino alla realtà.
+ Più lo scenario che andavamo a creare si avvicinava allo scenario del nostro
+ problema, più i risultati che ottenevamo da Intertour sembravano affidabili,
+ o quantomeno convincenti.
+\end_layout
+
+\begin_layout Standard
+Un dettaglio che si rivelato importante successivamente stava nel fatto
+ che i mezzi non erano visti come singole unità, ma come classi di veicoli.
+ Gli attributi relativi al mezzo non appartenenvano al singolo mezzo, ma
+ all'intera classe.
+ Questa particolarità ci è stato spiegato che era stata introdotta per motivi
+ prestazionali: più la flotta era omogenea, più i calcoli si semplificavano,
+ ed una simile rappresentazione forzava a distinguere solo ciò che era chiaramen
+te differente.
+\end_layout
+
+\begin_layout Subsubsection
+Qualifiche
+\end_layout
+
+\begin_layout Standard
+Per ogni mezzo era possibile definire arbitrariamente dei flag che rappresentass
+ero le 
+\begin_inset Quotes eld
+\end_inset
+
+qualifiche del mezzo
+\begin_inset Quotes erd
+\end_inset
+
+, che ci permettevano di risolvere problematiche complesse come quella dell'orto
+frutta vista in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Training-su-PTV"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Il meccanismo in sè era semplice, ed il sistema, dopo la prima volta era
+ stato impostato, era in grado di memorizzare le qualifiche attivate in
+ modo da non perderle tra una sessione di utilizzo e l'altra.
+ 
+\end_layout
+
+\begin_layout Standard
+Era necessario prima di tutto attivare i flag per i mezzi che si sapeva
+ possedessero certe caratteristiche e poi, ogni volta che un'ordine aveva
+ certe caratteristiche, si attivava il flag corrispondente anche per il
+ cliente (importante notare che la qualifica veniva vista come un'attributo
+ del cliente, e non dei suoi ordini).
+ Dopodichè era l'applicazione a tenere conto delle qualifiche e cercare
+ di attribuire il mezzo giusto durante il calcolo della soluzione.
+ Se il vincolo della qualifica non veniva rispettato dalla soluzione trovata,
+ nella piccola console appariva quale gita aveva violato il vicolo e su
+ quale punto di consegna.
+ Era anche possibile automatizzare in parte anche le attivazioni delle qualifich
+e definendo alcune macro, ma nel nostro caso ne abbiamo fatto a meno perchè
+ non ne facevamo un uso così esteso.
+\end_layout
+
+\begin_layout Subsubsection
+Visualizzazione dei risultati
+\end_layout
+
+\begin_layout Standard
+I punti di consegna appaiono rappresentati come dei pallini nella mappa
+ che mostra l'applicazione, collegati da linne continue che sono le gite.
+ Le gite si dipartono, come è logico, dal maggazzino di Mantova, che appare
+ come un triangolino.
+ Come triangolini appaiono anche eventuali 
+\emph on
+transit point
+\emph default
+, punti particolari che si comportano sia come normali destinazioni (un
+ certo quantitativo di merce deve esservi consegnato) sia come magazzini
+ (la merce, una volta arrivata, viene smistata utilizzando altri corrieri).
+\end_layout
+
+\begin_layout Standard
+Questa rappresentazione, benchè semplice ed abbastanza intuitiva, nasconde
+ in sè quello che potrebbe essere considerato un errore di usabilità: le
+ linee che congiugono i vari punti di consegna non ricalcano minimamente
+ quello che è il percorso reale, sono semplicemente linee che congiungono
+ coppie di punti nel modo più diretto possibile.
+\end_layout
+
+\begin_layout Standard
+Questo significa, come è succeso in caso reale, che se due punti si trovano
+ ai due estremi di un lago e fanno parte della stessa gita vedremo un linea
+ congiungerli e passare 
+\series bold
+sopra il lago
+\series default
+.
+ Ad una prima vista questa rappresentazione potrebbe sembrare fuorviante
+ oppure anche segnalare un errore nelle impostazioni, ed è quello che è
+ capitato.
+ Invece, tenendo conto di quanto detto prima, è chiaro che non c'è niente
+ di strano.
+\end_layout
+
+\begin_layout Standard
+Questa rappresentazione potrebbe derivare anche da limiti pratici, in quanto
+ non sappiamo se nella matrice delle distanze vengono memorizzate solo le
+ distanze tra le destinazioni o anche i percorsi che le collegano.
+ In ogni caso non è un difetto fatale, anzi per fortuna la mappa risulta
+ molto utile anche in presenza di questo difetto.
+\end_layout
+
+\begin_layout Subsubsection
+Velocità dei mezzi
+\end_layout
+
+\begin_layout Standard
+I dipendenti di TPS ci hanno subito avvertito di una peculiarità di questo
+ prodotto: le zone a ZTL non sono correttamente gestite.
+ Questo significa che se si fosse presentato ad esempio il caso di un punto
+ di consegna in centro a Milano lo l'applicazione ci avrebbe segnalato che
+ il punto era raggiungibile, ma non avrebbe segnalato che era necessario
+ nell'ultimo tratto utilizzare un mezzo leggero o con autorizzazione.
+ Bisognava quindi stare un attimo attenti ai risultati che lo strumento
+ mostrava alla fine del calcolo.
+\end_layout
+
+\begin_layout Standard
+A mio parere questo difetto sembra come al solito legato al fatto che nella
+ matrice delle distanze non vengano salvati altri dati sul percorso più
+ breve.
+\end_layout
+
+\begin_layout Standard
+Per ovviare al problema, e cercare di far quadrare il più possibile i conti
+ soprattutto per i tempi di viaggio, si doveva intervenire a mano, con 3
+ approcci possibili:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+osservare la gita, calcolare circa il punto in cui il mezzo entrava nella
+ zona ZTL, mettere in quel punto un transit point, e impostare delle qualifiche
+ sul vero punto di consegna in modo che fosse selezionato un mezzo leggero
+ o aurorizzato.
+
+\series default
+ Questo era decisamente l'approccio più corretto, ma molto difficile e dispendio
+so in termini di tempo.
+ Inoltre ricordiamo che era difficile stimare il punto preciso poichè la
+ mappa non mostrava il vero percorso del mezzo, ma soltanto una linea che
+ congiungeva 2 punti.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+stimare più o meno il punto dove il mezzo entrava nella zona ZTL, e stimare
+ la velocità media del mezzo leggero, e modificare la velocità del mezzo
+ pesante in modo che avesse un valore che era una specie di media pesata
+ tra i due.
+ Questo approccio risultava meno corretto, ma sembrava più veloce.
+
+\series default
+ In realtà si perdeva comunque un po' di tempo, poichè i mezzi erano suddivisi
+ in classi, e la velocità media era un'attributo della classe, non del veicolo,
+ per cui sarebbe stato necessario isolare il mezzo scelto e metterlo in
+ una classe a parte.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+era possibile modificare gli attributi relativi alla strada in modo da impostare
+ un determinata velocità massima (una specie di limite di velocità).
+
+\series default
+ Questo metodo, molto simile al secondo, in realtà risulterebbe molto più
+ semplice perchè tutti i relativi calcoli verrebbero campiuti interamente
+ dallo strumento, e di sicuro anche relativamente veloce.
+ Tuttavia ancora una volta usando solo la mappa non si poteva capire da
+ che via specifica il mezzo sarebbe passato, quindi era chiaro che si poteva
+ utilizzare questa tecnica solo se ad esempio utilizzavamo Maps&Guide per
+ visualizzare il percorso.
+\end_layout
+
+\begin_layout Standard
+La nostra fortuna era che situazioni come quella sopra descritta non si
+ presentavano, comunque abbiamo deciso di prendere nota del problema.
+ Il vero difetto dal mio punto di vista non consisteva nel fatto che PTV
+ Intertour non era in grado di risolvere agilmente il problema, ma piuttosto
+ il fatto che non potesse nemmeno segnalare all'operatore che era necessario
+ controllare i risultati.
+\end_layout
+
+\begin_layout Subsubsection
+Validazione dei risultati
+\end_layout
+
+\begin_layout Standard
+Come test per la configurazione adottata abbiamo utilizzato dei dati provenienti
+ da Primafrost e rilevati in giorno specifico, in modo da fare una prova
+ con uno scenario reale, con tanto di 
+\begin_inset Quotes eld
+\end_inset
+
+giri base
+\begin_inset Quotes erd
+\end_inset
+
+ (ovvero le gite originali tracciate manualmente).
+\end_layout
+
+\begin_layout Standard
+Sono state fatte più prove, provando a far variare il numero di punti di
+ consegna e la loro disposizione, e controllando ogni volta se i tempi di
+ riposo per i camionisti rispettavano le norme vigenti.
+\end_layout
+
+\begin_layout Standard
+Ciò che si è potuto osservare è che, utilizzando le gite originali come
+ punto di partenza si otteneva comunque un risparmio, misurabile attorno
+ all'1-2%, che era nulla in confronto al caso in cui le gite venivano ricalcolat
+e da capo.
+ in quest'ultimo caso si poteva anche raggiungere il 5% lasciando agire
+ per un po' la post-ottimizzazione.
+\end_layout
+
+\begin_layout Standard
+Come già detto precedentemente in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Progetto-di-massima"
+
+\end_inset
+
+, queste percentuali possono apparire irrisorie, ma non lo sono affatto,
+ poichè i fattori di costo per questo tipo di attività si aggirando complessivam
+ente sull'ordine dei milioni di euro, e quindi si sta parlando di una discreta
+ somma comunque.
+\end_layout
+
+\begin_layout Standard
+Ciò che abbiamo inoltre rilevato sono le prestazioni del componente applicativo:
+ in al massimo una decina di secondi un problema con circa 200 punti di
+ consegna ed una ventina di mezzi era stato completamente risolto, senza
+ violazioni di vincoli e migliorando la soluzione trovata manualmente del
+ 3% circa (tra i vincoli contavano anche i tempi di riposo).
+\end_layout
+
+\begin_layout Standard
+La post-ottimizzazione impiegava ben di più: in teoria la si poteva lasciare
+ andare quanto si voleva, ma sperimentalmente si era notato che i miglioramenti
+ più notevoli si avevano già entro i primi 2 minuti.
+ Passato questo limite, il tempo tra un miglioramento ed il successivo tendeva
+ ad allungarsi troppo, per cui si è deciso di impostare come condizione
+ di terminazione il fatto che fossero passati 120 secondi.
+ Pur usando un tempo così ristretto, si notava che in media la post-ottimizzazio
+ne migliorava la soluzione trovata dall'euristica dell'1-2% al massimo.
+\end_layout
+
+\begin_layout Subsection
+Comportamento dello strumento in caso di scenari dinamici
+\end_layout
+
+\begin_layout Standard
+Prima di comunicare ufficialmente al cliente i dati che avevamo raccolto,
+ era necessario fare anche delle prove con dati che provenissero da giornate
+ diverse, in modo da vedere come lo strumento si comportava di fronte a
+ scenari dinamici.
+\end_layout
+
+\begin_layout Standard
+Per nostra fortuna il cliente era molto ben disposto nei nostri confronti,
+ ed erano già disponibili i dati di alcune giornate, già riversati all'interno
+ dell'ERP aziendale.
+\end_layout
+
+\begin_layout Subsubsection
+Problemi di formato sui dati in input
+\end_layout
+
+\begin_layout Standard
+In questa fase abbiamo avuto qualche problema con il formato dei dati in
+ input per Intertour.
+ Me.R.Sy.
+ infatti era in grado di restituirci tutti i dati che ci servivano in formato
+ CSV, ma IT Manager, che noi usavamo per questa procedura, voleva che le
+ colonne fossero in un certo ordine, mentre Intertour voleva che le coordinate
+ per la georeferenziazione fossero nel formato Mercatore.
+\end_layout
+
+\begin_layout Standard
+In sé e per sé questo problema era assai stupido, e forse si poteva risolvere
+ anche solo con qualche macro di Microsoft Excel.
+ Questa infatti è stata la prima strada che abbiamo seguito, ma ben presto
+ ci siamo resi conto che i dati che provenivan dall'ERP non riguardavano
+ solo le giornate che servivano a noi.
+ Era dunque necessario filtrare i record ottenuti, e poi applicare tutte
+ le trasformazioni necessarie.
+ Con le macro di Excel era possibile eseguire le varie operazioni singolarmente,
+ ma visto che avevamo più tabelle (quella dei mezzi e quella degli ordini
+ dei clienti), la cosa si faceva più difficile, perchè da una parte dovevamo
+ riuscire ad escludere più dati possibile, mentre dall'altra non potevamo
+ permetterci di far saltare i controlli dei riferimenti incrociati, per
+ cui dovevamo eliminare solo lo stretto necessario.
+ Per farla breve avevamo veramente bisogno di un'operatore che funzionasse
+ più o meno come il JOIN di SQL per eseguire tutta la procedura in modo
+ da non fare danni.
+\end_layout
+
+\begin_layout Standard
+Così abbiamo provato ad usare le tabelle Excel come input per altri programmi
+ che ci permettessero di utilizzare qualche operazione similare ai DBMS.
+ Dato che l'ambiente in cui ci trovavamo a lavorare aveva un spiccata dominanza
+ di sistemi e applicazioni Windows-like, abbiamo fatto una prova con MS
+ Access, visto che apparteneva alla stessa suite.
+\end_layout
+
+\begin_layout Standard
+Ben presto però ci siamo resi conto dei limiti che l'applicazione aveva,
+ in quanto permetteva di importare le tabelle Excel, ma non permetteva di
+ usare operatore come il JOIN perchè di fatto non stava utilizzando veri
+ database.
+\end_layout
+
+\begin_layout Standard
+Così l'alternativa è stata l'utilizzo di SQL Server 2005 Express Edition,
+ per via del fatto che comunque è un DBMS, è free, ed è della stessa casa,
+ per cui potevamo aspettarci un po' di compatibilità.
+\end_layout
+
+\begin_layout Standard
+Indagando un po' abbiamo infatti trovato una pratica funzionalità che ci
+ permetteva di importare direttamente i dati dei file Excel all'interno
+ delle tabelle del database e viceversa.
+\end_layout
+
+\begin_layout Standard
+In questo modo siamo riusciti a risolvere tutto il problema in appena mezza
+ giornata.
+\end_layout
+
+\begin_layout Subsubsection
+Nuove gite, calcolate su più giorni
+\end_layout
+
+\begin_layout Standard
+Con i nuovi dati abbiamo potuto fare qualche test anche su pianificazioni
+ di altre giornata di consegna.
+ I risultati per fortuna si mantenevano nella media di quanto precedetemente
+ osservato.
+\end_layout
+
+\begin_layout Standard
+Con queste ultime prove avevamo dimostrato che lo strumento si comportava
+ bene anche in presenza di scenari dinamici, senza cambiare impostazioni.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prima-presentazione-risultati"
+
+\end_inset
+
+Prima presentazione dei risultati al cliente
+\end_layout
+
+\begin_layout Standard
+Abbiamo potuto finalmente presentare in maniera ufficiale i risultati ottenuti
+ in un meeting con tutti gli stakeholder riuniti.
+ Oltre ad una rappresentanza di Wincor Nixdorf e di Primafrost erano presenti
+ anche TPS e gruppo Lombardini.
+ Quest'ultimo in particolare era presente in quanto voleva conoscere quanto
+ il metodo di consegna di Primafrost sarebbe cambiato, visto che l'azienda
+ rifornisce i suoi punti di consegna.
+\end_layout
+
+\begin_layout Standard
+L'incontro è proceduto abbastanza bene, il cliente ha confermato che dal
+ suo punto di vista si stava andando nella direzione giusta.
+ 
+\end_layout
+
+\begin_layout Standard
+Alcune gite di quelle originali tuttavia sembravano strane perchè erano
+ stati registrati dei tempi che lo strumento non poteva riprodurre, così
+ gli esperti di TPS e i dipendenti di Primafrost e Wincor Nixdorf si sono
+ ripromessi di ricontrollare i dati per quelle gite in particolare.
+\end_layout
+
+\begin_layout Standard
+E' emerso anche un'altro dato interessante, di cui però e meglio parlare
+ nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Analisi-costi-benefici"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Percorso più corto o più breve?
+\end_layout
+
+\begin_layout Standard
+Una sola domanda rimase in sospeso dopo questo primo incontro.
+ I dirigenti di Primafrost, in linea del tutto teorica, si chiedevano se
+ era possibile regolare lo strumento in modo che invece di utlizzare i percorsi
+ più brevi tra i punti di consegna, utilizzasse invece quelli più veloci.
+\end_layout
+
+\begin_layout Standard
+Questa richiesta era dovuta principalmente alle modalità di pagamento degli
+ autisti: alcuni erano pagati al kilometro, altri all'ora, quindi non era
+ così irragionevole cercare di minimizzare le distanze nel primo caso ed
+ i tempi nel secondo.
+\end_layout
+
+\begin_layout Standard
+Per riuscire a soddisfare la richiesta dovevamo sapere di più sull'architettura
+ interna del programma e capire come manipolare i parametri dell'euristica
+ in modo che tirasse fuori i risultati che ci servivano.
+\end_layout
+
+\begin_layout Subsubsection
+Il componente MEFISTO
+\end_layout
+
+\begin_layout Standard
+MEFISTO è stato l'unico componente che ci appariva manipolabile da questo
+ punto di vista, ed è stato anche l'unico componente interno di cui abbiamo
+ ricevuto un minimo di documentazione da parte di TPS.
+\end_layout
+
+\begin_layout Standard
+Il funzionamento in dettaglio di MEFISTO può essere trovato nella sezione
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Mephisto"
+
+\end_inset
+
+.
+ Il suo funzionamento può essere riassunto in poche parole: questo componente
+ parte dal una soluzione base trovata da un'euristica veloce e cerca di
+ migliorarla.
+ I pesi servono ad indirizzare la ricerca e quindi a determinare l'aspetto
+ della soluzione finale.
+\end_layout
+
+\begin_layout Standard
+I pesi non erano modificabili da interfaccia grafica, ed ecco perchè non
+ li avevamo notati finora, ma da un file di configurazione, la cui locazione
+ ci è stata indicata dai tecnici TPS.
+\end_layout
+
+\begin_layout Standard
+Ciò che si è potuto notare è che, ponendo i risultati in un ipotetico piano
+ cartesiano organizzato come in figura, la funzione risulta abbastanza prevedibi
+le, tuttavia in alcuni casi che abbiamo trovato presentava alcune discontinuità.
+\end_layout
+
+\begin_layout Standard
+Non era pertanto possibile prevedere in modo accurato i risultati che si
+ sarebbero ottenuti.
+\end_layout
+
+\begin_layout Subsubsection
+Le gite che non tornavano
+\end_layout
+
+\begin_layout Standard
+Oltre al problema della non completa prevedibilità dell'influenza dei fattori
+ di costo, c'erano anche da tenere in considerazione le gite il cui costo
+ non tornava.
+ sembrava infatti che i ottenuti dal precedente sistema, che usava Maps&Guide,
+ non collimassero con i dati ottenuti utilizzando PTV Intertour.
+ In particolare quelli ottenuti con Maps&guide sembravano in alcuni casi
+ migliori.
+\end_layout
+
+\begin_layout Standard
+La prima ipotesi da verificare era che stessero usando la stessa versione
+ delle mappe, altrimenti era chiaro che da dati diversi derivassero risultati
+ diversi.
+\end_layout
+
+\begin_layout Standard
+Sono stati controllati quindi i percorsi di riferimento alle mappe, ma erano
+ identici, e ce lo hanno confermato anche i tecnici TPS.Siamo pertanto tornati
+ a controllare se esistevano altri parametri che influenzassero il calcolo
+ e che fossero comuni ai due sistemi.
+ A prima vista però questa strada sembrava un vicolo cieco.
+\end_layout
+
+\begin_layout Standard
+La soluzione di questo problema venne data da Cristian, il dipendente di
+ Primafrost che si occupava del calcolo delle gite.
+ Mentre noi cercavamo di riprodurre i suoi risultati, lui aveva cercato
+ di riprodurre i nostri, con successo.
+\end_layout
+
+\begin_layout Standard
+Tutto si era risolto con la variazione di un singolo fattore, che dall'interfacc
+ia sembrava effettivamente influenzare il calcolo del percorso, ma solo
+ per quanto riguardava la sua lunghezza.
+\end_layout
+
+\begin_layout Standard
+La figura illustra quello che esponeva l'interfaccia: mettendo un valore
+ massimo a quel coefficiente avremmo in teoria dovuto influenzare la ricerca
+ in modo che selezionasse il percorso più breve, al contrario avrebbe selezionat
+o il più veloce.
+\end_layout
+
+\begin_layout Standard
+Non è dato sapere di preciso come questo singolo fattore influenzasse il
+ calcolo, ma si possono fare supposizioni: supponendo che l'algoritmo utilizzato
+ da entrambi i programmi sia simile a grnular Tabu Search, quel fattore
+ potrebbe in realtà aver influenzato la 
+\begin_inset Quotes eld
+\end_inset
+
+granularità
+\begin_inset Quotes erd
+\end_inset
+
+ dello spazio delle soluzioni, cambiando il numero di archi presi in considerazi
+one.
+ Una volta trovato quindi una disposizione degli archi simile, i due programmi
+ avrebbero cominciato a restituire soluzioni simili tra loro.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:ricerca-giusti-fattori"
+
+\end_inset
+
+La ricerca dei giusti valori per i fattori
+\end_layout
+
+\begin_layout Standard
+Risolto il problema delle gite 
+\begin_inset Quotes eld
+\end_inset
+
+non corrette
+\begin_inset Quotes erd
+\end_inset
+
+, rimaneva il problema di trovare i valori 
+\begin_inset Quotes eld
+\end_inset
+
+migliori
+\begin_inset Quotes erd
+\end_inset
+
+ per soddisfare le esigenze del cliente.
+\end_layout
+
+\begin_layout Standard
+Vi erano sostanzialmente 2 metodi possibili:
+\end_layout
+
+\begin_layout Enumerate
+Cercare manualmente, attraverso una serie di prove, i valori corretti
+\end_layout
+
+\begin_layout Enumerate
+Cercare di automatizzare il processo descritto al punto 1
+\end_layout
+
+\begin_layout Standard
+Ognuna delle due scelte aveva vantaggi e svantaggi, ovviamente.
+ Nel caso della ricerca manuale i tempi potevano essere anche molto lunghi
+ e la qualità della soluzione trovata scadente, viceversa per il caso automatico
+, con la differenza che per automatizzare il processo e mantenere i tempi
+ ragionevolmente brevi potevano essere necessarie risorse computazionali
+ aggiuntive, all'epoca non disponibili.
+\end_layout
+
+\begin_layout Standard
+Si è quindi optato per la prima scelta, raggiungendo una soluzione abbastanza
+ buona dopo qualche giorno di lavoro.
+\end_layout
+
+\begin_layout Standard
+Giusto per completezza, i risultati che si sarebbero potuti ottenere con
+ una procedura automatica, sono spiegati nel capitolo 3, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Implementazione"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Validazione dei risultati
+\end_layout
+
+\begin_layout Standard
+Tutte prove di cui si è parlato prima sono state effettuate sulle mappe
+ e sugli ordini su ci sono anche state effettuate anche le prove fatte per
+ laprima consegna, per cui eravamo piuttosto sicuri dei risultati.
+\end_layout
+
+\begin_layout Subsection
+Presentazione dei risultati definitiva al cliente
+\end_layout
+
+\begin_layout Standard
+Il cliente, già contento perchè aveva intuito che si stava andando nella
+ direzione giusta, è stato molto felice di sapere che c'era anche un modo
+ di manipolare il risultato finale dell'applicazione.
+ In questo modo se un domani fossero cambiate le esigenze, si poteva semplicemen
+te agire sui parametri invece che gettare via tutto.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Analisi-costi-benefici"
+
+\end_inset
+
+Analisi costi-benefici
+\end_layout
+
+\begin_layout Standard
+A conti fatti le due architetture eran più o meno equivalenti dal punto
+ di vista dei vantaggi e degli svantaggi.
+\end_layout
+
+\begin_layout Standard
+Ciò che ha portato quindi ad una scelta netta è stato ciò che è emerso già
+ dal primo incontro con gli stakeholder, ovvero il fatto che alcune informazioni
+ non erano del tutto aggiornate all'interno delle mappe.
+\end_layout
+
+\begin_layout Subsection
+Vantaggi e svataggi utilizzzando PTV Intertour
+\end_layout
+
+\begin_layout Standard
+Utilizzando Intertour i vantaggi che se ne ottenevano erano valutabili a
+ livello di maggiore semplicità di utilizzo per l'utente finale se si utilizzava
+ direttamente l'interfaccia grafica prevista dallo strumento, ed un costo
+ minore o quantomeno comparabile a quello degli XServer.
+\end_layout
+
+\begin_layout Standard
+D'altro canto l'applicazione non risultava così facile da integrare nell'archite
+ttura già esistente, infatti necessitava di qualche workaround solo per
+ interfacciarlo direttamente con l'ERP.
+\end_layout
+
+\begin_layout Standard
+Questa risultava essere un'ottima alternativa nel caso si fosse visto che
+ la componente umana non poteva essere esclusa, in quanto anche se più difficile
+ da integrare poteva risultare più usabile.
+\end_layout
+
+\begin_layout Subsection
+Vantaggi e svantaggi utilizzando PTV XTour
+\end_layout
+
+\begin_layout Standard
+Utilizzando XTour era probabilmente più facile da integrare con la'rchitettura
+ preesistente, ma non avrebbe necessariamente semplificato l'interazione
+ con l'utente.
+\end_layout
+
+\begin_layout Standard
+Grazie all'architettura basata su Web Service, si poteva riuscire a visualizzare
+ le mappe anche all'interno di un browser con poco sforzo, visto che esistevano
+ già librerie apposite.
+\end_layout
+
+\begin_layout Standard
+Il problema sarebbe stato dover disegnare ex-novo una nuova interfaccia
+ per l'utente, con possibili problemi di usabilità e di familiarizzazione
+ con i nuovi controlli.
+\end_layout
+
+\begin_layout Standard
+Inoltre non era detto che il costo fosse per forza contenuto, non sono mai
+ state fatte abbastanza prove per avere la certezza se ogni XServer fosse
+ più o meno indipendente dagli altri o se fosse necessario l'utilizzo di
+ più di uno di questi prodotti in sinergia.
+ Facendo conto che le licenze erano diverse per ogni prodotto, significava
+ potenzialmente pagarle tutte a parte singolarmente.
+\end_layout
+
+\begin_layout Standard
+Questa poteva tuttavia essere un'ottima alternativa nel caso si fosse visto
+ che la componente umana era escludibile quasi del tutto.
+ Riducendo i controlli all'osso ed integrando tutto il resto, la qualità
+ delle soluzioni era garantita.
+\end_layout
+
+\begin_layout Subsection
+L'incompletezza delle mappe
+\end_layout
+
+\begin_layout Standard
+Già durante il primo incontro con gli stakeholder, come accennato nel capitolo
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prima-presentazione-risultati"
+
+\end_inset
+
+, emerse subito un problema relativo al calcolo dei percorsi.
+\end_layout
+
+\begin_layout Standard
+PTV Intertour infatti non ci permetteva di vedere di preciso quale percorso
+ seguivano i mezzi, e Christian, che in Primafrost si occupava del calcolo
+ delle gite, ha voluto vederci chiaro.
+\end_layout
+
+\begin_layout Standard
+Ricalcolando i percorsi utilizzando Maps&Guide si ottenevano risultati un
+ po' strani infatti ( e queste erano le gite che non tornavano ), mentre
+ altri sembravano potenzialmente ignorare alcune restrizioni presenti sul
+ manto stradale: in un caso particolare Christian ci ha spiegato che per
+ percorrere una certa di distanza in così poco tempo l'applicazione poteva
+ potenzialmente aver deciso di passare per una galleria attaverso la quale
+ un camion non poteva passare.
+\end_layout
+
+\begin_layout Standard
+Ci siamo sentiti subito di escludere il caso, anche se sapevamo che Cristian
+ aveva più esperienza di tutti noi in fatto di strade.
+ In realtà parlandone un po' è uscito fuori che l'ipotesi di Cristian non
+ era così insensata, in quanto la stessa TPS ha dovuto confessare che non
+ era così garantito che le mappe fossero accurate al 100%: erano sicuramete
+ complete ed aggiornate per quanto riguardava la cartografia, ma i dati
+ riguardanti la viabilità erano anche frutto di PTV, e poteva darsi che
+ l'Italia non fosse sempre così aggiornata.
+\end_layout
+
+\begin_layout Subsection
+Scelta finale
+\end_layout
+
+\begin_layout Standard
+In realtà, per quanto il problema della completezza delle mappe sembrasse
+ un problema minore, aveva rivelato una criticità: non potendo più garantire
+ che i percorsi calcolati avrebbero rispettato di base i vincoli imposti
+ dal codice della strada, non si poteva spingere più di tanto con l'ottimizzazio
+ne, anzi bisognava cercare di rifarsi il più possibile ai percorsi precalcolati
+ in origine.
+\end_layout
+
+\begin_layout Standard
+Non si è voluto comunque abbandonare il progetto, in quanto le premesse
+ sembravano promettenti, ma era ormai chiaro che la componente umana non
+ era eliminabile.
+\end_layout
+
+\begin_layout Standard
+Si è quindi deciso di mantenere come applicazione di riferimento PTV Intertour,
+ e di integrarlo in modo da fornire a Cristian tutti i controlli necessari.
+ Con questo assetto la figura professionale di questo dipendente non veniva
+ sostituita, anzi si permetteva all'individuo di crescere ulteriormente
+ nella sua carriera professionale, diventando esperto nell'utilizzo dello
+ strumento.
+\end_layout
+
+\begin_layout Standard
+Questo permetterebbe un domani di poter in teoria affiancare a Cristian
+ un assistente per poter gestire le consegne in caso di sua assenza, ed
+ inoltre con il potenziale miglioramento dello strumento si potrebbero anche
+ raggiungere risparmi sempre migliori, o almeno garantire che più o meno
+ sarà sempre possibile un piccolo margine di risparmio.
+\end_layout
+
+\begin_layout Standard
+Gli XServer non verranno pertanto impiegati, in quanto non offrirebbero
+ i vantaggi sperati e rischierebbero di costare troppo ora le licenze.
+ Questa alternativa sarà rivalutata in futuro, quando magari più clienti
+ utilizzeranno questo servizio e ci sarà bisogno di gestire configurazioni
+ diverse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Implementazione"
+
+\end_inset
+
+Implementazione
+\end_layout
+
+\begin_layout Standard
+Nell vicenda spiegata nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:ricerca-giusti-fattori"
+
+\end_inset
+
+ rimaneva un dubbio irrisolto: si poteva riuscire a trovare i coefficienti
+ giusti in un modo automatico o comunque semi-automatico?
+\end_layout
+
+\begin_layout Standard
+Questo ci avrebbe permesso di avere un minimo di sicurezza per quanto riguardava
+ l'ottimalità della soluzione trovata e ci avrebbe risparmiato potenzialmente
+ un sacco di fatica.
+\end_layout
+
+\begin_layout Standard
+In questo capitolo presento un mio contributo completamente personale in
+ cui ho cercato di rispondere questo quesito.
+\end_layout
+
+\begin_layout Standard
+Nella prima sezione parlerò in generale delle motivazioni che mi hanno fatto
+ scegliere l'approccio che poi ho usato, quindi descriverò come ho ottenuto
+ i dati, i risultati ottenuti ed infine come ho potuto validare i risultati.
+\end_layout
+
+\begin_layout Section
+Approccio generale
+\end_layout
+
+\begin_layout Standard
+Era chiaro che non avrei potuto risolvere il problema utilizzando PV Intertour,
+ in quanto nella documentazione di questo strumento non era minimamente
+ spiegato se vi fosse un modo di impartire comandi all'applicazione senza
+ passare per l'interfaccia grafica, quindi non era possibile utilizzarlo
+ da riga d comando o mediante script di qualche genere.
+\end_layout
+
+\begin_layout Standard
+La selta quindi più ovvia era quella di utilizzare gli XServer, ed in particolar
+e XTour in quanto, sempre stando alla documentazione, era il più simile
+ da un punto di vista di funzionalità ed utilizzo.
+\end_layout
+
+\begin_layout Standard
+TPS aveva fornito a Wincor un account per riuscire a scaricare le ultime
+ versioni degli XServer direttamente dal sito di PTV, per cui questa parte
+ non cosutuiva un problema.
+\end_layout
+
+\begin_layout Standard
+I problemi sono cominciati quando, facendo delle prove con i vari applicativi,
+ mi sono reso conto ingenuamente che le mappe non erano incluse nel download.
+ Chiedendo a TPS mi sono reso conto che le mappe avrebbero occupato circa
+ 10 GB, quindi non era possibile scambiarci i file.
+\end_layout
+
+\begin_layout Standard
+Ho abbandonato quindi quella strada, ma ho ottenuto lo stesso i dati, come
+ spiegherò più avanti, poichè in ogni caso non esisteva un modo per importarli
+ all'interno di XTour.
+\end_layout
+
+\begin_layout Standard
+Ho deciso perciò di eseguire un semplice 
+\begin_inset Quotes eld
+\end_inset
+
+dimostrazione
+\begin_inset Quotes erd
+\end_inset
+
+, ovvero un test che avrebbe dato risultati da interpretare in linea di
+ massima, visto che ogni soluzione con un più ampio margine di precisione
+ era da scartare.
+\end_layout
+
+\begin_layout Standard
+Il mio approccio è stato quindi quello di reimplementare Granular Tabu Search
+ e di compiere la ricerca dei fattori migliori atraverso un algoritmo genetico,
+ per vedere se quest'ultimo mi aiutava a selezionare i coefficienti più
+ promenttenti in un tempo ragionevole.
+\end_layout
+
+\begin_layout Subsection
+Reimplementazione di Granular Tabu Search
+\end_layout
+
+\begin_layout Standard
+Per reimplementare il Granular Tabu Search ho utilizzato direttamente l'articolo
+ origininale di Toth e Vigo.
+ L'implementazione più prestante si sarebbe potuta ottenere certamente scrivendo
+ tutto in C e ottimizzando per l'architettura su cui l'applicazione avrebbe
+ dovuto girare.
+\end_layout
+
+\begin_layout Standard
+Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto troppo
+ rispetto alle mie aspettative: C non possiede nativamente il supporto per
+ liste, mappe di hash e iteratori, e tra l'altro benchè ia un linguaggio
+ molto potente non prevede meccanismi per lavorare con gli oggetti senza
+ allocare/deallocare la memoria manualmente, esponendo quindi il sistema
+ a problemi di memory leak e salti ad aree di memoria non più allocate.
+ Per correggere tutti i bug relativi alla gestione della memoria da soli
+ a mio avviso sarebbe servita una settimana, con il rischio di bug non scovati
+ ed effetti più o meno bizantini anche alla fine della revisione.
+\end_layout
+
+\begin_layout Standard
+Avrei potuto puntare sul C++, ma conoscevo meglio Python, e sapevo che comunque
+ anche il codice Python veniva compilato, anche se magari non era ottimizzato.
+ inoltre questo linguaggio aveva tutti i vantaggi che C non aveva, con l'unico
+ difetto che non sapevo prevedere quali performance il codice finale avrebbe
+ avuto.
+ Quest'ultimo problema non era così importante, in fondo la mia era solo
+ una dimostrazione: era importante che fosse corretta, non prestante.
+\end_layout
+
+\begin_layout Subsection
+L'algoritmo genetico
+\end_layout
+
+\begin_layout Standard
+Ogni algoritmo genetico (come spiegato precedentmente in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Algoritmo-genetico"
+
+\end_inset
+
+) non fa altro che rappresentare i geni degli individui mediante stringhe,
+ calcolando per ogni stringa un vlore di fitness, ed infine, mediante un
+ processo di selezione, fa accopiare gli individui migliori in modo che
+ la nuova generazione sia migliore di quella prima.
+ Nella riproduzione i corredi cromosomici dei genitori vengono mischiati
+ tramite cross-over, in modo da ampliare lo spettro delle possibili soluzioni,
+ ed infine c'è una probabilità di ottenre una mutazione, che aiuta a non
+ rimanere ancorati ai 
+\begin_inset Quotes eld
+\end_inset
+
+minimi locali
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Se come geni pendiamo i coefficienti che usiamo per il granular tabu search,
+ la rappresentazione in stringa di una specifica coppia di valori possibili
+ può rappresentare il corredo genetico di un'individuo.
+\end_layout
+
+\begin_layout Standard
+Nel caso che ci si presentava in azienda noi dovevamo cercare di riprodurre
+ i risultati di Primafrost, trovando i coefficienti opportuni.
+\end_layout
+
+\begin_layout Standard
+Possiamo quindi fare in modo che individui che ottengono i risultati vicini
+ ad un valore preimpostato siano favoriti nel processo di selezione, in
+ modo da ottenere una popolazione finale che presenti come geni solo i coefficie
+nti più promettenti.
+\end_layout
+
+\begin_layout Standard
+Ad ogni ciclo dell'algoritmo da me progettato infatti si ha:
+\end_layout
+
+\begin_layout Enumerate
+inizializzazione degli agenti
+\end_layout
+
+\begin_layout Enumerate
+calcolo della soluzione del problema mediante Granular Tabu Search (i coefficien
+ti usati nella ricerca sono quelli presenti nei geni dell'individuo)
+\end_layout
+
+\begin_layout Enumerate
+selezione degli individui in base ai risultati ottenuti (metodo della ruota
+ della roulette)
+\end_layout
+
+\begin_layout Enumerate
+Cross-over (uniforme) e mutazione
+\end_layout
+
+\begin_layout Section
+Ottenere i dati di input
+\end_layout
+
+\begin_layout Standard
+Il fatto che non si potessero ottenere i dati direttamente dalle mappe di
+ PTV non rappresentava un problema.
+ avevo infatti trovato un simpatico tutorial sugli XServer bastato su Javascript
+, che permetteva di editare il codice [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AJAX-tutorial"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+Studiando un po' l'API pubblica descritta nella documentazione di PTV, ed
+ avendo ancora un file Excel di quelli usati per PTV Intertour, sono riuscito
+ ad impostare il programma in modo che, date una serie di città, calcolasse
+ la lunghezza e la durata del percorso tra ogni coppia di città.
+\end_layout
+
+\begin_layout Standard
+Il risultato di quest'operazione era una sorta di matrice delle distanze,
+ ottima per il gnere di problema che doveva essere trattato.
+\end_layout
+
+\begin_layout Standard
+Visto che i punti d consegna erano dell'ordine del centinaio almeno, l'operazion
+e ha richiesto qualche ora.
+\end_layout
+
+\begin_layout Standard
+A causa di un limite sulla massima granularità nella mappa del tutorial,
+ punti di consegna ppartenenti alla stessa città collessavano.
+ Ho eliminato quindi i punti coincidenti, in quanto erano rendevano solo
+ più pesanti i calcoli da effettuare.
+\end_layout
+
+\begin_layout Standard
+La matrice delle distanze che ho potuto utilizzare dopo quest'operazione
+ risulta quindi un po' diversa da quella reale.
+\end_layout
+
+\begin_layout Section
+Risultati ottenuti
+\end_layout
+
+\begin_layout Section
+Validazione risultati
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Conclusioni
+\end_layout
+
+\begin_layout Standard
+Si può quindi concludere che, allo stato odierno, il mondo commerciale è
+ ora in grado di rispondere anche alle esigenze di chi ogni giorno deve
+ gestire un'intera flotta di veicoli e qualche centinaio di punti di consegna.
+ Da un punto di vista prestazionale, si evidenziano gli eccellenti risultati
+ raggiunti da PTV.
+\end_layout
+
+\begin_layout Standard
+La vera criticità di oggi invece è tenere completi ed aggiornati i dati
+ delle mappe, partendo da quelli riguardano strettamente la cartografia,
+ fino ai dati sulla viabilità e la percorribilità delle strade.
+\end_layout
+
+\begin_layout Standard
+Senza dati al pari con le aspettative, infatti, si possono creare situazioni
+ spiacevoli in cui i risultati trovati sono inammissibili nella realtà delle
+ cose, come dimostra il caso di Primafrost.
+\end_layout
+
+\begin_layout Standard
+Siamo sicuri che le persone di TPS hanno realizzato quanto importante sia
+ questa priorità, e sicuramente nei prossimi anni si impegnereanno a fondo
+ per migliorare la qualità delle loro mappe.
+\end_layout
+
+\begin_layout Standard
+Questo potrebbe davvero rendere possibile, in un futuro molto prossimo,
+ una reale disponibilità di una soluzione commerciale in grado di risolvere
+ istanze del 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+ in un tempo ragionevole.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries CONCLUSIONI}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries CONCLUSIONI}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Conclusioni}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+chaptermark}[1]{
+\backslash
+markright{
+\backslash
+thechapter 
+\backslash
+ #1}{}} 
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}} 
+\backslash
+appendix 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Prima Appendice
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries 
+\backslash
+thechapter 
+\backslash
+:Prima Appendice}] {
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{thebibliography}{90}              
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries 
+\backslash
+leftmark}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries 
+\backslash
+thepage}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Bibliografia}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Sito-Wincor-Nixdorf"
+
+\end_inset
+
+Sito Wincor Nixdorf, sezione Retail
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "The-Vehicle-Routing-Problem"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+The Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, P.
+ Toth, D.
+ Vigo, 
+\shape italic
+Society for Industrial and Apllied Mathematics
+\shape default
+, 2002
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K3}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "geocodifica"
+
+\end_inset
+
+Sito TPS Italia, 
+\begin_inset Quotes eld
+\end_inset
+
+Geocodifica e normalizzazione delle anagrafiche
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/geocodifica_no
+rmalizzazione_anagrafiche.php
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K4}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Truck-Dispatching-Problem"
+
+\end_inset
+
+"The Truck Dispatching Problem", Dantzig, G.B., Ramser, J.H.
+ (1959).
+ Management Science 6 (1): 80–91.
+ doi:10.1287/mnsc.6.1.80.
+ Retrieved 2008-04-17.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://links.jstor.org/pss/2627477
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K5}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "PTV-Intertour"
+
+\end_inset
+
+Sito PTV, sezione 
+\begin_inset Quotes eld
+\end_inset
+
+Pianificazione ed ottimizzazione dei giri
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K6}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Mefisto-bib"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+MEFISTO: A Pragmatic Metaheuristic Framework for Adaptive Search with a
+ Special Application to Pickup and Delivery Transports
+\begin_inset Quotes erd
+\end_inset
+
+,A Cardeneo, W Heid, F Radaschewski et al., Operations Research Proceedings
+ 2008: Selected Papers of the Annual International Conference of the German
+ Operations Research Society (GOR) University of Augsburg, September 3-5,
+ 2008
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K7}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "TabuRoute"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+A tabu search heuristic for the vehicle routing problem
+\begin_inset Quotes erd
+\end_inset
+
+, M.
+ Gendreau, A.
+ Hertz, G.
+ Laporte, Management Science, 1994
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K8}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "granular-tabu-search"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+The granular tabu search and its application to the Vehicle-Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, P.
+ Toth, D.
+ Vigo, INFORMS Journal on Computing, 2003
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K9}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "GENIUS-bib"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+New insertion and postoptimization procedures for the traveling salesman
+ problem
+\begin_inset Quotes erd
+\end_inset
+
+, M.
+ Gendreau, A.
+ Hertz, G.
+ Laporte, Operations Research, 1992
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K10}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "significato-wincor"
+
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.wincor-nixdorf.com/internet/site_DE/DE/WincorNixdorf/Press/pressrelease
+s/1998-1999/KKRundGoldmanSachs_22_10_1999.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K11}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "storia wincor"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+Wincor Nixdorf
+\begin_inset Quotes erd
+\end_inset
+
+, Wikipedia tedesca
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://de.wikipedia.org/wiki/Wincor_Nixdorf
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K12}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Dati finanziari wincor"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+Wincor Nixdorf
+\begin_inset Quotes erd
+\end_inset
+
+ su sito 
+\begin_inset Quotes eld
+\end_inset
+
+Pubbliway, il portale per il business online
+\begin_inset Quotes erd
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.pubbliway.com/informatica/wincor_nixdorf_s.r.l._1121241
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K13}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "TPS-bib"
+
+\end_inset
+
+Sito TPS, sezione 
+\begin_inset Quotes eld
+\end_inset
+
+Chi siamo
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.tpsitalia.it/azienda/
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K14}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "PTV-bib"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+PTV Planung Transport Verkehr
+\begin_inset Quotes erd
+\end_inset
+
+ sulla Wikipedia tedesca
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://de.wikipedia.org/wiki/PTV_Planung_Transport_Verkehr
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K15}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Documentazione-di-PTV"
+
+\end_inset
+
+Documentazione di PTV Intertour 5.9, fornitami da TPS Italia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K16}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "AJAX-tutorial"
+
+\end_inset
+
+Sito PTV, sezione sviluppatori, 
+\begin_inset Quotes eld
+\end_inset
+
+Interactive AJAX Tutorial for PTV MobilityPlatform
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://80.146.239.135/mp-ajax-api-samples/tutorial/tutorial.html
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K17}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "algoritmo-genetico"
+
+\end_inset
+
+Wikipedia inglese, 
+\begin_inset Quotes eld
+\end_inset
+
+Genetic Algorithm
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/Genetic_algorithm
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{thebibliography}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Ringraziamenti
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

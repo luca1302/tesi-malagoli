@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"  standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="600" height="480" viewBox="0 0 600 480"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<desc>Produced by GNUPLOT 4.2 patchlevel 6  </desc>
+
+<defs>
+
+	<circle id='gpDot' r='0.5' stroke-width='0.5'/>
+	<path id='gpPt0' stroke-width='0.222' stroke='currentColor' d='M-1,0 h2 M0,-1 v2'/>
+	<path id='gpPt1' stroke-width='0.222' stroke='currentColor' d='M-1,-1 L1,1 M1,-1 L-1,1'/>
+	<path id='gpPt2' stroke-width='0.222' stroke='currentColor' d='M-1,0 L1,0 M0,-1 L0,1 M-1,-1 L1,1 M-1,1 L1,-1'/>
+	<rect id='gpPt3' stroke-width='0.222' stroke='currentColor' x='-1' y='-1' width='2' height='2'/>
+	<rect id='gpPt4' stroke-width='0.222' stroke='currentColor' fill='currentColor' x='-1' y='-1' width='2' height='2'/>
+	<circle id='gpPt5' stroke-width='0.222' stroke='currentColor' cx='0' cy='0' r='1'/>
+	<use xlink:href='#gpPt5' id='gpPt6' fill='currentColor' stroke='none'/>
+	<path id='gpPt7' stroke-width='0.222' stroke='currentColor' d='M0,-1.33 L-1.33,0.67 L1.33,0.67 z'/>
+	<use xlink:href='#gpPt7' id='gpPt8' fill='currentColor' stroke='none'/>
+	<use xlink:href='#gpPt7' id='gpPt9' stroke='currentColor' transform='rotate(180)'/>
+	<use xlink:href='#gpPt9' id='gpPt10' fill='currentColor' stroke='none'/>
+	<use xlink:href='#gpPt3' id='gpPt11' stroke='currentColor' transform='rotate(45)'/>
+	<use xlink:href='#gpPt11' id='gpPt12' fill='currentColor' stroke='none'/>
+</defs>
+<g style="fill:none; color:white; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
+</g>
+<g style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
+	<path  d='M96.8,422.4 L105.8,422.4 M579.2,422.4 L570.2,422.4 '></path>
+	<g transform="translate(88.5,426.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 3850</text>
+	</g>
+	<path  d='M96.8,376.3 L105.8,376.3 M579.2,376.3 L570.2,376.3 '></path>
+	<g transform="translate(88.5,380.8)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 3900</text>
+	</g>
+	<path  d='M96.8,330.3 L105.8,330.3 M579.2,330.3 L570.2,330.3 '></path>
+	<g transform="translate(88.5,334.8)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 3950</text>
+	</g>
+	<path  d='M96.8,284.2 L105.8,284.2 M579.2,284.2 L570.2,284.2 '></path>
+	<g transform="translate(88.5,288.7)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 4000</text>
+	</g>
+	<path  d='M96.8,238.2 L105.8,238.2 M579.2,238.2 L570.2,238.2 '></path>
+	<g transform="translate(88.5,242.7)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 4050</text>
+	</g>
+	<path  d='M96.8,192.1 L105.8,192.1 M579.2,192.1 L570.2,192.1 '></path>
+	<g transform="translate(88.5,196.6)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 4100</text>
+	</g>
+	<path  d='M96.8,146.1 L105.8,146.1 M579.2,146.1 L570.2,146.1 '></path>
+	<g transform="translate(88.5,150.6)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 4150</text>
+	</g>
+	<path  d='M96.8,100.0 L105.8,100.0 M579.2,100.0 L570.2,100.0 '></path>
+	<g transform="translate(88.5,104.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 4200</text>
+	</g>
+	<path  d='M96.8,54.0 L105.8,54.0 M579.2,54.0 L570.2,54.0 '></path>
+	<g transform="translate(88.5,58.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text> 4250</text>
+	</g>
+	<path  d='M96.8,422.4 L96.8,413.4 M96.8,54.0 L96.8,63.0 '></path>
+	<g transform="translate(96.8,444.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text> 0</text>
+	</g>
+	<path  d='M193.3,422.4 L193.3,413.4 M193.3,54.0 L193.3,63.0 '></path>
+	<g transform="translate(193.3,444.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text> 0.2</text>
+	</g>
+	<path  d='M289.8,422.4 L289.8,413.4 M289.8,54.0 L289.8,63.0 '></path>
+	<g transform="translate(289.8,444.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text> 0.4</text>
+	</g>
+	<path  d='M386.2,422.4 L386.2,413.4 M386.2,54.0 L386.2,63.0 '></path>
+	<g transform="translate(386.2,444.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text> 0.6</text>
+	</g>
+	<path  d='M482.7,422.4 L482.7,413.4 M482.7,54.0 L482.7,63.0 '></path>
+	<g transform="translate(482.7,444.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text> 0.8</text>
+	</g>
+	<path  d='M579.2,422.4 L579.2,413.4 M579.2,54.0 L579.2,63.0 '></path>
+	<g transform="translate(579.2,444.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text> 1</text>
+	</g>
+	<path  d='M96.8,54.0 L96.8,422.4 L579.2,422.4 L579.2,54.0 L96.8,54.0 Z '></path>
+	<g transform="translate(34.2,238.2) rotate(-90)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text>km</text>
+	</g>
+	<g transform="translate(338.0,471.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text>costo km</text>
+	</g>
+	<g transform="translate(338.0,31.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
+		<text>costo km vs spazio</text>
+	</g>
+</g>
+<g style="fill:none; color:red; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
+</g>
+<g style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
+	<g transform="translate(512.1,76.5)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:end">
+		<text>spazio</text>
+	</g>
+</g>
+<g style="fill:none; color:red; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
+	<path  d='M520.4,72.0 L562.6,72.0 M96.8,86.2 L101.6,150.7 L145.0,407.7 L217.4,363.5 L338.0,383.7 L458.6,382.8 
+		L531.0,388.3 L574.4,388.3 L579.2,388.3 '></path>
+	<use xlink:href='#gpPt0' transform='translate(96.8,86.2) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(101.6,150.7) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(145.0,407.7) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(217.4,363.5) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(338.0,383.7) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(458.6,382.8) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(531.0,388.3) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(574.4,388.3) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(579.2,388.3) scale(4.50)'/>
+	<use xlink:href='#gpPt0' transform='translate(541.5,72.0) scale(4.50)'/>
+</g>
+<g style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
+	<path  d='M96.8,54.0 L96.8,422.4 L579.2,422.4 L579.2,54.0 L96.8,54.0 Z '></path>
+</g>
+</svg>

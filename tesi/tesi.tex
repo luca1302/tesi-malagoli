@@ -1,0 +1,2523 @@
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[a4paper,twoside,italian]{report}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{array}
+\usepackage{float}
+\usepackage{url}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+
+\begin{document}
+\begin{titlepage} 
+
+\begin{center}
+\textsc{\Large Alma Mater Studiorum $\cdot$ Università di Bologna}
+\rule[0.1cm]{11.8cm}{0.1mm} \rule[0.5cm]{11.8cm}{0.6mm} \textbf{\small FACOLTÀ
+DI SCIENZE MATEMATICHE, FISICHE E NATURALI}\\
+\textbf{\small{} Corso di Laurea Magistrale in Informatica} 
+\par\end{center}
+
+\begin{center}
+\vspace{15mm}
+
+\par\end{center}
+
+\begin{center}
+\vspace{15mm}
+
+\par\end{center}
+
+\begin{center}
+\textbf{\LARGE {}``Vehicle Routing Problem'': }
+\par\end{center}{\LARGE \par}
+
+\begin{center}
+\textbf{\LARGE un caso di studio}
+\par\end{center}{\LARGE \par}
+
+\vspace{50mm}
+ 
+
+\noindent \begin{flushleft}
+%
+\begin{minipage}[t]{0.47\textwidth}%
+\textbf{\large Relatore:}{\large \par}
+
+\textbf{\large Chiar.mo Prof. }{\large \par}
+
+\textbf{\large Fabio Panzieri}{\large \par}
+
+\medskip{}
+
+
+\textbf{\large Correlatore: }{\large \par}
+
+\textbf{\large Ing. Alberto Torrini}%
+\end{minipage}\hfill{}%
+\begin{minipage}[t]{0.47\textwidth}%
+\raggedleft \textbf{\large Presentata da:}\\
+\textbf{\large{} Davide Malagoli}%
+\end{minipage}\vspace{18mm}
+\textbf{\large Sessione II}
+\par\end{flushleft}{\large \par}
+
+\noindent \begin{flushleft}
+\textbf{\large Anno Accademico 2010-2011}
+\par\end{flushleft}{\large \par}
+
+\end{titlepage} 
+
+\newpage{}
+
+\newpage{}
+
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}} \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries INDICE}}\tableofcontents{}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\listoffigures
+
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\listoftables
+
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\pagenumbering{roman}
+
+\addcontentsline{toc}{chapter}{Introduzione}
+
+
+\chapter*{Introduzione}
+
+\rhead[\fancyplain{}{\bfseries INTRODUZIONE}]{\fancyplain{}{\bfseries\thepage}} \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries INTRODUZIONE}}
+
+
+\section*{Scopo della tesi}
+
+In quest'elaborato si vuole descrivere la mia breve esperienza maturata
+presso Wincor-Nixdorf, in particolare rispetto ad un problema posto
+da uno dei suoi clienti, Primafrost.
+
+Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
+Lombardini (supermercati, discount,ipermercati, cash \& carry, e-commerce,
+grossisti) ponendo sempre molta attenzione non solo alla qualità della
+merce trasportata, ma anche alla precisione dell\textquoteright{}ordine
+evaso e alla tempestività della distribuzione. I suoi punti di vendita
+sono sparsi per tutta la parte settentrionale dell'Italia, mentre
+il magazzino centrale è situato vicino a Mantova. Attualmente il numero
+dei punti di vendita è in continuo aumento, e Primafrost doveva rivedere
+il metodo con cui gestiva la creazione delle gite ed il dispiegamento
+della sua flotta di veicoli. 
+
+Finora infatti tutto questo era stato gestito in modo quasi esclusivamente
+manuale: lo sforzo principale era infatti svolto da un solo dipendente,
+il quale in quanto ex-camionista aveva grande esperienza delle tessuto
+della rete stradale italiana. La sua esperienza era vitale per l'azienda,
+in quanto permetteva di evitare le strade generalmente più disagevoli
+per i trasportatori e contemporaneamente di rispettare i vincoli del
+codice stradale. 
+
+Tuttavia ogni infrastruttura che si regge su un solo elemento insostituibile
+ha ovvi problemi di scalabilità, e la crescente richiesta aveva fatto
+sì che anche i vertici dell'azienda si rendessero conto del problema,
+chiedendo a Wincor se era possibile automatizzare, almeno parzialmente,
+il processo.
+
+Wincor Nixdorf da parte sua aveva già notato che l'interesse dei suoi
+clienti verso problemi di questo tipo era in crescita, tuttavia tutti
+quelli che avevano tentato di risolvere il problema da soli con soluzioni
+personalizzate fino ad allora avevano fallito. Facendo teso di queste
+esperienze, Wincor aveva deciso quindi di accettare la sfida, tentando
+però una strada diversa, che passasse attraverso l'integrazione dei
+componenti che aveva già sviluppato, in modo da offrire ai suoi clienti
+un servizio che sfruttasse gli anni di esperienza acquisiti nel settore.
+
+
+\section*{Motivazioni}
+
+Problemi come questo non sono nuovi nel mondo della Ricerca Operativa:
+il problema di Primafrost era infatti riconducibile ad un problema
+piuttosto noto in campo accademico, detto {}``Vehicle routing Problem''.
+Questo particolare problema è tuttora estesamente trattato in ambito
+di ricerca, nonostante siano già stati spesi già 40 anni di lavoro.
+sono state studiate istanze con più o meno ogni genere di limitazione
+ragionevolmente significativa, dalla capacità limitata dei veicoli
+fino a limitazioni presenti sui punti di consegna o sulle qualifiche
+dei conducenti.
+
+Questa tipologia di problemi infatti è interessante sia da un punto
+di vista accademico per la sua elevata complessità, sia da un punto
+di vista commerciale, poiché le voci di costo interessate sono in
+genere dell'ordine di milioni di euro, e continuamente crescenti.
+Anche la più piccola percentuale di risparmio su totali così grandi
+è quindi sempre significativa per qualsiasi bilancio aziendale.
+
+La soluzione del problema risultava quindi economicamente vantaggiosa
+per entrambe le aziende, e lasciava intravedere interessanti possibili
+futuri sviluppi. In particolare Wincor Nixdorf aveva intenzione, nel
+caso il progetto fosse andato a buon fine, di proporre l'idea anche
+ad altri suoi clienti.
+
+
+\section*{Stato dell'arte}
+
+Utilizzando la sua solita metodologia, Wincor ha deciso di non agire
+come una software house sviluppando da subito componenti nuovi, ma
+ha cercato dapprima se esistevano soluzioni già commercializzate.
+
+Per fortuna i frutti di anni di ricerca da parte del mondo accademico
+possono oggi essere beneficiati anche dal mondo commerciale: esistono
+infatti alcune soluzioni software che già oggi risolvono diverse tipologie
+e varianti di questo problema.
+
+Alcune tra le soluzione maggiormente accreditate appartengono ad una
+compagnia, PTV, di origine tedesca.
+
+Le soluzioni software di PTV sono oggi utilizzate da un ampio pubblico,
+e anche da diverse aziende più o meno grandi. Si può dire che ovunque
+vi sia un problema di instradamento di veicoli vi sia virtualmente
+spazio per l'adozione dei suo prodotti, quindi si può ben immaginare
+perché abbia avuto una diffusione così endemica.
+
+Qui in Italia uno dei suoi clienti è nient'altro che Poste Italiane,la
+quale aveva un ovvio problema nell'ottimizzare le spedizioni postali,
+e ha trovato conveniente utilizzare un software specializzato per
+trovare una soluzione.
+
+Come si può intuire, PTV ha diverse partnership sparse un po' per
+tutta Europa. In Italia il partner di riferimento è TPS, con cui Wincor
+Nixdorf aveva già preso contatti nel periodo in cui arrivai. Avevano
+già utilizzato infatti un'altra volta una soluzione PTV sempre per
+Primafrost.
+
+Il pacchetto impiegato era {}``Maps\&Guide'', ed era servito poichè
+aveva capacità simili a Intertour. Una differenza rispetto a Intertour
+era nella rappresentazione delle mappe: {}``Maps\&Guide'' era in
+grado di rappresentare l'effettivo percorso del veicolo sul manto
+stradale con una grafica che a prima vista ricordava il ben più famoso
+Google Maps. Questo strumento era infatti stato integrato all'interno
+di un'interfaccia piuttosto complessa per la gestione delle consegne.
+Quest'interfaccia era anch'essa stata realizzata da Tuttavia questo
+strumento, benché fosse stato già integrato in un'interfaccia p era
+limitato, in quanto non era in grado
+
+
+\section*{Contributo della tesi}
+
+L'azienda infatti stava guardando il mercato alla ricerca di una soluzione
+che le paresse adatta, in modo da poter effettuare un primo studio
+di fattibilità, sulla base del quale avrebbe deciso il modus operandi
+per risolvere il problema del suo cliente.
+
+Il contributo principale di questa tesi riguarda quindi proprio i
+dati raccolti ed i risultati ottenuti nell'ambito di questo studio
+di fattibilità. Il lavoro da me svolto presso Wincor Nixdorf è il
+risultato di un esperienza di affiancamento con un dipendente dell'azienda,
+Primo Tilli, che già era stato assegnato a questo problema. 
+
+Il mio ingresso nell'azienda è avvenuto un po' dopo l'inizio effettivo
+del progetto, per cui alcune decisioni erano già state prese, ma le
+sorprese non sono venute a mancare in ogni caso.
+
+Al momento del mio ingresso, si era ormai inquadrato abbastanza nello
+specifico quali architetture software potevano soddisfare i requisiti
+impostici dal cliente. Rimaneva però comunque una scelta tra due alternative:
+vi era la possibilità di implementare tutto utilizzando un'applicazione
+{}``vecchio stampo'' (PTV Intertour), ed integrarla sia all'interno
+di una interfaccia precedentemente sviluppata per Primafrost sia con
+l'ERP aziendale, oppure si poteva anche valutare di seguire lo stesso
+processo, ma con server applicativi (XTour e serie XServer) già predisposti
+anche ad un approccio più simile a quello di un'architettura di servizi.
+
+Da entrambe queste due soluzioni ci si aspettava che producessero
+buoni risultati, e difatti le premesse c'erano, in quanto a prima
+vista sembravano utilizzare gli stessi algoritmi, anche se magari
+in modi simili ma non uguali. Non era infatti chiaro da subito se
+i risultati prodotti da XTour sarebbero stati gli stessi di PTV Intertour
+o se dovessero essere raffinati prima da qualche altro componente
+della famiglia XServer. Dal punto di vista dell'integrazione invece
+il margine di variabilità era abbastanza ampio: l'interfaccia sviluppata
+per Primafrost era stata sviluppata utilizzando AJAX, per cui poteva
+darsi che l'architettura basata su Web Service fosse più facile da
+integrare.
+
+Il nostro obiettivo era dunque quello di studiare le due architetture,
+osservare le loro potenzialità, i loro limiti, ed infine scegliere
+quali delle due si adattava meglio alle nostre esigenze. L'obiettivo
+che mi era stato assegnato in particolare era quello di studiare il
+framework MEFISTO ed il suo funzionamento. Questa indagine mi avrebbe
+portato, anche se allora non lo immaginavo, a conoscere il vasto background
+di informazioni che sottostava al funzionamento dei software da noi
+impiegati.
+
+Una volta conclusa la mia esperienza con Primafrost ho successivamente
+deciso di studiare una soluzione migliore ad un problema in cui ci
+eravamo imbattuti, tentando un approccio basato su algoritmi genetici.
+Questa parte è interamente descritta in un capitolo a parte.
+
+
+\section*{Metodologia usata}
+
+Era importante coinvolgere il cliente e contemporaneamente fargli
+percepire che da parte nostra vi era interesse per il suo problema.
+Per questo si era optato per un modello di sviluppo incrementale e
+con milestone stabilite in accordo con le esigenze di tutti.
+
+Quello che si voleva raggiungere era ottenere risultati che potessero
+risultare credibili e vicini il più possibile a quella che sarebbe
+risultata essere la realtà di utilizzo. Non è difficile capire il
+perché di questa esigenza: il cliente aveva bisogno di sapere il prima
+possibile se la soluzione che si veniva a profilare poteva avere un
+reale impiego per cui valesse la pena spendere il proprio tempo e
+denaro. Fortunatamente, contemporaneamente allo sviluppo della soluzione
+per l'ottimizzazione delle gite, Primafrost e Wincor Nixdorf stavano
+mettendo a punto un sistema per il monitoraggio dei veicoli, per cui
+possiamo dire che la base di dati da utilizzata per gli esperimenti
+avrebbe coinciso con quella degli esperimenti. Non si trattava di
+dati particolarmente precisi, poiché anche il progetto di monitoraggio
+tuttavia era ancora allo stadio embrionale, e c'erano ancora diversi
+problemi nella fase della raccolta dei dati, ma erano sicuramente
+dati reali, vicini alla realtà di tutti i giorni.
+
+I dati che noi avevamo riguardavano le gite compiute dagli automezzi,
+e suddivise in base alla giornata in cui erano state effettuate. Da
+questo insieme sono state alcune giornate {}``affidabili'', i cui
+dati erano stati già ricontrollati.
+
+Per il resto è stato necessario solo un breve addestramento da parte
+di TPS nei nostri confronti per quanto riguardava i prodotti utilizzati,
+dopodiché eravamo già operativi.
+
+
+\section*{Struttura del documento}
+
+Questa tesi è strutturata in modo da ricalcare il più possibile quella
+che è stata la naturale successione degli eventi, in modo che risulti
+semplice al lettore comprendere ciò che si è fatto. Siccome la problematica
+affrontata è piuttosto vasta ed articolata, è stata prevista una sezione
+preliminare in cui tutti i concetti e termini chiave vengono ripresi,
+in modo da garantire che la lettura di questo documento possa essere
+già sufficiente per la comprensione delle soluzioni illustrate.
+
+\medskip{}
+Il documento è suddiviso in 3 capitoli:
+\begin{enumerate}
+\item \textbf{Stato dell'arte:} in questo capitolo vengono descritti tutti
+i concetti importanti, le parole chiave, gli algoritmi che poi saranno
+menzionati nel documento. Viene anche presentato un approfondimento
+sul punto di vista delle aziende coinvolte.
+\item \textbf{Architettura proposta:} in questo capitolo viene presentato
+un approfondimento sulle architetture proposte, sul lavoro ed i risultati
+ottenuti per lo studio di fattibilità, e alcune conclusioni che sono
+state tratte.
+\item \textbf{Implementazione:} in quest'ultimo capitolo viene presentato
+un mio contributo personale ad un problema affrontato nel capitolo
+2 ma che era rimasto sostanzialmente irrisolto. Spiegando l'idea da
+cui sono partito, il procedimento da me adottato ed i risultati finali
+è possibile formulare alcune ipotesi sulla struttura dell'algoritmo
+sottostante il framework MEFISTO
+\end{enumerate}
+Al termine delle analisi e delle ipotesi mostrate all'interno dei
+capitoli, si giunge quindi alle Conclusioni, in cui si discuterà delle
+criticità che anora oggi esistono nell'affrontare problemi di questa
+tipologia. Affermazioni ovviamente supportate dall'esperienza diretta
+da me compiuta.
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\chapter{Stato dell'arte}
+
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}} \pagenumbering{arabic}
+
+In questo capitolo riporteremo quello che è stato osservato essere
+oggigiorno lo stato dell'arte per quanto riguarda il problema trattato. 
+
+Nella prima sezione analizzeremo il modo di vedere il problema da
+parte del mondo industriale, in particolare faremo riferimento allo
+scenario descritto da Wincor Nixdorf.
+
+Nella sezione successiva introdurremo una serie di termini e concetti
+che saranno utili più avanti in questa tesi, ed infine nell'ultima
+sezione parleremo un po' del problema dell'instradamento dei veicoli
+e delle sue varianti.
+
+
+\section{Lo scenario di Wincor Nixdorf}
+
+In questa sezione parliamo in breve dell'azienda Wincor Nixdorf, della
+sua struttura organizzativa, per poi concentrarci sul problema che
+i suoi clienti si erano trovati ad affrontare. Da lì esamineremo brevemente
+le motivazioni che hanno spinto Wincor ad intraprendere il progetto
+di cui si parla in questo elaborato e la metodologia con cui hanno
+deciso di affrontare il problema. Poiché il lavoro descritto in questo
+documento riguarda un opera concepita presso Wincor Nixdorf Retail
+Consulting, solo la realtà di questa compagnia sarà descritta nel
+dettaglio.
+
+
+\subsection{Storia ed organizzazione aziendale}
+
+Le origini dell'odierna azienda {[}\ref{storia wincor}{]} partono
+nel lontano 1952, nel {}``Labor für Impulstechnik'' del pioniere
+informatico Heinz Nixdorf. Nel 1968 diventa Nixdorf Computer AG (1968-1990),
+poi Siemens-Nixdorf Informationssysteme AG (1990-1998), e Siemens-Nixdorf
+Retail \& Banking Systems GmbH (1998-1999). Wincor Nixdorf venne infine
+fondata nell'ottobre 1999 come compagnia indipendente. Nel 1999 l'organizzazione
+viene rilevata dalla finanziaria Kohlberg Kravis Roberts insieme al
+partner Goldman Sachs, e prende il nome di Wincor Nixdorf. 
+
+Il suffiso {}``Wincor'', composto da \textquotedbl{}win\textquotedbl{}
+e \textquotedbl{}core\textquotedbl{}, rappresenta la promessa di profitto
+e la competenza della compagnia nel settori retail e banking {[}\ref{significato-wincor}{]}.
+
+Oggi Wincor Nixdorf - quotata alla Borsa di Francoforte - conta a
+livello mondiale oltre 7.000 dipendenti e un fatturato di circa 2
+miliardi di Euro. E' presente in oltre 90 paesi, con 31 filiali consociate
+nazionali. I dati di mercato fatti registrare nel 2005 indicano che,
+nei segmenti degli ATM e dei sistemi POS Retail, Wincor Nixdorf è
+leader di mercato in Germania e al terzo posto a livello mondiale.{[}\ref{Dati finanziari wincor}{]}
+\medskip{}
+
+
+In Germania l'azienda è composta da 20 compagnie:
+\begin{enumerate}
+\item Wincor Nixdorf International GmbH
+\item Wincor Nixdorf Banking Consulting GmbH (BCON)
+\item Wincor Nixdorf Branch Technology GmbH
+\item Wincor Nixdorf GmbH Business Administration Center (BAC)
+\item Wincor Nixdorf Customer Care GmbH
+\item Wincor Nixdorf Services GmbH
+\item Wincor Nixdorf Facility GmbH 
+\item Wincor Nixdorf Facility Services GmbH
+\item Wincor Nixdorf property management Ilmenau GmbH \& Co.
+\item Wincor Nixdorf Logistics GmbH
+\item Wincor Nixdorf Lottery Solutions GmbH
+\item Wincor Nixdorf Real Estate GmbH \& Co.
+\item Wincor Nixdorf Retail Consulting GmbH (RCON)
+\item Wincor Nixdorf Retail Services GmbH
+\item Wincor Nixdorf Security GmbH
+\item Wincor Nixdorf Services GmbH
+\item Wincor Nixdorf Technology GmbH
+\item Wincor Nixdorf Portavis GmbH
+\item Prosystems IT GmbH e Bank Consulting AG, di cui Wincor Nixdorf possiede
+il 51\%
+\end{enumerate}
+In Italia, Wincor Nixdorf è presente dal 1999 con un Gruppo strutturato
+in tre società:
+\begin{enumerate}
+\item Wincor Nixdorf
+\item Wincor Nixdorf Retail
+\item Wincor Nixdorf Retail Consulting
+\end{enumerate}
+che coprono l'intera offerta di consulenza, prodotti e servizi per
+i settori bancario e di vendita al dettaglio. Wincor Nixdorf Italia
+conta un organico di circa 180 persone.
+
+
+\subsection{Wincor Nixdorf Retail Consulting}
+
+
+\subsubsection{La missione aziendale}
+
+Wincor Nixdorf Retail Consulting (nel seguito WNRC) ha come scopo
+quello di offrire consulenza su processi del business aziendale alle
+aziende della Grande Distribuzione Organizzata (nel seguito GDO).
+
+
+\subsubsection{\label{wincor-metodo}La metodologia di lavoro}
+
+Dopo aver disegnato i processi con i clienti sorge il problema di
+come supportarli dal punto di vista dell'Information Tecnology.
+
+WNRC è anche in grado di sviluppare specifiche applicazioni software
+a supporto dei processi disegnati con i clienti.
+
+L'approccio di WNRC allo sviluppo software non è quello di una \emph{software
+house} ma quello di offrire ai clienti {}``soluzioni'' ritagliate
+su misura dei processi da informatizzare.
+
+Nello sviluppo di queste soluzioni WNRC ha avuto l'abilità di integrarle
+organicamente le une con le altre; oggi costituiscono una suite di
+nome Merchandise Retail System (acronimo Me.R.Sy, vedi \ref{sub:Me.R.Sy})
+che in pratica è un ERP per le aziende della GDO.
+
+Le aree funzionali coperte dall'aziende sono molte, in particolare
+la logistica dei Centri di Distribuzione (nel seguito Cedi).
+
+
+\subsection{L'interesse dei clienti al problema}
+
+Tipicamente le aziende trattate da WNRC possiedono centinaia di Punti
+di Vendita (nel seuito Pdv) nei vari canali (Ipermercati, Supermercati,
+Cash\&Carry, Discount, Internet, ecc.)
+
+I Cedi consegnano a questi Pdv diverse volte alla settimana; da cui
+ne derivano importanti costi di trasporto.
+
+I clienti di Wincor stanno diventando sempre più sensibili a queste
+voci di costo (anche perchè destinate a crescere nel tempo) e questa
+area sta diventando per WNRC interessante per nuove possibilità di
+business.
+
+Negli ultimi anni alcuni clienti di Wincor hanno tentato di affrontare
+il problema della minimizzazione dei costi di trasporto con dei progetti
+autonomi, ma sono tutti falliti.
+
+
+\subsubsection{Le cause del fallimento dei progetti affrontati dai clienti}
+
+Le cause principali del fallimento si ritiene possano essere queste:
+\begin{enumerate}
+\item La complessità del problema è stata sottovalutata
+\item L'approccio al problema non è stato quello giusto; ad esempio si è
+cercato di dare uno strumento sofisiticato in mano al responsabile
+delle spedizioni il quale:
+
+\begin{enumerate}
+\item non aveva il bagaglio culturale necessario (spesso questa figura è
+un ex-caminista)
+\item Provocava un conflitto di interessi (queste figure, se abili, sono
+ben remunerate; lo strumento, se funziona, erode il potere di queste
+figure...)
+\end{enumerate}
+\item Non si è capito la necessità di fortissima integrazione fra lo strumento
+di integrazione cartografica e quello che, nel processo, sta a monte
+e a valle (ad esempio, una volta pianificato le gite bisogna essere
+in grado di pilotare il picking ed il carico del camion in modo da
+rispettare la pianificazione)
+\end{enumerate}
+
+\subsection{L'interessamento di Wincor al problema}
+
+In conclusione Wincor Nixdorf riteneva che:
+\begin{itemize}
+\item I tempi fossero maturi per spingere, con alcuni dei clienti principali,
+un progetto di {}``minimizzazione costi trasporto'' che, utilizzando
+un sofisticato tool di painificazione cartografica, permettesse di
+ridurre questa importante voce di costo.
+\item condizione necessaria ( e non sufficiente ) per concludere, assieme
+ai clienti, il progetto con successo, fosse quella di integrare il
+tool all'interno di Me.R.Sy., permettendo ai due software di dialogare
+e di scambiarsi dati
+\item fosse necessario un approccio propositivo presso i clienti di questo
+progetto
+\end{itemize}
+La fattibilità di questo progetto era tuttavia subordinata al successo
+di un {}``Proof of Concept'' nel quale si sarebbero dovuti fornire
+anche indicazioni sull'incidenza del risparmio potenziale.
+
+
+\section{Background}
+
+In questa sezione è possibile trovare chiarimenti sui termini che
+verranno usati nelle sezioni successive.
+
+
+\subsection{\label{sub:Me.R.Sy}Me.R.Sy}
+
+\textquotedbl{}Me.R.Sy.\textquotedbl{}(Merchandising Retail System)
+{[}\ref{Sito-Wincor-Nixdorf}{]} è la suite gestionale di Wincor Nixdorf.
+risponde alle esigenze delle aziende retail gestendo l\textquoteright{}intera
+filiera della moderna distribuzione: dalla negoziazione col fornitore
+alla logistica della merce, dal punto di vendita al consumatore finale.
+
+La suite applicativa Me.R.Sy., grazie alla sua modularità, che permette
+di configurare l\textquoteright{}applicazione in modo graduale e progressivo
+nel tempo, controlla con efficacia ed efficienza tutti i processi
+caratteristici di un\textquoteright{}azienda retail, garantendo alti
+livelli di flessibilità.
+
+I moduli della Suite Me.R.Sy. insistono su 4 aree applicative:
+\begin{enumerate}
+\item \textbf{Area Commerciale:} supporta l\textquoteright{}impresa e gli
+utenti nell\textquoteright{}ambito della relazione con l\textquoteright{}industria.
+L\textquoteright{}ambiente applicativo, basandosi su questa solida
+struttura anagrafica, garantisce una copertura ampia e profonda di
+tutte le funzionalità inerenti il ciclo passivo (rapporto tra distributore
+e produttore) e il ciclo attivo (rapporto tra distributore e punto
+vendita).
+\item \textbf{Area Logistica:} supporta l\textquoteright{}impresa e gli
+utenti nell\textquoteright{}ambito della gestione del ciclo merci
+e del magazzino. Nella gestione dei processi caratteristici, Me.R.Sy.
+può utilizzare tecnologie sia in ambito radiofrequenza (RF) che in
+ambito voice, garantendo precisione nell\textquoteright{}esecuzione
+delle attività e una tracciabilità completa dei prodotti.
+\item \textbf{Gestione della Rete:} permette la gestione delle superfici
+di vendita evolutasi, nel modello e nelle funzioni, con le best practice
+italiane del canale. Integra in sé tutte le anagrafiche necessarie
+alla completa gestione dei negozi, nonché la possibilità di utilizzare,
+per le politiche commerciali, alcuni specifici moduli per la progettazione,
+applicazione e controllo della politica commerciale.
+\item \textbf{Area Store:} garantisce un\textquoteright{}ampia copertura
+funzionale per i processi di back office, mantenendo in loco la sola
+interfaccia con la barriera casse e le bilance.
+\end{enumerate}
+
+\subsection{Geocodifica}
+
+La geocodifica {[}\ref{geocodifica}{]} consente di attribuire ad
+un indirizzo presente in un database (via, numero civico, località,
+provincia, nazione) una coppia di coordinate geografiche. La geocodifica
+consente il posizionamento degli indirizzi sulla cartografia digitale
+e, quindi, la loro successiva visualizzazione e rielaborazione per
+attività di analisi, di pianificazione, di geomarketing, etc.
+
+
+\subsection{Gite e gite cartografiche}
+
+Il percorso che un veicolo terrestre (es. automobile,camion, treno,
+ecc.), navale, o aereo) compie partendo dal punto di partenza a quello
+di arrivo, e passando nel suo tragitto attraverso vari punti di controllo,
+non ha una denominazione univoca in italiano: {}``giro'' o {}``tragitto''
+sono in genere le parole più appropriate. Nei problemi di instradamento
+dei veicoli (vedi \ref{VRP}) l'insieme dei veicoli potrebbe tranquillamente
+essere composto anche da veicoli navali o aerei, senza cambiare di
+molto la tecnica di soluzione del problema stesso. Per questo in questo
+elaborato si parlerà in modo generico di {}``gite''.
+
+Con il termine {}``gita'' si intende il percorso che un veicolo
+(terrestre navale, o aereo) compie partendo dal punto di partenza
+a quello di arrivo, e passando nel suo tragitto attraverso vari punti
+di controllo, che sono rappresentati dai punti di consegna.
+
+Una gita è quindi una sequenza ordinata di cui ogni elemento rappresenta
+un punto di consegna. Ogni gita ha come primo elemento sempre un deposito
+tra quelli che sono stati definiti.
+
+Una gita cartografica è una gita in cui i punti di consegna sono geocodificati.
+
+In questo elaborato ogni volta in cui si parla di gite si intende
+gite cartografiche.
+
+
+\subsubsection{Punti di consegna}
+
+Un punto di consegna rappresenta un cliente che fa richiesta ad un
+deposito di un qualche tipo di bene o merce, e che deve essergli recapitato
+alle sue coordinate.
+
+Ogni punto di consegna possiede un identificativo univoco ed una serie
+di coordinate che permette di localizzarlo all'interno dello spazio
+del problema. Nel caso lo spazio del problema sia rappresentato da
+mappe geografiche generalmente si utilizzano coordinate geografiche,
+mentre nel caso di mappe cartografiche digitali si può passare anche
+a tecniche di geocodifica.
+
+La definizione dell'unità di misura della merce è in genere definita
+o concordata con l'utilizzatore finale, quindi nel caso di merci possono
+essere pallet, roll, ecc. o anche confezioni singole.
+
+
+\subsubsection{Depositi}
+
+Sono punti di consegna speciali, che hanno una richiesta nulla ( i
+depositi non possono fare richieste tra di loro). Ogni gita parte
+sempre da uno dei depositi. In questo elaborato sarà trattati solamente
+casi in cui vi è un solo deposito, quindi sarà anche rispettata la
+convenzione utilizzata in letteratura di indicare il deposito con
+l'identificativo 0.
+
+
+\subsubsection{Gite {}``aperte'' e gite {}``chiuse''}
+
+Una gita, per essere tale secondo la nostra definizione, deve sempre
+partire dal deposito. Una gita si dice {}``chiusa'' se il punto
+di arrivo è il deposito di partenza, {}``aperta'' altrimenti.
+
+Nei problemi di instradamento dei veicoli classici normalmente si
+suppone che i veicoli debbano partire e tornare al deposito di partenza.
+Questo elaborato non si discosta dalla letteratura da questo punto
+di vista, quindi quando si parla di gite senza specificare diversamente
+si suppone che si stia parlando di gite {}``chiuse''.
+
+
+\subsection{PTV AG}
+
+PTV (Planung Transport Verkehr) AG {[}\ref{PTV-bib}{]}, costituita
+nel 1979 a Karlsruhe, Germania è una compagnia di consulenza e sviluppo
+software. 
+
+Il business di PTV è principalmente concentrato nelle aree del trasporto,
+della mobilità e della logistica, e sviluppa software per la pianificazione
+e l'ottimizzazione dei trasporti e delle gite. 
+
+La compagnia è ora attiva in 4 continenti, ha 700 dipendenti e 1500
+clienti in 75 nazioni. Alcuni dei loro prodotti software sono utilizzati
+in Germania anche dalle università nella formazione dei futuri ingegneri
+del traffico.
+
+Una famiglia di prodotti commerciali che sicuramente ha conquistato
+una certa fetta di mercato per quanto riguarda la pianificazione delle
+gite è rappresentata dal marchio {}``Maps \& Guide''.
+
+
+\subsection{TPS}
+
+TPS (Transport Planning Service) {[}\ref{TPS-bib}{]} nasce a Perugia
+nel 1993 dall\textquoteright{}iniziativa di un giovane gruppo di ingegneri
+specialisti nel settore della pianificazione dei trasporti. L\textquoteright{}obiettivo
+comune era ed è quello di fornire ad operatori pubblici e privati,
+consulenze, prodotti e servizi nel campo dell\textquoteright{}ingegneria
+del traffico, dei trasporti e della logistica. In questo ambito, TPS
+ha avviato un\textquoteright{}importantissima partnership con la PTV
+AG, azienda leader a livello europeo nello sviluppo di soluzioni software
+per la mobilità.
+
+La struttura organizzativa della TPS è articolata sul territorio nazionale
+italiano con uffici a Perugia (sede legale ed operativa con certificazione
+di qualità UNI EN ISO 9001:2000), Bologna e Milano. 
+
+A livello operativo TPS è strutturata nelle seguenti unità: 
+\begin{itemize}
+\item team di progettazione e consulenza nei campi dell\textquoteright{}ingegneria
+del traffico, della logistica e dei trasporti 
+\item unità tecnica per rilievi ed indagini nei settori del traffico e dei
+trasporti 
+\item rete commerciale e unità tecnica di supporto per l\textquoteright{}assistenza
+post-vendita dei software 
+\item laboratorio di sviluppo software laboratorio di ricerca
+\end{itemize}
+L'organico della TPS è per la quasi totalità costituito da ingegneri
+ed architetti esperti in pianificazione dei trasporti, ingegneria
+del traffico e modellistica applicata. Ad essi si affianca l\textquoteright{}attività
+di un nucleo di programmatori che lavora nello sviluppo di soluzioni
+software basate su cartografia digitale.
+
+
+\subsection{Euristica di Clarke e Wright}
+
+L'euristica di Clarke e Wright\ref{The-Vehicle-Routing-Problem} di
+cui si parla in questo elaborato di tesi è meglio conosciuta come
+{}``algoritmo dei risparmi di Clarke e Wright'' (nome originale:
+{}``Clarke and Wright Savings Algorithm'').
+
+È senz'altro l'euristica più conosciuta nell'ambito del Vehicle Routing
+Problem, ed è basato sull'idea di risparmio.
+
+Si suddivide in 2 fasi: il calcolo dei risparmi e la fusione delle
+gite.
+
+Per quanto concerne il calcolo dei risparmi, quando due gite $\left(0,\ldots,i,0\right)$
+e $\left(0,j,\ldots,0\right)$ esiste un cammino tra \emph{i} e \emph{j}
+e la nuova gita creata sarebbe ancora fattibile, allora viene computato
+un'ammontare chiamato risparmio, che è pari a $s_{ij}=c_{i0}+c_{0j}-c_{ij}$,
+ovvero la distanza che si è risparmiato tornando al deposito una volta
+di meno. I risparmi vengono quindi ordinati in modo non crescente.
+
+La fusione delle gite può essere fatta in due modi: sequenziale o
+parallelo.
+
+Nel caso parallelo, partendo dal massimo risparmio fino al minimo
+si effettuano le giunzioni delle gite, sempre però cercando di rispettare
+i vincoli di fattibilità.
+
+Nel caso sequenziale invece si esamina una gita per volta, e si cerca
+tra i risparmi, sempre dal maggiore al minore, se si può combinare
+la gita corrente con un altra rispettando i vincoli di fattibilità.
+
+I risultati sperimentali dicono che la versione parallela è più performante
+di quella sequenziale, e quindi in questo elaborato quando ci si riferirà
+a questa euristica si intenderà sempre la sua versione parallela.
+
+
+\subsection{Euristiche e Metaeuristiche}
+
+Sono state proposte diverse approcci basati su euristiche per risolvere
+il problema dell'instradamento dei veicoli (vedi \ref{VRP}), che
+possono essere raggruppati in due insiemi distinti: 
+\begin{enumerate}
+\item Quelli basati su euristiche {}``classiche'' (sviluppate principalmente
+tra gli anni '60 e inizio '90)
+\item Quelli basati su {}``metaeuristiche'' (sviluppate tra la metà degli
+anni '90 ed i primi anni del terzo millennio)
+\end{enumerate}
+Le euristiche compiono una esplorazione limitata dell'albero delle
+scelte e delle combinazioni possibili producendo però generalmente
+una soluzione comunque buona rispetto a quella ottima. Gran parte
+delle soluzioni commerciali oggigiorno esistenti appartengono alla
+prima famiglia, anche e sopratutto perchè questo tipo di euristiche
+può essere esteso per tenere conto della diversità dei vincoli riscontati
+in contesti reali.
+
+Vedremo invece come le soluzioni analizzate in quest'elaborato (PTV
+Intertour Standard e gli xServer) appantegono alla seconda famiglia,
+rappresentando così un'evoluzione rispetto al panorama generale.
+
+Nelle metaeuristiche infatti l'enfasi è posta invece sull'esplorazione
+in profondità dell'albero delle scelte, o almeno di quelle regioni
+dell'albero che appaiano più promettenti. Questi metodi tipicamente
+combinano tecniche sofisticate per la ricerca dei vicini, la memorizzazione
+delle strutture dati e la ricombinazione dei risultati.
+
+La qualità delle soluzioni così ottenute è più alta rispetto a quella
+delle euristiche più classiche, ma richiede un maggior tempo per essere
+trovata. Tra l'altro, queste procedure richiedono una configurazione
+abbastanza precisa di alcuni parametri utilizzati dall'algoritmo,
+e che servono all'eurisitica per adattarsi al contesto di impiego.
+Questa configurazione in alcuni casi può diventare particolarmente
+problematica.
+
+Nonostante tutto però la differenza tra euristiche e metaeuristiche
+sembra risiedere nel fatto che le seconde posseggono una serie di
+accorgimenti per evitare di rimanere bloccati in minimi locali mediante
+una gestione più permissiva del risultato trovato: nelle euristiche
+classiche spesso si passa infatti da una soluzione fattibile all'altra,
+in una continua ricerca di miglioramento; nelle metaeuristiche spesso
+invece la scelta della soluzione successiva può riguardare anche soluzioni
+non fattibili, poichè si è visto che sperimentalmente questo approccio
+permette di trovare più velocemente la soluzione giusta.
+
+
+\subsection{Tabu Search}
+
+Tabu Search è una metaeuristica molto famosa all'interno della'mbietne
+della Ricerca Operativa, e diverse sue estensioni sono state usate
+anche in ambito VRP.
+
+In Tabu Search vengono analizzate sequenze di soluzioni in modo iterativo:
+ad ogni iterazione vengono prodotte diverse soluzioni da una variazione
+della soluzione ottenuta al passo precedente. Da questo insieme viene
+scelta la configurazione {}``migliore'', ovvero quella che porta
+più vicino all'obiettivo che si vuole raggiungere.
+
+Per evitare la creazione di cicli nella scelta delle soluzioni, le
+soluzioni che sono state esaminate recentemente sono contrassegnate
+come {}``tabù'', il che significa che per un certo numero di iterazioni
+non possono essere più prese in considerazione.
+
+L'approccio basilare di questa metaeuristica, nell'arco di una decina
+d'anni, è stato utilizzato da diversi autori, i quali lo hanno in
+genere arricchito di diverse caratteristiche e migliorie. Ad esempio,
+per risparmiare memoria, alcune estensioni di Tabu Search non memorizzano
+le soluzioni interamente, ma solo qualche attributo.
+
+Tra gli approcci più famosi o innovativi ricordiamo:
+\begin{itemize}
+\item TabuRoute, descritto poco più avanti in questo documento (cap. \ref{sub:TabuRoute}).
+Concepito da Gendreau, Laporte e Hertz, integra al suo interno l'euristica
+GENIUS (vedi \ref{sub:GENIUS}).
+\item Adaptive Memory, di Rochard e Taillard, poichè intriduce il concetto
+di memoria adattiva per potenziare glia pprocci basati su Tabu Search
+\item Granular Tabu Search, di Toth e Vigo, poichè tuttora viene ritenuto
+un ottimo approccio per risolvere l'instradamento dei veicoli
+\end{itemize}
+
+\subsection{\label{sub:GENIUS}GENIUS}
+
+GENIUS {[}\ref{GENIUS-bib}{]} è un'euristica utilizzata per risolvere
+il problema del commesso viaggiatore, ma che è stata impiegata anche
+in campo VRP da TabuRoute (vedi cap.\ref{sub:TabuRoute}).
+
+L'acronimo in realtà descrive due euristiche, {}``GENeralized Insertion''
+e {}``Ustring and Stringing'', e che servono ognuna per un passo
+specifico di questo algoritmo a due fasi.
+
+La prima si occupa, dato un nodo, di inserirlo all'interno di una
+sequenza circolare (che di norma è una gita). 
+
+La seconda euristica, in un secondo momento, si occupa di migliorare
+la gita trovata, e funge perciò da port-ottimizzazione.
+
+Gli schemi con cui queste euristiche aggiungono o tolgono nodi dalla
+gita concedono determinate caratteristiche all'algoritmo, e quindi
+vengono analizzate di seguito.
+
+
+\subsubsection{\label{sub:GENI}GENI}
+
+{}``GENeralized Insertion'' viene utilizzata per inizializzare la
+gita. 
+
+L'inserzione non viene fatta in maniera casuale ma segue degli schemi,
+che andiamo ad illustrare:
+\begin{enumerate}
+\item Nel primo schema di inserzione si suppone che il nodo \emph{n} debba
+essere inserito tra \emph{$n{}_{i}$} ed $n{}_{j}$ (diversi tra loro),
+e che esista un nodo \emph{$n_{k}$} diverso dagli altri due. Non
+è necessario che i due nodi siano adiacenti, come si vede bene nella
+figura \ref{fig:Inserzione-di-tipo-1}. Come si vede alcuni segmenti
+della sequenza sono stati {}``invertiti''. Notare che questo schema
+si riduce ad un inserzione classica nel caso in cui \emph{$n{}_{i}=n_{i+1},n_{j}=n_{j+1},n_{k}=n_{k+1}$.}
+%
+\begin{figure}
+\includegraphics[scale=0.5]{\string"inserzione tipo 1\string".jpg}
+
+\caption{\label{fig:Inserzione-di-tipo-1}Inserzione di tipo 1}
+
+\end{figure}
+
+\item Il secondo schema assomiglia al primo, ma questa volta si suppone
+anche l'esistenza di un nodo $n{}_{l}$diverso dagli altri. notare
+che in questo caso le {}``inversioni'' nella gita sono numerose,
+come si vede in figura \ref{fig:Inserzione-di-tipo-2}. %
+\begin{figure}
+\includegraphics[scale=0.5]{\string"inserzione tipo 2\string".jpg}
+
+\caption{\label{fig:Inserzione-di-tipo-2}Inserzione di tipo 2}
+
+
+
+\end{figure}
+
+\end{enumerate}
+Degno di nota è il fatto che, per come lavora quest'euristica, non
+si può partire da una gita vuota, ma bensì devono esserci almeno 3
+nodi. Questo problema è dovuto alla struttura degli schemi di inserzione,
+ed è possibile risolverlo aggiungendo nodi casulamente alla gita fino
+ad arrivare a 3. Un'altra caratteristica che deriva dall'uso di questi
+schemi è la non necessità di un componente che perturbi la soluzione,
+poichè le {}``inversioni'' negli schemi servono proprio a questo.
+
+Visto che esitono 2 schemi di inserzione, viene sempre scelto l'inserimento
+che porta alla costruzione di una gita di costo minimo tra le alternative.
+
+
+\subsubsection{\label{sub:US}US}
+
+In modo iterativo {}``Unstringing and Stringing'', toglie un nodo
+dalla gita e lo reiserisce, sempre usando gli schemi di GENI per il
+reinserimento. La rimozione dei nodi dalla gita non viene fatto a
+caso, ma seguendo determinati schemi, che come si può notare dalla
+figure \ref{fig:Rimozione-di-tipo-1} e \ref{fig:Rimozione-di-tipo-2},
+altro non sono che l'inserso dei passi di inserzione descritti nel
+paragrafo precedente.
+
+%
+\begin{figure}
+\includegraphics[scale=0.5]{\string"rimozione tipo 1\string".jpg}\caption{\label{fig:Rimozione-di-tipo-1}Rimozione di tipo 1}
+
+
+
+\end{figure}
+%
+\begin{figure}
+\includegraphics[scale=0.4]{\string"rimozione tipo 2\string".jpg}
+
+\caption{\label{fig:Rimozione-di-tipo-2}Rimozione di tipo 2}
+
+
+
+\end{figure}
+
+
+
+\subsection{\label{sub:TabuRoute}TabuRoute}
+
+Tra gli approcci derivati da Tabu Search, TabuRoute {[}\ref{sub:TabuRoute}{]}
+introduce diverse caratteristiche innovative. La lista delle soluzioni
+che possono essere raggiunte da quella corrente viene determinata
+usando GENI (vedi \ref{sub:GENI}), eliminando un vertice da una gita
+e cercando di inserirlo in un'altra mediante un criterio di minimo
+costo.
+
+Un'altra importante caratteristica consiste nell'utilizzo di fattori
+di penalizzazione per svantaggiare la scelta di soluzioni che non
+rispettano i vincoli (dette anche inammissibili). Più precisamente:
+\begin{itemize}
+\item la funzione di ricerca viene lasciata libera di selezionare anche
+soluzioni inammissibili, a patto che abbiano un costo minore. 
+\item Dopo un certo numero numero di soluzioni inammissibili esaminate consecutivamente
+i fattori di penalità aumentano, e così aumenta anche il costo delle
+soluzioni che violano i vincoli
+\item Dopo un certo numero di soluzioni ammissibili consecutive invece il
+valore dei fattori di penalità decresce
+\end{itemize}
+Questa tecnica viene utilizzata per creare un mix di soluzioni ammissibili
+e non che impedisca alla ricerca di fermarsi in un minimo locale.
+
+Ultima importante peculiarità di questo algoritmo è l'utilizzo di
+false partenze: più soluzioni iniziali vengono generate, e solo la
+più promettente viene scelta come putno di partenza.
+
+
+\subsection{Granular Tabu Search}
+
+È una metaeuristica, introdotta da Toth e Vigo, che ha finora ottenuto
+eccellenti risultati per il VRP {[}\ref{granular-tabu-search}{]}.
+
+L'idea di base, molto promettente, e che gli archi lunghi difficilmente
+faranno parte della soluzione ottima. Viene quindi introdotto un limite
+{}``di granularità'' per gli archi, scelto anche in base alla lunghezza
+media degli archi contenuti in una soluzione ottenuta in un'euristica
+veloce (nei risultati sperimentali era stata usata quella di Clarke
+e Wright).
+
+L'implementazione di Granular Tabu Search quindi riprende quella di
+TabuRoute e vi aggiunge quest'ultima caratteristica, diminuendo così
+i tempi di calcolo.
+
+Nella versione originale sono considerate solo mosse di tipo OR1 o
+OR2 per lo scambio dei nodi all'interno delle gite.
+
+
+\subsection{PTV Intertour}
+
+PTV Intertour non è un'applicativo, ma bensì una suite di programmi
+specializzati per la pianificazione e l'ottimizzazione dei giri per
+la grande distribuzione {[}\ref{PTV-Intertour}{]}. Ogni software
+ha alcune funzionalità leggermente diverse che lo rende adatto ad
+uno specifico compito.
+
+%
+\begin{table}[H]
+\begin{tabular}{|>{\centering}p{0.3\paperwidth}|c|}
+\hline 
+\textbf{Funzionalità} & \textbf{Prodotto}\tabularnewline
+\hline
+\hline 
+Pianificazione automatica dei giri di distribuzione & PTV Intertour Standard\tabularnewline
+\hline 
+Master route planning & PTV Intertour Strategy\tabularnewline
+\hline 
+Location planning & PTV Intertour Strategy\tabularnewline
+\hline 
+Pianificazione delle zone di vendita e ottimizzazione della rete commerciale & PTV Map\&Market\tabularnewline
+\hline 
+Componenti server per l\textquoteright{}integrazione di funzionalità
+geografiche e di ottimizzazione dei percorsi in applicativi distribuiti & PTV xServer\tabularnewline
+\hline
+\end{tabular}
+
+
+\end{table}
+
+
+\medskip{}
+Qui di seguito approfondiremo solo gli applicativi che sono interessanti
+per questo elaborato.
+
+
+\subsubsection{PTV Intertour Standard}
+
+PTV Intertour è un software che permette di risolvere complessi scenari
+di distribuzione e raccolta merci sul territorio. Suggerendo una programmazione
+ottimizzata dei viaggi e degli impieghi della flotta veicolare, sia
+su base giornaliera che settimanale, consente di risparmiare fino
+al 20\% dei costi di distribuzione. Per garantire risultati di questo
+tipo Intertour include un framework per l'ottimizzazione (MEFISTO,
+vedi pag. \pageref{sub:Mephisto}) e ed una dettagliata cartografia
+digitale su cui viene effettuato il calcolo delle distanze stradali
+e dei tempi di percorrenza tra le destinazioni. PTV Intertour può
+generare automaticamente i viaggi assegnando fermate e mezzi in pochi
+secondi, oltre a permettere anche di aggiungere le fermate una ad
+una senza compromettere l'efficienza dei viaggi nel complesso. E'
+possibile tuttavia manipolare la soluzione trovata per adattarla meglio
+alle proprie esigenze, aggiungendo,togliendo o scambiando fermate
+tra i viaggi, o addirittura aggiungere nuove fermate non precedentemente
+pianificate all'interno di un giro. Nella composizione dei viaggi
+PTV Intertour tiene conto di tutti i possibili vincoli sia temporali,
+sia strutturali che logistici: orari di servizio per la consegna/ritiro
+con più fasce temporali giornaliere; tempi di turnazione dei mezzi;
+data e orari di disponibilità della merce; tempi di guida nel rispetto
+dei limiti di legge; tempo massimo di permanenza a bordo della merce;
+quantitativi da consegnare (roll, pallet, volume, peso); capacità
+delle diverse tipologie di mezzi della flotta; richiesta di equipaggiamenti
+particolari sui mezzi per determinate merci, clienti; depositi di
+distribuzione/transit point/multidrop; vincoli di passaggio intermedio
+su magazzini per il prelievo/scarico della merce; limitazione della
+durata dei viaggi; generazione di viaggi con concarico. 
+
+
+\subsubsection{PTV xServer}
+
+I PTV xServer basilarmente offrono le stesse funzionalità dei componenti
+della suite Intertour, ma usando un'architettura orientata ai servizi.
+Questo comporta una serie di indiscutibili vantaggi:
+\begin{enumerate}
+\item permettono di ideare soluzioni con un'occhio di riguardo per la scalabilità.
+Gli xServer sono indipendenti l\textquoteright{}uno dall\textquoteright{}altro,
+e grazie alla tecnologia cluster, si può espandere il pool di macchine
+utilizzate in qualsiasi momento e quindi soddisfare eventuali richieste
+di prestazioni maggiori
+\item sono compatibili con le tecnologie attuali di sviluppo, tutti i componenti
+hanno interfaccia standard XML/SOAP e questo significa che possono
+essere facilmente integrati in sistemi ed applicativi 
+\item i bundle degli xServer sono completamente standalone, e non necessitano
+di nessuna installazione
+\item mantengono performance elevate poichè l'integrazione dei moduli avviene
+sì tramite un framework di comunicazione scritto in Java ma i singoli
+moduli sono scritti in linguaggio C++ 
+\item sono multipiattaforma, in quanto possono essere installati in ambiente
+Windows o Linux e sono in grado di sfruttare i sistemi multiprocessore 
+\item hanno un approccio nativamente Web 2.0, con interattività garantita
+grazie all\textquoteright{}utilizzo della tecnologia AJAX
+\item vi è un intero portale completamente dedicato al prodotto (\textquotedblleft{}PTV
+Developer Zone\textquotedblright{}) dove consultare tutte le ultime
+novità sui prodotti disponibili, tutte le statistiche sul materiale
+cartografico, scaricare aggiornamenti e nuove release, consultare
+FAQ ed ottenere supporto
+\end{enumerate}
+Qui di seguito riportiamo i 7 server, ognuno con il compito ad esso
+associato:
+\begin{enumerate}
+\item \textbf{xMap:} si occupa della navigazione dinamica delle mappe AJAX
+e rappresentazione interattiva di percorsi, informazioni sul traffico,
+veicoli e, più in generale, POI, punti, polilinee, aree, immagini,
+etc.
+\item \textbf{xLocate:} si occupa della geocodifica e validazione di indirizzi
+(dall\textquoteright{}indirizzo alle coordinate). Supporta differenti
+formati di coordinate geografiche (WGS-84, GeoDecimal, GeoMinSec,
+Mercator etc.), permette la geocodifica inversa (dalle coordinate
+all\textquoteright{}indirizzo). Possiede un modalità batch per la
+geocodifica di grandi quantità di indirizzi e differenti metodi di
+ricerca che possono essere combinati l\textquoteright{}uno con l\textquoteright{}altro
+(binary, fuzzy, phonetic) 
+\item \textbf{xRoute:} possiede tutte le funzionalità legate al calcolo
+di percorsi con più tappe intermedie, distanze e tempi di percorrenza
+(generazione della lista descrittiva del percorso e dei dati necessari
+alla rappresentazione del percorso su mappa). Permette inoltre di
+calcolare i percorsi per diversi tipologie di veicolo tenendo conto
+di pedaggi autostradali.
+\item \textbf{xSequence:} ottimizzazione di una sequenza di tappe nel rispetto
+di vincoli operativi quali finestre orarie e molti altri parametri
+propri del mondo del trasporto e della logistica (carico/scarico,
+quantità, categorie di veicoli,\ldots{}). La differenza principale
+rispetto a xRoute sta nel fatto che viene considerata una sola sequenza,
+non tutti i percorsi contemporaneamente
+\item \textbf{xDima:} calcolo ottimizzato di matrici di distanza (tempi
+e distanze). 
+\item \textbf{xCluster:} utile per la creazione di gruppi omogenei di punti
+in funzione di parametri geografici e altri criteri. 
+\item \textbf{xTour:} ottimizzazione dei giri in funzione di parametri quali
+la capacità dei veicoli, le finestre temporali di aperture e chiusura,
+etc. Gli ordini vengono suddivisi in giri ottimizzati nel rispetto
+dei vincoli riducendo i chilometri percorsi, il tempo e il numero
+di veicoli necessari. La differenza principale ripetto a xCluster
+sta nel fatto che xTour non si occupa di raggruppare i clienti in
+base alle consegne periodiche, mentre la differenza rispetto a xRoute
+è rappresentata dalla strategia di ottimizzazione, in particolare
+xTour tiene conto anche delle finestre di consegna.
+\end{enumerate}
+
+\subsection{\label{sub:Mephisto}MEFISTO}
+
+MEFISTO (Metaheuristics Framework for Information Systems in Transport
+Optimisation) {[}\ref{Mefisto-bib}{]} è, come dice il nome, un framework
+per l'implementazione di metaeuristiche, disegnato dai suoi autori
+ed ora sfruttato da PTV per le sue soluzioni commerciali.
+
+Le sviluppo di MEFISTO è dovuto al fatto che fino a poco tempo fa
+i requisiti per un componente business in ambito VRP erano:
+\begin{itemize}
+\item la correttezza del modello, che doveva essere più vicino alla realtà
+possibile
+\item il tempo di calcolo, che doveva essere il minimo possibile o comunque
+un ammontare ragionevole
+\end{itemize}
+Questo aveva portato a vincoli più stringenti come distanze asimmetriche,
+finestre temporali diverse per ogni utente, tempi di attesa massimi,
+eterogneità della flotta, vincoli di precedenza, ecc, mentre i tempi
+di calcolo venivano ridotti affidandosi ad eursitiche particolarmente
+rapide e ad una successiva fase di post-ottimizzazione (come succedeva
+nel caso di GENIUS, vedi \ref{sub:GENIUS}).
+
+Questa classe di problemi, in letteratura conosciuta come 'problemi
+{}``ricchi'' di instradamento dei veicoli' (nome originale: {}``rich
+veihicle routing problems''), ha avuto particolare fortuna negli
+anni passati.
+
+Recentemente però ha cominciato ad emergere un alteriore requisito,
+ovvero la qualità della soluzione stessa, richiesta che si aggiungeva
+ai precedenti vincoli posti. Contemporaneamente l'avanzamento tecnologico
+dell'hardware aveva permesso di ottenere dei tempi di calcolo sufficientemente
+brevi a fronte di una buona qualità della soluzione. Questi fattori
+portarono quindi ad un cambio di atteggiamento verso il problema,
+e permesso ad approcci più sofisticati, come le metaeuristiche, di
+poter essere usate su ampia scala, e non solo per soddisfare i bisogni
+del singolo cliente.
+
+Di metaeuristiche però non ve n'era una sola, e la ricerca in questo
+campo intanto continuava insesorabilmente. Per mostrare un comportamento
+trasparente rispetto alla particolare metauristica utilizzata e mantenere
+compatibilità sulle interfacce, era necessario sviluppare una framework
+più generale. Da questa idea nacque MEFISTO.
+
+L'intero framework è scritto in C++ e si compone di un'architettura
+suddivisa in 3 livelli:
+\begin{enumerate}
+\item il primo livello è sostanzialmente indipendente dall'applicazione
+e dalla metaeuristica implementata. Fornisce soltanto le funzioni
+principali e le strutture dati che servono a rappresentare le entità
+fondamentali di qualsiasi metaeuristica. Fanno parte di questo livello
+le classi che rappresentano il generatore di mosse, le mosse stesse,
+lo spazio delle soluzioni e la ricerca locale
+\item il secondo livello contiene tutte le classi che servono alla specifica
+metaeuristica, ed ereditano le funzionalità dalle classi del primo
+livello
+\item il terzo livello è fortemente dipendente dall'applicazione utilizzata
+e dal tipo di problema trattato. Ad esempio, per quanto riguarda l'ambito
+VRP, questo livello dovrà contenere le classi rappresentanti le mosse
+per scambiare nodi ed archi
+\end{enumerate}
+Nell'articolo originale vengono inoltre riportati i risultati sperimentali
+ottenuti in un caso reale e utilizzando un'estensione di Granular
+Tabu Search, a cui sono state aggiunte anche mosse di swap e A-B.
+
+Dalle informazioni che ci sono state fornite da TPS e PTV questa metaeuristica
+doveva essere molto simile a quella utilizzata da PTV Intertour Standard
+e dagli xServer.
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\section{\label{VRP}Vehicle Routing Problem}
+
+Il problema dell'instradamento dei veicoli ( in inglese {}``Vehicle
+Routing Problem'', o VRP ) riguarda la determinazione di un insieme
+ottimale di gite che dovranno essere utilizzati da una flotta di veicoli
+per servire un dato insieme di clienti. Come è possibile intuire data
+la sua similitudine con il problema del commesso viaggiatore, la sua
+complessità è elevata, apprteiene infatti all'insieme dei problemi
+NP-hard.
+
+Come problema combinatorio e di ottimizzazione è un classico nella
+letteratura della Ricerca Operativa: sono passati ormai più di 50
+anni da quando Dantzig e Ramser introdussero il problema nel 1959.
+
+Nella letteratura vi è una predisposizione a indicare questo problema
+con il suo nome od il suo acronimo inglese. Tale convenzione verrà
+d'ora in poi rispettata anche in questo elaborato.
+
+Il {}``Vehicle Routing Problem'' è un problema importante per il
+trasporto, la logistica e la distribuzione {[}\ref{Truck-Dispatching-Problem}{]}.
+Lo scopo implicito è quello di minimizzare il costo per la distribuzione
+delle merci, quindi è chiaro che vi è anche molto interesse industriale,
+non solo di ricerca, su questo problema.
+
+A partire dall'articolo di Dantiz e Ramster e successivamente quello
+di Clarke e Wright (nel 1964), furono quindi concepiti centinaia di
+modelli e algoritmi furono proposti per trovare una soluzione il più
+possibile ottima, ma data l'elevata complessità del problema stesso
+finora sono state prodotte solo euristiche che producono approssimazioni
+più o meno precise in un tempo ragionevole.
+
+La versione classica del VRP prevede che l'intera flotta parta da
+un unico deposito, visiti una serie di punti di consegna, e poi ritorni
+al deposito di partenza. Inoltre tutte le richieste dei clienti sono
+deterministiche, conosciute in anticipo, e non possono essere suddivise
+tra i mezzi. Esistono però alcune variazioni, più o meno note, di
+grande interesse pratico:
+\begin{itemize}
+\item \textbf{Capacitated VRP (CVRP)}: in questa versione i mezzi che compongono
+la flotta hanno una capacità limitata ma uguale per tutti, e che quindi
+funge da vincolo nel calcolo della soluzione
+\item \textbf{Multi-Capacitated VRP (MCVRP): }come nel CVRP i mezzi hanno
+una capacità limitata, ma le capacità dei singoli veicoli possono
+essere diverse tra loro
+\item \textbf{VRP with Time Window (VRPTW):} valgono tutti vincoli descritti
+per il CVRP, e si aggiunge un vincolo sull'intervallo di tempo in
+cui la merce deve essere consegnata. Ogni cliente espone un intervallo
+di tempo in cui è {}``aperto'', e quindi ricettivo alla consegna
+della merce, chiamata finestra di consegna. Beni consegnati al di
+fuori della finestra di consegna non vengono raccolti e contano come
+consegna mancata. Il problema quindi si arrichisce di complessità
+perchè non è più importante coprire solamente tutti i clienti con
+un dispendio minimo, ma bisogna anche assicurarsi di consegnare la
+merce in tempo, in modo da minimizzare l'ammontare di merce non consegnata.
+\end{itemize}
+Per ognuna di queste è prevista sia la versione {}``simmetrica'',
+ovvero dove gli archi hanno lo stesso costo sia in un verso che nell'altro,
+che quella {}``asimmetrica'', dove invece il costo dell'arco dipende
+anche dal verso in cui lo si percorre. In questo elaborato, a meno
+che non specificato esplicitamente, si intendono sempre le versioni
+asimmetriche di tali problemi, in quanto le versioni simmetriche non
+sono che un caso particolare di quelle asimmetriche.
+
+Esistono anche variazioni che contemplano l'utilizzo di più depositi
+invece di averne uno solo centralizzato, ma non saranno descritte
+in questo elaborato.
+
+
+\section{\label{sec:Algoritmo-genetico}Algoritmo genetico}
+
+Un algoritmo genetico è un'euristica di ricerca che cerca di riprodurre
+il processo di evoluzione naturale. Quesa euristica è generalemnte
+usata per genrare utili soluzioni nei problemi di ottimizzazione e
+ricerca. Gli algoritmi genetici alla classe più generale dei problemi
+evoluzionistici, i quali generano soluzioni a problemi di ottimizzazione
+usando tecniche ispirate sempre all'evoluzione naturale, quali ereditarietà,
+mutazione, selezione e crossover.
+
+
+\subsection{Principio generale}
+
+In un algoritmo genetico {[}\ref{algoritmo-genetico}{]}, una popolazione
+di stringhe (chiamate cromosomi, geni o genotipi del genoma) che rappresentano
+le soluzioni candidate (chiamate individui o fenotipi) in un problema
+di ottimizzazione, evolvono verso soluzioni migliori.
+
+Tradizionalmente, le soluzioni sono rappresentate come stringhe bnarie,
+ma sono possibili anche altre rappresentazioni ovviamente. Gli algoritmi
+genetici sono impiegati in molti campi quali (bio)informatica, ingegneria,
+economia, chimica, matematica, fisica, ecc. 
+
+Un tipico algoritmo genetico richiede:
+\begin{enumerate}
+\item un modo per rappresentare mediante geni il dominio delle soluzioni
+\item una funzione detta {}``di idoneità'', per valutare il dominio delle
+soluzioni
+\end{enumerate}
+La funzione {}``di idoneità'' viene geeralemnte utilizzata per favorire
+le soluzioni {}``idonee'' o comunque buone rispetto al problema,
+e svantaggiare le altre.
+
+\medskip{}
+
+
+Pseudocodice di un semplice algoritmo genetico generazionale:
+\begin{enumerate}
+\item Scegli la popolazione iniziale di individui
+\item Valuta l'idoneità di ogni individuo 
+\item Ripeti fino a che il criterio di terminazione non è raggiunto: (time
+out, idoneità minima raggiunta, ecc.)
+
+\begin{enumerate}
+\item segli gli individui più idonei per la riproduzione
+\item dai origine ai nuovi individui attraverso il crossover dei geni e
+la mutazione
+\item Valuta l'idoneità di ogni nuovo individuo 
+\item rimpiazza gli individui meno idonei con i nuovi
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Inizializzazione }
+
+Inizialmente vengono generate tanti corredi genetici quanti individui
+della popolazione initiale. queste rappresentano le soluzioni iniziali.
+La dimensione della popolazione iniziale dipende dal problema in questione,
+ma di solito contiene centinaia o migliaia di individui.
+
+Sempre parlando in linea generale, questa popolazione viene generata
+casualmente, cercando di coprire l'intero spettro della soluzioni
+possibili. Oppure si può anche utilizzare particolari intervalli di
+valori in cui si pensa possano annidarsi le soluzioni migliori.
+
+
+\subsection{Selezione }
+
+Durante ogni iterazione successiva, una porzione della popolazione
+esistente viene selezionata per dare vita ad una nuova generazione.
+
+Le soluzioni individuali vengono selzionate attraverso un processo
+basato sull'idoneità del singolo individuo, dove le soluzioni con
+un più alto punteggio di idoneità hanno maggiore probabilità di essere
+selezionate.
+
+Esistono più stategie di scelta, ognuna con i suoi pro e contro:
+\begin{enumerate}
+\item \textbf{metodo della roulette:} con questo metodo ogni individuo ha
+una idoneità $f_{i}$ ed una probabilità di essere scelto pari a $p_{i}=\frac{f_{i}}{\sum_{j=1}^{N}f_{j}}$,
+dove N è il numero degli individui scelti. Questo permette di ottenere
+una selezione abbastanza uniforme e rappresentativa rispetto alla
+effettiva idoneità degli individui.
+\item \textbf{campionamento universale stocastico:} simile al metodo della
+roulette, ma con migliori probabilità matematiche dal punto di vista
+della previsione
+\item \textbf{metodo del torneo:} richiede la simulazione di diversi {}``tornei''
+tra una ristretta cerchia di individui scelti a caso tra la popolazione.
+Il vincitore di ogni torneo, ovvero quello più idoneo, viene scelto
+per la riproduzione. La pressione selettiva indotta da questo metodo
+può essere moderata variando la dimensione degli individui coinvolti.
+Più il numero degli individui è grande, minore è la probabilità che
+gli individui deboli vengano selzionati.
+\item \textbf{metodo della troncatura:} semplicissimo, semplicemente seleziona
+i migliori K individui sulla base dell'idoneità e li fa riprodurre
+tra loro.
+\end{enumerate}
+
+\subsection{Riproduzione }
+
+Nel passo successivo viene creata una seconda generazione di individui
+(o soluzioni) mediante una simulazione della riproduzione sessuale:
+il crossover.
+
+Per ogni nuova soluzione che si vole produrre, una coppia di soluzioni
+{}``genitrici'' viene selzionata. Producendo un {}``bambino''
+attraverso le operazioni che spiegheremo a breve, viene creata una
+nuova soluzione che ha molto in comune con i suoi {}``genitori''.
+
+Lo scopo ultimo è quello di far progredire le soluzioni verso una
+nuova genrazione, potenzialmente {}``migliore'' di quella precedente.
+
+Esistono diversi meccanismi di crossover, alcuni tra i più famosi
+sono:
+\begin{enumerate}
+\item Crossover puntuale: viene selezionato un indice particolare all'interno
+delle due stringhe che rappresentano i corredi genetici dei {}``genitori'',
+e quindi si effettua lo scambio dei due segmenti
+\item Crossover a doppio punto: simile al crossover puntuale, ma con 2 punti
+di scambio
+\item {}``Cut and Splice'': simile al crossover puntale, ma i punti di
+scambio non hanno lo stesso indice. Atipico rispetto ai precedenti
+poichè può produrre {}``prole'' con stringhe di lunghezza diversa
+rispetto ai {}``genitori''
+\item Crossover uniforme: si seleziona una probabilità con cui due bit delle
+due stringhe si scambieranno (tipicamente 0.5) e si lancia una monetina
+per ogni bit della stringa 
+\end{enumerate}
+All'interno di questo processo la mutazione serve unicamente ad impedire
+che le soluzioni si adagino su un {}``minimo locale'': se la mutazione
+è vantaggiosa infatti, l'intero gruppo tende a compiere un balzo in
+avanti da un punto di vista evoluzionistico, altrimenti viene semplicemente
+scartata senza alterare il risultato finale.
+
+Ovviamente esistono anche meccanismi diversi dalla mutazione e dal
+crossover, ma non saranno affrontati in quest'elaborato.
+
+
+\chapter{Architettura proposta}
+
+Il problema posto da Primafrost, che riguardava il carico, scarico
+e la definizone delle gite per la flotta degli automezzi era facilmente
+riconducibile ad una particolare istanza di VRP.
+
+Questo tipo di problemi sono tutti NP-hard, tuttavia sono già disponibili
+diverse soluzioni commerciali (basate su euristiche) che permettono
+di ottenere soluzioni molto buone, se non ottime.
+
+Quando il sottoscritto ha cominciato ad occuparsi di questo progetto
+lo studio di fattibilità non era nella sua fase iniziale, per cui
+alcune scelte erano già state fatte, in quanto si era già arrivati
+ad una bbozza generale del progetto, e visto un paio di alternative
+possibili. Si è tuttavia deciso di riportare comunque tutti i dati,
+sia quelli precedenti al mio arrivo sia quelli successivi per dare
+un'idea più articolata del contesto di lavoro. Ogni sezione deve essere
+vista come una fase dello studio di fattibilità,ed alla fine di ogni
+sezione viene riportato quello che è stato il risultato dell'incontro
+finale con gli stakeholder.
+
+Tutte le scelte precedenti al mio arrivo verranno presentate nella
+prima sezione di questo capitolo, e successivamente si passerà al
+problema vero e proprio: la scelta tra un'architettura {}``vecchio
+stampo'', con l'utilizzo di software stand-alone, oppure l'adozione
+di una più moderna architettura Web service ma un attimo più complessa
+da progettare e realizzare.
+
+
+\section{\label{sec:Progetto-di-massima}Progetto di massima della soluzione}
+
+Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost
+la gestione della flotta (ovvero carico e gite) era affidata ad un
+dipendente dell'azienda, il quale essendo un ex-camionista ed avendo
+una larga esperienza della rete stradale italiana poteva senza dubbio
+soddisfare le esigenze dell'azienda.
+
+Ma questa gestione portava diversi problemi:
+\begin{enumerate}
+\item Il futuro di quella parte dell'azienda era accentrato tutto nelle
+mani di un solo uomo
+\item La gestione manuale non dava nessuna garanzia di portare a soluzioni
+ottime o quantomeno buone, benchè si fossero presi diversi accorgimenti
+e vi fosse buona volontà da parte di tutti
+\item Questa gestione non conveniva nemmeno al suddetto dipendente, il quale
+a caus del suo ruolo poteva prendersi pochissime ferie
+\end{enumerate}
+Si cercava dunque una soluzione che permettesse di automatizzare l'intero
+processo, o almeno ua sua parte, in modo da alleviare gli svantaggi
+dovuti alla situazione attuale.
+
+
+\subsection{Requisiti della soluzione}
+
+La soluzione proposta, per risultare accettabile da parte di Primafrost,
+doveva:
+\begin{enumerate}
+\item permettere di automatizzare, in tutto o in parte, la generazione delle
+gite, una volta forniti ovviamente i dati necessari (mezzi, richieste,
+ecc.)
+\item offrire garanzie di minimizzazione dei costi maggiori rispetto alla
+normale gestione manuale
+\item permettere di modificare le gite generate, possibilmente in maniera
+semplice e veloce, garantendo così un maggior controllo sull'output
+prodotto
+\item offrire garanzie di rispettare le norme sindacali vigenti per gli
+autisti dei camion, tra cui è contemplata anche ilrispetto dei tempi
+di riposo
+\item essere pronta, almeno in una forma prototipale, in un tempo relativamente
+breve
+\end{enumerate}
+Per essere accettabile da parte di Wincor la soluzione doveva:
+\begin{enumerate}
+\item rispettare i vincoli posti dal cliente
+\item permettere una gestione dei dati integrata con l'ERP aziendale, Me.R.Sy
+\end{enumerate}
+Requisiti impliciti da parte del cliente potevano essere sulla possibile
+interfaccia del prodotto, che doveva essere user-friendly e non intralciante
+dal punto di vista operativo.
+
+Da parte di Wicor Nixdorf un requisito implicito poteva essere la
+necessità di uno strumento o applicativo che non necessitasse più
+di tanto un continuo intervento da parte dei suoi dipendenti.
+
+
+\subsection{Modalità di realizzazione}
+
+Realizzazione o acquisizione (con esame e valutazione delle eventuali
+alternative)
+
+Come già spiegato nella sezione \ref{wincor-metodo}, Wincor Nixdorf
+non ha un approccio simile a quello delle software house, quindi di
+sicuro la scelta strategica era di puntare su prodotti già realizzati,
+e customizzarli per il cliente, piuttosto che svilupparne altri ex-novo.
+
+Per Primafrost in particolare era stata già realizzata un'applicazione
+per la gestione dei carichi dei mezzi e per la visualizzazione delle
+gite (tra l'altro già integrata con Me.R.Sy.). Sembrava quindi logico
+cercare di integrare il tutto con un'applicazione/servizio che calcolasse
+in automatico le gite in base a i carichi. La visualizzazione delle
+gite veniva fatta con una versione di {}``PTV Maps \& Guide''.
+
+Era quindi logico cercare una soluzione applicativa sempre progettata
+da PTV, sia perchè poteva risultare più semplice da integrare sia
+perchè PTV al momento è una delle aziende leader nel campo.
+
+
+\subsection{Valutazione delle alternative}
+
+Le 3 alternative possibili erano le seguenti:
+\begin{enumerate}
+\item ottimizzare le gite usando gli XServer
+\item ottimizzare le gite usando PTV Intertour
+\item lasciare tutto com'era (non era una vera alternativa, ma era piuttosto
+l'ultima spiaggia)
+\end{enumerate}
+L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
+se l'ottimizzazione delle gite doveva essere fatta automaticamente
+piuttosto che manualmente, e se era meglio utilizzare Web Service
+o un approccio applicativo classico.
+
+
+\section{Il progetto proposto}
+
+Come visto nella sezione precedente, molti aspetti partivano già inquadrati,
+e tuttavia non era chiaro quale fosse l'alternativa vincente. 
+
+Ci si è quindi informati prima sui processi del cliente coinvolti,
+e si è cercato di sconvolgerli il meno possibile, come spiegato nella
+prima sottosezione.
+
+Per alcuni problemi secondari, di cui parliamo a breve, sembrava che
+la componente umana fosse imprescindibile in alcuni casi. Inoltre
+non era chiaro cosa un'architettura orientata ai servizi aggiungesse
+all'architettura, per cui si era partiti facendo test utilizzando
+l'applicazione stand-alone. Chiaro non era neppure quanto tempo ci
+volesse ad eseguire una corretta configurazione dello strumento, e
+se questa configurazione potesse essere unica nonostante la variabilità
+degli scenari.
+
+Nel mio lavoro non ero solo, anzi la mia mansione era di affiancare
+un giovane impiegato (Primo Tilli) che era statao incaricato di occuparsi
+del problema. Tutto il lavoro svolto da me e da Primo si trova nelle
+sottosezioni successive.
+
+
+\subsection{Processi del cliente}
+
+Sicuramente si può pensare che esista una documentazione ufficiale
+in cui sono descritti i processi di Primafrost, anche se in modo non
+necessariamente formale, tuttavia comprensibilmente quella documentazione
+non ci è stata fornita.
+
+La mia conoscenza dei processi di Primafrost deriva esclusivamente
+dal bagaglio di conoscenza posseduto da Wincor Nixdorf, e da quanto
+è emerso negli incontri con il cliente, quindi la visione che ne deriva
+potrebbe essere certamente limitata, ma a mio parere è abbastanza
+completa per permettere uno sguardo generale alla metodologia di lavoro.\medskip{}
+
+
+Il proceso che era interessante per noi era il processo di gestione
+delle consegne,e questo poteva essere scomposto come segue:
+\begin{enumerate}
+\item Sotto-processo di raccolta dati dei clienti
+
+\begin{itemize}
+\item ricezione degli ordini
+\item eventuale modifica delle finestre di consegna
+\end{itemize}
+\item sotto-processo di preparazione della flotta
+
+\begin{enumerate}
+\item creazione delle gite
+\item eventuale correzione dei carichi dei veicoli
+\item assegnazione degli autisti
+\item carico veicoli
+\end{enumerate}
+\item Sotto-processo di dispiegamento delle consegne
+
+\begin{itemize}
+\item tracciamento dei mezzi in marcia
+\end{itemize}
+\end{enumerate}
+\medskip{}
+Come si può notare alcuni di questi sotto-processi ho deciso di suddividerli
+usando elenchi puntati invece che numerati. Questo deriva dal fatto
+che non so con certezza in che ordine vengano svolte le attività.
+
+Per quanto conosco infatti Primafrost stabilisce con i punti di consegna
+delle finestre di servizio, entro le quali la merce deve essere consegnata
+perchè è presente il personale addetto allo scarico. Consegnare al
+di fuori di queste finestre risulta quindi in uno spreco di tempo
+e denaro sia per l'azienda che per il punto di consegna, quindi risultano
+essere un vincolo operativo.
+
+Periodicamente l'azienda quindi raccoglie gli ordini dai suoi clienti/punti
+di consegna e da questi dati parte nella preparazione della flotta.
+
+Le gite vengono create su base giornaliera, e chiaramente non è necessario
+che ogni cliente abbia ordini nuovi ogni giorno, quindi i possibili
+scenari che ne derivano sono abbastanza dinamici.
+
+Come già accennato in altre sezioni, il processo di creazione delle
+gite viene svolto prevalentemente a mano da un dipendente (un ex-camionista,
+per la precisione) che ha grande esperienza delle strade italiane,
+e quindi può fare previsioni sulle situazioni contingenti che si potrebbero
+presentare agli autisti in determinate vie ed in determinati momenti
+della giornata.
+
+Una volta trovato il percorso, è necessario calcolare una stima dei
+kilometri da percorrere e tempo potenziale impiego di tempo. Almeno
+questa parte non era eseguita in maniera completamente manuale, ma
+mediante il software 'Maps\&Guide' si riusciva ad ottenere stime abbastanza
+precise.
+
+Fatte le gite e apportate eventuali correzioni, la flotta ed i carichi
+sui mezzi vengono preparati, ed una volta partiti i mezzi vengono
+tracciati temporalmente mediante appositi strumenti, in modo da assicurarsi
+che gli autisti rispettino i tempi di lvoro e di riposo. Alcuni di
+essi in particolare sono già tracciati anche mediante GPS, quindi
+si possono ottenere informazioni ance sulla gita realmente percorsa,
+anche se tuttavia sono una ristretta minoranza.
+
+
+\subsection{Problemi secondari}
+
+Un vincolo operatico piuttosto ovvio è rappresentato dalla capacità
+dei mezzi di trasporto. Le eccezioni per quanto riguarda questo limite
+non possono che essere gestite in maniera manuale, con conseguente
+rischio di perdita di ottimalità della soluzione.
+
+Con la vecchia suite capitava ogni tanto una incorretta gestione dei
+carichi dei camion.
+
+La componenete umana in questo caso si rivelava indispensabile: spesso
+era necessario modificare le gite già calcolate per far tornare i
+conti, ed un uomo con una discreta esperienza ed abilità poteva individuare
+in pochissimo tempo le modifiche che servivano allo scopo senza aumentare
+i mezzi e senza sconvolgere più di tanto la vecchia pianificazione.
+
+Un'altro problema che persino con i mezzi di oggi non viene trattato
+nelle applicazioni commerciali è l'eccesso di traffico che alcune
+strade riscontrano periodicamente durante la giornata, il quale può
+creare diversi disagi agli autisti.
+
+Ancora una volta un essere umano con un po' di esperienza può riuscire
+invece a prevedere il problema, e addirittura sa indicare se il problema
+affligge uno solo dei versi di marcia, e può quindi avvalersene nel
+tentativo di ottimizzare le gite.
+
+Per quest'ultimo problema PTV sta compiendo degli studi e dei rilevamenti
+statistici, ma è chiaro che ancora per un po' di tempo l'essere umano
+è destinato a rimanere indispensabile.
+
+Come se non bastasse le tipologie di merce caricata incidono sul tipo
+di veicolo da utilizzare, e da quest'ultimo dipende quanta merce di
+un certo tipo può essere caricata. Ad esempio non è possibile caricare
+assieme articoli di ortofrutta e salumi, poichè non sarebbe a norma
+rispetto alle norme vigenti. La merce ortofrutticola infatti ha una
+certa carica batterica e micotica, che rischia di contaminare il resto
+della merce, e si rende necessario l'utilizzo di una paratia per dividere
+i tipi di merce. La paratia è possibile montarla se il mezzo possiede
+almeno 2 ingressi al vano merci, e quindi questo limita la scelta
+all'interno della flotta.
+
+Questo genere di problemi di carattere alquanto complesso è ancora
+risolvibile in maniera semi-automatica, ovvero l'operatore è in grado
+di indicare una serie di vincoli che chiameremo {}``qualifiche''
+sulle merci, i veicoli e persino gli autisti, nel caso si necessitasse
+di abiliazoni particolari, e lasciare che un software di un qualche
+tipo risolva il problema delle corrispondenze, ma anche in questo
+caso la costruzione dei vincoli non può che essere fatta da una persona
+che conosce la situazione contingente al problema.
+
+
+\subsection{\label{sub:Training-su-PTV}Training su PTV Intertour}
+
+Per prima cosa si è voluto provare ad usare PTV Intertour, in modo
+da non complicare da subito la possibile architettura finale.
+
+Per utilizzare l'applicazione è necessario di un'addestramento veramente
+minimo (fornitoci dai dipendenti di TPS), gran parte dei comandi dell'interfaccia
+sono abbastanza intuitivi. Giusto per avere una panoramica diciamo
+che Intertour accetta in input file dati con formato ASCII, XML, CSV
+oppure anche da tabelle di frontiera in formato SQL SERVER o ORACLE
+{[}\ref{Documentazione-di-PTV}{]}.
+
+I dati necessari all'applicazione riguardano depositi (in cui sono
+inclusi anche gli ordini), veicoli ed autisti. Questi dati vengono
+chiamati {}``master data'', e vengono memorizzati in locale su filesystem,
+e successivamente processate dall'applicazione, la quale ricava anche
+i dati relativi alla geocodifica degli indirizzi.
+
+Da qui PTV Intertour ricava uella che si chiama {}``matrice delle
+distanze'', ovvero ad ogni coppia di destinazioni associa la distanza
+del più breve percorso che passa tra le due. questa matrice è utilizzata
+dall'euristica per trovare la corretta soluzione.
+
+Nei \emph{master data }è possibile indicare quelli che vengono chiamati
+dall'applicazione 'giri base', ovvero gite precalcolate dall'utente
+esterno. PTV Intertour permette infatti sia di calcolare le gite ex-novo,
+sia di una funzionalità per cercare di utilizzare i 'giri base' come
+punto di partenza nella ricerca di una soluzione ottima.
+
+L'utlima funzionalità che ci hanno illustrato era l'utilizzo di quella
+che in Ricerca Operativa viene chiamata 'post-ottimizzazione', ovvero
+un possibile raffinamento ulteriore della soluzione trovata, basata
+sul componenete MEFISTO (vedi \ref{sub:Mephisto}).
+
+Per un'interfacciamento più user-friendly o per semplice integrazione
+con l'ERP aziendale è possibile inoltre utilizzare un altro applicativo,
+IT Manager, che permette di caricare facilmente i dati e memorizza
+tutto in un database in formato SQL SERVER.
+
+L'interfaccia di IT Manager è poco più che minimale, ma contiene tutte
+le funzionalità necessarie: è possibile modificare i dati, mandare
+a Intertour solo un sottoinsieme ben preciso,ecc. Inoltre è permette
+di verificare le coordinate di georeferenziazione disegnando il punto
+su una mappa.
+
+
+\subsection{Configurazione di PTV Intertour}
+
+La spiegazione che ci era sata data su questo prodotto era davvero
+dettagliata, ma tuttavia tutti i dettagli che ci erano stati forniti
+erano utili solo come aiuto durante lo svolgimento dei casi d'uso
+più o meno tipici, mentre il funzionamento interno del programma,
+come ci si poteva aspettare, rimaneva per lo più oscuro.
+
+In questa fase l'attività principale è stata quella di eseguire una
+attenta esplorazione dell'interfaccia alla ricerca di parametri che
+ci permettessero di migliorare i risultati. A questa era affiancata
+una attività di validazione misurando come si comportava in alcuni
+casi reali.
+
+
+\subsubsection{Parametri dell'euristica}
+
+Ben presto ci siamo resi conto che il controllo sui risultati poteva
+essere anche molto fine, anche se abbiamo riscontrato qualche potenziale
+pecca. Oltre a diversi tool per la visualizzazione dei risultati infatti,
+l'applicazione ci forniva funzionalità:
+\begin{itemize}
+\item per cambiare alcune proprietà relative ai mezzi (velocità media, qualifiche,
+costi per fascia oraria/kilometrica, ecc.)
+\item per aggiungere/modificare alcuni vincoli per quanto riguardava la
+soluzione (tempo massimo che un mezzo poteva attendere presso un punto
+di consegna in attesa che aprisse, costo relativo alla singola unità
+di tempo, finestre di consegna, ecc.)
+\item per decidere se adottare i {}``giri base'' come punto di riferimento
+o meno (era possibile ad esempio decidere di tenere fissi i clienti
+che dovevano essere visitati nelle gite, ma fare in modo che fosse
+l'applicativo a decidere qual'era l'ordine che minimizzava i costi)
+\item per tenere traccia dei vincoli che erano stati eventualmente violati
+dalla soluzione, mediante una piccola console.
+\end{itemize}
+Ognuna di queste funzionalità ci aiutava nella creazione di uno scenario
+simulato che cercavamo di rendere il più possibile vicino alla realtà.
+Più lo scenario che andavamo a creare si avvicinava allo scenario
+del nostro problema, più i risultati che ottenevamo da Intertour sembravano
+affidabili, o quantomeno convincenti.
+
+Un dettaglio che si rivelato importante successivamente stava nel
+fatto che i mezzi non erano visti come singole unità, ma come classi
+di veicoli. Gli attributi relativi al mezzo non appartenenvano al
+singolo mezzo, ma all'intera classe. Questa particolarità ci è stato
+spiegato che era stata introdotta per motivi prestazionali: più la
+flotta era omogenea, più i calcoli si semplificavano, ed una simile
+rappresentazione forzava a distinguere solo ciò che era chiaramente
+differente.
+
+
+\subsubsection{Qualifiche}
+
+Per ogni mezzo era possibile definire arbitrariamente dei flag che
+rappresentassero le {}``qualifiche del mezzo'', che ci permettevano
+di risolvere problematiche complesse come quella dell'ortofrutta vista
+in \ref{sub:Training-su-PTV}. 
+
+Il meccanismo in sè era semplice, ed il sistema, dopo la prima volta
+era stato impostato, era in grado di memorizzare le qualifiche attivate
+in modo da non perderle tra una sessione di utilizzo e l'altra. 
+
+Era necessario prima di tutto attivare i flag per i mezzi che si sapeva
+possedessero certe caratteristiche e poi, ogni volta che un'ordine
+aveva certe caratteristiche, si attivava il flag corrispondente anche
+per il cliente (importante notare che la qualifica veniva vista come
+un'attributo del cliente, e non dei suoi ordini). Dopodichè era l'applicazione
+a tenere conto delle qualifiche e cercare di attribuire il mezzo giusto
+durante il calcolo della soluzione. Se il vincolo della qualifica
+non veniva rispettato dalla soluzione trovata, nella piccola console
+appariva quale gita aveva violato il vicolo e su quale punto di consegna.
+Era anche possibile automatizzare in parte anche le attivazioni delle
+qualifiche definendo alcune macro, ma nel nostro caso ne abbiamo fatto
+a meno perchè non ne facevamo un uso così esteso.
+
+
+\subsubsection{Visualizzazione dei risultati}
+
+I punti di consegna appaiono rappresentati come dei pallini nella
+mappa che mostra l'applicazione, collegati da linne continue che sono
+le gite. Le gite si dipartono, come è logico, dal maggazzino di Mantova,
+che appare come un triangolino. Come triangolini appaiono anche eventuali
+\emph{transit point}, punti particolari che si comportano sia come
+normali destinazioni (un certo quantitativo di merce deve esservi
+consegnato) sia come magazzini (la merce, una volta arrivata, viene
+smistata utilizzando altri corrieri).
+
+Questa rappresentazione, benchè semplice ed abbastanza intuitiva,
+nasconde in sè quello che potrebbe essere considerato un errore di
+usabilità: le linee che congiugono i vari punti di consegna non ricalcano
+minimamente quello che è il percorso reale, sono semplicemente linee
+che congiungono coppie di punti nel modo più diretto possibile.
+
+Questo significa, come è succeso in caso reale, che se due punti si
+trovano ai due estremi di un lago e fanno parte della stessa gita
+vedremo un linea congiungerli e passare \textbf{sopra il lago}. Ad
+una prima vista questa rappresentazione potrebbe sembrare fuorviante
+oppure anche segnalare un errore nelle impostazioni, ed è quello che
+è capitato. Invece, tenendo conto di quanto detto prima, è chiaro
+che non c'è niente di strano.
+
+Questa rappresentazione potrebbe derivare anche da limiti pratici,
+in quanto non sappiamo se nella matrice delle distanze vengono memorizzate
+solo le distanze tra le destinazioni o anche i percorsi che le collegano.
+In ogni caso non è un difetto fatale, anzi per fortuna la mappa risulta
+molto utile anche in presenza di questo difetto.
+
+
+\subsubsection{Velocità dei mezzi}
+
+I dipendenti di TPS ci hanno subito avvertito di una peculiarità di
+questo prodotto: le zone a ZTL non sono correttamente gestite. Questo
+significa che se si fosse presentato ad esempio il caso di un punto
+di consegna in centro a Milano lo l'applicazione ci avrebbe segnalato
+che il punto era raggiungibile, ma non avrebbe segnalato che era necessario
+nell'ultimo tratto utilizzare un mezzo leggero o con autorizzazione.
+Bisognava quindi stare un attimo attenti ai risultati che lo strumento
+mostrava alla fine del calcolo.
+
+A mio parere questo difetto sembra come al solito legato al fatto
+che nella matrice delle distanze non vengano salvati altri dati sul
+percorso più breve.
+
+Per ovviare al problema, e cercare di far quadrare il più possibile
+i conti soprattutto per i tempi di viaggio, si doveva intervenire
+a mano, con 3 approcci possibili:
+\begin{enumerate}
+\item \textbf{osservare la gita, calcolare circa il punto in cui il mezzo
+entrava nella zona ZTL, mettere in quel punto un transit point, e
+impostare delle qualifiche sul vero punto di consegna in modo che
+fosse selezionato un mezzo leggero o aurorizzato.} Questo era decisamente
+l'approccio più corretto, ma molto difficile e dispendioso in termini
+di tempo. Inoltre ricordiamo che era difficile stimare il punto preciso
+poichè la mappa non mostrava il vero percorso del mezzo, ma soltanto
+una linea che congiungeva 2 punti.
+\item \textbf{stimare più o meno il punto dove il mezzo entrava nella zona
+ZTL, e stimare la velocità media del mezzo leggero, e modificare la
+velocità del mezzo pesante in modo che avesse un valore che era una
+specie di media pesata tra i due. Questo approccio risultava meno
+corretto, ma sembrava più veloce.} In realtà si perdeva comunque un
+po' di tempo, poichè i mezzi erano suddivisi in classi, e la velocità
+media era un'attributo della classe, non del veicolo, per cui sarebbe
+stato necessario isolare il mezzo scelto e metterlo in una classe
+a parte.
+\item \textbf{era possibile modificare gli attributi relativi alla strada
+in modo da impostare un determinata velocità massima (una specie di
+limite di velocità).} Questo metodo, molto simile al secondo, in realtà
+risulterebbe molto più semplice perchè tutti i relativi calcoli verrebbero
+campiuti interamente dallo strumento, e di sicuro anche relativamente
+veloce. Tuttavia ancora una volta usando solo la mappa non si poteva
+capire da che via specifica il mezzo sarebbe passato, quindi era chiaro
+che si poteva utilizzare questa tecnica solo se ad esempio utilizzavamo
+Maps\&Guide per visualizzare il percorso.
+\end{enumerate}
+La nostra fortuna era che situazioni come quella sopra descritta non
+si presentavano, comunque abbiamo deciso di prendere nota del problema.
+Il vero difetto dal mio punto di vista non consisteva nel fatto che
+PTV Intertour non era in grado di risolvere agilmente il problema,
+ma piuttosto il fatto che non potesse nemmeno segnalare all'operatore
+che era necessario controllare i risultati.
+
+
+\subsubsection{Validazione dei risultati}
+
+Come test per la configurazione adottata abbiamo utilizzato dei dati
+provenienti da Primafrost e rilevati in giorno specifico, in modo
+da fare una prova con uno scenario reale, con tanto di {}``giri base''
+(ovvero le gite originali tracciate manualmente).
+
+Sono state fatte più prove, provando a far variare il numero di punti
+di consegna e la loro disposizione, e controllando ogni volta se i
+tempi di riposo per i camionisti rispettavano le norme vigenti.
+
+Ciò che si è potuto osservare è che, utilizzando le gite originali
+come punto di partenza si otteneva comunque un risparmio, misurabile
+attorno all'1-2\%, che era nulla in confronto al caso in cui le gite
+venivano ricalcolate da capo. in quest'ultimo caso si poteva anche
+raggiungere il 5\% lasciando agire per un po' la post-ottimizzazione.
+
+Come già detto precedentemente in \ref{sec:Progetto-di-massima},
+queste percentuali possono apparire irrisorie, ma non lo sono affatto,
+poichè i fattori di costo per questo tipo di attività si aggirando
+complessivamente sull'ordine dei milioni di euro, e quindi si sta
+parlando di una discreta somma comunque.
+
+Ciò che abbiamo inoltre rilevato sono le prestazioni del componente
+applicativo: in al massimo una decina di secondi un problema con circa
+200 punti di consegna ed una ventina di mezzi era stato completamente
+risolto, senza violazioni di vincoli e migliorando la soluzione trovata
+manualmente del 3\% circa (tra i vincoli contavano anche i tempi di
+riposo).
+
+La post-ottimizzazione impiegava ben di più: in teoria la si poteva
+lasciare andare quanto si voleva, ma sperimentalmente si era notato
+che i miglioramenti più notevoli si avevano già entro i primi 2 minuti.
+Passato questo limite, il tempo tra un miglioramento ed il successivo
+tendeva ad allungarsi troppo, per cui si è deciso di impostare come
+condizione di terminazione il fatto che fossero passati 120 secondi.
+Pur usando un tempo così ristretto, si notava che in media la post-ottimizzazione
+migliorava la soluzione trovata dall'euristica dell'1-2\% al massimo.
+
+
+\subsection{Comportamento dello strumento in caso di scenari dinamici}
+
+Prima di comunicare ufficialmente al cliente i dati che avevamo raccolto,
+era necessario fare anche delle prove con dati che provenissero da
+giornate diverse, in modo da vedere come lo strumento si comportava
+di fronte a scenari dinamici.
+
+Per nostra fortuna il cliente era molto ben disposto nei nostri confronti,
+ed erano già disponibili i dati di alcune giornate, già riversati
+all'interno dell'ERP aziendale.
+
+
+\subsubsection{Problemi di formato sui dati in input}
+
+In questa fase abbiamo avuto qualche problema con il formato dei dati
+in input per Intertour. Me.R.Sy. infatti era in grado di restituirci
+tutti i dati che ci servivano in formato CSV, ma IT Manager, che noi
+usavamo per questa procedura, voleva che le colonne fossero in un
+certo ordine, mentre Intertour voleva che le coordinate per la georeferenziazione
+fossero nel formato Mercatore.
+
+In sé e per sé questo problema era assai stupido, e forse si poteva
+risolvere anche solo con qualche macro di Microsoft Excel. Questa
+infatti è stata la prima strada che abbiamo seguito, ma ben presto
+ci siamo resi conto che i dati che provenivan dall'ERP non riguardavano
+solo le giornate che servivano a noi. Era dunque necessario filtrare
+i record ottenuti, e poi applicare tutte le trasformazioni necessarie.
+Con le macro di Excel era possibile eseguire le varie operazioni singolarmente,
+ma visto che avevamo più tabelle (quella dei mezzi e quella degli
+ordini dei clienti), la cosa si faceva più difficile, perchè da una
+parte dovevamo riuscire ad escludere più dati possibile, mentre dall'altra
+non potevamo permetterci di far saltare i controlli dei riferimenti
+incrociati, per cui dovevamo eliminare solo lo stretto necessario.
+Per farla breve avevamo veramente bisogno di un'operatore che funzionasse
+più o meno come il JOIN di SQL per eseguire tutta la procedura in
+modo da non fare danni.
+
+Così abbiamo provato ad usare le tabelle Excel come input per altri
+programmi che ci permettessero di utilizzare qualche operazione similare
+ai DBMS. Dato che l'ambiente in cui ci trovavamo a lavorare aveva
+un spiccata dominanza di sistemi e applicazioni Windows-like, abbiamo
+fatto una prova con MS Access, visto che apparteneva alla stessa suite.
+
+Ben presto però ci siamo resi conto dei limiti che l'applicazione
+aveva, in quanto permetteva di importare le tabelle Excel, ma non
+permetteva di usare operatore come il JOIN perchè di fatto non stava
+utilizzando veri database.
+
+Così l'alternativa è stata l'utilizzo di SQL Server 2005 Express Edition,
+per via del fatto che comunque è un DBMS, è free, ed è della stessa
+casa, per cui potevamo aspettarci un po' di compatibilità.
+
+Indagando un po' abbiamo infatti trovato una pratica funzionalità
+che ci permetteva di importare direttamente i dati dei file Excel
+all'interno delle tabelle del database e viceversa.
+
+In questo modo siamo riusciti a risolvere tutto il problema in appena
+mezza giornata.
+
+
+\subsubsection{Nuove gite, calcolate su più giorni}
+
+Con i nuovi dati abbiamo potuto fare qualche test anche su pianificazioni
+di altre giornata di consegna. I risultati per fortuna si mantenevano
+nella media di quanto precedetemente osservato.
+
+Con queste ultime prove avevamo dimostrato che lo strumento si comportava
+bene anche in presenza di scenari dinamici, senza cambiare impostazioni.
+
+
+\subsection{\label{sub:Prima-presentazione-risultati}Prima presentazione dei
+risultati al cliente}
+
+Abbiamo potuto finalmente presentare in maniera ufficiale i risultati
+ottenuti in un meeting con tutti gli stakeholder riuniti. Oltre ad
+una rappresentanza di Wincor Nixdorf e di Primafrost erano presenti
+anche TPS e gruppo Lombardini. Quest'ultimo in particolare era presente
+in quanto voleva conoscere quanto il metodo di consegna di Primafrost
+sarebbe cambiato, visto che l'azienda rifornisce i suoi punti di consegna.
+
+L'incontro è proceduto abbastanza bene, il cliente ha confermato che
+dal suo punto di vista si stava andando nella direzione giusta. 
+
+Alcune gite di quelle originali tuttavia sembravano strane perchè
+erano stati registrati dei tempi che lo strumento non poteva riprodurre,
+così gli esperti di TPS e i dipendenti di Primafrost e Wincor Nixdorf
+si sono ripromessi di ricontrollare i dati per quelle gite in particolare.
+
+E' emerso anche un'altro dato interessante, di cui però e meglio parlare
+nella sezione \ref{sec:Analisi-costi-benefici}.
+
+
+\subsection{Percorso più corto o più breve?}
+
+Una sola domanda rimase in sospeso dopo questo primo incontro. I dirigenti
+di Primafrost, in linea del tutto teorica, si chiedevano se era possibile
+regolare lo strumento in modo che invece di utlizzare i percorsi più
+brevi tra i punti di consegna, utilizzasse invece quelli più veloci.
+
+Questa richiesta era dovuta principalmente alle modalità di pagamento
+degli autisti: alcuni erano pagati al kilometro, altri all'ora, quindi
+non era così irragionevole cercare di minimizzare le distanze nel
+primo caso ed i tempi nel secondo.
+
+Per riuscire a soddisfare la richiesta dovevamo sapere di più sull'architettura
+interna del programma e capire come manipolare i parametri dell'euristica
+in modo che tirasse fuori i risultati che ci servivano.
+
+
+\subsubsection{Il componente MEFISTO}
+
+MEFISTO è stato l'unico componente che ci appariva manipolabile da
+questo punto di vista, ed è stato anche l'unico componente interno
+di cui abbiamo ricevuto un minimo di documentazione da parte di TPS.
+
+Il funzionamento in dettaglio di MEFISTO può essere trovato nella
+sezione \ref{sub:Mephisto}. Il suo funzionamento può essere riassunto
+in poche parole: questo componente parte dal una soluzione base trovata
+da un'euristica veloce e cerca di migliorarla. I pesi servono ad indirizzare
+la ricerca e quindi a determinare l'aspetto della soluzione finale.
+
+I pesi non erano modificabili da interfaccia grafica, ed ecco perchè
+non li avevamo notati finora, ma da un file di configurazione, la
+cui locazione ci è stata indicata dai tecnici TPS.
+
+Ciò che si è potuto notare è che, ponendo i risultati in un ipotetico
+piano cartesiano organizzato come in figura, la funzione risulta abbastanza
+prevedibile, tuttavia in alcuni casi che abbiamo trovato presentava
+alcune discontinuità.
+
+Non era pertanto possibile prevedere in modo accurato i risultati
+che si sarebbero ottenuti.
+
+
+\subsubsection{Le gite che non tornavano}
+
+Oltre al problema della non completa prevedibilità dell'influenza
+dei fattori di costo, c'erano anche da tenere in considerazione le
+gite il cui costo non tornava. sembrava infatti che i ottenuti dal
+precedente sistema, che usava Maps\&Guide, non collimassero con i
+dati ottenuti utilizzando PTV Intertour. In particolare quelli ottenuti
+con Maps\&guide sembravano in alcuni casi migliori.
+
+La prima ipotesi da verificare era che stessero usando la stessa versione
+delle mappe, altrimenti era chiaro che da dati diversi derivassero
+risultati diversi.
+
+Sono stati controllati quindi i percorsi di riferimento alle mappe,
+ma erano identici, e ce lo hanno confermato anche i tecnici TPS.Siamo
+pertanto tornati a controllare se esistevano altri parametri che influenzassero
+il calcolo e che fossero comuni ai due sistemi. A prima vista però
+questa strada sembrava un vicolo cieco.
+
+La soluzione di questo problema venne data da Cristian, il dipendente
+di Primafrost che si occupava del calcolo delle gite. Mentre noi cercavamo
+di riprodurre i suoi risultati, lui aveva cercato di riprodurre i
+nostri, con successo.
+
+Tutto si era risolto con la variazione di un singolo fattore, che
+dall'interfaccia sembrava effettivamente influenzare il calcolo del
+percorso, ma solo per quanto riguardava la sua lunghezza.
+
+La figura illustra quello che esponeva l'interfaccia: mettendo un
+valore massimo a quel coefficiente avremmo in teoria dovuto influenzare
+la ricerca in modo che selezionasse il percorso più breve, al contrario
+avrebbe selezionato il più veloce.
+
+Non è dato sapere di preciso come questo singolo fattore influenzasse
+il calcolo, ma si possono fare supposizioni: supponendo che l'algoritmo
+utilizzato da entrambi i programmi sia simile a grnular Tabu Search,
+quel fattore potrebbe in realtà aver influenzato la {}``granularità''
+dello spazio delle soluzioni, cambiando il numero di archi presi in
+considerazione. Una volta trovato quindi una disposizione degli archi
+simile, i due programmi avrebbero cominciato a restituire soluzioni
+simili tra loro.
+
+
+\subsubsection{\label{sub:ricerca-giusti-fattori}La ricerca dei giusti valori per
+i fattori}
+
+Risolto il problema delle gite {}``non corrette'', rimaneva il problema
+di trovare i valori {}``migliori'' per soddisfare le esigenze del
+cliente.
+
+Vi erano sostanzialmente 2 metodi possibili:
+\begin{enumerate}
+\item Cercare manualmente, attraverso una serie di prove, i valori corretti
+\item Cercare di automatizzare il processo descritto al punto 1
+\end{enumerate}
+Ognuna delle due scelte aveva vantaggi e svantaggi, ovviamente. Nel
+caso della ricerca manuale i tempi potevano essere anche molto lunghi
+e la qualità della soluzione trovata scadente, viceversa per il caso
+automatico, con la differenza che per automatizzare il processo e
+mantenere i tempi ragionevolmente brevi potevano essere necessarie
+risorse computazionali aggiuntive, all'epoca non disponibili.
+
+Si è quindi optato per la prima scelta, raggiungendo una soluzione
+abbastanza buona dopo qualche giorno di lavoro.
+
+Giusto per completezza, i risultati che si sarebbero potuti ottenere
+con una procedura automatica, sono spiegati nel capitolo 3, \ref{cha:Implementazione}.
+
+
+\subsubsection{Validazione dei risultati}
+
+Tutte prove di cui si è parlato prima sono state effettuate sulle
+mappe e sugli ordini su ci sono anche state effettuate anche le prove
+fatte per laprima consegna, per cui eravamo piuttosto sicuri dei risultati.
+
+
+\subsection{Presentazione dei risultati definitiva al cliente}
+
+Il cliente, già contento perchè aveva intuito che si stava andando
+nella direzione giusta, è stato molto felice di sapere che c'era anche
+un modo di manipolare il risultato finale dell'applicazione. In questo
+modo se un domani fossero cambiate le esigenze, si poteva semplicemente
+agire sui parametri invece che gettare via tutto.
+
+
+\section{\label{sec:Analisi-costi-benefici}Analisi costi-benefici}
+
+A conti fatti le due architetture eran più o meno equivalenti dal
+punto di vista dei vantaggi e degli svantaggi.
+
+Ciò che ha portato quindi ad una scelta netta è stato ciò che è emerso
+già dal primo incontro con gli stakeholder, ovvero il fatto che alcune
+informazioni non erano del tutto aggiornate all'interno delle mappe.
+
+
+\subsection{Vantaggi e svataggi utilizzzando PTV Intertour}
+
+Utilizzando Intertour i vantaggi che se ne ottenevano erano valutabili
+a livello di maggiore semplicità di utilizzo per l'utente finale se
+si utilizzava direttamente l'interfaccia grafica prevista dallo strumento,
+ed un costo minore o quantomeno comparabile a quello degli XServer.
+
+D'altro canto l'applicazione non risultava così facile da integrare
+nell'architettura già esistente, infatti necessitava di qualche workaround
+solo per interfacciarlo direttamente con l'ERP.
+
+Questa risultava essere un'ottima alternativa nel caso si fosse visto
+che la componente umana non poteva essere esclusa, in quanto anche
+se più difficile da integrare poteva risultare più usabile.
+
+
+\subsection{Vantaggi e svantaggi utilizzando PTV XTour}
+
+Utilizzando XTour era probabilmente più facile da integrare con la'rchitettura
+preesistente, ma non avrebbe necessariamente semplificato l'interazione
+con l'utente.
+
+Grazie all'architettura basata su Web Service, si poteva riuscire
+a visualizzare le mappe anche all'interno di un browser con poco sforzo,
+visto che esistevano già librerie apposite.
+
+Il problema sarebbe stato dover disegnare ex-novo una nuova interfaccia
+per l'utente, con possibili problemi di usabilità e di familiarizzazione
+con i nuovi controlli.
+
+Inoltre non era detto che il costo fosse per forza contenuto, non
+sono mai state fatte abbastanza prove per avere la certezza se ogni
+XServer fosse più o meno indipendente dagli altri o se fosse necessario
+l'utilizzo di più di uno di questi prodotti in sinergia. Facendo conto
+che le licenze erano diverse per ogni prodotto, significava potenzialmente
+pagarle tutte a parte singolarmente.
+
+Questa poteva tuttavia essere un'ottima alternativa nel caso si fosse
+visto che la componente umana era escludibile quasi del tutto. Riducendo
+i controlli all'osso ed integrando tutto il resto, la qualità delle
+soluzioni era garantita.
+
+
+\subsection{L'incompletezza delle mappe}
+
+Già durante il primo incontro con gli stakeholder, come accennato
+nel capitolo \ref{sub:Prima-presentazione-risultati}, emerse subito
+un problema relativo al calcolo dei percorsi.
+
+PTV Intertour infatti non ci permetteva di vedere di preciso quale
+percorso seguivano i mezzi, e Christian, che in Primafrost si occupava
+del calcolo delle gite, ha voluto vederci chiaro.
+
+Ricalcolando i percorsi utilizzando Maps\&Guide si ottenevano risultati
+un po' strani infatti ( e queste erano le gite che non tornavano ),
+mentre altri sembravano potenzialmente ignorare alcune restrizioni
+presenti sul manto stradale: in un caso particolare Christian ci ha
+spiegato che per percorrere una certa di distanza in così poco tempo
+l'applicazione poteva potenzialmente aver deciso di passare per una
+galleria attaverso la quale un camion non poteva passare.
+
+Ci siamo sentiti subito di escludere il caso, anche se sapevamo che
+Cristian aveva più esperienza di tutti noi in fatto di strade. In
+realtà parlandone un po' è uscito fuori che l'ipotesi di Cristian
+non era così insensata, in quanto la stessa TPS ha dovuto confessare
+che non era così garantito che le mappe fossero accurate al 100\%:
+erano sicuramete complete ed aggiornate per quanto riguardava la cartografia,
+ma i dati riguardanti la viabilità erano anche frutto di PTV, e poteva
+darsi che l'Italia non fosse sempre così aggiornata.
+
+
+\subsection{Scelta finale}
+
+In realtà, per quanto il problema della completezza delle mappe sembrasse
+un problema minore, aveva rivelato una criticità: non potendo più
+garantire che i percorsi calcolati avrebbero rispettato di base i
+vincoli imposti dal codice della strada, non si poteva spingere più
+di tanto con l'ottimizzazione, anzi bisognava cercare di rifarsi il
+più possibile ai percorsi precalcolati in origine.
+
+Non si è voluto comunque abbandonare il progetto, in quanto le premesse
+sembravano promettenti, ma era ormai chiaro che la componente umana
+non era eliminabile.
+
+Si è quindi deciso di mantenere come applicazione di riferimento PTV
+Intertour, e di integrarlo in modo da fornire a Cristian tutti i controlli
+necessari. Con questo assetto la figura professionale di questo dipendente
+non veniva sostituita, anzi si permetteva all'individuo di crescere
+ulteriormente nella sua carriera professionale, diventando esperto
+nell'utilizzo dello strumento.
+
+Questo permetterebbe un domani di poter in teoria affiancare a Cristian
+un assistente per poter gestire le consegne in caso di sua assenza,
+ed inoltre con il potenziale miglioramento dello strumento si potrebbero
+anche raggiungere risparmi sempre migliori, o almeno garantire che
+più o meno sarà sempre possibile un piccolo margine di risparmio.
+
+Gli XServer non verranno pertanto impiegati, in quanto non offrirebbero
+i vantaggi sperati e rischierebbero di costare troppo ora le licenze.
+Questa alternativa sarà rivalutata in futuro, quando magari più clienti
+utilizzeranno questo servizio e ci sarà bisogno di gestire configurazioni
+diverse.
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\chapter{\label{cha:Implementazione}Implementazione}
+
+Nell vicenda spiegata nella sezione \ref{sub:ricerca-giusti-fattori}
+rimaneva un dubbio irrisolto: si poteva riuscire a trovare i coefficienti
+giusti in un modo automatico o comunque semi-automatico?
+
+Questo ci avrebbe permesso di avere un minimo di sicurezza per quanto
+riguardava l'ottimalità della soluzione trovata e ci avrebbe risparmiato
+potenzialmente un sacco di fatica.
+
+In questo capitolo presento un mio contributo completamente personale
+in cui ho cercato di rispondere questo quesito.
+
+Nella prima sezione parlerò in generale delle motivazioni che mi hanno
+fatto scegliere l'approccio che poi ho usato, quindi descriverò come
+ho ottenuto i dati, i risultati ottenuti ed infine come ho potuto
+validare i risultati.
+
+
+\section{Approccio generale}
+
+Era chiaro che non avrei potuto risolvere il problema utilizzando
+PV Intertour, in quanto nella documentazione di questo strumento non
+era minimamente spiegato se vi fosse un modo di impartire comandi
+all'applicazione senza passare per l'interfaccia grafica, quindi non
+era possibile utilizzarlo da riga d comando o mediante script di qualche
+genere.
+
+La selta quindi più ovvia era quella di utilizzare gli XServer, ed
+in particolare XTour in quanto, sempre stando alla documentazione,
+era il più simile da un punto di vista di funzionalità ed utilizzo.
+
+TPS aveva fornito a Wincor un account per riuscire a scaricare le
+ultime versioni degli XServer direttamente dal sito di PTV, per cui
+questa parte non cosutuiva un problema.
+
+I problemi sono cominciati quando, facendo delle prove con i vari
+applicativi, mi sono reso conto ingenuamente che le mappe non erano
+incluse nel download. Chiedendo a TPS mi sono reso conto che le mappe
+avrebbero occupato circa 10 GB, quindi non era possibile scambiarci
+i file.
+
+Ho abbandonato quindi quella strada, ma ho ottenuto lo stesso i dati,
+come spiegherò più avanti, poichè in ogni caso non esisteva un modo
+per importarli all'interno di XTour.
+
+Ho deciso perciò di eseguire un semplice {}``dimostrazione'', ovvero
+un test che avrebbe dato risultati da interpretare in linea di massima,
+visto che ogni soluzione con un più ampio margine di precisione era
+da scartare.
+
+Il mio approccio è stato quindi quello di reimplementare Granular
+Tabu Search e di compiere la ricerca dei fattori migliori atraverso
+un algoritmo genetico, per vedere se quest'ultimo mi aiutava a selezionare
+i coefficienti più promenttenti in un tempo ragionevole.
+
+
+\subsection{Reimplementazione di Granular Tabu Search}
+
+Per reimplementare il Granular Tabu Search ho utilizzato direttamente
+l'articolo origininale di Toth e Vigo. L'implementazione più prestante
+si sarebbe potuta ottenere certamente scrivendo tutto in C e ottimizzando
+per l'architettura su cui l'applicazione avrebbe dovuto girare.
+
+Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto
+troppo rispetto alle mie aspettative: C non possiede nativamente il
+supporto per liste, mappe di hash e iteratori, e tra l'altro benchè
+ia un linguaggio molto potente non prevede meccanismi per lavorare
+con gli oggetti senza allocare/deallocare la memoria manualmente,
+esponendo quindi il sistema a problemi di memory leak e salti ad aree
+di memoria non più allocate. Per correggere tutti i bug relativi alla
+gestione della memoria da soli a mio avviso sarebbe servita una settimana,
+con il rischio di bug non scovati ed effetti più o meno bizantini
+anche alla fine della revisione.
+
+Avrei potuto puntare sul C++, ma conoscevo meglio Python, e sapevo
+che comunque anche il codice Python veniva compilato, anche se magari
+non era ottimizzato. inoltre questo linguaggio aveva tutti i vantaggi
+che C non aveva, con l'unico difetto che non sapevo prevedere quali
+performance il codice finale avrebbe avuto. Quest'ultimo problema
+non era così importante, in fondo la mia era solo una dimostrazione:
+era importante che fosse corretta, non prestante.
+
+
+\subsection{L'algoritmo genetico}
+
+Ogni algoritmo genetico (come spiegato precedentmente in \ref{sec:Algoritmo-genetico})
+non fa altro che rappresentare i geni degli individui mediante stringhe,
+calcolando per ogni stringa un vlore di fitness, ed infine, mediante
+un processo di selezione, fa accopiare gli individui migliori in modo
+che la nuova generazione sia migliore di quella prima. Nella riproduzione
+i corredi cromosomici dei genitori vengono mischiati tramite cross-over,
+in modo da ampliare lo spettro delle possibili soluzioni, ed infine
+c'è una probabilità di ottenre una mutazione, che aiuta a non rimanere
+ancorati ai {}``minimi locali''.
+
+Se come geni pendiamo i coefficienti che usiamo per il granular tabu
+search, la rappresentazione in stringa di una specifica coppia di
+valori possibili può rappresentare il corredo genetico di un'individuo.
+
+Nel caso che ci si presentava in azienda noi dovevamo cercare di riprodurre
+i risultati di Primafrost, trovando i coefficienti opportuni.
+
+Possiamo quindi fare in modo che individui che ottengono i risultati
+vicini ad un valore preimpostato siano favoriti nel processo di selezione,
+in modo da ottenere una popolazione finale che presenti come geni
+solo i coefficienti più promettenti.
+
+Ad ogni ciclo dell'algoritmo da me progettato infatti si ha:
+\begin{enumerate}
+\item inizializzazione degli agenti
+\item calcolo della soluzione del problema mediante Granular Tabu Search
+(i coefficienti usati nella ricerca sono quelli presenti nei geni
+dell'individuo)
+\item selezione degli individui in base ai risultati ottenuti (metodo della
+ruota della roulette)
+\item Cross-over (uniforme) e mutazione
+\end{enumerate}
+
+\section{Ottenere i dati di input}
+
+Il fatto che non si potessero ottenere i dati direttamente dalle mappe
+di PTV non rappresentava un problema. avevo infatti trovato un simpatico
+tutorial sugli XServer bastato su Javascript, che permetteva di editare
+il codice {[}\ref{AJAX-tutorial}{]}.
+
+Studiando un po' l'API pubblica descritta nella documentazione di
+PTV, ed avendo ancora un file Excel di quelli usati per PTV Intertour,
+sono riuscito ad impostare il programma in modo che, date una serie
+di città, calcolasse la lunghezza e la durata del percorso tra ogni
+coppia di città.
+
+Il risultato di quest'operazione era una sorta di matrice delle distanze,
+ottima per il gnere di problema che doveva essere trattato.
+
+Visto che i punti d consegna erano dell'ordine del centinaio almeno,
+l'operazione ha richiesto qualche ora.
+
+A causa di un limite sulla massima granularità nella mappa del tutorial,
+punti di consegna ppartenenti alla stessa città collessavano. Ho eliminato
+quindi i punti coincidenti, in quanto erano rendevano solo più pesanti
+i calcoli da effettuare.
+
+La matrice delle distanze che ho potuto utilizzare dopo quest'operazione
+risulta quindi un po' diversa da quella reale.
+
+
+\section{Risultati ottenuti}
+
+
+\section{Validazione risultati}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\chapter*{Conclusioni}
+
+Si può quindi concludere che, allo stato odierno, il mondo commerciale
+è ora in grado di rispondere anche alle esigenze di chi ogni giorno
+deve gestire un'intera flotta di veicoli e qualche centinaio di punti
+di consegna. Da un punto di vista prestazionale, si evidenziano gli
+eccellenti risultati raggiunti da PTV.
+
+La vera criticità di oggi invece è tenere completi ed aggiornati i
+dati delle mappe, partendo da quelli riguardano strettamente la cartografia,
+fino ai dati sulla viabilità e la percorribilità delle strade.
+
+Senza dati al pari con le aspettative, infatti, si possono creare
+situazioni spiacevoli in cui i risultati trovati sono inammissibili
+nella realtà delle cose, come dimostra il caso di Primafrost.
+
+Siamo sicuri che le persone di TPS hanno realizzato quanto importante
+sia questa priorità, e sicuramente nei prossimi anni si impegnereanno
+a fondo per migliorare la qualità delle loro mappe.
+
+Questo potrebbe davvero rendere possibile, in un futuro molto prossimo,
+una reale disponibilità di una soluzione commerciale in grado di risolvere
+istanze del {}``Vehicle Routing Problem'' in un tempo ragionevole.
+
+\rhead[\fancyplain{}{\bfseries CONCLUSIONI}]{\fancyplain{}{\bfseries\thepage}} \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries CONCLUSIONI}}
+\addcontentsline{toc}{chapter}{Conclusioni}
+
+\renewcommand{\chaptermark}[1]{\markright{\thechapter \ #1}{}} \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}} \appendix 
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\chapter{Prima Appendice}
+
+\rhead[\fancyplain{}{\bfseries \thechapter \:Prima Appendice}] {\fancyplain{}{\bfseries\thepage}}
+
+\begin{thebibliography}{90}              
+\rhead[\fancyplain{}{\bfseries \leftmark}]{\fancyplain{}{\bfseries \thepage}}
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+\bibitem{K1}\label{Sito-Wincor-Nixdorf}Sito Wincor Nixdorf, sezione
+Retail
+
+(\url{http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html})
+
+\bibitem{K2}\label{The-Vehicle-Routing-Problem}''The Vehicle Routing
+Problem'', P. Toth, D. Vigo, \textit{Society for Industrial and Apllied
+Mathematics}, 2002
+
+\bibitem{K3}\label{geocodifica}Sito TPS Italia, {}``Geocodifica
+e normalizzazione delle anagrafiche''
+
+(\url{http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/geocodifica_normalizzazione_anagrafiche.php})
+
+\bibitem{K4}\label{Truck-Dispatching-Problem}\textquotedbl{}The
+Truck Dispatching Problem\textquotedbl{}, Dantzig, G.B., Ramser, J.H.
+(1959). Management Science 6 (1): 80\textendash{}91. doi:10.1287/mnsc.6.1.80.
+Retrieved 2008-04-17.
+
+(\url{http://links.jstor.org/pss/2627477})
+
+\bibitem{K5}\label{PTV-Intertour}Sito PTV, sezione {}``Pianificazione
+ed ottimizzazione dei giri''
+
+(\url{http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/})
+
+\bibitem{K6}\label{Mefisto-bib}''MEFISTO: A Pragmatic Metaheuristic
+Framework for Adaptive Search with a Special Application to Pickup
+and Delivery Transports'',A Cardeneo, W Heid, F Radaschewski et al.,
+Operations Research Proceedings 2008: Selected Papers of the Annual
+International Conference of the German Operations Research Society
+(GOR) University of Augsburg, September 3-5, 2008
+
+\bibitem{K7}\label{TabuRoute}''A tabu search heuristic for the
+vehicle routing problem'', M. Gendreau, A. Hertz, G. Laporte, Management
+Science, 1994
+
+\bibitem{K8}\label{granular-tabu-search}''The granular tabu search
+and its application to the Vehicle-Routing Problem'', P. Toth, D.
+Vigo, INFORMS Journal on Computing, 2003
+
+\bibitem{K9}\label{GENIUS-bib}''New insertion and postoptimization
+procedures for the traveling salesman problem'', M. Gendreau, A.
+Hertz, G. Laporte, Operations Research, 1992
+
+\bibitem{K10}\label{significato-wincor}\url{http://www.wincor-nixdorf.com/internet/site_DE/DE/WincorNixdorf/Press/pressreleases/1998-1999/KKRundGoldmanSachs_22_10_1999.html}
+
+\bibitem{K11}\label{storia wincor}''Wincor Nixdorf'', Wikipedia
+tedesca
+
+(\url{http://de.wikipedia.org/wiki/Wincor_Nixdorf})
+
+\bibitem{K12}\label{Dati finanziari wincor}''Wincor Nixdorf''
+su sito {}``Pubbliway, il portale per il business online'',
+
+(\url{http://www.pubbliway.com/informatica/wincor_nixdorf_s.r.l._1121241})
+
+\bibitem{K13}\label{TPS-bib}Sito TPS, sezione {}``Chi siamo''
+
+(\url{http://www.tpsitalia.it/azienda/})
+
+\bibitem{K14}\label{PTV-bib}''PTV Planung Transport Verkehr''
+sulla Wikipedia tedesca
+
+(\url{http://de.wikipedia.org/wiki/PTV_Planung_Transport_Verkehr})
+
+\bibitem{K15}\label{Documentazione-di-PTV}Documentazione di PTV
+Intertour 5.9, fornitami da TPS Italia.
+
+\bibitem{K16}\label{AJAX-tutorial}Sito PTV, sezione sviluppatori,
+{}``Interactive AJAX Tutorial for PTV MobilityPlatform'' (\url{http://80.146.239.135/mp-ajax-api-samples/tutorial/tutorial.html})
+
+\bibitem{K17}\label{algoritmo-genetico}Wikipedia inglese, {}``Genetic
+Algorithm'' (\url{http://en.wikipedia.org/wiki/Genetic_algorithm})
+
+\end{thebibliography}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+
+\chapter*{Ringraziamenti}
+
+\thispagestyle{empty}
+\end{document}

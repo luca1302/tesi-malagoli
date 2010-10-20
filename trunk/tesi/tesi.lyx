@@ -5017,7 +5017,27 @@ dimostrazione
 Il mio approccio è stato quindi quello di reimplementare Granular Tabu Search
  e di compiere la ricerca dei fattori migliori atraverso un algoritmo genetico,
  per vedere se quest'ultimo mi aiutava a selezionare i coefficienti più
- promenttenti in un tempo ragionevole.
+ promettenti in un tempo ragionevole.
+\end_layout
+
+\begin_layout Standard
+La ragionevolezza del tempo impiegato l'ho misurata confrontando i risultati
+ ottenuti dall'algoritmo genetico rispetto ad un algoritmo 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+, che invece tentava tutte le combinazioni dei fattori possibili, scegliendo
+ alla fine il risultato più vicino a quello desiderato.
+ Per motivi di limitazioni di tempo ho deciso di limitare arbitrariamente
+ l'intervallo dei valori possibili per ciascun fattore di costo all'intervallo
+ [0-100].
+ Questo mi forniva un numero abbastanza grande di coppie possibili da non
+ far perdere troppa generalità al test, senza dover attendere troppo tempo
+ mentre attendevo i risultati.
 \end_layout
 
 \begin_layout Subsection
@@ -5026,8 +5046,32 @@ Reimplementazione di Granular Tabu Search
 
 \begin_layout Standard
 Per reimplementare il Granular Tabu Search ho utilizzato direttamente l'articolo
- origininale di Toth e Vigo.
- L'implementazione più prestante si sarebbe potuta ottenere certamente scrivendo
+ originale di Toth e Vigo.
+\end_layout
+
+\begin_layout Standard
+Mi sono permesso di fare solo 3 modifiche all'articolo originale, in modo
+ renderlo più simile a quello ce veniva descritto nella documentazione di
+ MEFISTO:
+\end_layout
+
+\begin_layout Enumerate
+Invece di utilizzare solo mosse OR1, ho aggiunto anche mosse OR2 e SWAP,
+ in modo da ampliare la gamma delle possibili variazioni
+\end_layout
+
+\begin_layout Enumerate
+Ho fatto in modo che i valori iniziali dei fattori di costo potessero essere
+ decisi a riga di comando quando si lanciava il programma, in questo modo
+ si poteva utilizzarlo con l'algoritmo genetico
+\end_layout
+
+\begin_layout Enumerate
+Ho deciso di implementare tutto in Python, invece che il C o il C++
+\end_layout
+
+\begin_layout Standard
+L'implementazione più prestante si sarebbe potuta ottenere certamente scrivendo
  tutto in C e ottimizzando per l'architettura su cui l'applicazione avrebbe
  dovuto girare.
 \end_layout
@@ -5035,7 +5079,7 @@ Per reimplementare il Granular Tabu Search ho utilizzato direttamente l'articolo
 \begin_layout Standard
 Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto troppo
  rispetto alle mie aspettative: C non possiede nativamente il supporto per
- liste, mappe di hash e iteratori, e tra l'altro benchè ia un linguaggio
+ liste, mappe di hash e iteratori, e tra l'altro benchè sia un linguaggio
  molto potente non prevede meccanismi per lavorare con gli oggetti senza
  allocare/deallocare la memoria manualmente, esponendo quindi il sistema
  a problemi di memory leak e salti ad aree di memoria non più allocate.
@@ -5047,7 +5091,7 @@ Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto troppo
 \begin_layout Standard
 Avrei potuto puntare sul C++, ma conoscevo meglio Python, e sapevo che comunque
  anche il codice Python veniva compilato, anche se magari non era ottimizzato.
- inoltre questo linguaggio aveva tutti i vantaggi che C non aveva, con l'unico
+ Inoltre questo linguaggio aveva tutti i vantaggi che C non aveva, con l'unico
  difetto che non sapevo prevedere quali performance il codice finale avrebbe
  avuto.
  Quest'ultimo problema non era così importante, in fondo la mia era solo
@@ -5125,12 +5169,117 @@ Cross-over (uniforme) e mutazione
 \end_layout
 
 \begin_layout Section
+Esperimenti eseguiti
+\end_layout
+
+\begin_layout Standard
+Per eseguire degli esperimenti i cui risultati potessero essere un minimo
+ validati e confrontati tra loro ho deciso di utilizzare 2 istanze 
+\begin_inset Quotes eld
+\end_inset
+
+ideali
+\begin_inset Quotes erd
+\end_inset
+
+ del problema, ovvero istanze utilizzate tipicamente in letteratura per
+ confrontare gli algoritmi ma che non hanno pretesa di realtà, ed 1 caso
+ reale, ovvero il caso reale, di cui ho dovuto calcolare la matrice delle
+ distanze, come descritto nella sezione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Ottenere-i-dati"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Le istanze 
+\begin_inset Quotes eld
+\end_inset
+
+ideali
+\begin_inset Quotes erd
+\end_inset
+
+ invece le ho potute reperire su 
+\emph on
+VRP Web 
+\emph default
+[
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "The-VRP-Web"
+
+\end_inset
+
+], un sito molto completo in cui sono raccolte molte di queste istanze,
+ in modo da promuovere il loro utilizzo negli articoli scientifici che trattano
+ del settore.
+ Sono inoltre suddivise per creatore, e vengono riportati i risultati migliori
+ mai raggiunti da un'euristica istanza per istanza.
+ Visto che il sito è aggiornato con una certa frequenza, i dati che sono
+ raccolti in queste pagine mi sono sembrati affidabili.
+\end_layout
+
+\begin_layout Standard
+Negli esperimenti che avevo in programma ho aggiunto anche un paio di esperiment
+i 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+, che non avrebbero operato seguendo l'algoritmo genetico come solito, ma
+ avrebbero invece esplorato iterativamente, coppia per coppia, tutto lo
+ spazio delle soluzioni, e preso la più vicina a quella desiderata.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Ottenere-i-dati"
+
+\end_inset
+
 Ottenere i dati di input
 \end_layout
 
 \begin_layout Standard
+Nel cercare di vedere come l'algoritmo genetico si sarebbe comportato in
+ caso reale dovevo risolvere il problema dell'incompletezza dei dati in
+ mio possesso.
+\end_layout
+
+\begin_layout Standard
+Possedevo infatti i risultati finali di quell'istanza, conoscevo le quantità
+ degli ordini e i mezzi disponibili, ma non conoscevo la posizione geografica
+ dei vari clienti nè tantomeno le distanze reciproche tra di loro.
+\end_layout
+
+\begin_layout Standard
+Avevo provato a farmi restituire tali dati da PTV Intertour, ma non avevo
+ trovato la funzionalità adatta, anche perché, come mi confermarono le persone
+ di TPS poi, quella funzionalità non sembrava essere stata prevista.
+\end_layout
+
+\begin_layout Standard
+La funzionalità di importazione/esportazione della matrce delle distanze
+ era infatti presente solo in un prodotto della serie XServer, XDima.
+ Ho provato quindi, utilizzando delle licenze di prova, a far funzionare
+ tale server, ma infruttuosamente, poiché nel download non erano state previste
+ le mappe geocodificate, e non vi era un modo pratico nè per me nè per le
+ persone di TPS di passarmi tali file, che in totale occupavano approssimativame
+nte una decina di GigaBytes.
+\end_layout
+
+\begin_layout Standard
 Il fatto che non si potessero ottenere i dati direttamente dalle mappe di
- PTV non rappresentava un problema.
+ PTV tuttavia non rappresentava un problema.
  avevo infatti trovato un simpatico tutorial sugli XServer bastato su Javascript
 , che permetteva di editare il codice [
 \begin_inset CommandInset ref
@@ -5168,14 +5317,86 @@ A causa di un limite sulla massima granularità nella mappa del tutorial,
 
 \begin_layout Standard
 La matrice delle distanze che ho potuto utilizzare dopo quest'operazione
- risulta quindi un po' diversa da quella reale.
+ risulta quindi un po' diversa da quella reale, ma mi permetteva comunque
+ di fare qualche prova anche su un caso reale.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Risultati ottenuti
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+Il mio primo esperimento è stato effettuato sull'istanza 'c101' di Condreau.
+ Questa infatti era una buona istanza di CVRPTW, con 100 clienti ed 1 magazzino.
+ 
+\end_layout
+
+\begin_layout Standard
+Sorprendentemente per me, la versione di Granular Tabu Search che avevo
+ implementato non riusciva a risolvere questo problema, o meglio generava
+ solo soluzioni inammissibili, che violavano almeno un vincolo.
+ La prima spiegazione che mi diedi fu che affettivamente il vincolo temporale
+ di 2 minuti fosse troppo stringente, ed il runtime python troppo lento.
+\end_layout
+
+\begin_layout Standard
+Così ho deciso di tenere buona questa istanza, ma di considerarla come se
+ fosse un'istanza di CVRP, piuttosto che di CVRPTW, ovvero ho fatto in modo
+ che Granular Tabu Search non tenesse più conto delle finestre di consegna.
+\end_layout
+
+\begin_layout Standard
+In questo modo le soluzioni sono tornate ad essere ammissibili, e pure non
+ troppo lontane dal valore ottimale, come viene mostrato nella sezione di
+ validazione 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Validazione-risultati"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ho scelto quindi anche un'istanza diversa, presa anche da un autore diverso,
+ in modo da evitare possibili schemi ricorrenti inseriti che ogni autore
+ potrebbe avere, e ho scelto l'istanza 'RC101' di Solomon, che aveva in
+ comune con quella di Condreau il numero di clienti da servire, sempre considera
+ndola come un'istanza di CVRP.
+ Anche in questo caso i risultati erano ammissibili, e non lontani dalla
+ soluzione migliore.
+\end_layout
+
+\begin_layout Standard
+Lanciando l'algoritmo 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ su entrambi i problemi ho scoperto paio di cose interessanti, visibili
+ anche in figura: ponendo di poter stabilire un ordinamento tra le coppie
+ di fattori, in modo da poterli rappresentare sull'asse delle ascisse, sull'asse
+ delle ordinate ci troveremmo di fronte a quella che sembra una funzione
+ costante, tranne qualche eventuale punto di discontinuità, come visibile
+ in figura.
+\end_layout
+
+\begin_layout Standard
+Si può notare come tra la soluzione non post-ottimizzata (quella con coefficient
+i (0,0), nell'origine)
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Validazione-risultati"
+
+\end_inset
+
 Validazione risultati
 \end_layout
 
@@ -6098,6 +6319,48 @@ status collapsed
 \begin_layout Plain Layout
 
 http://en.wikipedia.org/wiki/Genetic_algorithm
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{K18}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "The-VRP-Web"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+The VRP Web
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://neo.lcc.uma.es/radi-aeb/WebVRP/index.html?bibliography.html
 \end_layout
 
 \end_inset

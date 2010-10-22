@@ -5071,6 +5071,14 @@ Ho deciso di implementare tutto in Python, invece che il C o il C++
 \end_layout
 
 \begin_layout Standard
+Come metaeuristica Granular Tabu Search ha bisogno di partire da una soluzione
+ fornita da un euristica rapida.
+ Nell'articolo viene utilizzata l'euristica di Clarke e Wright, quindi ho
+ deciso di tenere buona quell'implementazione, anche se avrei potuto utilizzare
+ qualunque altra euristica conosciuta.
+\end_layout
+
+\begin_layout Standard
 L'implementazione più prestante si sarebbe potuta ottenere certamente scrivendo
  tutto in C e ottimizzando per l'architettura su cui l'applicazione avrebbe
  dovuto girare.
@@ -5325,6 +5333,10 @@ La matrice delle distanze che ho potuto utilizzare dopo quest'operazione
 Risultati ottenuti
 \end_layout
 
+\begin_layout Subsubsection
+Esperimenti con istanze CVRPTW
+\end_layout
+
 \begin_layout Standard
 Il mio primo esperimento è stato effettuato sull'istanza 'c101' di Condreau.
  Questa infatti era una buona istanza di CVRPTW, con 100 clienti ed 1 magazzino.
@@ -5339,10 +5351,15 @@ Sorprendentemente per me, la versione di Granular Tabu Search che avevo
  di 2 minuti fosse troppo stringente, ed il runtime python troppo lento.
 \end_layout
 
+\begin_layout Subsubsection
+Esperimenti con istanze CVRP
+\end_layout
+
 \begin_layout Standard
-Così ho deciso di tenere buona questa istanza, ma di considerarla come se
- fosse un'istanza di CVRP, piuttosto che di CVRPTW, ovvero ho fatto in modo
- che Granular Tabu Search non tenesse più conto delle finestre di consegna.
+Dati i risultati ottenuti in precedenza, ho deciso di l'istanza 'c101' di
+ Condreau, ma di considerarla come se fosse un'istanza di CVRP, piuttosto
+ che di CVRPTW, ovvero ho fatto in modo che Granular Tabu Search non tenesse
+ più conto delle finestre di consegna.
 \end_layout
 
 \begin_layout Standard
@@ -5378,11 +5395,184 @@ brute force
 \end_inset
 
  su entrambi i problemi ho scoperto paio di cose interessanti, visibili
- anche in figura: ponendo di poter stabilire un ordinamento tra le coppie
- di fattori, in modo da poterli rappresentare sull'asse delle ascisse, sull'asse
- delle ordinate ci troveremmo di fronte a quella che sembra una funzione
- costante, tranne qualche eventuale punto di discontinuità, come visibile
- in figura.
+ anche in figura: 
+\end_layout
+
+\begin_layout Enumerate
+ponendo di poter stabilire un ordinamento tra le coppie di fattori, in modo
+ da poterli rappresentare sull'asse delle ascisse, sull'asse delle ordinate
+ ci troveremmo di fronte a quella che sembra una funzione costante, tranne
+ qualche eventuale punto di discontinuità, come visibile in figura.
+\end_layout
+
+\begin_layout Enumerate
+Si può notare come tra la soluzione non post-ottimizzata (quella con coefficient
+i (0,0), nell'origine) sia sempre peggiore rispetto alla versione su cui
+ invece Granular Tabu Search ha potuto operare
+\end_layout
+
+\begin_layout Enumerate
+Il miglioramento percentuale è tuttavia variabile, e va dallo 0,008% dell'istanz
+a di Condreau al 6% dell'istanza di Solomon, il che più o meno ci riporta
+ in media a quel 3% che era stato osservato nei casi reali
+\end_layout
+
+\begin_layout Standard
+Ho voluto quindi provare a vedere che risultati ottenevo con il caso reale
+ di Primafrost: i risultati sono stati pessimi, in quanto ancora una volta
+ non si riusciva a produrre una soluzione ammissibile.
+\end_layout
+
+\begin_layout Subsubsection
+La consulenza di un esperto del campo, Paolo Toth
+\end_layout
+
+\begin_layout Standard
+Frustrato dai risultati ottenuti, mi sono rivolto al professor Paolo Toth,
+ presso la Facoltà di Ingegneria di Bologna, in quanto affermato studioso
+ del campo ed inventore dell'algoritmo originale.
+ Dal breve colloquio che ho avuto sono riuscito a capire che non c'era nulla
+ di sbagliato in quello che avevo fatto, ero solo stato troppo ingenuo.
+\end_layout
+
+\begin_layout Standard
+Lo sforzo decisivo in queste applicazioni viene sempre fatto dall'euristica
+ principale, non dalla metaeuristica.
+ L'euristica di Clarke e Wright è veramente molto semplice, per cui può
+ adattarsi bene ai casi della letteratura, ma non così bene a casi reali
+ o semplicemente più complessi.
+ La metaeuristica poi svolge il suo lavoro tentando di migliorare ancora
+ di più la soluzione ottenuta, ma se la soluzione di patenza non è buona,
+ risulta quasi del tutto inutile.
+\end_layout
+
+\begin_layout Subsubsection
+Risultati con l'algoritmo genetico
+\end_layout
+
+\begin_layout Standard
+A causa delle scadenze temporali, che ormai si erano rivelate pressanti,
+ ho deciso comunque di fare anche gli esperimenti con l'algoritmo genetico.
+ In fondo dovevo semplicemente dimostrare che questa metodologia poteva
+ comunque produrre i risultati che cercavamo in modo automatico.
+\end_layout
+
+\begin_layout Standard
+Nel nostro caso avevamo dei valori di output da usare come riferimento,
+ e dovevamo trovare quale combinazione di coefficienti produceva quel risultato,
+ o qualcosa di simile, per cui non era così importante quale fosse l'effettivo
+ valore della funzione in ogni punto.
+\end_layout
+
+\begin_layout Standard
+Nel nostro caso i coefficienti su cui potevamo condurre i test erano solo
+ 2: costo dei chilometri percorsi e costo del tempo impiegato.
+ Ogni coppia in teoria poteva produrre soluzioni diverse le une dalle altre,
+ anche se idealmente non era difficile, osservando come si era comportata
+ la funzione sul campo, presagire che maggiore era il valore di un fattore
+ di costo, più la procedura avrebbe cercato di favorire soluzioni che minimizzav
+ano la voce di costo relativa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nell'algoritmo genetico venivano utilizzati 100 agenti come 
+\begin_inset Quotes eld
+\end_inset
+
+popolazione iniziale
+\begin_inset Quotes erd
+\end_inset
+
+ e partire dai 10000 ottenibili facendo il prodotto cartesiano tra i 100
+ valori possibili per il primo fattore e 100 del secondo.
+\end_layout
+
+\begin_layout Standard
+Ho deciso dunque di limitare il mio studio alle prime 10 generazioni a partire
+ da quella iniziale, in modo da vedere se era possibile già individuare
+ delle tendenze chiare anche se con così pochi agenti e tempo.
+ Al di sopra di questa soglia, infatti, la convenienza del procedimento
+ genetico rispetto a quello 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ andava scemando, se si teneva conto anche del fatto che il primo restituiva
+ solo una soluzione approssimata, mentre il secondo una soluzione esatta.
+\end_layout
+
+\begin_layout Standard
+Per rendere evidente che la selezione genetica operava in modo totalmente
+ indipendente dall'andamento della funzione, ho deciso di operare nel seguente
+ modo:
+\end_layout
+
+\begin_layout Enumerate
+Nell'istanza trattata da Condreau, ovrei impostato il valore desiderato
+ in modo che fosse 
+\series bold
+maggiore
+\series default
+ di tutti i valori ottenuti tramite 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In questo modo sarebbe dovuto emergere come più adatto il valore massimo,
+ ovvero quello ottenuto dalla coppia (0,0)
+\end_layout
+
+\begin_layout Enumerate
+Nel caso invece dell'istanza di Solomon, avrei impostato il valore desiderato
+ in modo che fosse 
+\series bold
+minore
+\series default
+ di tutti i valori ottenuti tramite 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In questo modo si sarebbe dovuto notare che la coppia che produceva il
+ valor minimo risultasse avvantaggiata, mentre la coppia (0,0) avrebbe dovuto
+ scomparire, in quanto produceva il valore massimo
+\end_layout
+
+\begin_layout Enumerate
+Non avrei invece minimamente trattato il caso reale in questa ultima fase,
+ in quanto non risultava essere particolarmente significativo
+\end_layout
+
+\begin_layout Standard
+In quest'ultima fase i risultati sono stati abbastanza soddisfacenti, come
+ si può notare in figura.
+ Per una trattazione dettagliata rimando invece il lettore alla sezione
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Validazione-risultati"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -5393,6 +5583,10 @@ name "sub:Validazione-risultati"
 \end_inset
 
 Validazione risultati
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard

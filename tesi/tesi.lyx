@@ -524,7 +524,45 @@ Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
 tà della distribuzione.
  I suoi punti di vendita sono sparsi per tutta la parte settentrionale dell'Ital
 ia, mentre il magazzino centrale è situato vicino a Mantova.
- Attualmente il numero dei punti di vendita è in continuo aumento, e Primafrost
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename clienti1.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+In figura la distribuzione dei clienti di Primafrost, aggiornata al 24/09/2010
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Attualmente il numero dei punti di vendita è in continuo aumento, e Primafrost
  doveva rivedere il metodo con cui gestiva la creazione delle gite ed il
  dispiegamento della sua flotta di veicoli.
  
@@ -4569,13 +4607,184 @@ I pesi non erano modificabili da interfaccia grafica, ed ecco perchè non
 
 \begin_layout Standard
 Ciò che si è potuto notare è che, ponendo i risultati in un ipotetico piano
- cartesiano organizzato come in figura, la funzione risulta abbastanza prevedibi
-le, tuttavia in alcuni casi che abbiamo trovato presentava alcune discontinuità.
+ cartesiano organizzato come in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:funzione1"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:funzione2"
+
+\end_inset
+
+, la funzione risulta abbastanza prevedibile, tuttavia in alcuni casi che
+ abbiamo trovato presentava alcune discontinuità.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename costokm_vs_spazio.eps
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename costokm_vs_tempo.eps
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:funzione1"
+
+\end_inset
+
+Come si può notare, sia dal punto di vista spaziale che di quello temporale,
+ la funzione risulta in linea di massima prevedibile, ma presenta delle
+ discontinuità.
+ In queste figure il costo del tempo di guida era stato impostato su un
+ valore arbitrario di 100.
+ Il valore riportato per il costo dei kilometri è in realtà il rapporto
+ tra il costo dei kilometri e quello del tempo.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Non era pertanto possibile prevedere in modo accurato i risultati che si
  sarebbero ottenuti.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename costokm_vs_velocita.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:funzione2"
+
+\end_inset
+
+Grafico ricavato da quelli già visti in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:funzione1"
+
+\end_inset
+
+.
+ Per ogni punto sull'asse delle ascisse, è stato fatto il rapporto tra il
+ valore delle ordinate dei due due grafici, in modo che si ottenesse una
+ misura della velocità media.
+ Come si può notare, con un valore minimo del coeffciente del costo dei
+ chilometri vengano privilegiate soluzioni con una velocità media più alta,
+ mentre mano a mano che il costo dei chilometri cresce, vengono privilegiate
+ soluzioni con velocità medie più basse ma che contemplano percorsi in media
+ più brevi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -4621,9 +4830,9 @@ ia sembrava effettivamente influenzare il calcolo del percorso, ma solo
 
 \begin_layout Standard
 La figura illustra quello che esponeva l'interfaccia: mettendo un valore
- massimo a quel coefficiente avremmo in teoria dovuto influenzare la ricerca
- in modo che selezionasse il percorso più breve, al contrario avrebbe selezionat
-o il più veloce.
+ minimo a quel coefficiente avremmo in teoria dovuto influenzare la ricerca
+ in modo che selezionasse il percorso più veloce, al contrario avrebbe seleziona
+to il più breve.
 \end_layout
 
 \begin_layout Standard
@@ -5418,6 +5627,112 @@ a di Condreau al 6% dell'istanza di Solomon, il che più o meno ci riporta
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename condreau_bruteforce2.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Istanza di Condreau
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename solomon_brute_force.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Istanza di Solomon
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:genetico1"
+
+\end_inset
+
+Come si può notare, la rappresentazione dei risultati suggerisce la somiglianza
+ con il grafico prodotto da una funzone costante, meno qualche discontinuità.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Ho voluto quindi provare a vedere che risultati ottenevo con il caso reale
  di Primafrost: i risultati sono stati pessimi, in quanto ancora una volta
  non si riusciva a produrre una soluzione ammissibile.
@@ -5579,7 +5894,21 @@ Non avrei invece minimamente trattato il caso reale in questa ultima fase,
 
 \begin_layout Standard
 In quest'ultima fase i risultati sono stati abbastanza soddisfacenti, come
- si può notare in figura.
+ si può notare in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:genetico2"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:genetico3"
+
+\end_inset
+
+.
  Per una trattazione dettagliata rimando invece il lettore alla sezione
  
 \begin_inset CommandInset ref
@@ -5599,6 +5928,237 @@ name "sub:Validazione-risultati"
 \end_inset
 
 Validazione risultati
+\end_layout
+
+\begin_layout Standard
+Ogni esperimento effettuato aveva un qualche criterio di validazione dei
+ risultati.
+ 
+\end_layout
+
+\begin_layout Standard
+Per quanto riguarda i primi esperimenti trovati su 
+\emph on
+VRP Web
+\emph default
+, erano già disponibili sul sito i migliori risultati mai ottenuti sulle
+ istanze, e quindi è stata valutata la vicinanza tra i risultati riportati
+ sul sito e quelli ottenuti empiricamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename condreau1.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename condreau2.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:genetico2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename solomon1.eps
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename solomon10.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:genetico3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

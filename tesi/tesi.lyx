@@ -3122,18 +3122,85 @@ Dalle informazioni che ci sono state fornite da TPS e PTV questa metaeuristica
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+Un esempio di funzionamento di MEFISTO mostrato in grafica lo si può vedere
+ in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Finestra-grafica-MEFISTO"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename mefisto-window.eps
+	scale 50
+
+\end_inset
 
 
-\backslash
-clearpage{
-\backslash
-pagestyle{empty}
-\backslash
-cleardoublepage}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Finestra-grafica-MEFISTO"
+
+\end_inset
+
+Finestra grafica di MEFISTO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Si possono notare vari putni di interesse: nella parte superiore, possiamo
+ vedere un grafico che ci illustra quale sia il costo dell'attuale soluzione
+ migliore (linea verde), della soluzione di partenza (linea rossa), e la
+ soluzione corrente (linea nera).
+\end_layout
+
+\begin_layout Plain Layout
+Nella parte inferiore invece possiamo notare più o meno le stesse informazioni,
+ ma in valore numerico.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3644,6 +3711,26 @@ minimo locale
 \begin_layout Standard
 Ovviamente esistono anche meccanismi diversi dalla mutazione e dal crossover,
  ma non saranno affrontati in quest'elaborato.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+clearpage{
+\backslash
+pagestyle{empty}
+\backslash
+cleardoublepage}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -4233,7 +4320,14 @@ Parametri dell'euristica
 Ben presto ci siamo resi conto che il controllo sui risultati poteva essere
  anche molto fine, anche se abbiamo riscontrato qualche potenziale pecca.
  Oltre a diversi tool per la visualizzazione dei risultati infatti, l'applicazio
-ne ci forniva funzionalità:
+ne ci forniva funzionalità (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schermata-di-PTV"
+
+\end_inset
+
+):
 \end_layout
 
 \begin_layout Itemize
@@ -4266,6 +4360,39 @@ giri base
 \begin_layout Itemize
 per tenere traccia dei vincoli che erano stati eventualmente violati dalla
  soluzione, mediante una piccola console.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schermata-di-PTV"
+
+\end_inset
+
+Schermata di PTV Intertour
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

@@ -544,7 +544,8 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-In figura la distribuzione dei clienti di Primafrost, aggiornata al 24/09/2010
+Distribuzione dei clienti di Primafrost nel Nord Italia, aggiornata al 24/09/201
+0
 \end_layout
 
 \end_inset
@@ -783,13 +784,6 @@ Il nostro obiettivo era dunque quello di studiare le due architetture, osservare
  dei software da noi impiegati.
 \end_layout
 
-\begin_layout Standard
-Una volta conclusa la mia esperienza con Primafrost ho successivamente deciso
- di studiare una soluzione migliore ad un problema in cui ci eravamo imbattuti,
- tentando un approccio basato su algoritmi genetici.
- Questa parte è interamente descritta in un capitolo a parte.
-\end_layout
-
 \begin_layout Section*
 Metodologia usata
 \end_layout
@@ -838,6 +832,140 @@ affidabili
 Per il resto è stato necessario solo un breve addestramento da parte di
  TPS nei nostri confronti per quanto riguardava i prodotti utilizzati, dopodiché
  eravamo già operativi.
+\end_layout
+
+\begin_layout Section*
+Un ulteriore approfondimento
+\end_layout
+
+\begin_layout Standard
+Durante la mia esperienza con Wincor Nixdorf, siamo arrivati ad un punto
+ dove ci siamo resi conto che non erano gli algoritmi ad avere delle falle,
+ anzi quelli ottenevano ottimi risultati, invece non potevamo essere sicuri
+ che i dati riguardanti le mappe ed i limiti dettati dal manto stradale
+ lo fossero.
+\end_layout
+
+\begin_layout Standard
+Si è dovuto limitare quindi l'ottimizzazione complessiva prodotta dallo
+ strumento, in modo che non producesse gite che si sarebbero poi potute
+ rivelare impraticabili.
+ Per fare questo si è deciso di manipolare i fattori di costo della funzione
+ obiettivo che l'applicazione tentava di minimizzare.
+ Questa operazione è stata svolta quasi completamente in modo manuale, facendo
+ previsioni sul comportamento dell'euristica, che tuttavia se analizzata
+ mostrava diverse discontinuità, impedendo un reale studio.
+\end_layout
+
+\begin_layout Standard
+L'apparente approssimatività di questo approccio era tuttavia compensata
+ dalla rapidità con cui ci si riusciva ad avviciniarsi alla soluzione cercata:
+ in pochi giorni eravamo stati in grado non solo di trovare quali relazioni
+ i vari fattori di costo avessero sulle soluzioni generate, ma eravamo anche
+ riusciti a trovare dei coefficienti in grado di produrre i risultati che
+ cercavamo.
+\end_layout
+
+\begin_layout Standard
+Una volta conclusa la mia esperienza con Primafrost ho successivamente deciso
+ di studiare una soluzione migliore ad un problema in cui ci eravamo imbattuti,
+ tentando un approccio basato su algoritmi genetici.
+ Questa parte è interamente descritta in un capitolo a parte.
+\end_layout
+
+\begin_layout Standard
+Questa idea nasceva dalla mia voglia di trovare un modo automatico o semi-automa
+tico per giungere agli stessi risultati a cui eravamo giunti manualmente.
+ Questo da una parte avrebbe probabilmente permesso di perfezionare un metodo
+ utile per un impiego futuro, e dall'altro magari poteva pure permettere
+ di offrire garanzie sulle proprietà della soluzione trovata.
+\end_layout
+
+\begin_layout Standard
+L'idea di base era di effettuare qualche simulazione con un ristretto numero
+ di agenti, il cui corredo genetico sarebbe stato rappresentato da una coppia
+ di coefficienti.
+ questi coefficienti avrebbero rappresentato i valori per i fattori di costo
+ che avevamo modificato nell'istanza reale.
+\end_layout
+
+\begin_layout Standard
+Questi valori sarebbero stati utlizzati dal software per generare le gite,
+ restituendo il totale dei kilometri percorsi ed il tempo impiegato per
+ percorrerli.
+ La sopravvivenza di ogni agente sarebbe quindi stata dettata dalla vicinanza
+ della soluzione, ottenuta mediante i suoi geni, ad un valore arbitrario.
+ In questo modo risultavano favoriti nella corsa per la sopravvivenza solo
+ gli agenti che generavano soluzioni vicine al valore che cercavamo, per
+ cui sarebbe bastato vedere quale era la popolazione vincente alla fine
+ dell'esecuzione.
+\end_layout
+
+\begin_layout Standard
+Per avere il massimo dell'attinenza tra i risultati delle istanze classiche
+ e quelli del caso reale avevo pensato di utilizzare gli stessi strumenti
+ che avevo utilizzato in Wincor, o qualcosa del genere, tuttavia non è stato
+ possibile a causa delle difficoltà, del tutto comprensibile, a farmi consegnare
+ una versione delle mappe da TPS, in modo da poterle utilizzare per gli
+ esperimenti.
+\end_layout
+
+\begin_layout Standard
+Non potendo accedere ai dati originali, e non trovando un modo per far utilizzar
+e ai componenti dei dati creati appositamente da me, ho deciso di tentare
+ la realizzazione di un'implementazione che mimasse le funzioanlità principali
+ dello strumento, ovvero appunto la creazione di rotte.
+\end_layout
+
+\begin_layout Standard
+Siccome non sapevo nulla sull'euristica utilizzata per produrre le gite,
+ ma sapevo che il componente MEFISTO, che veniva utilizzato per la post-ottimizz
+azione, era basato sulla metaeuristica Granular Tabu Search, ne ho reimplementat
+o la versione originale, e provata sia su istanze già utilizzate dalla letteratu
+ra scientifica che sui dati del caso reale in studio.
+\end_layout
+
+\begin_layout Standard
+I risultati sono stati tutt'altro che strabilianti, così sono andato ad
+ esporre i miei dubbi all'ideatore di Granular Tabu Search, Paolo Toth,
+ il quale mi ha confermato i sospetti che già avevo: avevo implementato
+ correttamente la metaeuristica, ma tutti i risultati finali si basavano
+ su una prima soluzione generata da una euristica rapida, e nella versione
+ da me utilizzata avevo usato un'euristica troppo semplice, non in grado
+ di risolvere brillentemente i problemi che le sottoponevo.
+ In particolare le istanze classiche risultavano ancora fattibili, anche
+ se non si giungeva a risultati strabilianti, mentre l'applicazione non
+ era ingrado di trovare una soluzione per quanto riguardava il caso reale
+ di Primafrost.
+\end_layout
+
+\begin_layout Standard
+Purtroppo non avevo più tempo per reimplementare l'euristica, e così ho
+ dovuto accontentarmi di ciò che avevo.
+\end_layout
+
+\begin_layout Standard
+Nonostante i dati tutto sommato pessimi e le differenze minime tra i valori
+ delle soluzioni migliori rispetto a quelle pessime, i risultati sono stati
+ accettabili: anche usando poche generazioni, e quindi poche iterazioni
+ della procedura, si notava che venivano chiaramente privilegiati gli agenti
+ vincenti.
+\end_layout
+
+\begin_layout Standard
+I risultati ottenuti, quindi, fanno sperare che l'approccio genetico da
+ me utilizzato sia comunque praticabile, e anzi possa diventare auspicabile
+ nel caso si debba un giorno affrontare un problema dello stesso genere,
+ ma più complesso.
+\end_layout
+
+\begin_layout Standard
+A queste conclusioni sono giunto dopo aver paragonato i tempi impiegati
+ dall'algoritmo genetico con un'altro algoritmo, più stupido, che invece
+ provava tutte le soluzioni possibili.
+ Si notava infatti che, benché quest'ultimo garantisse di trovare una soluzione
+ ottima, invece che una semplicemente buona come nel caso genetico, impiegava
+ anche un tempo che era 10 volte maggiore.
 \end_layout
 
 \begin_layout Section*
@@ -892,7 +1020,9 @@ Implementazione:
  irrisolto.
  Spiegando l'idea da cui sono partito, il procedimento da me adottato ed
  i risultati finali è possibile formulare alcune ipotesi sulla struttura
- dell'algoritmo sottostante il framework MEFISTO
+ dell'algoritmo sottostante il framework MEFISTO.
+ Inoltre dai risultati si evincono anche alcune potenzialità e difetti della
+ mia implementazione
 \end_layout
 
 \begin_layout Standard
@@ -4694,6 +4824,8 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+
+\series bold
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -4703,6 +4835,30 @@ name "fig:funzione1"
 
 \end_inset
 
+
+\emph on
+Rappresentazione grafica dell'andamento dei risultati dell'euristica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 Come si può notare, sia dal punto di vista spaziale che di quello temporale,
  la funzione risulta in linea di massima prevedibile, ma presenta delle
  discontinuità.
@@ -4715,10 +4871,6 @@ Come si può notare, sia dal punto di vista spaziale che di quello temporale,
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4759,6 +4911,27 @@ name "fig:funzione2"
 
 \end_inset
 
+
+\emph on
+Rappresentazione grafica della relazione tra coefficiente di costo e velocità
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 Grafico ricavato da quelli già visti in figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5714,6 +5887,28 @@ name "fig:genetico1"
 
 \end_inset
 
+
+\emph on
+Comparazione tra due regioni interessanti tra l'istanza di Solomon e quella
+ di Condreau.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
 Come si può notare, la rappresentazione dei risultati suggerisce la somiglianza
  con il grafico prodotto da una funzone costante, meno qualche discontinuità.
 \end_layout
@@ -5739,6 +5934,12 @@ Ho voluto quindi provare a vedere che risultati ottenevo con il caso reale
 \end_layout
 
 \begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:La-consulenza-di"
+
+\end_inset
+
 La consulenza di un esperto del campo, Paolo Toth
 \end_layout
 
@@ -5931,98 +6132,250 @@ Validazione risultati
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+Ogni esperimento effettuato aveva un qualche criterio di validazione dei
+ risultati.
+ 
+\end_layout
+
+\begin_layout Standard
+Per quanto riguarda i primi esperimenti trovati su 
+\emph on
+VRP Web
+\emph default
+, erano già disponibili sul sito i migliori risultati mai ottenuti sulle
+ istanze, e quindi è stata valutata la vicinanza tra i risultati riportati
+ sul sito e quelli ottenuti empiricamente.
+ Per quanto riguarda l'istanza di Primafrost è stata invece valutata la
+ vicinanza con i risultati ottenuti sul campo con MEFISTO.
+ I risultati sono visibili nella tabella 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:validazione brute force"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features islongtable="true" headBottomDL="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row endhead="true" endfirsthead="true">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename condreau1.eps
-	scale 50
+Istanza
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Costo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Miglior risultato
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Post-ottimizato
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Miglioramento
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Condreau
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1123.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+828.54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1123.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,001 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Solomon
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1508.89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+827.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1425.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,53%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Primafrost
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9769558
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3753
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9769558
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename condreau2.eps
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:genetico2"
+name "tab:validazione brute force"
 
 \end_inset
 
-
+Comparazione tra i risultati ottenuti con la mia implementazione e quelli
+ migliori mai trovati
 \end_layout
 
 \end_inset
@@ -6031,12 +6384,112 @@ name "fig:genetico2"
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Come si può notare, i risultati ottenuti non sono per niente straordinari,
+ a causa dell'euristica di base troppo semplice, come spiegato nella sezione
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:La-consulenza-di"
+
+\end_inset
+
+.
+ Tuttavia, tolta l'istanza di Primafrost, che risultava essere troppo complessa
+ e quindi non risolvibile in modo ammissibile in un tempo così limitato,
+ negli altri due casi la metaeuristica produceva comunque un miglioramento,
+ ed in media si riotteneva un 3% di miglioramento rispetto alla soluzione
+ non post-ottimizzata, ovvero un risultato simile a quello che erano stati
+ i risultati con MEFISTO.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Per quanto riguarda i risultati ottenuti con gli algortimi genetici sono
+ state fatte solo delle indagini di tendenza, mediante statistiche, che
+ tuttavia dimostrano come l'algoritmo si comporti piuttosto bene anche se
+ il tempo a disposizione risulta limitato.
+\end_layout
+
+\begin_layout Standard
+La popolazione iniziale era fondamentalmente scelta a caso, ma si notavano
+ un paio di cose interessanti:
+\end_layout
+
+\begin_layout Enumerate
+Se la popolazione inziale non conteneva agenti con corredo genetico (0,0)
+ e (0,1), allora quello che si otteneva era un insieme di agenti che producevano
+ lo stesso valore (come spiegato anche nella sezione precedente), e quindi,
+ essendo tutti equivalenti, nessuno di loro poteva prevalere.
+ Il fatto che il grafico non mostrasse nessuna predominanza di un gruppo
+ su un altro ci diceva che tutti gli agenti, e quindi le coppie di fattori,
+ erano equivalenti
+\end_layout
+
+\begin_layout Enumerate
+Se invece la popolazione iniziale conteneva una delle coppie interessanti,
+ il gruppo che raggiungeva un valore più vicno a quello desiderato tendeva
+ a dominare sugli altri, esattamente come previsto, anche se i risultati
+ potevano variare notevolmente, come si può vedere nelle figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:genetico2"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:genetico3"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+I risultati apparivano estremamente evidenti se gli agenti venivano raggruppati
+ in base al valore della funzione di 
+\begin_inset Quotes eld
+\end_inset
+
+idoneità
+\begin_inset Quotes erd
+\end_inset
+
+ (vedi 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Algoritmo-genetico"
+
+\end_inset
+
+).
+ Infatti, a causa delle continue ricombinazioni e mutazioni genetiche, non
+ era possibile studiare nel particolare l'evoluzione dei singoli geni.
+ Raggruppandoli invece in base all'idoneità i risultati apparivano più chiari
+ perchè si riusciva a prevedere quale gruppo avrebbe vinto.
 \end_layout
 
 \begin_layout Standard
@@ -6055,7 +6508,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename solomon1.eps
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -6063,6 +6516,12 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:solomon-a"
+
+\end_inset
+
 
 \end_layout
 
@@ -6085,12 +6544,12 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename solomon10.eps
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -6101,6 +6560,56 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:solomon-b"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename solomon_prob.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:solomon-c"
+
+\end_inset
+
 
 \end_layout
 
@@ -6129,6 +6638,63 @@ name "fig:genetico3"
 \end_inset
 
 
+\emph on
+Tendenza della popolazione nell'istanza di Solomon
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Si individuano 3 cluster di 
+\begin_inset Quotes eld
+\end_inset
+
+idoneità
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:solomon-a"
+
+\end_inset
+
+): quello della coppia (0,0), quello della coppia (0,1) e quelle di tutte
+ le altre coppie.
+ La coppia (0,1) è quella con idoneità maggiore, (0,0) è quella con idoneità
+ minore, mentre tutte le altre presentano un valor medio.
+ Dopo 10 generazioni (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:solomon-b"
+
+\end_inset
+
+), la popolazione con minor idoneità è già scomparsa, mentre la popolazione
+ più idonea si espande, tuttavia non domina ancora.
+ Questa rapidità nel processo è interessante notando la differenza minima
+ tra le idoneità dei cluster (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:solomon-c"
+
+\end_inset
+
+).
 \end_layout
 
 \end_inset
@@ -6143,6 +6709,828 @@ name "fig:genetico3"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+La variabilità dei sisultati di cui parla il punto 2 si riferisce ad un
+ caso abbastanza anomalo che si era verificato in una particolare esecuzione
+ di Granular Tabu Search sull'istanza di Condreau: la popolazione iniziale
+ era ben assortita, e poteva essere divisa in 2 gruppi, uno contenente tutti
+ gli agenti con corredo genetico la coppia (0,0) ed uno contenente tutti
+ gli altri.
+\end_layout
+
+\begin_layout Standard
+Ovviamente (0,0), per come è stato spiegato nella sezione precedente, era
+ una coppia favorita e quella particolare popolazione mostrava un'idoneità
+ più alta.
+ Durante l'esecuzione anomala, a causa di una mutazione genetica in uno
+ dei figli, si era formato un altro individuo (0,0).
+ Questi 2 individui avevano cominciato a riprodursi, oltre che con gli altri,
+ anche tra di loro, siccome erano due individui favoriti.
+\end_layout
+
+\begin_layout Standard
+Casi simili capitavano anche nell'istanza di Solomon, tuttavia, in questa
+ particolare esecuzione, una serie particolarmente fortunata di numeri casuali
+ generati nella procedura di riproduzione avevano dato luogo ad una vera
+ e propria esplosione della popolazione favorita.
+ Dopo questa serie di 
+\begin_inset Quotes eld
+\end_inset
+
+rapporti incestuosi
+\begin_inset Quotes erd
+\end_inset
+
+, la percentuale degli individui appartenenti alla popolazione con corredo
+ genetico (0,0) era cresciuta molto, e questo favorì nuovamente la riproduzione
+ intra-gruppo rispetto a quella extra-gruppo, essendo la popolazione favorita.
+ Alla decima generazione la popolazione favorita dominava rispetto alle
+ altre.
+\end_layout
+
+\begin_layout Standard
+Questo risultato risulta ancora più straordinario se si pensa che le differenze
+ tra i valori di idoneità tra i 2 gruppi erano situate oltre la quarta cifra
+ significativa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename condreau1.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:condreau-a"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename condreau2.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:condreau-b"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename condreau_prob.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:condreau-c"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:genetico2"
+
+\end_inset
+
+
+\emph on
+Tendenza della popolazione in una esecuzione particolare nell'istanza di
+ Condreau.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+Come si può notare in figura, vi sono due gruppi, di cui il gruppo con genoma
+ (0,0) è il favorito (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:condreau-a"
+
+\end_inset
+
+).
+ A causa di una fortunata serie di eventi, la decima generazione vede lo
+ strapotere di quest'ultimo (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:condreau-b"
+
+\end_inset
+
+), benché la differenza tra l'idoneità tra i due gruppi fosse differente
+ come valore solo a partire dalla quarta cifra significativa, e quindi nel
+ grafico non si nota (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:condreau-c"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si poteva quindi concludere che anche la più piccola differenza era importante
+ per l'algoritmo, tuttavia non era possibile stabilire a priori il peso
+ che queste differenze avrebbero avuto sulla singola esecuzione.
+\end_layout
+
+\begin_layout Section
+Confronto tra i metodi di scelta dei coefficienti
+\end_layout
+
+\begin_layout Standard
+In questo elaborato abbiamo visto 3 metodi con cui si sarebbero potute soddisfar
+e le esigenze del cliente.
+ Ci era infatti stato chiesto di trovare una coppia di coefficienti che
+ permettesse al nostro strumento di riprodurre più o meno fedelmente i risultati
+ già conosciuti.
+ 
+\end_layout
+
+\begin_layout Standard
+Sul campo si è potuto vedere all'opera solo uno dei 3 metodi, quello manuale,
+ basato su previsioni e stime fatte da esseri umani.
+ Il metodo si è rivelato vincente poichè ha prodotto buoni risultati in
+ poco tempo, tuttavia non vi è alcune reale garanzia che il risultato trovato
+ sia il migliore ottenibile.
+\end_layout
+
+\begin_layout Standard
+Esistono quindi almeno altri 2 metodi per trovare i coefficienti suddetti,
+ che però fanno affidamento su componenti informatici.
+ Garantiscono un risultato buono, se non necessariamente il migliore in
+ assoluto, però richiedono più risorse per trovare la soluzione giusta (Tabella
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:CPU-time"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Metodo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Qualità della soluzione
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+CPU Time (min)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Genetico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buona ( a volte Ottima)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Brute Force
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ottima
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:CPU-time"
+
+\end_inset
+
+Confronto tra le prestazioni dell'algoritmo genetico e quello 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+L'approccio 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ garantisce di trovare una soluzione ottima, ma per trovarla deve esplorare
+ tutte le soluzioni possibili.
+ Nel nostro caso vi erano all'incirca diecimila combinazioni, ognuna delle
+ quali veniva utlizzata all'interno di Granular Tabu Search, la cui esecuzione
+ durava un paio di minuti.
+ Il tempo totale impiegato era quindi di circa 20000 minuti, se eseguito
+ su una singola CPU.
+ Sono state utilizzate circa 40 calcolatori presenti nei laboratori per
+ ridurre il tempo impiegato in modo che risultasse accettabile (circa 3
+ giorni e mezzo).
+ L'algoritmo genetico impega 10 volte meno tempo, ma non è in grado assicurare
+ che quella restituita sia la soluzione ottima, ma solo che sia una tra
+ la migliori soluzioni esaminate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I pro e i contro dei vari metodi si possono vedere nella tabella 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pro-e-contro"
+
+\end_inset
+
+.
+ Da notare che nel cso dell'algoritmo genetico è possibile distinguere un
+ 
+\begin_inset Quotes eld
+\end_inset
+
+caso ottimo
+\begin_inset Quotes erd
+\end_inset
+
+ ed un 
+\begin_inset Quotes eld
+\end_inset
+
+caso pessimo
+\begin_inset Quotes erd
+\end_inset
+
+, questo perché dallo spazio delle 10000 coppie di coefficienti possibili
+ ne sono stati scelti solo 100.
+ Inoltre durante l'esecuzione dell'algoritmo tramite le ricombinazioni e
+ la mutazioni nuove coppie vengono esplorate, per cui possiamo concludere
+ che idealmente, dopo 10 generazioni, o abbiamo ottenuto la dominanza di
+ un gruppo sugli altri, e questo può segnalare il ritrovamento di un'ottima
+ coppia di coefficienti, oppure vengono esplorate un po' meno di 1000 soluzioni
+ equivalenti.
+\end_layout
+
+\begin_layout Standard
+Quindi possiamo dire che, eseguendo più volte l'algoritmo genetico, per
+ esplorare tutte le possibili soluzioni impieghiamo più o meno lo stesso
+ tempo (forse un po' maggiore) rispetto all'algoritmo 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="10page%">
+<column alignment="center" valignment="top" width="10page%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Metodo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Qualità soluzione
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tempo (min)
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+(Caso Ottimo)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tempo (min)
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+(Caso Pessimo)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manuale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buona
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Qualche giorno
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Solo stimabile
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Genetico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buona o Ottima
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+un po' di più di 20000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Brute Force
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ottima
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:pro-e-contro"
+
+\end_inset
+
+Come mostra bene ed in modo sintetico la tabella qui presente, il vantaggio
+ della taratura manuale è la rapidità con cui può produrre un risultato
+ tutto sommato accettabile, ma non garantisce nulla sui tempi impiegati
+ né sulla qualità della soluzione.
+ L'algoritmo 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ è molto migliore dal punto di vista della soluzione, ma pessimo come tempo
+ impiegato.
+ L'algoritmo genetico nel caso ottimo e migliore di entrambi, mentre nel
+ caso pessimo presenta le stesse prestazioni dell'algoritmo 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una cosa che non emerge dalle tabelle è come cresca il tempo impiegato per
+ trovare una buona soluzione nei 3 metodi.
+ Poniamo ad esempio che aumenti il numero dei coefficienti da controllare
+ e/o gli intervalli di valori possibili per ogni coefficiente.
+\end_layout
+
+\begin_layout Standard
+Nel caso aumentino semplicemente gli intervalli, con il metodo manuale il
+ tempo cresce sicuramente, anche se non sappiamo bene prevedere di quanto.
+ Se invece aumentiamo il numero di coefficienti cambia tutto, in quanto
+ i risultati diventano difficili da rappresentare in forma grafica, e quindi
+ più difficili da comprendere, per cui possiamo pensare che un aumento dei
+ coefficienti sia più critico di un aumento degli intervalli, e potrebbe
+ rivelarsi una crescita non lineare.
+\end_layout
+
+\begin_layout Standard
+Nel caso dell'algoritmo 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ non cambia nulla, la crescita di tempo rimane lineare sempre e non si perde
+ niente per quanto riguarda la qualità della soluzione, ma i tempi diventano
+ veramente lunghi.
+\end_layout
+
+\begin_layout Standard
+Nel caso dell'algoritmo genetico invece, la crescita di tempo rimane lineare
+ comunque, usando qualche accorgimento nella scelta della popolazione iniziale,
+ si perde qualcosa dal punto di vista della garanzia dell'ottimalità della
+ soluzione, ma si può riuscire ad impiegare fino a 10 volte di meno, come
+ visto in questi esperimenti, nel caso ottimo.
 \end_layout
 
 \begin_layout Standard
@@ -6210,6 +7598,27 @@ Vehicle Routing Problem
 \end_layout
 
 \begin_layout Standard
+Per quanto riguarda il problema trattato nella sezione e approfondito nel
+ capitolo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Implementazione"
+
+\end_inset
+
+, ovvero la ricerca di coefficienti per ottenere un risultato particolare
+ dallo strumento, si è visto che nel caso i coefficienti siano 2 il tempo
+ impiegato risulta poco rispetto alla buona qualità della soluzione.
+ Nel caso si renda necessario manipolare più coefficienti invece l'approccio
+ manuale potrebbe diventare troppo lungo senza al contempo garantire nulla
+ sull'ottimalità della soluzione.
+ Si consiglia pertanto l'utilizzo di un algoritmo basato su metaeuristiche,
+ come l'algoritmo genetico ivi descritto, poiché garantisce di ottenere
+ una soluzione tutto sommato buona richiedendo un ammontare di risorse appena
+ superiore.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -6262,100 +7671,6 @@ status open
 
 
 \backslash
-renewcommand{
-\backslash
-chaptermark}[1]{
-\backslash
-markright{
-\backslash
-thechapter 
-\backslash
- #1}{}} 
-\backslash
-lhead[
-\backslash
-fancyplain{}{
-\backslash
-bfseries
-\backslash
-thepage}]{
-\backslash
-fancyplain{}{
-\backslash
-bfseries
-\backslash
-rightmark}} 
-\backslash
-appendix 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-clearpage{
-\backslash
-pagestyle{empty}
-\backslash
-cleardoublepage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Prima Appendice
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rhead[
-\backslash
-fancyplain{}{
-\backslash
-bfseries 
-\backslash
-thechapter 
-\backslash
-:Prima Appendice}] {
-\backslash
-fancyplain{}{
-\backslash
-bfseries
-\backslash
-thepage}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{thebibliography}{90}              
 \end_layout
 
@@ -6376,6 +7691,23 @@ fancyplain{}{
 bfseries 
 \backslash
 thepage}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries BIBLIOGRAFIA}}
 \end_layout
 
 \begin_layout Plain Layout

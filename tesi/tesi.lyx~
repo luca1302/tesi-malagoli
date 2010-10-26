@@ -1,4 +1,4 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.6 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -506,7 +506,7 @@ bfseries INTRODUZIONE}}
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Scopo della tesi
 \end_layout
 
@@ -599,7 +599,7 @@ one dei componenti che aveva già sviluppato, in modo da offrire ai suoi
  settore.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Motivazioni
 \end_layout
 
@@ -639,7 +639,7 @@ La soluzione del problema risultava quindi economicamente vantaggiosa per
  andato a buon fine, di proporre l'idea anche ad altri suoi clienti.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Stato dell'arte
 \end_layout
 
@@ -713,7 +713,7 @@ Maps&Guide
  non era in grado
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Contributo della tesi
 \end_layout
 
@@ -784,7 +784,7 @@ Il nostro obiettivo era dunque quello di studiare le due architetture, osservare
  dei software da noi impiegati.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Metodologia usata
 \end_layout
 
@@ -834,7 +834,7 @@ Per il resto è stato necessario solo un breve addestramento da parte di
  eravamo già operativi.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsubsection*
 Un ulteriore approfondimento
 \end_layout
 
@@ -847,8 +847,16 @@ Durante la mia esperienza con Wincor Nixdorf, siamo arrivati ad un punto
 \end_layout
 
 \begin_layout Standard
-Si è dovuto limitare quindi l'ottimizzazione complessiva prodotta dallo
- strumento, in modo che non producesse gite che si sarebbero poi potute
+Questo perchè gli addetti di TPS ci avevano spiegato solo in un secondo
+ momento che i dati che riguardavano la topografia erano sicuramente giusti
+ e controllati, mentre quelli che riguardavano i limiti imposti dal manto
+ stradale (gallerie basse, limiti di velocità, ecc.) potevano non essere
+ perfettamente aggiornati per il suolo italiano.
+\end_layout
+
+\begin_layout Standard
+Si è dunque dovuto limitare quindi l'ottimizzazione complessiva prodotta
+ dallo strumento, in modo che non producesse gite che si sarebbero poi potute
  rivelare impraticabili.
  Per fare questo si è deciso di manipolare i fattori di costo della funzione
  obiettivo che l'applicazione tentava di minimizzare.
@@ -885,7 +893,7 @@ tico per giungere agli stessi risultati a cui eravamo giunti manualmente.
 L'idea di base era di effettuare qualche simulazione con un ristretto numero
  di agenti, il cui corredo genetico sarebbe stato rappresentato da una coppia
  di coefficienti.
- questi coefficienti avrebbero rappresentato i valori per i fattori di costo
+ Questi coefficienti avrebbero rappresentato i valori per i fattori di costo
  che avevamo modificato nell'istanza reale.
 \end_layout
 
@@ -4320,7 +4328,14 @@ Parametri dell'euristica
 Ben presto ci siamo resi conto che il controllo sui risultati poteva essere
  anche molto fine, anche se abbiamo riscontrato qualche potenziale pecca.
  Oltre a diversi tool per la visualizzazione dei risultati infatti, l'applicazio
-ne ci forniva funzionalità (figura ):
+ne ci forniva funzionalità (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schermata-di-PTV"
+
+\end_inset
+
+):
 \end_layout
 
 \begin_layout Itemize
@@ -4353,6 +4368,47 @@ giri base
 \begin_layout Itemize
 per tenere traccia dei vincoli che erano stati eventualmente violati dalla
  soluzione, mediante una piccola console.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename schermata intertour.jpg
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schermata-di-PTV"
+
+\end_inset
+
+Schermata di PTV Intertour
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4446,7 +4502,45 @@ Questa rappresentazione, benchè semplice ed abbastanza intuitiva, nasconde
  in sè quello che potrebbe essere considerato un errore di usabilità: le
  linee che congiugono i vari punti di consegna non ricalcano minimamente
  quello che è il percorso reale, sono semplicemente linee che congiungono
- coppie di punti nel modo più diretto possibile.
+ coppie di punti nel modo più diretto possibile (figura ).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gite.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Alcune gite mostrate da Intertour
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

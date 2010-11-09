@@ -430,25 +430,6 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Standard
-
-\series medium
-\size normal
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pagenumbering{roman}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -511,7 +492,7 @@ Scopo della tesi
 \end_layout
 
 \begin_layout Standard
-In quest'elaborato si vuole descrivere la mia breve esperienza maturata
+In quest'elaborato si vuole descrivere la soluzione di un problema maturata
  presso Wincor-Nixdorf, in particolare rispetto ad un problema posto da
  uno dei suoi clienti, Primafrost.
 \end_layout
@@ -592,7 +573,7 @@ Wincor Nixdorf da parte sua aveva già notato che l'interesse dei suoi clienti
  verso problemi di questo tipo era in crescita, tuttavia tutti quelli che
  avevano tentato di risolvere il problema da soli con soluzioni personalizzate
  fino ad allora avevano fallito.
- Facendo teso di queste esperienze, Wincor aveva deciso quindi di accettare
+ Facendo tesoro di queste esperienze, Wincor aveva deciso quindi di accettare
  la sfida, tentando però una strada diversa, che passasse attraverso l'integrazi
 one dei componenti che aveva già sviluppato, in modo da offrire ai suoi
  clienti un servizio che sfruttasse gli anni di esperienza acquisiti nel
@@ -657,7 +638,7 @@ Per fortuna i frutti di anni di ricerca da parte del mondo accademico possono
 \end_layout
 
 \begin_layout Standard
-Alcune tra le soluzione maggiormente accreditate appartengono ad una compagnia,
+Alcune tra le soluzioni maggiormente accreditate appartengono ad una compagnia,
  PTV, di origine tedesca.
 \end_layout
 
@@ -780,7 +761,7 @@ Il nostro obiettivo era dunque quello di studiare le due architetture, osservare
  L'obiettivo che mi era stato assegnato in particolare era quello di studiare
  il framework MEFISTO ed il suo funzionamento.
  Questa indagine mi avrebbe portato, anche se allora non lo immaginavo,
- a conoscere il vasto background di informazioni che sottostava al funzionamento
+ a conoscere il vasto background di informazioni che sottostà al funzionamento
  dei software da noi impiegati.
 \end_layout
 
@@ -806,7 +787,7 @@ Quello che si voleva raggiungere era ottenere risultati che potessero risultare
  Fortunatamente, contemporaneamente allo sviluppo della soluzione per l'ottimizz
 azione delle gite, Primafrost e Wincor Nixdorf stavano mettendo a punto
  un sistema per il monitoraggio dei veicoli, per cui possiamo dire che la
- base di dati da utilizzata per gli esperimenti avrebbe coinciso con quella
+ base di dati utilizzata per gli esperimenti avrebbe coinciso con quella
  degli esperimenti.
  Non si trattava di dati particolarmente precisi, poiché anche il progetto
  di monitoraggio tuttavia era ancora allo stadio embrionale, e c'erano ancora
@@ -817,7 +798,7 @@ azione delle gite, Primafrost e Wincor Nixdorf stavano mettendo a punto
 \begin_layout Standard
 I dati che noi avevamo riguardavano le gite compiute dagli automezzi, e
  suddivise in base alla giornata in cui erano state effettuate.
- Da questo insieme sono state alcune giornate 
+ Da questo insieme sono state scelte alcune giornate 
 \begin_inset Quotes eld
 \end_inset
 
@@ -855,8 +836,8 @@ Questo perchè gli addetti di TPS ci avevano spiegato solo in un secondo
 \end_layout
 
 \begin_layout Standard
-Si è dunque dovuto limitare quindi l'ottimizzazione complessiva prodotta
- dallo strumento, in modo che non producesse gite che si sarebbero poi potute
+Si è dunque dovuto limitare l'ottimizzazione complessiva prodotta dallo
+ strumento, in modo che non producesse gite che si sarebbero poi potute
  rivelare impraticabili.
  Per fare questo si è deciso di manipolare i fattori di costo della funzione
  obiettivo che l'applicazione tentava di minimizzare.
@@ -913,7 +894,7 @@ Questi valori sarebbero stati utlizzati dal software per generare le gite,
 Per avere il massimo dell'attinenza tra i risultati delle istanze classiche
  e quelli del caso reale avevo pensato di utilizzare gli stessi strumenti
  che avevo utilizzato in Wincor, o qualcosa del genere, tuttavia non è stato
- possibile a causa delle difficoltà, del tutto comprensibile, a farmi consegnare
+ possibile a causa della difficoltà, del tutto comprensibile, a farmi consegnare
  una versione delle mappe da TPS, in modo da poterle utilizzare per gli
  esperimenti.
 \end_layout
@@ -1084,9 +1065,33 @@ fancyplain{}{
 \backslash
 bfseries
 \backslash
-rightmark}} 
+rightmark}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-pagenumbering{arabic}
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries STATO DELL'ARTE}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}}
 \end_layout
 
 \end_inset
@@ -3070,7 +3075,7 @@ rich veihicle routing problems
 \end_layout
 
 \begin_layout Standard
-Recentemente però ha cominciato ad emergere un alteriore requisito, ovvero
+Recentemente però ha cominciato ad emergere un ulteriore requisito, ovvero
  la qualità della soluzione stessa, richiesta che si aggiungeva ai precedenti
  vincoli posti.
  Contemporaneamente l'avanzamento tecnologico dell'hardware aveva permesso
@@ -3239,7 +3244,7 @@ Vehicle Routing Problem
  dovranno essere utilizzati da una flotta di veicoli per servire un dato
  insieme di clienti.
  Come è possibile intuire data la sua similitudine con il problema del commesso
- viaggiatore, la sua complessità è elevata, apprteiene infatti all'insieme
+ viaggiatore, la sua complessità è elevata, appartiene infatti all'insieme
  dei problemi NP-hard.
 \end_layout
 
@@ -3381,8 +3386,8 @@ Algoritmo genetico
 \begin_layout Standard
 Un algoritmo genetico è un'euristica di ricerca che cerca di riprodurre
  il processo di evoluzione naturale.
- Quesa euristica è generalemnte usata per genrare utili soluzioni nei problemi
- di ottimizzazione e ricerca.
+ Questa euristica è generalmente usata per generare utili soluzioni nei
+ problemi di ottimizzazione e ricerca.
  Gli algoritmi genetici alla classe più generale dei problemi evoluzionistici,
  i quali generano soluzioni a problemi di ottimizzazione usando tecniche
  ispirate sempre all'evoluzione naturale, quali ereditarietà, mutazione,
@@ -3443,7 +3448,7 @@ di idoneità
 \begin_inset Quotes erd
 \end_inset
 
- viene geeralemnte utilizzata per favorire le soluzioni 
+ viene generalmente utilizzata per favorire le soluzioni 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3480,7 +3485,7 @@ Ripeti fino a che il criterio di terminazione non è raggiunto: (time out,
 
 \begin_deeper
 \begin_layout Enumerate
-segli gli individui più idonei per la riproduzione
+se gli gli individui più idonei per la riproduzione
 \end_layout
 
 \begin_layout Enumerate
@@ -3501,9 +3506,9 @@ Inizializzazione
 \end_layout
 
 \begin_layout Standard
-Inizialmente vengono generate tanti corredi genetici quanti individui della
- popolazione initiale.
- queste rappresentano le soluzioni iniziali.
+Inizialmente vengono generati tanti corredi genetici quanti individui della
+ popolazione iniziale.
+ Queste rappresentano le soluzioni iniziali.
  La dimensione della popolazione iniziale dipende dal problema in questione,
  ma di solito contiene centinaia o migliaia di individui.
 \end_layout
@@ -3511,8 +3516,8 @@ Inizialmente vengono generate tanti corredi genetici quanti individui della
 \begin_layout Standard
 Sempre parlando in linea generale, questa popolazione viene generata casualmente
 , cercando di coprire l'intero spettro della soluzioni possibili.
- Oppure si può anche utilizzare particolari intervalli di valori in cui
- si pensa possano annidarsi le soluzioni migliori.
+ Oppure si possono anche utilizzare particolari intervalli di valori in
+ cui si pensa possano annidarsi le soluzioni migliori.
 \end_layout
 
 \begin_layout Subsection
@@ -3746,6 +3751,60 @@ Architettura proposta
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries ARCHITETTURA PROPOSTA}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Il problema posto da Primafrost, che riguardava il carico, scarico e la
  definizone delle gite per la flotta degli automezzi era facilmente riconducibil
 e ad una particolare istanza di VRP.
@@ -3760,7 +3819,7 @@ Questo tipo di problemi sono tutti NP-hard, tuttavia sono già disponibili
 \begin_layout Standard
 Quando il sottoscritto ha cominciato ad occuparsi di questo progetto lo
  studio di fattibilità non era nella sua fase iniziale, per cui alcune scelte
- erano già state fatte, in quanto si era già arrivati ad una bbozza generale
+ erano già state fatte, in quanto si era già arrivati ad una bozza generale
  del progetto, e visto un paio di alternative possibili.
  Si è tuttavia deciso di riportare comunque tutti i dati, sia quelli precedenti
  al mio arrivo sia quelli successivi per dare un'idea più articolata del
@@ -4016,7 +4075,7 @@ La mia conoscenza dei processi di Primafrost deriva esclusivamente dal bagaglio
 \end_layout
 
 \begin_layout Standard
-Il proceso che era interessante per noi era il processo di gestione delle
+Il processo che era interessante per noi era il processo di gestione delle
  consegne,e questo poteva essere scomposto come segue:
 \end_layout
 
@@ -4502,7 +4561,14 @@ Questa rappresentazione, benchè semplice ed abbastanza intuitiva, nasconde
  in sè quello che potrebbe essere considerato un errore di usabilità: le
  linee che congiugono i vari punti di consegna non ricalcano minimamente
  quello che è il percorso reale, sono semplicemente linee che congiungono
- coppie di punti nel modo più diretto possibile (figura ).
+ coppie di punti nel modo più diretto possibile (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alcune-gite-mostrate"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -4526,6 +4592,12 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alcune-gite-mostrate"
+
+\end_inset
+
 Alcune gite mostrate da Intertour
 \end_layout
 
@@ -5494,6 +5566,60 @@ name "cha:Implementazione"
 \end_inset
 
 Implementazione
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+rightmark}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rhead[
+\backslash
+fancyplain{}{
+\backslash
+bfseries IMPLEMENTAZIONE}]{
+\backslash
+fancyplain{}{
+\backslash
+bfseries
+\backslash
+thepage}}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

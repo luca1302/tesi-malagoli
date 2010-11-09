@@ -16,16 +16,21 @@
 \font_tt_scale 100
 
 \graphics default
-\paperfontsize default
+\paperfontsize 12
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
+\leftmargin 3cm
+\topmargin 2cm
+\rightmargin 3cm
+\bottommargin 2cm
+\headsep 0.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -71,6 +76,10 @@ Alma Mater Studiorum
 \shape default
 \size default
  
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset ERT
 status open
 
@@ -84,6 +93,10 @@ rule[0.1cm]{11.8cm}{0.1mm}
 \end_inset
 
  
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset ERT
 status open
 
@@ -97,6 +110,11 @@ rule[0.5cm]{11.8cm}{0.6mm}
 \end_inset
 
  
+\end_layout
+
+\begin_layout Standard
+\align center
+
 \series bold
 \size small
 FACOLTÀ DI SCIENZE MATEMATICHE, FISICHE E NATURALI
@@ -446,10 +464,12 @@ addcontentsline{toc}{chapter}{Introduzione}
 \end_layout
 
 \begin_layout Chapter*
+\paragraph_spacing double
 Introduzione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -488,16 +508,19 @@ bfseries INTRODUZIONE}}
 \end_layout
 
 \begin_layout Subsubsection*
+\paragraph_spacing double
 Scopo della tesi
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In quest'elaborato si vuole descrivere la soluzione di un problema maturata
  presso Wincor-Nixdorf, in particolare rispetto ad un problema posto da
  uno dei suoi clienti, Primafrost.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Primafrost si occupa di servire i numerosi canali di vendita del Gruppo
  Lombardini (supermercati, discount,ipermercati, cash & carry, e-commerce,
  grossisti) ponendo sempre molta attenzione non solo alla qualità della
@@ -544,6 +567,7 @@ Distribuzione dei clienti di Primafrost nel Nord Italia, aggiornata al 24/09/201
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Attualmente il numero dei punti di vendita è in continuo aumento, e Primafrost
  doveva rivedere il metodo con cui gestiva la creazione delle gite ed il
  dispiegamento della sua flotta di veicoli.
@@ -551,6 +575,7 @@ Attualmente il numero dei punti di vendita è in continuo aumento, e Primafrost
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Finora infatti tutto questo era stato gestito in modo quasi esclusivamente
  manuale: lo sforzo principale era infatti svolto da un solo dipendente,
  il quale in quanto ex-camionista aveva grande esperienza delle tessuto
@@ -562,6 +587,7 @@ Finora infatti tutto questo era stato gestito in modo quasi esclusivamente
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tuttavia ogni infrastruttura che si regge su un solo elemento insostituibile
  ha ovvi problemi di scalabilità, e la crescente richiesta aveva fatto sì
  che anche i vertici dell'azienda si rendessero conto del problema, chiedendo
@@ -569,6 +595,7 @@ Tuttavia ogni infrastruttura che si regge su un solo elemento insostituibile
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Wincor Nixdorf da parte sua aveva già notato che l'interesse dei suoi clienti
  verso problemi di questo tipo era in crescita, tuttavia tutti quelli che
  avevano tentato di risolvere il problema da soli con soluzioni personalizzate
@@ -581,10 +608,12 @@ one dei componenti che aveva già sviluppato, in modo da offrire ai suoi
 \end_layout
 
 \begin_layout Subsubsection*
+\paragraph_spacing double
 Motivazioni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Problemi come questo non sono nuovi nel mondo della Ricerca Operativa: il
  problema di Primafrost era infatti riconducibile ad un problema piuttosto
  noto in campo accademico, detto 
@@ -604,6 +633,7 @@ lmente significativa, dalla capacità limitata dei veicoli fino a limitazioni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa tipologia di problemi infatti è interessante sia da un punto di vista
  accademico per la sua elevata complessità, sia da un punto di vista commerciale
 , poiché le voci di costo interessate sono in genere dell'ordine di milioni
@@ -613,6 +643,7 @@ Questa tipologia di problemi infatti è interessante sia da un punto di vista
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La soluzione del problema risultava quindi economicamente vantaggiosa per
  entrambe le aziende, e lasciava intravedere interessanti possibili futuri
  sviluppi.
@@ -621,16 +652,19 @@ La soluzione del problema risultava quindi economicamente vantaggiosa per
 \end_layout
 
 \begin_layout Subsubsection*
+\paragraph_spacing double
 Stato dell'arte
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Utilizzando la sua solita metodologia, Wincor ha deciso di non agire come
  una software house sviluppando da subito componenti nuovi, ma ha cercato
  dapprima se esistevano soluzioni già commercializzate.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per fortuna i frutti di anni di ricerca da parte del mondo accademico possono
  oggi essere beneficiati anche dal mondo commerciale: esistono infatti alcune
  soluzioni software che già oggi risolvono diverse tipologie e varianti
@@ -638,11 +672,13 @@ Per fortuna i frutti di anni di ricerca da parte del mondo accademico possono
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Alcune tra le soluzioni maggiormente accreditate appartengono ad una compagnia,
  PTV, di origine tedesca.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le soluzioni software di PTV sono oggi utilizzate da un ampio pubblico,
  e anche da diverse aziende più o meno grandi.
  Si può dire che ovunque vi sia un problema di instradamento di veicoli
@@ -651,12 +687,14 @@ Le soluzioni software di PTV sono oggi utilizzate da un ampio pubblico,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Qui in Italia uno dei suoi clienti è nient'altro che Poste Italiane,la quale
  aveva un ovvio problema nell'ottimizzare le spedizioni postali, e ha trovato
  conveniente utilizzare un software specializzato per trovare una soluzione.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come si può intuire, PTV ha diverse partnership sparse un po' per tutta
  Europa.
  In Italia il partner di riferimento è TPS, con cui Wincor Nixdorf aveva
@@ -666,6 +704,7 @@ Come si può intuire, PTV ha diverse partnership sparse un po' per tutta
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il pacchetto impiegato era 
 \begin_inset Quotes eld
 \end_inset
@@ -695,10 +734,12 @@ Maps&Guide
 \end_layout
 
 \begin_layout Subsubsection*
+\paragraph_spacing double
 Contributo della tesi
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'azienda infatti stava guardando il mercato alla ricerca di una soluzione
  che le paresse adatta, in modo da poter effettuare un primo studio di fattibili
 tà, sulla base del quale avrebbe deciso il modus operandi per risolvere
@@ -706,6 +747,7 @@ tà, sulla base del quale avrebbe deciso il modus operandi per risolvere
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il contributo principale di questa tesi riguarda quindi proprio i dati raccolti
  ed i risultati ottenuti nell'ambito di questo studio di fattibilità.
  Il lavoro da me svolto presso Wincor Nixdorf è il risultato di un esperienza
@@ -715,12 +757,14 @@ Il contributo principale di questa tesi riguarda quindi proprio i dati raccolti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il mio ingresso nell'azienda è avvenuto un po' dopo l'inizio effettivo del
  progetto, per cui alcune decisioni erano già state prese, ma le sorprese
  non sono venute a mancare in ogni caso.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Al momento del mio ingresso, si era ormai inquadrato abbastanza nello specifico
  quali architetture software potevano soddisfare i requisiti impostici dal
  cliente.
@@ -741,6 +785,7 @@ te sviluppata per Primafrost sia con l'ERP aziendale, oppure si poteva anche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Da entrambe queste due soluzioni ci si aspettava che producessero buoni
  risultati, e difatti le premesse c'erano, in quanto a prima vista sembravano
  utilizzare gli stessi algoritmi, anche se magari in modi simili ma non
@@ -755,6 +800,7 @@ Da entrambe queste due soluzioni ci si aspettava che producessero buoni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il nostro obiettivo era dunque quello di studiare le due architetture, osservare
  le loro potenzialità, i loro limiti, ed infine scegliere quali delle due
  si adattava meglio alle nostre esigenze.
@@ -766,10 +812,12 @@ Il nostro obiettivo era dunque quello di studiare le due architetture, osservare
 \end_layout
 
 \begin_layout Subsubsection*
+\paragraph_spacing double
 Metodologia usata
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Era importante coinvolgere il cliente e contemporaneamente fargli percepire
  che da parte nostra vi era interesse per il suo problema.
  Per questo si era optato per un modello di sviluppo incrementale e con
@@ -777,6 +825,7 @@ Era importante coinvolgere il cliente e contemporaneamente fargli percepire
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Quello che si voleva raggiungere era ottenere risultati che potessero risultare
  credibili e vicini il più possibile a quella che sarebbe risultata essere
  la realtà di utilizzo.
@@ -796,6 +845,7 @@ azione delle gite, Primafrost e Wincor Nixdorf stavano mettendo a punto
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I dati che noi avevamo riguardavano le gite compiute dagli automezzi, e
  suddivise in base alla giornata in cui erano state effettuate.
  Da questo insieme sono state scelte alcune giornate 
@@ -810,16 +860,19 @@ affidabili
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per il resto è stato necessario solo un breve addestramento da parte di
  TPS nei nostri confronti per quanto riguardava i prodotti utilizzati, dopodiché
  eravamo già operativi.
 \end_layout
 
 \begin_layout Subsubsection*
+\paragraph_spacing double
 Un ulteriore approfondimento
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Durante la mia esperienza con Wincor Nixdorf, siamo arrivati ad un punto
  dove ci siamo resi conto che non erano gli algoritmi ad avere delle falle,
  anzi quelli ottenevano ottimi risultati, invece non potevamo essere sicuri
@@ -828,6 +881,7 @@ Durante la mia esperienza con Wincor Nixdorf, siamo arrivati ad un punto
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo perchè gli addetti di TPS ci avevano spiegato solo in un secondo
  momento che i dati che riguardavano la topografia erano sicuramente giusti
  e controllati, mentre quelli che riguardavano i limiti imposti dal manto
@@ -836,6 +890,7 @@ Questo perchè gli addetti di TPS ci avevano spiegato solo in un secondo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si è dunque dovuto limitare l'ottimizzazione complessiva prodotta dallo
  strumento, in modo che non producesse gite che si sarebbero poi potute
  rivelare impraticabili.
@@ -847,6 +902,7 @@ Si è dunque dovuto limitare l'ottimizzazione complessiva prodotta dallo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'apparente approssimatività di questo approccio era tuttavia compensata
  dalla rapidità con cui ci si riusciva ad avviciniarsi alla soluzione cercata:
  in pochi giorni eravamo stati in grado non solo di trovare quali relazioni
@@ -856,6 +912,7 @@ L'apparente approssimatività di questo approccio era tuttavia compensata
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una volta conclusa la mia esperienza con Primafrost ho successivamente deciso
  di studiare una soluzione migliore ad un problema in cui ci eravamo imbattuti,
  tentando un approccio basato su algoritmi genetici.
@@ -863,6 +920,7 @@ Una volta conclusa la mia esperienza con Primafrost ho successivamente deciso
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa idea nasceva dalla mia voglia di trovare un modo automatico o semi-automa
 tico per giungere agli stessi risultati a cui eravamo giunti manualmente.
  Questo da una parte avrebbe probabilmente permesso di perfezionare un metodo
@@ -871,6 +929,7 @@ tico per giungere agli stessi risultati a cui eravamo giunti manualmente.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'idea di base era di effettuare qualche simulazione con un ristretto numero
  di agenti, il cui corredo genetico sarebbe stato rappresentato da una coppia
  di coefficienti.
@@ -879,6 +938,7 @@ L'idea di base era di effettuare qualche simulazione con un ristretto numero
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questi valori sarebbero stati utlizzati dal software per generare le gite,
  restituendo il totale dei kilometri percorsi ed il tempo impiegato per
  percorrerli.
@@ -891,6 +951,7 @@ Questi valori sarebbero stati utlizzati dal software per generare le gite,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per avere il massimo dell'attinenza tra i risultati delle istanze classiche
  e quelli del caso reale avevo pensato di utilizzare gli stessi strumenti
  che avevo utilizzato in Wincor, o qualcosa del genere, tuttavia non è stato
@@ -900,6 +961,7 @@ Per avere il massimo dell'attinenza tra i risultati delle istanze classiche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Non potendo accedere ai dati originali, e non trovando un modo per far utilizzar
 e ai componenti dei dati creati appositamente da me, ho deciso di tentare
  la realizzazione di un'implementazione che mimasse le funzioanlità principali
@@ -907,6 +969,7 @@ e ai componenti dei dati creati appositamente da me, ho deciso di tentare
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Siccome non sapevo nulla sull'euristica utilizzata per produrre le gite,
  ma sapevo che il componente MEFISTO, che veniva utilizzato per la post-ottimizz
 azione, era basato sulla metaeuristica Granular Tabu Search, ne ho reimplementat
@@ -915,6 +978,7 @@ ra scientifica che sui dati del caso reale in studio.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I risultati sono stati tutt'altro che strabilianti, così sono andato ad
  esporre i miei dubbi all'ideatore di Granular Tabu Search, Paolo Toth,
  il quale mi ha confermato i sospetti che già avevo: avevo implementato
@@ -929,11 +993,13 @@ I risultati sono stati tutt'altro che strabilianti, così sono andato ad
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Purtroppo non avevo più tempo per reimplementare l'euristica, e così ho
  dovuto accontentarmi di ciò che avevo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nonostante i dati tutto sommato pessimi e le differenze minime tra i valori
  delle soluzioni migliori rispetto a quelle pessime, i risultati sono stati
  accettabili: anche usando poche generazioni, e quindi poche iterazioni
@@ -942,6 +1008,7 @@ Nonostante i dati tutto sommato pessimi e le differenze minime tra i valori
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I risultati ottenuti, quindi, fanno sperare che l'approccio genetico da
  me utilizzato sia comunque praticabile, e anzi possa diventare auspicabile
  nel caso si debba un giorno affrontare un problema dello stesso genere,
@@ -949,6 +1016,7 @@ I risultati ottenuti, quindi, fanno sperare che l'approccio genetico da
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A queste conclusioni sono giunto dopo aver paragonato i tempi impiegati
  dall'algoritmo genetico con un'altro algoritmo, più stupido, che invece
  provava tutte le soluzioni possibili.
@@ -958,10 +1026,12 @@ A queste conclusioni sono giunto dopo aver paragonato i tempi impiegati
 \end_layout
 
 \begin_layout Section*
+\paragraph_spacing double
 Struttura del documento
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa tesi è strutturata in modo da ricalcare il più possibile quella che
  è stata la naturale successione degli eventi, in modo che risulti semplice
  al lettore comprendere ciò che si è fatto.
@@ -972,6 +1042,7 @@ Questa tesi è strutturata in modo da ricalcare il più possibile quella che
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset VSpace defskip
 \end_inset
 
@@ -979,6 +1050,7 @@ Il documento è suddiviso in 3 capitoli:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Stato dell'arte:
@@ -990,6 +1062,7 @@ Stato dell'arte:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Architettura proposta:
@@ -1000,6 +1073,7 @@ Architettura proposta:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Implementazione:
@@ -1015,6 +1089,7 @@ Implementazione:
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Al termine delle analisi e delle ipotesi mostrate all'interno dei capitoli,
  si giunge quindi alle Conclusioni, in cui si discuterà delle criticità
  che anora oggi esistono nell'affrontare problemi di questa tipologia.
@@ -1022,6 +1097,7 @@ Al termine delle analisi e delle ipotesi mostrate all'interno dei capitoli,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -1042,10 +1118,12 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter
+\paragraph_spacing double
 Stato dell'arte
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -1074,6 +1152,7 @@ rightmark}}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -1100,18 +1179,21 @@ thepage}}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questo capitolo riporteremo quello che è stato osservato essere oggigiorno
  lo stato dell'arte per quanto riguarda il problema trattato.
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nella prima sezione analizzeremo il modo di vedere il problema da parte
  del mondo industriale, in particolare faremo riferimento allo scenario
  descritto da Wincor Nixdorf.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nella sezione successiva introdurremo una serie di termini e concetti che
  saranno utili più avanti in questa tesi, ed infine nell'ultima sezione
  parleremo un po' del problema dell'instradamento dei veicoli e delle sue
@@ -1119,10 +1201,12 @@ Nella sezione successiva introdurremo una serie di termini e concetti che
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 Lo scenario di Wincor Nixdorf
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questa sezione parliamo in breve dell'azienda Wincor Nixdorf, della sua
  struttura organizzativa, per poi concentrarci sul problema che i suoi clienti
  si erano trovati ad affrontare.
@@ -1135,10 +1219,12 @@ In questa sezione parliamo in breve dell'azienda Wincor Nixdorf, della sua
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Storia ed organizzazione aziendale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le origini dell'odierna azienda [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1166,6 +1252,7 @@ te.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il suffiso 
 \begin_inset Quotes eld
 \end_inset
@@ -1186,6 +1273,7 @@ reference "significato-wincor"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Oggi Wincor Nixdorf - quotata alla Borsa di Francoforte - conta a livello
  mondiale oltre 7.000 dipendenti e un fatturato di circa 2 miliardi di Euro.
  E' presente in oltre 90 paesi, con 31 filiali consociate nazionali.
@@ -1206,124 +1294,153 @@ reference "Dati finanziari wincor"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In Germania l'azienda è composta da 20 compagnie:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf International GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Banking Consulting GmbH (BCON)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Branch Technology GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf GmbH Business Administration Center (BAC)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Customer Care GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Services GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Facility GmbH 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Facility Services GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf property management Ilmenau GmbH & Co.
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Logistics GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Lottery Solutions GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Real Estate GmbH & Co.
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Retail Consulting GmbH (RCON)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Retail Services GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Security GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Services GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Technology GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Portavis GmbH
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Prosystems IT GmbH e Bank Consulting AG, di cui Wincor Nixdorf possiede
  il 51%
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In Italia, Wincor Nixdorf è presente dal 1999 con un Gruppo strutturato
  in tre società:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Retail
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Wincor Nixdorf Retail Consulting
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 che coprono l'intera offerta di consulenza, prodotti e servizi per i settori
  bancario e di vendita al dettaglio.
  Wincor Nixdorf Italia conta un organico di circa 180 persone.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Wincor Nixdorf Retail Consulting
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 La missione aziendale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Wincor Nixdorf Retail Consulting (nel seguito WNRC) ha come scopo quello
  di offrire consulenza su processi del business aziendale alle aziende della
  Grande Distribuzione Organizzata (nel seguito GDO).
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "wincor-metodo"
@@ -1334,16 +1451,19 @@ La metodologia di lavoro
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Dopo aver disegnato i processi con i clienti sorge il problema di come supportar
 li dal punto di vista dell'Information Tecnology.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 WNRC è anche in grado di sviluppare specifiche applicazioni software a supporto
  dei processi disegnati con i clienti.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'approccio di WNRC allo sviluppo software non è quello di una 
 \emph on
 software house
@@ -1360,6 +1480,7 @@ soluzioni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nello sviluppo di queste soluzioni WNRC ha avuto l'abilità di integrarle
  organicamente le une con le altre; oggi costituiscono una suite di nome
  Merchandise Retail System (acronimo Me.R.Sy, vedi 
@@ -1373,50 +1494,60 @@ reference "sub:Me.R.Sy"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le aree funzionali coperte dall'aziende sono molte, in particolare la logistica
  dei Centri di Distribuzione (nel seguito Cedi).
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 L'interesse dei clienti al problema
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tipicamente le aziende trattate da WNRC possiedono centinaia di Punti di
  Vendita (nel seuito Pdv) nei vari canali (Ipermercati, Supermercati, Cash&Carry
 , Discount, Internet, ecc.)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I Cedi consegnano a questi Pdv diverse volte alla settimana; da cui ne derivano
  importanti costi di trasporto.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I clienti di Wincor stanno diventando sempre più sensibili a queste voci
  di costo (anche perchè destinate a crescere nel tempo) e questa area sta
  diventando per WNRC interessante per nuove possibilità di business.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Negli ultimi anni alcuni clienti di Wincor hanno tentato di affrontare il
  problema della minimizzazione dei costi di trasporto con dei progetti autonomi,
  ma sono tutti falliti.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Le cause del fallimento dei progetti affrontati dai clienti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le cause principali del fallimento si ritiene possano essere queste:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 La complessità del problema è stata sottovalutata
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 L'approccio al problema non è stato quello giusto; ad esempio si è cercato
  di dare uno strumento sofisiticato in mano al responsabile delle spedizioni
  il quale:
@@ -1424,17 +1555,20 @@ L'approccio al problema non è stato quello giusto; ad esempio si è cercato
 
 \begin_deeper
 \begin_layout Enumerate
+\paragraph_spacing double
 non aveva il bagaglio culturale necessario (spesso questa figura è un ex-caminis
 ta)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Provocava un conflitto di interessi (queste figure, se abili, sono ben remunerat
 e; lo strumento, se funziona, erode il potere di queste figure...)
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
+\paragraph_spacing double
 Non si è capito la necessità di fortissima integrazione fra lo strumento
  di integrazione cartografica e quello che, nel processo, sta a monte e
  a valle (ad esempio, una volta pianificato le gite bisogna essere in grado
@@ -1443,14 +1577,17 @@ Non si è capito la necessità di fortissima integrazione fra lo strumento
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 L'interessamento di Wincor al problema
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In conclusione Wincor Nixdorf riteneva che:
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 I tempi fossero maturi per spingere, con alcuni dei clienti principali,
  un progetto di 
 \begin_inset Quotes eld
@@ -1465,16 +1602,19 @@ e di ridurre questa importante voce di costo.
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 condizione necessaria ( e non sufficiente ) per concludere, assieme ai clienti,
  il progetto con successo, fosse quella di integrare il tool all'interno
  di Me.R.Sy., permettendo ai due software di dialogare e di scambiarsi dati
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 fosse necessario un approccio propositivo presso i clienti di questo progetto
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La fattibilità di questo progetto era tuttavia subordinata al successo di
  un 
 \begin_inset Quotes eld
@@ -1489,15 +1629,18 @@ Proof of Concept
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 Background
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questa sezione è possibile trovare chiarimenti sui termini che verranno
  usati nelle sezioni successive.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Me.R.Sy"
@@ -1508,6 +1651,7 @@ Me.R.Sy
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 "Me.R.Sy."(Merchandising Retail System) [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1522,6 +1666,7 @@ reference "Sito-Wincor-Nixdorf"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La suite applicativa Me.R.Sy., grazie alla sua modularità, che permette di
  configurare l’applicazione in modo graduale e progressivo nel tempo, controlla
  con efficacia ed efficienza tutti i processi caratteristici di un’azienda
@@ -1529,11 +1674,13 @@ La suite applicativa Me.R.Sy., grazie alla sua modularità, che permette di
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I moduli della Suite Me.R.Sy.
  insistono su 4 aree applicative:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Area Commerciale:
@@ -1546,6 +1693,7 @@ Area Commerciale:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Area Logistica:
@@ -1559,6 +1707,7 @@ Area Logistica:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Gestione della Rete:
@@ -1572,6 +1721,7 @@ Gestione della Rete:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 Area Store:
@@ -1581,10 +1731,12 @@ Area Store:
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Geocodifica
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La geocodifica [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1600,10 +1752,12 @@ reference "geocodifica"
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Gite e gite cartografiche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il percorso che un veicolo terrestre (es.
  automobile,camion, treno, ecc.), navale, o aereo) compie partendo dal punto
  di partenza a quello di arrivo, e passando nel suo tragitto attraverso
@@ -1647,6 +1801,7 @@ gite
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Con il termine 
 \begin_inset Quotes eld
 \end_inset
@@ -1662,6 +1817,7 @@ gita
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una gita è quindi una sequenza ordinata di cui ogni elemento rappresenta
  un punto di consegna.
  Ogni gita ha come primo elemento sempre un deposito tra quelli che sono
@@ -1669,25 +1825,30 @@ Una gita è quindi una sequenza ordinata di cui ogni elemento rappresenta
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una gita cartografica è una gita in cui i punti di consegna sono geocodificati.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questo elaborato ogni volta in cui si parla di gite si intende gite cartograf
 iche.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Punti di consegna
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un punto di consegna rappresenta un cliente che fa richiesta ad un deposito
  di un qualche tipo di bene o merce, e che deve essergli recapitato alle
  sue coordinate.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ogni punto di consegna possiede un identificativo univoco ed una serie di
  coordinate che permette di localizzarlo all'interno dello spazio del problema.
  Nel caso lo spazio del problema sia rappresentato da mappe geografiche
@@ -1696,6 +1857,7 @@ Ogni punto di consegna possiede un identificativo univoco ed una serie di
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La definizione dell'unità di misura della merce è in genere definita o concordat
 a con l'utilizzatore finale, quindi nel caso di merci possono essere pallet,
  roll, ecc.
@@ -1703,10 +1865,12 @@ a con l'utilizzatore finale, quindi nel caso di merci possono essere pallet,
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Depositi
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sono punti di consegna speciali, che hanno una richiesta nulla ( i depositi
  non possono fare richieste tra di loro).
  Ogni gita parte sempre da uno dei depositi.
@@ -1716,6 +1880,7 @@ Sono punti di consegna speciali, che hanno una richiesta nulla ( i depositi
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Gite 
 \begin_inset Quotes eld
 \end_inset
@@ -1736,6 +1901,7 @@ chiuse
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una gita, per essere tale secondo la nostra definizione, deve sempre partire
  dal deposito.
  Una gita si dice 
@@ -1758,6 +1924,7 @@ aperta
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nei problemi di instradamento dei veicoli classici normalmente si suppone
  che i veicoli debbano partire e tornare al deposito di partenza.
  Questo elaborato non si discosta dalla letteratura da questo punto di vista,
@@ -1774,10 +1941,12 @@ chiuse
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 PTV AG
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 PTV (Planung Transport Verkehr) AG [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1791,6 +1960,7 @@ reference "PTV-bib"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il business di PTV è principalmente concentrato nelle aree del trasporto,
  della mobilità e della logistica, e sviluppa software per la pianificazione
  e l'ottimizzazione dei trasporti e delle gite.
@@ -1798,6 +1968,7 @@ Il business di PTV è principalmente concentrato nelle aree del trasporto,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La compagnia è ora attiva in 4 continenti, ha 700 dipendenti e 1500 clienti
  in 75 nazioni.
  Alcuni dei loro prodotti software sono utilizzati in Germania anche dalle
@@ -1805,6 +1976,7 @@ La compagnia è ora attiva in 4 continenti, ha 700 dipendenti e 1500 clienti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una famiglia di prodotti commerciali che sicuramente ha conquistato una
  certa fetta di mercato per quanto riguarda la pianificazione delle gite
  è rappresentata dal marchio 
@@ -1819,10 +1991,12 @@ Maps & Guide
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 TPS
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 TPS (Transport Planning Service) [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1841,6 +2015,7 @@ reference "TPS-bib"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La struttura organizzativa della TPS è articolata sul territorio nazionale
  italiano con uffici a Perugia (sede legale ed operativa con certificazione
  di qualità UNI EN ISO 9001:2000), Bologna e Milano.
@@ -1848,29 +2023,35 @@ La struttura organizzativa della TPS è articolata sul territorio nazionale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A livello operativo TPS è strutturata nelle seguenti unità: 
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 team di progettazione e consulenza nei campi dell’ingegneria del traffico,
  della logistica e dei trasporti 
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 unità tecnica per rilievi ed indagini nei settori del traffico e dei trasporti
  
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 rete commerciale e unità tecnica di supporto per l’assistenza post-vendita
  dei software 
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 laboratorio di sviluppo software laboratorio di ricerca
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'organico della TPS è per la quasi totalità costituito da ingegneri ed
  architetti esperti in pianificazione dei trasporti, ingegneria del traffico
  e modellistica applicata.
@@ -1879,10 +2060,12 @@ L'organico della TPS è per la quasi totalità costituito da ingegneri ed
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Euristica di Clarke e Wright
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'euristica di Clarke e Wright
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1910,15 +2093,18 @@ Clarke and Wright Savings Algorithm
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 È senz'altro l'euristica più conosciuta nell'ambito del Vehicle Routing
  Problem, ed è basato sull'idea di risparmio.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si suddivide in 2 fasi: il calcolo dei risparmi e la fusione delle gite.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per quanto concerne il calcolo dei risparmi, quando due gite 
 \begin_inset Formula $\left(0,\ldots,i,0\right)$
 \end_inset
@@ -1946,32 +2132,38 @@ j
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La fusione delle gite può essere fatta in due modi: sequenziale o parallelo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel caso parallelo, partendo dal massimo risparmio fino al minimo si effettuano
  le giunzioni delle gite, sempre però cercando di rispettare i vincoli di
  fattibilità.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel caso sequenziale invece si esamina una gita per volta, e si cerca tra
  i risparmi, sempre dal maggiore al minore, se si può combinare la gita
  corrente con un altra rispettando i vincoli di fattibilità.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I risultati sperimentali dicono che la versione parallela è più performante
  di quella sequenziale, e quindi in questo elaborato quando ci si riferirà
  a questa euristica si intenderà sempre la sua versione parallela.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Euristiche e Metaeuristiche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sono state proposte diverse approcci basati su euristiche per risolvere
  il problema dell'instradamento dei veicoli (vedi 
 \begin_inset CommandInset ref
@@ -1984,6 +2176,7 @@ reference "VRP"
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Quelli basati su euristiche 
 \begin_inset Quotes eld
 \end_inset
@@ -1996,6 +2189,7 @@ classiche
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Quelli basati su 
 \begin_inset Quotes eld
 \end_inset
@@ -2008,6 +2202,7 @@ metaeuristiche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le euristiche compiono una esplorazione limitata dell'albero delle scelte
  e delle combinazioni possibili producendo però generalmente una soluzione
  comunque buona rispetto a quella ottima.
@@ -2018,12 +2213,14 @@ Le euristiche compiono una esplorazione limitata dell'albero delle scelte
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Vedremo invece come le soluzioni analizzate in quest'elaborato (PTV Intertour
  Standard e gli xServer) appantegono alla seconda famiglia, rappresentando
  così un'evoluzione rispetto al panorama generale.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nelle metaeuristiche infatti l'enfasi è posta invece sull'esplorazione in
  profondità dell'albero delle scelte, o almeno di quelle regioni dell'albero
  che appaiano più promettenti.
@@ -2033,6 +2230,7 @@ Nelle metaeuristiche infatti l'enfasi è posta invece sull'esplorazione in
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La qualità delle soluzioni così ottenute è più alta rispetto a quella delle
  euristiche più classiche, ma richiede un maggior tempo per essere trovata.
  Tra l'altro, queste procedure richiedono una configurazione abbastanza
@@ -2042,6 +2240,7 @@ tica per adattarsi al contesto di impiego.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nonostante tutto però la differenza tra euristiche e metaeuristiche sembra
  risiedere nel fatto che le seconde posseggono una serie di accorgimenti
  per evitare di rimanere bloccati in minimi locali mediante una gestione
@@ -2054,16 +2253,19 @@ Nonostante tutto però la differenza tra euristiche e metaeuristiche sembra
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Tabu Search
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tabu Search è una metaeuristica molto famosa all'interno della'mbietne della
  Ricerca Operativa, e diverse sue estensioni sono state usate anche in ambito
  VRP.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In Tabu Search vengono analizzate sequenze di soluzioni in modo iterativo:
  ad ogni iterazione vengono prodotte diverse soluzioni da una variazione
  della soluzione ottenuta al passo precedente.
@@ -2079,6 +2281,7 @@ migliore
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per evitare la creazione di cicli nella scelta delle soluzioni, le soluzioni
  che sono state esaminate recentemente sono contrassegnate come 
 \begin_inset Quotes eld
@@ -2093,6 +2296,7 @@ tabù
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'approccio basilare di questa metaeuristica, nell'arco di una decina d'anni,
  è stato utilizzato da diversi autori, i quali lo hanno in genere arricchito
  di diverse caratteristiche e migliorie.
@@ -2101,10 +2305,12 @@ L'approccio basilare di questa metaeuristica, nell'arco di una decina d'anni,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tra gli approcci più famosi o innovativi ricordiamo:
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 TabuRoute, descritto poco più avanti in questo documento (cap.
  
 \begin_inset CommandInset ref
@@ -2126,16 +2332,19 @@ reference "sub:GENIUS"
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 Adaptive Memory, di Rochard e Taillard, poichè intriduce il concetto di
  memoria adattiva per potenziare glia pprocci basati su Tabu Search
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 Granular Tabu Search, di Toth e Vigo, poichè tuttora viene ritenuto un ottimo
  approccio per risolvere l'instradamento dei veicoli
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:GENIUS"
@@ -2146,6 +2355,7 @@ GENIUS
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 GENIUS [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2165,6 +2375,7 @@ reference "sub:TabuRoute"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'acronimo in realtà descrive due euristiche, 
 \begin_inset Quotes eld
 \end_inset
@@ -2186,23 +2397,27 @@ Ustring and Stringing
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La prima si occupa, dato un nodo, di inserirlo all'interno di una sequenza
  circolare (che di norma è una gita).
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La seconda euristica, in un secondo momento, si occupa di migliorare la
  gita trovata, e funge perciò da port-ottimizzazione.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Gli schemi con cui queste euristiche aggiungono o tolgono nodi dalla gita
  concedono determinate caratteristiche all'algoritmo, e quindi vengono analizzat
 e di seguito.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:GENI"
@@ -2213,6 +2428,7 @@ GENI
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Quotes eld
 \end_inset
 
@@ -2225,11 +2441,13 @@ GENeralized Insertion
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'inserzione non viene fatta in maniera casuale ma segue degli schemi, che
  andiamo ad illustrare:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Nel primo schema di inserzione si suppone che il nodo 
 \emph on
 n
@@ -2323,6 +2541,7 @@ Inserzione di tipo 1
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Il secondo schema assomiglia al primo, ma questa volta si suppone anche
  l'esistenza di un nodo 
 \begin_inset Formula $n{}_{l}$
@@ -2389,6 +2608,7 @@ Inserzione di tipo 2
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Degno di nota è il fatto che, per come lavora quest'euristica, non si può
  partire da una gita vuota, ma bensì devono esserci almeno 3 nodi.
  Questo problema è dovuto alla struttura degli schemi di inserzione, ed
@@ -2407,11 +2627,13 @@ inversioni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Visto che esitono 2 schemi di inserzione, viene sempre scelto l'inserimento
  che porta alla costruzione di una gita di costo minimo tra le alternative.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:US"
@@ -2422,6 +2644,7 @@ US
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In modo iterativo 
 \begin_inset Quotes eld
 \end_inset
@@ -2452,6 +2675,7 @@ reference "fig:Rimozione-di-tipo-2"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -2532,6 +2756,7 @@ Rimozione di tipo 2
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:TabuRoute"
@@ -2542,6 +2767,7 @@ TabuRoute
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tra gli approcci derivati da Tabu Search, TabuRoute [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2563,6 +2789,7 @@ reference "sub:GENI"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un'altra importante caratteristica consiste nell'utilizzo di fattori di
  penalizzazione per svantaggiare la scelta di soluzioni che non rispettano
  i vincoli (dette anche inammissibili).
@@ -2570,38 +2797,45 @@ Un'altra importante caratteristica consiste nell'utilizzo di fattori di
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 la funzione di ricerca viene lasciata libera di selezionare anche soluzioni
  inammissibili, a patto che abbiano un costo minore.
  
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 Dopo un certo numero numero di soluzioni inammissibili esaminate consecutivament
 e i fattori di penalità aumentano, e così aumenta anche il costo delle soluzioni
  che violano i vincoli
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 Dopo un certo numero di soluzioni ammissibili consecutive invece il valore
  dei fattori di penalità decresce
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa tecnica viene utilizzata per creare un mix di soluzioni ammissibili
  e non che impedisca alla ricerca di fermarsi in un minimo locale.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ultima importante peculiarità di questo algoritmo è l'utilizzo di false
  partenze: più soluzioni iniziali vengono generate, e solo la più promettente
  viene scelta come putno di partenza.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Granular Tabu Search
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 È una metaeuristica, introdotta da Toth e Vigo, che ha finora ottenuto eccellent
 i risultati per il VRP [
 \begin_inset CommandInset ref
@@ -2614,6 +2848,7 @@ reference "granular-tabu-search"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'idea di base, molto promettente, e che gli archi lunghi difficilmente
  faranno parte della soluzione ottima.
  Viene quindi introdotto un limite 
@@ -2630,20 +2865,24 @@ di granularità
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'implementazione di Granular Tabu Search quindi riprende quella di TabuRoute
  e vi aggiunge quest'ultima caratteristica, diminuendo così i tempi di calcolo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nella versione originale sono considerate solo mosse di tipo OR1 o OR2 per
  lo scambio dei nodi all'interno delle gite.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 PTV Intertour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 PTV Intertour non è un'applicativo, ma bensì una suite di programmi specializzat
 i per la pianificazione e l'ottimizzazione dei giri per la grande distribuzione
  [
@@ -2659,6 +2898,7 @@ reference "PTV-Intertour"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float table
 placement H
 wide false
@@ -2813,6 +3053,7 @@ PTV xServer
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset VSpace defskip
 \end_inset
 
@@ -2821,10 +3062,12 @@ Qui di seguito approfondiremo solo gli applicativi che sono interessanti
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 PTV Intertour Standard
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 PTV Intertour è un software che permette di risolvere complessi scenari
  di distribuzione e raccolta merci sul territorio.
  Suggerendo una programmazione ottimizzata dei viaggi e degli impieghi della
@@ -2863,16 +3106,19 @@ ne di viaggi con concarico.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 PTV xServer
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I PTV xServer basilarmente offrono le stesse funzionalità dei componenti
  della suite Intertour, ma usando un'architettura orientata ai servizi.
  Questo comporta una serie di indiscutibili vantaggi:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 permettono di ideare soluzioni con un'occhio di riguardo per la scalabilità.
  Gli xServer sono indipendenti l’uno dall’altro, e grazie alla tecnologia
  cluster, si può espandere il pool di macchine utilizzate in qualsiasi momento
@@ -2880,33 +3126,39 @@ permettono di ideare soluzioni con un'occhio di riguardo per la scalabilità.
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 sono compatibili con le tecnologie attuali di sviluppo, tutti i componenti
  hanno interfaccia standard XML/SOAP e questo significa che possono essere
  facilmente integrati in sistemi ed applicativi 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 i bundle degli xServer sono completamente standalone, e non necessitano
  di nessuna installazione
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 mantengono performance elevate poichè l'integrazione dei moduli avviene
  sì tramite un framework di comunicazione scritto in Java ma i singoli moduli
  sono scritti in linguaggio C++ 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 sono multipiattaforma, in quanto possono essere installati in ambiente Windows
  o Linux e sono in grado di sfruttare i sistemi multiprocessore 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 hanno un approccio nativamente Web 2.0, con interattività garantita grazie
  all’utilizzo della tecnologia AJAX
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 vi è un intero portale completamente dedicato al prodotto (“PTV Developer
  Zone”) dove consultare tutte le ultime novità sui prodotti disponibili,
  tutte le statistiche sul materiale cartografico, scaricare aggiornamenti
@@ -2914,10 +3166,12 @@ vi è un intero portale completamente dedicato al prodotto (“PTV Developer
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Qui di seguito riportiamo i 7 server, ognuno con il compito ad esso associato:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xMap:
@@ -2928,6 +3182,7 @@ xMap:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xLocate:
@@ -2943,6 +3198,7 @@ xLocate:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xRoute:
@@ -2956,6 +3212,7 @@ a del percorso e dei dati necessari alla rappresentazione del percorso su
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xSequence:
@@ -2968,6 +3225,7 @@ xSequence:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xDima:
@@ -2977,6 +3235,7 @@ xDima:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xCluster:
@@ -2987,6 +3246,7 @@ xCluster:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 xTour:
@@ -3002,6 +3262,7 @@ ne, in particolare xTour tiene conto anche delle finestre di consegna.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Mephisto"
@@ -3012,6 +3273,7 @@ MEFISTO
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 MEFISTO (Metaheuristics Framework for Information Systems in Transport Optimisat
 ion) [
 \begin_inset CommandInset ref
@@ -3026,20 +3288,24 @@ reference "Mefisto-bib"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le sviluppo di MEFISTO è dovuto al fatto che fino a poco tempo fa i requisiti
  per un componente business in ambito VRP erano:
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 la correttezza del modello, che doveva essere più vicino alla realtà possibile
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 il tempo di calcolo, che doveva essere il minimo possibile o comunque un
  ammontare ragionevole
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo aveva portato a vincoli più stringenti come distanze asimmetriche,
  finestre temporali diverse per ogni utente, tempi di attesa massimi, eterogneit
 à della flotta, vincoli di precedenza, ecc, mentre i tempi di calcolo venivano
@@ -3055,6 +3321,7 @@ reference "sub:GENIUS"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa classe di problemi, in letteratura conosciuta come 'problemi 
 \begin_inset Quotes eld
 \end_inset
@@ -3075,6 +3342,7 @@ rich veihicle routing problems
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Recentemente però ha cominciato ad emergere un ulteriore requisito, ovvero
  la qualità della soluzione stessa, richiesta che si aggiungeva ai precedenti
  vincoli posti.
@@ -3088,6 +3356,7 @@ Recentemente però ha cominciato ad emergere un ulteriore requisito, ovvero
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Di metaeuristiche però non ve n'era una sola, e la ricerca in questo campo
  intanto continuava insesorabilmente.
  Per mostrare un comportamento trasparente rispetto alla particolare metauristic
@@ -3097,11 +3366,13 @@ a utilizzata e mantenere compatibilità sulle interfacce, era necessario
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'intero framework è scritto in C++ e si compone di un'architettura suddivisa
  in 3 livelli:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il primo livello è sostanzialmente indipendente dall'applicazione e dalla
  metaeuristica implementata.
  Fornisce soltanto le funzioni principali e le strutture dati che servono
@@ -3111,11 +3382,13 @@ il primo livello è sostanzialmente indipendente dall'applicazione e dalla
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il secondo livello contiene tutte le classi che servono alla specifica metaeuris
 tica, ed ereditano le funzionalità dalle classi del primo livello
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il terzo livello è fortemente dipendente dall'applicazione utilizzata e
  dal tipo di problema trattato.
  Ad esempio, per quanto riguarda l'ambito VRP, questo livello dovrà contenere
@@ -3123,18 +3396,21 @@ il terzo livello è fortemente dipendente dall'applicazione utilizzata e
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nell'articolo originale vengono inoltre riportati i risultati sperimentali
  ottenuti in un caso reale e utilizzando un'estensione di Granular Tabu
  Search, a cui sono state aggiunte anche mosse di swap e A-B.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Dalle informazioni che ci sono state fornite da TPS e PTV questa metaeuristica
  doveva essere molto simile a quella utilizzata da PTV Intertour Standard
  e dagli xServer.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un esempio di funzionamento di MEFISTO mostrato in grafica lo si può vedere
  in figura 
 \begin_inset CommandInset ref
@@ -3147,6 +3423,7 @@ reference "fig:Finestra-grafica-MEFISTO"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -3222,6 +3499,7 @@ Nella parte inferiore invece possiamo notare più o meno le stesse informazioni,
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "VRP"
@@ -3232,6 +3510,7 @@ Vehicle Routing Problem
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il problema dell'instradamento dei veicoli ( in inglese 
 \begin_inset Quotes eld
 \end_inset
@@ -3249,18 +3528,21 @@ Vehicle Routing Problem
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come problema combinatorio e di ottimizzazione è un classico nella letteratura
  della Ricerca Operativa: sono passati ormai più di 50 anni da quando Dantzig
  e Ramser introdussero il problema nel 1959.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nella letteratura vi è una predisposizione a indicare questo problema con
  il suo nome od il suo acronimo inglese.
  Tale convenzione verrà d'ora in poi rispettata anche in questo elaborato.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il 
 \begin_inset Quotes eld
 \end_inset
@@ -3284,6 +3566,7 @@ reference "Truck-Dispatching-Problem"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A partire dall'articolo di Dantiz e Ramster e successivamente quello di
  Clarke e Wright (nel 1964), furono quindi concepiti centinaia di modelli
  e algoritmi furono proposti per trovare una soluzione il più possibile
@@ -3293,6 +3576,7 @@ A partire dall'articolo di Dantiz e Ramster e successivamente quello di
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La versione classica del VRP prevede che l'intera flotta parta da un unico
  deposito, visiti una serie di punti di consegna, e poi ritorni al deposito
  di partenza.
@@ -3302,6 +3586,7 @@ La versione classica del VRP prevede che l'intera flotta parta da un unico
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 
 \series bold
 Capacitated VRP (CVRP)
@@ -3312,6 +3597,7 @@ Capacitated VRP (CVRP)
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 
 \series bold
 Multi-Capacitated VRP (MCVRP): 
@@ -3321,6 +3607,7 @@ come nel CVRP i mezzi hanno una capacità limitata, ma le capacità dei singoli
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 
 \series bold
 VRP with Time Window (VRPTW):
@@ -3345,6 +3632,7 @@ aperto
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per ognuna di queste è prevista sia la versione 
 \begin_inset Quotes eld
 \end_inset
@@ -3369,11 +3657,13 @@ asimmetrica
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Esistono anche variazioni che contemplano l'utilizzo di più depositi invece
  di averne uno solo centralizzato, ma non saranno descritte in questo elaborato.
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Algoritmo-genetico"
@@ -3384,6 +3674,7 @@ Algoritmo genetico
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un algoritmo genetico è un'euristica di ricerca che cerca di riprodurre
  il processo di evoluzione naturale.
  Questa euristica è generalmente usata per generare utili soluzioni nei
@@ -3395,10 +3686,12 @@ Un algoritmo genetico è un'euristica di ricerca che cerca di riprodurre
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Principio generale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In un algoritmo genetico [
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3412,6 +3705,7 @@ reference "algoritmo-genetico"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tradizionalmente, le soluzioni sono rappresentate come stringhe bnarie,
  ma sono possibili anche altre rappresentazioni ovviamente.
  Gli algoritmi genetici sono impiegati in molti campi quali (bio)informatica,
@@ -3420,14 +3714,17 @@ Tradizionalmente, le soluzioni sono rappresentate come stringhe bnarie,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un tipico algoritmo genetico richiede:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 un modo per rappresentare mediante geni il dominio delle soluzioni
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 una funzione detta 
 \begin_inset Quotes eld
 \end_inset
@@ -3440,6 +3737,7 @@ di idoneità
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La funzione 
 \begin_inset Quotes eld
 \end_inset
@@ -3460,6 +3758,7 @@ idonee
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset VSpace defskip
 \end_inset
 
@@ -3467,45 +3766,55 @@ idonee
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Pseudocodice di un semplice algoritmo genetico generazionale:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Scegli la popolazione iniziale di individui
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Valuta l'idoneità di ogni individuo 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Ripeti fino a che il criterio di terminazione non è raggiunto: (time out,
  idoneità minima raggiunta, ecc.)
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
+\paragraph_spacing double
 se gli gli individui più idonei per la riproduzione
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 dai origine ai nuovi individui attraverso il crossover dei geni e la mutazione
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Valuta l'idoneità di ogni nuovo individuo 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 rimpiazza gli individui meno idonei con i nuovi
 \end_layout
 
 \end_deeper
 \begin_layout Subsection
+\paragraph_spacing double
 Inizializzazione 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Inizialmente vengono generati tanti corredi genetici quanti individui della
  popolazione iniziale.
  Queste rappresentano le soluzioni iniziali.
@@ -3514,6 +3823,7 @@ Inizialmente vengono generati tanti corredi genetici quanti individui della
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sempre parlando in linea generale, questa popolazione viene generata casualmente
 , cercando di coprire l'intero spettro della soluzioni possibili.
  Oppure si possono anche utilizzare particolari intervalli di valori in
@@ -3521,25 +3831,30 @@ Sempre parlando in linea generale, questa popolazione viene generata casualmente
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Selezione 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Durante ogni iterazione successiva, una porzione della popolazione esistente
  viene selezionata per dare vita ad una nuova generazione.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le soluzioni individuali vengono selzionate attraverso un processo basato
  sull'idoneità del singolo individuo, dove le soluzioni con un più alto
  punteggio di idoneità hanno maggiore probabilità di essere selezionate.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Esistono più stategie di scelta, ognuna con i suoi pro e contro:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 metodo della roulette:
@@ -3558,6 +3873,7 @@ metodo della roulette:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 campionamento universale stocastico:
@@ -3567,6 +3883,7 @@ campionamento universale stocastico:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 metodo del torneo:
@@ -3589,6 +3906,7 @@ tornei
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 metodo della troncatura:
@@ -3598,15 +3916,18 @@ metodo della troncatura:
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Riproduzione 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel passo successivo viene creata una seconda generazione di individui (o
  soluzioni) mediante una simulazione della riproduzione sessuale: il crossover.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per ogni nuova soluzione che si vole produrre, una coppia di soluzioni 
 \begin_inset Quotes eld
 \end_inset
@@ -3637,6 +3958,7 @@ genitori
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Lo scopo ultimo è quello di far progredire le soluzioni verso una nuova
  genrazione, potenzialmente 
 \begin_inset Quotes eld
@@ -3650,10 +3972,12 @@ migliore
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Esistono diversi meccanismi di crossover, alcuni tra i più famosi sono:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Crossover puntuale: viene selezionato un indice particolare all'interno
  delle due stringhe che rappresentano i corredi genetici dei 
 \begin_inset Quotes eld
@@ -3667,11 +3991,13 @@ genitori
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Crossover a doppio punto: simile al crossover puntuale, ma con 2 punti di
  scambio
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 \begin_inset Quotes eld
 \end_inset
 
@@ -3701,12 +4027,14 @@ genitori
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Crossover uniforme: si seleziona una probabilità con cui due bit delle due
  stringhe si scambieranno (tipicamente 0.5) e si lancia una monetina per
  ogni bit della stringa 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 All'interno di questo processo la mutazione serve unicamente ad impedire
  che le soluzioni si adagino su un 
 \begin_inset Quotes eld
@@ -3722,11 +4050,13 @@ minimo locale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ovviamente esistono anche meccanismi diversi dalla mutazione e dal crossover,
  ma non saranno affrontati in quest'elaborato.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -3747,10 +4077,12 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter
+\paragraph_spacing double
 Architettura proposta
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -3779,6 +4111,7 @@ rightmark}}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -3805,18 +4138,21 @@ thepage}}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il problema posto da Primafrost, che riguardava il carico, scarico e la
  definizone delle gite per la flotta degli automezzi era facilmente riconducibil
 e ad una particolare istanza di VRP.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo tipo di problemi sono tutti NP-hard, tuttavia sono già disponibili
  diverse soluzioni commerciali (basate su euristiche) che permettono di
  ottenere soluzioni molto buone, se non ottime.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Quando il sottoscritto ha cominciato ad occuparsi di questo progetto lo
  studio di fattibilità non era nella sua fase iniziale, per cui alcune scelte
  erano già state fatte, in quanto si era già arrivati ad una bozza generale
@@ -3830,6 +4166,7 @@ Quando il sottoscritto ha cominciato ad occuparsi di questo progetto lo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tutte le scelte precedenti al mio arrivo verranno presentate nella prima
  sezione di questo capitolo, e successivamente si passerà al problema vero
  e proprio: la scelta tra un'architettura 
@@ -3845,6 +4182,7 @@ vecchio stampo
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Progetto-di-massima"
@@ -3855,6 +4193,7 @@ Progetto di massima della soluzione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost la gestione
  della flotta (ovvero carico e gite) era affidata ad un dipendente dell'azienda,
  il quale essendo un ex-camionista ed avendo una larga esperienza della
@@ -3862,99 +4201,119 @@ Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost la gestione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ma questa gestione portava diversi problemi:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Il futuro di quella parte dell'azienda era accentrato tutto nelle mani di
  un solo uomo
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 La gestione manuale non dava nessuna garanzia di portare a soluzioni ottime
  o quantomeno buone, benchè si fossero presi diversi accorgimenti e vi fosse
  buona volontà da parte di tutti
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Questa gestione non conveniva nemmeno al suddetto dipendente, il quale a
  caus del suo ruolo poteva prendersi pochissime ferie
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si cercava dunque una soluzione che permettesse di automatizzare l'intero
  processo, o almeno ua sua parte, in modo da alleviare gli svantaggi dovuti
  alla situazione attuale.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Requisiti della soluzione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La soluzione proposta, per risultare accettabile da parte di Primafrost,
  doveva:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 permettere di automatizzare, in tutto o in parte, la generazione delle gite,
  una volta forniti ovviamente i dati necessari (mezzi, richieste, ecc.)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 offrire garanzie di minimizzazione dei costi maggiori rispetto alla normale
  gestione manuale
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 permettere di modificare le gite generate, possibilmente in maniera semplice
  e veloce, garantendo così un maggior controllo sull'output prodotto
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 offrire garanzie di rispettare le norme sindacali vigenti per gli autisti
  dei camion, tra cui è contemplata anche ilrispetto dei tempi di riposo
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 essere pronta, almeno in una forma prototipale, in un tempo relativamente
  breve
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per essere accettabile da parte di Wincor la soluzione doveva:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 rispettare i vincoli posti dal cliente
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 permettere una gestione dei dati integrata con l'ERP aziendale, Me.R.Sy
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Requisiti impliciti da parte del cliente potevano essere sulla possibile
  interfaccia del prodotto, che doveva essere user-friendly e non intralciante
  dal punto di vista operativo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Da parte di Wicor Nixdorf un requisito implicito poteva essere la necessità
  di uno strumento o applicativo che non necessitasse più di tanto un continuo
  intervento da parte dei suoi dipendenti.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Modalità di realizzazione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Realizzazione o acquisizione (con esame e valutazione delle eventuali alternativ
 e)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come già spiegato nella sezione 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3968,6 +4327,7 @@ reference "wincor-metodo"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per Primafrost in particolare era stata già realizzata un'applicazione per
  la gestione dei carichi dei mezzi e per la visualizzazione delle gite (tra
  l'altro già integrata con Me.R.Sy.).
@@ -3985,33 +4345,40 @@ PTV Maps & Guide
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Era quindi logico cercare una soluzione applicativa sempre progettata da
  PTV, sia perchè poteva risultare più semplice da integrare sia perchè PTV
  al momento è una delle aziende leader nel campo.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Valutazione delle alternative
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le 3 alternative possibili erano le seguenti:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 ottimizzare le gite usando gli XServer
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 ottimizzare le gite usando PTV Intertour
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 lasciare tutto com'era (non era una vera alternativa, ma era piuttosto l'ultima
  spiaggia)
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
  se l'ottimizzazione delle gite doveva essere fatta automaticamente piuttosto
  che manualmente, e se era meglio utilizzare Web Service o un approccio
@@ -4019,22 +4386,26 @@ L'alternativa era dunque tecnologica, in quanto bisognava solo decidere
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 Il progetto proposto
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come visto nella sezione precedente, molti aspetti partivano già inquadrati,
  e tuttavia non era chiaro quale fosse l'alternativa vincente.
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ci si è quindi informati prima sui processi del cliente coinvolti, e si
  è cercato di sconvolgerli il meno possibile, come spiegato nella prima
  sottosezione.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per alcuni problemi secondari, di cui parliamo a breve, sembrava che la
  componente umana fosse imprescindibile in alcuni casi.
  Inoltre non era chiaro cosa un'architettura orientata ai servizi aggiungesse
@@ -4046,16 +4417,19 @@ e stand-alone.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel mio lavoro non ero solo, anzi la mia mansione era di affiancare un giovane
  impiegato (Primo Tilli) che era statao incaricato di occuparsi del problema.
  Tutto il lavoro svolto da me e da Primo si trova nelle sottosezioni successive.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Processi del cliente
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sicuramente si può pensare che esista una documentazione ufficiale in cui
  sono descritti i processi di Primafrost, anche se in modo non necessariamente
  formale, tuttavia comprensibilmente quella documentazione non ci è stata
@@ -4063,6 +4437,7 @@ Sicuramente si può pensare che esista una documentazione ufficiale in cui
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La mia conoscenza dei processi di Primafrost deriva esclusivamente dal bagaglio
  di conoscenza posseduto da Wincor Nixdorf, e da quanto è emerso negli incontri
  con il cliente, quindi la visione che ne deriva potrebbe essere certamente
@@ -4075,57 +4450,69 @@ La mia conoscenza dei processi di Primafrost deriva esclusivamente dal bagaglio
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il processo che era interessante per noi era il processo di gestione delle
  consegne,e questo poteva essere scomposto come segue:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Sotto-processo di raccolta dati dei clienti
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+\paragraph_spacing double
 ricezione degli ordini
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 eventuale modifica delle finestre di consegna
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
+\paragraph_spacing double
 sotto-processo di preparazione della flotta
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
+\paragraph_spacing double
 creazione delle gite
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 eventuale correzione dei carichi dei veicoli
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 assegnazione degli autisti
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 carico veicoli
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
+\paragraph_spacing double
 Sotto-processo di dispiegamento delle consegne
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+\paragraph_spacing double
 tracciamento dei mezzi in marcia
 \end_layout
 
 \end_deeper
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset VSpace defskip
 \end_inset
 
@@ -4136,6 +4523,7 @@ Come si può notare alcuni di questi sotto-processi ho deciso di suddividerli
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per quanto conosco infatti Primafrost stabilisce con i punti di consegna
  delle finestre di servizio, entro le quali la merce deve essere consegnata
  perchè è presente il personale addetto allo scarico.
@@ -4145,17 +4533,20 @@ Per quanto conosco infatti Primafrost stabilisce con i punti di consegna
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Periodicamente l'azienda quindi raccoglie gli ordini dai suoi clienti/punti
  di consegna e da questi dati parte nella preparazione della flotta.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le gite vengono create su base giornaliera, e chiaramente non è necessario
  che ogni cliente abbia ordini nuovi ogni giorno, quindi i possibili scenari
  che ne derivano sono abbastanza dinamici.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come già accennato in altre sezioni, il processo di creazione delle gite
  viene svolto prevalentemente a mano da un dipendente (un ex-camionista,
  per la precisione) che ha grande esperienza delle strade italiane, e quindi
@@ -4164,6 +4555,7 @@ Come già accennato in altre sezioni, il processo di creazione delle gite
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una volta trovato il percorso, è necessario calcolare una stima dei kilometri
  da percorrere e tempo potenziale impiego di tempo.
  Almeno questa parte non era eseguita in maniera completamente manuale,
@@ -4172,6 +4564,7 @@ Una volta trovato il percorso, è necessario calcolare una stima dei kilometri
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Fatte le gite e apportate eventuali correzioni, la flotta ed i carichi sui
  mezzi vengono preparati, ed una volta partiti i mezzi vengono tracciati
  temporalmente mediante appositi strumenti, in modo da assicurarsi che gli
@@ -4182,10 +4575,12 @@ Fatte le gite e apportate eventuali correzioni, la flotta ed i carichi sui
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Problemi secondari
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un vincolo operatico piuttosto ovvio è rappresentato dalla capacità dei
  mezzi di trasporto.
  Le eccezioni per quanto riguarda questo limite non possono che essere gestite
@@ -4194,11 +4589,13 @@ Un vincolo operatico piuttosto ovvio è rappresentato dalla capacità dei
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Con la vecchia suite capitava ogni tanto una incorretta gestione dei carichi
  dei camion.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La componenete umana in questo caso si rivelava indispensabile: spesso era
  necessario modificare le gite già calcolate per far tornare i conti, ed
  un uomo con una discreta esperienza ed abilità poteva individuare in pochissimo
@@ -4207,6 +4604,7 @@ La componenete umana in questo caso si rivelava indispensabile: spesso era
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un'altro problema che persino con i mezzi di oggi non viene trattato nelle
  applicazioni commerciali è l'eccesso di traffico che alcune strade riscontrano
  periodicamente durante la giornata, il quale può creare diversi disagi
@@ -4214,6 +4612,7 @@ Un'altro problema che persino con i mezzi di oggi non viene trattato nelle
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ancora una volta un essere umano con un po' di esperienza può riuscire invece
  a prevedere il problema, e addirittura sa indicare se il problema affligge
  uno solo dei versi di marcia, e può quindi avvalersene nel tentativo di
@@ -4221,12 +4620,14 @@ Ancora una volta un essere umano con un po' di esperienza può riuscire invece
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per quest'ultimo problema PTV sta compiendo degli studi e dei rilevamenti
  statistici, ma è chiaro che ancora per un po' di tempo l'essere umano è
  destinato a rimanere indispensabile.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come se non bastasse le tipologie di merce caricata incidono sul tipo di
  veicolo da utilizzare, e da quest'ultimo dipende quanta merce di un certo
  tipo può essere caricata.
@@ -4240,6 +4641,7 @@ Come se non bastasse le tipologie di merce caricata incidono sul tipo di
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo genere di problemi di carattere alquanto complesso è ancora risolvibile
  in maniera semi-automatica, ovvero l'operatore è in grado di indicare una
  serie di vincoli che chiameremo 
@@ -4258,6 +4660,7 @@ e dei vincoli non può che essere fatta da una persona che conosce la situazione
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Training-su-PTV"
@@ -4268,11 +4671,13 @@ Training su PTV Intertour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per prima cosa si è voluto provare ad usare PTV Intertour, in modo da non
  complicare da subito la possibile architettura finale.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per utilizzare l'applicazione è necessario di un'addestramento veramente
  minimo (fornitoci dai dipendenti di TPS), gran parte dei comandi dell'interfacc
 ia sono abbastanza intuitivi.
@@ -4289,6 +4694,7 @@ reference "Documentazione-di-PTV"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I dati necessari all'applicazione riguardano depositi (in cui sono inclusi
  anche gli ordini), veicoli ed autisti.
  Questi dati vengono chiamati 
@@ -4305,6 +4711,7 @@ master data
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Da qui PTV Intertour ricava uella che si chiama 
 \begin_inset Quotes eld
 \end_inset
@@ -4319,6 +4726,7 @@ matrice delle distanze
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nei 
 \emph on
 master data 
@@ -4331,6 +4739,7 @@ master data
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'utlima funzionalità che ci hanno illustrato era l'utilizzo di quella che
  in Ricerca Operativa viene chiamata 'post-ottimizzazione', ovvero un possibile
  raffinamento ulteriore della soluzione trovata, basata sul componenete
@@ -4345,6 +4754,7 @@ reference "sub:Mephisto"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per un'interfacciamento più user-friendly o per semplice integrazione con
  l'ERP aziendale è possibile inoltre utilizzare un altro applicativo, IT
  Manager, che permette di caricare facilmente i dati e memorizza tutto in
@@ -4352,6 +4762,7 @@ Per un'interfacciamento più user-friendly o per semplice integrazione con
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'interfaccia di IT Manager è poco più che minimale, ma contiene tutte le
  funzionalità necessarie: è possibile modificare i dati, mandare a Intertour
  solo un sottoinsieme ben preciso,ecc.
@@ -4360,10 +4771,12 @@ L'interfaccia di IT Manager è poco più che minimale, ma contiene tutte le
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Configurazione di PTV Intertour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La spiegazione che ci era sata data su questo prodotto era davvero dettagliata,
  ma tuttavia tutti i dettagli che ci erano stati forniti erano utili solo
  come aiuto durante lo svolgimento dei casi d'uso più o meno tipici, mentre
@@ -4372,6 +4785,7 @@ La spiegazione che ci era sata data su questo prodotto era davvero dettagliata,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questa fase l'attività principale è stata quella di eseguire una attenta
  esplorazione dell'interfaccia alla ricerca di parametri che ci permettessero
  di migliorare i risultati.
@@ -4380,10 +4794,12 @@ a in alcuni casi reali.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Parametri dell'euristica
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ben presto ci siamo resi conto che il controllo sui risultati poteva essere
  anche molto fine, anche se abbiamo riscontrato qualche potenziale pecca.
  Oltre a diversi tool per la visualizzazione dei risultati infatti, l'applicazio
@@ -4398,11 +4814,13 @@ reference "fig:Schermata-di-PTV"
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 per cambiare alcune proprietà relative ai mezzi (velocità media, qualifiche,
  costi per fascia oraria/kilometrica, ecc.)
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 per aggiungere/modificare alcuni vincoli per quanto riguardava la soluzione
  (tempo massimo che un mezzo poteva attendere presso un punto di consegna
  in attesa che aprisse, costo relativo alla singola unità di tempo, finestre
@@ -4410,6 +4828,7 @@ per aggiungere/modificare alcuni vincoli per quanto riguardava la soluzione
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 per decidere se adottare i 
 \begin_inset Quotes eld
 \end_inset
@@ -4425,11 +4844,13 @@ giri base
 \end_layout
 
 \begin_layout Itemize
+\paragraph_spacing double
 per tenere traccia dei vincoli che erano stati eventualmente violati dalla
  soluzione, mediante una piccola console.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -4471,6 +4892,7 @@ Schermata di PTV Intertour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ognuna di queste funzionalità ci aiutava nella creazione di uno scenario
  simulato che cercavamo di rendere il più possibile vicino alla realtà.
  Più lo scenario che andavamo a creare si avvicinava allo scenario del nostro
@@ -4479,6 +4901,7 @@ Ognuna di queste funzionalità ci aiutava nella creazione di uno scenario
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Un dettaglio che si rivelato importante successivamente stava nel fatto
  che i mezzi non erano visti come singole unità, ma come classi di veicoli.
  Gli attributi relativi al mezzo non appartenenvano al singolo mezzo, ma
@@ -4490,10 +4913,12 @@ te differente.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Qualifiche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per ogni mezzo era possibile definire arbitrariamente dei flag che rappresentass
 ero le 
 \begin_inset Quotes eld
@@ -4516,6 +4941,7 @@ reference "sub:Training-su-PTV"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il meccanismo in sè era semplice, ed il sistema, dopo la prima volta era
  stato impostato, era in grado di memorizzare le qualifiche attivate in
  modo da non perderle tra una sessione di utilizzo e l'altra.
@@ -4523,6 +4949,7 @@ Il meccanismo in sè era semplice, ed il sistema, dopo la prima volta era
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Era necessario prima di tutto attivare i flag per i mezzi che si sapeva
  possedessero certe caratteristiche e poi, ogni volta che un'ordine aveva
  certe caratteristiche, si attivava il flag corrispondente anche per il
@@ -4539,10 +4966,12 @@ e definendo alcune macro, ma nel nostro caso ne abbiamo fatto a meno perchè
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Visualizzazione dei risultati
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I punti di consegna appaiono rappresentati come dei pallini nella mappa
  che mostra l'applicazione, collegati da linne continue che sono le gite.
  Le gite si dipartono, come è logico, dal maggazzino di Mantova, che appare
@@ -4557,6 +4986,7 @@ transit point
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa rappresentazione, benchè semplice ed abbastanza intuitiva, nasconde
  in sè quello che potrebbe essere considerato un errore di usabilità: le
  linee che congiugono i vari punti di consegna non ricalcano minimamente
@@ -4572,6 +5002,7 @@ reference "fig:Alcune-gite-mostrate"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -4616,8 +5047,9 @@ Alcune gite mostrate da Intertour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo significa, come è succeso in caso reale, che se due punti si trovano
- ai due estremi di un lago e fanno parte della stessa gita vedremo un linea
+ ai due estremi di un lago e fanno parte della stessa gita vedremo una linea
  congiungerli e passare 
 \series bold
 sopra il lago
@@ -4631,6 +5063,7 @@ sopra il lago
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa rappresentazione potrebbe derivare anche da limiti pratici, in quanto
  non sappiamo se nella matrice delle distanze vengono memorizzate solo le
  distanze tra le destinazioni o anche i percorsi che le collegano.
@@ -4639,10 +5072,12 @@ Questa rappresentazione potrebbe derivare anche da limiti pratici, in quanto
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Velocità dei mezzi
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I dipendenti di TPS ci hanno subito avvertito di una peculiarità di questo
  prodotto: le zone a ZTL non sono correttamente gestite.
  Questo significa che se si fosse presentato ad esempio il caso di un punto
@@ -4654,18 +5089,21 @@ I dipendenti di TPS ci hanno subito avvertito di una peculiarità di questo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A mio parere questo difetto sembra come al solito legato al fatto che nella
  matrice delle distanze non vengano salvati altri dati sul percorso più
  breve.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per ovviare al problema, e cercare di far quadrare il più possibile i conti
  soprattutto per i tempi di viaggio, si doveva intervenire a mano, con 3
  approcci possibili:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 osservare la gita, calcolare circa il punto in cui il mezzo entrava nella
@@ -4682,6 +5120,7 @@ so in termini di tempo.
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 stimare più o meno il punto dove il mezzo entrava nella zona ZTL, e stimare
@@ -4698,6 +5137,7 @@ stimare più o meno il punto dove il mezzo entrava nella zona ZTL, e stimare
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 
 \series bold
 era possibile modificare gli attributi relativi alla strada in modo da impostare
@@ -4714,6 +5154,7 @@ era possibile modificare gli attributi relativi alla strada in modo da impostare
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La nostra fortuna era che situazioni come quella sopra descritta non si
  presentavano, comunque abbiamo deciso di prendere nota del problema.
  Il vero difetto dal mio punto di vista non consisteva nel fatto che PTV
@@ -4723,10 +5164,12 @@ La nostra fortuna era che situazioni come quella sopra descritta non si
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Validazione dei risultati
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come test per la configurazione adottata abbiamo utilizzato dei dati provenienti
  da Primafrost e rilevati in giorno specifico, in modo da fare una prova
  con uno scenario reale, con tanto di 
@@ -4741,12 +5184,14 @@ giri base
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sono state fatte più prove, provando a far variare il numero di punti di
  consegna e la loro disposizione, e controllando ogni volta se i tempi di
  riposo per i camionisti rispettavano le norme vigenti.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ciò che si è potuto osservare è che, utilizzando le gite originali come
  punto di partenza si otteneva comunque un risparmio, misurabile attorno
  all'1-2%, che era nulla in confronto al caso in cui le gite venivano ricalcolat
@@ -4756,6 +5201,7 @@ e da capo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come già detto precedentemente in 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4770,6 +5216,7 @@ ente sull'ordine dei milioni di euro, e quindi si sta parlando di una discreta
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ciò che abbiamo inoltre rilevato sono le prestazioni del componente applicativo:
  in al massimo una decina di secondi un problema con circa 200 punti di
  consegna ed una ventina di mezzi era stato completamente risolto, senza
@@ -4778,6 +5225,7 @@ Ciò che abbiamo inoltre rilevato sono le prestazioni del componente applicativo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La post-ottimizzazione impiegava ben di più: in teoria la si poteva lasciare
  andare quanto si voleva, ma sperimentalmente si era notato che i miglioramenti
  più notevoli si avevano già entro i primi 2 minuti.
@@ -4789,10 +5237,12 @@ ne migliorava la soluzione trovata dall'euristica dell'1-2% al massimo.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Comportamento dello strumento in caso di scenari dinamici
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Prima di comunicare ufficialmente al cliente i dati che avevamo raccolto,
  era necessario fare anche delle prove con dati che provenissero da giornate
  diverse, in modo da vedere come lo strumento si comportava di fronte a
@@ -4800,16 +5250,19 @@ Prima di comunicare ufficialmente al cliente i dati che avevamo raccolto,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per nostra fortuna il cliente era molto ben disposto nei nostri confronti,
  ed erano già disponibili i dati di alcune giornate, già riversati all'interno
  dell'ERP aziendale.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Problemi di formato sui dati in input
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questa fase abbiamo avuto qualche problema con il formato dei dati in
  input per Intertour.
  Me.R.Sy.
@@ -4820,6 +5273,7 @@ In questa fase abbiamo avuto qualche problema con il formato dei dati in
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In sé e per sé questo problema era assai stupido, e forse si poteva risolvere
  anche solo con qualche macro di Microsoft Excel.
  Questa infatti è stata la prima strada che abbiamo seguito, ma ben presto
@@ -4839,6 +5293,7 @@ In sé e per sé questo problema era assai stupido, e forse si poteva risolvere
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Così abbiamo provato ad usare le tabelle Excel come input per altri programmi
  che ci permettessero di utilizzare qualche operazione similare ai DBMS.
  Dato che l'ambiente in cui ci trovavamo a lavorare aveva un spiccata dominanza
@@ -4847,6 +5302,7 @@ Così abbiamo provato ad usare le tabelle Excel come input per altri programmi
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ben presto però ci siamo resi conto dei limiti che l'applicazione aveva,
  in quanto permetteva di importare le tabelle Excel, ma non permetteva di
  usare operatore come il JOIN perchè di fatto non stava utilizzando veri
@@ -4854,27 +5310,32 @@ Ben presto però ci siamo resi conto dei limiti che l'applicazione aveva,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Così l'alternativa è stata l'utilizzo di SQL Server 2005 Express Edition,
  per via del fatto che comunque è un DBMS, è free, ed è della stessa casa,
  per cui potevamo aspettarci un po' di compatibilità.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Indagando un po' abbiamo infatti trovato una pratica funzionalità che ci
  permetteva di importare direttamente i dati dei file Excel all'interno
  delle tabelle del database e viceversa.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questo modo siamo riusciti a risolvere tutto il problema in appena mezza
  giornata.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Nuove gite, calcolate su più giorni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Con i nuovi dati abbiamo potuto fare qualche test anche su pianificazioni
  di altre giornata di consegna.
  I risultati per fortuna si mantenevano nella media di quanto precedetemente
@@ -4882,11 +5343,13 @@ Con i nuovi dati abbiamo potuto fare qualche test anche su pianificazioni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Con queste ultime prove avevamo dimostrato che lo strumento si comportava
  bene anche in presenza di scenari dinamici, senza cambiare impostazioni.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Prima-presentazione-risultati"
@@ -4897,6 +5360,7 @@ Prima presentazione dei risultati al cliente
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Abbiamo potuto finalmente presentare in maniera ufficiale i risultati ottenuti
  in un meeting con tutti gli stakeholder riuniti.
  Oltre ad una rappresentanza di Wincor Nixdorf e di Primafrost erano presenti
@@ -4907,12 +5371,14 @@ Abbiamo potuto finalmente presentare in maniera ufficiale i risultati ottenuti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'incontro è proceduto abbastanza bene, il cliente ha confermato che dal
  suo punto di vista si stava andando nella direzione giusta.
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Alcune gite di quelle originali tuttavia sembravano strane perchè erano
  stati registrati dei tempi che lo strumento non poteva riprodurre, così
  gli esperti di TPS e i dipendenti di Primafrost e Wincor Nixdorf si sono
@@ -4920,6 +5386,7 @@ Alcune gite di quelle originali tuttavia sembravano strane perchè erano
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 E' emerso anche un'altro dato interessante, di cui però e meglio parlare
  nella sezione 
 \begin_inset CommandInset ref
@@ -4932,10 +5399,12 @@ reference "sec:Analisi-costi-benefici"
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Percorso più corto o più breve?
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una sola domanda rimase in sospeso dopo questo primo incontro.
  I dirigenti di Primafrost, in linea del tutto teorica, si chiedevano se
  era possibile regolare lo strumento in modo che invece di utlizzare i percorsi
@@ -4943,6 +5412,7 @@ Una sola domanda rimase in sospeso dopo questo primo incontro.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa richiesta era dovuta principalmente alle modalità di pagamento degli
  autisti: alcuni erano pagati al kilometro, altri all'ora, quindi non era
  così irragionevole cercare di minimizzare le distanze nel primo caso ed
@@ -4950,22 +5420,26 @@ Questa richiesta era dovuta principalmente alle modalità di pagamento degli
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per riuscire a soddisfare la richiesta dovevamo sapere di più sull'architettura
  interna del programma e capire come manipolare i parametri dell'euristica
  in modo che tirasse fuori i risultati che ci servivano.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Il componente MEFISTO
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 MEFISTO è stato l'unico componente che ci appariva manipolabile da questo
  punto di vista, ed è stato anche l'unico componente interno di cui abbiamo
  ricevuto un minimo di documentazione da parte di TPS.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il funzionamento in dettaglio di MEFISTO può essere trovato nella sezione
  
 \begin_inset CommandInset ref
@@ -4983,12 +5457,14 @@ reference "sub:Mephisto"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I pesi non erano modificabili da interfaccia grafica, ed ecco perchè non
  li avevamo notati finora, ma da un file di configurazione, la cui locazione
  ci è stata indicata dai tecnici TPS.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ciò che si è potuto notare è che, ponendo i risultati in un ipotetico piano
  cartesiano organizzato come in figura 
 \begin_inset CommandInset ref
@@ -5009,6 +5485,7 @@ reference "fig:funzione2"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -5133,11 +5610,13 @@ Come si può notare, sia dal punto di vista spaziale che di quello temporale,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Non era pertanto possibile prevedere in modo accurato i risultati che si
  sarebbero ottenuti.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -5214,10 +5693,12 @@ reference "fig:funzione1"
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Le gite che non tornavano
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Oltre al problema della non completa prevedibilità dell'influenza dei fattori
  di costo, c'erano anche da tenere in considerazione le gite il cui costo
  non tornava.
@@ -5228,12 +5709,14 @@ Oltre al problema della non completa prevedibilità dell'influenza dei fattori
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La prima ipotesi da verificare era che stessero usando la stessa versione
  delle mappe, altrimenti era chiaro che da dati diversi derivassero risultati
  diversi.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sono stati controllati quindi i percorsi di riferimento alle mappe, ma erano
  identici, e ce lo hanno confermato anche i tecnici TPS.Siamo pertanto tornati
  a controllare se esistevano altri parametri che influenzassero il calcolo
@@ -5242,6 +5725,7 @@ Sono stati controllati quindi i percorsi di riferimento alle mappe, ma erano
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La soluzione di questo problema venne data da Cristian, il dipendente di
  Primafrost che si occupava del calcolo delle gite.
  Mentre noi cercavamo di riprodurre i suoi risultati, lui aveva cercato
@@ -5249,12 +5733,14 @@ La soluzione di questo problema venne data da Cristian, il dipendente di
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tutto si era risolto con la variazione di un singolo fattore, che dall'interfacc
 ia sembrava effettivamente influenzare il calcolo del percorso, ma solo
  per quanto riguardava la sua lunghezza.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La figura illustra quello che esponeva l'interfaccia: mettendo un valore
  minimo a quel coefficiente avremmo in teoria dovuto influenzare la ricerca
  in modo che selezionasse il percorso più veloce, al contrario avrebbe seleziona
@@ -5262,6 +5748,7 @@ to il più breve.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Non è dato sapere di preciso come questo singolo fattore influenzasse il
  calcolo, ma si possono fare supposizioni: supponendo che l'algoritmo utilizzato
  da entrambi i programmi sia simile a grnular Tabu Search, quel fattore
@@ -5280,6 +5767,7 @@ one.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:ricerca-giusti-fattori"
@@ -5290,6 +5778,7 @@ La ricerca dei giusti valori per i fattori
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Risolto il problema delle gite 
 \begin_inset Quotes eld
 \end_inset
@@ -5310,18 +5799,22 @@ migliori
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Vi erano sostanzialmente 2 metodi possibili:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Cercare manualmente, attraverso una serie di prove, i valori corretti
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Cercare di automatizzare il processo descritto al punto 1
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ognuna delle due scelte aveva vantaggi e svantaggi, ovviamente.
  Nel caso della ricerca manuale i tempi potevano essere anche molto lunghi
  e la qualità della soluzione trovata scadente, viceversa per il caso automatico
@@ -5331,11 +5824,13 @@ Ognuna delle due scelte aveva vantaggi e svantaggi, ovviamente.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si è quindi optato per la prima scelta, raggiungendo una soluzione abbastanza
  buona dopo qualche giorno di lavoro.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Giusto per completezza, i risultati che si sarebbero potuti ottenere con
  una procedura automatica, sono spiegati nel capitolo 3, 
 \begin_inset CommandInset ref
@@ -5348,20 +5843,24 @@ reference "cha:Implementazione"
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Validazione dei risultati
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tutte prove di cui si è parlato prima sono state effettuate sulle mappe
  e sugli ordini su ci sono anche state effettuate anche le prove fatte per
  laprima consegna, per cui eravamo piuttosto sicuri dei risultati.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Presentazione dei risultati definitiva al cliente
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il cliente, già contento perchè aveva intuito che si stava andando nella
  direzione giusta, è stato molto felice di sapere che c'era anche un modo
  di manipolare il risultato finale dell'applicazione.
@@ -5370,6 +5869,7 @@ te agire sui parametri invece che gettare via tutto.
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Analisi-costi-benefici"
@@ -5380,21 +5880,25 @@ Analisi costi-benefici
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A conti fatti le due architetture eran più o meno equivalenti dal punto
  di vista dei vantaggi e degli svantaggi.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ciò che ha portato quindi ad una scelta netta è stato ciò che è emerso già
  dal primo incontro con gli stakeholder, ovvero il fatto che alcune informazioni
  non erano del tutto aggiornate all'interno delle mappe.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Vantaggi e svataggi utilizzzando PTV Intertour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Utilizzando Intertour i vantaggi che se ne ottenevano erano valutabili a
  livello di maggiore semplicità di utilizzo per l'utente finale se si utilizzava
  direttamente l'interfaccia grafica prevista dallo strumento, ed un costo
@@ -5402,40 +5906,47 @@ Utilizzando Intertour i vantaggi che se ne ottenevano erano valutabili a
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 D'altro canto l'applicazione non risultava così facile da integrare nell'archite
 ttura già esistente, infatti necessitava di qualche workaround solo per
  interfacciarlo direttamente con l'ERP.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa risultava essere un'ottima alternativa nel caso si fosse visto che
  la componente umana non poteva essere esclusa, in quanto anche se più difficile
  da integrare poteva risultare più usabile.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Vantaggi e svantaggi utilizzando PTV XTour
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Utilizzando XTour era probabilmente più facile da integrare con la'rchitettura
  preesistente, ma non avrebbe necessariamente semplificato l'interazione
  con l'utente.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Grazie all'architettura basata su Web Service, si poteva riuscire a visualizzare
  le mappe anche all'interno di un browser con poco sforzo, visto che esistevano
  già librerie apposite.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il problema sarebbe stato dover disegnare ex-novo una nuova interfaccia
  per l'utente, con possibili problemi di usabilità e di familiarizzazione
  con i nuovi controlli.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Inoltre non era detto che il costo fosse per forza contenuto, non sono mai
  state fatte abbastanza prove per avere la certezza se ogni XServer fosse
  più o meno indipendente dagli altri o se fosse necessario l'utilizzo di
@@ -5445,6 +5956,7 @@ Inoltre non era detto che il costo fosse per forza contenuto, non sono mai
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questa poteva tuttavia essere un'ottima alternativa nel caso si fosse visto
  che la componente umana era escludibile quasi del tutto.
  Riducendo i controlli all'osso ed integrando tutto il resto, la qualità
@@ -5452,10 +5964,12 @@ Questa poteva tuttavia essere un'ottima alternativa nel caso si fosse visto
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 L'incompletezza delle mappe
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Già durante il primo incontro con gli stakeholder, come accennato nel capitolo
  
 \begin_inset CommandInset ref
@@ -5468,12 +5982,14 @@ reference "sub:Prima-presentazione-risultati"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 PTV Intertour infatti non ci permetteva di vedere di preciso quale percorso
  seguivano i mezzi, e Christian, che in Primafrost si occupava del calcolo
  delle gite, ha voluto vederci chiaro.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ricalcolando i percorsi utilizzando Maps&Guide si ottenevano risultati un
  po' strani infatti ( e queste erano le gite che non tornavano ), mentre
  altri sembravano potenzialmente ignorare alcune restrizioni presenti sul
@@ -5484,6 +6000,7 @@ Ricalcolando i percorsi utilizzando Maps&Guide si ottenevano risultati un
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ci siamo sentiti subito di escludere il caso, anche se sapevamo che Cristian
  aveva più esperienza di tutti noi in fatto di strade.
  In realtà parlandone un po' è uscito fuori che l'ipotesi di Cristian non
@@ -5495,10 +6012,12 @@ Ci siamo sentiti subito di escludere il caso, anche se sapevamo che Cristian
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Scelta finale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In realtà, per quanto il problema della completezza delle mappe sembrasse
  un problema minore, aveva rivelato una criticità: non potendo più garantire
  che i percorsi calcolati avrebbero rispettato di base i vincoli imposti
@@ -5508,12 +6027,14 @@ ne, anzi bisognava cercare di rifarsi il più possibile ai percorsi precalcolati
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Non si è voluto comunque abbandonare il progetto, in quanto le premesse
  sembravano promettenti, ma era ormai chiaro che la componente umana non
  era eliminabile.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si è quindi deciso di mantenere come applicazione di riferimento PTV Intertour,
  e di integrarlo in modo da fornire a Cristian tutti i controlli necessari.
  Con questo assetto la figura professionale di questo dipendente non veniva
@@ -5523,6 +6044,7 @@ Si è quindi deciso di mantenere come applicazione di riferimento PTV Intertour,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo permetterebbe un domani di poter in teoria affiancare a Cristian
  un assistente per poter gestire le consegne in caso di sua assenza, ed
  inoltre con il potenziale miglioramento dello strumento si potrebbero anche
@@ -5531,6 +6053,7 @@ Questo permetterebbe un domani di poter in teoria affiancare a Cristian
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Gli XServer non verranno pertanto impiegati, in quanto non offrirebbero
  i vantaggi sperati e rischierebbero di costare troppo ora le licenze.
  Questa alternativa sarà rivalutata in futuro, quando magari più clienti
@@ -5539,6 +6062,7 @@ Gli XServer non verranno pertanto impiegati, in quanto non offrirebbero
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -5559,6 +6083,7 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "cha:Implementazione"
@@ -5569,6 +6094,7 @@ Implementazione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -5597,6 +6123,7 @@ rightmark}}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -5623,6 +6150,7 @@ thepage}}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nell vicenda spiegata nella sezione 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5635,27 +6163,32 @@ reference "sub:ricerca-giusti-fattori"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo ci avrebbe permesso di avere un minimo di sicurezza per quanto riguardava
  l'ottimalità della soluzione trovata e ci avrebbe risparmiato potenzialmente
  un sacco di fatica.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questo capitolo presento un mio contributo completamente personale in
  cui ho cercato di rispondere questo quesito.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nella prima sezione parlerò in generale delle motivazioni che mi hanno fatto
  scegliere l'approccio che poi ho usato, quindi descriverò come ho ottenuto
  i dati, i risultati ottenuti ed infine come ho potuto validare i risultati.
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 Approccio generale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Era chiaro che non avrei potuto risolvere il problema utilizzando PV Intertour,
  in quanto nella documentazione di questo strumento non era minimamente
  spiegato se vi fosse un modo di impartire comandi all'applicazione senza
@@ -5664,18 +6197,21 @@ Era chiaro che non avrei potuto risolvere il problema utilizzando PV Intertour,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La selta quindi più ovvia era quella di utilizzare gli XServer, ed in particolar
 e XTour in quanto, sempre stando alla documentazione, era il più simile
  da un punto di vista di funzionalità ed utilizzo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 TPS aveva fornito a Wincor un account per riuscire a scaricare le ultime
  versioni degli XServer direttamente dal sito di PTV, per cui questa parte
  non cosutuiva un problema.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I problemi sono cominciati quando, facendo delle prove con i vari applicativi,
  mi sono reso conto ingenuamente che le mappe non erano incluse nel download.
  Chiedendo a TPS mi sono reso conto che le mappe avrebbero occupato circa
@@ -5683,12 +6219,14 @@ I problemi sono cominciati quando, facendo delle prove con i vari applicativi,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ho abbandonato quindi quella strada, ma ho ottenuto lo stesso i dati, come
  spiegherò più avanti, poichè in ogni caso non esisteva un modo per importarli
  all'interno di XTour.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ho deciso perciò di eseguire un semplice 
 \begin_inset Quotes eld
 \end_inset
@@ -5703,6 +6241,7 @@ dimostrazione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il mio approccio è stato quindi quello di reimplementare Granular Tabu Search
  e di compiere la ricerca dei fattori migliori atraverso un algoritmo genetico,
  per vedere se quest'ultimo mi aiutava a selezionare i coefficienti più
@@ -5710,6 +6249,7 @@ Il mio approccio è stato quindi quello di reimplementare Granular Tabu Search
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La ragionevolezza del tempo impiegato l'ho misurata confrontando i risultati
  ottenuti dall'algoritmo genetico rispetto ad un algoritmo 
 \begin_inset Quotes eld
@@ -5730,36 +6270,43 @@ brute force
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Reimplementazione di Granular Tabu Search
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per reimplementare il Granular Tabu Search ho utilizzato direttamente l'articolo
  originale di Toth e Vigo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Mi sono permesso di fare solo 3 modifiche all'articolo originale, in modo
  renderlo più simile a quello ce veniva descritto nella documentazione di
  MEFISTO:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Invece di utilizzare solo mosse OR1, ho aggiunto anche mosse OR2 e SWAP,
  in modo da ampliare la gamma delle possibili variazioni
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Ho fatto in modo che i valori iniziali dei fattori di costo potessero essere
  decisi a riga di comando quando si lanciava il programma, in questo modo
  si poteva utilizzarlo con l'algoritmo genetico
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Ho deciso di implementare tutto in Python, invece che il C o il C++
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Come metaeuristica Granular Tabu Search ha bisogno di partire da una soluzione
  fornita da un euristica rapida.
  Nell'articolo viene utilizzata l'euristica di Clarke e Wright, quindi ho
@@ -5768,12 +6315,14 @@ Come metaeuristica Granular Tabu Search ha bisogno di partire da una soluzione
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 L'implementazione più prestante si sarebbe potuta ottenere certamente scrivendo
  tutto in C e ottimizzando per l'architettura su cui l'applicazione avrebbe
  dovuto girare.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto troppo
  rispetto alle mie aspettative: C non possiede nativamente il supporto per
  liste, mappe di hash e iteratori, e tra l'altro benchè sia un linguaggio
@@ -5786,6 +6335,7 @@ Tuttavia il tempo per sviluppare l'intero codice sarebbe cresciuto troppo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Avrei potuto puntare sul C++, ma conoscevo meglio Python, e sapevo che comunque
  anche il codice Python veniva compilato, anche se magari non era ottimizzato.
  Inoltre questo linguaggio aveva tutti i vantaggi che C non aveva, con l'unico
@@ -5796,10 +6346,12 @@ Avrei potuto puntare sul C++, ma conoscevo meglio Python, e sapevo che comunque
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 L'algoritmo genetico
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ogni algoritmo genetico (come spiegato precedentmente in 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5826,17 +6378,20 @@ minimi locali
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Se come geni pendiamo i coefficienti che usiamo per il granular tabu search,
  la rappresentazione in stringa di una specifica coppia di valori possibili
  può rappresentare il corredo genetico di un'individuo.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel caso che ci si presentava in azienda noi dovevamo cercare di riprodurre
  i risultati di Primafrost, trovando i coefficienti opportuni.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Possiamo quindi fare in modo che individui che ottengono i risultati vicini
  ad un valore preimpostato siano favoriti nel processo di selezione, in
  modo da ottenere una popolazione finale che presenti come geni solo i coefficie
@@ -5844,32 +6399,39 @@ nti più promettenti.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ad ogni ciclo dell'algoritmo da me progettato infatti si ha:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 inizializzazione degli agenti
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 calcolo della soluzione del problema mediante Granular Tabu Search (i coefficien
 ti usati nella ricerca sono quelli presenti nei geni dell'individuo)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 selezione degli individui in base ai risultati ottenuti (metodo della ruota
  della roulette)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Cross-over (uniforme) e mutazione
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 Esperimenti eseguiti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per eseguire degli esperimenti i cui risultati potessero essere un minimo
  validati e confrontati tra loro ho deciso di utilizzare 2 istanze 
 \begin_inset Quotes eld
@@ -5893,6 +6455,7 @@ reference "sec:Ottenere-i-dati"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Le istanze 
 \begin_inset Quotes eld
 \end_inset
@@ -5922,6 +6485,7 @@ reference "The-VRP-Web"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Negli esperimenti che avevo in programma ho aggiunto anche un paio di esperiment
 i 
 \begin_inset Quotes eld
@@ -5937,6 +6501,7 @@ brute force
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Ottenere-i-dati"
@@ -5947,24 +6512,28 @@ Ottenere i dati di input
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel cercare di vedere come l'algoritmo genetico si sarebbe comportato in
  caso reale dovevo risolvere il problema dell'incompletezza dei dati in
  mio possesso.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Possedevo infatti i risultati finali di quell'istanza, conoscevo le quantità
  degli ordini e i mezzi disponibili, ma non conoscevo la posizione geografica
  dei vari clienti nè tantomeno le distanze reciproche tra di loro.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Avevo provato a farmi restituire tali dati da PTV Intertour, ma non avevo
  trovato la funzionalità adatta, anche perché, come mi confermarono le persone
  di TPS poi, quella funzionalità non sembrava essere stata prevista.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La funzionalità di importazione/esportazione della matrce delle distanze
  era infatti presente solo in un prodotto della serie XServer, XDima.
  Ho provato quindi, utilizzando delle licenze di prova, a far funzionare
@@ -5975,6 +6544,7 @@ nte una decina di GigaBytes.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il fatto che non si potessero ottenere i dati direttamente dalle mappe di
  PTV tuttavia non rappresentava un problema.
  avevo infatti trovato un simpatico tutorial sugli XServer bastato su Javascript
@@ -5989,6 +6559,7 @@ reference "AJAX-tutorial"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Studiando un po' l'API pubblica descritta nella documentazione di PTV, ed
  avendo ancora un file Excel di quelli usati per PTV Intertour, sono riuscito
  ad impostare il programma in modo che, date una serie di città, calcolasse
@@ -5996,16 +6567,19 @@ Studiando un po' l'API pubblica descritta nella documentazione di PTV, ed
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il risultato di quest'operazione era una sorta di matrice delle distanze,
  ottima per il gnere di problema che doveva essere trattato.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Visto che i punti d consegna erano dell'ordine del centinaio almeno, l'operazion
 e ha richiesto qualche ora.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A causa di un limite sulla massima granularità nella mappa del tutorial,
  punti di consegna ppartenenti alla stessa città collessavano.
  Ho eliminato quindi i punti coincidenti, in quanto erano rendevano solo
@@ -6013,26 +6587,31 @@ A causa di un limite sulla massima granularità nella mappa del tutorial,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La matrice delle distanze che ho potuto utilizzare dopo quest'operazione
  risulta quindi un po' diversa da quella reale, ma mi permetteva comunque
  di fare qualche prova anche su un caso reale.
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 Risultati ottenuti
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Esperimenti con istanze CVRPTW
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Il mio primo esperimento è stato effettuato sull'istanza 'c101' di Condreau.
  Questa infatti era una buona istanza di CVRPTW, con 100 clienti ed 1 magazzino.
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sorprendentemente per me, la versione di Granular Tabu Search che avevo
  implementato non riusciva a risolvere questo problema, o meglio generava
  solo soluzioni inammissibili, che violavano almeno un vincolo.
@@ -6041,10 +6620,12 @@ Sorprendentemente per me, la versione di Granular Tabu Search che avevo
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Esperimenti con istanze CVRP
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Dati i risultati ottenuti in precedenza, ho deciso di l'istanza 'c101' di
  Condreau, ma di considerarla come se fosse un'istanza di CVRP, piuttosto
  che di CVRPTW, ovvero ho fatto in modo che Granular Tabu Search non tenesse
@@ -6052,6 +6633,7 @@ Dati i risultati ottenuti in precedenza, ho deciso di l'istanza 'c101' di
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questo modo le soluzioni sono tornate ad essere ammissibili, e pure non
  troppo lontane dal valore ottimale, come viene mostrato nella sezione di
  validazione 
@@ -6065,6 +6647,7 @@ reference "sub:Validazione-risultati"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ho scelto quindi anche un'istanza diversa, presa anche da un autore diverso,
  in modo da evitare possibili schemi ricorrenti inseriti che ogni autore
  potrebbe avere, e ho scelto l'istanza 'RC101' di Solomon, che aveva in
@@ -6075,6 +6658,7 @@ ndola come un'istanza di CVRP.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Lanciando l'algoritmo 
 \begin_inset Quotes eld
 \end_inset
@@ -6088,6 +6672,7 @@ brute force
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 ponendo di poter stabilire un ordinamento tra le coppie di fattori, in modo
  da poterli rappresentare sull'asse delle ascisse, sull'asse delle ordinate
  ci troveremmo di fronte a quella che sembra una funzione costante, tranne
@@ -6095,18 +6680,21 @@ ponendo di poter stabilire un ordinamento tra le coppie di fattori, in modo
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Si può notare come tra la soluzione non post-ottimizzata (quella con coefficient
 i (0,0), nell'origine) sia sempre peggiore rispetto alla versione su cui
  invece Granular Tabu Search ha potuto operare
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Il miglioramento percentuale è tuttavia variabile, e va dallo 0,008% dell'istanz
 a di Condreau al 6% dell'istanza di Solomon, il che più o meno ci riporta
  in media a quel 3% che era stato osservato nei casi reali
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -6235,12 +6823,14 @@ Come si può notare, la rappresentazione dei risultati suggerisce la somiglianza
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ho voluto quindi provare a vedere che risultati ottenevo con il caso reale
  di Primafrost: i risultati sono stati pessimi, in quanto ancora una volta
  non si riusciva a produrre una soluzione ammissibile.
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:La-consulenza-di"
@@ -6251,6 +6841,7 @@ La consulenza di un esperto del campo, Paolo Toth
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Frustrato dai risultati ottenuti, mi sono rivolto al professor Paolo Toth,
  presso la Facoltà di Ingegneria di Bologna, in quanto affermato studioso
  del campo ed inventore dell'algoritmo originale.
@@ -6259,6 +6850,7 @@ Frustrato dai risultati ottenuti, mi sono rivolto al professor Paolo Toth,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Lo sforzo decisivo in queste applicazioni viene sempre fatto dall'euristica
  principale, non dalla metaeuristica.
  L'euristica di Clarke e Wright è veramente molto semplice, per cui può
@@ -6270,11 +6862,13 @@ Lo sforzo decisivo in queste applicazioni viene sempre fatto dall'euristica
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Utilizzando euristiche più complesse avrei potuto decisamente migliorare
  i risultati, ma ormai il tempo scarseggiava e non ho potuto fare di meglio.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo però ci dice una cosa importante sul prodotto di PTV: con un discreta
  probabilità l'applicazione da me implementato rispecchia in linea di massima
  il funzionamento del componente MEFISTO, tuttavia il vero valore dell'intera
@@ -6286,10 +6880,12 @@ Questo però ci dice una cosa importante sul prodotto di PTV: con un discreta
 \end_layout
 
 \begin_layout Subsubsection
+\paragraph_spacing double
 Risultati con l'algoritmo genetico
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 A causa delle scadenze temporali, che ormai si erano rivelate pressanti,
  ho deciso comunque di fare anche gli esperimenti con l'algoritmo genetico.
  In fondo dovevo semplicemente dimostrare che questa metodologia poteva
@@ -6297,6 +6893,7 @@ A causa delle scadenze temporali, che ormai si erano rivelate pressanti,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel nostro caso avevamo dei valori di output da usare come riferimento,
  e dovevamo trovare quale combinazione di coefficienti produceva quel risultato,
  o qualcosa di simile, per cui non era così importante quale fosse l'effettivo
@@ -6304,6 +6901,7 @@ Nel nostro caso avevamo dei valori di output da usare come riferimento,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel nostro caso i coefficienti su cui potevamo condurre i test erano solo
  2: costo dei chilometri percorsi e costo del tempo impiegato.
  Ogni coppia in teoria poteva produrre soluzioni diverse le une dalle altre,
@@ -6314,6 +6912,7 @@ ano la voce di costo relativa.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset VSpace defskip
 \end_inset
 
@@ -6321,6 +6920,7 @@ ano la voce di costo relativa.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nell'algoritmo genetico venivano utilizzati 100 agenti come 
 \begin_inset Quotes eld
 \end_inset
@@ -6334,6 +6934,7 @@ popolazione iniziale
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ho deciso dunque di limitare il mio studio alle prime 10 generazioni a partire
  da quella iniziale, in modo da vedere se era possibile già individuare
  delle tendenze chiare anche se con così pochi agenti e tempo.
@@ -6351,12 +6952,14 @@ brute force
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per rendere evidente che la selezione genetica operava in modo totalmente
  indipendente dall'andamento della funzione, ho deciso di operare nel seguente
  modo:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Nell'istanza trattata da Condreau, ovrei impostato il valore desiderato
  in modo che fosse 
 \series bold
@@ -6376,6 +6979,7 @@ brute force
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Nel caso invece dell'istanza di Solomon, avrei impostato il valore desiderato
  in modo che fosse 
 \series bold
@@ -6396,11 +7000,13 @@ brute force
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Non avrei invece minimamente trattato il caso reale in questa ultima fase,
  in quanto non risultava essere particolarmente significativo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In quest'ultima fase i risultati sono stati abbastanza soddisfacenti, come
  si può notare in figura 
 \begin_inset CommandInset ref
@@ -6429,6 +7035,7 @@ reference "sub:Validazione-risultati"
 \end_layout
 
 \begin_layout Subsection
+\paragraph_spacing double
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Validazione-risultati"
@@ -6439,12 +7046,14 @@ Validazione risultati
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ogni esperimento effettuato aveva un qualche criterio di validazione dei
  risultati.
  
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per quanto riguarda i primi esperimenti trovati su 
 \emph on
 VRP Web
@@ -6465,6 +7074,7 @@ reference "tab:validazione brute force"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float table
 wide false
 sideways false
@@ -6733,6 +7343,7 @@ reference "sub:La-consulenza-di"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per quanto riguarda i risultati ottenuti con gli algortimi genetici sono
  state fatte solo delle indagini di tendenza, mediante statistiche, che
  tuttavia dimostrano come l'algoritmo si comporti piuttosto bene anche se
@@ -6740,11 +7351,13 @@ Per quanto riguarda i risultati ottenuti con gli algortimi genetici sono
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La popolazione iniziale era fondamentalmente scelta a caso, ma si notavano
  un paio di cose interessanti:
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Se la popolazione inziale non conteneva agenti con corredo genetico (0,0)
  e (0,1), allora quello che si otteneva era un insieme di agenti che producevano
  lo stesso valore (come spiegato anche nella sezione precedente), e quindi,
@@ -6755,6 +7368,7 @@ Se la popolazione inziale non conteneva agenti con corredo genetico (0,0)
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 Se invece la popolazione iniziale conteneva una delle coppie interessanti,
  il gruppo che raggiungeva un valore più vicno a quello desiderato tendeva
  a dominare sugli altri, esattamente come previsto, anche se i risultati
@@ -6776,6 +7390,7 @@ reference "fig:genetico3"
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 I risultati apparivano estremamente evidenti se gli agenti venivano raggruppati
  in base al valore della funzione di 
 \begin_inset Quotes eld
@@ -6800,6 +7415,7 @@ reference "sec:Algoritmo-genetico"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -7019,6 +7635,7 @@ reference "fig:solomon-c"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La variabilità dei sisultati di cui parla il punto 2 si riferisce ad un
  caso abbastanza anomalo che si era verificato in una particolare esecuzione
  di Granular Tabu Search sull'istanza di Condreau: la popolazione iniziale
@@ -7028,6 +7645,7 @@ La variabilità dei sisultati di cui parla il punto 2 si riferisce ad un
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Ovviamente (0,0), per come è stato spiegato nella sezione precedente, era
  una coppia favorita e quella particolare popolazione mostrava un'idoneità
  più alta.
@@ -7038,6 +7656,7 @@ Ovviamente (0,0), per come è stato spiegato nella sezione precedente, era
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Casi simili capitavano anche nell'istanza di Solomon, tuttavia, in questa
  particolare esecuzione, una serie particolarmente fortunata di numeri casuali
  generati nella procedura di riproduzione avevano dato luogo ad una vera
@@ -7058,12 +7677,14 @@ rapporti incestuosi
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo risultato risulta ancora più straordinario se si pensa che le differenze
  tra i valori di idoneità tra i 2 gruppi erano situate oltre la quarta cifra
  significativa.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -7261,16 +7882,19 @@ reference "fig:condreau-c"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si poteva quindi concludere che anche la più piccola differenza era importante
  per l'algoritmo, tuttavia non era possibile stabilire a priori il peso
  che queste differenze avrebbero avuto sulla singola esecuzione.
 \end_layout
 
 \begin_layout Section
+\paragraph_spacing double
 Confronto tra i metodi di scelta dei coefficienti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 In questo elaborato abbiamo visto 3 metodi con cui si sarebbero potute soddisfar
 e le esigenze del cliente.
  Ci era infatti stato chiesto di trovare una coppia di coefficienti che
@@ -7280,6 +7904,7 @@ e le esigenze del cliente.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Sul campo si è potuto vedere all'opera solo uno dei 3 metodi, quello manuale,
  basato su previsioni e stime fatte da esseri umani.
  Il metodo si è rivelato vincente poichè ha prodotto buoni risultati in
@@ -7288,6 +7913,7 @@ Sul campo si è potuto vedere all'opera solo uno dei 3 metodi, quello manuale,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Esistono quindi almeno altri 2 metodi per trovare i coefficienti suddetti,
  che però fanno affidamento su componenti informatici.
  Garantiscono un risultato buono, se non necessariamente il migliore in
@@ -7303,6 +7929,7 @@ reference "tab:CPU-time"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float table
 wide false
 sideways false
@@ -7502,6 +8129,7 @@ brute force
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 I pro e i contro dei vari metodi si possono vedere nella tabella 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7538,6 +8166,7 @@ caso pessimo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Quindi possiamo dire che, eseguendo più volte l'algoritmo genetico, per
  esplorare tutte le possibili soluzioni impieghiamo più o meno lo stesso
  tempo (forse un po' maggiore) rispetto all'algoritmo 
@@ -7552,6 +8181,7 @@ brute force
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float table
 wide false
 sideways false
@@ -7823,6 +8453,7 @@ brute force
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Una cosa che non emerge dalle tabelle è come cresca il tempo impiegato per
  trovare una buona soluzione nei 3 metodi.
  Poniamo ad esempio che aumenti il numero dei coefficienti da controllare
@@ -7830,6 +8461,7 @@ Una cosa che non emerge dalle tabelle è come cresca il tempo impiegato per
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel caso aumentino semplicemente gli intervalli, con il metodo manuale il
  tempo cresce sicuramente, anche se non sappiamo bene prevedere di quanto.
  Se invece aumentiamo il numero di coefficienti cambia tutto, in quanto
@@ -7840,6 +8472,7 @@ Nel caso aumentino semplicemente gli intervalli, con il metodo manuale il
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel caso dell'algoritmo 
 \begin_inset Quotes eld
 \end_inset
@@ -7854,6 +8487,7 @@ brute force
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nel caso dell'algoritmo genetico invece, la crescita di tempo rimane lineare
  comunque, usando qualche accorgimento nella scelta della popolazione iniziale,
  si perde qualcosa dal punto di vista della garanzia dell'ottimalità della
@@ -7862,6 +8496,7 @@ Nel caso dell'algoritmo genetico invece, la crescita di tempo rimane lineare
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -7882,10 +8517,12 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter*
+\paragraph_spacing double
 Conclusioni
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Si può quindi concludere che, allo stato odierno, il mondo commerciale è
  ora in grado di rispondere anche alle esigenze di chi ogni giorno deve
  gestire un'intera flotta di veicoli e qualche centinaio di punti di consegna.
@@ -7894,24 +8531,28 @@ Si può quindi concludere che, allo stato odierno, il mondo commerciale è
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 La vera criticità di oggi invece è tenere completi ed aggiornati i dati
  delle mappe, partendo da quelli riguardano strettamente la cartografia,
  fino ai dati sulla viabilità e la percorribilità delle strade.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Senza dati al pari con le aspettative, infatti, si possono creare situazioni
  spiacevoli in cui i risultati trovati sono inammissibili nella realtà delle
  cose, come dimostra il caso di Primafrost.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Siamo sicuri che le persone di TPS hanno realizzato quanto importante sia
  questa priorità, e sicuramente nei prossimi anni si impegnereanno a fondo
  per migliorare la qualità delle loro mappe.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Questo potrebbe davvero rendere possibile, in un futuro molto prossimo,
  una reale disponibilità di una soluzione commerciale in grado di risolvere
  istanze del 
@@ -7926,6 +8567,7 @@ Vehicle Routing Problem
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Per quanto riguarda il problema trattato nella sezione e approfondito nel
  capitolo 
 \begin_inset CommandInset ref
@@ -7947,6 +8589,7 @@ reference "cha:Implementazione"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -7992,6 +8635,7 @@ addcontentsline{toc}{chapter}{Conclusioni}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8051,6 +8695,7 @@ addcontentsline{toc}{chapter}{Bibliografia}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8074,6 +8719,7 @@ Sito Wincor Nixdorf, sezione Retail
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
 status collapsed
@@ -8089,6 +8735,7 @@ http://www.wincor-nixdorf.com/internet/site_IT/IT/Retail/Retail_node.html
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8126,6 +8773,7 @@ Society for Industrial and Apllied Mathematics
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8157,6 +8805,7 @@ Geocodifica e normalizzazione delle anagrafiche
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
 status collapsed
@@ -8173,6 +8822,7 @@ rmalizzazione_anagrafiche.php
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8200,6 +8850,7 @@ name "Truck-Dispatching-Problem"
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
 status collapsed
@@ -8215,6 +8866,7 @@ http://links.jstor.org/pss/2627477
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8246,6 +8898,7 @@ Pianificazione ed ottimizzazione dei giri
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
 status collapsed
@@ -8261,6 +8914,7 @@ http://www.tpsitalia.it/software/pianificazione_ottimizzazione_giri/
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8296,6 +8950,7 @@ MEFISTO: A Pragmatic Metaheuristic Framework for Adaptive Search with a
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8330,6 +8985,7 @@ A tabu search heuristic for the vehicle routing problem
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8363,6 +9019,7 @@ The granular tabu search and its application to the Vehicle-Routing Problem
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8398,6 +9055,7 @@ New insertion and postoptimization procedures for the traveling salesman
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8433,6 +9091,7 @@ s/1998-1999/KKRundGoldmanSachs_22_10_1999.html
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8452,25 +9111,27 @@ name "storia wincor"
 
 \end_inset
 
+Sito di Wincor Nixdorf, sezione 
+\begin_inset Quotes eld
+\end_inset
 
+Storia della compagnia
 \begin_inset Quotes erd
 \end_inset
 
-Wincor Nixdorf
-\begin_inset Quotes erd
-\end_inset
 
-, Wikipedia tedesca
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-http://de.wikipedia.org/wiki/Wincor_Nixdorf
+http://www.wincor-nixdorf.com/internet/site_EN/EN/WincorNixdorf/Company/geschichte
+/geschichte_node.html
 \end_layout
 
 \end_inset
@@ -8479,6 +9140,7 @@ http://de.wikipedia.org/wiki/Wincor_Nixdorf
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8518,9 +9180,10 @@ Pubbliway, il portale per il business online
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -8533,6 +9196,7 @@ http://www.pubbliway.com/informatica/wincor_nixdorf_s.r.l._1121241
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8564,6 +9228,7 @@ Chi siamo
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
 status collapsed
@@ -8579,6 +9244,7 @@ http://www.tpsitalia.it/azienda/
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8598,25 +9264,26 @@ name "PTV-bib"
 
 \end_inset
 
+Sito di PTV Planung Transport Verkehr, sezione 
+\begin_inset Quotes eld
+\end_inset
 
+Compagnia
 \begin_inset Quotes erd
 \end_inset
 
-PTV Planung Transport Verkehr
-\begin_inset Quotes erd
-\end_inset
 
- sulla Wikipedia tedesca
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 (
 \begin_inset Flex URL
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-http://de.wikipedia.org/wiki/PTV_Planung_Transport_Verkehr
+http://www.ptvag.com/company/
 \end_layout
 
 \end_inset
@@ -8625,6 +9292,7 @@ http://de.wikipedia.org/wiki/PTV_Planung_Transport_Verkehr
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8648,6 +9316,7 @@ Documentazione di PTV Intertour 5.9, fornitami da TPS Italia.
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8690,6 +9359,7 @@ http://80.146.239.135/mp-ajax-api-samples/tutorial/tutorial.html
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8709,29 +9379,20 @@ name "algoritmo-genetico"
 
 \end_inset
 
-Wikipedia inglese, 
-\begin_inset Quotes eld
-\end_inset
 
-Genetic Algorithm
 \begin_inset Quotes erd
 \end_inset
 
- (
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://en.wikipedia.org/wiki/Genetic_algorithm
-\end_layout
-
+Genetic Programming – An Introduction
+\begin_inset Quotes erd
 \end_inset
 
-)
+, Wolfgang Banzhaf, Peter Nordin, Robert Keller, Frank Francone, Morgan
+ Kaufmann, San Francisco, CA(1998) 
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8774,6 +9435,7 @@ http://neo.lcc.uma.es/radi-aeb/WebVRP/index.html?bibliography.html
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8790,6 +9452,7 @@ end{thebibliography}
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 
@@ -8810,10 +9473,12 @@ cleardoublepage}
 \end_layout
 
 \begin_layout Chapter*
+\paragraph_spacing double
 Ringraziamenti
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 \begin_inset ERT
 status open
 

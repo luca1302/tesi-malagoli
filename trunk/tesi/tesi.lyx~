@@ -5757,9 +5757,9 @@ Rappresentazione grafica dell'andamento dei risultati dell'euristica
 
 \begin_layout Standard
 \paragraph_spacing double
-Tuttavia in alcuni casi che abbiamo trovato presentava alcune discontinuità,
- pertanto non era possibile prevedere in modo accurato i risultati che si
- sarebbero ottenuti.
+Tuttavia in alcuni casi che abbiamo trovato la curva presentava alcune discontin
+uità, pertanto non era possibile prevedere in modo accurato i risultati
+ che si sarebbero ottenuti.
 \end_layout
 
 \begin_layout Standard
@@ -6779,7 +6779,14 @@ brute force
 \end_inset
 
  su entrambi i problemi ho scoperto paio di cose interessanti, visibili
- anche in figura: 
+ anche in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:genetico1"
+
+\end_inset
+
+: 
 \end_layout
 
 \begin_layout Enumerate
@@ -6787,7 +6794,7 @@ brute force
 ponendo di poter stabilire un ordinamento tra le coppie di fattori, in modo
  da poterli rappresentare sull'asse delle ascisse, sull'asse delle ordinate
  ci troveremmo di fronte a quella che sembra una funzione costante, tranne
- qualche eventuale punto di discontinuità, come visibile in figura.
+ qualche eventuale punto di discontinuità.
 \end_layout
 
 \begin_layout Enumerate
@@ -6893,38 +6900,12 @@ name "fig:genetico1"
 
 \end_inset
 
-
-\emph on
 Comparazione tra due regioni interessanti tra l'istanza di Solomon e quella
  di Condreau.
 \end_layout
 
 \end_inset
 
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Come si può notare, la rappresentazione dei risultati suggerisce la somiglianza
- con il grafico prodotto da una funzone costante, meno qualche discontinuità.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -7186,6 +7167,26 @@ reference "tab:validazione brute force"
 
 \begin_layout Standard
 \paragraph_spacing double
+Come si può notare, i risultati ottenuti non sono per niente straordinari,
+ a causa dell'euristica di base troppo semplice, come spiegato nella sezione
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:La-consulenza-di"
+
+\end_inset
+
+.
+ Tuttavia, tolta l'istanza di Primafrost, che risultava essere troppo complessa
+ e quindi non risolvibile in modo ammissibile in un tempo così limitato,
+ negli altri due casi la metaeuristica produceva comunque un miglioramento,
+ ed in media si riotteneva un 3% di miglioramento rispetto alla soluzione
+ non post-ottimizzata, ovvero un risultato simile a quello che erano stati
+ i risultati con MEFISTO.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float table
 wide false
 sideways false
@@ -7411,43 +7412,6 @@ Comparazione tra i risultati ottenuti con la mia implementazione e quelli
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Come si può notare, i risultati ottenuti non sono per niente straordinari,
- a causa dell'euristica di base troppo semplice, come spiegato nella sezione
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:La-consulenza-di"
-
-\end_inset
-
-.
- Tuttavia, tolta l'istanza di Primafrost, che risultava essere troppo complessa
- e quindi non risolvibile in modo ammissibile in un tempo così limitato,
- negli altri due casi la metaeuristica produceva comunque un miglioramento,
- ed in media si riotteneva un 3% di miglioramento rispetto alla soluzione
- non post-ottimizzata, ovvero un risultato simile a quello che erano stati
- i risultati con MEFISTO.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -7455,10 +7419,9 @@ reference "sub:La-consulenza-di"
 
 \begin_layout Standard
 \paragraph_spacing double
-Per quanto riguarda i risultati ottenuti con gli algortimi genetici sono
- state fatte solo delle indagini di tendenza, mediante statistiche, che
- tuttavia dimostrano come l'algoritmo si comporti piuttosto bene anche se
- il tempo a disposizione risulta limitato.
+Questi risultati, benchè ottenuti mediante delle semplici indagini di tendenza,
+ tuttavia dimostrano come l'algoritmo tenda a comportarsi piuttosto bene
+ anche se il tempo a disposizione risulta limitato.
 \end_layout
 
 \begin_layout Standard
@@ -7671,64 +7634,7 @@ name "fig:genetico3"
 
 \end_inset
 
-
-\emph on
 Tendenza della popolazione nell'istanza di Solomon
-\end_layout
-
-\end_inset
-
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Si individuano 3 cluster di 
-\begin_inset Quotes eld
-\end_inset
-
-idoneità
-\begin_inset Quotes erd
-\end_inset
-
- (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:solomon-a"
-
-\end_inset
-
-): quello della coppia (0,0), quello della coppia (0,1) e quelle di tutte
- le altre coppie.
- La coppia (0,1) è quella con idoneità maggiore, (0,0) è quella con idoneità
- minore, mentre tutte le altre presentano un valor medio.
- Dopo 10 generazioni (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:solomon-b"
-
-\end_inset
-
-), la popolazione con minor idoneità è già scomparsa, mentre la popolazione
- più idonea si espande, tuttavia non domina ancora.
- Questa rapidità nel processo è interessante notando la differenza minima
- tra le idoneità dei cluster (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:solomon-c"
-
-\end_inset
-
-).
 \end_layout
 
 \end_inset
@@ -7747,12 +7653,92 @@ reference "fig:solomon-c"
 
 \begin_layout Standard
 \paragraph_spacing double
-La variabilità dei sisultati di cui parla il punto 2 si riferisce ad un
- caso abbastanza anomalo che si era verificato in una particolare esecuzione
- di Granular Tabu Search sull'istanza di Condreau: la popolazione iniziale
- era ben assortita, e poteva essere divisa in 2 gruppi, uno contenente tutti
- gli agenti con corredo genetico la coppia (0,0) ed uno contenente tutti
- gli altri.
+Utilizzando il raggruppamento infatti si vede che nell'istanza di Solomon
+ si possono individuare 3 gruppi in base all'
+\begin_inset Quotes erd
+\end_inset
+
+idoneità
+\begin_inset Quotes erd
+\end_inset
+
+ (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:solomon-a"
+
+\end_inset
+
+): quello della coppia (0,0), quello della coppia (0,1) e quello di tutte
+ le altre coppie.
+ La coppia (0,1) è quella con idoneità maggiore, (0,0) è quella con idoneità
+ minore, mentre tutte le altre presentano un valor medio.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Nell'istanza di Condreau si notano invece solo due gruppi, di cui il gruppo
+ con genoma (0,0) è il favorito (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:condreau-a"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Dopo 10 generazioni (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:solomon-b"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:condreau-b"
+
+\end_inset
+
+), in entrambe le istanze la popolazione con minor idoneità è già scomparsa,
+ mentre la popolazione più idonea si espande, tuttavia non domina ancora.
+ Questa rapidità nel processo è interessante notando la differenza minima
+ tra le idoneità dei cluster (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:solomon-c"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:condreau-c"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+La variabilità dei risultati di cui parla il punto 2 si riferisce invece
+ ad un caso abbastanza anomalo che si era verificato in una particolare
+ esecuzione di Granular Tabu Search sull'istanza di Condreau, e che è visibile
+ in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:genetico2"
+
+\end_inset
+
+: la popolazione iniziale era ben assortita, e poteva essere come al solito
+ divisa in 2 gruppi, uno contenente tutti gli agenti con corredo genetico
+ la coppia (0,0) ed uno contenente tutti gli altri.
 \end_layout
 
 \begin_layout Standard
@@ -7931,55 +7917,8 @@ name "fig:genetico2"
 
 \end_inset
 
-
-\emph on
 Tendenza della popolazione in una esecuzione particolare nell'istanza di
  Condreau.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Come si può notare in figura, vi sono due gruppi, di cui il gruppo con genoma
- (0,0) è il favorito (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:condreau-a"
-
-\end_inset
-
-).
- A causa di una fortunata serie di eventi, la decima generazione vede lo
- strapotere di quest'ultimo (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:condreau-b"
-
-\end_inset
-
-), benché la differenza tra l'idoneità tra i due gruppi fosse differente
- come valore solo a partire dalla quarta cifra significativa, e quindi nel
- grafico non si nota (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:condreau-c"
-
-\end_inset
-
-).
 \end_layout
 
 \end_inset
@@ -8027,9 +7966,27 @@ Sul campo si è potuto vedere all'opera solo uno dei 3 metodi, quello manuale,
 \paragraph_spacing double
 Esistono quindi almeno altri 2 metodi per trovare i coefficienti suddetti,
  che però fanno affidamento su componenti informatici.
- Garantiscono un risultato buono, se non necessariamente il migliore in
- assoluto, però richiedono più risorse per trovare la soluzione giusta (Tabella
- 
+ L'approccio 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ garantisce di trovare una soluzione ottima, ma per trovarla deve esplorare
+ tutte le soluzioni possibili.
+ Nel nostro caso vi erano all'incirca diecimila combinazioni, ognuna delle
+ quali veniva utlizzata all'interno di Granular Tabu Search, la cui esecuzione
+ durava un paio di minuti.
+ Il tempo totale impiegato era quindi di circa 20000 minuti, se eseguito
+ su una singola CPU.
+ Sono state utilizzate circa 40 calcolatori presenti nei laboratori per
+ ridurre il tempo impiegato in modo che risultasse accettabile (circa 3
+ giorni e mezzo).
+ L'algoritmo genetico impega 10 volte meno tempo, ma non è in grado assicurare
+ che quella restituita sia la soluzione ottima, ma solo che sia una tra
+ la migliori soluzioni esaminate (Tabella 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:CPU-time"
@@ -8047,6 +8004,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features>
@@ -8172,6 +8130,8 @@ name "tab:CPU-time"
 
 \end_inset
 
+
+\emph default
 Confronto tra le prestazioni dell'algoritmo genetico e quello 
 \begin_inset Quotes eld
 \end_inset
@@ -8180,57 +8140,11 @@ brute force
 \begin_inset Quotes erd
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-L'approccio 
-\begin_inset Quotes eld
-\end_inset
-
-brute force
-\begin_inset Quotes erd
-\end_inset
-
- garantisce di trovare una soluzione ottima, ma per trovarla deve esplorare
- tutte le soluzioni possibili.
- Nel nostro caso vi erano all'incirca diecimila combinazioni, ognuna delle
- quali veniva utlizzata all'interno di Granular Tabu Search, la cui esecuzione
- durava un paio di minuti.
- Il tempo totale impiegato era quindi di circa 20000 minuti, se eseguito
- su una singola CPU.
- Sono state utilizzate circa 40 calcolatori presenti nei laboratori per
- ridurre il tempo impiegato in modo che risultasse accettabile (circa 3
- giorni e mezzo).
- L'algoritmo genetico impega 10 volte meno tempo, ma non è in grado assicurare
- che quella restituita sia la soluzione ottima, ma solo che sia una tra
- la migliori soluzioni esaminate.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -8241,16 +8155,18 @@ brute force
 
 \begin_layout Standard
 \paragraph_spacing double
-I pro e i contro dei vari metodi si possono vedere nella tabella 
+Come mostra bene ed in modo sintetico la tabella 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:pro-e-contro"
 
 \end_inset
 
-.
- Da notare che nel cso dell'algoritmo genetico è possibile distinguere un
- 
+, il vero vantaggio della taratura manuale è la rapidità con cui può produrre
+ un risultato tutto sommato accettabile, ma non garantisce nulla sui tempi
+ impiegati né sulla qualità della soluzione.
+ Da notare che nel caso dell'algoritmo genetico è possibile distinguere
+ un 
 \begin_inset Quotes eld
 \end_inset
 

@@ -2929,13 +2929,40 @@ reference "PTV-Intertour"
 
 \begin_layout Standard
 \paragraph_spacing double
+Ad esempio PTV Intertour Standard permette di pianificare in modo automatico
+ i giri di distribuzione delle merci per uno o più giorni, mentre PTV Intertour
+ Strategy permette di dare una visione più generale all'utente delle zone
+ di vendita che si vengono a creare.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Per pensare invece ad una ripianificazione delle zone di vendita, e quindi
+ della rete commerciale viene in aiuto PTV Map&Market.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Infine, se nella propria azienda risulta necessaria una integrazione basata
+ su Web Service dei servizi di PTV, sono diponibili i PTV xServer, come
+ si può vedere anche in Tabella 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Funzionalità-dei-vari"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features>
@@ -3074,6 +3101,24 @@ PTV xServer
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Funzionalità-dei-vari"
+
+\end_inset
+
+Funzionalità dei vari componenti della suite PTV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -3084,9 +3129,6 @@ PTV xServer
 
 \begin_layout Standard
 \paragraph_spacing double
-\begin_inset VSpace defskip
-\end_inset
-
 Qui di seguito approfondiremo solo gli applicativi che sono interessanti
  per questo elaborato.
 \end_layout
@@ -3454,6 +3496,70 @@ reference "fig:Finestra-grafica-MEFISTO"
 
 \begin_layout Standard
 \paragraph_spacing double
+Si possono notare vari punti di interesse: nella parte superiore, possiamo
+ vedere un grafico che ci illustra quale sia il costo dell'attuale soluzione
+ migliore (linea verde), della soluzione di partenza (linea rossa), e la
+ soluzione corrente (linea nera).
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Nella parte inferiore invece possiamo notare più o meno le stesse informazioni,
+ ma in valore numerico.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Nella parte centrale invece sono riportati alcuni dati tecnici sul funzionamento
+ interno del componente in formato tabellare.
+ In ordine da sinistra a destra: 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+il nome della mossa che viene utilizzata, 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+una colonna che permette di attivarli/disattivarli anche durante l'esecuzione
+ stessa
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+il totale di soluzioni esplorabili
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+le soluzioni effettivamente visitate da Granular Tabu Search
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+il numero di soluzioni, di quelle considerate, che non violavano vincoli
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+il numero di soluzioni, di quelle considerate, che erano tabù
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+quante soluzioni esplorate con quella mossa sono state davvero impiegate
+ nel processo 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing double
+quante soluzioni esplorate con quella mossa hanno poi portato ad un reale
+ miglioramento rispetto alla soluzione precedente
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
 \begin_inset Float figure
 wide false
 sideways false
@@ -3473,8 +3579,6 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
-\emph on
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Finestra-grafica-MEFISTO"
@@ -3486,40 +3590,6 @@ Finestra grafica di MEFISTO
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Si possono notare vari putni di interesse: nella parte superiore, possiamo
- vedere un grafico che ci illustra quale sia il costo dell'attuale soluzione
- migliore (linea verde), della soluzione di partenza (linea rossa), e la
- soluzione corrente (linea nera).
-\end_layout
-
-\begin_layout Plain Layout
-Nella parte inferiore invece possiamo notare più o meno le stesse informazioni,
- ma in valore numerico.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

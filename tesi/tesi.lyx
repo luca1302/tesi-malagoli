@@ -616,24 +616,58 @@ Problemi come questo non sono nuovi nel mondo della Ricerca Operativa: il
 \begin_inset Quotes eld
 \end_inset
 
-Vehicle routing Problem
+Problema di instradamento dei veicoli
 \begin_inset Quotes erd
 \end_inset
 
-.
- Questo particolare problema è tuttora estesamente trattato in ambito di
- ricerca, nonostante siano già stati spesi già 40 anni di lavoro.
- sono state studiate istanze con più o meno ogni genere di limitazione ragionevo
+ ( in inglese 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+, o VRP ).
+ Questo particolare problema riguarda la determinazione di un insieme ottimale
+ di gite che dovranno essere utilizzati da una flotta di veicoli per servire
+ un dato insieme di clienti.
+ Come è possibile intuire data la sua similitudine con il problema del commesso
+ viaggiatore, la sua complessità è elevata, appartiene infatti all'insieme
+ dei problemi NP-hard.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Nella letteratura vi è una predisposizione a indicare questo problema con
+ il suo nome od il suo acronimo inglese.
+ Tale convenzione verrà d'ora in poi rispettata anche in questo elaborato.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Il 
+\begin_inset Quotes eld
+\end_inset
+
+Vehicle Routing Problem
+\begin_inset Quotes erd
+\end_inset
+
+ è tuttora estesamente trattato in ambito di ricerca, nonostante siano già
+ stati spesi già 40 anni di lavoro.
+ Sono state studiate istanze con più o meno ogni genere di limitazione ragionevo
 lmente significativa, dalla capacità limitata dei veicoli fino a limitazioni
  presenti sui punti di consegna o sulle qualifiche dei conducenti.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing double
-Questa tipologia di problemi infatti è interessante sia da un punto di vista
- accademico per la sua elevata complessità, sia da un punto di vista commerciale
-, poiché le voci di costo interessate sono in genere dell'ordine di milioni
- di euro, e continuamente crescenti.
+Lo scopo implicito di questa tipologia di problemi è quello di minimizzare
+ il costo per la distribuzione delle merci, per cui sono interessanti sia
+ da un punto di vista accademico per la loro elevata complessità, sia da
+ un punto di vista commerciale, poiché le voci di costo interessate sono
+ in genere dell'ordine di milioni di euro, e continuamente crescenti.
  Anche la più piccola percentuale di risparmio su totali così grandi è quindi
  sempre significativa per qualsiasi bilancio aziendale.
 \end_layout
@@ -3507,38 +3541,6 @@ Vehicle Routing Problem
 
 \begin_layout Standard
 \paragraph_spacing double
-Il problema dell'instradamento dei veicoli ( in inglese 
-\begin_inset Quotes eld
-\end_inset
-
-Vehicle Routing Problem
-\begin_inset Quotes erd
-\end_inset
-
-, o VRP ) riguarda la determinazione di un insieme ottimale di gite che
- dovranno essere utilizzati da una flotta di veicoli per servire un dato
- insieme di clienti.
- Come è possibile intuire data la sua similitudine con il problema del commesso
- viaggiatore, la sua complessità è elevata, appartiene infatti all'insieme
- dei problemi NP-hard.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
-Come problema combinatorio e di ottimizzazione è un classico nella letteratura
- della Ricerca Operativa: sono passati ormai più di 50 anni da quando Dantzig
- e Ramser introdussero il problema nel 1959.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
-Nella letteratura vi è una predisposizione a indicare questo problema con
- il suo nome od il suo acronimo inglese.
- Tale convenzione verrà d'ora in poi rispettata anche in questo elaborato.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
 Il 
 \begin_inset Quotes eld
 \end_inset
@@ -3547,18 +3549,24 @@ Vehicle Routing Problem
 \begin_inset Quotes erd
 \end_inset
 
- è un problema importante per il trasporto, la logistica e la distribuzione
- [
+ è un problema il cui scopo è quello di individuare una soluzione che minimizzi
+ il costo di distribuzione delle merci.
+ Risulta quindi molto interessante in ambito di trasporto, di logistica
+ e di distribuzione [
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "Truck-Dispatching-Problem"
 
 \end_inset
 
-].
- Lo scopo implicito è quello di minimizzare il costo per la distribuzione
- delle merci, quindi è chiaro che vi è anche molto interesse industriale,
- non solo di ricerca, su questo problema.
+],
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Come problema combinatorio e di ottimizzazione è un classico nella letteratura
+ della Ricerca Operativa: sono passati ormai più di 50 anni da quando Dantzig
+ e Ramser introdussero il problema nel 1959.
 \end_layout
 
 \begin_layout Standard

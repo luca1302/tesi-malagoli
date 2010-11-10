@@ -3509,42 +3509,51 @@ Nella parte inferiore invece possiamo notare più o meno le stesse informazioni,
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing double
 Nella parte centrale invece sono riportati alcuni dati tecnici sul funzionamento
  interno del componente in formato tabellare.
  In ordine da sinistra a destra: 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il nome della mossa che viene utilizzata, 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 una colonna che permette di attivarli/disattivarli anche durante l'esecuzione
  stessa
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il totale di soluzioni esplorabili
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 le soluzioni effettivamente visitate da Granular Tabu Search
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il numero di soluzioni, di quelle considerate, che non violavano vincoli
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 il numero di soluzioni, di quelle considerate, che erano tabù
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 quante soluzioni esplorate con quella mossa sono state davvero impiegate
  nel processo 
 \end_layout
 
 \begin_layout Enumerate
+\paragraph_spacing double
 quante soluzioni esplorate con quella mossa hanno poi portato ad un reale
  miglioramento rispetto alla soluzione precedente
 \end_layout
@@ -3570,8 +3579,6 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
-\emph on
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Finestra-grafica-MEFISTO"
@@ -3583,32 +3590,6 @@ Finestra grafica di MEFISTO
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4071,8 +4052,12 @@ Esistono diversi meccanismi di crossover, alcuni tra i più famosi sono:
 
 \begin_layout Enumerate
 \paragraph_spacing double
-Crossover puntuale: viene selezionato un indice particolare all'interno
- delle due stringhe che rappresentano i corredi genetici dei 
+
+\series bold
+Crossover puntuale
+\series default
+: viene selezionato un indice particolare all'interno delle due stringhe
+ che rappresentano i corredi genetici dei 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4085,12 +4070,17 @@ genitori
 
 \begin_layout Enumerate
 \paragraph_spacing double
-Crossover a doppio punto: simile al crossover puntuale, ma con 2 punti di
- scambio
+
+\series bold
+Crossover a doppio punto
+\series default
+: simile al crossover puntuale, ma con 2 punti di scambio
 \end_layout
 
 \begin_layout Enumerate
 \paragraph_spacing double
+
+\series bold
 \begin_inset Quotes eld
 \end_inset
 
@@ -4098,6 +4088,8 @@ Cut and Splice
 \begin_inset Quotes erd
 \end_inset
 
+
+\series default
 : simile al crossover puntale, ma i punti di scambio non hanno lo stesso
  indice.
  Atipico rispetto ai precedenti poichè può produrre 
@@ -4121,9 +4113,12 @@ genitori
 
 \begin_layout Enumerate
 \paragraph_spacing double
-Crossover uniforme: si seleziona una probabilità con cui due bit delle due
- stringhe si scambieranno (tipicamente 0.5) e si lancia una monetina per
- ogni bit della stringa 
+
+\series bold
+Crossover uniforme
+\series default
+: si seleziona una probabilità con cui due bit delle due stringhe si scambierann
+o (tipicamente 0.5) e si lancia una monetina per ogni bit della stringa 
 \end_layout
 
 \begin_layout Standard
@@ -4144,8 +4139,35 @@ minimo locale
 
 \begin_layout Standard
 \paragraph_spacing double
-Ovviamente esistono anche meccanismi diversi dalla mutazione e dal crossover,
- ma non saranno affrontati in quest'elaborato.
+Ovviamente esistono anche altri meccanismi per l'attuazione del crossover,
+ ad esempio:
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+
+\series bold
+Crossover per cromosomi ordinati
+\series default
+, dove non vengono scambiati geni tra i genitori, ma solo riordinati da
+ un punto arbitrario in poi, scelto come nel crossover puntuale
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+
+\series bold
+Operazione di ricombinazione degli archi
+\series default
+, utilizzata quando si ha a che fare con cromosomi che rappresentano strutture
+ permutazionali.
+ Mediante una matrice di adiacenza vengono ricombinati gli archi, e non
+ i nodi, della struttura, mantenedone intatte le proprietà
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Tuttavia questi meccanismi non saranno affrontati in quest'elaborato.
 \end_layout
 
 \begin_layout Standard
@@ -4287,10 +4309,9 @@ Progetto di massima della soluzione
 
 \begin_layout Standard
 \paragraph_spacing double
-Precedentemente alla proposta di Wincor Nixdorf, presso Primafrost la gestione
- della flotta (ovvero carico e gite) era affidata ad un dipendente dell'azienda,
- il quale essendo un ex-camionista ed avendo una larga esperienza della
- rete stradale italiana poteva senza dubbio soddisfare le esigenze dell'azienda.
+Come già menzionato nell'introduzione, precedentemente alla proposta di
+ Wincor Nixdorf presso Primafrost la gestione della flotta (ovvero carico
+ e gite) era affidata ad un unico dipendente dell'azienda.
 \end_layout
 
 \begin_layout Standard
@@ -4314,7 +4335,7 @@ La gestione manuale non dava nessuna garanzia di portare a soluzioni ottime
 \begin_layout Enumerate
 \paragraph_spacing double
 Questa gestione non conveniva nemmeno al suddetto dipendente, il quale a
- caus del suo ruolo poteva prendersi pochissime ferie
+ causa del suo ruolo poteva prendersi pochissime ferie
 \end_layout
 
 \begin_layout Standard
@@ -4512,8 +4533,13 @@ e stand-alone.
 \begin_layout Standard
 \paragraph_spacing double
 Nel mio lavoro non ero solo, anzi la mia mansione era di affiancare un giovane
- impiegato (Primo Tilli) che era statao incaricato di occuparsi del problema.
- Tutto il lavoro svolto da me e da Primo si trova nelle sottosezioni successive.
+ impiegato (Primo Tilli) che era stato incaricato di occuparsi del problema.
+ Tutto il lavoro svolto da me e da Primo si trova nelle sottosezioni successive,
+ in particolare quello che riguarda la configurazione di PTV Intertour è
+ stato svolto prevalentemente da lui, mentre sulla conversione dei dati
+ sono subentrato io.
+ Nel caso dei test su MEFISTO ci siamo spartiti equamente il lavoro dovendo
+ fare molte simulazioni in poco tempo.
 \end_layout
 
 \begin_layout Subsection
@@ -4633,18 +4659,9 @@ Periodicamente l'azienda quindi raccoglie gli ordini dai suoi clienti/punti
 
 \begin_layout Standard
 \paragraph_spacing double
-Le gite vengono create su base giornaliera, e chiaramente non è necessario
- che ogni cliente abbia ordini nuovi ogni giorno, quindi i possibili scenari
- che ne derivano sono abbastanza dinamici.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
-Come già accennato in altre sezioni, il processo di creazione delle gite
- viene svolto prevalentemente a mano da un dipendente (un ex-camionista,
- per la precisione) che ha grande esperienza delle strade italiane, e quindi
- può fare previsioni sulle situazioni contingenti che si potrebbero presentare
- agli autisti in determinate vie ed in determinati momenti della giornata.
+Le gite vengono create manualmente su base giornaliera, e chiaramente non
+ è necessario che ogni cliente abbia ordini nuovi ogni giorno, quindi i
+ possibili scenari che ne derivano sono abbastanza dinamici.
 \end_layout
 
 \begin_layout Standard
@@ -4896,14 +4913,7 @@ Parametri dell'euristica
 Ben presto ci siamo resi conto che il controllo sui risultati poteva essere
  anche molto fine, anche se abbiamo riscontrato qualche potenziale pecca.
  Oltre a diversi tool per la visualizzazione dei risultati infatti, l'applicazio
-ne ci forniva funzionalità (figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Schermata-di-PTV"
-
-\end_inset
-
-):
+ne ci forniva funzionalità:
 \end_layout
 
 \begin_layout Itemize
@@ -5003,6 +5013,52 @@ Un dettaglio che si rivelato importante successivamente stava nel fatto
  prestazionali: più la flotta era omogenea, più i calcoli si semplificavano,
  ed una simile rappresentazione forzava a distinguere solo ciò che era chiaramen
 te differente.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schermata-di-PTV"
+
+\end_inset
+
+ possiamo inoltre vedere una possibile schermata tipo dell'applicazione:
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+la barra in alto, con le icone, ci dava l'accesso a tutte le funzionalità
+ del programma relative al calcolo delle gite
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+sulla sinistra possiamo vedere un riquadro con una mappa, che ci fornisce
+ un riscontro visivo di massima ripetto alla pianificazione
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+sull'estrema sinistra la barra orizzontale invece ci permetteva di manipolare
+ la mappa, utilizzando zoom, selezioni, rotazioni, oltre che a permetterci
+ il salvataggio e la stampa della mappa
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+in primo piano a centro vediamo invece un possibile riepilogo della pianificazio
+ne appena svolta, con diversi dati tecnici che ci dicono quante gite sono
+ state fatte, la somma dei kilometri e dei minuti di tutte le gite, e la
+ quantità di merce che è stata portata a destinazione
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing double
+a destra invece possiamo trovare gli stessi risultati che ci fornisce la
+ mappa, ma in rappresentazione tabulare.
+ Vengono utilizzati spesso per controllare nel dettaglio la pianificazione
 \end_layout
 
 \begin_layout Subsubsection
@@ -5573,8 +5629,24 @@ reference "fig:funzione2"
 
 \end_inset
 
-, la funzione risulta abbastanza prevedibile, tuttavia in alcuni casi che
- abbiamo trovato presentava alcune discontinuità.
+, la funzione risultava abbastanza prevedibile.
+ In particolare, in entrambe le figure il costo del tempo di guida e dei
+ chilometri percorsi erano stati impostati su un valore arbitrario di 100.
+ Il costo del tempo di guida veniva tenuto costante, mentre il costo dei
+ chilometri percorsi veniva moltiplicato per un coefficiente che assumeva
+ invece alcuni valori ben precisi nell'intervallo tra 0 e 1 (in figura viene
+ infatti riportato solo il valore del coefficiente).
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Ciò che tutte le figure mostrano, anche se in modo diverso, è che con un
+ valore minimo del coeffciente del costo dei chilometri vengono privilegiate
+ soluzioni con una velocità media più alta, mentre mano a mano che il costo
+ dei chilometri cresce, vengono privilegiate soluzioni con velocità medie
+ più basse ma che contemplano percorsi in media più brevi.
+ In linea di massima quindi più i chilometri risultavano costosi più vincevano
+ soluzioni che ne contevano meno, a favore del tempo di guida, come previsto.
 \end_layout
 
 \begin_layout Standard
@@ -5602,6 +5674,12 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:funzione1-a"
+
+\end_inset
+
 
 \end_layout
 
@@ -5629,6 +5707,12 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:funzione1-b"
+
+\end_inset
+
 
 \end_layout
 
@@ -5658,38 +5742,7 @@ name "fig:funzione1"
 
 \end_inset
 
-
-\emph on
 Rappresentazione grafica dell'andamento dei risultati dell'euristica
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Come si può notare, sia dal punto di vista spaziale che di quello temporale,
- la funzione risulta in linea di massima prevedibile, ma presenta delle
- discontinuità.
- In queste figure il costo del tempo di guida era stato impostato su un
- valore arbitrario di 100.
- Il valore riportato per il costo dei kilometri è in realtà il rapporto
- tra il costo dei kilometri e quello del tempo.
- 
 \end_layout
 
 \end_inset
@@ -5704,7 +5757,8 @@ Come si può notare, sia dal punto di vista spaziale che di quello temporale,
 
 \begin_layout Standard
 \paragraph_spacing double
-Non era pertanto possibile prevedere in modo accurato i risultati che si
+Tuttavia in alcuni casi che abbiamo trovato presentava alcune discontinuità,
+ pertanto non era possibile prevedere in modo accurato i risultati che si
  sarebbero ottenuti.
 \end_layout
 
@@ -5736,43 +5790,7 @@ name "fig:funzione2"
 
 \end_inset
 
-
-\emph on
 Rappresentazione grafica della relazione tra coefficiente di costo e velocità
-\end_layout
-
-\end_inset
-
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
-Grafico ricavato da quelli già visti in figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:funzione1"
-
-\end_inset
-
-.
- Per ogni punto sull'asse delle ascisse, è stato fatto il rapporto tra il
- valore delle ordinate dei due due grafici, in modo che si ottenesse una
- misura della velocità media.
- Come si può notare, con un valore minimo del coeffciente del costo dei
- chilometri vengano privilegiate soluzioni con una velocità media più alta,
- mentre mano a mano che il costo dei chilometri cresce, vengono privilegiate
- soluzioni con velocità medie più basse ma che contemplano percorsi in media
- più brevi.
 \end_layout
 
 \end_inset

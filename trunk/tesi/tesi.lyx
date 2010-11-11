@@ -9549,27 +9549,5 @@ cleardoublepage}
 
 \end_layout
 
-\begin_layout Chapter*
-\paragraph_spacing double
-Ringraziamenti
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

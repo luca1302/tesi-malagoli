@@ -3,6 +3,11 @@
 \begin_document
 \begin_header
 \textclass report
+\begin_preamble
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\end_preamble
 \use_default_options false
 \language italian
 \inputencoding auto
@@ -6037,7 +6042,7 @@ Vantaggi e svantaggi utilizzando PTV XTour
 
 \begin_layout Standard
 \paragraph_spacing double
-Utilizzando XTour era probabilmente più facile da integrare con la'rchitettura
+Utilizzando XTour era probabilmente più facile da integrare con l'architettura
  preesistente, ma non avrebbe necessariamente semplificato l'interazione
  con l'utente.
 \end_layout
@@ -7769,8 +7774,8 @@ rapporti incestuosi
 , la percentuale degli individui appartenenti alla popolazione con corredo
  genetico (0,0) era cresciuta molto, e questo favorì nuovamente la riproduzione
  intra-gruppo rispetto a quella extra-gruppo, essendo la popolazione favorita.
- Alla decima generazione la popolazione favorita dominava rispetto alle
- altre.
+ Alla decima generazione la popolazione favorita quasi dominava rispetto
+ alle altre.
 \end_layout
 
 \begin_layout Standard
@@ -8183,13 +8188,12 @@ caso pessimo
 \end_inset
 
 , questo perché dallo spazio delle 10000 coppie di coefficienti possibili
- ne sono stati scelti solo 100.
- Inoltre durante l'esecuzione dell'algoritmo tramite le ricombinazioni e
- la mutazioni nuove coppie vengono esplorate, per cui possiamo concludere
- che idealmente, dopo 10 generazioni, o abbiamo ottenuto la dominanza di
- un gruppo sugli altri, e questo può segnalare il ritrovamento di un'ottima
- coppia di coefficienti, oppure vengono esplorate un po' meno di 1000 soluzioni
- equivalenti.
+ ne sono stati scelti solo 100 come popolazione iniziale.
+ Durante l'esecuzione dell'algoritmo tramite le ricombinazioni e la mutazioni
+ nuove coppie vengono generate, per cui possiamo concludere che idealmente,
+ dopo 10 generazioni, o abbiamo ottenuto la dominanza di un gruppo sugli
+ altri, e questo può segnalare il ritrovamento di un'ottima coppia di coefficien
+ti, oppure vengono esplorate un po' meno di 1000 soluzioni equivalenti.
 \end_layout
 
 \begin_layout Standard
@@ -8502,6 +8506,44 @@ Conclusioni
 
 \begin_layout Standard
 \paragraph_spacing double
+In quest'elaborato di tesi abbiamo presentato il risultato di uno studio
+ di fattibilità a cui ho collaborato.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Nel capitolo 2 è stata riportata quella che è stata la mia esperienza in
+ Wincor Nixdorf, e di come è stato risolto il problema posto da Primafrost.
+ Davanti alla scelta tra l'utilizzo di PTV Intertour o dei PTV XServer,
+ si è deciso di usare il primo dei due.
+ Questo perchè a conti fatti a livello architetturale le due soluzioni eran
+ più o meno equivalenti dal punto di vista dei vantaggi e degli svantaggi.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Ciò che ha portato quindi ad una scelta netta è stata la mancanza di aggiornamen
+to delle informazioni all'interno delle mappe.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Siccome questa mancanza era presente in entrambi i componenti, limitando
+ il nostro campo d'azione, si è optato per Intertour in quanto non era necessari
+o realizzare ex-novo una nuova interfaccia per l'utente.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Nonostante i problemi presenti sui dati, si è riusciti comunque a rendere
+ felice il cliente impostando lo strumento in modo che producesse delle
+ soluzioni simili a quelle che si sarebbero ottenute con una progettazione
+ manuale delle gite, ma che risultavano in ogni caso più vantaggiose a causa
+ del maggior grado di ottimizzazione.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
 Si può quindi concludere che, allo stato odierno, il mondo commerciale è
  ora in grado di rispondere anche alle esigenze di chi ogni giorno deve
  gestire un'intera flotta di veicoli e qualche centinaio di punti di consegna.
@@ -8511,14 +8553,14 @@ Si può quindi concludere che, allo stato odierno, il mondo commerciale è
 
 \begin_layout Standard
 \paragraph_spacing double
-La vera criticità di oggi invece è tenere completi ed aggiornati i dati
- delle mappe, partendo da quelli riguardano strettamente la cartografia,
- fino ai dati sulla viabilità e la percorribilità delle strade.
+La vera criticità di oggi invece sembra essere tenere completi ed aggiornati
+ i dati delle mappe, partendo da quelli che riguardano strettamente la cartograf
+ia, fino ai dati sulla viabilità e la percorribilità delle strade.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing double
-Senza dati al pari con le aspettative, infatti, si possono creare situazioni
+Senza dati al pari alle aspettative, infatti, si possono creare situazioni
  spiacevoli in cui i risultati trovati sono inammissibili nella realtà delle
  cose, come dimostra il caso di Primafrost.
 \end_layout
@@ -8547,28 +8589,80 @@ Vehicle Routing Problem
 
 \begin_layout Standard
 \paragraph_spacing double
-Per quanto riguarda il problema trattato nella sezione e approfondito nel
- capitolo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cha:Implementazione"
-
-\end_inset
-
-, ovvero la ricerca di coefficienti per ottenere un risultato particolare
- dallo strumento, si è visto che nel caso i coefficienti siano 2 il tempo
- impiegato risulta poco rispetto alla buona qualità della soluzione.
- Nel caso si renda necessario manipolare più coefficienti invece l'approccio
- manuale potrebbe diventare troppo lungo senza al contempo garantire nulla
- sull'ottimalità della soluzione.
- Si consiglia pertanto l'utilizzo di un algoritmo basato su metaeuristiche,
- come l'algoritmo genetico ivi descritto, poiché garantisce di ottenere
- una soluzione tutto sommato buona richiedendo un ammontare di risorse appena
- superiore.
+Nel capitolo 3 ho invece riportato un mio contributo personale realizzato
+ a monte dell'esperieza in azienda.
+ Ho analizzato due metodologie automatiche per la soluzione di un problema
+ postoci dal cliente, ovvero il ritrovamento dei coefficienti giusti per
+ ottenere, mediante l'euristica dello strumento, il risultato desiderato.
+ Nel nostro caso si trattava di una diminuzione dei tempi di consegna o
+ dei chilometri percorsi.
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing double
+Il primo metodo consisteva nell'ingenua logica 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ che provava tutte le combinazioni possibili, il secondo in un approccio
+ basato su un algoritmo genetico.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Si è visto che, nel caso i coefficienti siano 2, il tempo impiegato dall'approcc
+io 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ risulta abbastanza elevato anche a fronte di una garanzia di ottimalità
+ della soluzione.
+ Migliore risulta il caso manuale, ma nel caso si renda necessario manipolare
+ più coefficienti anche questo approccio potrebbe diventare troppo svantaggioso
+ in termini di tempo senza nemmeno garantire nulla sull'ottimalità della
+ soluzione.
+ La soluzione migliore risulta l'utilizzo di un algoritmo basato su metaeuristic
+he, come l'algoritmo genetico ivi descritto, poiché sembra garatire l'otteniment
+o di una soluzione tutto sommato buona richiedendo un ammontare di risorse
+ appena superiore.
+\end_layout
+
+\begin_layout Subsubsection*
+Sviluppi futuri
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Di sicuro in un futuro relativamente prossimo questa soluzione sarà integrata
+ con l'iniziativa, già in corso presso Primafrost, che riguarda la tracciabilità
+ dei veicoli.
+ Mediante i dati che provverranno da questo progetto sarà infine possibile
+ cominciare a concepire la quasi completa automatizzazione del processo
+ di creazione delle gite.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Altri sviluppi interessanti si possono intravedere per la procedura di ricerca
+ automatizzata dei coefficienti descritta nel capitolo 3.
+ Questa procedura permette infatti di manipolare il risultato dell'euristica
+ senza intervenire sul codice del programma, favorendo la generazione di
+ soluzioni che corrispondano maggiormente a quelle che sono le esigenze
+ del cliente.
+ Tuttavia i risultati ottenuti sono ancora troppo vaghi per parlarne seriamente,
+ infatti servono una quantità maggiore di dati per poter essere sicuri del
+ fatto che il suo impiego possa risultare realmente vantaggioso per l'azienda.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -8610,6 +8704,10 @@ addcontentsline{toc}{chapter}{Conclusioni}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

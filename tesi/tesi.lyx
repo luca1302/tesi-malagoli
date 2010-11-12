@@ -8516,21 +8516,11 @@ Nel capitolo 2 è stata riportata quella che è stata la mia esperienza in
  Wincor Nixdorf, e di come è stato risolto il problema posto da Primafrost.
  Davanti alla scelta tra l'utilizzo di PTV Intertour o dei PTV XServer,
  si è deciso di usare il primo dei due.
- Questo perchè a conti fatti a livello architetturale le due soluzioni eran
- più o meno equivalenti dal punto di vista dei vantaggi e degli svantaggi.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
-Ciò che ha portato quindi ad una scelta netta è stata la mancanza di aggiornamen
-to delle informazioni all'interno delle mappe.
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing double
-Siccome questa mancanza era presente in entrambi i componenti, limitando
- il nostro campo d'azione, si è optato per Intertour in quanto non era necessari
-o realizzare ex-novo una nuova interfaccia per l'utente.
+ Sebbene a conti fatti a livello architetturale le due soluzioni eran più
+ o meno equivalenti dal punto di vista dei vantaggi e degli svantaggi ed
+ una mancanza di aggiornamento delle informazioni all'interno delle mappe
+ era presente in entrambi i componenti, si è optato per Intertour in quanto
+ non era necessario realizzare ex-novo una nuova interfaccia per l'utente.
 \end_layout
 
 \begin_layout Standard
@@ -8629,10 +8619,10 @@ brute force
  più coefficienti anche questo approccio potrebbe diventare troppo svantaggioso
  in termini di tempo senza nemmeno garantire nulla sull'ottimalità della
  soluzione.
- La soluzione migliore risulta l'utilizzo di un algoritmo basato su metaeuristic
-he, come l'algoritmo genetico ivi descritto, poiché sembra garatire l'otteniment
-o di una soluzione tutto sommato buona richiedendo un ammontare di risorse
- appena superiore.
+ La soluzione migliore risulta quindi l'utilizzo di un algoritmo basato
+ su metaeuristiche, come l'algoritmo genetico ivi descritto, poiché sembra
+ garatire l'ottenimento di una soluzione tutto sommato buona richiedendo
+ un ammontare di risorse appena superiore.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8657,8 +8647,8 @@ Altri sviluppi interessanti si possono intravedere per la procedura di ricerca
  senza intervenire sul codice del programma, favorendo la generazione di
  soluzioni che corrispondano maggiormente a quelle che sono le esigenze
  del cliente.
- Tuttavia i risultati ottenuti sono ancora troppo vaghi per parlarne seriamente,
- infatti servono una quantità maggiore di dati per poter essere sicuri del
+ Tuttavia i risultati ottenuti non sono ancora significativi per avere certezze,
+ infatti serve una quantità maggiore di dati per poter essere sicuri del
  fatto che il suo impiego possa risultare realmente vantaggioso per l'azienda.
 \end_layout
 

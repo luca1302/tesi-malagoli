@@ -127,8 +127,152 @@ LatexCommand tableofcontents
 Stato dell'arte
 \end_layout
 
+\begin_layout Subsection
+Background
+\end_layout
+
 \begin_layout BeginFrame
-x
+Background
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Il problema
+\end_layout
+
+\begin_layout BeginFrame
+Il problema
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Gli strumenti disponibili
+\end_layout
+
+\begin_layout BeginFrame
+Gli strumenti disponibili
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Euristiche e metaeuristiche
+\end_layout
+
+\begin_layout BeginFrame
+Euristiche e metaeuristiche
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Architettura proposta
+\end_layout
+
+\begin_layout Subsection
+Le possibili alternative
+\end_layout
+
+\begin_layout BeginFrame
+Le possibili alternative
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Configurazione di PTV Intertour
+\end_layout
+
+\begin_layout BeginFrame
+Configurazione di PTV Intertour
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Presentazione dei risultati al cliente
+\end_layout
+
+\begin_layout BeginFrame
+Presentazione dei risultati al cliente
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Analisi costi-benefici
+\end_layout
+
+\begin_layout BeginFrame
+Problemi con le mappe
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Implementazione
+\end_layout
+
+\begin_layout Subsection
+Approccio generale
+\end_layout
+
+\begin_layout BeginFrame
+Approccio generale
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Esperimenti eseguiti
+\end_layout
+
+\begin_layout BeginFrame
+Esperimenti eseguiti
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Confronto tra i metodi utilizzati
+\end_layout
+
+\begin_layout BeginFrame
+Confronto tra i metodi utilizzati
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Conclusioni
+\end_layout
+
+\begin_layout BeginFrame
+Conclusioni
 \end_layout
 
 \begin_layout EndFrame

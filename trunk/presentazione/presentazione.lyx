@@ -241,8 +241,12 @@ Gli strumenti disponibili
 \end_layout
 
 \begin_layout Itemize
-Era già stato svolto un piccolo studio sugli strumenti disponibili sul mercato:
- tra tutti erano stati scelti quelli della azienda tedesca PTV
+Era stato svolto un piccolo studio sugli strumenti disponibili sul mercato:
+ erano stati scelti quelli della azienda tedesca PTV
+\end_layout
+
+\begin_layout Itemize
+Dovevamo valutare quale fosse il migliore per noi
 \end_layout
 
 \begin_layout Standard
@@ -267,7 +271,7 @@ status open
 
 \begin_layout Plain Layout
 
-{PTV Intertour}
+{PTV Intertour Standard}
 \end_layout
 
 \end_inset
@@ -276,7 +280,25 @@ status open
 \end_layout
 
 \begin_layout Block
-Defined protocols
+- Generazione gite
+\end_layout
+
+\begin_layout Block
+- Manipolazione della soluzione trovata
+\lyxline
+
+\end_layout
+
+\begin_layout Block
+
+\color red
+- Applicativo
+\end_layout
+
+\begin_layout Block
+
+\color green
+- Interfaccia grafica con controlli già pronta
 \end_layout
 
 \end_inset
@@ -304,7 +326,7 @@ status open
 
 \begin_layout Plain Layout
 
-{PTV XTour}
+{PTV XServer: XTour}
 \end_layout
 
 \end_inset
@@ -312,25 +334,35 @@ status open
 
 \end_layout
 
+\begin_layout Block
+- Generazione gite
+\end_layout
+
+\begin_layout Block
+- Manipolazione della soluzione trovata
+\end_layout
+
+\begin_layout Block
+
+\lyxline
+
+\end_layout
+
+\begin_layout Block
+
+\color green
+- Servizio web
+\end_layout
+
+\begin_layout Block
+
+\color red
+- Interfaccia grafica basata su componenti
+\end_layout
+
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-Dovevamo valutare quale fosse il migliore
-\end_layout
-
-\begin_layout EndFrame
-
-\end_layout
-
-\begin_layout Subsection
-Euristiche e metaeuristiche
-\end_layout
-
-\begin_layout BeginFrame
-Euristiche e metaeuristiche
 \end_layout
 
 \begin_layout EndFrame
@@ -342,11 +374,38 @@ Architettura proposta
 \end_layout
 
 \begin_layout Subsection
-Le possibili alternative
+Schema generale
 \end_layout
 
 \begin_layout BeginFrame
-Le possibili alternative
+Schema generale
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename architettura.eps
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una volta che i dati si trovavano nell'ERP aziendale, potevano essere utilizzati
+ come basi di dati comune anche per altre attività del processo
 \end_layout
 
 \begin_layout EndFrame
@@ -382,7 +441,7 @@ Analisi costi-benefici
 \end_layout
 
 \begin_layout BeginFrame
-Problemi con le mappe
+Analisi costi-benefici
 \end_layout
 
 \begin_layout EndFrame
@@ -399,6 +458,22 @@ Approccio generale
 
 \begin_layout BeginFrame
 Approccio generale
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Qualità dei componenti usati
+\end_layout
+
+\begin_layout BeginFrame
+Qualità dei componenti usati
 \end_layout
 
 \begin_layout EndFrame

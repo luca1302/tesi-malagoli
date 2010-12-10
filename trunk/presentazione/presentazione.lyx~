@@ -146,8 +146,8 @@ importanti costi di trasporto, destinati a crescere nel tempo: necessitano
 \end_layout
 
 \begin_layout Itemize
-Negli ultimi anni alcuni clienti hanno tentato di affrontare con dei progetti
- autonomi, ma hanno fallito: 
+Negli ultimi anni alcuni clienti hanno tentato con dei progetti autonomi,
+ ma hanno fallito: 
 \end_layout
 
 \begin_deeper
@@ -171,7 +171,7 @@ provocava un conflitto di interessi
 
 \end_deeper
 \begin_layout Enumerate
-Non si è capito la necessità di integrazione fra lo strumento di integrazione
+Non si è capito la necessità di integrazione fra lo strumento di pianificazione
  cartografica e le altre parti del processo (es.
  picking ed il carico del camion) in modo da rispettare la pianicazione
 \end_layout
@@ -301,6 +301,12 @@ status open
 - Interfaccia grafica con controlli già pronta
 \end_layout
 
+\begin_layout Block
+
+\color green
+- costi di licenza minori
+\end_layout
+
 \end_inset
 
 
@@ -358,6 +364,12 @@ status open
 
 \color red
 - Interfaccia grafica basata su componenti
+\end_layout
+
+\begin_layout Block
+
+\color red
+- costi di licenza maggiori
 \end_layout
 
 \end_inset
@@ -425,14 +437,6 @@ Data-entry
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Suddivisione dei veicoli in gruppi
-\end_layout
-
-\begin_layout Itemize
-Inserimento del costo orario/al kilometro per ogni gruppo
-\end_layout
-
 \begin_layout Itemize
 Inserimento dei vincoli 
 \end_layout
@@ -573,7 +577,7 @@ Scelta finale
 \end_layout
 
 \begin_layout Itemize
-Il cliente ha reputato promettenti le premesse del progetto
+Il cliente ha reputato promettente il progetto
 \end_layout
 
 \begin_layout Itemize
@@ -602,20 +606,20 @@ conflitto di interessi risolto, aumento di competenza professionale
 
 \end_deeper
 \begin_layout Itemize
-PTV Intertour Standard offriva una buona interfaccia, ma scarsa intergazione
- con interfacce web
-\end_layout
-
-\begin_layout Itemize
-I PTV XServer si integravano meglio, ma erano sconvenienti come costi di
- licenza
-\end_layout
-
-\begin_layout Itemize
 Si è optato quindi di non scartare il lavoro già svolto con Intertour, e
  vedere di migliorare in seguito
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+PTV Intertour Standard offriva una buona interfaccia
+\end_layout
+
+\begin_layout Itemize
+I PTV XServer erano troppo sconvenienti come costi di licenza
+\end_layout
+
+\end_deeper
 \begin_layout EndFrame
 
 \end_layout
@@ -771,6 +775,57 @@ Qualità dei componenti usati
 Qualità dei componenti usati
 \end_layout
 
+\begin_layout Itemize
+Non esisteva una soluzione semplice per:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+utilizzare lo strumento originale (niente versione di prova)
+\end_layout
+
+\begin_layout Itemize
+utilizzare i dati originali (10 GB, non facili da scambiare)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ma:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sapevo quale euristica utilizzavano (Granular Tabu Search, 
+\series bold
+modificata
+\series default
+): reimplementato in Python l'
+\series bold
+originale
+\end_layout
+
+\begin_layout Itemize
+potevo ricavare i dati da un altro servizio online di PTV, ma erano meno
+ accurati
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+I risultati che si sono ottenuti sono di tipo qualitativo
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Granular Tabu Search utilizza una prima euristica veloce per trovare la
+ prima soluzione, e poi la migliora
+\end_layout
+
+\begin_layout Itemize
+L'euristica era stata migliorata: l'originale funzionava bene sulle istanze
+ classiche, ma non sui casi reali
+\end_layout
+
+\end_deeper
 \begin_layout EndFrame
 
 \end_layout
@@ -783,16 +838,44 @@ Esperimenti eseguiti
 Esperimenti eseguiti
 \end_layout
 
-\begin_layout EndFrame
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename funzione.eps
+	scale 25
+
+\end_inset
+
 
 \end_layout
 
-\begin_layout Subsection
-Confronto tra i metodi utilizzati
+\end_inset
+
+
 \end_layout
 
-\begin_layout BeginFrame
-Confronto tra i metodi utilizzati
+\begin_layout Itemize
+Popolazione iniziale: 100 individui/10000 possibili combinazioni
+\end_layout
+
+\begin_layout Itemize
+2 minuti allo strumento per trovare una soluzione dati i coefficienti
+\end_layout
+
+\begin_layout Enumerate
+Brute force: 20000 (=2x10000) minuti per ottenenere la soluzione
+\end_layout
+
+\begin_layout Enumerate
+Algoritmo genetico: in sole 10 generazioni mostra una dominanza della popolazion
+e più adatta (2000 minuti)
 \end_layout
 
 \begin_layout EndFrame
@@ -807,6 +890,44 @@ Conclusioni
 Conclusioni
 \end_layout
 
+\begin_layout Itemize
+Il progetto di pianificazione automatica delle gite è stato un successo
+\end_layout
+
+\begin_layout Itemize
+Gli approcci automatici possono essere convenienti nel caso di molti coefficient
+i
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+per un umano un problema con 5 dimensioni è difficile
+\end_layout
+
+\begin_layout Itemize
+tempi di calcolo lunghi
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sviluppi futuri:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+completare integrazione con il tracking dei veicoli
+\end_layout
+
+\begin_layout Itemize
+intraprendere la stessa strada con altri clienti
+\end_layout
+
+\begin_layout Itemize
+valutare quano l'approccio automatico di individuazione dei coefficienti
+ giusti sia conveniente
+\end_layout
+
+\end_deeper
 \begin_layout EndFrame
 
 \end_layout

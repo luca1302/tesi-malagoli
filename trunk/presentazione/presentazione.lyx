@@ -156,7 +156,7 @@ La complessità del problema è stata sottovalutata
 \end_layout
 
 \begin_layout Enumerate
-si è cercato di dare uno strumento sositicato al responsabile delle spedizioni
+si è cercato di dare uno strumento sofisticato al responsabile delle spedizioni
  ma: 
 \end_layout
 
@@ -173,7 +173,7 @@ provocava un conflitto di interessi
 \begin_layout Enumerate
 Non si è capito la necessità di integrazione fra lo strumento di pianificazione
  cartografica e le altre parti del processo (es.
- picking ed il carico del camion) in modo da rispettare la pianicazione
+ picking ed il carico del camion) in modo da rispettare la pianificazione
 \end_layout
 
 \end_deeper
@@ -190,7 +190,7 @@ Il problema
 \end_layout
 
 \begin_layout Itemize
-I problemi dei clienti erano riconducibili al problema dell'instadamanento
+I problemi dei clienti erano riconducibili al problema dell'instradamanento
  dei veicoli (
 \begin_inset Quotes eld
 \end_inset
@@ -221,7 +221,7 @@ Le moderne soluzioni di pianificazione cartografica già risolvono questo
 \begin_layout Itemize
 Wincor Nixdorf ha quindi ritenuto che i tempi fossero maturi per spingere,
  con alcuni dei clienti principali, un progetto di minimizzazione costi
- trasporto che utilizzasse un sosticato tool di pianicazione cartografica
+ trasporto che utilizzasse un sofisticato tool di pianicazione cartografica
 \end_layout
 
 \begin_layout Itemize
@@ -639,7 +639,7 @@ manualmente
 \end_deeper
 \begin_layout Itemize
 L'euristica dello strumento utilizza coefficienti per misurare il costo
- di ogni soluzione, e seglie quella di costo minimo
+ di ogni soluzione, e sceglie quella di costo minimo
 \end_layout
 
 \begin_layout Itemize
@@ -901,7 +901,7 @@ completare integrazione con il tracking dei veicoli
 \end_layout
 
 \begin_layout Itemize
-valutare quano l'approccio automatico di individuazione dei coefficienti
+valutare quanto l'approccio automatico di individuazione dei coefficienti
  giusti sia conveniente
 \end_layout
 

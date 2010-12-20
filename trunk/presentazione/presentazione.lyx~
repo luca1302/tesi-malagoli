@@ -136,18 +136,15 @@ Background
 \end_layout
 
 \begin_layout Itemize
-Tipicamente le aziende trattate da Wincor Nixdorf possiedono centinaia di
- Punti di Vendita 
+centinaia di Punti di Vendita
 \end_layout
 
 \begin_layout Itemize
-importanti costi di trasporto, destinati a crescere nel tempo: necessitano
- ottimizzazione
+importanti costi di trasporto, destinati a crescere nel tempo
 \end_layout
 
 \begin_layout Itemize
-Negli ultimi anni alcuni clienti hanno tentato con dei progetti autonomi,
- ma hanno fallito: 
+Fallimento dei progetti autonomi: 
 \end_layout
 
 \begin_deeper
@@ -156,8 +153,7 @@ La complessità del problema è stata sottovalutata
 \end_layout
 
 \begin_layout Enumerate
-si è cercato di dare uno strumento sofisticato al responsabile delle spedizioni
- ma: 
+Consegna strumento sofisticato al responsabile delle spedizioni: 
 \end_layout
 
 \begin_deeper
@@ -171,9 +167,9 @@ provocava un conflitto di interessi
 
 \end_deeper
 \begin_layout Enumerate
-Non si è capito la necessità di integrazione fra lo strumento di pianificazione
- cartografica e le altre parti del processo (es.
- picking ed il carico del camion) in modo da rispettare la pianificazione
+Mancata comprensione della necessità di integrazione con le altre parti
+ del processo (es.
+ picking ed il carico del camion)
 \end_layout
 
 \end_deeper
@@ -190,8 +186,7 @@ Il problema
 \end_layout
 
 \begin_layout Itemize
-I problemi dei clienti erano riconducibili al problema dell'instradamanento
- dei veicoli (
+Problema dell'instradamanento dei veicoli (
 \begin_inset Quotes eld
 \end_inset
 
@@ -199,29 +194,26 @@ Vehicle Routing Problem
 \begin_inset Quotes erd
 \end_inset
 
-), che è un classico della Ricerca Operativa:
+):
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-bisogna collegare tutti i punti di consegna, minimizzando il numero delle
- gite (veicoli) impiegati
+collegare i punti di consegna, minimizzando numero di gite
 \end_layout
 
 \begin_layout Enumerate
-contemporaneamente minimizzare anche il costo totale delle gite
+contemporaneamente minimizzare il costo totale delle gite
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Le moderne soluzioni di pianificazione cartografica già risolvono questo
- tipo di problemi
+Moderne soluzioni di pianificazione cartografica già risolvono questo tipo
+ di problemi
 \end_layout
 
 \begin_layout Itemize
-Wincor Nixdorf ha quindi ritenuto che i tempi fossero maturi per spingere,
- con alcuni dei clienti principali, un progetto di minimizzazione costi
- trasporto che utilizzasse un sofisticato tool di pianicazione cartografica
+Avvio di un progetto di minimizzazione costi trasporto 
 \end_layout
 
 \begin_layout Itemize
@@ -459,10 +451,6 @@ Conversione formato ordini e mezzi di trasporto
 
 \begin_deeper
 \begin_layout Itemize
-Erano disponibili dati completi solo per alcuni giorni
-\end_layout
-
-\begin_layout Itemize
 Era necessario filtrare ed incrociare i dati, oltre che effettuare un cambio
  di formato per renderli compatibili
 \end_layout
@@ -507,8 +495,7 @@ Richieste:
 \end_layout
 
 \begin_layout Enumerate
-Possibilità di automatizzare, in tutto o in parte, la generazione delle
- gite 
+Possibilità di automatizzare la generazione delle gite 
 \end_layout
 
 \begin_deeper
@@ -520,8 +507,8 @@ Possibile
 
 \end_deeper
 \begin_layout Enumerate
-Offrire garanzie di minimizzazione dei costi maggiori rispetto alla normale
- gestione manuale
+Offrire garanzie di ottimizzazione maggiori rispetto alla precedente gestione
+ manuale
 \end_layout
 
 \begin_deeper
@@ -533,8 +520,8 @@ i risultati mostravano un risparmio del 3-5%
 
 \end_deeper
 \begin_layout Enumerate
-Offrire garanzie di rispettare correttamente i vincoli operativi (es.
- norme sui tempi di riposo)
+Rispettare i vincoli operativi (es.
+ tempi di riposo)
 \end_layout
 
 \begin_deeper
@@ -581,15 +568,7 @@ Il cliente ha reputato promettente il progetto
 \end_layout
 
 \begin_layout Itemize
-Si è optato per rendere disponibile l'utilizzo dello strumento direttamente
- al responsabile delle spedizioni: 
-\color green
-conflitto di interessi risolto, opportunità di crescita professionale
-\end_layout
-
-\begin_layout Itemize
-Si è optato quindi di non scartare il lavoro già svolto con Intertour, e
- vedere di migliorare in seguito
+Si è optato quindi di non scartare il lavoro già svolto con Intertour
 \end_layout
 
 \begin_deeper
@@ -602,6 +581,13 @@ I PTV XServer erano troppo sconvenienti come costi di licenza
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Si è optato per rendere disponibile l'utilizzo dello strumento direttamente
+ al responsabile delle spedizioni: 
+\color green
+conflitto di interessi risolto, opportunità di crescita professionale
+\end_layout
+
 \begin_layout EndFrame
 
 \end_layout
@@ -638,8 +624,7 @@ manualmente
 
 \end_deeper
 \begin_layout Itemize
-L'euristica dello strumento utilizza coefficienti per misurare il costo
- di ogni soluzione, e sceglie quella di costo minimo
+L'euristica dello strumento utilizza un approccio lineare
 \end_layout
 
 \begin_layout Itemize
@@ -693,28 +678,11 @@ banali
 
 \begin_deeper
 \begin_layout Itemize
-troppi vincoli: usando valori 
-\begin_inset Quotes eld
-\end_inset
-
-alti
-\begin_inset Quotes erd
-\end_inset
-
- rischiamo di violarli
+troppi vincoli
 \end_layout
 
 \begin_layout Itemize
-il tempo di calcolo è limitato: potrebbero esistere coppie di coefficienti
- 
-\begin_inset Quotes eld
-\end_inset
-
-inaspettate
-\begin_inset Quotes erd
-\end_inset
-
- che permettono di trovare soluzioni migliori in meno tempo
+il tempo di calcolo è limitato
 \end_layout
 
 \end_deeper
@@ -758,7 +726,7 @@ Qualità dei componenti usati
 \end_layout
 
 \begin_layout Itemize
-Non esisteva una soluzione semplice per:
+Non potevo:
 \end_layout
 
 \begin_deeper
@@ -777,7 +745,7 @@ Ma:
 
 \begin_deeper
 \begin_layout Itemize
-sapevo quale euristica utilizzavano (Granular Tabu Search, 
+conoscevo l'euristica utilizzata (Granular Tabu Search, 
 \series bold
 modificata
 \series default
@@ -798,13 +766,15 @@ I risultati che si sono ottenuti sono di tipo qualitativo
 
 \begin_deeper
 \begin_layout Itemize
-Granular Tabu Search utilizza una prima euristica veloce per trovare la
- prima soluzione, e poi la migliora
+Granular Tabu Search usa una euristica ausiliaria
 \end_layout
 
 \begin_layout Itemize
-L'euristica era stata migliorata: l'originale funzionava bene sulle istanze
- classiche, ma non sui casi reali
+L'euristica 
+\series bold
+originale
+\series default
+ funzionava su istanze classiche, non reali
 \end_layout
 
 \end_deeper
@@ -856,8 +826,7 @@ Brute force: 20000 (=2x10000) minuti per ottenenere la soluzione
 \end_layout
 
 \begin_layout Enumerate
-Algoritmo genetico: in sole 10 generazioni mostra una dominanza della popolazion
-e più adatta (2000 minuti)
+Algoritmo genetico: 10 generazioni (2000 minuti)
 \end_layout
 
 \begin_layout EndFrame
@@ -901,7 +870,7 @@ completare integrazione con il tracking dei veicoli
 \end_layout
 
 \begin_layout Itemize
-valutare quano l'approccio automatico di individuazione dei coefficienti
+valutare quanto l'approccio automatico di individuazione dei coefficienti
  giusti sia conveniente
 \end_layout
 
